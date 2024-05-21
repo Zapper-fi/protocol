@@ -1,53 +1,26 @@
 @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Bold.ttf) format("truetype");
+    font-family: "Inter";
+    src: url('/static/fonts/Inter/Inter-Bold.ttf') format("truetype");
     font-weight: 600;
   }
   
   @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Bold-Italic.ttf) format("truetype");
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-DemiBold.ttf) format("truetype");
+    font-family: "Inter";
+    src: url('/static/fonts/Inter/Inter-SemiBold.ttf') format("truetype");
     font-weight: 500;
   }
   
   @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-DemiBold-Italic.ttf) format("truetype");
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Medium.ttf) format("truetype");
+    font-family: "Inter";
+    src: url('/static/fonts/Inter/Inter-Medium.ttf') format("truetype");
     font-weight: 400;
   }
   
-  @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Medium-Italic.ttf) format("truetype");
-    font-weight: 400;
-    font-style: italic;
-  }
   
   @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Regular.ttf) format("truetype");
+    font-family: "Inter";
+    src: url('/static/fonts/Inter/Inter-Regular.ttf') format("truetype");
     font-weight: 300;
-  }
-  
-  @font-face {
-    font-family: "Avenir Next";
-    src: url(/static/fonts/AvenirNext-Italic.ttf) format("truetype");
-    font-weight: 300;
-    font-style: italic;
   }
   
   
@@ -119,7 +92,7 @@
   }
   
   body, h1, h2, h3, h4, h5, p {
-    font-family: "Avenir Next", Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
