@@ -49,7 +49,7 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
 			navbar: {
-				title: "Zapper Studio",
+				title: "Zap Protocol",
 				logo: {
 					alt: "Zapper Logo",
 					src: "img/logo.png",
@@ -57,9 +57,21 @@ const config = {
 				items: [
 					{
 						position: "left",
-						label: "Event Interpretation",
-						to: "docs/event-interpretation",
-						activeBaseRegex: "docs/event-interpretation",
+						label: "Interpretation Docs",
+						to: "docs/interpretation",
+						activeBaseRegex: "docs/interpretation",
+					},
+					{
+						position: "left",
+						label: "Indexer Docs",
+						to: "docs/interpretation",
+						activeBaseRegex: "docs/interpretation",
+					},
+					{
+						position: "left",
+						label: "Consumer API",
+						to: "docs/interpretation",
+						activeBaseRegex: "docs/interpretation",
 					},
 					{
 						href: "https://github.com/Zapper-fi/studio",
