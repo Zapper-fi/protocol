@@ -6,20 +6,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
 	title:
 		"An open protocol that incentivizes the interpretation and distribution of human-readable onchain information.",
-	plugins: [
-		"docusaurus-plugin-sass",
-		[
-			"docusaurus-plugin-remote-content",
-			{
-				// options here
-				name: "studio-changelog",
-				sourceBaseUrl:
-					"https://raw.githubusercontent.com/Zapper-fi/studio/main/",
-				outDir: "docs", // the base directory to output to.
-				documents: ["CHANGELOG.md"], // the file names to download
-			},
-		],
-	],
+	plugins: ["docusaurus-plugin-sass"],
 	tagline: "Illuminating the onchain world for everyone.",
 
 	url: "https://protocol.zapper.xyz",
@@ -64,45 +51,14 @@ const config = {
 					{
 						position: "left",
 						label: "Indexer Docs",
-						to: "docs/interpretation",
-						activeBaseRegex: "docs/interpretation",
+						to: "docs/indexing",
+						activeBaseRegex: "docs/indexing",
 					},
 					{
 						position: "left",
 						label: "Consumer API",
-						to: "docs/interpretation",
-						activeBaseRegex: "docs/interpretation",
-					},
-					{
-						href: "https://github.com/Zapper-fi/studio",
-						label: "GitHub",
-						position: "right",
-					},
-				],
-			},
-			footer: {
-				links: [
-					{
-						title: "Community",
-						items: [
-							{
-								label: "Twitter",
-								href: "https://twitter.com/zapper_fi",
-							},
-							{
-								label: "Discord",
-								href: "https://zapper.xyz/discord",
-							},
-						],
-					},
-					{
-						title: "More",
-						items: [
-							{
-								label: "GitHub",
-								href: "https://github.com/Zapper-fi/studio",
-							},
-						],
+						to: "docs/api",
+						activeBaseRegex: "docs/api",
 					},
 				],
 			},
