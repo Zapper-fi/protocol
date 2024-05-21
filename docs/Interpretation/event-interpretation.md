@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# Activity feed event interpreters
+# Event Interpreters
 
 ## What is an event interpreter?
