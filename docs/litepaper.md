@@ -25,7 +25,7 @@ Indexing templates are a defining primitive for the protocol. They perform two v
 
 Indexing templates are built by interpreters. At their core they are very simple JSON files that can be read as a set of instructions for an indexer. And there are many ways to build and allow the creation of these templates, and they don't require any knowledge of coding.
 
-You can view a simple example [here](docs/interpretation/app-token-interpretation/overview#example.md).
+You can view a simple example [here](/docs/interpretation/overview#example).
 
 ### Stakeholders
 #### Interpreters
