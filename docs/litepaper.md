@@ -220,6 +220,29 @@ Here's an example of what a functioning <b>App Token Interpreter</b> indexing te
   }
 }
 ```
+### Stakeholders
+#### Interpreters
+These are the onchain explorers and cartographers. They scout the chain for unindexed information and build indexing templates. 
+
+Initially a portion of interpreters will be "Reviewers", a proto-dao that receives retro-actives incentives for ensuring quality interpreters are correct and validated. 
+
+### Indexers
+They index data from validated interpreters and run nodes that distribute this data to consumers. This data is served via different resolvers - e.g. a resolver for user lending positions on Aave. Resolvers are an interface allowing users to query data originating from interpreters.
+
+### Consumers
+They pay for readable data and use it to power their own applications.
+
+### $ZAP - Utility Token
+#### Utility
+##### Payment
+ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders and acting as native form of payment for the data. 
+
+For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
+
+#### Governance
+ZAP will also minimally provide governance for the protocol, more specifically
+- Setting the protocol fees
+- Distributing incentives
 
 ### Advantages
 #### Data Quality
@@ -230,13 +253,12 @@ For example, an app token interpreter for Aave V3 knows exactly that they need t
 That said while the problem of quality can be greatly reduced via automation, we still require a coordination layer at the protocol level to indicate which version of an interpreter is the best.
 
 #### Standardization
-
+Soon.
 
 #### Composability
 Since smart contracts are composable with each-other, we wanted to make sure that information composability can exist at the semantic layer as well. A simple example:
 
 You are a wallet app that wants to display a readable transaction history to your users- some of these enriched transactions may contain information about DeFi assets. If an interpreter for that DeFi asset exists, you are able to extract all the contextual information for that asset
-
 
 ### Templates Types
 #### Event Interpreters
@@ -265,13 +287,16 @@ In the future, many other templates can be created to fit any type of use case:
 - Badges, Attestations
 
 ### Use Cases
+Soon.
 #### Social/Identity
+Soon.
 #### DeFi
+Soon.
 #### Search
+Soon.
 #### LLMs
+Soon.
 #### Recommendation Engines
+Soon.
 #### Accounting
-
-### Stakeholders
-
-
+Soon.
