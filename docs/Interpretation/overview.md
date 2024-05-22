@@ -4,8 +4,6 @@ sidebar_position: 1
 
 # Overview
 
-https://github.com/Zapper-fi/protocol/assets/6855274/3b03ecce-b903-4f79-9f1d-f507541aa3e9
-
 ## Indexing Templates
 Indexing templates are a defining primitive for the protocol. They perform two very important functions:
 - They standardize the semantic information for an onchain entity
