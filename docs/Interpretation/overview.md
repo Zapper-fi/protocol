@@ -1,8 +1,17 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-# Example
+# Overview
+
+## Indexing Templates
+Indexing templates are a defining primitive for the protocol. They perform two very important functions:
+- They standardize the semantic information for an onchain entity
+- They instruct indexers on how onchain information should be indexed, transformed and stored.
+
+Indexing templates are built by interpreters. At their core they are very simple JSON files that can be read as a set of instructions for an indexer. And there are many ways to build and allow the creation of these templates, and they don't require any knowledge of coding.
+
+## Example
 
 Here's an example of what a functioning <b>App Token Interpreter</b> indexing template that surfaces user balances for all Uniswap V2 pools on Ethereum Mainnet.
 

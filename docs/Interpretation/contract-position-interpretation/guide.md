@@ -2,6 +2,6 @@
 sidebar_position: 2
 ---
 
-# Guide
-
+# Getting Started
 Coming Soon.
+
