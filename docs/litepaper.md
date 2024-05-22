@@ -39,18 +39,6 @@ They index data from validated interpreters and run nodes that distribute this d
 ### Consumers
 They pay for readable data and use it to power their own applications.
 
-### $ZAP - Utility Token
-#### Utility
-##### Payment
-ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders and acting as native form of payment for the data. 
-
-For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
-
-#### Governance
-ZAP will also minimally provide governance for the protocol, more specifically
-- Setting the protocol fees
-- Distributing incentives
-
 ### Advantages
 #### Data Quality
 Since every template specify a strict interface and format for returning data. It's much easier to assure consistent quality across the board, as you know exactly what to expect. Current existing solutions are code sandboxes, which makes it very difficult to build good tests, as you don't know what to test. 
@@ -93,12 +81,28 @@ In the future, many other templates can be created to fit any type of use case:
 - Social Feeds
 - Badges, Attestations
 
-### Use Cases
+
+## $ZAP - Utility Token
+### Payment
+ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders and acting as native form of payment for the data. 
+
+For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
+
+### Governance
+ZAP will also minimally provide governance for the protocol, more specifically
+- Setting the protocol fees
+- Distributing incentives
+
+## Use Cases
 Soon.
 #### Social/Identity
-Soon.
+
+Using semantic information as a way to enrich user / account information. Help users connect with other people onchain with similar interests.
+
 #### DeFi
-Soon.
+
+Powering DeFi Apps with information about different financial positions, enabling users to track their positions and their portfolios. Offering portfolio tracking services to Wallets, and Aggregators.
+
 #### Search
 Soon.
 #### LLMs
