@@ -50,13 +50,7 @@ const config = {
 					},
 					{
 						position: "left",
-						label: "Indexer Docs",
-						to: "docs/indexing/intro",
-						activeBaseRegex: "docs/indexing/intro",
-					},
-					{
-						position: "left",
-						label: "Consumer API",
+						label: "API",
 						to: "docs/api/intro",
 						activeBaseRegex: "docs/api/into",
 					},

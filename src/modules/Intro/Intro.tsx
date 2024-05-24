@@ -21,7 +21,7 @@ export const Intro: React.FC = () => {
 						<h1 className={styles.title}>{siteConfig.tagline}</h1>
 						<h3 className={styles.subtitle}>{siteConfig.title}</h3>
 						<div className={styles.buttons}>
-							<Link className={styles.button} to="/docs/litepaper">
+							<Link className={styles.button} to="/docs/introduction">
 								Learn More
 							</Link>
 						</div>
