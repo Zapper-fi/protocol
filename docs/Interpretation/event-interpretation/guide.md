@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting Started
 
-## Where to start
+## Where to start!
 
 For a lot of transactions, it can be a bit tricky to understand exactly what the purpose of a transaction was, if you are not the one that executed it. 
 
@@ -120,9 +120,115 @@ If you do not see the correct app in the list, please do type in the name yourse
 Note that you do not need to associate the transaction with an app if no app was involved or if you don’t know for sure what app the transaction happened on; if there is no app, just select the "no app" toggle. For example, if the transaction is just a user minting an NFT from an NFT collection, initiated directly from the NFT collection’s smart contract, and didn’t take place through OpenSea or some frontend, then there is no app to associate it with.
 
 ## Preview Feed Section
+When interpreting your transaction, you will see the right side of your screen be updated automatically as you input new information about the transaction. This is a great tool to determine if you have interpreted all the transactions correctly or not. 
+
+In the screenshot below, you can see that two transactions were not interpreted correctly, therefore the fields were not filled in with the right info, or maybe some details are missing. 
+
+(image)
+
+This can happen if you are too specific in your interpretation or if the contract method does more than one action. In the later case you can submit a conditional event by adding a case to the interpretation, see the next section for more details. 
+
+Important! Note that failed transactions can also appear in the preview, when this happens, you don’t have to worry about the preview shown and can just ignore that transaction card. To confirm, simply click on the transaction and look on Zapper or on the explorer to confirm it is indeed a failed transaction. 
+
 
 ## Conditional Events
 
+On your interpretation adventure, you might stumble upon some events that are a bit more complex. Some transactions with the same method might lead to different interpretations. For example, a transaction might have different outcomes depending on specific values. In those situations, you will need to indicate what happens under each condition to interpret all events correctly. 
+
+Note: If this is your first event interpretation, we would recommend starting with a more simple transaction, and keep a conditional for when you are more comfortable with the tool. 
+
+To create a conditional, simply click “Add Case” to open a new section. 
+
+(image)
+
+You will then be able to add the specifics of the transaction. If you are familiar with coding, this works really similarly to an “if” function. In the sense that you are presenting how to interpret the event when (if) this situation occurs. “Actual” is where you will indicate the parameter to look at and “Expected” is what the outcome of this parameter you want to compare it to for this condition to apply. 
+
+**Here is a basic example to better illustrate:** Usually when a wallet mints an NFT it will mint it in that same wallet and the transaction should read something like “zfreddyy.eth has minted a Zapper NFT”. In this case, the “Expected” scenario is that the “Transfer to” address is the same as the “From” address. 
+
+In some cases, the contract also allows you to mint and send the NFT to a different wallet address in the same transaction. In this case, we want this to appear on the readable event card to be something like “zfreddyy.eth has minted a Zapper NFT and sent it to 0xmarc.eth”. For this to happen we need to create a conditional scenario when the “Transfer to” address is not the “From” address. 
+
+(image)
+
+Additional information, as you can see at the bottom of the screenshot above, you could have more than one condition for a single event. 
+
 ## Tips on how to investigate an event
 
+### 1. Look at the method name
 
+The method name is usually helpful in pointing you towards what action is taken. If the method name is deposit, its likely the user sent tokens away and deposited them in an app. HOWEVER, methods can also be misleading, so do not blindly trust them! Most smart contracts are forks of other contracts, where the devs copy the contract, and tweak it for their needs, but do not update the method names. This can lead to situations where a withdraw function is really a claim function, or a deposit is really locked funds for 2 years.
+
+Looking for a method name? Your best reflex is to look up your transaction on the chain explorer. At the bottom of the page you should see the option “Show more details” If you click on it, more information about the transaction will appear. In the “Input Data” section you will find the method name, as well as the parameters of this specific transaction. 
+
+(image) 
+
+Zap Protocol’s's goal is to accurately and clearly describe the blockchain, so please be aware of this in your submissions!
+
+### 2. Look at the logs
+
+Event logs contain important information about a transaction. They are used for purposes like tracking token transfers, decentralized exchange activity, and more, enabling efficient onchain communication and interaction. 
+
+You can find the logs by clicking on the “Logs” tab when looking at a transaction on the explorer. Looking at the logs can provide additional context and specifics about a transaction and therefore help you interpreting correctly an event. 
+
+(image)
+
+*Tip! 💡 The first log of the transaction is often used to describe the transaction itself.* 
+
+### 3. Look at the input methods
+
+See the example below, where the interpreter was able to point out exactly the number of the proposal that had been executed in a transaction, instead of just giving a generic “Executed a proposal” answer.  
+
+(image)
+
+This was possible thanks to the input data of the transaction. See what shows on the explorer: 
+
+(image)
+
+Without the interpreter going the extra mile and pointing out the proposal id, we would've had a generic “Executed a proposal” and therefore missed out on important information for this transaction. 
+
+### 4. Find the app related to the transaction/contract
+
+It often helps to look up what app a contract in a transaction is associated with. If you find that the contract relates to Aave, its a good chance the methods relating to supplying and withdrawing funds from a lending protocol. The best way to find out what app an contract belongs to is to Google the TO address.
+
+(image)
+
+If that fails, another good way to investigate what app owns a contract is to search it on Github, and look if it is in an app's Github repository (or o\if another app has added it and labeled it in their repo). [Example search query:](https://github.com/search?q=0x6774Bcbd5ceCeF1336b5300fb5186a12DDD8b367&type=code)
+
+(image)
+
+If you think you need additional context to interpret the event with precision, you can always refer to the explorer. You can easily access the transaction’s explorer page in the top right corner of the page. 
+
+(image)
+
+## Submission Process
+
+Once you’ve written your event interpretation, go ahead and submit it! Once you click submit, your event interpretation is sent for review to the ReviewerZapper team and some community members with a reviewer role. Here’s how the review process works:
+- We are generally reviewing to make sure the verbiage makes sense (e.g. is in the past tense) and is consistent. We may tweak the words submitted to align it with other event interpreters on the site or add details that were not available to you.
+- If there is a new app that needs to be created to associate this event with, we’ll go ahead and add it.
+- If the submission is all good to go, we will approve it, and your event interpreter will be deployed for all users to consume!
+- If the submission has some issues, it may be rejected with a rejection reason. Common rejection reasons are if the submission is a duplicate of another submission that was pending or if the action was too vague to understand.
+  
+Note that you can monitor the status of your submissions and see rejection reasons in your [My Submissions](https://www.zapper.xyz/my-submissions) page.
+
+(image)
+
+## Event Interpretation examples
+
+For those who prefer a visual preview to better understand the process of interpreting events, we put together some videos of different types of events you might encounter.
+
+**Overview of the interface:**
+[Jasper Video 1]
+
+**Example of a String extraction case:**
+[Jasper Video 2]
+
+**Example of an Address extraction case:**
+[Jasper Video 3]
+
+## Events that cannot be interpreted at this time:
+
+- Multi-sig transactions - we are working on interpreting these events at-scale
+- Proxy contract transactions, like transactions interacting with Maker’s DSProxy contracts. We’re also working on interpreting these at scale, but they are weird
+
+If you have any questions about event interpretation or a specific case you are currently working on, please join our [Discord](https://www.zapper.xyz/discord) where Zap Protocol team members and our growing community of experienced event interpreters will be happy to help you out! Simply join us in the #event-interpreters channel.
+
+Thank you for helping us make the blockchain readable! 
