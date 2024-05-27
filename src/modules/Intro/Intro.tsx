@@ -16,7 +16,7 @@ export const Intro: React.FC = () => {
 		>
 			<div
 				style={{
-					backgroundImage: "url(./img/background.png)",
+					backgroundImage: "url(./img/background2.png)",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					width: "calc(100% - 32px)", // Remove PaddingX
