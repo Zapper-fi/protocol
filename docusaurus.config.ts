@@ -2,12 +2,13 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config = {
 	title:
-		"An open protocol that incentivizes the interpretation and distribution of human-readable onchain information.",
+		"An open protocol that incentivizes the interpretation of human-readable onchain information.",
 	plugins: ["docusaurus-plugin-sass"],
-	tagline: "Illuminating the onchain world for everyone.",
+	tagline: "Illuminating the Onchain World.",
 
 	url: "https://protocol.zapper.xyz",
 	baseUrl: "/",
@@ -19,8 +20,7 @@ const config = {
 	presets: [
 		[
 			"classic",
-			/** @type {import('@docusaurus/preset-classic').Options} */
-			({
+			{
 				docs: {
 					sidebarPath: require.resolve("./sidebars.js"),
 					editUrl: "https://github.com/Zapper-fi/protocol/tree/main/",
@@ -28,39 +28,37 @@ const config = {
 				theme: {
 					customCss: require.resolve("./src/scss/custom.scss"),
 				},
-			}),
+			} satisfies Preset.Options,
 		],
 	],
 
-	themeConfig:
-		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-		({
-			navbar: {
-				title: "Zap Protocol",
-				logo: {
-					alt: "Zapper Logo",
-					src: "img/logo.png",
+	themeConfig: {
+		navbar: {
+			title: "Zap Protocol",
+			logo: {
+				alt: "Zapper Logo",
+				src: "img/logo.png",
+			},
+			items: [
+				{
+					position: "left",
+					label: "Interpretation Docs",
+					to: "docs/interpretation/overview",
+					activeBaseRegex: "docs/interpretation/overview",
 				},
-				items: [
-					{
-						position: "left",
-						label: "Interpretation Docs",
-						to: "docs/interpretation/overview",
-						activeBaseRegex: "docs/interpretation/overview",
-					},
-					{
-						position: "left",
-						label: "API",
-						to: "docs/api/intro",
-						activeBaseRegex: "docs/api/into",
-					},
-				],
-			},
-			prism: {
-				theme: prismThemes.github,
-				darkTheme: prismThemes.dracula,
-			},
-		}),
+				{
+					position: "left",
+					label: "API",
+					to: "docs/api/intro",
+					activeBaseRegex: "docs/api/into",
+				},
+			],
+		},
+		prism: {
+			theme: prismThemes.github,
+			darkTheme: prismThemes.dracula,
+		},
+	} satisfies Preset.ThemeConfig,
 } satisfies Config;
 
 export default config;

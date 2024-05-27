@@ -1,36 +1,72 @@
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import clsx from "clsx";
 import styles from "../../pages/index.module.scss";
-import Link from "@docusaurus/Link";
+import { LinkButton } from "../../components/LinkButton";
+import { ButtonGroup } from "../../components/ButtonGroup";
 
 export const Intro: React.FC = () => {
 	const { siteConfig } = useDocusaurusContext();
 	return (
-		<header className={clsx("hero hero--primary", styles.heroBanner)}>
-			<div className="container">
-				<div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
+		<header
+			style={{
+				padding: "16px",
+				height: "calc(100vh - 60px)",
+				position: "relative",
+			}}
+		>
+			<div
+				style={{
+					backgroundImage: "url(./img/background.png)",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					width: "calc(100% - 32px)", // Remove PaddingX
+					height: "calc(100% - 32px)", // Remove PaddingY
+					position: "absolute",
+					zIndex: -1,
+					borderRadius: "16px",
+				}}
+			/>
+			<div className="container" style={{ height: "100%" }}>
+				<div
+					style={{
+						height: "100%",
+						display: "flex",
+						alignItems: "center",
+						gap: "32px",
+						padding: "88px 0px",
+					}}
+				>
 					<div
 						style={{
+							height: "100%",
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "flex-start",
-							maxWidth: "fit-content",
+							justifyContent: "space-between",
+							maxWidth: "540px",
 						}}
 					>
-						<h1 className={styles.title}>{siteConfig.tagline}</h1>
-						<h3 className={styles.subtitle}>{siteConfig.title}</h3>
-						<div className={styles.buttons}>
-							<Link className={styles.button} to="/docs/introduction">
-								Learn More
-							</Link>
+						<h1
+							style={{ color: "white", fontSize: "80px" }}
+							className={styles.title}
+						>
+							{siteConfig.tagline}
+						</h1>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "flex-start",
+							}}
+						>
+							<h4 style={{ color: "white" }} className={styles.subtitle}>
+								{siteConfig.title}
+							</h4>
+							<ButtonGroup>
+								<LinkButton href="/docs/introduction" buttonCopy="Learn More" />
+							</ButtonGroup>
 						</div>
 					</div>
-					<img
-						src="./img/light.png"
-						alt="Zapper Studio"
-						style={{ width: "520px", height: "auto", borderRadius: "16px" }}
-					/>
 				</div>
 			</div>
 		</header>
