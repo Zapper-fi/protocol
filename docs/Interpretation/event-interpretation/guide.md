@@ -23,7 +23,7 @@ The areas are:
 2. Item type(s) involved
 3. The app that this transaction took place through
 
-(image)
+![My Image](img/assets/logo.svg)
 
 Together, these three elements will help us have a standardized format for events which will always come down to something resembling: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
 
