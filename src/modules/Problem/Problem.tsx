@@ -1,3 +1,4 @@
+import { Card } from "../../components/Card";
 import { Section } from "../../components/Section";
 import React from "react";
 
@@ -5,13 +6,13 @@ export const Problem: React.FC = () => {
 	return (
 		<Section>
 			<div
+				className="border"
 				style={{
 					display: "flex",
 					gap: "40px",
 					padding: "64px 64px",
-					borderWidth: "4px",
-					borderColor: "#fff",
-					borderStyle: "double",
+					borderWidth: "medium",
+					borderStyle: "dotted",
 					alignItems: "center",
 				}}
 			>
@@ -55,7 +56,7 @@ export const Problem: React.FC = () => {
 						fontStyle: "italic",
 					}}
 				>
-					Readable onchain information is <b>important</b>.
+					Readable onchain information is <b className="accent">important</b>.
 				</h2>
 				<div
 					style={{
@@ -66,16 +67,13 @@ export const Problem: React.FC = () => {
 						maxWidth: "100%",
 					}}
 				>
-					<div
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -89,18 +87,14 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
+					</Card>
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -114,17 +108,14 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
+					</Card>
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -138,17 +129,14 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
+					</Card>
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -162,17 +150,14 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
+					</Card>
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -186,17 +171,14 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
+					</Card>
+					<Card
 						style={{
 							display: "flex",
 							gap: "16px",
 							flexDirection: "column",
 							width: "340px",
 							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
 						}}
 					>
 						<img
@@ -210,31 +192,7 @@ export const Problem: React.FC = () => {
 							Track your DeFi positons, your NFT collections, lorem ipsum dolor
 							sit amet, consectetur adipiscing elit, sed do eiusmod.
 						</p>
-					</div>
-					<div
-						style={{
-							display: "flex",
-							gap: "16px",
-							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
-							backgroundColor: "black",
-							padding: "32px",
-							borderRadius: "16px",
-						}}
-					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>Portfolio Tracking</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
-						</p>
-					</div>
+					</Card>
 				</div>
 			</div>
 		</Section>

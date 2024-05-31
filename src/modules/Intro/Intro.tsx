@@ -9,9 +9,10 @@ export const Intro: React.FC = () => {
 	return (
 		<header
 			style={{
-				padding: "16px",
+				padding: "0px 16px 16px 16px",
 				height: "calc(100vh - 60px)",
 				position: "relative",
+				zIndex: 1,
 			}}
 		>
 			<div
@@ -20,7 +21,7 @@ export const Intro: React.FC = () => {
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					width: "calc(100% - 32px)", // Remove PaddingX
-					height: "calc(100% - 32px)", // Remove PaddingY
+					height: "calc(100% - 16px)", // Remove PaddingBottom
 					position: "absolute",
 					zIndex: -1,
 					borderRadius: "16px",
