@@ -3,11 +3,66 @@ sidebar_position: 1
 ---
 
 # Overview
-## Introduction
-App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The large majority of these tokens do not have a market price, rather they have a reedemable price to unlock an underyling token. To surface these to users, we first need to interpret the contract interface that manage these positions.
 
-## Example
-```
+## What is an App Token?
+
+App Token is the term Zapper uses for investable positions that are represented by the `ERC20` token standard. App Tokens are:
+
+1. Transferrable
+2. Fungible
+3. Redeemable for some underlying token or set of tokens, from which they dervice their value
+4. Related to a crypto App
+
+Common examples of app tokens are:
+
+- Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve
+- Autocompounding "vaults" from yield aggregators like Pickle or Yearn
+- Supply and borrow positions in a lending app like Aave
+- Or even more obscure primitives like options in Opyn or prize savings accounts in PoolTogether
+
+The large majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive the value of them.
+
+App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return. Hoewver, some app tokens are intermediary tokenized investments; TODO EXAMPLE NEEDED
+
+## What is an App Token Interpreter(ATI)?
+
+App Token Interpreters are used to index app-centric token balances for users. This can be [USDC](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) lent on Aave [aUSDC](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c), or a liquidity position for [DAI/USDC](https://etherscan.io/address/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5) you hold on Uniswap V2. All app tokens are redeemable for some amount of underlying token(s), and an App Token Interpreter is what provides the ruleset of what an app token is redeemable for.
+
+There are 3 main components of an App Token Interpreter:
+
+1. Defining what contracts & network the ATI applies to
+2. Defining how to resolve the underlying token(s)
+3. Defining how many underlying tokens an app token is redeemable for
+
+## Components of an App Token Interpreter
+
+### Contracts & Network
+
+App Token Interpreters start with the basis of a contract address or a contract factory. The basic assumption is that the same ATI template can be used to resolve all instances of the same contract produced by the contract factory. For example, the Uniswap V2 factory contract produces all Uniswap V2 pairs, and the same ATI template can be used to resolve all Uniswap V2 pairs, as they all use the same contract ABI and contain the same methods.
+
+### Resolving Underlying Tokens
+
+Once the contract address or factory is defined, we then define how to resolve the underlying tokens. This can be done in a few ways:
+
+1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying tokens. For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
+2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, Aave ETH [aETH](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
+
+### Redeemable Value
+
+Finally, we define how many underlying tokens an app token is redeemable for. This is done through an expression, which is a mathematical formula that defines how many underlying tokens an app token is redeemable for. This can be as simple as inputting `1` for a token that is redeemable for 1 underlying token (a 1:1 redemption ratio), or as complex as a formula that calculates the redemption value based on the state of the contract. For example, a Uniswap V2 pair is redeemable for `reserve0 / (10 ^ token0.decimals())` amount of token0 and `reserve1 / (10 ^ token1.decimals())` amount of token1.
+
+The result of all these components is a set of rules that define how to resolve an app token. This information is assembled into a JSON object that is stored in the Zapper database, and is used to calculate the value of app tokens in user wallets.
+
+## Example JSON Object of an ATI
+
+Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory, and calculate the redemption value of the app token.
+
+Factory address: <https://etherscan.io/address/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f>
+Event signature used to populate pool tokens: `event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)`
+Underlying token resolution: `token0()` and `token1()` methods
+Redemption value calculation: `(reserve0 / (10 ^ token0.decimals())) / (reserve1 / (10 ^ token1.decimals())) + 1`
+
+```json
 {
     "appId": "QXBwLTY",
     "decimals": {
