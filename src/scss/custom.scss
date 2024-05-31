@@ -41,6 +41,12 @@
     --ifm-color-primary-light: #784ffe;
     --ifm-color-primary-lighter: #784ffe;
     --ifm-color-primary-lightest: #784ffe;
+    --ifm-card-background: #f7f7f8;
+    --ifm-border-color: #d7dce5;
+    --ifm-accent-color: #784ffe;
+    --ifm-default-background: #fff;
+    --ifm-text-alt-color: #4b5871;
+
 
     /** Zapper Theme **/
     --radius: 16px;
@@ -74,6 +80,14 @@
     --ifm-color-primary-light: #a387ff;
     --ifm-color-primary-lighter: #a387ff;
     --ifm-color-primary-lightest: #a387ff;
+    --ifm-card-background: #181c1f;
+    --ifm-border-color: #32383d;
+    --ifm-accent-color: #a387ff;
+    --ifm-default-background: #0c1013;
+    --ifm-text-alt-color: #c7d2da;
+
+
+
 
     /** Zapper Theme for Dark Mode**/
     --text-color: white;
@@ -146,70 +160,30 @@
     max-width: 1600px;
   }
 
-  [data-theme='dark'] {
-    .main-wrapper {
-      background-color: #0c1013;
-    }
-
-    .navbar {
-      background-color: #0c1013;
-    }
-
-    .card {
-      background-color: #181c1f;
-    }
-
-    .border {
-      border-color: #32383d;
-    }
-
-    .accent {
-      color: #a387ff;
-    }
-
-    .text-alt-color {
-      color: #9cabbb;
-    }
-
-    .navbar {
-      border-color: #32383d;
-    }
+  .text-alt-color {
+    color: var(--ifm-text-alt-color);
   }
 
-  [data-theme='light'] {
-    .main-wrapper {
-      background-color: #fff;
-    }
-
-    .navbar {
-      background-color: #fff;
-    }
-
-    .card {
-      background-color: #f7f7f8;
-    }
-
-    .border {
-      border-color: #d7dce5;
-    }
-
-    .accent {
-      color: #784ffe;
-    }
-
-    .text-alt-color {
-      color: #4b5871;
-    }
-
-    .navbar {
-      border-color: #d7dce5;
-    }
+  .main-wrapper, .navbar {
+    background-color: var(--ifm-default-background);
+  }
 
 
+  .card {
+    background-color: var(--ifm-card-background);
   }
 
   .navbar {
     box-shadow: none;
+    border-color: var(--ifm-border-color);
+  }
+
+  .border {
+      border-color: var(--ifm-border-color);
+  }
+
+  .accent {
+    border-color: var(--ifm-accent-color);
   }
 
   .docs-wrapper {
@@ -218,4 +192,21 @@
       border-width: 1px;
     }
   }
-  
+
+  .button {
+    &--primary {
+      background-color: #784ffe;
+      color: white;
+
+      &:hover {
+        background-color: #a387ff;
+        color: white;
+      }
+    }
+
+    &--secondary {
+      background-color: var(--ifm-card-background);
+      color: var(--text-color)
+    }
+  }
+

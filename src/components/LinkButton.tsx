@@ -14,10 +14,10 @@ export const LinkButton: React.FC<{
 }> = ({ type = ButtonType.Primary, buttonCopy, href }) => {
 	return (
 		<Link
-			className={styles.button}
+			className={
+				type === ButtonType.Primary ? "button--primary" : "button--secondary"
+			}
 			style={{
-				color: type === ButtonType.Primary ? "white" : "#0070f3",
-				border: type === ButtonType.Primary ? "none" : "1px solid #0070f3",
 				borderRadius: "8px",
 				padding: "0px 16px",
 				display: "flex",

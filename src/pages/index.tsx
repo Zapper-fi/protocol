@@ -3,6 +3,9 @@ import Layout from "@theme/Layout";
 import { Intro } from "../modules/Intro/Intro";
 import { Metrics } from "../modules/Metrics";
 import { Problem } from "../modules/Problem/Problem";
+import { Interpretation } from "../modules/Interpretation/Interpretation";
+import { ApiSection } from "../modules/Api/ApiSection";
+import { Footer } from "../modules/Footer";
 
 const Home: React.FC = () => {
 	return (
@@ -13,8 +16,11 @@ const Home: React.FC = () => {
 				style={{ display: "flex", flexDirection: "column", gap: "32px" }}
 			>
 				<Problem />
+				<ApiSection />
 				<Metrics />
+				<Interpretation />
 			</div>
+			<Footer />
 		</Layout>
 	);
 };

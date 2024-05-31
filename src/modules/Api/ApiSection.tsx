@@ -3,11 +3,16 @@ import { Section } from "../../components/Section";
 import { ButtonGroup } from "../../components/ButtonGroup";
 import { LinkButton } from "../../components/LinkButton";
 
-export const InterpretationEvent: React.FC = () => {
+export const ApiSection: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "32px" }}
+			style={{
+				borderWidth: "1px",
+				borderStyle: "solid",
+				padding: "32px",
+				margin: "32px 0px",
+			}}
 		>
 			<div style={{ display: "flex", gap: "32px" }}>
 				<div
@@ -24,22 +29,14 @@ export const InterpretationEvent: React.FC = () => {
 							fontWeight: "600",
 						}}
 					>
-						Event Interpreters
+						The Ultimate Human-Readable API
 					</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
 					<ButtonGroup>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/guide"
-							buttonCopy="Get Started"
-						/>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/overview"
-							buttonCopy="Learn More"
-							type="secondary"
-						/>
+						<LinkButton href="/docs/api/intro" buttonCopy="Get Started" />
 					</ButtonGroup>
 				</div>
 				<div style={{ flex: 1 }}>image goes here</div>
