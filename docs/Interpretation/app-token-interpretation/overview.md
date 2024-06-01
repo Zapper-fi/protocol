@@ -18,11 +18,15 @@ Common examples of app tokens are:
 - Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve
 - Autocompounding "vaults" from yield aggregators like Pickle or Yearn
 - Supply and borrow positions in a lending app like Aave
+- Vote-locked tokens (veCLV for vote-locked CLever)
 - Or even more obscure primitives like options in Opyn or prize savings accounts in PoolTogether
 
 The large majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive the value of them.
 
 App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return. Hoewver, some app tokens are intermediary tokenized investments; TODO EXAMPLE NEEDED
+
+:::warn
+App Tokens are tokenized positions. There is a different classs of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract, and are not represented by an `ERC20` token. Examples of these are farming positions in a contract, or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
 
 ## What is an App Token Interpreter(ATI)?
 
@@ -45,7 +49,7 @@ App Token Interpreters start with the basis of a contract address or a contract 
 Once the contract address or factory is defined, we then define how to resolve the underlying tokens. This can be done in a few ways:
 
 1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying tokens. For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
-2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, Aave ETH [aETH](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
+2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, [Aave ETH (aETH)](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
 
 ### Redeemable Value
 
@@ -57,10 +61,10 @@ The result of all these components is a set of rules that define how to resolve 
 
 Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory, and calculate the redemption value of the app token.
 
-Factory address: <https://etherscan.io/address/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f>
-Event signature used to populate pool tokens: `event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)`
-Underlying token resolution: `token0()` and `token1()` methods
-Redemption value calculation: `(reserve0 / (10 ^ token0.decimals())) / (reserve1 / (10 ^ token1.decimals())) + 1`
+- Factory address: <https://etherscan.io/address/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f>
+- Event signature used to populate pool tokens: `event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)`
+- Underlying token resolution: `token0()` and `token1()` methods
+- Redemption value calculation: `(reserve0 / (10 ^ token0.decimals())) / (reserve1 / (10 ^ token1.decimals())) + 1`
 
 ```json
 {
