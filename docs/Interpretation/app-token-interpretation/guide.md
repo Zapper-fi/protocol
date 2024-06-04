@@ -6,7 +6,7 @@ sidebar_position: 2
 ## App Token Interpreter
 
 <!-- :::note -->
-This guide assumes that you have already created an App Token. If you haven't, please refer to the [App Token Creation Guide](../app-token-creation/guide.md).
+This guide assumes that you have already created an App Token. If you haven't, please read the overview of [App Tokens](/docs/Interpretation/app-token-interpretation/overview).
 
 This guide will walk you through the process of building an App Token Interpreter. An App Token Interpreter is the ruleset that Zapper uses to to interpret the value of an App Token for any users' balance.
 
@@ -23,7 +23,9 @@ Note that a user's balance is assumed to be based on a `baalnceOf` method on the
 1. **Create a new App Token Interpreter**: You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard), and clicking the "Add Balance" button. This will open a modal where you can select the App Token Interpreter option.
 !["Add Balance" button](</static/img/assets/add_balance_button.png>)
 
-2. **Input the Token Address**: Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](TODO) for more information).
+2. **Input the Token Address**: Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide] for more information).
+
+<!-- TODO - add the factory guide link above -->
 
 <!-- :::note -->
     A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
@@ -67,6 +69,6 @@ Note that a user's balance is assumed to be based on a `baalnceOf` method on the
     - If there are any issues, Zapper will reject your interpreter and provide commentary on what the issue was. You can then make the necessary changes and resubmit the interpreter for review again.
     - Once your interpreter is approved, you will see it reflected on the [Leaderboard](https://zapper.xyz/curate/leaderboard), and users will be able to see their balance of the App Token in the Zapper UI. Additionally, you'll be able to see the number of users who have the App Token in their wallet in your [My Submissions page](ttps://zapper.xyz/my-submissions), so you can see the impact you across all Zapper users!
 
---TODO - Add a link to the App Token Interpreter Factory Guide
---TODO - Add a screenshot of My Submissions page with ATIs
---TODO - Add a screenshot of the Leaderboard with ATIs
+<!-- TODO - Add a link to the App Token Interpreter Factory Guide -->
+<!-- TODO - Add a screenshot of My Submissions page with ATIs -->
+<!-- TODO - Add a screenshot of the Leaderboard with ATIs -->
