@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Building an App Token Interpreter
+# Interpretation Walkthrough
 
 ## Components of an App Token Interpreter
 
