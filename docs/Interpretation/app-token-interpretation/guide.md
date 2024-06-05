@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Getting Started
+# Building an App Token Interpreter
 
 ## Components of an App Token Interpreter
 

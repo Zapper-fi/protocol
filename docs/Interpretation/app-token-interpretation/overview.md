@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Overview of App Tokens
 
 ## What is an App Token?
 
@@ -25,8 +25,9 @@ The large majority of these app tokens do not have a market price; you cannot go
 
 App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return. Hoewver, some app tokens are intermediary tokenized investments; TODO EXAMPLE NEEDED
 
-<!-- :::warn -->
+:::warn
 App Tokens are tokenized positions. There is a different classs of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract, and are not represented by an `ERC20` token. Examples of these are farming positions in a contract, or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
+:::
 
 ## What is an App Token Interpreter(ATI)?
 
