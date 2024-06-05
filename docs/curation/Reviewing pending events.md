@@ -10,14 +10,20 @@ Overall, the process of reviewing is pretty simple. (We will get in more details
 
 Choose an event → Get context for this event → Review the submission → Approve or Reject
 
-Tip! 💡 It might be easier to start with events that happened on apps you are familiar with, or some type of transactions that you have yourself made in the past. 
-
-Once you have selected an event you are interested in reviewing, simply click on that event to open up the review page. And this is where you get to work! 
-
 
 ## Where to start
 
-On the left side of the review page you will find the event information submitted by the interpreter. Here you can modify, add or remove any of the information submitted. Click on the pen to modify an element, and click on the X to delete an element. You can also modify the action verbs by deleting the text and entering a new one. 
+### Identifying Events to Review
+####Getting to the reviewer table
+[insert image]
+
+Once you get on the curator page, you will notice that the submissions are filtered on Pending. These are the ones you are interested in for now. 
+Once you have selected an event you are interested in reviewing, simply click on that event to open up the review page. This is where you get to work! 
+
+Tip! 💡 It might be easier to start with events that happened on apps you are familiar with, or some type of transactions that you have yourself made in the past. 
+
+### Reviewing the Event
+Once you've opened an event from the reviewer table. On the left side of the review page you will find the event information submitted by the interpreter. Here you can modify, add or remove any of the information submitted. Click on the pen to modify an element, and click on the X to delete an element. You can also modify the action verbs by deleting the text and entering a new one. 
 
 [insert image]
 
@@ -29,7 +35,6 @@ To help your reviewing, there are some resources available to you to provide add
 - The chain explorer
 
 Tip! 💡 Think of translating without this context as simply asking a generic online translating tool, while getting the context is like asking a native speaker to translate for you! We highly recommend getting a full picture of the event before approving or rejecting. 
-
 
 
 ## Decision making and step by step diagram
