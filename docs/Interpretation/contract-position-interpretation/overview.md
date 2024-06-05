@@ -3,9 +3,9 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# Overview
+# Overview of App Contract Positions
 
-## What is an App Contract Position Interpreter
+## What is an App Contract Position
 
 Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is in that these positions are not tokenized, and are a bit more arbitrary in nature. Contract Position Interpreters index and standardize arbitrary positions for apps.
 
