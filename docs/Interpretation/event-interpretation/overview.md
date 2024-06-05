@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview of Event Interpretations
+# Overview
 
 ## What Event Interpreters are
 
