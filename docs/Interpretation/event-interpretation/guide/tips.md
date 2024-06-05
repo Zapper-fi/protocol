@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Tips on How to investigate an event
