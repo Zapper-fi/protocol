@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: Interpretation Walkthrough
 ---
 
-# App Contract Position Interpreter Walkthrough
+# Interpretation Walkthrough
 
 ## Building a App Contract Position Interpreter
 
