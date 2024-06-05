@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview of Event Interpretations
 
-## What Event Interpreters are
+## What is an Event Interpreter
 
 Event Interpreters are used on onchain transactions to translate them into a human-readable output.
 

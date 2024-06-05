@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview of App Tokens
+# Overview
 
 ## What is an App Token?
 
