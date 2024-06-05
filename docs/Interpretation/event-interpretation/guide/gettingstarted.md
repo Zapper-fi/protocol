@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Building an Event Interpreter
+# Getting Started
 
 ## Where to start
 
