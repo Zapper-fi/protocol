@@ -22,6 +22,6 @@ In some cases, the contract also allows you to mint and send the NFT to a differ
 
 **Important note**, as you can see at the bottom of the screenshot above, you could have more than one condition for a single event. Some events could require multiple cases to cover all possible outcomes from a method. 
 
-:::note 
-⏭️ click here to read the next section
+:::info 
+⏭️ Keep reading the [next section](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/submissions)
 :::
