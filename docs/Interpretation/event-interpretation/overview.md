@@ -2,8 +2,10 @@
 sidebar_position: 1
 ---
 
-# Overview
-## Introduction
+# Overview of Event Interpretations
+
+## What Event Interpreters are
+
 Event Interpreters are used on onchain transactions to translate them into a human-readable output.
 
 With approximately 1,000,000 transactions processed daily on the Ethereum network, each transaction represents an onchain event encompassing various activities like mints, swaps, deposits, bridges, and more. Despite containing valuable information and context, transactions are often challenging to parse due to factors like logs, methods, internal transactions, and obfuscation caused by business logic and gas optimizations.
@@ -11,8 +13,10 @@ With approximately 1,000,000 transactions processed daily on the Ethereum networ
 Zap Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
 ## Example
+
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
-```
+
+```json
 {
     "type": "simple",
     "attachments": [
@@ -63,6 +67,7 @@ This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
 First, we assume that you have knowledge of what the transaction was generally about, such as “in this transaction, the user sent 6.9 ETH to user X on Farcaster”. Equipped with that knowledge, you can then fill out the transaction using the pre-populated drop-down menus and free-form text boxes.
 
 If you don’t have knowledge of the transaction before attacking this EI, we would recommend you do the following:
+
 - Take a look at the Zapper transaction card to see what information is already available (chain, token transfers, wallet involved etc.)
 - Open the explorer to see additional details of what happened onchain (logs, contract, token movement, accounts, input method parameters etc.)
 - You can even search online for the contract address to see what the app is, this could already provide important context (is it an NFT-related app, a DeFi app, a DEX, a lending protocol, etc.)

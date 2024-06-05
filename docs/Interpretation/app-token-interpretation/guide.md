@@ -34,7 +34,6 @@ A good token to practice with, that is being used in this guide, is the Compound
 3. **Select the Chain for the App Token**: Select the chain that the token is on. This will help Zapper fetch the token's metadata and balance information.
 ![Example of a token and address inputted](https://github.com/Zapper-fi/protocol/assets/43358952/15d37ff1-c3c2-4c96-9460-6157b043e0fd)
 
-
 4. **Input the Underlying Token Address**: Input the address of the underlying token. This could be 1 token address you input, or sourced from a method called on the token contract. If you want to call a method on the App Token's contract to get the underlying token address, type `@` to see the available methods. Note that only methods resulting in an output of type `address` are displayed in the menu, as only an address can be an underlying token.
     - In the case where you have multiple underlying tokens, you can:
        1. paste them directly into the input box and call multiple methods on the App Token's contract (such as `@token0` and `@token1`) or

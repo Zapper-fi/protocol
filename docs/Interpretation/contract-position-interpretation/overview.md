@@ -2,13 +2,15 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Overview of App Contract Positions
+
 ## Introduction
+
 Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is in that these positions are not tokenized, and are a bit more arbitrary in nature. Contract Position Interpreters index and standardize arbitrary positions for apps.
 
 ## Example
 
-```
+```json
 {
   "addressFactory": {
     "type": "FROM_LOG",
