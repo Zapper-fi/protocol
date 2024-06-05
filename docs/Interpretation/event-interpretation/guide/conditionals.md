@@ -21,7 +21,3 @@ In some cases, the contract also allows you to mint and send the NFT to a differ
 ![conditional2](https://github.com/Zapper-fi/protocol/assets/169290434/fe768c5a-7ee2-4406-ae9f-67d49a798bb3)
 
 **Important note**, as you can see at the bottom of the screenshot above, you could have more than one condition for a single event. Some events could require multiple cases to cover all possible outcomes from a method. 
-
-:::info[Next Section] 
-⏭️ Keep reading by clicking [here](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/submissions)
-:::
