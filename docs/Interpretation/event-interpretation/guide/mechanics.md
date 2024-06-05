@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Event Interpretation mechanics
+# Interpretation mechanics
 More often than not, it is super simple to interpret an event! There are 3 different areas to fill in the info for an uninterpreted transaction (and you don’t need to fill in all of them if its not needed)
 The areas are:
 1. The initial action verb
