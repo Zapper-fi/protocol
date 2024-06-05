@@ -1,10 +1,10 @@
 ---
 sidebar_position: 2
-sidebar_label: Interpretation Walkthrough
-pagination_label: Walkthrough of App Contract Position Interpreters
+sidebar_label: Interpretation Guide
+pagination_label: App Contract Position Interpreters Guide
 ---
 
-# Walkthrough of App Contract Position Interpreters
+# App Contract Position Interpreters Guide
 
 ## Building a App Contract Position Interpreter
 

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-sidebar_label: Interpretation Walkthrough
-pagination_label: Walkthrough of App Tokens Interpreters
+sidebar_label: Interpretation Guide
+pagination_label: App Tokens Interpreters Guide
 ---
-# Walkthrough of App Tokens Interpreters
+# App Tokens Interpreters Guide
 
 ## Components of an App Token Interpreter
 
