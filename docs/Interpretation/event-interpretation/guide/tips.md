@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Tips on How to investigate an event
+# Helpful Tips
 
 ## 1. Look at the method name
 
