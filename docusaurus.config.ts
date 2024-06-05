@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config = {
 	title:
-		"An open protocol that incentivizes the interpretation of human-readable onchain information.",
+		"An open protocol that incentivizes the interpretation and contextualization of onchain information.",
 	plugins: ["docusaurus-plugin-sass"],
 	tagline: "Illuminating the Onchain World.",
 
@@ -15,8 +15,8 @@ const config = {
 	onBrokenLinks: "warn",
 	onBrokenMarkdownLinks: "warn",
 	favicon: "img/favicon.ico",
-	organizationName: "Zap Protocol",
-	projectName: "Zap Protocol Website",
+	organizationName: "Zapper Protocol",
+	projectName: "Zapper Protocol Website",
 	presets: [
 		[
 			"classic",
@@ -34,7 +34,7 @@ const config = {
 
 	themeConfig: {
 		navbar: {
-			title: "Zap Protocol",
+			title: "Zapper Protocol",
 			logo: {
 				alt: "Zapper Logo",
 				src: "img/logo.png",
