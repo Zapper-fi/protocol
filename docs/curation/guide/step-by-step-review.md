@@ -2,11 +2,13 @@
 sidebar_position: 3
 ---
 
-# Decision making and step by step diagram
+# Step by Step Review
+
+## Decision making and step by step diagram
 
 [insert diagram]
 
-## Approving an Event
+### Approving an Event
 
 If you feel like the event interpretation is accurate, complete, and consistent with other similar transactions, it is ready to roll. You can go to the bottom of the review page to press “Save and Approve”.
 
@@ -18,7 +20,7 @@ After hitting the “save and approve” button, the status of the event will ch
 
 [insert image]
 
-## Rejecting an Event
+### Rejecting an Event
 
 Some events submitted might require to be rejected for different reasons. Here are possible reasons to reject an event interpretation:
 - The event has already been interpreted by someone else before <!-- Duplicate -->
