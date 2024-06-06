@@ -6,6 +6,10 @@ sidebar_position: 3
 
 ## Decision making and step by step diagram
 
+To ensure quality across all interpretations, a reviewer should always validate some important elements of the EI before approving it. 
+
+The below diagram can be used as a checklist to go through before approving or rejecting an event <!-- Even if the preview feed indicates that all events are returning a result -->
+
 [insert diagram]
 
 ### Approving an Event
