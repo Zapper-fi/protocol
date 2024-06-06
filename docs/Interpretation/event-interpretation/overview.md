@@ -4,6 +4,23 @@ sidebar_position: 1
 
 # Overview
 
+## What is an event?
+
+For Zap Protocol an event is the result of an onchain transaction. Each event is different, but it will usually consists of different parameters such as:
+- Date & time (when?)
+- Action (how?)
+- App & contract (where?)
+- Accounts (who?)
+- Tokens (what?)
+
+Brought together, the combination of these parameters will create a clear summary of the transaction, which most importantly will be **human readable**. It could look something like: 
+
+**On June 21st,2024,** [when] **zfreddyy.eth** [who] **bought** [how] **a Zapper NFT** [what] **on OpenSea** [where]. 
+
+All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user, which makes having a clear picture of an onchain event really difficult. This is why Event Interpreters are needed. 
+
+EIs transform the complicated into the simple. EIs turn the unreadable into the understandable.  
+
 ## What is an Event Interpreter (EI)
 
 Event Interpreters are used on onchain transactions to translate them into a human-readable output.
