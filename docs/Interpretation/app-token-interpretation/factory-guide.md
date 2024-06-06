@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-sidebar_label: Factory Guide
-pagination_label: App Tokens Interpreters Guide
+sidebar_label: Contract Factory Guide
+pagination_label: Contract Factory Guide
 ---
-# App Tokens Factory Interpreters Guide
+# App Tokens Contract Factory ATIs Guide
 
 ## Contract Factories
 
