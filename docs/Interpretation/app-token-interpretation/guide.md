@@ -31,11 +31,10 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 !["Add Balance" button](/img/assets/add_balance_button.png)
 
-### 2. Input the Token Address 
+### 2. Input the Token Address
 
-Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide] for more information).
+Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/factory_guide.md) for more information).
 
-<!-- TODO - add the factory guide link above -->
 A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
 
 ### 3. Select the Chain for the App Token
@@ -95,6 +94,5 @@ Once you've inputted all of the above, go ahead and submit the interpreter. This
     - If there are any issues, Zapper will reject your interpreter and provide commentary on what the issue was. You can then make the necessary changes and resubmit the interpreter for review again.
     - Once your interpreter is approved, you will see it reflected on the [Leaderboard](https://zapper.xyz/curate/leaderboard), and users will be able to see their balance of the App Token in the Zapper UI. Additionally, you'll be able to see the number of users who have the App Token in their wallet in your [My Submissions page](ttps://zapper.xyz/my-submissions), so you can see the impact you have across all Zapper users!
 
-<!-- TODO - Add a link to the App Token Interpreter Factory Guide -->
 <!-- TODO - Add a screenshot of My Submissions page with ATIs -->
 <!-- TODO - Add a screenshot of the Leaderboard with ATIs -->
