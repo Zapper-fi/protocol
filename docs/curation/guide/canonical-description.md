@@ -27,4 +27,4 @@ Having consistency across all similar transactions is super important. Whenever 
 | Unstaked    | Removed some funds from a platform | Unstaked $1 | $1 = token inflows |
 | Voted       | Exercising governance rights. Often seen in DAOs apps. | Voted on proposal ID $1 | $1 = proposal ID, Number from input or log parameter |
 | Played, attacked, rolled, bet, etc. | Used in gaming. Played game/Bet on something/attacked a player/etc. | Played with $1 Attacked $1 | $1 = actor that is being interacted with |
-| NONE        | Weird administrative tasks like “Validated transaction proofs”; “submitted report”; “Posted price feed onchain” that won<t include an item type | Any text that accurately represents the event etc. | |
+| NONE        | Weird administrative tasks like “Validated transaction proofs”; “submitted report”; “Posted price feed onchain” that will not include an item type | Any text that accurately represents the event etc. | |
