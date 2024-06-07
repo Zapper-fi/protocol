@@ -1,9 +1,26 @@
 import { LinkButton } from "../../components/LinkButton";
 import { Section } from "../../components/Section";
-import React from "react";
+import React, { useEffect } from "react";
 import { ButtonGroup } from "../../components/ButtonGroup";
 
 export const Token: React.FC = () => {
+	// grab the data-theme from the html tag
+	const theme = document.documentElement.getAttribute("data-theme");
+	const isDarkMode = theme === "dark";
+
+	const [isDark, setIsDark] = React.useState(isDarkMode);
+
+	useEffect(() => {
+		// if the theme changes, update the isDark state
+		if (theme === "dark") {
+			setIsDark(true);
+		} else {
+			setIsDark(false);
+		}
+	}, [theme]);
+
+	console.log("theme", theme);
+
 	return (
 		<Section
 			className="border"
@@ -74,7 +91,7 @@ export const Token: React.FC = () => {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
-						mixBlendMode: "lighten",
+						mixBlendMode: isDarkMode ? "lighten" : "initial",
 					}}
 				>
 					<video
@@ -85,7 +102,13 @@ export const Token: React.FC = () => {
 						muted
 						playsInline
 					>
-						<source src="./img/videos/Zapper_Token.mp4" />
+						<source
+							src={
+								isDarkMode
+									? "./img/videos/zapper-token.mp4"
+									: "./img/videos/zapper-token-light.mp4"
+							}
+						/>
 						Your browser does not support the video tag.
 					</video>
 				</div>
