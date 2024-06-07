@@ -3,7 +3,7 @@ import React from "react";
 
 export const Metrics: React.FC = () => {
 	return (
-		<Section>
+		<Section style={{ padding: "128px 32px" }}>
 			<div
 				style={{
 					display: "flex",
@@ -17,7 +17,7 @@ export const Metrics: React.FC = () => {
 						fontWeight: "600",
 					}}
 				>
-					Interpretation Metrics
+					Our Metrics
 				</h2>
 				<div
 					style={{

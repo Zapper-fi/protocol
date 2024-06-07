@@ -7,7 +7,7 @@ export const Token: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "32px" }}
+			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
@@ -26,17 +26,6 @@ export const Token: React.FC = () => {
 							alignItems: "center",
 						}}
 					>
-						<div
-							className="text-accent-color"
-							style={{
-								fontWeight: "500",
-								fontSize: "18px",
-								fontFamily: "monospace",
-								wordSpacing: "-6px",
-							}}
-						>
-							$ZAP TOKEN
-						</div>
 						<div
 							className="text-alt-color"
 							style={{
@@ -57,9 +46,16 @@ export const Token: React.FC = () => {
 							fontWeight: "600",
 						}}
 					>
-						Powering{" "}
-						<span className="text-alt-color" style={{ fontWeight: 500 }}>
-							Incentives
+						Powered by{" "}
+						<span
+							className="text-accent-color"
+							style={{
+								fontWeight: 600,
+								fontFamily: "monospace",
+								fontSize: "38px",
+							}}
+						>
+							$ZAP
 						</span>
 					</h2>
 					<p className="text-alt-color">
@@ -78,6 +74,7 @@ export const Token: React.FC = () => {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
+						mixBlendMode: "lighten",
 					}}
 				>
 					<video

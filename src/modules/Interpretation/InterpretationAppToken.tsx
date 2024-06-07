@@ -7,7 +7,7 @@ export const InterpretationAppToken: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "32px" }}
+			style={{ borderWidth: "1px", borderStyle: "solid", padding: "0px 32px" }}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
@@ -48,7 +48,7 @@ export const InterpretationAppToken: React.FC = () => {
 				</div>
 				<div style={{ flex: 1, textAlign: "center" }}>
 					<video
-						height="360px"
+						height="440px"
 						controls={false}
 						autoPlay={true}
 						loop={true}

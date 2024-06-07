@@ -100,6 +100,7 @@ export const ApiSection: React.FC = () => {
 					}}
 				>
 					<div
+						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Portfolio)}
 						style={{
 							display: "flex",
@@ -138,6 +139,7 @@ export const ApiSection: React.FC = () => {
 						/>
 					</div>
 					<div
+						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Timeline)}
 						style={{
 							display: "flex",
@@ -176,6 +178,7 @@ export const ApiSection: React.FC = () => {
 						/>
 					</div>
 					<div
+						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Trending)}
 						style={{
 							display: "flex",
@@ -214,6 +217,7 @@ export const ApiSection: React.FC = () => {
 						/>
 					</div>
 					<div
+						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Feeds)}
 						style={{
 							display: "flex",
@@ -250,6 +254,7 @@ export const ApiSection: React.FC = () => {
 						/>
 					</div>
 					<div
+						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Labels)}
 						style={{
 							display: "flex",
