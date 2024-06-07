@@ -21,7 +21,7 @@ Once you have the reviewer access, you will see a new tab called Review, under t
 The role of the reviewer is to confirm that transactions submitted by other community members represent what happened onchain.
 
 :::Note
-To do so, it has to be accurate, complete and consistent jump to [Canonical description](docs/curation/guide/canonical-description.md) for standard verbs to use for consistency.
+To do so, it has to be accurate, complete and consistent jump to [Canonical description](guide/canonical-description.md) for standard verbs to use for consistency.
 :::
 
 :::info
