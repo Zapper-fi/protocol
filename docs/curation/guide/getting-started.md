@@ -16,7 +16,7 @@ The table gives some basic information about each event, such as
 - The app 
 - Thw user that submitted that event
 
-Overall, the process of reviewing is pretty simple. <!-- We will get into more details later -->
+Overall, the process of reviewing is pretty simple. We will get into more details later
 - Choose an event to review
 - Get more context on the chosen event
 - Review the submission
