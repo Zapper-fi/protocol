@@ -7,36 +7,67 @@ import { Card } from "../../components/Card";
 export const ApiSection: React.FC = () => {
 	return (
 		<div>
-			<div style={{ display: "flex", gap: "32px" }}>
+			<div style={{ display: "flex", flexDirection: "column" }}>
 				<div
 					style={{
 						display: "flex",
+						gap: "32px",
+						width: "100%",
 						flexDirection: "column",
-						gap: "16px",
 						alignItems: "center",
-						flex: 1,
 					}}
 				>
-					<h1
+					<div
 						style={{
-							flex: 1,
+							fontSize: "12px",
+							textTransform: "uppercase",
+							borderStyle: "solid",
+							borderWidth: "1px",
+							padding: "8px 24px",
+							borderRadius: "16px",
+							width: "fit-content",
 							fontWeight: "600",
-							textAlign: "center",
 						}}
+						className="border text-alt-color"
 					>
-						The Ultimate Human-Readable API
-					</h1>
-					<h5
+						Powered by an open interpretation layer
+					</div>
+					<div
 						style={{
-							fontWeight: "400",
-							textAlign: "center",
-							maxWidth: "800px",
+							display: "flex",
+							flexDirection: "column",
+							gap: "16px",
+							alignItems: "center",
+							flex: 1,
 						}}
 					>
-						Access the most comprehensive onchain data built on top of our
-						powerful interpretation stack. From DeFi portfolios, onchain prices
-						to contextualized transaction histories.
-					</h5>
+						<h1
+							style={{
+								flex: 1,
+								fontWeight: "600",
+								textAlign: "center",
+							}}
+						>
+							The Ultimate Human-Readable API
+						</h1>
+						<h5
+							className="text-alt-color"
+							style={{
+								fontWeight: "300",
+								textAlign: "center",
+								maxWidth: "800px",
+							}}
+						>
+							Access the most comprehensive onchain data built on top of our
+							powerful interpretation stack. From DeFi portfolios, onchain
+							prices to contextualized transaction histories.
+						</h5>
+					</div>
+					<LinkButton
+						href="/docs/api/intro"
+						type="primary"
+						buttonCopy="Learn More"
+					/>
 				</div>
 			</div>
 			<Section
