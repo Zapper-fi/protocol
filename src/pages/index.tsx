@@ -7,6 +7,7 @@ import { Interpretation } from "../modules/Interpretation/Interpretation";
 import { ApiSection } from "../modules/Api/ApiSection";
 import { Footer } from "../modules/Footer";
 import { Token } from "../modules/Token/Token";
+import { Recall } from "../modules/Recall/Recall";
 
 const Home: React.FC = () => {
 	return (
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
 				<Interpretation />
 				<Metrics />
 				<Token />
+				<Recall />
 			</div>
 			<Footer />
 		</Layout>
