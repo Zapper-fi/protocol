@@ -6,7 +6,7 @@ sidebar_position: 2
 The following table includes a list of most popular actions taken onchain. As a reviewer, you should try to adapt the verbs submitted by the users to one of the actions in that list. 
 
 :::note
-Note that some of the actions won’t be covered by the standard verbs provided here. That’s totally fine, this table is only providing guidelines to be consistent when possible.
+Some of the actions won’t be covered by the standard verbs provided here. That’s totally fine, this table is only providing guidelines to be consistent when possible.
 :::
 
 :::caution
