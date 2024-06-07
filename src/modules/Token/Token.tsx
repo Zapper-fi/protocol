@@ -80,7 +80,14 @@ export const Token: React.FC = () => {
 						justifyContent: "center",
 					}}
 				>
-					<video height="320px" controls={false} autoPlay={true} loop={true}>
+					<video
+						height="320px"
+						controls={false}
+						autoPlay={true}
+						loop={true}
+						muted
+						playsInline
+					>
 						<source src="./img/videos/Zapper_Token.mp4" />
 						Your browser does not support the video tag.
 					</video>

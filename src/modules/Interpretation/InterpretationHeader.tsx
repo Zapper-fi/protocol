@@ -6,14 +6,14 @@ export const InterpretationHeader: React.FC = () => {
 			style={{
 				display: "flex",
 				flexDirection: "column",
-				gap: "0x",
+				gap: "16px",
 				padding: "0 32px",
 			}}
 		>
-			<h2 style={{ fontWeight: "600" }}>
+			<h1 style={{ fontWeight: "600" }}>
 				An open interpretation layer, built by{" "}
 				<span className="text-accent-color">you</span>.
-			</h2>
+			</h1>
 			<h5
 				style={{ fontWeight: 300, maxWidth: "1000px" }}
 				className="text-alt-color"

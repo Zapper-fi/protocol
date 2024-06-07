@@ -80,137 +80,186 @@ export const ApiSection: React.FC = () => {
 					style={{
 						display: "flex",
 						gap: "16px",
-						overflowX: "scroll",
 						width: "100%",
 						maxWidth: "100%",
+						justifyContent: "space-around",
 					}}
 				>
-					<Card
+					<div
 						style={{
 							display: "flex",
-							gap: "16px",
 							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
+							width: "120px",
+							maxWidth: "100%",
+							justifyContent: "center",
+							alignItems: "center",
+							gap: "16px",
+							cursor: "pointer",
 						}}
 					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>Portfolio Tracking</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
+						<div className="card" style={{ padding: "16px" }}>
+							<img
+								width="48px"
+								height="48px"
+								src="./img/react-icons/RiDonutChartFill.png"
+								alt="DeFi"
+							/>
+						</div>
+
+						<p
+							style={{
+								marginBottom: "0px",
+								textAlign: "center",
+								fontWeight: "500",
+							}}
+						>
+							Portfolio Tracking
 						</p>
-					</Card>
-					<Card
+						<div
+							className="accent-background"
+							style={{ height: "2px", display: "block", width: "48px" }}
+						/>
+					</div>
+					<div
 						style={{
 							display: "flex",
-							gap: "16px",
 							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
+							width: "120px",
+							maxWidth: "100%",
+							justifyContent: "center",
+							alignItems: "center",
+							gap: "16px",
+							cursor: "pointer",
 						}}
 					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>Account Timelines</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
+						<div className="card" style={{ padding: "16px" }}>
+							<img
+								width="48px"
+								height="48px"
+								src="./img/react-icons/FaTimeline.png"
+								alt="DeFi"
+							/>
+						</div>
+
+						<p
+							style={{
+								marginBottom: "0px",
+								textAlign: "center",
+								fontWeight: "500",
+							}}
+						>
+							Account Timelines
 						</p>
-					</Card>
-					<Card
+						<div
+							className="accent-background"
+							style={{ height: "2px", display: "block", width: "48px" }}
+						/>
+					</div>
+					<div
 						style={{
 							display: "flex",
-							gap: "16px",
 							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
+							width: "120px",
+							maxWidth: "100%",
+							justifyContent: "center",
+							alignItems: "center",
+							gap: "16px",
+							cursor: "pointer",
 						}}
 					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>Trending Actions</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
+						<div className="card" style={{ padding: "16px" }}>
+							<img
+								width="48px"
+								height="48px"
+								src="./img/react-icons/MdOutlineAreaChart.png"
+								alt="DeFi"
+							/>
+						</div>
+
+						<p
+							style={{
+								marginBottom: "0px",
+								textAlign: "center",
+								fontWeight: "500",
+							}}
+						>
+							Trending Onchain Apps
 						</p>
-					</Card>
-					<Card
+						<div
+							className="accent-background"
+							style={{ height: "2px", display: "block", width: "48px" }}
+						/>
+					</div>
+					<div
 						style={{
 							display: "flex",
-							gap: "16px",
 							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
+							width: "120px",
+							maxWidth: "100%",
+							justifyContent: "center",
+							alignItems: "center",
+							gap: "16px",
+							cursor: "pointer",
 						}}
 					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>Popular Apps</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
+						<div className="card" style={{ padding: "16px" }}>
+							<img
+								width="48px"
+								height="48px"
+								src="./img/react-icons/HiMiniSquare3Stack3D.png"
+								alt="DeFi"
+							/>
+						</div>
+
+						<p
+							style={{
+								marginBottom: "0px",
+								textAlign: "center",
+								fontWeight: "500",
+							}}
+						>
+							App <br /> Feeds
 						</p>
-					</Card>
-					<Card
+						<div
+							className="accent-background"
+							style={{ height: "2px", display: "block", width: "48px" }}
+						/>
+					</div>
+					<div
 						style={{
 							display: "flex",
-							gap: "16px",
 							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
+							width: "120px",
+							maxWidth: "100%",
+							justifyContent: "center",
+							alignItems: "center",
+							gap: "16px",
+							cursor: "pointer",
 						}}
 					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
-						/>
-						<h3 style={{ marginBottom: "0px" }}>App Feeds</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
+						<div className="card" style={{ padding: "16px" }}>
+							<img
+								width="48px"
+								height="48px"
+								src="./img/react-icons/RiDraftFill.png"
+								alt="DeFi"
+							/>
+						</div>
+
+						<p
+							style={{
+								marginBottom: "0px",
+								textAlign: "center",
+								fontWeight: "500",
+							}}
+						>
+							Contract Labelling
 						</p>
-					</Card>
-					<Card
-						style={{
-							display: "flex",
-							gap: "16px",
-							flexDirection: "column",
-							width: "340px",
-							minWidth: "340px",
-						}}
-					>
-						<img
-							width="80px"
-							height="80px"
-							src="./img/RiDonutChartFill.png"
-							alt="DeFi"
+						<div
+							className="accent-background"
+							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
-						<h3 style={{ marginBottom: "0px" }}>Contract Labelling</h3>
-						<p>
-							Track your DeFi positons, your NFT collections, lorem ipsum dolor
-							sit amet, consectetur adipiscing elit, sed do eiusmod.
-						</p>
-					</Card>
+					</div>
 				</div>
 			</Section>
 		</div>

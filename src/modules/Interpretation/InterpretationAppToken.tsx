@@ -46,7 +46,19 @@ export const InterpretationAppToken: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ flex: 1 }}>test</div>
+				<div style={{ flex: 1, textAlign: "center" }}>
+					<video
+						height="360px"
+						controls={false}
+						autoPlay={true}
+						loop={true}
+						muted
+						playsInline
+					>
+						<source src="./img/videos/Event_Video.mp4" />
+						Your browser does not support the video tag.
+					</video>
+				</div>
 			</div>
 		</Section>
 	);
