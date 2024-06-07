@@ -8,7 +8,7 @@ Reviewer the terms used by Zapper to identify community members that are respons
 
 To be a reviewer, users have to be proficient in event interpretations. Only EI super users can have access to review.
 
-If it’s your first time interpreting events, visit the [Event Interpretation Guide](#).
+If it’s your first time interpreting events, visit the [Event Interpretation Guide](#event-interpretation)
 
 If you want to join the reviewer community, jump in the discord or telegram to manifest your interest.
 
