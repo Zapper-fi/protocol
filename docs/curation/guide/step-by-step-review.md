@@ -12,7 +12,7 @@ The below diagram can be used as a checklist to go through before approving or r
 
 > **Note**: Please do so, even if the preview feed indicates that all events are returning a result
 
-![Step by Step diagram](static/img/reviewer-diagram.png)
+![Diagram](static/img/reviewer-diagram.png)
 
 ### Approving an Event
 
