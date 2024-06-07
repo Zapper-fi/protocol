@@ -1,10 +1,23 @@
 import React from "react";
 import { Section } from "../../components/Section";
-import { ButtonGroup } from "../../components/ButtonGroup";
 import { LinkButton } from "../../components/LinkButton";
-import { Card } from "../../components/Card";
+import { PortfolioTracking } from "./PortfolioTracking";
+import { AccountTimelines } from "./AccountTimelines";
+import { TrendingOnchainApps } from "./TrendingOnchainApps";
+import { Labelling } from "./Labelling";
+import { AppFeeds } from "./AppFeeds";
+
+enum TabEnum {
+	Portfolio = "portfolio",
+	Timeline = "timeline",
+	Trending = "trending",
+	Feeds = "feeds",
+	Labels = "labels",
+}
 
 export const ApiSection: React.FC = () => {
+	const [activeTab, setActiveTab] = React.useState(TabEnum.Portfolio);
+
 	return (
 		<div>
 			<div style={{ display: "flex", flexDirection: "column" }}>
@@ -74,6 +87,7 @@ export const ApiSection: React.FC = () => {
 				className="border"
 				style={{
 					margin: "32px 0px",
+					alignItems: "center",
 				}}
 			>
 				<div
@@ -81,11 +95,12 @@ export const ApiSection: React.FC = () => {
 						display: "flex",
 						gap: "16px",
 						width: "100%",
-						maxWidth: "100%",
+						maxWidth: "1200px",
 						justifyContent: "space-around",
 					}}
 				>
 					<div
+						onClick={() => setActiveTab(TabEnum.Portfolio)}
 						style={{
 							display: "flex",
 							flexDirection: "column",
@@ -101,7 +116,7 @@ export const ApiSection: React.FC = () => {
 							<img
 								width="48px"
 								height="48px"
-								src="./img/react-icons/RiDonutChartFill.png"
+								src="./img/react-icons/RiDonutChartFill.svg"
 								alt="DeFi"
 							/>
 						</div>
@@ -116,11 +131,14 @@ export const ApiSection: React.FC = () => {
 							Portfolio Tracking
 						</p>
 						<div
-							className="accent-background"
+							className={
+								activeTab === TabEnum.Portfolio ? "accent-background" : ""
+							}
 							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
 					</div>
 					<div
+						onClick={() => setActiveTab(TabEnum.Timeline)}
 						style={{
 							display: "flex",
 							flexDirection: "column",
@@ -136,7 +154,7 @@ export const ApiSection: React.FC = () => {
 							<img
 								width="48px"
 								height="48px"
-								src="./img/react-icons/FaTimeline.png"
+								src="./img/react-icons/FaTimeline.svg"
 								alt="DeFi"
 							/>
 						</div>
@@ -151,11 +169,14 @@ export const ApiSection: React.FC = () => {
 							Account Timelines
 						</p>
 						<div
-							className="accent-background"
+							className={
+								activeTab === TabEnum.Timeline ? "accent-background" : ""
+							}
 							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
 					</div>
 					<div
+						onClick={() => setActiveTab(TabEnum.Trending)}
 						style={{
 							display: "flex",
 							flexDirection: "column",
@@ -171,7 +192,7 @@ export const ApiSection: React.FC = () => {
 							<img
 								width="48px"
 								height="48px"
-								src="./img/react-icons/MdOutlineAreaChart.png"
+								src="./img/react-icons/MdOutlineAreaChart.svg"
 								alt="DeFi"
 							/>
 						</div>
@@ -186,11 +207,14 @@ export const ApiSection: React.FC = () => {
 							Trending Onchain Apps
 						</p>
 						<div
-							className="accent-background"
+							className={
+								activeTab === TabEnum.Trending ? "accent-background" : ""
+							}
 							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
 					</div>
 					<div
+						onClick={() => setActiveTab(TabEnum.Feeds)}
 						style={{
 							display: "flex",
 							flexDirection: "column",
@@ -206,7 +230,7 @@ export const ApiSection: React.FC = () => {
 							<img
 								width="48px"
 								height="48px"
-								src="./img/react-icons/HiMiniSquare3Stack3D.png"
+								src="./img/react-icons/HiMiniSquare3Stack3D.svg"
 								alt="DeFi"
 							/>
 						</div>
@@ -221,11 +245,12 @@ export const ApiSection: React.FC = () => {
 							App <br /> Feeds
 						</p>
 						<div
-							className="accent-background"
+							className={activeTab === TabEnum.Feeds ? "accent-background" : ""}
 							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
 					</div>
 					<div
+						onClick={() => setActiveTab(TabEnum.Labels)}
 						style={{
 							display: "flex",
 							flexDirection: "column",
@@ -241,7 +266,7 @@ export const ApiSection: React.FC = () => {
 							<img
 								width="48px"
 								height="48px"
-								src="./img/react-icons/RiDraftFill.png"
+								src="./img/react-icons/RiDraftFill.svg"
 								alt="DeFi"
 							/>
 						</div>
@@ -256,12 +281,19 @@ export const ApiSection: React.FC = () => {
 							Contract Labelling
 						</p>
 						<div
-							className="accent-background"
+							className={
+								activeTab === TabEnum.Labels ? "accent-background" : ""
+							}
 							style={{ height: "2px", display: "block", width: "48px" }}
 						/>
 					</div>
 				</div>
 			</Section>
+			{activeTab === TabEnum.Portfolio && <PortfolioTracking />}
+			{activeTab === TabEnum.Timeline && <AccountTimelines />}
+			{activeTab === TabEnum.Trending && <TrendingOnchainApps />}
+			{activeTab === TabEnum.Feeds && <AppFeeds />}
+			{activeTab === TabEnum.Labels && <Labelling />}
 		</div>
 	);
 };

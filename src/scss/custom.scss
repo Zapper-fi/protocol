@@ -187,6 +187,10 @@
       border-color: var(--ifm-border-color);
   }
 
+  hr {
+    background-color: var(--ifm-border-color);
+}
+
   .accent {
     border-color: var(--ifm-accent-color);
   }
@@ -199,6 +203,13 @@
     .navbar {
       border-bottom-style: solid;
       border-width: 1px;
+    }
+  }
+
+  .opacity-hover {
+    transition: linear 0.2s;
+    &:hover {
+      opacity: 0.6;
     }
   }
 
