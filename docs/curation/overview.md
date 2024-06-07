@@ -4,15 +4,17 @@ sidebar_position: 1
 
 # Overview
 
-Reviewer the terms used by Zapper to identify community members that are responsible to approve event interpretation submissions.
+Reviewer is the term used by Zap Protocl to identify community members that are responsible to approve event interpretation submissions.
 
 To be a reviewer, users have to be proficient in event interpretations. Only EI super users can have access to review.
 
 If it’s your first time interpreting events, visit the [Event Interpretation Guide](docs/Interpretation/event-interpretation/overview.md)
 
-If you want to join the reviewer community, jump in the discord or telegram to manifest your interest.
+If you want to join the reviewer community, jump in the [Discord](https://zapper.xyz/discord) or [Telegram](https://t.me/+mAVxPRsA7bE3ZDkx) to manifest your interest.
 
 Once you have the reviewer access, you will see a new tab called Review, under the curate section.
+
+[insert image]
 
 ## The role of a reviewer
 
