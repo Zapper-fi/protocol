@@ -46,7 +46,7 @@ export const InterpretationEvent: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ flex: 1, textAlign: "center", mixBlendMode: "lighten" }}>
+				<div style={{ flex: 1, textAlign: "center" }}>
 					<video
 						height="440px"
 						controls={false}
