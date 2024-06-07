@@ -6,6 +6,7 @@ import { Problem } from "../modules/Problem/Problem";
 import { Interpretation } from "../modules/Interpretation/Interpretation";
 import { ApiSection } from "../modules/Api/ApiSection";
 import { Footer } from "../modules/Footer";
+import { Token } from "../modules/Token/Token";
 
 const Home: React.FC = () => {
 	return (
@@ -13,12 +14,13 @@ const Home: React.FC = () => {
 			<Intro />
 			<div
 				className="container"
-				style={{ display: "flex", flexDirection: "column", gap: "32px" }}
+				style={{ display: "flex", flexDirection: "column", gap: "64px" }}
 			>
 				<Problem />
 				<ApiSection />
-				<Metrics />
 				<Interpretation />
+				<Metrics />
+				<Token />
 			</div>
 			<Footer />
 		</Layout>

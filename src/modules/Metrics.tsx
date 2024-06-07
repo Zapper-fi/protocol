@@ -9,6 +9,7 @@ export const Metrics: React.FC = () => {
 					display: "flex",
 					flexDirection: "column",
 					gap: "32px",
+					padding: "0 32px",
 				}}
 			>
 				<h2

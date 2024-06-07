@@ -8,8 +8,8 @@ export const Interpretation: React.FC = () => {
 	return (
 		<Section>
 			<InterpretationHeader />
-			<InterpretationAppToken />
 			<InterpretationEvent />
+			<InterpretationAppToken />
 		</Section>
 	);
 };

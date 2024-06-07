@@ -12,7 +12,7 @@
   
   @font-face {
     font-family: "Inter";
-    src: url('/static/fonts/Inter/Inter-Medium.ttf') format("truetype");
+    src: url('/static/fonts/Inter/Inter-Regular.ttf') format("truetype");
     font-weight: 400;
   }
   
@@ -56,7 +56,7 @@
     --xlg: 24px;
 
     --h1: 48px;
-    --h2: 32px;
+    --h2: 36px;
     --h3: 24px;
     --h4: 20px;
     --h5: 18px;
@@ -109,6 +109,7 @@
     font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
   h1 {
@@ -162,6 +163,10 @@
 
   .text-alt-color {
     color: var(--ifm-text-alt-color);
+  }
+
+  .text-accent-color {
+    color: var(--ifm-accent-color);
   }
 
   .main-wrapper, .navbar {

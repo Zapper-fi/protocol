@@ -9,13 +9,14 @@ export const InterpretationAppToken: React.FC = () => {
 			className="border"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "32px" }}
 		>
-			<div style={{ display: "flex", gap: "32px" }}>
+			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
 					style={{
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
 						flex: 1,
+						height: "fit-content",
 					}}
 				>
 					<h2
@@ -24,9 +25,12 @@ export const InterpretationAppToken: React.FC = () => {
 							fontWeight: "600",
 						}}
 					>
-						App Token Interpreters
+						Position{" "}
+						<span className="text-alt-color" style={{ fontWeight: 500 }}>
+							Interpretation
+						</span>
 					</h2>
-					<p>
+					<p className="text-alt-color">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
@@ -42,7 +46,7 @@ export const InterpretationAppToken: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ flex: 1 }}>image goes here</div>
+				<div style={{ flex: 1 }}>test</div>
 			</div>
 		</Section>
 	);
