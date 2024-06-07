@@ -10,9 +10,8 @@ To ensure quality across all interpretations, a reviewer should always validate 
 
 The below diagram can be used as a checklist to go through before approving or rejecting an event 
 
-:::Warning
-Please do so, even if the preview feed indicates that all events are returning a result
-:::
+> **Note**: Please do so, even if the preview feed indicates that all events are returning a result
+
 
 [insert diagram]
 
