@@ -14,9 +14,11 @@ The table gives some basic information about each event, such as
 - The network the event happened on
 - The description entered by the submitter
 - The app 
-- Thw user that submitted that event
+- The user that submitted the event
 
-Overall, the process of reviewing is pretty simple. We will get into more details later
+[insert image of the table header]
+
+Overall, the process of reviewing is pretty simple. To explore the detailed step by step, jump to the [step by step review section](./step-by-step-review.md)
 - Choose an event to review
 - Get more context on the chosen event
 - Review the submission

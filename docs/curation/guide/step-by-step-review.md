@@ -12,8 +12,7 @@ The below diagram can be used as a checklist to go through before approving or r
 
 > **Note**: Please do so, even if the preview feed indicates that all events are returning a result
 
-
-[insert diagram]
+![reviewer-diagram](https://github.com/Zapper-fi/protocol/assets/62707299/f635068a-48d0-4b3f-bb85-f47e22bde098)
 
 ### Approving an Event
 
