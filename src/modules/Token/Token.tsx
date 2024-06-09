@@ -1,25 +1,10 @@
 import { LinkButton } from "../../components/LinkButton";
 import { Section } from "../../components/Section";
-import React, { useEffect } from "react";
+import React from "react";
 import { ButtonGroup } from "../../components/ButtonGroup";
 
 export const Token: React.FC = () => {
-	// grab the data-theme from the html tag
-	const theme = document.documentElement.getAttribute("data-theme");
-	const isDarkMode = theme === "dark";
-
-	const [isDark, setIsDark] = React.useState(isDarkMode);
-
-	useEffect(() => {
-		// if the theme changes, update the isDark state
-		if (theme === "dark") {
-			setIsDark(true);
-		} else {
-			setIsDark(false);
-		}
-	}, [theme]);
-
-	console.log("theme", theme);
+	const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
 
 	return (
 		<Section
