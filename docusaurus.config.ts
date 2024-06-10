@@ -36,23 +36,12 @@ const config = {
 		footer: {
 			links: [
 				{
-					label: "Stack Overflow",
-					href: "https://stackoverflow.com/questions/tagged/docusaurus",
-				},
-				{
 					label: "Discord",
-					href: "https://discordapp.com/invite/docusaurus",
+					href: "https://zapper.xyz/discord",
 				},
 				{
 					label: "Twitter",
-					href: "https://twitter.com/docusaurus",
-				},
-				{
-					html: `
-					  <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
-						<img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
-					  </a>
-					`,
+					href: "https://twitter.com/zapper_fi",
 				},
 			],
 		},

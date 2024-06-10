@@ -54,7 +54,7 @@ export const Intro: React.FC = () => {
 						}}
 					>
 						<h1
-							style={{ color: "white", fontSize: "80px" }}
+							style={{ color: "white", fontSize: "72px" }}
 							className={styles.title}
 						>
 							{siteConfig.tagline}
