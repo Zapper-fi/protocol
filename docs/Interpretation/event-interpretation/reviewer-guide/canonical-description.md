@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 ---
-# Canonical Description Terms
+# Cheatsheet
 
 The table below lists common actions taken onchain. Reviewers should adapt user-submitted verbs to one of these actions when possible.
 
