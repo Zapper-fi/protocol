@@ -45,7 +45,7 @@ export const Recall: React.FC = () => {
 						</h5>
 					</div>
 					<LinkButton
-						href="/docs/interpration/intro"
+						href="/docs/interpration/contribute"
 						type="primary"
 						buttonCopy="Get Started"
 					/>
