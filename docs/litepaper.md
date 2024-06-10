@@ -5,16 +5,16 @@ sidebar_position: 5
 # Litepaper
 
 ## Introduction
-Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zapper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
+Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zaper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
 
-Just as all networks, blockchains are seeing similar patterns in regards to how value accrual changes over time. At first there aren’t that many applications, and so it's the applications themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
+Just as all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
 ## Mission
-At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone.
+At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone. Wether that is surfacing nodes that resonate with you - or simply being able to understand different entities.
 
 ## Protocol Overview
 ### Zapper vs. Zapper Protocol
-Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to decentralize and open up our interpretation stack for a few reasons:
+Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to open up our interpretation stack for a few reasons:
 - There doesn't exist a single centralized entity that will be able to organize all the onchain information when we have 1M dapps, 10M dapps, without building an open and incentivized protocol.
 - Readable onchain information should be open, commoditized, and ubiquitous.
 
@@ -32,6 +32,7 @@ You can view a simple example [here](/docs/interpretation/overview#example).
 These are the onchain explorers and cartographers. They scout the chain for unindexed information and build indexing templates.
 
 Initially, a portion of interpreters will be "Reviewers," a proto-DAO that will be incentivized to ensure quality and that interpreters are validated.
+
 
 ### Indexing: Zapper
 Zapper will be indexing and distributing data originating from indexing templates.
@@ -96,4 +97,4 @@ $ZAP is used for accessing API services & data.
 For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
 
 ### Governance
-ZAP will also minimally provide governance for the protocol, more specifically distributing incentives.
+$ZAP will provide minimal governance for the protocol, more specifically distributing incentives.
