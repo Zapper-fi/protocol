@@ -7,7 +7,7 @@ sidebar_position: 1
 
 :::note
 ##### Start contributing today!
-If you want to start contributing, and helping make blockchains readable, you can get started right [here](/docs/interpretation/contribute.md).
+If you want to start contributing, and helping make blockchains readable, you can get started right [here](/docs/interpretation/contribute).
 :::
 
 ### Zapper Protocol
