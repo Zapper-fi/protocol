@@ -6,11 +6,15 @@ sidebar_position: 2
 The following table includes a list of most popular actions taken onchain. As a reviewer, you should try to adapt the verbs submitted by the users to one of the actions in that list. 
 
 :::note
+
 Some of the actions won’t be covered by the standard verbs provided here. That’s totally fine, this table is only providing guidelines to be consistent when possible.
+
 :::
 
 :::caution
+
 Having consistency across all similar transactions is super important. Whenever in doubt, you can ask a second opinion from other reviewers.
+
 :::
 
 | Action verb | Description | General event description | Typical flows and variables included in the description |

@@ -12,7 +12,6 @@ The below diagram can be used as a checklist to go through before approving or r
 
 > **Note**: Please do so, even if the preview feed indicates that all events are returning a result
 
-<img src="https://github.com/Zapper-fi/protocol/assets/62707299/f635068a-48d0-4b3f-bb85-f47e22bde098" />
 ![reviewer-diagram](https://github.com/Zapper-fi/protocol/assets/62707299/f635068a-48d0-4b3f-bb85-f47e22bde098)
 
 ### Approving an Event
@@ -22,7 +21,9 @@ If you feel like the event interpretation is accurate, complete, and consistent 
 This will confirm the event interpretation and interpret all similar events for everyone to see! How cool is that?!
 
 :::note
+
 After hitting the “save and approve” button, the status of the event will change from Pending to Enabled.
+
 :::
 
 [insert image]

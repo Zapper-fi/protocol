@@ -7,7 +7,9 @@ sidebar_position: 1
 The review process starts in the Reviewer Dashboard. 
 
 :::info
+
 By default, all transactions are filtered on pending. These are the ones that need to be reviewed. 
+
 :::
 
 The table gives some basic information about each event, such as 
@@ -47,5 +49,7 @@ To help your reviewing, there are some resources available to you to provide add
 - The chain explorer
 
 :::tip
+
 It is highly recommended to get a full picture of the event before approving or rejecting. See the next section for how to follow the right steps.
+
 :::
