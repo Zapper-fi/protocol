@@ -18,4 +18,4 @@ Interested in joining the reviewer community? Join our [Discord](https://zapper.
 
 Once you have reviewer access, a new tab called Review will appear under the curate section.
 
-**[insert image]**
+![Curate](/img/assets/curate.png)
