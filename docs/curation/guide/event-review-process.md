@@ -30,7 +30,7 @@ To ensure quality across all interpretations, validate key elements of the EI be
 
 > **Note**: Validate even if the preview feed indicates all events are returning a result.
 
-![Reviewer Diagram](https://github.com/Zapper-fi/protocol/assets/62707299/f635068a-48d0-4b3f-bb85-f47e22bde098)
+![Reviewer Diagram](/img/assets/reviewer-diagram.png)
 
 ### Approving an Event
 
