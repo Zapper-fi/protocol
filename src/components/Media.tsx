@@ -1,4 +1,5 @@
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 import React, { useState, useEffect } from "react";
 
 export const Media: React.FC<{
@@ -7,13 +8,11 @@ export const Media: React.FC<{
 	isVideo?: boolean;
 	height: `${number}px`;
 }> = ({ ...props }) => {
-	return (
-		<BrowserOnly>
-			{() => {
-				return <MediaContent {...props} />;
-			}}
-		</BrowserOnly>
-	);
+	const isBrowser = useIsBrowser();
+
+	if (!isBrowser) return null;
+
+	return <MediaContent {...props} />;
 };
 
 const MediaContent: React.FC<{
