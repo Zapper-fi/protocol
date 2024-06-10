@@ -27,7 +27,9 @@ Overall, the process of reviewing is pretty simple. To explore the detailed step
 - Approve or Reject
 
 :::tip
+
 It might be easier to start with events that happened on apps you are familiar with, or some type of transactions that you have yourself made in the past.
+
 :::
 
 Once you have selected an event you are interested in reviewing, simply click on the line to open up the review page.
