@@ -21,7 +21,8 @@ const MediaContent: React.FC<{
 	darkSrc?: string;
 	isVideo?: boolean;
 	height: `${number}px`;
-}> = ({ src, darkSrc, isVideo, height }) => {
+	mixBlendMode?: string;
+}> = ({ src, darkSrc, isVideo, height, mixBlendMode }) => {
 	const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
 	useEffect(() => {
@@ -50,6 +51,9 @@ const MediaContent: React.FC<{
 				loop={true}
 				muted
 				playsInline
+				style={{
+					mixBlendMode: darkSrc && isDarkMode ? mixBlendMode : undefined,
+				}}
 			>
 				<source src={themeSrc} />
 				Your browser does not support the video tag.

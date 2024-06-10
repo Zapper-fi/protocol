@@ -78,6 +78,7 @@ export const Token: React.FC = () => {
 					}}
 				>
 					<Media
+						mixBlendMode="lighten"
 						height="320px"
 						isVideo
 						src="./videos/zapper-token-light.mp4"
