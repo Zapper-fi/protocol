@@ -28,5 +28,3 @@ The table provides basic information about each event, such as:
 :::tip
 Start with events on apps you are familiar with or types of transactions you have made in the past.
 :::
-
-Click on an event to open the review page.
