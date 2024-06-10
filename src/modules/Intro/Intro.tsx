@@ -21,16 +21,11 @@ export const Intro: React.FC = () => {
 				className="container"
 				style={{ height: "100%", position: "absolute", zIndex: -1 }}
 			>
-				<div
-					style={{
-						backgroundImage: "url(./img/background.png)",
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-						width: "calc(100%)", // Remove PaddingX
-						height: "calc(100%)", // Remove PaddingBottom
-
-						borderRadius: "16px",
-					}}
+				<img
+					loading="lazy"
+					alt="illuminating the onchain world"
+					src="./img/background.png"
+					style={{ width: "100%", height: "100%", borderRadius: "16px" }}
 				/>
 			</div>
 			<div className="container" style={{ height: "100%" }}>
