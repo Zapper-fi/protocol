@@ -150,6 +150,9 @@
       font-size: var(--h4);
       font-weight: 600;
     }
+
+    border-width: 1px;
+    border-bottom-style: solid;
   }
   
   .hide {
@@ -198,6 +201,8 @@
   .accent-background {
     background-color: var(--ifm-accent-color);
   }
+
+
 
   .docs-wrapper {
     .navbar {

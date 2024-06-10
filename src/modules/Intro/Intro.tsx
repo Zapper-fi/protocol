@@ -9,7 +9,7 @@ export const Intro: React.FC = () => {
 	return (
 		<header
 			style={{
-				padding: "0px 16px 16px 16px",
+				padding: "16px",
 				height: "calc(100vh - 180px)",
 				position: "relative",
 				zIndex: 1,
