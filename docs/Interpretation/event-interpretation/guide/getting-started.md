@@ -22,11 +22,11 @@ If you're unsure about the transaction, follow these steps:
 - Use the explorer for additional details (logs, contract, token movement, accounts, input method parameters etc.)
 - Search online for the contract address to see what the app is, this will provide important context (NFT-related app, DeFi app, DEX, lending protocol, etc.)
 
-(image) -> (image)
+![Animation](https://github.com/Zapper-fi/protocol/assets/169290434/bd3c5f3c-799f-4dca-bb6d-4a610412c915)
 
-Example of what interpreting an event looks like before and after. [Link to the above event on Zapper](https://zapper.xyz/event/base/0xfacc42536ebc8b37f80406ae52d4a81702d569ba96cd0ffdad986cbd6fa873b0).
+Above, an example of what interpreting an event looks like before and after.
 
-Once a transaction is interpreted, the description can be used for all events with the same contract method, making thousands of transactions human-readable. In the example above, the interpretation allowed the user to make over 38,000 transactions human readable!! 
+Once a transaction is interpreted, the description can be used for all events with the same contract method, making thousands of transactions human-readable.
 
 ## Event Interpretation video examples
 
