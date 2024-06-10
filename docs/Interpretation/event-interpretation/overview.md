@@ -6,22 +6,9 @@ sidebar_position: 1
 
 ## What is an event?
 
-For Zap Protocol an event is the result of an onchain transaction. Each event is different, but it will usually consists of different parameters such as:
-- Date & time (when?)
-- Action (how?)
-- App & contract (where?)
-- Accounts (who?)
-- Tokens (what?)
+### Types of events
 
-Brought together, the combination of these parameters will create a clear summary of the transaction.
-
-All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user, which makes having a clear picture of an onchain event really difficult. This is why Event Interpreters are needed. 
-
-EIs transform the complicated technical information of an onchain transaction into a simple and clear summary.
-
-## Types of events
-
-We can find an always growing list of different types of events happening onchain every day. Here are a few examples that we see more frequently to help illustrate what events are:
+An event is the result of an onchain transaction. We can find an ever growing list of different events happening onchain every day. Here are a few examples that we see more frequently to help illustrate what events are:
 
 **DeFi:** Transfer, Swap, Bridge, Stake, etc.
 
@@ -31,6 +18,24 @@ We can find an always growing list of different types of events happening onchai
 
 **Gaming:** Actions, Attacks, Rolls, Spins, etc.
 
+### What makes an event?
+
+Each event is different, but it will usually consists of different parameters such as:
+- Date & time (when?)
+- Action (how?)
+- App & contract (where?)
+- Accounts (who?)
+- Tokens (what?)
+
+Brought together, the combination of these parameters will create a clear summary of the transaction.
+
+We can find an always growing list of different types of events happening onchain every day. Here are a few examples that we see more frequently to help illustrate what events are:
+
+### Problem with onchain events
+
+All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user, which makes having a clear picture of an onchain event really difficult. Having a way of translating the onchain information into something a human can read is primordial. This is why Event Interpreters (EI) are needed. 
+
+EIs transform the complicated technical information of an onchain transaction into a simple and clear summary.
 
 ## What is an Event Interpreter (EI)
 
