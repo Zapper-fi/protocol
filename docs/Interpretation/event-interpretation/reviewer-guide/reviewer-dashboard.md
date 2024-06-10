@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Using the Reviewer Dashboard
+# Dashboard Guide
 
 The review process starts in the Reviewer Dashboard.
 
