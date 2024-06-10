@@ -1,6 +1,22 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import React, { useState, useEffect } from "react";
 
 export const Media: React.FC<{
+	src: string;
+	darkSrc?: string;
+	isVideo?: boolean;
+	height: `${number}px`;
+}> = ({ ...props }) => {
+	return (
+		<BrowserOnly>
+			{() => {
+				return <MediaContent {...props} />;
+			}}
+		</BrowserOnly>
+	);
+};
+
+const MediaContent: React.FC<{
 	src: string;
 	darkSrc?: string;
 	isVideo?: boolean;
@@ -23,8 +39,6 @@ export const Media: React.FC<{
 	const isDarkMode = theme === "dark";
 
 	const themeSrc = isDarkMode && darkSrc ? darkSrc : src;
-
-	console.log(themeSrc);
 
 	if (isVideo) {
 		return (
