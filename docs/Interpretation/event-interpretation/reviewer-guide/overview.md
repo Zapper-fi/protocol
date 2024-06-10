@@ -13,9 +13,8 @@ To become a reviewer, users must be proficient in event interpretations. Only EI
 If it’s your first time interpreting events, visit the [Event Interpretation Guide](docs/Interpretation/event-interpretation/overview.md).
 
 :::tip
-Interested in joining the reviewer community? Join our [Discord](https://zapper.xyz/discord) or [Telegram](https://t.me/+mAVxPRsA7bE3ZDkx) to express your interest.
+Interested in joining the reviewer community? Visit the [Becoming a Reviewer](/becoming-a-reviewer.md) section for more details.
 :::
 
-Once you have reviewer access, a new tab called Review will appear under the curate section.
 
-![Curate](/img/assets/curate2.png)
+
