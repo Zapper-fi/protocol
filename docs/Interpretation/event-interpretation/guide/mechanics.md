@@ -13,7 +13,7 @@ Interpreting an event is simple! There are three areas to fill for an uninterpre
 
 Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
 
-![image](https://github.com/Zapper-fi/protocol/assets/169290434/d089b9bd-1e3a-4e40-a8cd-9dcc189865b0)
+![image](/img/assets/mechanics2.png)
 
 
 ## 1. The initial verb​
@@ -23,40 +23,46 @@ The verb describes the action taken by the account that initiated the transactio
 ## 2. Item types
 
 Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some events may not require to include any items, while others may have more than one to give an accurate description of the event. 
-(image)
+
+![image](/img/assets/mechanics3.png)
 
 - **Token transfers:** Any tokens (ERC20 or NFT) entering or leaving a wallet. You can specify the transfer to the “from” account or the “to” account. Filters for ERC20 or NFT can be added. Here is an example of a transaction with a token transfer outflow and inflow:
 
-(image)
+![image](/img/assets/mechanics4.png)
+
+- **NFT Collection:** Will be used to reference a collection address available in the transaction data. The best example is when you approve a collection to be transacted on a marketplace. See example below. 
+
+![image](/img/assets/mechanics5.png) 
 
 - **ERC20 Token:** References a token that did not move. For example, a user can approve a token to be transferred without funds moving.
   
-(image)
+![image](/img/assets/mechanics6.png)
 
 - **Accounts:** References any wallet involved in the transaction, including intermediaries. Can be displayed as a full address or aliased as an ENS.
   
-(image)
+![image](/img/assets/mechanics7.png)
 
 - **NFT:** Points to a specific NFT not moving in or out of the wallet. Requires the NFT collection address and token ID data.
   
-(image)
+![image](/img/assets/mechanics8.png)
 
 - **Network:** Refers to a network ID in the transaction, useful for bridging transactions to reference a destination chain.
   
-(image)
+![image](/img/assets/mechanics9.png)
 
 - **String:** Surfaces any text in an event, such as a comment made on a vote.
   
-(image)
+![image](/img/assets/mechanics10.png)
 
 - **Number:** References a number, such as the number of proposals a user voted on.
   
-(image)
+![image](/img/assets/mechanics11.png)
 
 - **Duration:** Refers to a time period, like locking funds for a certain period. The source scale is the contract's duration, and the target scale is how you want to display it (e.g., minutes to months).
-(image)
 
-(image)
+![image](/img/assets/mechanics13.png)
+
+![image](/img/assets/mechanics12.png)
 
 :::note 
 
@@ -64,7 +70,7 @@ You don’t need to use every filter if it's not needed to describe the transact
 
 :::
 
-(image)
+![image](/img/assets/mechanics14.png)
 
 ### Transaction fields
 **“From” address** - the address the transaction originated by; labeled as “from” on the scanner websites. Looks like this: 0x24CA3B4Be3E9Bd11870B5E065bB367cc1708f06C; could be aliased as an ENS (0xmarc.eth). 
@@ -75,15 +81,13 @@ You don’t need to use every filter if it's not needed to describe the transact
 Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
 In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
 
-(image)
+![image](/img/assets/mechanics15.png)
 
 To see all the input parameter data, you can open the transaction on the chain explorer. 
 
-(image)
-
 Select Decode Input Data to see the output in a readable way.
 
-(image)
+![image](/img/assets/mechanics16.png)
 
 ### Log Parameters
 
@@ -93,7 +97,7 @@ Section under construction...
 
 Use the free-form input and drop-down menu to list the app associated with the transaction. If the correct app isn't listed, type it in, and it will be added soon. If no app was involved, select the "no app" toggle.
 
-(image)
+![image](/img/assets/mechanics17.png)
 
 If you do not see the correct app in the list, please do type in the name yourself, and it will be added to the list shortly after.
 
