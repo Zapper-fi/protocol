@@ -62,8 +62,9 @@ export const PortfolioTracking: React.FC = () => {
 						</div>
 						{selectedType === PortfolioTrackingType.AppHoldings && (
 							<p className="text-alt-color">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Track your holdings across various onchain applications. From
+								DeFi, NFT-Fi to Staking. Powered by an open interpretation
+								layer.
 							</p>
 						)}
 					</div>
@@ -101,8 +102,7 @@ export const PortfolioTracking: React.FC = () => {
 						</div>
 						{selectedType === PortfolioTrackingType.Tokens && (
 							<p className="text-alt-color">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Track your token holdings across various chains.
 							</p>
 						)}
 					</div>
@@ -140,8 +140,7 @@ export const PortfolioTracking: React.FC = () => {
 						</div>
 						{selectedType === PortfolioTrackingType.Nfts && (
 							<p className="text-alt-color">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Track your NFT holdings across various chains.
 							</p>
 						)}
 					</div>

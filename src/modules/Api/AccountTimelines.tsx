@@ -1,13 +1,11 @@
 import React from "react";
 import { Section } from "../../components/Section";
-import { ButtonGroup } from "../../components/ButtonGroup";
-import { LinkButton } from "../../components/LinkButton";
 
 export const AccountTimelines: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "0px 32px" }}
+			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
@@ -25,26 +23,19 @@ export const AccountTimelines: React.FC = () => {
 							fontWeight: "600",
 						}}
 					>
-						Event{" "}
+						Account{" "}
 						<span className="text-alt-color" style={{ fontWeight: 500 }}>
-							Interpretation
+							Timelines
 						</span>
 					</h2>
 					<p className="text-alt-color">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Get a chronological view of all the onchain activity of an account,
+						or bundle of accounts. Human-readable transactions, and contextual
+						information relating to accounts, actions, and events.
 					</p>
-					<ButtonGroup>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/guide"
-							buttonCopy="Get Started"
-						/>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/overview"
-							buttonCopy="Learn More"
-							type="secondary"
-						/>
-					</ButtonGroup>
+					<p className="text-alt-color">
+						Powered by an open interpretation layer.
+					</p>
 				</div>
 				<div style={{ flex: 1, textAlign: "center" }}>image</div>
 			</div>

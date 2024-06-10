@@ -27,6 +27,8 @@ export const LinkButton: React.FC<{
 				fontSize: "16px",
 				fontWeight: 500,
 				cursor: "pointer",
+				width: "fit-content",
+				whiteSpace: "nowrap",
 			}}
 			to={href}
 		>

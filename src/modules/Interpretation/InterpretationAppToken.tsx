@@ -2,6 +2,7 @@ import React from "react";
 import { Section } from "../../components/Section";
 import { ButtonGroup } from "../../components/ButtonGroup";
 import { LinkButton } from "../../components/LinkButton";
+import { Media } from "../../components/Media";
 
 export const InterpretationAppToken: React.FC = () => {
 	return (
@@ -15,14 +16,14 @@ export const InterpretationAppToken: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						flex: 1,
+						width: "100%",
 						height: "fit-content",
 					}}
 				>
 					<h2
 						style={{
-							flex: 1,
 							fontWeight: "600",
+							whiteSpace: "nowrap",
 						}}
 					>
 						Position{" "}
@@ -31,8 +32,10 @@ export const InterpretationAppToken: React.FC = () => {
 						</span>
 					</h2>
 					<p className="text-alt-color">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						App Token Interpreters are used to index app-centric token balances
+						for users. This can be loans, deposits, amount staked, etc... The
+						large majority of these tokens do not have a market price; rather,
+						they have a redeemable price to unlock an underlying token.
 					</p>
 					<ButtonGroup>
 						<LinkButton
@@ -46,18 +49,13 @@ export const InterpretationAppToken: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ flex: 1, textAlign: "center" }}>
-					<video
+				<div style={{ minWidth: "50%", textAlign: "center" }}>
+					<Media
+						src="./videos/Event_Light.mp4"
+						darkSrc="./videos/Event_Dark.mp4"
+						isVideo
 						height="440px"
-						controls={false}
-						autoPlay={true}
-						loop={true}
-						muted
-						playsInline
-					>
-						<source src="./img/videos/Event_Video.mp4" />
-						Your browser does not support the video tag.
-					</video>
+					/>
 				</div>
 			</div>
 		</Section>

@@ -16,7 +16,7 @@ export const InterpretationEvent: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						flex: 1,
+						width: "100%",
 						height: "fit-content",
 					}}
 				>
@@ -24,6 +24,7 @@ export const InterpretationEvent: React.FC = () => {
 						style={{
 							flex: 1,
 							fontWeight: "600",
+							whiteSpace: "nowrap",
 						}}
 					>
 						Event{" "}
@@ -32,8 +33,9 @@ export const InterpretationEvent: React.FC = () => {
 						</span>
 					</h2>
 					<p className="text-alt-color">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Event Interpreters are used on onchain transactions to translate
+						them into human-readable output, and augment them with contextual,
+						and often off-chain, information.
 					</p>
 					<ButtonGroup>
 						<LinkButton
@@ -47,7 +49,7 @@ export const InterpretationEvent: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ flex: 1, textAlign: "center" }}>
+				<div style={{ minWidth: "50%", textAlign: "center" }}>
 					<Media
 						src="./videos/Event_Light.mp4"
 						darkSrc="./videos/Event_Dark.mp4"

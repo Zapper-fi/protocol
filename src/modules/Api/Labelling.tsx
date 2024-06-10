@@ -7,7 +7,7 @@ export const Labelling: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "0px 32px" }}
+			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
@@ -25,26 +25,15 @@ export const Labelling: React.FC = () => {
 							fontWeight: "600",
 						}}
 					>
-						Event{" "}
+						Contract{" "}
 						<span className="text-alt-color" style={{ fontWeight: 500 }}>
-							Interpretation
+							Labelling
 						</span>
 					</h2>
 					<p className="text-alt-color">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Get comprehensive information about the ownership of a contract, its
+						activity, and its relationships with other contracts.
 					</p>
-					<ButtonGroup>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/guide"
-							buttonCopy="Get Started"
-						/>
-						<LinkButton
-							href="/docs/interpretation/event-interpretation/overview"
-							buttonCopy="Learn More"
-							type="secondary"
-						/>
-					</ButtonGroup>
 				</div>
 				<div style={{ flex: 1, textAlign: "center" }}>image</div>
 			</div>
