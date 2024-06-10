@@ -17,6 +17,7 @@ At its core, blockchains are a technology made to set us free, connect us via th
 Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to open up our interpretation stack for a few reasons:
 - There doesn't exist a single centralized entity that will be able to organize all the onchain information when we have 1M dapps, 10M dapps, without building an open and incentivized protocol.
 - Readable onchain information should be open, commoditized, and ubiquitous.
+----
 
 ### Indexing Templates
 Indexing templates are a defining primitive for the protocol. They perform two very important functions:
@@ -25,7 +26,11 @@ Indexing templates are a defining primitive for the protocol. They perform two v
 
 Indexing templates are built by interpreters. At their core, they are very simple JSON files that can be read as a set of instructions for an indexer. There are many ways to build and allow the creation of these templates, and they don't require any knowledge of coding.
 
-You can view a simple example [here](/docs/interpretation/overview#example).
+
+#### Examples
+- [Event Intepreter Example](docs/event-interpretation/overview#example)
+- [App Token Interpreter Example](/docs/interpretation/overview#example)
+---
 
 ### Stakeholders
 #### Interpreters
