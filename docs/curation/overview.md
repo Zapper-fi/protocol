@@ -21,15 +21,11 @@ Once you have the reviewer access, you will see a new tab called Review, under t
 The role of the reviewer is to confirm that transactions submitted by other community members represent what happened onchain.
 
 :::Note
-
 To do so, it has to be accurate, complete and consistent jump to [Canonical description](guide/canonical-description.md) for standard verbs to use for consistency.
-
 :::
 
 :::info
-
 This is a super important role since after going through your approval, all similar transactions will be readable, following the logic you approved.
-
 :::
 
 The reviewer can make adjustments to the Event interpretation before approving it. They also have the ability to reject or put a submission on hold if they feel some information is missing to have an accurate representation of what happened.

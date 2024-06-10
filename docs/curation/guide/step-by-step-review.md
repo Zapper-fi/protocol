@@ -21,9 +21,7 @@ If you feel like the event interpretation is accurate, complete, and consistent 
 This will confirm the event interpretation and interpret all similar events for everyone to see! How cool is that?!
 
 :::note
-
 After hitting the “save and approve” button, the status of the event will change from Pending to Enabled.
-
 :::
 
 [insert image]
