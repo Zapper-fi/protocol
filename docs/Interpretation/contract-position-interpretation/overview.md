@@ -75,7 +75,7 @@ xxx
 
 ## Example
 
-```json
+```js
 {
   "addressFactory": {
     "type": "FROM_LOG",

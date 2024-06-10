@@ -16,7 +16,7 @@ Zapper Protocol aims to address this issue by providing scalable tools for event
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
 
-```json
+```js
 {
     "type": "simple",
     "attachments": [
