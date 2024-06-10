@@ -12,7 +12,7 @@
   
   @font-face {
     font-family: "Inter";
-    src: url('/static/fonts/Inter/Inter-Medium.ttf') format("truetype");
+    src: url('/static/fonts/Inter/Inter-Regular.ttf') format("truetype");
     font-weight: 400;
   }
   
@@ -56,7 +56,7 @@
     --xlg: 24px;
 
     --h1: 48px;
-    --h2: 32px;
+    --h2: 36px;
     --h3: 24px;
     --h4: 20px;
     --h5: 18px;
@@ -109,6 +109,7 @@
     font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
   h1 {
@@ -149,6 +150,9 @@
       font-size: var(--h4);
       font-weight: 600;
     }
+
+    border-width: 1px;
+    border-bottom-style: solid;
   }
   
   .hide {
@@ -157,11 +161,15 @@
 
   .container {
     padding: 0 32px;
-    max-width: 1600px;
+    max-width: 1600px !important;
   }
 
   .text-alt-color {
     color: var(--ifm-text-alt-color);
+  }
+
+  .text-accent-color {
+    color: var(--ifm-accent-color);
   }
 
   .main-wrapper, .navbar {
@@ -182,14 +190,31 @@
       border-color: var(--ifm-border-color);
   }
 
+  hr {
+    background-color: var(--ifm-border-color);
+}
+
   .accent {
     border-color: var(--ifm-accent-color);
   }
+
+  .accent-background {
+    background-color: var(--ifm-accent-color);
+  }
+
+
 
   .docs-wrapper {
     .navbar {
       border-bottom-style: solid;
       border-width: 1px;
+    }
+  }
+
+  .opacity-hover {
+    transition: linear 0.2s;
+    &:hover {
+      opacity: 0.6;
     }
   }
 

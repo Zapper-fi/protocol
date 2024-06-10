@@ -45,7 +45,7 @@ Here is an example of a transaction with a token transfer outflow and inflow.
   
 (image)
 
-- **Network** is referring to a network ID available in the transaction. Zap Protocol has a mapping of network ID to network name. This will mostly be used in bridging transactions where we want to reference a destination chain.
+- **Network** is referring to a network ID available in the transaction. Zapper Protocol has a mapping of network ID to network name. This will mostly be used in bridging transactions where we want to reference a destination chain.
   
 (image)
 
@@ -98,7 +98,7 @@ Section under construction...
 ## 3. App
 
 ### The app that this transaction took place through​
-This is a free-form input + drop-down menu, where all apps that Zap Protocol has in its system are listed. If the transaction you are describing is associated with an onchain app, please select it from the list.
+This is a free-form input + drop-down menu, where all apps that Zapper Protocol has in its system are listed. If the transaction you are describing is associated with an onchain app, please select it from the list.
 
 (image)
 

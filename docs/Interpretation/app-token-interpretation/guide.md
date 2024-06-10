@@ -54,7 +54,9 @@ Input the address of the underlying token. This could be 1 token address you inp
 ![Example of the "@" menu for selecting an underlying token](/img/assets/at_menu.png)
 
 :::tip
+
 If you want to call a method on a contract different from the App Token's contract, you can do so via the "+ Add" button in the method input modal.
+
 :::
 
 ### 5. Calculate the Price Per Share 
@@ -66,7 +68,9 @@ Input the price per share of the token. This informs how much the App Token is w
 ![Inputted calculation for cUSDC](/img/assets/inputted_calculation.png)
 
 :::tip
+
 If you are unsure of the method to call on the App Token's contract to get the price per share, you can refer to the token owner's app documentation site, as they will often explain how to calculate the value of their tokens. If you are still unsure, you can ask in the Zapper Discord for help and we can help you figure it out.
+
 :::
 
 ### 6. Check the Previewed Value of the App Token

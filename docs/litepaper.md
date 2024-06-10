@@ -1,11 +1,11 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Litepaper
 
 ## Introduction
-Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zap Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
+Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zapper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
 
 Just as all networks, blockchains are seeing similar patterns in regards to how value accrual changes over time. At first there aren’t that many applications, and so it's the applications themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
@@ -13,8 +13,8 @@ Just as all networks, blockchains are seeing similar patterns in regards to how 
 At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone.
 
 ## Protocol Overview
-### Zapper vs. Zap Protocol
-Zapper and Zap Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to decentralize and open up our interpretation stack for a few reasons:
+### Zapper vs. Zapper Protocol
+Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to decentralize and open up our interpretation stack for a few reasons:
 - There doesn't exist a single centralized entity that will be able to organize all the onchain information when we have 1M dapps, 10M dapps, without building an open and incentivized protocol.
 - Readable onchain information should be open, commoditized, and ubiquitous.
 

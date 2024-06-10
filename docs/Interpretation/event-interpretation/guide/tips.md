@@ -12,7 +12,7 @@ Looking for a method name? Your best reflex is to look up your transaction on th
 
 (image) 
 
-Zap Protocol’s's goal is to accurately and clearly describe the blockchain, so please be aware of this in your submissions!
+Zapper Protocol’s's goal is to accurately and clearly describe the blockchain, so please be aware of this in your submissions!
 
 ## 2. Look at the logs
 
