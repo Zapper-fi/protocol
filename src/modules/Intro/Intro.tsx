@@ -10,23 +10,29 @@ export const Intro: React.FC = () => {
 		<header
 			style={{
 				padding: "16px",
-				height: "calc(100vh - 180px)",
-				position: "relative",
+				height: "calc(100vh - 92px)",
 				zIndex: 1,
+				position: "relative",
+				display: "flex",
+				justifyContent: "center",
 			}}
 		>
 			<div
-				style={{
-					backgroundImage: "url(./img/background2.png)",
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					width: "calc(100% - 32px)", // Remove PaddingX
-					height: "calc(100% - 16px)", // Remove PaddingBottom
-					position: "absolute",
-					zIndex: -1,
-					borderRadius: "16px",
-				}}
-			/>
+				className="container"
+				style={{ height: "100%", position: "absolute", zIndex: -1 }}
+			>
+				<div
+					style={{
+						backgroundImage: "url(./img/background2.png)",
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						width: "calc(100%)", // Remove PaddingX
+						height: "calc(100%)", // Remove PaddingBottom
+
+						borderRadius: "16px",
+					}}
+				/>
+			</div>
 			<div className="container" style={{ height: "100%" }}>
 				<div
 					style={{
@@ -34,7 +40,7 @@ export const Intro: React.FC = () => {
 						display: "flex",
 						alignItems: "center",
 						gap: "32px",
-						padding: "88px 0px",
+						padding: "64px",
 					}}
 				>
 					<div

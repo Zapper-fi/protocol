@@ -14,6 +14,7 @@ export const Problem: React.FC = () => {
 					borderWidth: "medium",
 					borderStyle: "dotted",
 					alignItems: "center",
+					marginTop: "64px",
 				}}
 			>
 				<div style={{ flex: 1 }}>
