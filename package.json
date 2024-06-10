@@ -1,5 +1,5 @@
 {
-	"name": "zap-protocol-website",
+	"name": "zapper-protocol-website",
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
@@ -48,5 +48,5 @@
 	"engines": {
 		"node": ">=18.0"
 	},
-	"description": "Zap Protocol Website"
+	"description": "Zapper Protocol Website"
 }
