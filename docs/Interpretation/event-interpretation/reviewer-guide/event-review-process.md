@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Event Review Process
+# Review Process
 
 ## Page Overview
 
