@@ -5,24 +5,6 @@ import { ButtonGroup } from "../../components/ButtonGroup";
 import { Media } from "../../components/Media";
 
 export const Token: React.FC = () => {
-	const [theme, setTheme] = useState(localStorage.getItem("theme"));
-
-	useEffect(() => {
-		const handleThemeChange = () => {
-			setTheme(localStorage.getItem("theme"));
-		};
-
-		window.addEventListener("storage", handleThemeChange);
-
-		return () => {
-			window.removeEventListener("storage", handleThemeChange);
-		};
-	}, []);
-
-	const isDarkMode = theme === "dark";
-
-	console.log(isDarkMode);
-
 	return (
 		<Section
 			className="border"
@@ -93,7 +75,6 @@ export const Token: React.FC = () => {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
-						mixBlendMode: isDarkMode ? "lighten" : "initial",
 					}}
 				>
 					<Media
