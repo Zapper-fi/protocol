@@ -10,7 +10,7 @@ In the screenshot below, two transactions were not interpreted correctly, indica
 
 (image)
 
-This can occur if your interpretation is too specific or if the contract method performs multiple actions. In such cases, you can submit a [conditional event[(https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/conditionals) by adding a case to the interpretation.
+This can occur if your interpretation is too specific or if the contract method performs multiple actions. In such cases, you can submit a [conditional event](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/conditionals) by adding a case to the interpretation.
 
 :::warning 
 
