@@ -24,9 +24,13 @@ EIs transform the complicated technical information of an onchain transaction in
 We can find an always growing list of different types of events happening onchain every day. Here are a few examples that we see more frequently to help illustrate what events are:
 
 **DeFi:** Transfer, Swap, Bridge, Stake, etc.
+
 **NFT:** Mints, Sales, etc.
+
 **Governance:** Votes, proposals, etc.
+
 **Gaming:** Actions, Attacks, Rolls, Spins, etc.
+
 
 ## What is an Event Interpreter (EI)
 
