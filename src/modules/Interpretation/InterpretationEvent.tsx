@@ -2,6 +2,7 @@ import React from "react";
 import { Section } from "../../components/Section";
 import { ButtonGroup } from "../../components/ButtonGroup";
 import { LinkButton } from "../../components/LinkButton";
+import { Media } from "../../components/Media";
 
 export const InterpretationEvent: React.FC = () => {
 	return (
@@ -36,7 +37,7 @@ export const InterpretationEvent: React.FC = () => {
 					</p>
 					<ButtonGroup>
 						<LinkButton
-							href="/docs/interpretation/event-interpretation/guide"
+							href="/docs/interpretation/event-interpretation/guide/getting-started"
 							buttonCopy="Get Started"
 						/>
 						<LinkButton
@@ -47,17 +48,12 @@ export const InterpretationEvent: React.FC = () => {
 					</ButtonGroup>
 				</div>
 				<div style={{ flex: 1, textAlign: "center" }}>
-					<video
+					<Media
+						src="./videos/Event_Light.mp4"
+						darkSrc="./videos/Event_Dark.mp4"
+						isVideo
 						height="440px"
-						controls={false}
-						autoPlay={true}
-						loop={true}
-						muted
-						playsInline
-					>
-						<source src="./img/videos/Event_Video.mp4" />
-						Your browser does not support the video tag.
-					</video>
+					/>
 				</div>
 			</div>
 		</Section>

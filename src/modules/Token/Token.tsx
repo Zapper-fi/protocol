@@ -1,10 +1,27 @@
 import { LinkButton } from "../../components/LinkButton";
 import { Section } from "../../components/Section";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ButtonGroup } from "../../components/ButtonGroup";
+import { Media } from "../../components/Media";
 
 export const Token: React.FC = () => {
-	const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
+	const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
+	useEffect(() => {
+		const handleThemeChange = () => {
+			setTheme(localStorage.getItem("theme"));
+		};
+
+		window.addEventListener("storage", handleThemeChange);
+
+		return () => {
+			window.removeEventListener("storage", handleThemeChange);
+		};
+	}, []);
+
+	const isDarkMode = theme === "dark";
+
+	console.log(isDarkMode);
 
 	return (
 		<Section
@@ -79,23 +96,12 @@ export const Token: React.FC = () => {
 						mixBlendMode: isDarkMode ? "lighten" : "initial",
 					}}
 				>
-					<video
+					<Media
 						height="320px"
-						controls={false}
-						autoPlay={true}
-						loop={true}
-						muted
-						playsInline
-					>
-						<source
-							src={
-								isDarkMode
-									? "./img/videos/zapper-token.mp4"
-									: "./img/videos/zapper-token-light.mp4"
-							}
-						/>
-						Your browser does not support the video tag.
-					</video>
+						isVideo
+						src="./videos/zapper-token-light.mp4"
+						darkSrc="./videos/zapper-token.mp4"
+					/>
 				</div>
 			</div>
 		</Section>
