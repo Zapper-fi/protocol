@@ -9,7 +9,7 @@ Interpreting an event is simple! There are three areas to fill for an uninterpre
 2. Item type(s) involved
 3. The app through which the transaction occured
 
-![image](https://github.com/Zapper-fi/protocol/assets/169290434/cb44b8f1-534e-4f44-bd09-9878a37ec036)
+![image](/img/assets/mechanics1.png)
 
 Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
 
