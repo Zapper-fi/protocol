@@ -8,4 +8,3 @@ pagination_label: 2+ Underlying Tokens Guide
 ## Situations where multiple underlying tokens are found
 
 Coming Soon...
-
