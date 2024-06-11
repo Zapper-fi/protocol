@@ -14,7 +14,7 @@ Zap Protocol aims to clearly describe the blockchain, so ensure your submissions
 
 ## 2. Look at the logs
 
-Event logs provide important transaction details, such as tracking token transfers and decentralized exchange activity. On the explorer, click the “Logs” tab for additional context. The first log often describes the transaction itself.
+Event logs provide important transaction details, such as tracking token transfers and decentralized exchange activity. On the explorer, click the “Logs” tab for additional context.
 
 ![logs](/img/assets/logs1.png)
 
