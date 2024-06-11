@@ -45,7 +45,7 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 - **Duration:** Refers to a time period, like locking funds for a certain period. The source scale is the contract's duration, and the target scale is how you want to display it (e.g., minutes to months).
 ![image](/img/assets/Duration.png)
 
-![image](/img/assets/mechanics12.png)
+![image](/img/assets/mechanics13.png)
 
 :::note 
 
