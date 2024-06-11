@@ -27,6 +27,12 @@ You don’t need to use every filter if it's not needed to describe the transact
 
 ![image](/img/assets/mechanics14.png)
 
+## Data Sources
+
+When interpreting an event, you will pull data from different sources. To excel in your Scout Explorer role, it is best to understand each of these data sources, where to find them and how they can be used in an interpretation. 
+
+Here are the three data source you will use most frequently. 
+
 ### Transaction fields
 **“From” address** - the address the transaction originated by; labeled as “from” on the scanner websites. Looks like this: 0x24CA3B4Be3E9Bd11870B5E065bB367cc1708f06C; could be aliased as an ENS (0xmarc.eth). 
 
@@ -47,4 +53,9 @@ Select Decode Input Data to see the output in a readable way.
 
 ### Log Parameters
 
-Section under construction... 
+You also have the possibility of extracting data directly from the logs. This can come in useful when the method parameter does not offer the level of detail you want to surface in the event. 
+
+To access all the log parameter data, you can open the transaction on the chain explorer. Select the Logs(X) option at the top menu and you will access the logs. 
+
+When selecting “Log Parameter” as the data you want to pull from in the Interpretation form, you will have a drop down menu with all available logs. You need to choose the one that better represents the information you want to extract. Eg: Selecting “Account” if you want to point to a wallet address. 
+
