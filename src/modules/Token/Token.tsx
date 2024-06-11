@@ -10,7 +10,14 @@ export const Token: React.FC = () => {
 			className="border"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
-			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+			<div
+				style={{
+					display: "flex",
+					gap: "32px",
+					alignItems: "center",
+					flexWrap: "wrap",
+				}}
+			>
 				<div
 					style={{
 						display: "flex",

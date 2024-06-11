@@ -165,6 +165,10 @@
   .container {
     padding: 0 32px;
     max-width: 1600px !important;
+
+    @media screen and (max-width: 750px) {
+      padding: 0 16px,
+  }
   }
 
   .text-alt-color {

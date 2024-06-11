@@ -7,8 +7,6 @@
     justify-content: center;
 
 
-
-
     &__content {
         height: 100%;
         display: flex;
@@ -16,8 +14,8 @@
         gap: 32px;
         padding: 64px;
 
-        @media screen and (max-width: 768px) {
-            padding: 16px 0px,
+        @media screen and (max-width: 750px) {
+            padding: 16px,
         }
     }
    
