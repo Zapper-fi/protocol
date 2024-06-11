@@ -46,8 +46,10 @@ Zapper Protocol aims to address this issue by providing scalable tools for event
 
 An event interpreter is built out of different key components. Put together these key components give structure and meaning to the interpretation. Here are these key components:
 
-**1. Description:** Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. 
+**1. Description:** Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction.
+
 **2. Items involved:** Items could be tokens, NFTs, or any information contained in the onchain transaction. 
+
 **3. App:** The app through which the transaction occured is the last piece of the puzzle. 
 
 Together, these three elements give us a clear summary of the event:
