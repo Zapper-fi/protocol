@@ -56,7 +56,7 @@ Together, these three elements give us a clear summary of the event:
 
 ![image](/img/assets/mechanics2.png)
 
-## Example
+## Example JSON Object of an EI
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
 
