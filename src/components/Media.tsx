@@ -45,7 +45,8 @@ const MediaContent: React.FC<{
 		return (
 			<video
 				key={themeSrc}
-				height={height}
+				height="100%"
+				width="100%"
 				controls={false}
 				autoPlay={true}
 				loop={true}
@@ -53,6 +54,7 @@ const MediaContent: React.FC<{
 				playsInline
 				style={{
 					mixBlendMode: darkSrc && isDarkMode ? mixBlendMode : undefined,
+					objectFit: "cover",
 				}}
 			>
 				<source src={themeSrc} />

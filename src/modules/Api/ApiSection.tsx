@@ -20,7 +20,7 @@ export const ApiSection: React.FC = () => {
 				<div
 					style={{
 						display: "flex",
-						gap: "32px",
+						gap: "24px",
 						width: "100%",
 						flexDirection: "column",
 						alignItems: "center",
@@ -59,18 +59,18 @@ export const ApiSection: React.FC = () => {
 						>
 							The Ultimate Human-Readable API
 						</h1>
-						<h5
+						<p
 							className="text-alt-color"
 							style={{
 								fontWeight: "300",
 								textAlign: "center",
-								maxWidth: "800px",
+								maxWidth: "720px",
 							}}
 						>
 							Access the most comprehensive onchain data built on top of our
 							powerful interpretation stack. From DeFi portfolios, onchain
 							prices to contextualized transaction histories.
-						</h5>
+						</p>
 					</div>
 					<LinkButton
 						href="/docs/api/intro"
@@ -91,8 +91,8 @@ export const ApiSection: React.FC = () => {
 						display: "flex",
 						gap: "16px",
 						width: "100%",
-						maxWidth: "1200px",
-						justifyContent: "space-around",
+						maxWidth: "600px",
+						justifyContent: "space-between",
 					}}
 				>
 					<div

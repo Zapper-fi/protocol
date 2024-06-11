@@ -25,7 +25,7 @@ export const InterpretationAppToken: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						width: "600px",
+						width: "500px",
 						height: "fit-content",
 					}}
 				>
@@ -67,6 +67,8 @@ export const InterpretationAppToken: React.FC = () => {
 						borderWidth: "1px",
 						borderRadius: "16px",
 						overflow: "hidden",
+						display: "flex",
+						justifyContent: "center",
 					}}
 				>
 					{" "}

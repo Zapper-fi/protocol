@@ -13,6 +13,8 @@ export const InterpretationEvent: React.FC = () => {
 					gap: "64px",
 					alignItems: "center",
 					flexWrap: "wrap",
+					position: "relative",
+					justifyContent: "space-between",
 				}}
 			>
 				<div
@@ -20,7 +22,7 @@ export const InterpretationEvent: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						width: "600px",
+						width: "500px",
 						height: "fit-content",
 					}}
 				>
@@ -56,19 +58,22 @@ export const InterpretationEvent: React.FC = () => {
 				<div
 					className="border"
 					style={{
-						minWidth: "50%",
 						textAlign: "center",
 						borderStyle: "solid",
 						borderWidth: "1px",
 						borderRadius: "16px",
 						overflow: "hidden",
+						display: "flex",
+						justifyContent: "center",
+						flex: 1,
+						minWidth: "50%",
+						maxWidth: "800px",
 					}}
 				>
 					<Media
 						src="./videos/Event_Light.mp4"
 						darkSrc="./videos/Event_Dark.mp4"
 						isVideo
-						height="440px"
 					/>
 				</div>
 			</div>
