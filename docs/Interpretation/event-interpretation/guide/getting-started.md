@@ -12,7 +12,7 @@ Alternatively, you can explore popular transactions on the [Zapper Curate](https
 
 For more details see the [Helpful Tips](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/tips) section. 
 
-## Quick example of an Event Interpreter
+## Example of an Event Interpreter
 
 First, let's assume you have know the transaction's purpose, such as “the user Y sent 6.9 ETH to user X on Farcaster”. Equipped with that knowledge, fill out the transaction using the pre-populated drop-down menus and free-form text boxes.
 
