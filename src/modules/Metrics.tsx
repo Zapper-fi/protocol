@@ -21,7 +21,10 @@ export const Metrics: React.FC = () => {
 				<div
 					style={{
 						display: "flex",
-						gap: "16px",
+						gap: "32px",
+						flexGrow: 1,
+						minWidth: "fit-content",
+						flexWrap: "wrap",
 					}}
 				>
 					<div
@@ -36,7 +39,7 @@ export const Metrics: React.FC = () => {
 						}}
 					>
 						<h3 style={{ marginBottom: "0px" }}>4.59 Billion</h3>
-						<p style={{ marginBottom: "0px" }}>
+						<p style={{ marginBottom: "0px", whiteSpace: "nowrap" }}>
 							Total Human Readable Transactions
 						</p>
 					</div>
@@ -52,7 +55,9 @@ export const Metrics: React.FC = () => {
 						}}
 					>
 						<h3 style={{ marginBottom: "0px" }}>2,500</h3>
-						<p style={{ marginBottom: "0px" }}>Position Interpreters</p>
+						<p style={{ marginBottom: "0px", whiteSpace: "nowrap" }}>
+							Position Interpreters
+						</p>
 					</div>
 					<div
 						style={{
@@ -66,7 +71,9 @@ export const Metrics: React.FC = () => {
 						}}
 					>
 						<h3 style={{ marginBottom: "0px" }}>7,200</h3>
-						<p style={{ marginBottom: "0px" }}>Event Interpreters</p>
+						<p style={{ marginBottom: "0px", whiteSpace: "nowrap" }}>
+							Event Interpreters
+						</p>
 					</div>
 					<div
 						style={{
@@ -79,8 +86,10 @@ export const Metrics: React.FC = () => {
 							justifyContent: "center",
 						}}
 					>
-						<h3 style={{ marginBottom: "0px" }}>10</h3>
-						<p style={{ marginBottom: "0px" }}>Chains Supported</p>
+						<h3 style={{ marginBottom: "0px" }}>14</h3>
+						<p style={{ marginBottom: "0px", whiteSpace: "nowrap" }}>
+							Chains Supported
+						</p>
 					</div>
 				</div>
 			</div>

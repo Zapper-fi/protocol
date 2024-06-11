@@ -7,21 +7,25 @@ import { Media } from "../../components/Media";
 export const InterpretationAppToken: React.FC = () => {
 	return (
 		<Section
-			className="border"
 			style={{
-				borderWidth: "1px",
-				borderStyle: "solid",
 				padding: "16px 32px",
-				marginTop: "64px",
+				marginTop: "128px",
 			}}
 		>
-			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+			<div
+				style={{
+					display: "flex",
+					gap: "64px",
+					alignItems: "center",
+					flexWrap: "wrap",
+				}}
+			>
 				<div
 					style={{
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						width: "100%",
+						width: "600px",
 						height: "fit-content",
 					}}
 				>
@@ -54,7 +58,18 @@ export const InterpretationAppToken: React.FC = () => {
 						/>
 					</ButtonGroup>
 				</div>
-				<div style={{ minWidth: "50%", textAlign: "center" }}>
+				<div
+					className="border"
+					style={{
+						minWidth: "50%",
+						textAlign: "center",
+						borderStyle: "solid",
+						borderWidth: "1px",
+						borderRadius: "16px",
+						overflow: "hidden",
+					}}
+				>
+					{" "}
 					<Media
 						src="./videos/Position_Light.mp4"
 						darkSrc="./videos/Position_Dark.mp4"
