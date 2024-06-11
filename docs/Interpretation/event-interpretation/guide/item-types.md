@@ -5,7 +5,6 @@ sidebar_position: 4
 # Item types
 
 Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some events may not require to include any items, while others may have more than one to give an accurate description of the event. 
-![image](/img/assets/mechanics3.png)
 
 | **Type**            | **Description**                                                                                                                                                                  | **Example**                            |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -25,8 +24,6 @@ You don’t need to use every filter if it's not needed to describe the transact
 
 :::
 
-![image](/img/assets/mechanics14.png)
-
 ## Data Sources
 
 When interpreting an event, you will pull data from different sources. To excel in your Scout Explorer role, it is best to understand each of these data sources, where to find them and how they can be used in an interpretation. 
@@ -42,8 +39,6 @@ Here are the three data source you will use most frequently.
 
 Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
 In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
-
-![image](/img/assets/mechanics15.png)
 
 To see all the input parameter data, you can open the transaction on the chain explorer. 
 
