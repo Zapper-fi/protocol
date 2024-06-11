@@ -4,7 +4,6 @@ sidebar_position: 1
 
 # Introduction
 
-
 ## Indexing Templates
 
 Indexing templates are a defining primitive for the protocol. They perform two very important functions:
