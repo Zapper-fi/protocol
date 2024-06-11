@@ -10,13 +10,10 @@ sidebar_position: 1
 
 An event is the result of an onchain transaction. We can find an ever growing list of different events happening onchain every day. Here are a few examples that we see more frequently to help illustrate what events are:
 
-**DeFi:** Transfer, Swap, Bridge, Stake, etc.
-
-**NFT:** Mints, Sales, etc.
-
-**Governance:** Votes, proposals, etc.
-
-**Gaming:** Actions, Attacks, Rolls, Spins, etc.
+- **DeFi:** Transfer, Swap, Bridge, Stake, etc.
+- **NFT:** Mints, Sales, etc.
+- **Governance:** Votes, proposals, etc.
+- **Gaming:** Actions, Attacks, Rolls, Spins, etc.
 
 ### What makes an event?
 
