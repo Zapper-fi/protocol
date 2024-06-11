@@ -20,4 +20,6 @@ First, let's assume you have basic knowledge of the transaction's purpose, such 
 - Use the explorer for additional details (logs, contract, token movement, accounts, input method parameters etc.)
 - Search online for the contract address to see what the app is, this will provide important context (NFT-related app, DeFi app, DEX, lending protocol, etc.)
 
+### 3. Build your Event
+
 Once you feel confident that you have a good understanding of what happened, it is now time to [build your event](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/building-event)!
