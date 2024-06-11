@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Interpretation mechanics
+# Building an Event
 Interpreting an event is simple! There are three areas to fill for an uninterpreted transaction (and not all need to be filled if unnecessary):
 
 1. Initial action verb
@@ -14,6 +14,8 @@ Interpreting an event is simple! There are three areas to fill for an uninterpre
 Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
 
 ![image](/img/assets/mechanics2.png)
+
+To create an event, you simply have to combine these three building blocks to interpret the event. 
 
 ## 1. The initial verb​
 
