@@ -19,7 +19,14 @@ export const PortfolioTracking: React.FC = () => {
 			className="border"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
-			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+			<div
+				style={{
+					display: "flex",
+					gap: "64px",
+					alignItems: "center",
+					flexWrap: "wrap",
+				}}
+			>
 				<div
 					style={{
 						display: "flex",
@@ -27,6 +34,7 @@ export const PortfolioTracking: React.FC = () => {
 						gap: "4px",
 						flex: 1,
 						height: "fit-content",
+						minWidth: "500px",
 					}}
 				>
 					<div
@@ -147,17 +155,31 @@ export const PortfolioTracking: React.FC = () => {
 				</div>
 				<div style={{ flex: 1, textAlign: "center", height: "420px" }}>
 					{selectedType === PortfolioTrackingType.AppHoldings && (
-						<img height="100%" src="./img/app-holdings.png" alt="placeholder" />
+						<img
+							height="100%"
+							width="100%"
+							src="./img/app-holdings.png"
+							alt="placeholder"
+							style={{ objectFit: "contain", minWidth: "500px" }}
+						/>
 					)}
 					{selectedType === PortfolioTrackingType.Tokens && (
 						<img
 							height="100%"
+							width="100%"
 							src="./img/token-holdings.png"
 							alt="placeholder"
+							style={{ objectFit: "contain", minWidth: "500px" }}
 						/>
 					)}
 					{selectedType === PortfolioTrackingType.Nfts && (
-						<img height="100%" src="./img/nft-holdings.png" alt="placeholder" />
+						<img
+							height="100%"
+							width="100%"
+							src="./img/nft-holdings.png"
+							alt="placeholder"
+							style={{ objectFit: "contain", minWidth: "500px" }}
+						/>
 					)}
 				</div>
 			</div>

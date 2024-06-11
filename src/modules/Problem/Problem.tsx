@@ -9,27 +9,30 @@ export const Problem: React.FC = () => {
 				className="border"
 				style={{
 					display: "flex",
-					gap: "40px",
+					gap: "32px",
 					padding: "64px 64px",
 					borderWidth: "4px",
 					borderStyle: "double",
 					alignItems: "center",
 					marginTop: "64px",
+					flexWrap: "wrap",
+					justifyContent: "space-between",
 				}}
 			>
 				<div style={{ flex: 1 }}>
 					<h2
 						style={{
 							flex: 1,
-							fontFamily: "serif",
-							fontSize: "44px",
+							fontFamily: "monospace",
+							fontSize: "38px",
 							fontWeight: "600",
+							minWidth: "400px",
 						}}
 					>
 						Onchain information is disorganized and unreadable.
 					</h2>
 				</div>
-				<div style={{ flex: 1 }}>
+				<div style={{ flex: 1, minWidth: "500px" }}>
 					<h5 color="" style={{ fontWeight: "normal", lineHeight: "28px" }}>
 						The amount of onchain applications is increasing exponentially - no
 						centralized entity will be able to organize everything.
