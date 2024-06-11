@@ -8,11 +8,11 @@ sidebar_position: 3
 
 On the left side of the review page, you will find the event information submitted by the interpreter. You can modify, add, or remove any information. Click the pen icon to edit an element and the X icon to delete an element. Modify action verbs by deleting the text and entering a new one.
 
-**[insert image]**
+![Edit-type](/img/assets/ReviewStep.png)
 
 On the right side, you will find a preview feed to confirm if the event has been correctly interpreted for all events. Scroll down to see 12 different events with the same method to ensure accuracy.
 
-**[insert image]**
+![Preview](/img/assets/preview.png)
 
 ### Resources for Reviewing
 
@@ -42,7 +42,7 @@ This will confirm the event interpretation and apply it to all similar events.
 After hitting the “Save and Approve” button, the event status changes from Pending to Enabled.
 :::
 
-****[insert image]**
+![approved](/img/assets/approved.gif)
 
 ### Rejecting an Event
 
