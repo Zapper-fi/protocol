@@ -11,8 +11,8 @@ export const Problem: React.FC = () => {
 					display: "flex",
 					gap: "40px",
 					padding: "64px 64px",
-					borderWidth: "medium",
-					borderStyle: "dotted",
+					borderWidth: "4px",
+					borderStyle: "double",
 					alignItems: "center",
 					marginTop: "64px",
 				}}
@@ -30,14 +30,14 @@ export const Problem: React.FC = () => {
 					</h2>
 				</div>
 				<div style={{ flex: 1 }}>
-					<h4 style={{ fontWeight: "normal", lineHeight: "28px" }}>
+					<h5 color="" style={{ fontWeight: "normal", lineHeight: "28px" }}>
 						The amount of onchain applications is increasing exponentially - no
 						centralized entity will be able to organize everything.
-					</h4>
-					<h4 style={{ fontWeight: "normal", lineHeight: "28px" }}>
+					</h5>
+					<h5 style={{ fontWeight: "normal", lineHeight: "28px" }}>
 						Blockchains are bustling digital downtowns containing rich economic
 						opportunities, yet are very difficult to navigate.
-					</h4>
+					</h5>
 				</div>
 			</div>
 		</Section>

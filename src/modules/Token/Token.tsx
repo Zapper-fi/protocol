@@ -1,21 +1,18 @@
 import { LinkButton } from "../../components/LinkButton";
 import { Section } from "../../components/Section";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ButtonGroup } from "../../components/ButtonGroup";
 import { Media } from "../../components/Media";
 
 export const Token: React.FC = () => {
 	return (
-		<Section
-			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
-		>
+		<Section className="border" style={{ padding: "64px 32px" }}>
 			<div
 				style={{
 					display: "flex",
-					gap: "32px",
+					gap: "16px",
 					alignItems: "center",
-					flexWrap: "wrap",
+					flexWrap: "wrap-reverse",
 				}}
 			>
 				<div
@@ -23,7 +20,7 @@ export const Token: React.FC = () => {
 						display: "flex",
 						flexDirection: "column",
 						gap: "16px",
-						flex: 1,
+						width: "500px",
 					}}
 				>
 					<div
@@ -59,11 +56,9 @@ export const Token: React.FC = () => {
 							className="text-accent-color"
 							style={{
 								fontWeight: 600,
-								fontFamily: "monospace",
-								fontSize: "38px",
 							}}
 						>
-							$ZAP
+							<span style={{ opacity: "0.6", fontSize: "28px" }}>$</span>ZAP
 						</span>
 					</h2>
 					<p className="text-alt-color">
@@ -77,20 +72,25 @@ export const Token: React.FC = () => {
 				</div>
 				<div
 					style={{
-						flex: 1,
-						height: "360px",
-						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
+						display: "flex",
+						flex: 1,
 					}}
 				>
-					<Media
-						mixBlendMode="lighten"
-						height="320px"
-						isVideo
-						src="./videos/zapper-token-light.mp4"
-						darkSrc="./videos/zapper-token.mp4"
-					/>
+					<div
+						style={{
+							minWidth: "320px",
+							maxWidth: "420px",
+						}}
+					>
+						<Media
+							mixBlendMode="lighten"
+							isVideo
+							src="./videos/zapper-token-light.mp4"
+							darkSrc="./videos/zapper-token.mp4"
+						/>
+					</div>
 				</div>
 			</div>
 		</Section>

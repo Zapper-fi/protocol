@@ -18,6 +18,8 @@ export const InterpretationAppToken: React.FC = () => {
 					gap: "64px",
 					alignItems: "center",
 					flexWrap: "wrap",
+					position: "relative",
+					justifyContent: "space-between",
 				}}
 			>
 				<div
@@ -61,7 +63,6 @@ export const InterpretationAppToken: React.FC = () => {
 				<div
 					className="border"
 					style={{
-						minWidth: "50%",
 						textAlign: "center",
 						borderStyle: "solid",
 						borderWidth: "1px",
@@ -69,6 +70,9 @@ export const InterpretationAppToken: React.FC = () => {
 						overflow: "hidden",
 						display: "flex",
 						justifyContent: "center",
+						flex: 1,
+						minWidth: "50%",
+						maxWidth: "800px",
 					}}
 				>
 					{" "}
