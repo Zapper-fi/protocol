@@ -2,9 +2,9 @@
 sidebar_position: 6
 ---
 
-# Preview Feed 
+# Confirming your Work
 
-When interpreting your transaction, the right side of your screen updates automatically as you input new information. This helps you determine if your interpretations are correct. 
+When interpreting your transaction, the right side of your screen updates automatically as you input new information. This helps you determine if your interpretations are correct. We call this section the **Preview Feed**. This can serve as your best friend when interpreting events, since it can allow you catch quickly some mistakes. 
 
 In the screenshot below, two transactions were not interpreted correctly, indicating incorrect or missing details.
 
