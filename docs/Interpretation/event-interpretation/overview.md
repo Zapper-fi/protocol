@@ -42,6 +42,10 @@ We are seeing approximately 1,000,000 transactions processed daily on the Ethere
 
 Zapper Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
+## Example of an Event Interpreter
+
+![Animation](/img/assets/Animation.gif)
+
 ## Example
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
