@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Becoming a Reviewer
 
-:::note
+:::info
 To become a reviewer, you need to be proficient in event interpretations. Only EI super users have access to review.
 :::
 
