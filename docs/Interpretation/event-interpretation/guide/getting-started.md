@@ -22,7 +22,7 @@ If you're unsure about the transaction, follow these steps:
 - Use the explorer for additional details (logs, contract, token movement, accounts, input method parameters etc.)
 - Search online for the contract address to see what the app is, this will provide important context (NFT-related app, DeFi app, DEX, lending protocol, etc.)
 
-![Animation](/img/assets/animation.gif)
+![Animation](/img/assets/Animation.gif)
 
 Above, an example of what interpreting an event looks like before and after.
 
