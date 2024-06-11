@@ -8,7 +8,12 @@ export const InterpretationAppToken: React.FC = () => {
 	return (
 		<Section
 			className="border"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "0px 32px" }}
+			style={{
+				borderWidth: "1px",
+				borderStyle: "solid",
+				padding: "16px 32px",
+				marginTop: "64px",
+			}}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
 				<div
@@ -51,8 +56,8 @@ export const InterpretationAppToken: React.FC = () => {
 				</div>
 				<div style={{ minWidth: "50%", textAlign: "center" }}>
 					<Media
-						src="./videos/Event_Light.mp4"
-						darkSrc="./videos/Event_Dark.mp4"
+						src="./videos/Position_dark.mp4"
+						darkSrc="./videos/Position_dark.mp4"
 						isVideo
 						height="440px"
 					/>
