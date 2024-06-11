@@ -15,7 +15,6 @@ Together, these elements create a standardized format: This **(1)** happened, wi
 
 ![image](/img/assets/mechanics2.png)
 
-
 ## 1. The initial verb​
 
 The verb describes the action taken by the account that initiated the transaction. Common verbs include deposited, minted, swapped, claimed, borrowed, and bridged. However, these can get more complex if needed, such as Bought a Powershart Pack, Toggled nesting, or Bought a raffle ticket. The main goal is to accurately describe what action was taken in the transaction.
@@ -61,6 +60,7 @@ You don’t need to use every filter if it's not needed to describe the transact
 **“To” address** - the address the user is initiating the transaction with; this is always a smart contract, and we assume it is “owned” by an app of some sort, as the app deployed the smart contract. Usually not an ENS.
 
 ### Method Parameters
+
 Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
 In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
 

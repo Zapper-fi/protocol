@@ -17,3 +17,4 @@ This can occur if your interpretation is too specific or if the contract method 
 Failed transactions can appear in the preview. You can ignore these transaction cards. To confirm a failed transaction, click on it and check on Zapper or the explorer.
 
 :::
+

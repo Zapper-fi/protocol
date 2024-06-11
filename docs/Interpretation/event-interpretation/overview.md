@@ -40,13 +40,13 @@ Event Interpreters are used on onchain transactions to translate them into a hum
 
 We are seeing approximately 1,000,000 transactions processed daily on the Ethereum network. Despite containing valuable information and context, transactions are often challenging to parse due to factors like logs, methods, internal transactions, and obfuscation caused by business logic and gas optimizations.
 
-Zap Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
+Zapper Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
 ## Example
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
 
-```json
+```js
 {
     "type": "simple",
     "attachments": [

@@ -1,7 +1,9 @@
 ---
 sidebar_position: 2
+sidebar_label: Interpretation Guide
+pagination_label: App Tokens Interpreters Guide
 ---
-# Building an App Token Interpreter
+# App Tokens Interpreters Guide
 
 ## Components of an App Token Interpreter
 
@@ -29,11 +31,10 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 !["Add Balance" button](/img/assets/add_balance_button.png)
 
-### 2. Input the Token Address 
+### 2. Input the Token Address
 
-Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide] for more information).
+Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/factory_guide.md) for more information).
 
-<!-- TODO - add the factory guide link above -->
 A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
 
 ### 3. Select the Chain for the App Token
@@ -59,13 +60,28 @@ If you want to call a method on a contract different from the App Token's contra
 ### 5. Calculate the Price Per Share 
 
 Input the price per share of the token. This informs how much the App Token is worth in terms of the underlying token.
-    - If the token is redeemable 1-for-1 for its underlying token, you can input the number `1`.
-    - If the token requires a calculation and values from methods called on a contract, you should build that calculation in the input field. For example, the price-per-share of Compound's cUSDC token is calculated by calling the `exchangeRateStored` method on the cUSDC contract, which returns the price per share in terms of the underlying token (USDC). You then need to adjust this value to be in terms of the underlying token's decimals, which is 6 for USDC, and you add 10 to the decimal. The calculation would look like this: `@exchangeRateStored(CErc20) / 10 ^ (@decimals(FiatTokenV2_2) + 10)`. Note that the `CErc20` and `FiatTokenV2_2` are the contract names of the cUSDC and USDC tokens, respectively, as we needed to get the decimals of the underlying token to adjust the price per share.
+
+#### Simple 
+If the token is redeemable 1-for-1 for its underlying token, you can input the number `1`.
+
+#### Math Formulas 
+If the token requires a calculation and values from methods called on a contract, you should build that calculation in the input field. For example, the price-per-share of Compound's cUSDC token is calculated by calling the `exchangeRateStored` method on the cUSDC contract, which returns the price per share in terms of the underlying token (USDC). You then need to adjust this value to be in terms of the underlying token's decimals, which is 6 for USDC, and you add 10 to the decimal. 
+
+The calculation would look like this: 
+
+```js
+@exchangeRateStored(CErc20) / 10 ^ (@decimals(FiatTokenV2_2) + 10)
+```
+
+
+Note that the `CErc20` and `FiatTokenV2_2` are the contract names of the <b>cUSDC</b> and USDC tokens, respectively, as we needed to get the decimals of the underlying token to adjust the price per share.
 
 ![Inputted calculation for cUSDC](/img/assets/inputted_calculation.png)
 
 :::tip
+
 If you are unsure of the method to call on the App Token's contract to get the price per share, you can refer to the token owner's app documentation site, as they will often explain how to calculate the value of their tokens. If you are still unsure, you can ask in the Zapper Discord for help and we can help you figure it out.
+
 :::
 
 ### 6. Check the Previewed Value of the App Token
@@ -93,6 +109,5 @@ Once you've inputted all of the above, go ahead and submit the interpreter. This
     - If there are any issues, Zapper will reject your interpreter and provide commentary on what the issue was. You can then make the necessary changes and resubmit the interpreter for review again.
     - Once your interpreter is approved, you will see it reflected on the [Leaderboard](https://zapper.xyz/curate/leaderboard), and users will be able to see their balance of the App Token in the Zapper UI. Additionally, you'll be able to see the number of users who have the App Token in their wallet in your [My Submissions page](ttps://zapper.xyz/my-submissions), so you can see the impact you have across all Zapper users!
 
-<!-- TODO - Add a link to the App Token Interpreter Factory Guide -->
 <!-- TODO - Add a screenshot of My Submissions page with ATIs -->
 <!-- TODO - Add a screenshot of the Leaderboard with ATIs -->

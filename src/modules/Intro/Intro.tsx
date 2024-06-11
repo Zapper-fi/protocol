@@ -9,24 +9,25 @@ export const Intro: React.FC = () => {
 	return (
 		<header
 			style={{
-				padding: "0px 16px 16px 16px",
-				height: "calc(100vh - 60px)",
-				position: "relative",
+				padding: "16px",
+				height: "calc(100vh - 92px)",
 				zIndex: 1,
+				position: "relative",
+				display: "flex",
+				justifyContent: "center",
 			}}
 		>
 			<div
-				style={{
-					backgroundImage: "url(./img/background2.png)",
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					width: "calc(100% - 32px)", // Remove PaddingX
-					height: "calc(100% - 16px)", // Remove PaddingBottom
-					position: "absolute",
-					zIndex: -1,
-					borderRadius: "16px",
-				}}
-			/>
+				className="container"
+				style={{ height: "100%", position: "absolute", zIndex: -1 }}
+			>
+				<img
+					loading="lazy"
+					alt="illuminating the onchain world"
+					src="./img/background.png"
+					style={{ width: "100%", height: "100%", borderRadius: "16px" }}
+				/>
+			</div>
 			<div className="container" style={{ height: "100%" }}>
 				<div
 					style={{
@@ -34,7 +35,7 @@ export const Intro: React.FC = () => {
 						display: "flex",
 						alignItems: "center",
 						gap: "32px",
-						padding: "88px 0px",
+						padding: "64px",
 					}}
 				>
 					<div
@@ -48,7 +49,7 @@ export const Intro: React.FC = () => {
 						}}
 					>
 						<h1
-							style={{ color: "white", fontSize: "80px" }}
+							style={{ color: "white", fontSize: "72px" }}
 							className={styles.title}
 						>
 							{siteConfig.tagline}

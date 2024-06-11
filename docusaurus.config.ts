@@ -17,6 +17,10 @@ const config = {
 	favicon: "img/favicon.ico",
 	organizationName: "Zapper Protocol",
 	projectName: "Zapper Protocol Website",
+	themes: ["@docusaurus/theme-mermaid"],
+	markdown: {
+		mermaid: true,
+	},
 	presets: [
 		[
 			"classic",
@@ -33,6 +37,22 @@ const config = {
 	],
 
 	themeConfig: {
+		defaultMode: "dark",
+		footer: {
+			copyright: "Zapper Protocol",
+			links: [
+				{
+					position: "left",
+					label: "Discord",
+					href: "https://zapper.xyz/discord",
+				},
+				{
+					position: "left",
+					label: "Twitter",
+					href: "https://twitter.com/zapper_fi",
+				},
+			],
+		},
 		navbar: {
 			title: "Zapper Protocol",
 			logo: {
@@ -54,6 +74,7 @@ const config = {
 				},
 			],
 		},
+
 		prism: {
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
