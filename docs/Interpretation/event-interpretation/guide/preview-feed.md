@@ -4,12 +4,17 @@ sidebar_position: 4
 
 # Preview Feed 
 
-When interpreting your transaction, you will see the right side of your screen be updated automatically as you input new information about the transaction. This is a great tool to determine if you have interpreted all the transactions correctly or not. 
+When interpreting your transaction, the right side of your screen updates automatically as you input new information. This helps you determine if your interpretations are correct. 
 
-In the screenshot below, you can see that two transactions were not interpreted correctly, therefore the fields were not filled in with the right info, or maybe some details are missing. 
+In the screenshot below, two transactions were not interpreted correctly, indicating incorrect or missing details.
 
-(image)
+![previewfeed](/img/assets/previewfeed.png)
 
-This can happen if you are too specific in your interpretation or if the contract method does more than one action. In the later case you can submit a conditional event by adding a case to the interpretation, see the next section for more details. 
+This can occur if your interpretation is too specific or if the contract method performs multiple actions. In such cases, you can submit a [conditional event](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/conditionals) by adding a case to the interpretation.
 
-Important! Note that failed transactions can also appear in the preview, when this happens, you don’t have to worry about the preview shown and can just ignore that transaction card. To confirm, simply click on the transaction and look on Zapper or on the explorer to confirm it is indeed a failed transaction. 
+:::warning 
+
+Failed transactions can appear in the preview. You can ignore these transaction cards. To confirm a failed transaction, click on it and check on Zapper or the explorer.
+
+:::
+

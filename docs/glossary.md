@@ -6,13 +6,6 @@ sidebar_position: 6
 
 ## App
 
-Onchain entity
-Protocol that owns smart contract
-
-## Interpreter
-
-Someone who builds indexing templates.
-
 ## App Contract Position Interpreter (ACPI)
 
 ## App Token Interpreter (ATI)
@@ -32,3 +25,4 @@ Someone who builds indexing templates.
 ## Reviewer
 
 ## Contract Factory
+
