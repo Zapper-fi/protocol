@@ -8,7 +8,7 @@ pagination_label: Overview of App Contract Positions
 
 ## What is an App Contract Position?
 
-Like [App Tokens](/docs/Interpretation/app-token-interpretation/overview.md), App Contract Positions represent onchain investments and what their redeemable value is, in terms of underlying tokens.
+Like [App Tokens](/docs/Interpretation/app-token-interpretation/overview), App Contract Positions represent onchain investments and what their redeemable value is, in terms of underlying tokens.
 
 The key difference is in that these positions are **not tokenized**, and are a bit more arbitrary in nature.
 
