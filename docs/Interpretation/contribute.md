@@ -12,9 +12,9 @@ ANYONE can be an interpreter. You don't need to know how to code to build an int
 
 Check out our various guides on how to build interpreters:
 
-- [Event Interpreters Guide](/docs/Interpretation/event-interpretation/guide.md)
-- [App Token Interpreters Guide](/docs/Interpretation/app-token-interpretation/guide.md)
-- [App Contract Position Interpreters Guide - COMING SOON](/docs/Interpretation/app-contract-position-interpretation/guide.md)
+- [Event Interpreters Guide](/docs/interpretation/event-interpretation/guide/getting-started)
+- [App Token Interpreters Guide](/docs/interpretation/app-token-interpretation/guide)
+- [App Contract Position Interpreters Guide - COMING SOON](/docs/Interpretation/contract-position-interpretation/guide)
 <!-- TODO - update ACPI guide when ready for launch -->
 
 ## How Do I Find Uninterpreted Events, tokens, and investments?
