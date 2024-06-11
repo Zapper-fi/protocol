@@ -44,7 +44,7 @@ We currently are working on the following templates:
 
 Here's an example of what a functionin **App Token Interpreter** indexing template that surfaces user balances for all Uniswap V2 pools on Ethereum Mainnet.
 
-```json
+```js
 {
     "appId": "QXBwLTY",
     "decimals": {
