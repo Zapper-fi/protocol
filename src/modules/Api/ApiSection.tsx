@@ -3,15 +3,11 @@ import { Section } from "../../components/Section";
 import { LinkButton } from "../../components/LinkButton";
 import { PortfolioTracking } from "./PortfolioTracking";
 import { AccountTimelines } from "./AccountTimelines";
-import { TrendingOnchainApps } from "./TrendingOnchainApps";
 import { Labelling } from "./Labelling";
-import { AppFeeds } from "./AppFeeds";
 
 enum TabEnum {
 	Portfolio = "portfolio",
 	Timeline = "timeline",
-	Trending = "trending",
-	Feeds = "feeds",
 	Labels = "labels",
 }
 
@@ -76,11 +72,6 @@ export const ApiSection: React.FC = () => {
 							prices to contextualized transaction histories.
 						</h5>
 					</div>
-					<LinkButton
-						href="/docs/api/intro"
-						type="primary"
-						buttonCopy="Learn More"
-					/>
 				</div>
 			</div>
 			<Section
@@ -179,82 +170,6 @@ export const ApiSection: React.FC = () => {
 					</div>
 					<div
 						className="opacity-hover"
-						onClick={() => setActiveTab(TabEnum.Trending)}
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "120px",
-							maxWidth: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "16px",
-							cursor: "pointer",
-						}}
-					>
-						<div className="card" style={{ padding: "16px" }}>
-							<img
-								width="48px"
-								height="48px"
-								src="./img/react-icons/MdOutlineAreaChart.svg"
-								alt="DeFi"
-							/>
-						</div>
-
-						<p
-							style={{
-								marginBottom: "0px",
-								textAlign: "center",
-								fontWeight: "500",
-							}}
-						>
-							Trending Onchain Apps
-						</p>
-						<div
-							className={
-								activeTab === TabEnum.Trending ? "accent-background" : ""
-							}
-							style={{ height: "2px", display: "block", width: "48px" }}
-						/>
-					</div>
-					<div
-						className="opacity-hover"
-						onClick={() => setActiveTab(TabEnum.Feeds)}
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "120px",
-							maxWidth: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "16px",
-							cursor: "pointer",
-						}}
-					>
-						<div className="card" style={{ padding: "16px" }}>
-							<img
-								width="48px"
-								height="48px"
-								src="./img/react-icons/HiMiniSquare3Stack3D.svg"
-								alt="DeFi"
-							/>
-						</div>
-
-						<p
-							style={{
-								marginBottom: "0px",
-								textAlign: "center",
-								fontWeight: "500",
-							}}
-						>
-							App <br /> Feeds
-						</p>
-						<div
-							className={activeTab === TabEnum.Feeds ? "accent-background" : ""}
-							style={{ height: "2px", display: "block", width: "48px" }}
-						/>
-					</div>
-					<div
-						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Labels)}
 						style={{
 							display: "flex",
@@ -296,8 +211,6 @@ export const ApiSection: React.FC = () => {
 			</Section>
 			{activeTab === TabEnum.Portfolio && <PortfolioTracking />}
 			{activeTab === TabEnum.Timeline && <AccountTimelines />}
-			{activeTab === TabEnum.Trending && <TrendingOnchainApps />}
-			{activeTab === TabEnum.Feeds && <AppFeeds />}
 			{activeTab === TabEnum.Labels && <Labelling />}
 		</div>
 	);
