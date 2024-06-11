@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Review
+# Validation
 
 :::info
 A reviewer in Zap Protocol is a community member responsible for approving different types of submissions.
