@@ -86,7 +86,7 @@ export const Metrics: React.FC = () => {
 							justifyContent: "center",
 						}}
 					>
-						<h3 style={{ marginBottom: "0px" }}>10</h3>
+						<h3 style={{ marginBottom: "0px" }}>14</h3>
 						<p style={{ marginBottom: "0px", whiteSpace: "nowrap" }}>
 							Chains Supported
 						</p>
