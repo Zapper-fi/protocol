@@ -15,4 +15,4 @@ To become a reviewer, you need to be proficient in event interpretations. Only E
 
 Once you have reviewer access, you will see a new tab called Review under the curate section.
 
-[insert image]
+![Curate](/img/assets/curate2.png)
