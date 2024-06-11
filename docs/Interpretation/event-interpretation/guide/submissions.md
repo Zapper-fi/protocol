@@ -23,7 +23,7 @@ Note that you can monitor the status of your submissions and see rejection reaso
 
 :::info 
 
-If you have any questions about event interpretation, join our [Discord](https://www.zapper.xyz/discord) where Zap Protocol team members and our growing community of experienced event interpreters will be happy to help you out! Join us in the #event-interpreters channel.
+If you have any questions about event interpretation, join our [Discord](https://www.zapper.xyz/discord) where Zapper Protocol team members and our growing community of experienced event interpreters will be happy to help you out! Join us in the #event-interpreters channel.
 
 :::
 

@@ -10,7 +10,7 @@ The method name often indicates the action taken. For example, "deposit" usually
 
 ![method](/img/assets/methodname.png)
 
-Zap Protocol aims to clearly describe the blockchain, so ensure your submissions are accurate!
+Zapper Protocol aims to clearly describe the blockchain, so ensure your submissions are accurate!
 
 ## 2. Look at the logs
 

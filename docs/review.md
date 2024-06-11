@@ -5,7 +5,7 @@ sidebar_position: 3
 # Validation
 
 :::info
-A reviewer in Zap Protocol is a community member responsible for approving different types of submissions.
+A reviewer in Zapper Protocol is a community member responsible for approving different types of submissions.
 :::
 
 ## Becoming a reviewer
