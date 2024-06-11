@@ -29,9 +29,9 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 - **Token transfers:** Any tokens (ERC20 or NFT) entering or leaving a wallet. You can specify the transfer to the “from” account or the “to” account. Filters for ERC20 or NFT can be added. Here is an example of a transaction with a token transfer outflow and inflow:
 ![image](/img/assets/Swap.png)
 - **NFT Collection:** Will be used to reference a collection address available in the transaction data. The best example is when you approve a collection to be transacted on a marketplace. See example below. 
-![image](/img/assets/ApproveNFT) 
+![image](/img/assets/ApproveNFT.png) 
 - **ERC20 Token:** References a token that did not move. For example, a user can approve a token to be transferred without funds moving.
-![image](/img/assets/ApproveToken)
+![image](/img/assets/ApproveToken.png)
 - **Accounts:** References any wallet involved in the transaction, including intermediaries. Can be displayed as a full address or aliased as an ENS.
 ![image](/img/assets/SendToken.png)
 - **NFT:** Points to a specific NFT not moving in or out of the wallet. Requires the NFT collection address and token ID data.
