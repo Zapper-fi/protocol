@@ -60,13 +60,28 @@ If you want to call a method on a contract different from the App Token's contra
 ### 5. Calculate the Price Per Share 
 
 Input the price per share of the token. This informs how much the App Token is worth in terms of the underlying token.
-    - If the token is redeemable 1-for-1 for its underlying token, you can input the number `1`.
-    - If the token requires a calculation and values from methods called on a contract, you should build that calculation in the input field. For example, the price-per-share of Compound's cUSDC token is calculated by calling the `exchangeRateStored` method on the cUSDC contract, which returns the price per share in terms of the underlying token (USDC). You then need to adjust this value to be in terms of the underlying token's decimals, which is 6 for USDC, and you add 10 to the decimal. The calculation would look like this: `@exchangeRateStored(CErc20) / 10 ^ (@decimals(FiatTokenV2_2) + 10)`. Note that the `CErc20` and `FiatTokenV2_2` are the contract names of the cUSDC and USDC tokens, respectively, as we needed to get the decimals of the underlying token to adjust the price per share.
+
+#### Simple 
+If the token is redeemable 1-for-1 for its underlying token, you can input the number `1`.
+
+#### Math Formulas 
+If the token requires a calculation and values from methods called on a contract, you should build that calculation in the input field. For example, the price-per-share of Compound's cUSDC token is calculated by calling the `exchangeRateStored` method on the cUSDC contract, which returns the price per share in terms of the underlying token (USDC). You then need to adjust this value to be in terms of the underlying token's decimals, which is 6 for USDC, and you add 10 to the decimal. 
+
+The calculation would look like this: 
+
+```js
+@exchangeRateStored(CErc20) / 10 ^ (@decimals(FiatTokenV2_2) + 10)
+```
+
+
+Note that the `CErc20` and `FiatTokenV2_2` are the contract names of the <b>cUSDC</b> and USDC tokens, respectively, as we needed to get the decimals of the underlying token to adjust the price per share.
 
 ![Inputted calculation for cUSDC](/img/assets/inputted_calculation.png)
 
 :::tip
+
 If you are unsure of the method to call on the App Token's contract to get the price per share, you can refer to the token owner's app documentation site, as they will often explain how to calculate the value of their tokens. If you are still unsure, you can ask in the Zapper Discord for help and we can help you figure it out.
+
 :::
 
 ### 6. Check the Previewed Value of the App Token

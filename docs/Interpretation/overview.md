@@ -2,58 +2,234 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Introduction
 
-## Parsing Onchain Information
+## Indexing Templates
 
-At Zapper, our mission is to make all onchain information accessible and human readable. To many, onchain information you see on Etherscan can be difficult to parse and overwhelming. Users are constantly asking:
+Indexing templates are a defining primitive for the protocol. They perform two very important functions:
 
-- "What actually happened in this transaction?"
-- "What is the value of my investments?"
-- "Who owns this contract?"
+- They standardize the semantic information for an onchain entity
+- They instruct indexers on how onchain information should be indexed, transformed and stored.
 
-Zapper's protocol is built to answer these questions. We do this via what we call "Interpreters", which are essentially a set of instructions that tell Zapper Protocol how to read and interpret onchain information.
+Indexing templates are built by interpreters. At their core they are very simple JSON files that can be read as a set of instructions for an indexer. And there are many ways to build and allow the creation of these templates, and they don't require any knowledge of coding.
 
-## What is an Interpreter?
+## Event Interpretation
+Event Interpreters are used on onchain transactions to translate them into human-readable output, and augment them with contextual, and often off-chain, information. 
 
-An interpreter is a set of instructions that tells Zapper Protocol how to read and interpret onchain information. There are 3 types of interpreters we have released, or plan to release in the coming weeks:
+You can read more about Event Interpreters [here](docs/interpretation/event-interpretation/overview.md).
 
-1. **Event Interpreters (EIs)**: These interpreters parse transactions and make them human readable. Their core goal is to boil a transaction down to only its more important parts, and display only that key information to the user. [You can read more about Event Interpreters here](/docs/Interpretation/event-interpretation/overview.md).
-2. **App Token Interpreters (ATIs)**: These interpreters are used to surface information about tokenized investments users make and hold in their wallet. We refer to the tokens a user receives in return for their investment as "App Tokens". [You can read more about App Token Interpreters here](/docs/Interpretation/app-token-interpretation/overview.md).
-3. **App Contract Position Interpreters (ACPIs)**: These interpreters are used to surface information about the positions users hold on smart contracts (and therefore, are not tokenized). [You can read more about App Contract Position Interpreters here](/docs/Interpretation/app-contract-position-interpretation/overview.md).
+## App Token Interpretation
+App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The large majority of these tokens do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
 
-## Who Makes Interpreters?
+You can read more about App Token Interpreters [here](docs/interpretation/app-token-interpretation/overview.md).
 
-Interpreters are built by "Curators" on Zapper Protocol's platform. Curators build and maintain interpreters. They are the ones who define the set of instructions that tell Zapper Protocol how to read and interpret onchain information.
+## Contract Position Interpretation
+Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is in that these positions are not tokenized, and are a bit more arbitrary in nature. Contract Position Interpreters index and standardize arbitrary positions for apps.
 
-ANYONE can be an interpreter. You don't need to know how to code to build an interpreter. All you need is knowledge of a particular investment and its smart contract, or what actually occured in a given transaction.
+You can read more about Contract Position Interpreters [here](docs/interpretation/contract-position-interpretation/overview.md).
 
-## How Do I Create an Interpreter?
+## Future
+One of the main benefits of working with indexing templates, is that rather than having flexibility at the base layer, e.g. a sandbox, flexibility is maintained with the creation of new indexing templates. Anyone can create a new template, and as long as an indexer can read the instructions, it can be directly ingested by the protocol via a soft social consensus - in similar way that ERC20 is an offchain consensus as to how tokens should be built and structured.
 
-Check out our various guides on how to build interpreters:
+We currently are working on the following templates:
+- Price Interpreters: Index prices for any AMM
+- NFT Marketplace Interpreters: Index sales for any NFT marketplace
 
-- [Event Interpreters Guide](/docs/Interpretation/event-interpretation/guide.md)
-- [App Token Interpreters Guide](/docs/Interpretation/app-token-interpretation/guide.md)
-- [App Contract Position Interpreters Guide - COMING SOON](/docs/Interpretation/app-contract-position-interpretation/guide.md)
-<!-- TODO - update ACPI guide when ready for launch -->
 
-## How Do I Find Things to Interpret?
+## Example
 
-If you're looking for popular events that are not interpreted, you can go to the [Events Curate page](https://zapper.xyz/curate/events).
+Here's an example of what a functionin **App Token Interpreter** indexing template that surfaces user balances for all Uniswap V2 pools on Ethereum Mainnet.
 
-<!-- TODO - add ATI, ACPI curate pages -->
-
-## How Do I Track the Status of My Interpreter Submissions?
-
-You can track the status of your interpreter submissions on your [My Submissions page](https://zapper.xyz/my-submissions). On that page, you can see the status of your submissions and the stats on how many events or wallets your interpreters have impacted.
-
-Additionally, when the status of your submission changes, you will receive an push notification on the Zapper website. You can check your notifications by clicking the bell icon in the top right corner of the Zapper website.
-
-<!-- TODO - add screenshot of notifications -->
-
-## Do I get Credit for Building an Interpreter?
-
-Yes! Curators who build interpreters are a critical part of Zapper Protocol's ecosystem.
-
-- You can see how you stack up versus other curators on the [Curators Leaderboard](https://zapper.xyz/leaderboard).
-- You can see how many interpreters you have submitted and their stats on your [My Submissions page](https://zapper.xyz/my-submissions).
+```js
+{
+    "appId": "QXBwLTY",
+    "decimals": {
+      "expression": "val1",
+      "type": "EXPRESSION",
+      "interpolations": [
+        {
+          "signature": "function decimals() view returns (uint8)",
+          "type": "METHOD_CALL",
+          "args": [],
+          "target": {
+            "type": "REFERENCE",
+            "reference": "address"
+          }
+        }
+      ]
+    },
+    "addressFactory": {
+      "type": "FROM_LOG",
+      "resolvers": [
+        {
+          "address": {
+            "type": "STRING",
+            "value": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f"
+          },
+          "signature": "event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)",
+          "startBlock": 0,
+          "resolveData": [],
+          "resolveAddress": {
+            "type": "REFERENCE",
+            "reference": "log.args.pair"
+          }
+        }
+      ]
+    },
+    "pricePerShare": {
+      "type": "AGGREGATE",
+      "rules": [
+        {
+          "expression": "(val1 / (10 ^ val2)) / (val3 / (10 ^ val4)) + 1",
+          "type": "EXPRESSION",
+          "interpolations": [
+            {
+              "type": "SEQUENCE",
+              "steps": [
+                {
+                  "signature": "function getReserves() view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)",
+                  "type": "METHOD_CALL",
+                  "args": [],
+                  "target": {
+                    "type": "REFERENCE",
+                    "reference": "address"
+                  }
+                },
+                {
+                  "type": "REFERENCE",
+                  "reference": "step1[0]"
+                }
+              ]
+            },
+            {
+              "signature": "function decimals() view returns (uint8)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "tokens[0].address"
+              }
+            },
+            {
+              "signature": "function totalSupply() view returns (uint256)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "address"
+              }
+            },
+            {
+              "signature": "function decimals() view returns (uint8)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "address"
+              }
+            }
+          ]
+        },
+        {
+          "expression": "(val1 / (10 ^ val2)) / (val3 / (10 ^ val4))",
+          "type": "EXPRESSION",
+          "interpolations": [
+            {
+              "type": "SEQUENCE",
+              "steps": [
+                {
+                  "signature": "function getReserves() view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast)",
+                  "type": "METHOD_CALL",
+                  "args": [],
+                  "target": {
+                    "type": "REFERENCE",
+                    "reference": "address"
+                  }
+                },
+                {
+                  "type": "REFERENCE",
+                  "reference": "step1[1]"
+                }
+              ]
+            },
+            {
+              "signature": "function decimals() view returns (uint8)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "tokens[1].address"
+              }
+            },
+            {
+              "signature": "function totalSupply() view returns (uint256)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "address"
+              }
+            },
+            {
+              "signature": "function decimals() view returns (uint8)",
+              "type": "METHOD_CALL",
+              "args": [],
+              "target": {
+                "type": "REFERENCE",
+                "reference": "address"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "network": "ETHEREUM_MAINNET",
+    "tokens": {
+      "type": "AGGREGATE",
+      "rules": [
+        {
+          "type": "METHOD_CALL",
+          "signature": "function token0() view returns (address)",
+          "target": {
+            "type": "REFERENCE",
+            "reference": "address"
+          },
+          "args": []
+        },
+        {
+          "type": "METHOD_CALL",
+          "signature": "function token1() view returns (address)",
+          "target": {
+            "type": "REFERENCE",
+            "reference": "address"
+          },
+          "args": []
+        }
+      ]
+    },
+    "symbol": {
+      "type": "METHOD_CALL",
+      "signature": "function symbol() view returns (string)",
+      "target": {
+        "type": "REFERENCE",
+        "reference": "address"
+      },
+      "args": []
+    },
+    "supply": {
+      "expression": "val1",
+      "type": "EXPRESSION",
+      "interpolations": [
+        {
+          "signature": "function totalSupply() view returns (uint256)",
+          "type": "METHOD_CALL",
+          "args": [],
+          "target": {
+            "type": "REFERENCE",
+            "reference": "address"
+          }
+        }
+      ]
+  }
+}
+```

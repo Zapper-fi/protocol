@@ -75,7 +75,7 @@ Event signature used to populate pool tokens: `event PairCreated(address indexed
 Underlying token resolution: `token0()` and `token1()` methods
 Redemption value calculation: `(reserve0 / (10 ^ token0.decimals())) / (reserve1 / (10 ^ token1.decimals())) + 1`
 
-```json
+```js
 {
     "appId": "QXBwLTY",
     "decimals": {

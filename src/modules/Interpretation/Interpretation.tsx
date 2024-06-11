@@ -6,10 +6,10 @@ import { InterpretationAppToken } from "./InterpretationAppToken";
 
 export const Interpretation: React.FC = () => {
 	return (
-		<Section>
+		<Section style={{ gap: "64px", marginTop: "128px" }}>
 			<InterpretationHeader />
-			<InterpretationAppToken />
 			<InterpretationEvent />
+			<InterpretationAppToken />
 		</Section>
 	);
 };

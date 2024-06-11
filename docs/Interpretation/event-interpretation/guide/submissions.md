@@ -19,6 +19,6 @@ Note that you can monitor the status of your submissions and see rejection reaso
 - Multi-sig transactions - we are working on interpreting these events at-scale
 - Proxy contract transactions, like transactions interacting with Maker’s DSProxy contracts. We’re also working on interpreting these at scale, but they are weird
 
-If you have any questions about event interpretation or a specific case you are currently working on, please join our [Discord](https://www.zapper.xyz/discord) where Zap Protocol team members and our growing community of experienced event interpreters will be happy to help you out! Simply join us in the #event-interpreters channel.
+If you have any questions about event interpretation or a specific case you are currently working on, please join our [Discord](https://www.zapper.xyz/discord) where Zapper Protocol team members and our growing community of experienced event interpreters will be happy to help you out! Simply join us in the #event-interpreters channel.
 
 Thank you for helping us make the blockchain readable! 
