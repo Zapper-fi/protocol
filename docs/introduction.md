@@ -20,5 +20,5 @@ Zapper and Zapper Protocol are distinct entities: Zapper is a client of the prot
 $ZAP is a utility token that incentives the creation of an open interpretation layer. Token generation event (TGE) is planned for Q4 2024 / Q1 2025.
 
 ### Quick Links
-- [Litepaper](/docs/litepaper.md)
+- [Litepaper](/docs/litepaper)
 
