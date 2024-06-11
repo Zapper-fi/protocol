@@ -14,8 +14,8 @@ To become a reviewer, users must be proficient in Event Interpretations, App Tok
 
 Visit the following sections to learn more about:
 - [Event Interpretation](docs/Interpretation/event-interpretation/overview.md)
-- [App Token Interpretation](#)
-- [App Contract Position Interpretation](#)
+- [App Token Interpretation](docs/Interpretation/app-token-interpretation/overview.md)
+- [Contract Position Interpretation](docs/Interpretation/contract-position-interpretation/overview.md)
 
 :::tip
 Interested in joining the reviewer community? Join our [Discord](https://zapper.xyz/discord) or [Telegram](https://t.me/+mAVxPRsA7bE3ZDkx) to express your interest.
@@ -24,6 +24,6 @@ Interested in joining the reviewer community? Join our [Discord](https://zapper.
 ## Reviewer Guides
 
 Already a reviewer? Visit our detailed guides:
-- Event Interpretation: [EI Reviewer Guide](#)
+- Event Interpretation: [EI Reviewer Guide](docs/Interpretation/event-interpretation/reviewer-guide/reviewer-dashboard.md)
 - App Token Interpretation: **Coming Soon™**
 - App Contract Position Interpretation: **Coming Soon™**
