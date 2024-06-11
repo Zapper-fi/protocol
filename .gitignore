@@ -16,8 +16,6 @@
 .env.production.local
 
 # Remote content
-docs/CHANGELOG.md
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
