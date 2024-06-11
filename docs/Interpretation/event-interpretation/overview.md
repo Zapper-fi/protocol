@@ -42,9 +42,17 @@ We are seeing approximately 1,000,000 transactions processed daily on the Ethere
 
 Zapper Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
-## Example of an Event Interpreter
+## Key Components
 
-![Animation](/img/assets/Animation.gif)
+An event interpreter is built out of different key components. Put together these key components give structure and meaning to the interpretation. Here are these key components:
+
+**1. Description:** Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. 
+**2. Items involved:** Items could be tokens, NFTs, or any information contained in the onchain transaction. 
+**3. App:** The app through which the transaction occured is the last piece of the puzzle. 
+
+Together, these three elements give us a clear summary of the event:
+
+![image](/img/assets/mechanics2.png)
 
 ## Example
 
