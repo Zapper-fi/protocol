@@ -14,7 +14,7 @@ Once you’ve written your event interpretation, submit it for review. The Revie
   
 Note that you can monitor the status of your submissions and see rejection reasons in your [My Submissions](https://www.zapper.xyz/my-submissions) page.
 
-(image)
+![submissions](/img/assets/submissions.png)
 
 ## Events not nterpreted at this time:
 
