@@ -24,22 +24,4 @@ If you're unsure about the transaction, follow these steps:
 
 ![Animation](/img/assets/Animation.gif)
 
-Above, an example of what interpreting an event looks like before and after.
-
-Once a transaction is interpreted, the description can be used for all events with the same contract method, making thousands of transactions human-readable.
-
-## Event Interpretation video examples
-
-For those who prefer a visual preview to better understand the process of interpreting events, we put together some videos of different types of events you might encounter.
-
-**Overview of the interface:**
-[Jasper Video 1]
-
-**Example of a String extraction case:**
-[Jasper Video 2]
-
-**Example of an Address extraction case:**
-[Jasper Video 3]
-
-
 Excited to make the blockchain readable for everyone? If you want to get started with your first interpretations, you can read our detailed [Guide](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide)!
