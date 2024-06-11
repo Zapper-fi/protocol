@@ -12,13 +12,18 @@ Zapper Prootcol will get developers access to interpreted events. For more infor
 
 - **Interpreted Events**: Transactions across all supported chains that have been interpreted by Zapper Protocol. Data will be keyed on the transaction hash
 - **Interpreted Account Timelines**: Receive a paginated payload of interpreted events for a given account
+- **App Feeds**: Receive a paginated payload of interpreted events for a given app and network
 
-### App Investment Valuations
+### Portfolio Tracking
 
 Zapper Protocol will offer interpreted investment valuations. For more information on Investment Valuation Interpretation, check out our [App Token Interpretation Overview](/docs/interpretation/app-token-interpretation/overview) and [App Contract Position Interpretation Overview](/docs/interpretation/contract-position-interpretation/overview).
 
 - **Interpreted App Tokens**: Valuation of tokenized investments in apps. Payload will include the token address, balance, the underlying tokens and the fiat value. Data will be keyed on the token address, app name, and account address.
 - **Interpreted Contract Positions**: Valuation of non-tokenized investments in apps. Payload will include the contract address, balance, the underlying tokens and the fiat value. Data will be keyed on the contract address, app name, and account address.
+
+### Trending Onchain Apps
+
+Track the most popular apps onchain, based on onchain activity from contracts owned by that app
 
 ### Contract / Address Labelling
 
@@ -35,13 +40,3 @@ Zapper currently has a REST API that developers can use to access interpreted da
 We will be deprecated the REST API the GraphQL API is released, with plenty of notice given to existing users on timeline and how to migrate.
 
 Developers can read moree about Zapper's [existing REST API here](https://studio.zapper.xyz/docs/apis/getting-started).
-
-```mermaid
-
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-    
-```
