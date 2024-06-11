@@ -37,6 +37,7 @@ const config = {
 	],
 
 	themeConfig: {
+		defaultMode: "dark",
 		footer: {
 			copyright: "Zapper Protocol",
 			links: [
