@@ -56,8 +56,8 @@ export const InterpretationAppToken: React.FC = () => {
 				</div>
 				<div style={{ minWidth: "50%", textAlign: "center" }}>
 					<Media
-						src="./videos/Position_dark.mp4"
-						darkSrc="./videos/Position_dark.mp4"
+						src="./videos/Position_Dark.mp4"
+						darkSrc="./videos/Position_Dark.mp4"
 						isVideo
 						height="440px"
 					/>
