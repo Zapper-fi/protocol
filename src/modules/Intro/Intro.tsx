@@ -7,16 +7,7 @@ import { ButtonGroup } from "../../components/ButtonGroup";
 export const Intro: React.FC = () => {
 	const { siteConfig } = useDocusaurusContext();
 	return (
-		<header
-			style={{
-				padding: "32px 0px",
-				height: "calc(100vh - 126px)",
-				zIndex: 1,
-				position: "relative",
-				display: "flex",
-				justifyContent: "center",
-			}}
-		>
+		<header className="intro">
 			<div
 				className="container"
 				style={{ height: "100%", position: "absolute", zIndex: -1 }}
@@ -29,15 +20,7 @@ export const Intro: React.FC = () => {
 				/>
 			</div>
 			<div className="container" style={{ height: "100%" }}>
-				<div
-					style={{
-						height: "100%",
-						display: "flex",
-						alignItems: "center",
-						gap: "32px",
-						padding: "64px",
-					}}
-				>
+				<div className="intro__content">
 					<div
 						style={{
 							height: "100%",
