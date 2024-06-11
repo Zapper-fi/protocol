@@ -12,7 +12,7 @@ On the left side of the review page, you will find the event information submitt
 
 On the right side, you will find a preview feed to confirm if the event has been correctly interpreted for all events. Scroll down to see 12 different events with the same method to ensure accuracy.
 
-![Preview](/img/assets/preview.png)
+![Preview](/img/assets/preview2.png)
 
 ### Resources for Reviewing
 
