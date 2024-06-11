@@ -42,7 +42,7 @@ This will confirm the event interpretation and apply it to all similar events.
 After hitting the “Save and Approve” button, the event status changes from Pending to Enabled.
 :::
 
-![approved](/img/assets/approved.gif)
+![approved](/img/assets/approved2.gif)
 
 ### Rejecting an Event
 
@@ -51,3 +51,9 @@ Some events may need to be rejected for various reasons:
 - The event needs more details to be complete, and these details couldn't be found through research
 - Duplicate submissions from the same user
 - Spam submissions lacking substantive information
+
+:::note
+After hitting the “Reject” button and selecting a reason, the event status changes from Pending to Rejected.
+:::
+
+![rejected](/img/assets/rejected.gif)
