@@ -16,7 +16,7 @@ The table provides basic information about each event, such as:
 - The app
 - The submitter
 
-**[insert image]**
+![Dashboard](/img/assets/reviewer-dashboard.png)
 
 ### Steps to Review an Event
 
