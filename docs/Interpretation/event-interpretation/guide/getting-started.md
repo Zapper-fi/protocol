@@ -34,11 +34,7 @@ Here is where to add each element in the curation tool:
 
 ![image](/img/assets/mechanics1.png)
 
-Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
-
-![image](/img/EventStructure.png)
-
-To create an event, you simply have to combine these three building blocks to interpret the event. 
+Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. To create an event, you simply have to combine these three building blocks to interpret the event. 
 
 :::tip 
 
