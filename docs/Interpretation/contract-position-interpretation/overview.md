@@ -10,7 +10,7 @@ pagination_label: Overview of App Contract Positions
 
 Like [App Tokens](/docs/Interpretation/app-token-interpretation/overview), App Contract Positions represent onchain investments and what their redeemable value is, in terms of underlying tokens.
 
-The key difference is in that these positions are **not tokenized**, and are a bit more arbitrary in nature.
+The key difference is that these positions are **not tokenized**, and are a bit more arbitrary.
 
 - For App Tokens, you deposit a token and receive a token in return. Thus, it is tokenized.
 - For App Contract Positions, you deposit a token and do not receive any tokens in return. Instead, the contract you deposited into logs the investment as a position on the contract, and you can redeem the position for the underlying token at any time.
@@ -19,11 +19,11 @@ App Contract Positions are:
 
 - Generally not transferrable (though some contracts may allow you to delegate or transfer them)
 - Fungible - you deposit into a large vault, alongside all the other depositors
-- Redeemable - you can redeem your position for the underlying token at any time (unless its locked)
+- Redeemable - you can redeem your position for the underlying token at any time (unless it's locked)
 - Related to a crypto App
 
 :::info
-Note that Zapper also treats NFT-based positions as App Contract Positions, despite them being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone, and must query the contract to determine the balance.
+Note that Zapper also treats NFT-based positions as App Contract Positions, despite them being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
 :::
 
 Common examples of App Contract Positions are:
@@ -35,15 +35,15 @@ Common examples of App Contract Positions are:
 
 ## What is an App Contract Position Interpreter (ACPI)?
 
-An App Contract Position Interpreter (ACPI) is a set of rules that Zapper uses to interpret the positions you have in a contract, and calculate their value in terms of underlying tokens.
+An App Contract Position Interpreter (ACPI) is a set of rules that Zapper uses to interpret the positions you have in a contract and calculate their value in terms of underlying tokens.
 
-ALl app contract positions are redeemable for some amount of underlying token(s).
+All app contract positions are redeemable for some amount of underlying token(s).
 
 There are 5 main components to an ACPI:
 
 1. Defining what contracts & network the ACPI applies
 2. Defining the positions within a contract
-3. Defining which addresses may have a position within the contrfact
+3. Defining which addresses may have a position within the contract
 4. Defining how to resolve the underlying tokens of the positions, that the investment is redeemable for.
 5. Defining how to calculate the exchange rate of the position in terms of the underlying token(s) it is redeemable for.
 
@@ -55,7 +55,7 @@ App Contract Position Interpreters start with the basis of a contract address or
 
 The basic assumption is that the same ACPI template can be used to resolve all instances of the same contract produced by the contract factory.
 
-  For example, JPEG'd, a NFT-backed loans app, has a [contract for each NFT collection they support](https://docs.jpegd.io/jpegd-dao/tokenomics/contracts#nft-vaults). The same ACPI template can be used to resolve all instances of the same contract produced by the contract factory.
+  For example, JPEG'd, an NFT-backed loans app, has a [contract for each NFT collection it supports](https://docs.jpegd.io/jpegd-dao/tokenomics/contracts#nft-vaults). The same ACPI template can be used to resolve all instances of the same contract produced by the contract factory.
 
 ### Positions
 
