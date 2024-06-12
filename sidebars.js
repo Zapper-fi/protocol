@@ -30,20 +30,3 @@ const sidebars = {
 
 module.exports = sidebars;
 
-export default {
-  docs: [
-    {
-      type: 'category',
-      label: 'Interpretation',
-      link: {
-        type: 'generated-index',
-        title: 'Zapper Protocol',
-        description: 'Learn about the most important Zapper concepts!',
-        slug: '/docs/interpretation',
-        keywords: ['guides'],
-        image: '/img/docusaurus.png',
-      },
-      items: ['app-curation', 'app-token-interpretation', 'contract-position-interpretation', 'event-interpretation'],
-    },
-  ],
-};
