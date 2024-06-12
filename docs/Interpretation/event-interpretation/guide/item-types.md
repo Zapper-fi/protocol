@@ -18,6 +18,12 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 | **Number**          | References a number, such as the number of proposals a user voted on.                                                                                                            | ![image](/img/assets/Number.png)       |
 | **Duration**        | Refers to a time period, like locking funds for a certain period. The source scale is the contract's duration, and the target scale is how you want to display it (e.g., minutes to months). | ![image](/img/assets/Duration.png)     |
 
+:::tip 
+
+Watch this video to see an example of an EI using a "String" item to interpret. 
+
+:::
+
 :::note 
 
 You don’t need to use every filter if it's not needed to describe the transaction. For example, filtering on the token transfer standard is optional.
