@@ -2,10 +2,9 @@
 sidebar_position: 4
 ---
 
-# Item types
+# Item Types
 
 Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some events may not require to include any items, while others may have more than one to give an accurate description of the event. 
-![image](/img/assets/mechanics3.png)
 
 | **Type**            | **Description**                                                                                                                                                                  | **Example**                            |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -19,13 +18,17 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 | **Number**          | References a number, such as the number of proposals a user voted on.                                                                                                            | ![image](/img/assets/Number.png)       |
 | **Duration**        | Refers to a time period, like locking funds for a certain period. The source scale is the contract's duration, and the target scale is how you want to display it (e.g., minutes to months). | ![image](/img/assets/Duration.png)     |
 
+:::tip 
+
+Watch this video to see an example of an EI using a "String" item to interpret. 
+
+:::
+
 :::note 
 
 You don’t need to use every filter if it's not needed to describe the transaction. For example, filtering on the token transfer standard is optional.
 
 :::
-
-![image](/img/assets/mechanics14.png)
 
 ## Data Sources
 
@@ -38,16 +41,26 @@ Here are the three data source you will use most frequently.
 
 **“To” address** - the address the user is initiating the transaction with; this is always a smart contract, and we assume it is “owned” by an app of some sort, as the app deployed the smart contract. Usually not an ENS.
 
+:::tip 
+
+Here is a video example of how to extract an account address: JASPER VIDEO
+
+:::
+
 ### Method Parameters
 
 Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
 In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
 
-![image](/img/assets/mechanics15.png)
-
 To see all the input parameter data, you can open the transaction on the chain explorer. 
 
 Select Decode Input Data to see the output in a readable way.
+
+:::tip 
+
+Input data can provide specific details, such as the proposal number, in a transaction.
+
+:::
 
 ![image](/img/assets/mechanics16.png)
 
@@ -59,3 +72,8 @@ To access all the log parameter data, you can open the transaction on the chain 
 
 When selecting “Log Parameter” as the data you want to pull from in the Interpretation form, you will have a drop down menu with all available logs. You need to choose the one that better represents the information you want to extract. Eg: Selecting “Account” if you want to point to a wallet address. 
 
+:::tip 
+
+Event logs provide important transaction details, such as tracking token transfers and decentralized exchange activity. The first log of the transaction is often used to describe the transaction itself.
+
+:::
