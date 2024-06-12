@@ -44,6 +44,12 @@ To see all the input parameter data, you can open the transaction on the chain e
 
 Select Decode Input Data to see the output in a readable way.
 
+:::tip 
+
+Input data can provide specific details, such as the proposal number, in a transaction.
+
+:::
+
 ![image](/img/assets/mechanics16.png)
 
 ### Log Parameters
@@ -54,3 +60,8 @@ To access all the log parameter data, you can open the transaction on the chain 
 
 When selecting “Log Parameter” as the data you want to pull from in the Interpretation form, you will have a drop down menu with all available logs. You need to choose the one that better represents the information you want to extract. Eg: Selecting “Account” if you want to point to a wallet address. 
 
+::tip 
+
+Event logs provide important transaction details, such as tracking token transfers and decentralized exchange activity. The first log of the transaction is often used to describe the transaction itself.
+
+:::
