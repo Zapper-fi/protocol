@@ -14,10 +14,10 @@ App Token is the term Zapper uses for investable positions that are represented 
 
 1. Transferrable
 2. Fungible
-3. Redeemable for some underlying token or set of tokens, from which they dervice their value
+3. Redeemable for some underlying token or set of tokens, from which they derive their value
 4. Related to a crypto App
 
-App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
+App Tokens are commonly held directly by users, so are analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
 
 ### Common examples of app tokens are
 
@@ -27,10 +27,10 @@ App Tokens are most commonly held directly by users, so are somewhat analogous t
 - Supply and borrow positions in a lending app like Aave ([example aUSDC token](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c))
 - Or even more obscure primitives like [Curve Gauages](https://etherscan.io/address/0x49887df6fe905663cdb46c616bfbfbb50e85a265) or prize savings accounts in [PoolTogether](https://optimistic.etherscan.io/address/0x03d3ce84279cb6f54f5e6074ff0f8319d830dafe)
 
-The large majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive the value of them.
+The majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive their value of them.
 
 :::warn
-App Tokens are tokenized positions. There is a different classs of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract, and are not represented by an `ERC20` token. Examples of these are farming positions in a contract, or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
+App Tokens are tokenized positions. There is a different class of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract and are not represented by an `ERC20` token. Examples of these are farming positions in a contract or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
 :::
 
 ## What is an App Token Interpreter(ATI)?
@@ -62,11 +62,11 @@ Finally, we define how many underlying tokens an app token is redeemable for, or
 
 This is done through an expression, which is a mathematical formula that defines how many underlying tokens an app token is redeemable for. This can be as simple as inputting `1` for a token that is redeemable for 1 underlying token (a 1:1 redemption ratio), or as complex as a formula that calculates the redemption value based on the state of the contract. For example, a Uniswap V2 pair is redeemable for `reserve0 / (10 ^ token0.decimals())` amount of token0 and `reserve1 / (10 ^ token1.decimals())` amount of token1.
 
-The result of all these components is a set of rules that define how to resolve an app token. This information is assembled into a JSON object that is stored in the Zapper database, and is used to calculate the value of app tokens in user wallets.
+The result of all these components is a set of rules that define how to resolve an app token. This information is assembled into a JSON object that is stored in the Zapper database and is used to calculate the value of app tokens in user wallets.
 
 ## Example JSON Object of an ATI
 
-Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory, and calculate the redemption value of the app token.
+Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory and calculate the redemption value of the app token.
 
 Factory address: [Etherscan Link](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract)
 Event signature used to populate pool tokens: `event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)`
