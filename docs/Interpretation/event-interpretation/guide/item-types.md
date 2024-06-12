@@ -20,7 +20,7 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 
 :::tip 
 
-Watch this video to see an example of an EI using a "String" item to interpret. 
+Watch [this video](https://youtu.be/ZrGbAckfV8s) to see an example of an EI using a "String" item to interpret. 
 
 :::
 
@@ -43,26 +43,35 @@ Here are the three data source you will use most frequently.
 
 :::tip 
 
-Here is a video example of how to extract an account address: JASPER VIDEO
+Here is a [video example](https://youtu.be/QYUromXZ9sQ) of how to extract an account address
 
 :::
 
 ### Method Parameters
 
-Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
-In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
-
-To see all the input parameter data, you can open the transaction on the chain explorer. 
-
-Select Decode Input Data to see the output in a readable way.
+Refers to data in the transaction’s input fields. When selecting this option on Zapper Protocol, only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data, this will allow you to see the data in a readable way.
 
 :::tip 
 
-Input data can provide specific details, such as the proposal number, in a transaction.
+Input data can provide specific details, such as the proposal number in a transaction, or the value of token transfered, as shown below. 
 
 :::
 
-![image](/img/assets/mechanics16.png)
+```
+
+Function: transfer(address to,uint256 value)
+
+MethodID: 0xa9059cbb
+[0]:  0000000000000000000000005b5ecfc8122ba166b21d6ea26268ef97e09b2e9f
+[1]:  000000000000000000000000000000000000000000000000000000007a308480
+
+```
+
+| #   | Name  | Type    | Data                                      |
+|-----|-------|---------|-------------------------------------------|
+| 0   | to    | address | 0x5B5ECfc8122bA166b21d6Ea26268Ef97e09B2E9F |
+| 1   | value | uint256 | 2050000000                                 |
+
 
 ### Log Parameters
 

@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Often, the first element you will add in your interpretation is the verb or text describing what happened. The verb describes the action taken by the account that initiated the transaction. Common verbs include deposited, minted, swapped, claimed, borrowed, and bridged. However, these can get more complex if needed, such as Bought a Powershart Pack, Toggled nesting, or Bought a raffle ticket. The main goal is to accurately describe what action was taken in the transaction.
 
-:::info 
+:::tip  
 
 Looking at Method Parameters can be a great way to understand the action in an event. The method name often indicates the action taken. For example, "deposit" usually means the user sent tokens to an app.
 
