@@ -27,6 +27,7 @@ There are 3 key components of an App Token Interpreter:
 Note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the App Token holding, then it is not an ERC20 token and cannot be interpreted with an App Token Interpreter.
 :::
 
+---
 ## App token interpreter walkthrough
 
 ### 1. Create a new app token interpreter
