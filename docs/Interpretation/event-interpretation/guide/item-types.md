@@ -20,7 +20,7 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 
 :::tip 
 
-Watch this video to see an example of an EI using a "String" item to interpret. 
+Watch [this video](https://youtu.be/ZrGbAckfV8s) to see an example of an EI using a "String" item to interpret. 
 
 :::
 
@@ -43,7 +43,7 @@ Here are the three data source you will use most frequently.
 
 :::tip 
 
-Here is a video example of how to extract an account address: JASPER VIDEO
+Here is a [video example](https://youtu.be/QYUromXZ9sQ) of how to extract an account address
 
 :::
 
@@ -58,7 +58,7 @@ Select Decode Input Data to see the output in a readable way.
 
 :::tip 
 
-Input data can provide specific details, such as the proposal number, in a transaction.
+Input data can provide specific details, such as the proposal number, in a transaction. Or the value of token transfered, as shown below. 
 
 :::
 
