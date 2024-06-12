@@ -106,5 +106,6 @@ $ZAP is used for accessing API services & data.
 
 For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
 
+---
 ### Governance
 $ZAP will provide minimal governance for the protocol, more specifically distributing incentives.
