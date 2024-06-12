@@ -12,7 +12,7 @@ If this is your first event interpretation, start with simpler transactions and 
 
 :::
 
-To create a conditional, simply click “Add Case” to open a new section.
+To create a conditional, simply click **“Add Case”** to open a new section.
 
 You will then be able to add the specifics of the transaction. If you are familiar with coding, this works really similarly to an “if” function. In the sense that you are presenting how to interpret the event when (if) this situation occurs. “Actual” is where you will indicate the parameter to look at and “Expected” is what the outcome of this parameter you want to compare it to for this condition to apply. 
 
