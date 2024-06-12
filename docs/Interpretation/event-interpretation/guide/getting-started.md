@@ -42,6 +42,6 @@ To create an event, you simply have to combine these three building blocks to in
 
 :::tip 
 
-To get a more in-depht look at the interpretation interface, you can watch this short video. INSERT JASPER VID
+To get a more in-depht look at the interpretation interface, you can watch [this short video](https://youtu.be/WnOqA-oacSM).
 
 :::
