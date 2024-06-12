@@ -10,7 +10,7 @@ Indexing Templates are the foundation from which interpretation is built.
 
 Indexing templates are their core are simple `JSON` files - and are formatted around different standards/types. You can view an example of a JSON file event interpreter [here](/docs/interpretation/event-interpretation/overview#example).
 
-There currently exist 3 types of indexing templates within the protocol:
+There currently exists 3 types of indexing templates within the protocol:
 - **Event Interpretation**
 - **App Token Interpretation**
 - **Contract Position Interpration**
