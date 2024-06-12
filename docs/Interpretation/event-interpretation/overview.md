@@ -54,7 +54,7 @@ An event interpreter is built out of different key components. Put together thes
 
 Together, these three elements give us a clear summary of the event:
 
-![image](/img/assets/mechanics2.png)
+![image](/img/App.png)
 
 ## Example JSON Object of an EI
 
