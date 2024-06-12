@@ -5,15 +5,15 @@ sidebar_position: 3
 ---
 # Price Per Share and ATI Submission
 
-## 5. Calculate the price per share
+### 5. Calculate the price per share
 
 Input the price per share of the token. This informs how much the App Token is worth in terms of the underlying token.
 
-### Simple
+#### Simple
 
 If the token is redeemable 1-for-1 for its underlying token, you can input the number `1`.
 
-### Math formulas
+#### Math formulas
 
 If the token requires a calculation and values from methods called on a contract, you should build that calculation in the input field.
 
@@ -32,7 +32,7 @@ Note that the `CErc20` and `FiatTokenV2_2` are the contract names of the **cUSDC
 If you are unsure of the method to call on the App Token's contract to get the price per share, you can refer to the token owner's app documentation site, as they will often explain how to calculate the value of their tokens. If you are still unsure, you can ask in the Zapper Discord for help and we can help you figure it out.
 :::
 
-### 5.1 Calculating price per share for multiple underlying tokens
+#### 5.1 Calculating price per share for multiple underlying tokens
 
 If the App Token has multiple underlying tokens, you can calculate the price per share for each underlying token and sum them together.
 
@@ -57,21 +57,21 @@ Where `UniswapV2PoolContract` is the contract name of the Uniswap V2 pool token,
 The interpreter will then sum these together to get the total price per share of the pool token.
 
 ---
-## 6. Check the previewed value of the App Token
+### 6. Check the previewed value of the App Token
 
 After inputting the token address, underlying token address, and price per share, you can check the previewed value of the App Token. This will show you the value of the App Token in fiat, such as USD, as well as the value of the underlying token(s) in fiat. This will help you confirm that the App Token Interpreter is working as expected.
     - If you're unsure if you got the App Token's pricing right, consider checking the token owner's app site, as they will often list the values of their tokens.
     - Additionally, if the token trades on a DEX, you can check the price of the token on [DEXScreener](https://dexscreener.com/) or something similar.
 
 ---
-## 7. Associate the App Token interpreter with an app
+### 7. Associate the App Token interpreter with an app
 
 Once your interpreter is working as expected, you can optionally associate the interpreter with an app. You should select the app that owns the token's contract and deploy it onchain. This will allow Zapper to show the App Token's balance to users in our UI, along with any other positions the user has on that app.
     - To see the list of apps available to associate the interpreter with, start typing in the "Select App" input box to search Zapper's database for the relevant app.
     - If you cannot find the right app to associate the interpreter with, you can type in that app's name and we will add it to our database and associate this interpreter with the app.
 
 ---
-## 8. Submit the App Token interpreter
+### 8. Submit the App Token interpreter
 
 Once you've inputted all of the above, go ahead and submit the interpreter. This will place the interpreter into a `Pending` state in your [My Submissions page](https://zapper.xyz/my-submissions).
 
