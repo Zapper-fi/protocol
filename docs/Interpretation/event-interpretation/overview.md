@@ -34,6 +34,7 @@ All of this information about each transaction is available through onchain expl
 
 EIs transform the complicated technical information of an onchain transaction into a simple and clear summary.
 
+---
 ## What is an Event Interpreter (EI)
 
 Event Interpreters are used on onchain transactions to translate them into a human-readable output.
@@ -42,6 +43,7 @@ We are seeing approximately 1,000,000 transactions processed daily on the Ethere
 
 Zapper Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
+---
 ## Key Components
 
 An event interpreter is built out of different key components. Put together these key components give structure and meaning to the interpretation. Here are these key components:
