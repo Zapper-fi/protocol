@@ -13,14 +13,17 @@ Anyone can be an interpreter. You don't need to know how to code to build an int
 
 To get started contributing to Zapper Protocol, visit one of our guides
 
-| [App Token Interpretation Guide](https://protocol.zapper.xyz/docs/Interpretation/app-token-interpretation/guide/getting-started) | [Event Interpretation Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/guide/getting-started) |
-|----------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| [App Contract Position Guide](https://protocol.zapper.xyz/docs/Interpretation/contract-position-interpretation/guide)                                                                                                                            | [Reviewer Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process) |
+| Guide                                | Link  |
+|--------------------------------------|-------|
+| App Token Interpretation             | [Guide](https://protocol.zapper.xyz/docs/Interpretation/app-token-interpretation/guide/getting-started) |
+| Event Interpretation               | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/guide/getting-started) |
+| App Contract Position Interpretation | [Guide](https://protocol.zapper.xyz/docs/Interpretation/contract-position-interpretation/overview) |
+| Reviewer                             | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process) |
 
 
 ## Curator Leaderboard
 
 Some contributors like seeing how many events they have made possible thanks to their interpretations, and track their submissions. You can easily to that with the two links below. 
 
-- You can see how you stack up versus other curators on the [Curator Leaderboard](https://zapper.xyz/leaderboard).
-- You can see how many interpreters you have submitted and their stats on your [My Submissions page](https://zapper.xyz/my-submissions).
+- You can see how you stack up versus other curators on the [Curator Leaderboard](https://zapper.xyz/curate/leaderboard).
+- You can see how many interpreters you have submitted and their stats on your [My Submissions page](https://zapper.xyz/curate/my-submissions).
