@@ -20,7 +20,7 @@ To get started contributing to Zapper Protocol, visit one of our guides
 | App Contract Position Interpretation | [Guide](https://protocol.zapper.xyz/docs/Interpretation/contract-position-interpretation/overview) |
 | Validation                            | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process) |
 
-
+---
 ## Curator Leaderboard
 
 Some contributors like seeing how many events they have made possible thanks to their interpretations, and track their submissions. You can easily to that with the two links below. 
