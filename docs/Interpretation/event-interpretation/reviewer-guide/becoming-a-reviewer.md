@@ -15,5 +15,3 @@ To become a reviewer, you need to be proficient in event interpretations. Only E
 2. **Join the Community**: Join our [Discord](https://zapper.xyz/discord) or [Telegram](https://t.me/+mAVxPRsA7bE3ZDkx) to express your interest in becoming a reviewer.
 
 Once you have reviewer access, you will see a new tab called Review under the curate section.
-
-![Curate](/img/assets/curate2.png)

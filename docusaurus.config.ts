@@ -68,6 +68,12 @@ const config = {
 				},
 				{
 					position: "left",
+					label: "Litepaper",
+					to: "docs/litepaper",
+					activeBaseRegex: "docs/litepaper",
+				},
+				{
+					position: "left",
 					label: "API",
 					to: "docs/api-intro",
 					activeBaseRegex: "docs/api-intro",
