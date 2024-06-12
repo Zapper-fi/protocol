@@ -4,7 +4,18 @@ sidebar_position: 1
 
 # Introduction
 
-Welcome to Zapper Protocol's docs. Zapper Protocol offers a new open interpretation layer to blockchains which had not been available before. We are excited to have you join us in our ambitious journey in making blockchains readable to all. 
+Welcome to Zapper Protocol's docs. Zapper Protocol developed a new open interpretation layer, which allows to interpret blockchains and make them human-readable. We are excited to have you join us in our ambitious journey in making blockchains readable to all. 
+
+---
+## Zapper Protocol & Zapper
+
+- Zapper Protocol: The interpretation layer built by Zapper, surfacing onchain information.
+- Zapper: Your favorite DeFi dashboard, and a client of the protocol, using the surfaced information. 
+
+Both entities are distinct and will operate indepedently. 
+
+---
+## Index
 
 We want to make this documentation website your one-stop shop for all information about Zapper Protocol. Solid documentation is the foundation of the accesibility of the data surfaced, as well as the foundation of our contributors efforts in helping us achieve our mission. 
 
