@@ -43,7 +43,7 @@ There are 5 main components to an ACPI:
 
 1. Contracts & network the ACPI applies to
 2. Definitions
-3. Acount addresses
+3. Account addresses
 4. Underlying tokens
 5. Price per share
 
@@ -65,7 +65,7 @@ The ability to have multiple balances within a smart contract is a key different
 
 ### Account Addresses
 
-The EOAs or smart contracts that meet a certain criteria to potentially have a position within the contract. This could be all addresses that have deposited into the contract, or only a subset of addresses that have deposited into the contract, and could be keyed off of logs, or returned via a method on the contract.
+The EOAs or smart contracts meet certain criteria to potentially have a position within the contract. This could be all addresses that have been deposited into the contract, or only a subset of addresses that have been deposited into the contract, and could be keyed off of logs, or returned via a method on the contract.
 
 ### Underlying Tokens
 
