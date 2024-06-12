@@ -69,8 +69,8 @@ const config = {
 				{
 					position: "left",
 					label: "API",
-					to: "docs/api/intro",
-					activeBaseRegex: "docs/api/into",
+					to: "docs/api-intro",
+					activeBaseRegex: "docs/api-intro",
 				},
 			],
 		},
