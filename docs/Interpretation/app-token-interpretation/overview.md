@@ -19,7 +19,7 @@ App Token is the term Zapper uses for investable positions that are represented 
 
 App Tokens are commonly held directly by users, so are analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
 
-### Common examples of app tokens are
+### Common examples of App Tokens are
 
 - Staking tokens, like staking stkAave or xSUSHI ([example stkAAVE token](https://etherscan.io/token/0x4da27a545c0c5b758a6ba100e3a049001de870f5))
 - Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve ([example Uniswap v2 pool token](https://etherscan.io/token/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5))
