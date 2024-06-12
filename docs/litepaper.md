@@ -9,9 +9,11 @@ Blockchains contain rich economic and social information, yet they remain disorg
 
 As with all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first, there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly, for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
+---
 ## Mission
 At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone. Whether that is surfacing nodes that resonate with you - or simply being able to understand different entities.
 
+---
 ## Protocol Overview
 ### Zapper vs. Zapper Protocol
 Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to open up our interpretation stack for a few reasons:
@@ -90,7 +92,7 @@ In the future, many other templates can be created to fit any type of use case:
 - Social Feeds
 - Badges, Attestations
 
-
+---
 ## $ZAP - Utility Token
 ### Payment
 $ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders.
