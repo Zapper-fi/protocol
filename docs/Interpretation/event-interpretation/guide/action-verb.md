@@ -10,19 +10,13 @@ Often, the first element you will add in your interpretation is the verb or text
 
 Looking at Method Parameters can be a great way to understand the action in an event. The method name often indicates the action taken. For example, "deposit" usually means the user sent tokens to an app.
 
-::
+:::
 
 The table below lists common actions taken onchain. Curators should adapt user-submitted verbs to one of these actions when possible.
 
 :::note
 
 Not all actions will be covered by the standard verbs provided here. This table is a guideline for consistency.
-
-:::
-
-:::caution
-
-Consistency across similar transactions is crucial. When in doubt, seek a second opinion from other community members.
 
 :::
 
@@ -42,5 +36,9 @@ Consistency across similar transactions is crucial. When in doubt, seek a second
 | Played, attacked, rolled, bet, etc. | Used in gaming. Played game/Bet on something/attacked a player/etc. | Played with $1 Attacked $1 | $1 = actor that is being interacted with |
 | NONE        | Administrative tasks like “Validated transaction proofs”; “submitted report”; “Posted price feed onchain” that do not include an item type | Any text that accurately represents the event etc. | |
 
+:::caution
 
+Consistency across similar transactions is crucial. When in doubt, seek a second opinion from other community members.
+
+:::
 
