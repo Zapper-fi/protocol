@@ -18,7 +18,7 @@ To get started contributing to Zapper Protocol, visit one of our guides
 | App Token Interpretation             | [Guide](https://protocol.zapper.xyz/docs/Interpretation/app-token-interpretation/guide/getting-started) |
 | Event Interpretation               | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/guide/getting-started) |
 | App Contract Position Interpretation | [Guide](https://protocol.zapper.xyz/docs/Interpretation/contract-position-interpretation/overview) |
-| Reviewer                             | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process) |
+| Validation                            | [Guide](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process) |
 
 
 ## Curator Leaderboard
