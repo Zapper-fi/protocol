@@ -18,3 +18,9 @@ Together, these elements create a standardized format: This **(1)** happened, wi
 ![image](/img/assets/mechanics2.png)
 
 To create an event, you simply have to combine these three building blocks to interpret the event. 
+
+:::tip 
+
+To get a more in-depht look at the interpretation interface, you can watch this short video. INSERT JASPER VID
+
+:::
