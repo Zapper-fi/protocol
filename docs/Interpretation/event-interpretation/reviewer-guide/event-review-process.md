@@ -14,7 +14,18 @@ On the right side, you will find a preview feed to confirm if the event has been
 
 ![Preview](/img/assets/preview2.png)
 
-### Resources for Reviewing
+## Steps to Review an Event
+
+- Choose an event to review
+- Get more context on the chosen event
+- Review the submission
+- Approve or Reject
+
+:::tip
+Start with events on apps you are familiar with or types of transactions you have made in the past.
+:::
+
+## Resources for Reviewing
 
 - The contract address
 - The Zapper transaction card
@@ -30,7 +41,17 @@ To ensure quality across all interpretations, validate key elements of the EI be
 
 > **Note**: Validate even if the preview feed indicates all events are returning a result.
 
-![Reviewer Diagram](/img/assets/reviewer-diagram.png)
+| Question | Action if YES | Action if NO | Tips |
+|----------|----------------|--------------|------|
+| 1. Has the transaction already been interpreted? | Reject the submission and add a reason. | Go to next step | Open the transaction on Zapper to see if it’s labeled as did something. |
+| 2. Is the verb or description used to describe the initial action accurate? | Go to next step. | 1. Adjust the verb and description to make it accurate or to standardize it. See - [Event Description](/docs/Interpretation/event-interpretation/guide/action-verb)<br/> 2. Go to next step | Open the explorer to see more details on the transaction.<br/> The method name can also be a good indicator. |
+| 3. Did the user submit the correct item type? | Go to next step | 1. Select the correct item type<br/> 2. Go to next step | You might also have to add an item to make the event even more complete. |
+| 4. Is the item type as accurate and inclusive as it can be? | Go to next step | 1. Select the correct item type<br/> 2. Go to next step | Example: Selecting a token contract for an ERC20 transaction will return a result, but won’t display the inflow or outflow amount. Change the item type for a token transfer to be more accurate. |
+| 5. Does the preview return a value for all 12 previewed transactions? | Go to next step | 1. Investigate the transactions with missing information. i.e. open explorer<br/> 2. You might have to select a more inclusive item type. Go back to question 4.<br/> 3. If you find that you have to create a conditional event, create a new case and confirm the new preview before moving to next step | Failed transactions will be displayed as incomplete previews.<br/> If all the incomplete transactions in the preview are failed ones, carry on to next step |
+| 6. Did the user submit an app? | Go to next step | Go to question 8. | |
+| 7. Are you able to confirm that the submitted app is the correct one? | Go to question 9. | 1. Set the app as None<br/> 2. **Hit save and Approve** | Open the contract in the explorer to find the name of the protocol.<br/> The deployer of the contract can also give you a good idea.<br/> You can alternatively search on Github, Google, or Twitter with the contract address. |
+| 8. Are you able to find the app yourself? | Go to next step | 1. Set the app as None<br/> 2. **Hit save and Approve** | Open the contract in the explorer to find the name of the protocol.<br/> The deployer of the contract can also give you a good idea.<br/> You can alternatively search on Github, Google, or Twitter with the contract address. |
+| 9. Is the app available in the dropdown? | 1. Select the app from the dropdown<br/> 2. **Hit save and Approve** | 1. Set the app as None<br/> 2. **Hit save and Approve** | |
 
 ### Approving an Event
 
