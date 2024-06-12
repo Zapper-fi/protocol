@@ -19,8 +19,8 @@ At its core, blockchains are a technology made to set us free, connect us via th
 Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to open up our interpretation stack for a few reasons:
 - There doesn't exist a single centralized entity that will be able to organize all the onchain information when we have 1M dapps, 10M dapps, without building an open and incentivized protocol.
 - Readable onchain information should be open, commoditized, and ubiquitous.
-----
 
+---
 ### Indexing Templates
 Indexing templates are a defining primitive for the protocol. They perform two very important functions:
 - They standardize the semantic information for an onchain entity.
@@ -32,21 +32,23 @@ Indexing templates are built by interpreters. At their core, they are very simpl
 #### Examples
 - [Event Intepreter Example](/docs/interpretation/event-interpretation/overview#example)
 - [App Token Interpreter Example](/docs/interpretation/overview#example)
----
 
+---
 ### Stakeholders
 #### Curators
 These are the onchain explorers and cartographers. They scout the chain for unindexed information and build indexing templates.
 
 Initially, a portion of curators will be "Reviewers," a proto-DAO that will be incentivized to ensure quality and that interpreters are validated.
 
-
+---
 ### Indexing: Zapper
 Zapper will be indexing and distributing data originating from indexing templates.
 
+---
 ### Consumers
 They pay for readable data and use it to power their applications. Data is payable with $ZAP.
 
+---
 ### Advantages
 #### Data Quality
 Since every template specifies a strict interface and format for returning the data, it's much easier to assure consistent quality across the board, as you know exactly what to expect. Current existing solutions are code sandboxes, which makes it very difficult to build good tests.
@@ -66,6 +68,7 @@ Since smart contracts are composable with each other, we wanted to make sure tha
 A simple example:
 You are a wallet app that wants to display a readable transaction history to your users; some of these enriched transactions may contain information about DeFi assets. If an interpreter for that DeFi asset exists, you are able to extract all the contextual information for that asset.
 
+---
 ### Templates Types
 #### Event Interpreters
 Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information. You can read more about Event Interpreters [here](docs/interpretation/event-interpretation/overview).
