@@ -5,7 +5,7 @@ sidebar_position: 1
 # Litepaper
 
 ## Introduction
-Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zaper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
+Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zapper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
 
 Just as all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
