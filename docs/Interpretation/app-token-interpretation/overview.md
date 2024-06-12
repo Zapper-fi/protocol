@@ -33,6 +33,7 @@ The majority of these app tokens do not have a market price; you cannot go on an
 App Tokens are tokenized positions. There is a different class of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract and are not represented by an `ERC20` token. Examples of these are farming positions in a contract or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
 :::
 
+---
 ## What is an App Token Interpreter(ATI)?
 
 App Token Interpreters are used to index app-centric token balances for users. This can be [USDC](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) lent on Aave [aUSDC](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c), or a liquidity position for [DAI/USDC](https://etherscan.io/address/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5) you hold on Uniswap V2. All app tokens are redeemable for some amount of underlying token(s), and an App Token Interpreter is what provides the ruleset of what an app token is redeemable for.
@@ -43,6 +44,7 @@ There are 3 main components of an App Token Interpreter:
 2. Defining how to resolve the underlying token(s)
 3. Defining how many underlying tokens an app token is redeemable for
 
+---
 ## Components of an App Token Interpreter
 
 ### Contracts & Network
@@ -64,6 +66,7 @@ This is done through an expression, which is a mathematical formula that defines
 
 The result of all these components is a set of rules that define how to resolve an app token. This information is assembled into a JSON object that is stored in the Zapper database and is used to calculate the value of app tokens in user wallets.
 
+---
 ## Example JSON Object of an ATI
 
 Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory and calculate the redemption value of the app token.
