@@ -47,6 +47,7 @@ There are 5 main components to an ACPI:
 4. Underlying tokens
 5. Price per share
 
+---
 ## Components of App Contract Position Interpreter
 
 ### Contracts & Network
@@ -75,6 +76,7 @@ The token(s) that the App Contract Position is redeemable for. This could be 1 t
 
 A formula or value that defines how much the position is worth in terms of the underlying token(s). This could be a simple value, such as `1`, or a complex formula that requires calling methods on the contract to calculate.
 
+---
 ## Example
 
 ```json
