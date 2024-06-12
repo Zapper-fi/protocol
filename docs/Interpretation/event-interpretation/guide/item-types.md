@@ -62,7 +62,7 @@ Input data can provide specific details, such as the proposal number, in a trans
 
 :::
 
-'''
+```
 
 Function: transfer(address to,uint256 value)
 
@@ -70,16 +70,16 @@ MethodID: 0xa9059cbb
 [0]:  0000000000000000000000005b5ecfc8122ba166b21d6ea26268ef97e09b2e9f
 [1]:  000000000000000000000000000000000000000000000000000000007a308480
 
-'''
+```
 
-'''
+```
 
 | #   | Name  | Type    | Data                                      |
 |-----|-------|---------|-------------------------------------------|
 | 0   | to    | address | 0x5B5ECfc8122bA166b21d6Ea26268Ef97e09B2E9F |
 | 1   | value | uint256 | 2050000000                                 |
 
-'''
+```
 
 ### Log Parameters
 
