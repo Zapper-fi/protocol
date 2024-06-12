@@ -33,6 +33,7 @@ Common examples of App Contract Positions are:
 - DCA or salary stream contracts, like [Sablier's payment streams](https://etherscan.io/address/0xAFb979d9afAd1aD27C5eFf4E27226E3AB9e5dCC9) or [Balmy's (fka Mean Fiance) DCA contracts](https://etherscan.io/address/0x20bdAE1413659f47416f769a4B27044946bc9923)
 - NFT-based on positions - where you deposit an NFT into a contract and receive a position in return. Common examples are [Uniswap V3 NFTs](https://etherscan.io/address/0xc36442b4a4522e871399cd717abdd847ab11fe88)
 
+---
 ## What is an App Contract Position Interpreter (ACPI)?
 
 An App Contract Position Interpreter (ACPI) is a set of rules that Zapper uses to interpret the positions you have in a contract and calculate their value in terms of underlying tokens.
