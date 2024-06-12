@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Item types
+# Item Types
 
 Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some events may not require to include any items, while others may have more than one to give an accurate description of the event. 
 
