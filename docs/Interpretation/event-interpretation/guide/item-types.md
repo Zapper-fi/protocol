@@ -37,7 +37,7 @@ When interpreting an event, you will pull data from different sources. To excel 
 
 Here are the three data source you will use most frequently. 
 
-### Transaction fields
+### Transaction Fields
 **“From” address** - the address the transaction originated by; labeled as “from” on the scanner websites. Looks like this: 0x24CA3B4Be3E9Bd11870B5E065bB367cc1708f06C; could be aliased as an ENS (0xmarc.eth). 
 
 **“To” address** - the address the user is initiating the transaction with; this is always a smart contract, and we assume it is “owned” by an app of some sort, as the app deployed the smart contract. Usually not an ENS.

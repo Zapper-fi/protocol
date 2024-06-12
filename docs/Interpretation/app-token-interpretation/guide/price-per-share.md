@@ -64,14 +64,14 @@ After inputting the token address, underlying token address, and price per share
     - Additionally, if the token trades on a DEX, you can check the price of the token on [DEXScreener](https://dexscreener.com/) or something similar.
 
 ---
-### 7. Associate the App Token interpreter with an app
+### 7. Associate the App Token Interpreter with an app
 
 Once your interpreter is working as expected, you can optionally associate the interpreter with an app. You should select the app that owns the token's contract and deploy it onchain. This will allow Zapper to show the App Token's balance to users in our UI, along with any other positions the user has on that app.
     - To see the list of apps available to associate the interpreter with, start typing in the "Select App" input box to search Zapper's database for the relevant app.
     - If you cannot find the right app to associate the interpreter with, you can type in that app's name and we will add it to our database and associate this interpreter with the app.
 
 ---
-### 8. Submit the App Token interpreter
+### 8. Submit the App Token Interpreter
 
 Once you've inputted all of the above, go ahead and submit the interpreter. This will place the interpreter into a `Pending` state in your [My Submissions page](https://zapper.xyz/my-submissions).
 

@@ -5,7 +5,7 @@ pagination_label: Getting Started
 ---
 # App Tokens Interpreters Guide
 
-## Components of an app token interpreter
+## Components of an App Token Interpreter
 
 :::note
 This guide assumes that you have already created an App Token. If you haven't, please read the overview of [App Tokens](/docs/Interpretation/app-token-interpretation/overview).
@@ -28,9 +28,9 @@ Note that a user's balance is assumed to be based on a `balanceOf` method on the
 :::
 
 ---
-## App token interpreter walkthrough
+## App Token Interpreter walkthrough
 
-### 1. Create a new app token interpreter
+### 1. Create a new App Token Interpreter
 
 You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the App Token Interpreter option.
 
