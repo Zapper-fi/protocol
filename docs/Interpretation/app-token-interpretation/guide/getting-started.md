@@ -36,6 +36,7 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 !["Add Balance" button](/img/assets/add_balance_button.png)
 
+---
 ### 2. Input the token address
 
 Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information).
@@ -61,6 +62,7 @@ To confirm that you chose the correct log, you should see multiple app tokens in
     <figcaption>Selecting the token pair log on a [Uniswap V2 contract factory](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f).</figcaption>
     </figure>
 
+---
 ### 3. Select the chain for the app token
 
 Select the chain that the token is on. This will help Zapper fetch the token's metadata and balance information.
