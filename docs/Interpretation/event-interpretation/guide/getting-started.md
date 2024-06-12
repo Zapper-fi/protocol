@@ -22,4 +22,26 @@ First, let's assume you have basic knowledge of the transaction's purpose, such 
 
 ### 3. Build your Event
 
-Once you feel confident that you have a good understanding of what happened, it is now time to [build your event](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/building-event)!
+Once you feel confident that you have a good understanding of what happened, it is now time to build your event!
+
+Interpreting an event is simple! There are three areas to fill for an uninterpreted transaction (and not all need to be filled if unnecessary):
+
+1. [Decription](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/action-verb)
+2. [Item type(s)](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/item-types) involved
+3. The [app](https://protocol-docs-smoky.vercel.app/docs/Interpretation/event-interpretation/guide/adding-app) through which the transaction occured
+
+Here is where to add each element in the curation tool:
+
+![image](/img/assets/mechanics1.png)
+
+Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. As shown in the example below. 
+
+![image](/img/assets/mechanics2.png)
+
+To create an event, you simply have to combine these three building blocks to interpret the event. 
+
+:::tip 
+
+To get a more in-depht look at the interpretation interface, you can watch this short video. INSERT JASPER VID
+
+:::
