@@ -58,6 +58,7 @@ Together, these three elements give us a clear summary of the event:
 
 ![image](/img/EventStructure.png)
 
+---
 ## Example JSON Object of an EI
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
