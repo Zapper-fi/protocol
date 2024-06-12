@@ -26,14 +26,16 @@ Zapper Protocol will get developers access to interpreted events. For more infor
 
 ### Portfolio Tracking
 
-Zapper Protocol will offer interpreted investment valuations. For more information on Investment Valuation Interpretation, check out our [App Token Interpretation Overview](/docs/interpretation/app-token-interpretation/overview) and [App Contract Position Interpretation Overview](/docs/interpretation/contract-position-interpretation/overview).
+Zapper Protocol will offer interpreted valuations for tokens, investments and NFTs. 
+
+For more information on Investment Valuation Interpretation, check out our [App Token Interpretation Overview](/docs/interpretation/app-token-interpretation/overview) and [App Contract Position Interpretation Overview](/docs/interpretation/contract-position-interpretation/overview).
 
 - **Interpreted App Tokens**: Valuation of tokenized investments in apps. The payload will include the token address, balance, the underlying tokens, and the fiat value. Data will be keyed on the token address, app name, and account address.
 - **Interpreted Contract Positions**: Valuation of non-tokenized investments in apps. The payload will include the contract address, balance, the underlying tokens, and the fiat value. Data will be keyed on the contract address, app name, and account address.
 
-### Trending Onchain Apps
+<!-- ### Trending Onchain Apps
 
-Track the most popular apps onchain, based on onchain activity from contracts owned by that app
+Track the most popular apps onchain, based on onchain activity from contracts owned by that app -->
 
 ### Contract / Address Labelling
 

@@ -33,10 +33,6 @@ Start with events on apps you are familiar with or types of transactions you hav
 - The Zapper transaction card
 - The chain explorer
 
-:::tip
-Get a full picture of the event before approving or rejecting. Follow the right steps outlined in the next section.
-:::
-
 ---
 ## Decision Making and Checklist
 
@@ -66,11 +62,10 @@ This will confirm the event interpretation and apply it to all similar events.
 After hitting the “Save and Approve” button, the event status changes from Pending to Enabled.
 :::
 
-![approved](/img/assets/approved2.gif)
-
 ### Rejecting an Event
 
 Some events may need to be rejected for various reasons:
+
 - The event has already been interpreted (duplicate)
 - The event needs more details to be complete, and these details couldn't be found through research
 - Duplicate submissions from the same user
@@ -79,5 +74,3 @@ Some events may need to be rejected for various reasons:
 :::note
 After hitting the “Reject” button and selecting a reason, the event status changes from Pending to Rejected.
 :::
-
-![rejected](/img/assets/rejected.gif)
