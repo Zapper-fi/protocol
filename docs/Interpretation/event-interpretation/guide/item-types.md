@@ -35,6 +35,12 @@ Here are the three data source you will use most frequently.
 
 **“To” address** - the address the user is initiating the transaction with; this is always a smart contract, and we assume it is “owned” by an app of some sort, as the app deployed the smart contract. Usually not an ENS.
 
+:::tip 
+
+Here is a video example of how to extract an account address: JASPER VIDEO
+
+:::
+
 ### Method Parameters
 
 Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
@@ -60,7 +66,7 @@ To access all the log parameter data, you can open the transaction on the chain 
 
 When selecting “Log Parameter” as the data you want to pull from in the Interpretation form, you will have a drop down menu with all available logs. You need to choose the one that better represents the information you want to extract. Eg: Selecting “Account” if you want to point to a wallet address. 
 
-::tip 
+:::tip 
 
 Event logs provide important transaction details, such as tracking token transfers and decentralized exchange activity. The first log of the transaction is often used to describe the transaction itself.
 
