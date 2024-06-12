@@ -14,6 +14,7 @@ On the right side, you will find a preview feed to confirm if the event has been
 
 ![Preview](/img/assets/preview2.png)
 
+---
 ## Steps to Review an Event
 
 - Choose an event to review
@@ -25,6 +26,7 @@ On the right side, you will find a preview feed to confirm if the event has been
 Start with events on apps you are familiar with or types of transactions you have made in the past.
 :::
 
+---
 ## Resources for Reviewing
 
 - The contract address
@@ -35,6 +37,7 @@ Start with events on apps you are familiar with or types of transactions you hav
 Get a full picture of the event before approving or rejecting. Follow the right steps outlined in the next section.
 :::
 
+---
 ## Decision Making and Checklist
 
 To ensure quality across all interpretations, validate key elements of the EI before approving it.
