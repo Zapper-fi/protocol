@@ -72,14 +72,11 @@ MethodID: 0xa9059cbb
 
 ```
 
-```
-
 | #   | Name  | Type    | Data                                      |
 |-----|-------|---------|-------------------------------------------|
 | 0   | to    | address | 0x5B5ECfc8122bA166b21d6Ea26268Ef97e09B2E9F |
 | 1   | value | uint256 | 2050000000                                 |
 
-```
 
 ### Log Parameters
 
