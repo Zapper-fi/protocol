@@ -41,11 +41,11 @@ All app contract positions are redeemable for some amount of underlying token(s)
 
 There are 5 main components to an ACPI:
 
-1. Defining what contracts & network the ACPI applies
-2. Defining the positions within a contract
-3. Defining which addresses may have a position within the contract
-4. Defining how to resolve the underlying tokens of the positions, that the investment is redeemable for.
-5. Defining how to calculate the exchange rate of the position in terms of the underlying token(s) it is redeemable for.
+1. Contracts & network the ACPI applies to
+2. Definitions
+3. Acount addresses
+4. Underlying tokens
+5. Price per share
 
 ## Components of App Contract Position Interpreter
 
@@ -57,25 +57,27 @@ The basic assumption is that the same ACPI template can be used to resolve all i
 
   For example, JPEG'd, an NFT-backed loans app, has a [contract for each NFT collection it supports](https://docs.jpegd.io/jpegd-dao/tokenomics/contracts#nft-vaults). The same ACPI template can be used to resolve all instances of the same contract produced by the contract factory.
 
-### Positions
+### Definitions
 
-xxx
+The set of investment positions held within 1 smart contract. 1 smart contract can hold many different balances for same the user, across many positions. An example of this would be Master Chef farms, where multiple liquidity pool tokens can be staked within the same contract.
 
-### Addresses
+The ability to have multiple balances within a smart contract is a key differentiator between App Token Interpreters and App Contract Position Interpreters. App Tokens can only have 1 balance held within the contract, which is the user's balance of the App Token itself.
 
-xxx
+### Account Addresses
 
-### Resolving Underlying Tokens
+The EOAs or smart contracts that meet a certain criteria to potentially have a position within the contract. This could be all addresses that have deposited into the contract, or only a subset of addresses that have deposited into the contract, and could be keyed off of logs, or returned via a method on the contract.
 
-xxx
+### Underlying Tokens
 
-### Calculating Exchange Rate
+The token(s) that the App Contract Position is redeemable for. This could be 1 token, or multiple tokens, and could be sourced from a method called on the contract, or input directly into the ACPI.
 
-xxx
+### Price Per Share
+
+A formula or value that defines how much the position is worth in terms of the underlying token(s). This could be a simple value, such as `1`, or a complex formula that requires calling methods on the contract to calculate.
 
 ## Example
 
-```js
+```json
 {
   "addressFactory": {
     "type": "FROM_LOG",
