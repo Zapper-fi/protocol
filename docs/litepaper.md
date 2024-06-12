@@ -5,12 +5,12 @@ sidebar_position: 1
 # Litepaper
 
 ## Introduction
-Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zaper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
+Blockchains contain rich economic and social information, yet they remain disorganized and unreadable. Zapper Protocol is an open protocol that incentivizes the interpretation and distribution of human-readable onchain information.
 
-Just as all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
+As with all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first, there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly, for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
 ## Mission
-At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone. Wether that is surfacing nodes that resonate with you - or simply being able to understand different entities.
+At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone. Whether that is surfacing nodes that resonate with you - or simply being able to understand different entities.
 
 ## Protocol Overview
 ### Zapper vs. Zapper Protocol
@@ -33,17 +33,17 @@ Indexing templates are built by interpreters. At their core, they are very simpl
 ---
 
 ### Stakeholders
-#### Interpreters
+#### Curators
 These are the onchain explorers and cartographers. They scout the chain for unindexed information and build indexing templates.
 
-Initially, a portion of interpreters will be "Reviewers," a proto-DAO that will be incentivized to ensure quality and that interpreters are validated.
+Initially, a portion of curators will be "Reviewers," a proto-DAO that will be incentivized to ensure quality and that interpreters are validated.
 
 
 ### Indexing: Zapper
 Zapper will be indexing and distributing data originating from indexing templates.
 
 ### Consumers
-They pay for readable data and use it to power their own applications. Data is payable with $ZAP.
+They pay for readable data and use it to power their applications. Data is payable with $ZAP.
 
 ### Advantages
 #### Data Quality
@@ -66,20 +66,20 @@ You are a wallet app that wants to display a readable transaction history to you
 
 ### Templates Types
 #### Event Interpreters
-Event Interpreters are used on onchain transactions to translate them into human-readable output, and augment them with contextual, and often off-chain, information. You can read more about Event Interpreters [here](docs/interpretation/event-interpretation/overview).
+Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information. You can read more about Event Interpreters [here](docs/interpretation/event-interpretation/overview).
 
 #### App Token Interpreters
-App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The large majority of these tokens do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
+App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The majority of these tokens do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
 
 You can read more about App Token Interpreters [here](docs/interpretation/app-token-interpretation/overview).
 
-#### Contract Position Interpreters
-Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is in that these positions are not tokenized, and are a bit more arbitrary in nature. Contract Position Interpreters index and standardize arbitrary positions for apps.
+#### App Contract Position Interpreters
+Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is that these positions are not tokenized, and are a bit more arbitrary. Contract Position Interpreters index and standardize arbitrary positions for apps.
 
 You can read more about Contract Position Interpreters [here](docs/interpretation/contract-position-interpretation/overview).
 
 #### Future Interpreters
-One of the main benefits of working with indexing templates, is that rather than having flexibility at the base layer, e.g. a sandbox, flexibility is maintained with the creation of new indexing templates. Anyone can create a new template, and as long as an indexer can read the instructions, it can be directly ingested by the protocol via a soft social consensus - in similar way that ERC20 is an offchain consensus as to how tokens should be built and structured.
+One of the main benefits of working with indexing templates is that rather than having flexibility at the base layer, e.g. a sandbox, flexibility is maintained with the creation of new indexing templates. Anyone can create a new template, and as long as an indexer can read the instructions, it can be directly ingested by the protocol via a soft social consensus - in a similar way that ERC20 is an offchain consensus as to how tokens should be built and structured.
 
 We currently are working on the following templates:
 - Price Interpreters: Index prices for any AMM
@@ -95,7 +95,7 @@ In the future, many other templates can be created to fit any type of use case:
 ### Payment
 $ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders.
 
-$ZAP is distributed to interpreters who provide a valuable service in increasing the total surface of contextualized onchain data.
+$ZAP is distributed to curators who provide a valuable service in increasing the total surface of contextualized onchain data.
 
 $ZAP is used for accessing API services & data.
 
