@@ -80,7 +80,7 @@ A formula or value that defines how much the position is worth in terms of the u
 ---
 ## Example
 
-```json
+```js
 {
   "addressFactory": {
     "type": "FROM_LOG",
