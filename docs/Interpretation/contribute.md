@@ -15,7 +15,7 @@ ANYONE can be an interpreter. You don't need to know how to code to build an int
 Check out our various guides on how to build interpreters:
 
 - [Event Interpreters Guide](/docs/interpretation/event-interpretation/guide/getting-started)
-- [App Token Interpreters Guide](/docs/interpretation/app-token-interpretation/guide)
+- [App Token Interpreters Guide](/docs/interpretation/app-token-interpretation/guide/getting-started)
 - [App Contract Position Interpreters Guide](/docs/Interpretation/contract-position-interpretation/guide)
 <!-- TODO - update ACPI guide when ready for launch -->
 
@@ -30,8 +30,6 @@ If you're looking for popular events that are not interpreted, you can go to the
 You can track the status of your interpreter submissions on your [My Submissions page](https://zapper.xyz/my-submissions). On that page, you can see the status of your submissions and the stats on how many events or wallets your interpreters have impacted.
 
 Additionally, when the status of your submission changes, you will receive an push notification on the Zapper website. You can check your notifications by clicking the bell icon in the top right corner of the Zapper website.
-
-<!-- TODO - add screenshot of notifications -->
 
 ### Do I get Credit for Building an Interpreter?
 
