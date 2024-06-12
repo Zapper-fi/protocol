@@ -29,7 +29,6 @@ App Tokens are most commonly held directly by users, so are somewhat analogous t
 
 The large majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive the value of them.
 
-<!-- TODO: reference intermediary App tokens -->
 :::warn
 App Tokens are tokenized positions. There is a different classs of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract, and are not represented by an `ERC20` token. Examples of these are farming positions in a contract, or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
 :::

@@ -35,12 +35,31 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 !["Add Balance" button](/img/assets/add_balance_button.png)
 
-### 2. Input the Token Address
+### 2. Input the token address
 
 Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/factory_guide) for more information).
 
 - A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
 
-### 3. Select the Chain for the App Token
+#### 2.1 Interpretting multiple app tokens from a contract factory
+
+You can interpret many app tokens at once, if they are all created from the same contract factory and call the same methods to build their balances. This can be extremely helpful, so you don't have to create an interpreter for each App Token.
+
+:::tip
+Many protocols leverage contract factories to create their new token contracts, such as Yearn, SushiSwap, and Uniswap. If you are interpreting tokens from one of these protocols, you can likely interpret multiple tokens at once. Usually, if an app token was created by a factory, it will have a `factory` method that returns the address of the factory that created it.
+:::
+
+To interpret a contract factory, tap the toggle labelled "Advanced Mode" in the top right of the interpreter page.
+
+Next, input the contract factory address in the input box. This will fetch a list of logs that were emitted by the factory contract that contain an address value in them. You can then select the method that returns the app token address from the logs each time a new token is created.
+
+To confirm that you chose the correct log, you should see multiple app tokens in the previewed token price section on the right hand side. Once this is confirmed as correct, you can go ahead with the rest of the steps as normal to complete the interpreter.
+
+    <figure>
+    ![Logs for a Uniswap V2 factory contract](/img/assets/contract_factory_mode.png)
+    <figcaption>Selecting the token pair log on a [Uniswap V2 contract factory](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f).</figcaption>
+    </figure>
+
+### 3. Select the chain for the app token
 
 Select the chain that the token is on. This will help Zapper fetch the token's metadata and balance information.
