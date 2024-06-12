@@ -10,14 +10,16 @@ pagination_label: Overview of App Tokens
 
 App Token is the term Zapper uses for investable positions that are represented by the `ERC20` token standard. 
 
-App Tokens are:
+### App Tokens are
 
 1. Transferrable
 2. Fungible
 3. Redeemable for some underlying token or set of tokens, from which they dervice their value
 4. Related to a crypto App
 
-Common examples of app tokens are:
+App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
+
+### Common examples of app tokens are
 
 - Staking tokens, like staking stkAave or xSUSHI ([example stkAAVE token](https://etherscan.io/token/0x4da27a545c0c5b758a6ba100e3a049001de870f5))
 - Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve ([example Uniswap v2 pool token](https://etherscan.io/token/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5))
@@ -26,10 +28,6 @@ Common examples of app tokens are:
 - Or even more obscure primitives like [Curve Gauages](https://etherscan.io/address/0x49887df6fe905663cdb46c616bfbfbb50e85a265) or prize savings accounts in [PoolTogether](https://optimistic.etherscan.io/address/0x03d3ce84279cb6f54f5e6074ff0f8319d830dafe)
 
 The large majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive the value of them.
-
-App Tokens are most commonly held directly by users, so are somewhat analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
-
-<!-- TODO: reference intermediary App tokens -->
 
 :::warn
 App Tokens are tokenized positions. There is a different classs of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract, and are not represented by an `ERC20` token. Examples of these are farming positions in a contract, or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/app-contract-position-interpretation/overview) guide.
@@ -58,7 +56,7 @@ Once the contract address or factory is defined, we then define how to resolve t
 1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying tokens. For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
 2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, [Aave ETH (aETH)](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
 
-### Exchange Rate
+### Price Per Share (Exchange Rate)
 
 Finally, we define how many underlying tokens an app token is redeemable for, or the exchange rate. 
 
