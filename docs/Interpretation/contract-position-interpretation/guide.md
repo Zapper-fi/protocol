@@ -6,6 +6,6 @@ pagination_label: App Contract Position Interpreters Guide
 
 # App Contract Position Interpreters Guide
 
-## Building a App Contract Position Interpreter
+## Building an App Contract Position Interpreter
 
 Coming Soon...
