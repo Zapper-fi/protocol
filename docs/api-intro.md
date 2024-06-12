@@ -11,6 +11,7 @@ You can access Zapper's existing REST API [here](https://studio.zapper.xyz/docs/
 Zapper Protocol's GraphQL API will be released in Q4 2024, at which time users of the REST API will be asked to migrate.
 :::
 
+---
 ## Data Types
 
 The Zapper Protocol API will offer the following data types:
@@ -38,10 +39,12 @@ Track the most popular apps onchain, based on onchain activity from contracts ow
 
 This endpoint will return information about a given contract, such as its label (i.e. `Uniswap v2 DAI / USDC Pool`), as well as what app owns the contract, such as all contracts owned by Balancer V2 on Polygon Network. Data will be keyed to the account address.
 
+---
 ## Launch Timeline
 
 Zapper Protocol is targeting a Q4 2024 release of the GraphQL endpoint.
 
+---
 ## Existing REST API
 
 Zapper currently has a REST API that developers can use to access interpreted data, launched in 2022. This API provides some of the data referenced above and can be used today.

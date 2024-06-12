@@ -30,6 +30,7 @@ You don’t need to use every filter if it's not needed to describe the transact
 
 :::
 
+---
 ## Data Sources
 
 When interpreting an event, you will pull data from different sources. To excel in your Scout Explorer role, it is best to understand each of these data sources, where to find them and how they can be used in an interpretation. 

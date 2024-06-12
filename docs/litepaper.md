@@ -9,16 +9,18 @@ Blockchains contain rich economic and social information, yet they remain disorg
 
 As with all networks, blockchains exhibit similar patterns in the evolution of emergent value accrual over time. At first, there aren’t that many applications, and so it's the applications or primitives (the nodes) themselves that atomically drive value. Google is only as valuable as the quantity and variety of things one can find and do on the web. Similarly, for blockchains, the compounding of new onchain use cases and the ever-growing app creates a need for readability and aggregation.
 
+---
 ## Mission
 At its core, blockchains are a technology made to set us free, connect us via the things we value, and unlock new economic opportunities. And to achieve that vision, we need to make blockchains readable to everyone. Whether that is surfacing nodes that resonate with you - or simply being able to understand different entities.
 
+---
 ## Protocol Overview
 ### Zapper vs. Zapper Protocol
 Zapper and Zapper Protocol are two distinct entities, the former being a client of the protocol, and the latter the initial interpretation layer built by Zapper. We've decided to open up our interpretation stack for a few reasons:
 - There doesn't exist a single centralized entity that will be able to organize all the onchain information when we have 1M dapps, 10M dapps, without building an open and incentivized protocol.
 - Readable onchain information should be open, commoditized, and ubiquitous.
-----
 
+---
 ### Indexing Templates
 Indexing templates are a defining primitive for the protocol. They perform two very important functions:
 - They standardize the semantic information for an onchain entity.
@@ -30,21 +32,23 @@ Indexing templates are built by interpreters. At their core, they are very simpl
 #### Examples
 - [Event Intepreter Example](/docs/interpretation/event-interpretation/overview#example)
 - [App Token Interpreter Example](/docs/interpretation/overview#example)
----
 
+---
 ### Stakeholders
 #### Curators
 These are the onchain explorers and cartographers. They scout the chain for unindexed information and build indexing templates.
 
 Initially, a portion of curators will be "Reviewers," a proto-DAO that will be incentivized to ensure quality and that interpreters are validated.
 
-
+---
 ### Indexing: Zapper
 Zapper will be indexing and distributing data originating from indexing templates.
 
+---
 ### Consumers
 They pay for readable data and use it to power their applications. Data is payable with $ZAP.
 
+---
 ### Advantages
 #### Data Quality
 Since every template specifies a strict interface and format for returning the data, it's much easier to assure consistent quality across the board, as you know exactly what to expect. Current existing solutions are code sandboxes, which makes it very difficult to build good tests.
@@ -64,6 +68,7 @@ Since smart contracts are composable with each other, we wanted to make sure tha
 A simple example:
 You are a wallet app that wants to display a readable transaction history to your users; some of these enriched transactions may contain information about DeFi assets. If an interpreter for that DeFi asset exists, you are able to extract all the contextual information for that asset.
 
+---
 ### Templates Types
 #### Event Interpreters
 Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information. You can read more about Event Interpreters [here](docs/interpretation/event-interpretation/overview).
@@ -90,7 +95,7 @@ In the future, many other templates can be created to fit any type of use case:
 - Social Feeds
 - Badges, Attestations
 
-
+---
 ## $ZAP - Utility Token
 ### Payment
 $ZAP is the central utility token for the protocol and performs the important function of aligning incentives between the different stakeholders.
@@ -101,5 +106,6 @@ $ZAP is used for accessing API services & data.
 
 For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
 
+---
 ### Governance
 $ZAP will provide minimal governance for the protocol, more specifically distributing incentives.
