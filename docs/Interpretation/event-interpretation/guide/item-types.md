@@ -49,16 +49,11 @@ Here is a [video example](https://youtu.be/QYUromXZ9sQ) of how to extract an acc
 
 ### Method Parameters
 
-Refers to data in the transaction’s input fields. Only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data.
-In the example below, we selected account as the type, we are only seeing the [0] option, cause it’s the only one with an address. [0] refers to the first field in the method bracket, [1] to the second field, [2] to the third, and so on.
-
-To see all the input parameter data, you can open the transaction on the chain explorer. 
-
-Select Decode Input Data to see the output in a readable way.
+Refers to data in the transaction’s input fields. When selecting this option on Zapper Protocol, only input matching the selected type is shown. To see all input parameter data, open the transaction on the chain explorer and select Decode Input Data, this will allow you to see the data in a readable way.
 
 :::tip 
 
-Input data can provide specific details, such as the proposal number, in a transaction. Or the value of token transfered, as shown below. 
+Input data can provide specific details, such as the proposal number in a transaction, or the value of token transfered, as shown below. 
 
 :::
 
