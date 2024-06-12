@@ -1,11 +1,10 @@
 ---
 sidebar_position: 4
-sidebar_label: Underlying Tokens
 pagination_label: ATI Video Walkthrough
 ---
 # Video Walkthrough
 
-This video will guide you through the process of interpreting an App Token with multiple underlying tokens.
+This video will guide you through the process of creating an App Token Interpreter.
 
 <iframe
   width="560"
