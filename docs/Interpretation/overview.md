@@ -8,19 +8,19 @@ sidebar_position: 1
 
 Indexing Templates are the foundation from which interpretation is built.
 
-Indexing templates are their core are simple `JSON` files - and are formatted around different standards / types. You can view an example of a JSON file event interpreter [here](/docs/interpretation/event-interpretation/overview#example).
+Indexing templates are their core are simple `JSON` files - and are formatted around different standards/types. You can view an example of a JSON file event interpreter [here](/docs/interpretation/event-interpretation/overview#example).
 
-There currently exists 3 types of indexing templates within the protocol:
-- <b>Event Interpretation</b>
-- <b>App Token Interpretation</b>
-- <b>Contract Position Interpration</b>
+There currently exist 3 types of indexing templates within the protocol:
+- **Event Interpretation**
+- **App Token Interpretation**
+- **Contract Position Interpration**
 
-The last two are both a subset of what we call `position interpretation` which have as a goal to present contextual financial positions or assets in different onchain apps.
+The last two are both a subset of what we call `position interpretation` which has as a goal to present contextual financial positions or assets in different onchain apps.
 
 
 ## Event Interpretation
 
-Event Interpreters are used on onchain transactions to translate them into human-readable output, and augment them with contextual, and often off-chain, information.
+Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information.
 
 You can read more about Event Interpreters [here](/docs/interpretation/event-interpretation/overview).
 
@@ -32,13 +32,13 @@ You can read more about App Token Interpreters [here](/docs/interpretation/app-t
 
 ## Contract Position Interpretation
 
-Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is in that these positions are not tokenized, and are a bit more arbitrary in nature. Contract Position Interpreters index and standardize arbitrary positions for apps.
+Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is that these positions are not tokenized, and are a bit more arbitrary. Contract Position Interpreters index and standardize arbitrary positions for apps.
 
 You can read more about Contract Position Interpreters [here](/docs/interpretation/contract-position-interpretation/overview).
 
 ## Future
 
-One of the main benefits of working with indexing templates, is that rather than having flexibility at the base layer, e.g. a sandbox, flexibility is maintained with the creation of new indexing templates. Anyone can create a new template, and as long as an indexer can read the instructions, it can be directly ingested by the protocol via a soft social consensus - in similar way that ERC20 is an offchain consensus as to how tokens should be built and structured.
+One of the main benefits of working with indexing templates is that rather than having flexibility at the base layer, e.g. a sandbox, flexibility is maintained with the creation of new indexing templates. Anyone can create a new template, and as long as an indexer can read the instructions, it can be directly ingested by the protocol via a soft social consensus - in a similar way that ERC20 is an offchain consensus as to how tokens should be built and structured.
 
 We currently are working on the following templates:
 
