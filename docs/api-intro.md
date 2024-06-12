@@ -6,8 +6,9 @@ sidebar_position: 5
 
 Zapper Protocol will be offering a GraphQL API for developers to access interpreted data. This API will be the primary way for developers to access onchain data from Zapper Protocol.
 
-:::info
-You can access Zapper's the existing REST API [here](https://studio.zapper.xyz/docs/apis/getting-started). Zapper Protocol's GraphQL API will be released in Q4 2024, at which time users of the REST API will be asked to migrate.
+:::tip
+You can access Zapper's existing REST API [here](https://studio.zapper.xyz/docs/apis/getting-started), which supports portfolio tracking capabilities.
+Zapper Protocol's GraphQL API will be released in Q4 2024, at which time users of the REST API will be asked to migrate.
 :::
 
 ## Data Types
