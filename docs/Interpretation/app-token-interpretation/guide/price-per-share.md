@@ -56,18 +56,21 @@ Where `UniswapV2PoolContract` is the contract name of the Uniswap V2 pool token,
 
 The interpreter will then sum these together to get the total price per share of the pool token.
 
+---
 ## 6. Check the previewed value of the App Token
 
 After inputting the token address, underlying token address, and price per share, you can check the previewed value of the App Token. This will show you the value of the App Token in fiat, such as USD, as well as the value of the underlying token(s) in fiat. This will help you confirm that the App Token Interpreter is working as expected.
     - If you're unsure if you got the App Token's pricing right, consider checking the token owner's app site, as they will often list the values of their tokens.
     - Additionally, if the token trades on a DEX, you can check the price of the token on [DEXScreener](https://dexscreener.com/) or something similar.
 
+---
 ## 7. Associate the App Token interpreter with an app
 
 Once your interpreter is working as expected, you can optionally associate the interpreter with an app. You should select the app that owns the token's contract and deploy it onchain. This will allow Zapper to show the App Token's balance to users in our UI, along with any other positions the user has on that app.
     - To see the list of apps available to associate the interpreter with, start typing in the "Select App" input box to search Zapper's database for the relevant app.
     - If you cannot find the right app to associate the interpreter with, you can type in that app's name and we will add it to our database and associate this interpreter with the app.
 
+---
 ## 8. Submit the App Token interpreter
 
 Once you've inputted all of the above, go ahead and submit the interpreter. This will place the interpreter into a `Pending` state in your [My Submissions page](https://zapper.xyz/my-submissions).
