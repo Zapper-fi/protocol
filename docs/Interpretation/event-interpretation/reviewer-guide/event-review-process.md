@@ -14,7 +14,18 @@ On the right side, you will find a preview feed to confirm if the event has been
 
 ![Preview](/img/assets/preview2.png)
 
-### Resources for Reviewing
+## Steps to Review an Event
+
+- Choose an event to review
+- Get more context on the chosen event
+- Review the submission
+- Approve or Reject
+
+:::tip
+Start with events on apps you are familiar with or types of transactions you have made in the past.
+:::
+
+## Resources for Reviewing
 
 - The contract address
 - The Zapper transaction card
