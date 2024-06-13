@@ -73,7 +73,7 @@ export const ApiSection: React.FC = () => {
 						</p>
 					</div>
 					<LinkButton
-						href="/docs/api/intro"
+						href="/docs/api-intro"
 						type="primary"
 						buttonCopy="Learn More"
 					/>
