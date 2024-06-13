@@ -44,9 +44,9 @@ export const InterpretationAppToken: React.FC = () => {
 					</h2>
 					<p className="text-alt-color">
 						App Token Interpreters are used to index app-centric token balances
-						for users. This can be loans, deposits, amount staked, etc... The
-						large majority of these tokens do not have a market price; rather,
-						they have a redeemable price to unlock an underlying token.
+						for users. This can be loans, deposits, pools, etc... The
+						majority of these tokens do not have a market price; rather,
+						they are priced based on the tokens they are redeemable for.
 					</p>
 					<ButtonGroup>
 						<LinkButton
