@@ -8,7 +8,7 @@ pagination_label: Getting Started
 ## Components of an App Token Interpreter
 
 :::note
-This guide assumes that you have already created an App Token. If you haven't, please read the overview of [App Tokens](/docs/learning-center).
+This guide assumes that you have already created an App Token. If you haven't, please read the overview of [App Tokens](/docs/learning-center#app-token-interpretation).
 :::
 
 This guide will walk you through building an App Token Interpreter. An App Token Interpreter is the ruleset that Zapper uses to interpret the value of an App Token for any user's balance.
