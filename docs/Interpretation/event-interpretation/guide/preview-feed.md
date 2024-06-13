@@ -10,7 +10,7 @@ When interpreting your transaction, the right side of your screen updates automa
 
 In the screenshot below, two transactions were not interpreted correctly, indicating incorrect or missing details.
 
-![previewfeed](/img/assets/previewfeed.png)
+![previewfeed](/img/assets/Confirming-your-Work.png)
 
 This can occur if your interpretation is too specific or if the contract method performs multiple actions. In such cases, you can submit a [conditional event](/docs/interpretation/event-interpretation/guide/conditionals) by adding a case to the interpretation.
 
