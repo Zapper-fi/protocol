@@ -20,24 +20,24 @@ Click on the appropriate link below to reach the subject you are curious to lear
 
 ### Litepaper
 
-Read our [Litepaper](https://protocol.zapper.xyz/docs/litepaper) to learn more about the protocol, the different actors involved and about its mission. You will also find information about the $ZAP token, our utility token that incentivizes the creation of an open interpretation layer.
+Read our [Litepaper](/docs/litepaper) to learn more about the protocol, the different actors involved and about its mission. You will also find information about the $ZAP token, our utility token that incentivizes the creation of an open interpretation layer.
 
 ### Contribute
 
-To get started on [contributing](https://protocol-docs-git-fredlach-final-countdown-zapper-fi.vercel.app/docs/Interpretation/contribute) to Zapper Protocol and help make the blockchain human readable. There are different ways to get involved, visit this page to learn about how you can start building. 
+To get started on [contributing](/docs/interpretation/contribute) to Zapper Protocol and help make the blockchain human readable. There are different ways to get involved, visit this page to learn about how you can start building. 
 
 ### Interpretation
 
-To understand how [interpretation](https://protocol.zapper.xyz/docs/interpretation/overview) works on Zapper Protocol and the different templates currently available. This section also includes detailed "how-to" guides to help our curating community deliver quality data for the protocol. 
+To understand how [interpretation](/docs/interpretation/overview) works on Zapper Protocol and the different templates currently available. This section also includes detailed "how-to" guides to help our curating community deliver quality data for the protocol. 
 
 ### Validation
 
-[Validation](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/becoming-a-reviewer) is the final step before interpreted data becomes available. To learn how to become a reviewer for Zapper Protocol, and how to get reviews done. Includes a decision tree to assist reviewers in confirming that all data made public is accurate. 
+[Validation](/docs/review) is the final step before interpreted data becomes available. To learn how to become a reviewer for Zapper Protocol, and how to get reviews done. Includes a decision tree to assist reviewers in confirming that all data made public is accurate. 
 
 ## API
 
-Zapper Protocol offers [API](https://protocol.zapper.xyz/docs/api-intro) services. Click the link above to learn about the available data types as well as upcoming products who will be made available. 
+Zapper Protocol offers [API](/docs/api-intro) services. Click the link above to learn about the available data types as well as upcoming products who will be made available. 
 
 ## Glossary
 
-We have put up this [glossary](https://protocol.zapper.xyz/docs/Interpretation/event-interpretation/reviewer-guide/becoming-a-reviewer) together to help understanding the protocol and its subtelties better. 
+We have put up this [glossary](/docs/glossary) together to help understanding the protocol and its subtelties better. 
