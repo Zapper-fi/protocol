@@ -32,7 +32,7 @@ Note that a user's balance is assumed to be based on a `balanceOf` method on the
 ## App Token Interpreter walkthrough
 
 :::info
-The key points of the following guide are also available in a video walkthrough [here](/docs/Interpretation/app-token-interpretation/guide/video-walkthrough).
+The key points of the following guide are also available in a video walkthrough [here](/docs/learning-center#app-token-interpretation).
 :::
 
 ### 1. Create a new App Token Interpreter
