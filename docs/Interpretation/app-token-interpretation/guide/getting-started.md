@@ -39,7 +39,7 @@ The key points of the following guide are also available in a video walkthrough 
 
 You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the App Token Interpreter option.
 
-!["Add Balance" button](/img/assets/add_balance_button.png)
+!["Add Balance" button](/img/assets/Create-new-ATI.png)
 
 ---
 
@@ -64,7 +64,7 @@ Next, input the contract factory address in the input box. This will fetch a lis
 To confirm that you chose the correct log, you should see multiple app tokens in the previewed token price section on the right-hand side. Once this is confirmed as correct, you can go ahead with the rest of the steps as normal to complete the interpreter.
 
     <figure>
-    ![Logs for a Uniswap V2 factory contract](/img/assets/contract_factory_mode.png)
+    ![Logs for a Uniswap V2 factory contract](/img/assets/Interpreting-multiple-app-tokens-from-contract-factory.png)
     <figcaption>Selecting the token pair log on a [Uniswap V2 contract factory](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f).</figcaption>
     </figure>
 

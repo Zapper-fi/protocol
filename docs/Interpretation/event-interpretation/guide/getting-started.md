@@ -35,7 +35,7 @@ Interpreting an event is simple! There are three areas to fill for an uninterpre
 
 Here is where to add each element in the curation tool:
 
-![image](/img/assets/mechanics1.png)
+![image](/img/assets/Buildyourevent.png)
 
 Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. To create an event, you simply have to combine these three building blocks to interpret the event. 
 
