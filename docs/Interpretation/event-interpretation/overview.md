@@ -63,7 +63,7 @@ The app through which the transaction occured is the last piece of the puzzle. C
 
 Together, these three elements give us a clear summary of the event:
 
-![image](/img/EventStructure.png)
+![image](/img/assets/App.png)
 
 ---
 ## Example JSON Object of an EI
