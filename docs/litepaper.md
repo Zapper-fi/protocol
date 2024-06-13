@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Litepaper
 ---
 
-<!-- ![hero image](/img/assets/litepaper_hero.png) -->
+![hero image](/img/assets/litepaper_hero_image.png)
 
 # Litepaper
 
