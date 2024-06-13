@@ -6,6 +6,27 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width: 750px) {
+        padding: 0px
+    }
+
+    .container {
+        @media screen and (max-width: 750px) {
+            padding: 0px
+        }
+    }
+
+    &__background {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+
+        @media screen and (max-width: 750px) {
+            border-radius: 0px;
+        }
+    }
+
 
     &__content {
         height: 100%;
@@ -15,8 +36,21 @@
         padding: 64px;
 
         @media screen and (max-width: 750px) {
-            padding: 16px,
+            padding: 64px 16px,
         }
+
+
+        h1 {
+
+            font-size: 72px;
+            color: white;
+
+            @media screen and (max-width: 750px) {
+                font-size: 60px;
+            }
+        }
+
+        
     }
    
 }

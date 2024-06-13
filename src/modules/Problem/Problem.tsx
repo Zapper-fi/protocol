@@ -5,20 +5,7 @@ import React from "react";
 export const Problem: React.FC = () => {
 	return (
 		<Section>
-			<div
-				className="border"
-				style={{
-					display: "flex",
-					gap: "32px",
-					padding: "64px 64px",
-					borderWidth: "4px",
-					borderStyle: "double",
-					alignItems: "center",
-					marginTop: "64px",
-					flexWrap: "wrap",
-					justifyContent: "space-between",
-				}}
-			>
+			<div className="border problem__section">
 				<div style={{ flex: 1 }}>
 					<h2
 						style={{
@@ -32,7 +19,7 @@ export const Problem: React.FC = () => {
 						Onchain information is disorganized and unreadable.
 					</h2>
 				</div>
-				<div style={{ flex: 1, minWidth: "500px" }}>
+				<div className="problem__section__description">
 					<h5 color="" style={{ fontWeight: "normal", lineHeight: "28px" }}>
 						The amount of onchain applications is increasing exponentially - no
 						centralized entity will be able to organize everything.

@@ -1,7 +1,5 @@
 import React from "react";
 import { Section } from "../../components/Section";
-import { ButtonGroup } from "../../components/ButtonGroup";
-import { LinkButton } from "../../components/LinkButton";
 
 enum PortfolioTrackingType {
 	AppHoldings = "App Holdings",
@@ -34,7 +32,7 @@ export const PortfolioTracking: React.FC = () => {
 						gap: "4px",
 						flex: 1,
 						height: "fit-content",
-						minWidth: "500px",
+						minWidth: "320px",
 					}}
 				>
 					<div
@@ -160,7 +158,7 @@ export const PortfolioTracking: React.FC = () => {
 							width="100%"
 							src="./img/assets/App_holdings.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: "contain", width: "100%", minWidth: "320px" }}
 						/>
 					)}
 					{selectedType === PortfolioTrackingType.Tokens && (
@@ -169,16 +167,16 @@ export const PortfolioTracking: React.FC = () => {
 							width="100%"
 							src="./img/assets/Tokens.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: "contain", width: "100%", minWidth: "320px" }}
 						/>
 					)}
 					{selectedType === PortfolioTrackingType.Nfts && (
 						<img
 							height="100%"
 							width="100%"
-							src="./img/assets/Nft.svg"
+							src="./img/assets/NFT.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: "contain", width: "100%", minWidth: "320px" }}
 						/>
 					)}
 				</div>

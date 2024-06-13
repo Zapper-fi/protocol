@@ -304,3 +304,37 @@
     }
   }
 
+
+  .problem__section {
+    display: flex;
+    gap: 32px;
+    padding: 64px;
+    border-width: 4px;
+    border-style: double;
+    align-items: center;
+    margin-top: 64px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+      @media screen and (max-width: 750px) {
+        padding: 0px;
+        border: none;
+    }
+
+    h2 {
+      @media screen and (max-width: 750px) {
+      font-size: 28px !important;
+      min-width: initial !important;
+      }
+    }
+
+    &__description {
+      flex: 1;
+      min-width: 500px;
+
+      @media screen and (max-width: 750px) {
+        min-width: 100%;
+      }
+    }
+  }
+

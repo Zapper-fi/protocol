@@ -36,12 +36,7 @@ export const Intro: React.FC = () => {
 							maxWidth: "540px",
 						}}
 					>
-						<h1
-							style={{ color: "white", fontSize: "72px" }}
-							className={styles.title}
-						>
-							{siteConfig.tagline}
-						</h1>
+						<h1 className={styles.title}>{siteConfig.tagline}</h1>
 						<div
 							style={{
 								display: "flex",
