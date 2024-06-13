@@ -40,4 +40,4 @@ Zapper Protocol offers [API](/docs/api-intro) services. Click the link above to 
 
 ## Glossary
 
-We have put up this [glossary](/docs/Interpretation/event-interpretation/reviewer-guide/becoming-a-reviewer) together to help understanding the protocol and its subtelties better. 
+We have put up this [glossary](/docs/glossary) together to help understanding the protocol and its subtelties better. 
