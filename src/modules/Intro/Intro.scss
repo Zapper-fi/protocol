@@ -35,8 +35,24 @@
         gap: 32px;
         padding: 64px;
 
+        &__child {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            max-width: 540px;
+
+            @media screen and (max-width: 750px) {
+                max-width: 100%;
+                height: 600px;
+            }
+    
+        }
+
         @media screen and (max-width: 750px) {
-            padding: 64px 16px,
+            padding: 64px 16px;
+            height: 880px;
         }
 
 
@@ -46,7 +62,11 @@
             color: white;
 
             @media screen and (max-width: 750px) {
-                font-size: 60px;
+                font-size: 62px;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 44px;
             }
         }
 

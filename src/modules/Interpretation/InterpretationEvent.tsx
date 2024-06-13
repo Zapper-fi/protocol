@@ -6,7 +6,7 @@ import { Media } from "../../components/Media";
 
 export const InterpretationEvent: React.FC = () => {
 	return (
-		<Section style={{ padding: "0px 32px" }}>
+		<Section className="no-padding-mobile" style={{ padding: "0px 32px" }}>
 			<div
 				style={{
 					display: "flex",
@@ -18,6 +18,7 @@ export const InterpretationEvent: React.FC = () => {
 				}}
 			>
 				<div
+					className="full-width-mobile"
 					style={{
 						display: "flex",
 						flexDirection: "column",
@@ -27,6 +28,7 @@ export const InterpretationEvent: React.FC = () => {
 					}}
 				>
 					<h2
+						className="mobile-wrap"
 						style={{
 							flex: 1,
 							fontWeight: "600",

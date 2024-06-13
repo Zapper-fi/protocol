@@ -80,13 +80,14 @@ export const ApiSection: React.FC = () => {
 				</div>
 			</div>
 			<Section
-				className="border"
+				className="border mobile-padding hide-mobile"
 				style={{
 					margin: "32px 0px",
 					alignItems: "center",
 				}}
 			>
 				<div
+					className="full-width-mobile"
 					style={{
 						display: "flex",
 						gap: "16px",

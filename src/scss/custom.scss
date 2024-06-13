@@ -338,3 +338,35 @@
     }
   }
 
+  .mobile-padding {
+    @media screen and (max-width: 750px) {
+      padding: 16px !important;
+    }
+  }
+
+  .no-padding-mobile {
+    @media screen and (max-width: 750px) {
+      padding: 0px !important;
+    }
+  }
+
+  .full-width-mobile {
+    @media screen and (max-width: 750px) {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .mobile-wrap {
+    @media screen and (max-width: 750px) {
+      white-space: break-spaces !important;
+    }
+  }
+
+  .hide-mobile {
+    @media screen and (max-width: 750px) {
+      display: none !important;
+    }
+  }
+

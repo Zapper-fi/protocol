@@ -6,7 +6,10 @@ import { Media } from "../../components/Media";
 
 export const Token: React.FC = () => {
 	return (
-		<Section className="border" style={{ padding: "64px 32px" }}>
+		<Section
+			className="border no-padding-mobile"
+			style={{ padding: "64px 32px" }}
+		>
 			<div
 				style={{
 					display: "flex",

@@ -16,26 +16,12 @@ export const Intro: React.FC = () => {
 					loading="lazy"
 					alt="illuminating the onchain world"
 					src="./img/background.png"
-					style={{
-						width: "100%",
-						height: "100%",
-						borderRadius: "16px",
-						objectFit: "cover",
-					}}
+					className="intro__background"
 				/>
 			</div>
 			<div className="container" style={{ height: "100%" }}>
 				<div className="intro__content">
-					<div
-						style={{
-							height: "100%",
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "flex-start",
-							justifyContent: "space-between",
-							maxWidth: "540px",
-						}}
-					>
+					<div className="intro__content__child">
 						<h1 className={styles.title}>{siteConfig.tagline}</h1>
 						<div
 							style={{

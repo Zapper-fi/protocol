@@ -14,7 +14,7 @@ export const PortfolioTracking: React.FC = () => {
 
 	return (
 		<Section
-			className="border"
+			className="border hide-mobile"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div
@@ -154,6 +154,7 @@ export const PortfolioTracking: React.FC = () => {
 				<div style={{ flex: 1, textAlign: "center", height: "420px" }}>
 					{selectedType === PortfolioTrackingType.AppHoldings && (
 						<img
+							className="full-width-mobile"
 							height="100%"
 							width="100%"
 							src="./img/assets/App_holdings.svg"
@@ -163,6 +164,7 @@ export const PortfolioTracking: React.FC = () => {
 					)}
 					{selectedType === PortfolioTrackingType.Tokens && (
 						<img
+							className="full-width-mobile"
 							height="100%"
 							width="100%"
 							src="./img/assets/Tokens.svg"
@@ -172,6 +174,7 @@ export const PortfolioTracking: React.FC = () => {
 					)}
 					{selectedType === PortfolioTrackingType.Nfts && (
 						<img
+							className="full-width-mobile"
 							height="100%"
 							width="100%"
 							src="./img/assets/NFT.svg"

@@ -14,7 +14,7 @@ export const AccountTimelines: React.FC = () => {
 
 	return (
 		<Section
-			className="border"
+			className="border hide-mobile"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div

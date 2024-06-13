@@ -1,12 +1,10 @@
 import React from "react";
 import { Section } from "../../components/Section";
-import { ButtonGroup } from "../../components/ButtonGroup";
-import { LinkButton } from "../../components/LinkButton";
 
 export const Labelling: React.FC = () => {
 	return (
 		<Section
-			className="border"
+			className="border hide-mobile"
 			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
 		>
 			<div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
