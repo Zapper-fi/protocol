@@ -50,6 +50,68 @@
     --ifm-default-background: #fff;
     --ifm-text-alt-color: #4b5871;
 
+    // other colors
+    --ifm-color-success: #00d897;
+    --ifm-color-info: #009fff;
+    --ifm-color-warning: #ffbe0b;
+    --ifm-color-danger: #f1356e;
+
+    //note
+    --ifm-color-secondary-dark: rgb(212, 213, 216);
+    --ifm-color-secondary-darker: rgb(200, 201, 204);
+    --ifm-color-secondary-darkest: rgb(164, 166, 168);
+    --ifm-color-secondary-light: rgb(238, 240, 242);
+    --ifm-color-secondary-lighter: rgb(241, 242, 245);
+    --ifm-color-secondary-lightest: rgb(245, 246, 248);
+    
+    // warning
+    --ifm-color-warning-dark:  #ffbe0b;
+    --ifm-color-warning-darker:  #ffbe0b;
+    --ifm-color-warning-darkest:  #ffbe0b;
+    --ifm-color-warning-light: rgb(255, 196, 38);
+    --ifm-color-warning-lighter: rgb(255, 207, 77);
+    --ifm-color-warning-lightest: rgb(255, 221, 128);
+
+    // danger
+    --ifm-color-danger-dark: #f1356e;
+    --ifm-color-danger-darker: #f1356e;
+    --ifm-color-danger-darkest: #f1356e;
+    --ifm-color-danger-light: rgb(251, 86, 91);
+    --ifm-color-danger-lighter: rgb(251, 116, 120);
+    --ifm-color-danger-lightest: rgb(253, 156, 159);
+
+    // success
+    --ifm-color-success-dark: #00d897;
+    --ifm-color-success-darker: #00d897;
+    --ifm-color-success-darkest: #00d897;
+    --ifm-color-success-light: rgba(0, 216, 51, 0.25);
+    --ifm-color-success-lighter: rgba(0, 216, 51, 0.25);
+    --ifm-color-success-lightest: rgba(0, 216, 51, 0.25);
+
+    //info
+    --ifm-color-info-dark: #009fff;
+    --ifm-color-info-darker: #009fff;
+    --ifm-color-info-darkest: #009fff;
+    --ifm-color-info-light: rgb(110, 207, 239);
+    --ifm-color-info-lighter: rgb(135, 216, 242);
+    --ifm-color-info-lightest: rgb(170, 227, 246);
+
+    .alert--success {
+      background-color:rgba(0, 216, 151, 0.2) ;
+    }
+
+    .alert--info {
+      background-color:rgba(76, 179, 212, 0.2) ;
+    }
+
+    .alert--warning {
+      background-color:rgba(255, 190, 11, 0.2) ;
+    }
+
+    .alert--danger {
+      background-color:rgba(241, 53, 110, 0.2) ;
+    }
+
 
     /** Zapper Theme **/
     --radius: 16px;
@@ -112,7 +174,7 @@
     font-family: "Inter", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+    text-rendering: optimizeLegibility;
   }
 
   h1 {

@@ -2,9 +2,10 @@
 sidebar_position: 1
 ---
 
-# Litepaper
-
 ![hero image](/img/assets/Litepaper_hero.png)
+
+
+# Litepaper
 
 ## Introduction
 
@@ -78,6 +79,7 @@ Since every template specifies a strict interface and format for returning the d
 For example, an app token interpreter for Aave V3 knows exactly that they need to return a balance for a user at the end, and each step of the way you need to specify strict data types to get there.
 
 That said, while the problem of quality can be greatly reduced via automation, we still require a coordination layer at the protocol level to indicate which version of an interpreter is the best.
+
 
 #### Standardization
 
