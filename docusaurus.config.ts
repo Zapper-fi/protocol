@@ -9,7 +9,15 @@ const config = {
 		"An open protocol that incentivizes the interpretation and contextualization of onchain information.",
 	plugins: ["docusaurus-plugin-sass"],
 	tagline: "Illuminating the Onchain World.",
-	image: "https://zapper.xyz/meta-img.png",
+	headTags: [
+	  {
+	    tagName: 'meta',
+	    attributes: {
+	      property: 'og:image',
+	      content: 'https://zapper.xyz/meta-img.png',
+     	    },
+	   },
+	],
 	url: "https://protocol.zapper.xyz",
 	baseUrl: "/",
 	onBrokenLinks: "warn",
