@@ -20,7 +20,7 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 
 :::tip 
 
-Watch [this video](https://youtu.be/ZrGbAckfV8s) to see an example of an EI using a "String" item to interpret. 
+Watch [this video](/docs/learning-center) to see an example of an EI using a "String" item to interpret. 
 
 :::
 
@@ -44,7 +44,7 @@ Here are the three data source you will use most frequently.
 
 :::tip 
 
-Here is a [video example](https://youtu.be/QYUromXZ9sQ) of how to extract an account address
+Here is a [video example](/docs/learning-center) of how to extract an account address
 
 :::
 
