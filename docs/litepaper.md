@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-sidebar_label: Litepaper
+title: Litepaper
 ---
 
-![hero image](/img/assets/Litepaper_hero.png)
+<!-- ![hero image](/img/assets/litepaper_hero.png) -->
 
 # Litepaper
 
