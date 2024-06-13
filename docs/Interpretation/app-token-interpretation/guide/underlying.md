@@ -13,7 +13,7 @@ Input the address of the underlying token. This could be 1 token address you inp
        1. paste them directly into the input box and call multiple methods on the App Token's contract (such as `@token0` and `@token1`) or
        2. select a method that returns a list of addresses (such as `@underlyingTokens`, which may return an array of the underlying addresses)
 
-![Example of the "@" menu for selecting an underlying token](/img/assets/at_menu.png)
+![Example of the "@" menu for selecting an underlying token](/img/assets/Input-underlying-token-address.png)
 
 :::tip
 If you want to call a method on a contract different from the App Token's contract, you can do so via the "+ Add" button in the method input modal.
@@ -27,7 +27,7 @@ You can input multiple underlying tokens by pasting them directly into the input
 
 If there are multiple methods to call for each underlying token, you can do those in the input box.
 
-![Example of multiple underlying tokens on a pool token contract](/img/assets/uni-v2-multi-underlying-tokens.png)
+![Example of multiple underlying tokens on a pool token contract](/img/assets/Input your-multiple-underlying-tokens.png)
 
 In the above example, the `@token0` and `@token1` methods are called on the Uni V2 LP token contract to get the underlying tokens.
 
