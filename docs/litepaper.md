@@ -142,8 +142,16 @@ $ZAP is used for accessing API services & data.
 
 For example, if a popular wallet application wants to augment user account information with DeFi positions, they can directly pay protocol for that data, just as they would pay a regular API.
 
----
 
 ### Governance
 
 $ZAP will provide minimal governance for the protocol, more specifically distributing incentives.
+
+---
+
+## Timeline
+
+- **Phase 1 - Q2:** Opening up our interpretation layer and allowing anyone to contribute. Initial focus will be on incentivizing the creation of high-quality interpretated data supply and building out our curator community.
+- **Phase 2 - Q4:** Launch of our open API & Token Generation Event
+- **Phase 3 - 2025-2026:** Further Decentralization of the Protocol + new interpretation primitives
+
