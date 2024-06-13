@@ -7,7 +7,8 @@
     justify-content: center;
 
     @media screen and (max-width: 750px) {
-        padding: 0px
+        padding: 0px;
+        height: calc(100vh - 60px);
     }
 
     .container {
@@ -45,14 +46,13 @@
 
             @media screen and (max-width: 750px) {
                 max-width: 100%;
-                height: 600px;
             }
     
         }
 
         @media screen and (max-width: 750px) {
             padding: 64px 16px;
-            height: 880px;
+            height: calc(100vh - 60px);
         }
 
 
