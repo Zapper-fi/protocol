@@ -26,6 +26,6 @@ Interested in joining the reviewer community? Join our [Discord](https://zapper.
 ## Reviewer Guides
 
 Are you already a reviewer? Visit our detailed guides:
-- Event Interpretation: [EI Reviewer Guide](/docs/interpretation/event-interpretation/reviewer-guide/reviewer-dashboard)
+- Event Interpretation: [EI Reviewer Guide](/docs/Interpretation/event-interpretation/reviewer-guide/event-review-process)
 - App Token Interpretation: **Coming Soon™**
 - App Contract Position Interpretation: **Coming Soon™**
