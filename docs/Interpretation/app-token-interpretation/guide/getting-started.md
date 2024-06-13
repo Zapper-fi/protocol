@@ -28,7 +28,12 @@ Note that a user's balance is assumed to be based on a `balanceOf` method on the
 :::
 
 ---
+
 ## App Token Interpreter walkthrough
+
+:::info
+The key points of the following guide are also available in a video walkthrough [here](/docs/Interpretation/app-token-interpretation/guide/video-walkthrough).
+:::
 
 ### 1. Create a new App Token Interpreter
 
@@ -37,6 +42,7 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 !["Add Balance" button](/img/assets/add_balance_button.png)
 
 ---
+
 ### 2. Input the token address
 
 Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information).
@@ -63,6 +69,7 @@ To confirm that you chose the correct log, you should see multiple app tokens in
     </figure>
 
 ---
+
 ### 3. Select the chain for the app token
 
 Select the chain that the token is on. This will help Zapper fetch the token's metadata and balance information.
