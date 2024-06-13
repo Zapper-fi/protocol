@@ -9,7 +9,7 @@ Welcome to Zapper Protocol's docs. Zapper Protocol developed a new open interpre
 ---
 ## Zapper Protocol & Zapper
 
-- Zapper Protocol: The interpretation layer built by Zapper, surfacing onchain information.
+- Zapper Protocol: The interpretation layer built by Zapper and a community of contributors, surfacing onchain information.
 - Zapper: Your favorite DeFi dashboard, and a client of the protocol, using the surfaced information. 
 
 Both entities are distinct and will operate indepedently. 
