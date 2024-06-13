@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-pagination_label: Event Interpreter Overview
+pagination_label: Event Interpretation Overview
 ---
 
 # Overview
@@ -19,6 +19,7 @@ An event is the result of an onchain transaction. We can find an ever growing li
 ### What makes an event?
 
 Each event is different, but it will usually consists of different parameters such as:
+
 - Date & time (when?)
 - Action (how?)
 - App & contract (where?)
@@ -31,11 +32,12 @@ We can find an always growing list of different types of events happening onchai
 
 ### Problem with onchain events
 
-All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user, which makes having a clear picture of an onchain event really difficult. Having a way of translating the onchain information into something a human can read is primordial. This is why Event Interpreters (EI) are needed. 
+All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user, which makes having a clear picture of an onchain event really difficult. Having a way of translating the onchain information into something a human can read is primordial. This is why Event Interpreters (EI) are needed.
 
 EIs transform the complicated technical information of an onchain transaction into a simple and clear summary.
 
 ---
+
 ## What is an Event Interpreter (EI)
 
 Event Interpreters are used on onchain transactions to translate them into a human-readable output.
@@ -45,27 +47,29 @@ We are seeing approximately 1,000,000 transactions processed daily on the Ethere
 Zapper Protocol aims to address this issue by providing scalable tools for event interpretation. Users can leverage these building blocks to create understandable transaction summaries, assuming they have a general understanding of the transaction's purpose. By utilizing pre-populated drop-down menus and free-form text boxes, users can effectively fill out the transaction details.
 
 ---
+
 ## Key Components
 
 An event interpreter is built out of different key components. Put together these key components give structure and meaning to the interpretation. Here are these key components:
 
-### 1. Description 
+### 1. Description
 
-Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. Click [here](/docs/interpretation/event-interpretation/guide/action-verb) to learn more about how to add the Description of an event. 
+Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. Click [here](/docs/interpretation/event-interpretation/guide/action-verb) to learn more about how to add the Description of an event.
 
-### 2. Items involved 
+### 2. Items involved
 
-Items could be tokens, NFTs, or any information contained in the onchain transaction. Click [here](/docs/interpretation/event-interpretation/guide/item-types) to learn more about the different items that can be part of an event. 
+Items could be tokens, NFTs, or any information contained in the onchain transaction. Click [here](/docs/interpretation/event-interpretation/guide/item-types) to learn more about the different items that can be part of an event.
 
-### 3. App 
+### 3. App
 
-The app through which the transaction occured is the last piece of the puzzle. Click [here](/docs/interpretation/event-interpretation/guide/adding-app) to learn more about Description of an event. 
+The app through which the transaction occured is the last piece of the puzzle. Click [here](/docs/interpretation/event-interpretation/guide/adding-app) to learn more about Description of an event.
 
 Together, these three elements give us a clear summary of the event:
 
 ![image](/img/assets/App.png)
 
 ---
+
 ## Example JSON Object of an EI
 
 This is a simple event intepreter for Crypto Valleys, an onchain game on Blast.
