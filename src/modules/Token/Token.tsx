@@ -63,7 +63,7 @@ export const Token: React.FC = () => {
 					</h2>
 					<p className="text-alt-color">
 						The ZAP token is central to the protocol 一 serving as an incentive
-						to interpret onchain information, and as a payment for accessing its
+						to interpret onchain information and as a payment for accessing its
 						data.
 					</p>
 					<ButtonGroup>
