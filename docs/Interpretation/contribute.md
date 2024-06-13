@@ -24,4 +24,4 @@ To get started contributing to Zapper Protocol, visit one of our guides:
 We will be tracking the top contributors in a leaderboard!
 
 - Check your ranking on the [Curator Leaderboard](https://zapper.xyz/curate/leaderboard).
-- View your submissions and their stats on your [My Submissions page](https://zapper.xyz/curate/my-submissions).
+- View your submissions and their stats on your [My Submissions page](https://zapper.xyz/my-submissions).
