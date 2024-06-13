@@ -53,7 +53,7 @@ export const Intro: React.FC = () => {
 								{siteConfig.title}
 							</h4>
 							<ButtonGroup>
-								<LinkButton href="/docs/introduction" buttonCopy="Learn More" />
+								<LinkButton href="/docs/litepaper" buttonCopy="Learn More" />
 							</ButtonGroup>
 						</div>
 					</div>
