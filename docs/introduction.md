@@ -32,7 +32,7 @@ To understand how [interpretation](/docs/interpretation/overview) works on Zappe
 
 ### Validation
 
-[Validation](/docs/Interpretation/event-interpretation/reviewer-guide/becoming-a-reviewer) is the final step before interpreted data becomes available. To learn how to become a reviewer for Zapper Protocol, and how to get reviews done. Includes a decision tree to assist reviewers in confirming that all data made public is accurate. 
+[Validation](docs/review) is the final step before interpreted data becomes available. To learn how to become a reviewer for Zapper Protocol, and how to get reviews done. Includes a decision tree to assist reviewers in confirming that all data made public is accurate. 
 
 ## API
 
