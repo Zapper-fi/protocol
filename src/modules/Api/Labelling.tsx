@@ -32,10 +32,22 @@ export const Labelling: React.FC = () => {
 					</h2>
 					<p className="text-alt-color">
 						Get comprehensive information about the ownership of a contract, its
-						activity, and its relationships with other contracts.
+						activity, and its relationship with other contracts.
 					</p>
 				</div>
-				<div style={{ flex: 1, textAlign: "center" }}>image</div>
+				<div style={{ flex: 1, textAlign: "center" }}>
+					<img
+						height="100%"
+						width="100%"
+						src="./img/assets/Contract_Labelling.svg"
+						alt="placeholder"
+						style={{
+							objectFit: "contain",
+							minWidth: "500px",
+							maxHeight: "400px",
+						}}
+					/>
+				</div>
 			</div>
 		</Section>
 	);

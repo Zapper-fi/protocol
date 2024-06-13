@@ -100,7 +100,7 @@ export const PortfolioTracking: React.FC = () => {
 									fontSize: "24px",
 									marginTop: "-24px",
 									transform:
-										selectedType === PortfolioTrackingType.T
+										selectedType === PortfolioTrackingType.Tokens
 											? "rotate(180deg)"
 											: "initial",
 								}}
@@ -158,7 +158,7 @@ export const PortfolioTracking: React.FC = () => {
 						<img
 							height="100%"
 							width="100%"
-							src="./img/app-holdings.png"
+							src="./img/assets/App_holdings.svg"
 							alt="placeholder"
 							style={{ objectFit: "contain", minWidth: "500px" }}
 						/>
@@ -167,7 +167,7 @@ export const PortfolioTracking: React.FC = () => {
 						<img
 							height="100%"
 							width="100%"
-							src="./img/token-holdings.png"
+							src="./img/assets/Tokens.svg"
 							alt="placeholder"
 							style={{ objectFit: "contain", minWidth: "500px" }}
 						/>
@@ -176,7 +176,7 @@ export const PortfolioTracking: React.FC = () => {
 						<img
 							height="100%"
 							width="100%"
-							src="./img/nft-holdings.png"
+							src="./img/assets/Nft.svg"
 							alt="placeholder"
 							style={{ objectFit: "contain", minWidth: "500px" }}
 						/>
