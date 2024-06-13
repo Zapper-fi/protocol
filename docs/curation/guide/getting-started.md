@@ -49,3 +49,16 @@ To help your reviewing, there are some resources available to you to provide add
 :::tip
 It is highly recommended to get a full picture of the event before approving or rejecting. See the next section for how to follow the right steps.
 :::
+
+<div style="padding: 1em; margin: 1em 0; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
+  <a href="https://zapper.xyz/discord" style="text-decoration: none; color: #333;">
+    <strong>Join our Discord</strong>
+  </a>
+</div>
+
+<div style="padding: 1em; margin: 1em 0; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; text-align: center;">
+  <a href="https://t.me/+mAVxPRsA7bE3ZDkx" style="text-decoration: none; color: #333;">
+    <strong>Join our Telegram</strong>
+  </a>
+</div>
+
