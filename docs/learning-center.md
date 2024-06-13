@@ -24,8 +24,8 @@ This video will guide you through the process of creating an App Token Interpret
 Here you will find a video to guide you through the process of creating an Event Intepretation with a **String** item type. 
 
 <iframe 
-  width="1280" 
-  height="720" 
+  width="560" 
+  height="315" 
   src="https://www.youtube.com/embed/gZGSxaShxgA" 
   title="Submit an EI with String item type" 
   frameborder="0" 
@@ -38,8 +38,8 @@ Here you will find a video to guide you through the process of creating an Event
 This next video will guide you through the process of creating an Event Interpretation with a **Actor** item type. 
 
 <iframe 
-  width="1280" 
-  height="720" 
+  width="560" 
+  height="315" 
   src="https://www.youtube.com/embed/PkRWBTRcOb0" 
   title="Submitting an EI with an Actor item type" 
   frameborder="0" 
