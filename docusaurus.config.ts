@@ -14,7 +14,7 @@ const config = {
 	    tagName: 'meta',
 	    attributes: {
 	      property: 'og:image',
-	      content: 'https://zapper.xyz/meta-img.png',
+	      content: 'https://protocol.zapper.xyz/img/logo.png',
      	    },
 	   },
 	],
