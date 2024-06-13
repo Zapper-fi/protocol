@@ -8,11 +8,11 @@ sidebar_position: 3
 
 On the left side of the review page, you will find the event information submitted by the interpreter. You can modify, add, or remove any information. Click the pen icon to edit an element and the X icon to delete an element. Modify action verbs by deleting the text and entering a new one.
 
-![Edit-type](/img/assets/ReviewStep.png)
+![Edit-type](/img/assets/Page-Overview.png)
 
 On the right side, you will find a preview feed to confirm if the event has been correctly interpreted for all events. Scroll down to see 12 different events with the same method to ensure accuracy.
 
-![Preview](/img/assets/preview2.png)
+![Preview](/img/assets/Page-Overview-2.png)
 
 ---
 ## Steps to Review an Event
