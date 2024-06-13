@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Use the free-form input and drop-down menu to list the app associated with the transaction. If the correct app isn't listed, type it in, and it will be added soon. If no app was involved, select the "no app" toggle.
 
-![image](/img/App.png)
+![image](/img/assets/AddingtheApp.png)
 
 If you do not see the correct app in the list, please do type in the name yourself, and it will be added to the list shortly after.
 
