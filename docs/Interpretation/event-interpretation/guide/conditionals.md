@@ -20,7 +20,7 @@ You will then be able to add the specifics of the transaction. If you are famili
 
 If the contract allows minting and sending the NFT to a different address in the same transaction, the event should read: “zfreddyy.eth has minted a Zapper NFT and sent it to 0xmarc.eth.” This requires a conditional scenario where the “Transfer to” address is not the “From” address.
 
-![conditional2](/img/assets/conditional2.png)
+![conditional2](/img/assets/Conditional-Events.png)
 
 :::note 
 
