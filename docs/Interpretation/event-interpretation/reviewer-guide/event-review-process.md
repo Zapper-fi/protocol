@@ -17,10 +17,10 @@ On the right side, you will find a preview feed to confirm if the event has been
 ---
 ## Steps to Review an Event
 
-- Choose an event to review
-- Get more context on the chosen event
-- Review the submission
-- Approve or Reject
+1. Choose an event to review
+2.  Get more context on the chosen event
+3. Review the submission
+4. Approve or Reject
 
 :::tip
 Start with events on apps you are familiar with or types of transactions you have made in the past.
