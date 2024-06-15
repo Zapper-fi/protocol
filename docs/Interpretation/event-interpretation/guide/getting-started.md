@@ -11,7 +11,7 @@ pagination_label: Getting Started with EIs
 
 The best place to start is by connecting your wallet on [Zapper](https://zapper.xyz/) and looking at your activity feed. Look for transactions that are rendered as "did something" in the activity tab. We recommend this since understanding the purpose of a transaction can be tricky if you didn't execute it.
 
-Alternatively, you can explore popular transactions on the [Zapper Curate](https://zapper.xyz/curate/events) page. If you know an app well, interpret multiple transactions from it, as this familiarity helps. Also, if you know an app well, interpret multiple transactions from it, as this familiarity helps.
+Alternatively, you can explore popular transactions on the [Zapper Curate](https://zapper.xyz/curate/events) page.
 
 ---
 ### 2. Gather information
