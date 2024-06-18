@@ -27,7 +27,7 @@ You can input multiple underlying tokens by pasting them directly into the input
 
 If there are multiple methods to call for each underlying token, you can do those in the input box.
 
-![Example of multiple underlying tokens on a pool token contract](/img/assets/Input your-multiple-underlying-tokens.png)
+![Example of multiple underlying tokens on a pool token contract](/img/assets/input-your-multiple-underlying-tokens.png)
 
 In the above example, the `@token0` and `@token1` methods are called on the Uni V2 LP token contract to get the underlying tokens.
 
