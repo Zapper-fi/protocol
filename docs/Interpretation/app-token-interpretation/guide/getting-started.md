@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Getting Started
 pagination_label: Getting Started
 ---
-# App Tokens Interpreters Guide
+# App Tokens Interpreters (ATIs) Guide
 
 ## Components of an App Token Interpreter
 
