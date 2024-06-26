@@ -43,13 +43,15 @@ For example, on a Uniswap V2 pool token contract, you would calculate the price 
 For `token0`:
 
     ```js
-    (@_reserve0(UniswapV2PoolContract) / 10 ^ @decimals(token0Contract)) / (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
+    (@_reserve0(UniswapV2PoolContract) / 10 ^ @decimals(token0Contract)) / 
+        (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
     ```
 
 For `token1`:
 
     ```js
-    (@_reserve1(UniswapV2PoolContract) / 10 ^ @decimals(token1Contract)) / (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
+    (@_reserve1(UniswapV2PoolContract) / 10 ^ @decimals(token1Contract)) / 
+        (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
     ```
 
 Where `UniswapV2PoolContract` is the contract name of the Uniswap V2 pool token, `token0Contract` and `token1Contract` are the contracts of the underlying tokens.
