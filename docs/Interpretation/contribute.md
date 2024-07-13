@@ -25,3 +25,11 @@ We will be tracking the top contributors in a leaderboard!
 
 - Check your ranking on the [Curator Leaderboard](https://zapper.xyz/curate/leaderboard).
 - View your submissions and their stats on your [My Submissions page](https://zapper.xyz/my-submissions).
+
+## Join our community
+
+Have any questions? Want to learn more? Don't hesitate to reach out and join our community.
+
+- Discord: https://zapper.xyz/discord
+- Telegram: [https://t.me/+mAVxPRsA7bE3ZDkx](https://t.me/+z8qmxu72oz9kMDYx)
+
