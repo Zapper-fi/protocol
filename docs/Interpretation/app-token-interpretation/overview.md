@@ -72,8 +72,11 @@ The result of all these components is a set of rules that define how to resolve 
 Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory and calculate the redemption value of the app token.
 
 Factory address: [Etherscan Link](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract)
+
 Event signature used to populate pool tokens: `event PairCreated(address indexed token0, address indexed token1, address pair, uint256 untitled3)`
+
 Underlying token resolution: `token0()` and `token1()` methods
+
 Redemption value calculation: `(reserve0 / (10 ^ token0.decimals())) / (reserve1 / (10 ^ token1.decimals())) + 1`
 
 ```js
