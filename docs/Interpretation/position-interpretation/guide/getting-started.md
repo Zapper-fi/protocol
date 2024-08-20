@@ -5,13 +5,13 @@ pagination_label: Getting Started
 ---
 # Position Interpreters (PIs) Guide
 
+This guide will walk you through building an Position Interpreter. An Position Interpreter is the ruleset that Zapper uses to interpret the value of a position that a user has in a protocol, whether its tokenized or non-tokenized.
+
 ## Components of a Position Interpreter
 
 :::note
 This guide assumes that you have already read about what positions are. If you haven't, please read the [overview of Positions](/docs/Interpretation/position-interpretation/overview.md).
 :::
-
-This guide will walk you through building an Position Interpreter. An Position Interpreter is the ruleset that Zapper uses to interpret the value of a position that a user has in a protocol, whether its tokenized or non-tokenized.
 
 There are 3 key components of an Position Interpreter:
 
@@ -32,9 +32,20 @@ For tokenized postions, note that a user's balance is assumed to be based on a `
 
 ## Position Interpreter walkthrough
 
-:::info
-The key points of the following guide are also available in a video walkthrough [here](/docs/learning-center#app-token-interpretation).
-:::
+Below is a step-by-step guide to creating a Position Interpreter. 
+
+Also, check out this video guide to creating an Position Interpreter for tokenized positions:
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/8c_tn36bYG8?si=oC1R207ezlvOb8Pv"
+  title="Position Interpreation - tokenized positions"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
 
 ### 1. Create a new Position Interpreter
 
