@@ -12,6 +12,7 @@ A position is a representation of a user's holdings or balance in a specific ass
 
 :::info
 Apps deploy various contracts for different types of positions, and will offer investments that are tokenized, and others that are non-tokenized. It is somewhat arbitrary when an app chooses for a position to be tokenized or non-tokenized, and the distinction is not always clear. Zapper treats tokenized positions as positions that are represented by a token, and non-tokenized positions as positions that are not represented by a token.
+:::
 
 ![Positions Example](/img/tutorial/positions_example.png)
 
