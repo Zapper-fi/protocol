@@ -8,7 +8,7 @@ pagination_label: Overview of Positions
 
 ## What is an Position?
 
-A position is a representation of a user's holdings or balance in a specific asset or contract. When a user deposits a token into a protocol, and that deposit has value, the user has entered into a position. Positions can be represented in a variety of ways, such as a tokenized position or a non-tokenized position. Either way, the position represents the user's ownership of a specific asset or contract.
+A position is a representation of a user's holdings or balance in a specific asset or contract. When a user deposits a token into a protocol, and that deposit has value, the user has entered into a position. Positions can be represented in a variety of ways, such as a "tokenized position" or a "non-tokenized position". Either way, the position represents the user's ownership of a specific asset or contract.
 
 ### Tokenized Positions
 
@@ -39,22 +39,22 @@ The majority of these tokenized positions do not have a market price; you cannot
 
 #### What is an Non-Tokenized Position?
 
-Like [Tokenized Positions](/docs/Interpretation/app-token-interpretation/overview), non-tokenized positionss represent onchain investments and what their redeemable value is, in terms of underlying tokens.
+Like tokenized positions, non-tokenized positionss represent onchain investments and what their redeemable value is, in terms of underlying tokens.
 
 The key difference is that these non-tokenized positions are **not tokenized**, and are a bit more arbitrary.
 
-- For Tokenized Positions, you deposit a token and receive a token in return. Thus, it is tokenized.
+- For Tokenized Positions, you deposit a token and receive a token in return. Thus, it is tokenized, with the token acting like a receipt.
 - For non-tokenized positions, you deposit a token and do not receive any tokens in return. Instead, the contract you deposited into logs the investment as a position on the contract, and you can redeem the position for the underlying token at any time.
 
 non-tokenized positionss are:
 
-1. Generally not transferrable (though some contracts may allow you to delegate or transfer them)
+1. Not transferrable (though some contracts may allow you to delegate or transfer them)
 2. Fungible - you deposit into a large vault, alongside all the other depositors
 3. Redeemable - you can redeem your position for the underlying token at any time (unless it's locked)
 4. Related to a crypto App
 
 :::info
-Note that Zapper also treats NFT-based positions as non-tokenized positions, despite them being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
+Note that Zapper also treats NFT-based positions as non-tokenized positions, despite them technically being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
 :::
 
 #### Common examples of non-tokenized positions

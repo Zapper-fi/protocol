@@ -15,16 +15,17 @@ This guide will walk you through building an Position Interpreter. An Position I
 
 There are 3 key components of an Position Interpreter:
 
-1. **Token Address**: The address of the token the interpreter interprets. This could be 1 token address you input or a list of token addresses fetched from a contract factory.
+1. **Contract Address**: The address of the contract the interpreter interprets. This could be 1 contract address you input or a list of contract addresses fetched from a contract factory.
 2. **Underlying token address**: The address of the token that the user deposited into the investment.
     - This could be 1 token address you input, or sourced from a method called on the token contract.
     - There could also be multiple underlying tokens, such as the case for a pool token, which often has 2 underlying tokens, or a vault, which can have `n` underlying tokens.
-3. **Price Per Share**: The price per share of the token. This informs how much the App Token is worth in terms of the underlying token.
-    - Sometimes, it's simple, where 1 App Token is redeemable for 1 underlying token (such as with Aave's aUSDC, where 1 aUSDC = 1 USDC).
+3. **Price Per Share**: The price per share of the position, in terms of how much its worth in terms of the underlying token. This is the value that Zapper uses to calculate the user's balance.
+
+    - Sometimes, it's simple, where 1 position is redeemable for 1 underlying token (such as with Aave's aUSDC, where 1 aUSDC = 1 USDC).
     - This calculation could also be more complex, such as with Yearn's yCRV, where the price per share is calculated based on the underlying tokens in the vault.
 
 :::warning
-Note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the App Token holding, then it is not an ERC20 token and cannot be interpreted with an Position Interpreter.
+For tokenized postions, note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the position holding, then it is not an ERC20 token and would not be interpreted as a tokenized position. Instead, this would be a non-tokenized position interpretation.
 :::
 
 ---
@@ -37,31 +38,31 @@ The key points of the following guide are also available in a video walkthrough 
 
 ### 1. Create a new Position Interpreter
 
-You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the Position Interpreter option.
+You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add a Balance" button. This will open a modal where you can select the Position Interpreter option.
 
 !["Add Balance" button](/img/assets/Create-new-ATI.png)
 
 ---
 
-### 2. Input the token address
+### 2. Input the contract address
 
-Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [Position Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information).
+Input the contract address of the position you want to interpret. This guide will start with a single contract address, but you can also build an interpreter for multiple contract addresses as once using a contract factory. To do do this, see the [Position Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information.
 
-- A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
+- A good contract to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet. You'd just paste the sting in to the input box.
 
-#### 2.1 Interpreting multiple app tokens from a contract factory
+#### 2.1 Interpreting multiple contracts from a contract factory
 
-You can interpret many app tokens at once if they are all created from the same contract factory and call the same methods to build their balances. This can be extremely helpful, so you don't have to create an interpreter for each App Token.
+You can interpret many contract positions at once if they are all created from the same contract factory and call the same methods to build their balances. This can be extremely helpful, so you don't have to create an interpreter for each position.
 
 :::tip
-Many protocols leverage contract factories to create their new token contracts, such as Yearn, SushiSwap, and Uniswap. If you are interpreting tokens from one of these protocols, you can likely interpret multiple tokens at once. Usually, if an app token was created by a factory, it will have a `factory` method that returns the address of the factory that created it.
+Many protocols leverage contract factories to create their new contracts that hold positions, such as Yearn, SushiSwap, and Uniswap. If you are interpreting a position from one of these protocols, you can likely interpret multiple contracts at once. Often, if an position was created by a factory, it will have a `factory` method that returns the address of the factory that created it.
 :::
 
-To interpret a contract factory, tap the toggle labeled "Advanced Mode" in the top right of the interpreter page.
+To interpret a contract factory, toggle to choose "Multiple" in the "Are you integrating a single position or multiple positions?" section of the interpreter page.
 
-Next, input the contract factory address in the input box. This will fetch a list of logs that were emitted by the factory contract that contains an address value in them. You can then select the method that returns the app token address from the logs each time a new token is created.
+Next, input the contract factory address in the input box. This will result in Zapper fetching a list of logs that were emitted by the factory contract that contains an address value in output. You can then select the parameter that returns the position address from the logs each time a new contract is created.
 
-To confirm that you chose the correct log, you should see multiple app tokens in the previewed token price section on the right-hand side. Once this is confirmed as correct, you can go ahead with the rest of the steps as normal to complete the interpreter.
+To confirm that you chose the correct log, you should see multiple positions in the previewed token price section on the right-hand side. Once this is confirmed as correct, you can go ahead with the rest of the steps as normal to complete the interpreter.
 
     <figure>
     ![Logs for a Uniswap V2 factory contract](/img/assets/Interpreting-multiple-app-tokens-from-contract-factory.png)
@@ -70,6 +71,8 @@ To confirm that you chose the correct log, you should see multiple app tokens in
 
 ---
 
-### 3. Select the chain for the app token
+### 3. Select the chain for the position
 
-Select the chain that the token is on. This will help Zapper fetch the token's metadata and balance information.
+Select the chain that the contract is on. This will help Zapper fetch the contract's metadata and balance information.
+
+And with that, you're done with the initial setup! You can now move on to the next steps to complete the interpreter.

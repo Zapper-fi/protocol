@@ -2,6 +2,7 @@
 sidebar_position: 1
 sidebar_label: Overview
 pagination_label: Overview of App Contract Positions
+sidebar_class_name: hidden
 ---
 
 # Overview of App Contract Positions
@@ -34,6 +35,7 @@ Common examples of App Contract Positions are:
 - NFT-based on positions - where you deposit an NFT into a contract and receive a position in return. Common examples are [Uniswap V3 NFTs](https://etherscan.io/address/0xc36442b4a4522e871399cd717abdd847ab11fe88)
 
 ---
+
 ## What is an App Contract Position Interpreter (ACPI)?
 
 An App Contract Position Interpreter (ACPI) is a set of rules that Zapper uses to interpret the positions you have in a contract and calculate their value in terms of underlying tokens.
@@ -49,6 +51,7 @@ There are 5 main components to an ACPI:
 5. Price per share
 
 ---
+
 ## Components of App Contract Position Interpreter
 
 ### Contracts & Network
@@ -78,6 +81,7 @@ The token(s) that the App Contract Position is redeemable for. This could be 1 t
 A formula or value that defines how much the position is worth in terms of the underlying token(s). This could be a simple value, such as `1`, or a complex formula that requires calling methods on the contract to calculate.
 
 ---
+
 ## Example
 
 ```js
