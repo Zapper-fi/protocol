@@ -32,7 +32,7 @@ For tokenized postions, note that a user's balance is assumed to be based on a `
 
 ## Position Interpreter walkthrough
 
-Below is a step-by-step guide to creating a Position Interpreter. 
+Below is a step-by-step guide to creating a Position Interpreter.
 
 Also, check out this video guide to creating an Position Interpreter for tokenized positions:
 
@@ -46,6 +46,8 @@ Also, check out this video guide to creating an Position Interpreter for tokeniz
   referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen
 ></iframe>
+
+For more video guides, check out the [Learning Center](/docs/learning-center).
 
 ### 1. Create a new Position Interpreter
 
