@@ -3,17 +3,17 @@ sidebar_position: 1
 sidebar_label: Getting Started
 pagination_label: Getting Started
 ---
-# App Tokens Interpreters (ATIs) Guide
+# Position Interpreters (PIs) Guide
 
-## Components of an App Token Interpreter
+## Components of a Position Interpreter
 
 :::note
-This guide assumes that you have already created an App Token. If you haven't, please read the overview of [App Tokens](/docs/learning-center#app-token-interpretation).
+This guide assumes that you have already read about what positions are. If you haven't, please read the [overview of Positions](/docs/Interpretation/position-interpretation/overview.md).
 :::
 
-This guide will walk you through building an App Token Interpreter. An App Token Interpreter is the ruleset that Zapper uses to interpret the value of an App Token for any user's balance.
+This guide will walk you through building an Position Interpreter. An Position Interpreter is the ruleset that Zapper uses to interpret the value of a position that a user has in a protocol, whether its tokenized or non-tokenized.
 
-There are 3 key components of an App Token Interpreter:
+There are 3 key components of an Position Interpreter:
 
 1. **Token Address**: The address of the token the interpreter interprets. This could be 1 token address you input or a list of token addresses fetched from a contract factory.
 2. **Underlying token address**: The address of the token that the user deposited into the investment.
@@ -24,20 +24,20 @@ There are 3 key components of an App Token Interpreter:
     - This calculation could also be more complex, such as with Yearn's yCRV, where the price per share is calculated based on the underlying tokens in the vault.
 
 :::warning
-Note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the App Token holding, then it is not an ERC20 token and cannot be interpreted with an App Token Interpreter.
+Note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the App Token holding, then it is not an ERC20 token and cannot be interpreted with an Position Interpreter.
 :::
 
 ---
 
-## App Token Interpreter walkthrough
+## Position Interpreter walkthrough
 
 :::info
 The key points of the following guide are also available in a video walkthrough [here](/docs/learning-center#app-token-interpretation).
 :::
 
-### 1. Create a new App Token Interpreter
+### 1. Create a new Position Interpreter
 
-You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the App Token Interpreter option.
+You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the Position Interpreter option.
 
 !["Add Balance" button](/img/assets/Create-new-ATI.png)
 
@@ -45,7 +45,7 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 ### 2. Input the token address
 
-Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [App Token Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information).
+Input the token address of the App Token you want to interpret. This guide will start with a single token address, but you can also input a list of token addresses fetched from a contract factory (see the [Position Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information).
 
 - A good token to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet.
 

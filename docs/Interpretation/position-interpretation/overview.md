@@ -1,25 +1,31 @@
 ---
 sidebar_position: 1
 sidebar_label: Overview
-pagination_label: Overview of App Tokens
+pagination_label: Overview of Positions
 ---
 
-# Overview of App Tokens
+# Overview of Positions
 
-## What is an App Token?
+## What is an Position?
 
-App Token is the term Zapper uses for investable positions that are represented by the `ERC20` token standard. 
+A position is a representation of a user's holdings or balance in a specific asset or contract. When a user deposits a token into a protocol, and that deposit has value, the user has entered into a position. Positions can be represented in a variety of ways, such as a tokenized position or a non-tokenized position. Either way, the position represents the user's ownership of a specific asset or contract.
 
-### App Tokens are
+### Tokenized Positions
+
+#### What is a Tokenized Position?
+
+Tokenized positions are:
 
 1. Transferrable
 2. Fungible
 3. Redeemable for some underlying token or set of tokens, from which they derive their value
 4. Related to a crypto App
 
-App Tokens are commonly held directly by users, so are analogous to the concept of a _receipt_. You deposit 100 USDC on Aave, you get a receipt of 100 aUSDC in return.
+Tokenized positions are commonly held directly by users, so are analogous to the concept of a _receipt_. You deposit 100 USDC on Aave and receive 100 aUSDC tokens in return. The aUSDC token is a tokenized position that acts like a receipt of your deposit, and is redeemable for 100 USDC on Aave, or tradeable elsewhere (if the token is listed on an exchange).
 
-### Common examples of App Tokens are
+#### Common examples of Tokenzied Tokens
+
+Common examples of Tokenzied Tokens are:
 
 - Staking tokens, like staking stkAave or xSUSHI ([example stkAAVE token](https://etherscan.io/token/0x4da27a545c0c5b758a6ba100e3a049001de870f5))
 - Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve ([example Uniswap v2 pool token](https://etherscan.io/token/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5))
@@ -27,49 +33,85 @@ App Tokens are commonly held directly by users, so are analogous to the concept 
 - Supply and borrow positions in a lending app like Aave ([example aUSDC token](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c))
 - Or even more obscure primitives like [Curve Gauages](https://etherscan.io/address/0x49887df6fe905663cdb46c616bfbfbb50e85a265) or prize savings accounts in [PoolTogether](https://optimistic.etherscan.io/address/0x03d3ce84279cb6f54f5e6074ff0f8319d830dafe)
 
-The majority of these app tokens do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, app tokens are redeemable for some underlying token(s). The redemption value of an app token for its underlying tokens is how we price and derive their value of them.
+The majority of these tokenized positions do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, tokenized positions are redeemable for some underlying token(s). The redemption value of a position for its underlying tokens is how we price and derive their value of them.
 
-:::warn
-App Tokens are tokenized positions. There is a different class of investments that we call App Contract Positions, which are not tokenized. These are positions that are held directly in a contract and are not represented by an `ERC20` token. Examples of these are farming positions in a contract or a locked position in a contract that does not issue a token. To learn more about App Contract Positions, see the [App Contract Position Interpretation](/docs/Interpretation/contract-position-interpretation/overview) guide.
+### Non-Tokenized Positions
+
+#### What is an Non-Tokenized Position?
+
+Like [Tokenized Positions](/docs/Interpretation/app-token-interpretation/overview), non-tokenized positionss represent onchain investments and what their redeemable value is, in terms of underlying tokens.
+
+The key difference is that these non-tokenized positions are **not tokenized**, and are a bit more arbitrary.
+
+- For Tokenized Positions, you deposit a token and receive a token in return. Thus, it is tokenized.
+- For non-tokenized positions, you deposit a token and do not receive any tokens in return. Instead, the contract you deposited into logs the investment as a position on the contract, and you can redeem the position for the underlying token at any time.
+
+non-tokenized positionss are:
+
+1. Generally not transferrable (though some contracts may allow you to delegate or transfer them)
+2. Fungible - you deposit into a large vault, alongside all the other depositors
+3. Redeemable - you can redeem your position for the underlying token at any time (unless it's locked)
+4. Related to a crypto App
+
+:::info
+Note that Zapper also treats NFT-based positions as non-tokenized positions, despite them being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
 :::
 
----
-## What is an App Token Interpreter(ATI)?
+#### Common examples of non-tokenized positions
 
-App Token Interpreters are used to index app-centric token balances for users. This can be [USDC](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) lent on Aave [aUSDC](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c), or a liquidity position for [DAI/USDC](https://etherscan.io/address/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5) you hold on Uniswap V2. All app tokens are redeemable for some amount of underlying token(s), and an App Token Interpreter is what provides the ruleset of what an app token is redeemable for.
+Common examples of Non-tokenized Positions are:
 
-There are 3 main components of an App Token Interpreter:
-
-1. Defining what contracts & network the ATI applies to
-2. Defining how to resolve the underlying token(s)
-3. Defining how many underlying tokens an app token is redeemable for
+- Deposits into farms of liquidity mining programs. Common examples are staking your Curve LP tokens on Convex Finance, or staking your Sushi LP tokens on SushiSwap.
+- Deposits into staking contracts, where you do not receive a staking token in return. Common examples are [Gitcoin Staking](https://etherscan.io/address/0x0e3efd5be54cc0f4c64e0d186b0af4b7f2a0e95f)
+- DCA or salary stream contracts, like [Sablier's payment streams](https://etherscan.io/address/0xAFb979d9afAd1aD27C5eFf4E27226E3AB9e5dCC9) or [Balmy's (fka Mean Fiance) DCA contracts](https://etherscan.io/address/0x20bdAE1413659f47416f769a4B27044946bc9923)
+- NFT-based on positions - where you deposit an NFT into a contract and receive a position in return. Common examples are [Uniswap V3 NFTs](https://etherscan.io/address/0xc36442b4a4522e871399cd717abdd847ab11fe88)
 
 ---
-## Components of an App Token Interpreter
+
+## Position Interpreters
+
+### What is a Position Interpreter(PI)?
+
+Position Interpreters are used to index app-centric balances for users. A PI contains the logic telling Zapper how to interpret a user's balance in a specific app. This is done by defining the contract(s) that the PI applies to, and the methods to call on the contract to resolve the user's balance.
+
+This can be [USDC](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) lent on Aave [aUSDC](https://etherscan.io/token/0xbcca60bb61934080951369a648fb03df4f96263c), or a liquidity position for [DAI/USDC](https://etherscan.io/address/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5) you hold on Uniswap V2. All positions are redeemable for some amount of underlying token(s), and an Position Interpreter is what provides the ruleset of what a position is redeemable for.
+
+There are 3 main components of a Position Interpreter:
+
+1. Defining what contract(s) & network the PI applies to
+2. Defining how to fetch the underlying token(s) of the position
+3. Defining how exchange rate that the position is redeemable for, in terms of the underlying token(s)
+
+---
+
+## Components of an Position Interpreter
 
 ### Contracts & Network
 
-App Token Interpreters start with the basis of a contract address or a contract factory. The basic assumption is that the same ATI template can be used to resolve all instances of the same contract produced by the contract factory. For example, the Uniswap V2 factory contract produces all Uniswap V2 pairs, and the same ATI template can be used to resolve all Uniswap V2 pairs, as they all use the same contract ABI and contain the same methods.
+Position Interpreters start with the basis of a contract address or a contract factory. The basic assumption is that the same PI template can be used to resolve all instances of the same contract produced by the contract factory. For example, the Uniswap V2 factory contract produces all Uniswap V2 pairs (100k+ positions!), and the same PI template can be used to resolve all Uniswap V2 pairs, as they all use the same contract ABI and contain the same methods.
 
 ### Resolving Underlying Tokens
 
 Once the contract address or factory is defined, we then define how to resolve the underlying tokens. This can be done in a few ways:
 
-1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying tokens. For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
+1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying token(s). For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
 2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, [Aave ETH (aETH)](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
 
 ### Price Per Share (Exchange Rate)
 
-Finally, we define how many underlying tokens an app token is redeemable for, or the exchange rate. 
+Finally, we define how many underlying tokens a position is redeemable for, or the exchange rate.
 
-This is done through an expression, which is a mathematical formula that defines how many underlying tokens an app token is redeemable for. This can be as simple as inputting `1` for a token that is redeemable for 1 underlying token (a 1:1 redemption ratio), or as complex as a formula that calculates the redemption value based on the state of the contract. For example, a Uniswap V2 pair is redeemable for `reserve0 / (10 ^ token0.decimals())` amount of token0 and `reserve1 / (10 ^ token1.decimals())` amount of token1.
+This is done through an expression, which is a mathematical formula that defines how many underlying tokens a position is redeemable for.
 
-The result of all these components is a set of rules that define how to resolve an app token. This information is assembled into a JSON object that is stored in the Zapper database and is used to calculate the value of app tokens in user wallets.
+This can be as simple as inputting `1` for a token that is redeemable for 1 underlying token (a 1:1 redemption ratio), or as complex as a formula that calculates the redemption value based on the state of the contract. For example, a Uniswap V2 pair is redeemable for `reserve0 / (10 ^ token0.decimals())` amount of token0 and `reserve1 / (10 ^ token1.decimals())` amount of token1.
+
+The result of all these components is a set of rules that define how to resolve a position. This information is assembled into a JSON object that is stored in the Zapper database and is used to calculate the value of the positions the user owns.
 
 ---
-## Example JSON Object of an ATI
 
-Below is an example JSON object of an App Token Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory and calculate the redemption value of the app token.
+## Example JSON Object of an Position Interpreter
+
+Below is an example JSON object of an Position Interpreter for a Uniswap V2 factory contract. This ATI is used to resolve the underlying tokens of all Uniswap V2 pairs created by the factory and calculate the redemption value of the positions.
 
 Factory address: [Etherscan Link](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract)
 
