@@ -10,9 +10,14 @@ pagination_label: Overview of Positions
 
 A position is a representation of a user's holdings or balance in a specific asset or contract. When a user deposits a token into a protocol, and that deposit has value, the user has entered into a position. Positions can be represented in a variety of ways, such as a "tokenized position" or a "non-tokenized position". Either way, the position represents the user's ownership of a specific asset or contract.
 
+:::info
+Apps deploy various contracts for different types of positions, and will offer investments that are tokenized, and others that are non-tokenized. It is somewhat arbitrary when an app chooses for a position to be tokenized or non-tokenized, and the distinction is not always clear. Zapper treats tokenized positions as positions that are represented by a token, and non-tokenized positions as positions that are not represented by a token.
+
+![Positions Example](/img/assets/position_example.png)
+
 ### Tokenized Positions
 
-#### What is a Tokenized Position?
+#### What is a tokenized position?
 
 Tokenized positions are:
 
@@ -23,9 +28,9 @@ Tokenized positions are:
 
 Tokenized positions are commonly held directly by users, so are analogous to the concept of a _receipt_. You deposit 100 USDC on Aave and receive 100 aUSDC tokens in return. The aUSDC token is a tokenized position that acts like a receipt of your deposit, and is redeemable for 100 USDC on Aave, or tradeable elsewhere (if the token is listed on an exchange).
 
-#### Common examples of Tokenzied Tokens
+#### Common examples of tokenzied positions
 
-Common examples of Tokenzied Tokens are:
+Common examples of Tokenzied positions are:
 
 - Staking tokens, like staking stkAave or xSUSHI ([example stkAAVE token](https://etherscan.io/token/0x4da27a545c0c5b758a6ba100e3a049001de870f5))
 - Liquidity pool positions in a decentralized exchange like Uniswap, SushiSwap, or Curve ([example Uniswap v2 pool token](https://etherscan.io/token/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5))
@@ -35,31 +40,32 @@ Common examples of Tokenzied Tokens are:
 
 The majority of these tokenized positions do not have a market price; you cannot go on an exchange and buy 2 $TOSHI/$WETH pool tokens. Rather, tokenized positions are redeemable for some underlying token(s). The redemption value of a position for its underlying tokens is how we price and derive their value of them.
 
-### Non-Tokenized Positions
+### Non-tokenized positions
 
-#### What is an Non-Tokenized Position?
+#### What is an non-tokenized position?
 
-Like tokenized positions, non-tokenized positionss represent onchain investments and what their redeemable value is, in terms of underlying tokens.
+Like tokenized positions, non-tokenized positions represent onchain investments and what their redeemable value is, in terms of underlying tokens.
 
 The key difference is that these non-tokenized positions are **not tokenized**, and are a bit more arbitrary.
 
 - For Tokenized Positions, you deposit a token and receive a token in return. Thus, it is tokenized, with the token acting like a receipt.
 - For non-tokenized positions, you deposit a token and do not receive any tokens in return. Instead, the contract you deposited into logs the investment as a position on the contract, and you can redeem the position for the underlying token at any time.
 
-non-tokenized positionss are:
+Non-tokenized positions are:
 
 1. Not transferrable (though some contracts may allow you to delegate or transfer them)
 2. Fungible - you deposit into a large vault, alongside all the other depositors
 3. Redeemable - you can redeem your position for the underlying token at any time (unless it's locked)
 4. Related to a crypto App
 
-:::info
-Note that Zapper also treats NFT-based positions as non-tokenized positions, despite them technically being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather the position itself. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
-:::
+There are 2 somewhat confusing exceptions, where a position that is technically tokenized is treated as non-tokenized by Zapper:
+
+1. NFT-based positions: Zapper also treats NFT-based positions as non-tokenized positions, despite them technically being tokenized. This is because the NFT you receive in return for the deposit does not represent the balance of the position, but rather marks that you _may_ hold a position in the investment. Due to this, Zapper cannot calculate how much of the position a user owns from the NFT alone and must query the contract to determine the balance.
+2. Tokenized positions where the position owner does not receive a token: Zapper treats these as non-tokenized positions, as the user does not receive a token in return for the deposit. Common examples are staking contracts where you deposit a token, and a staked token is minted, but instead of receiving the staked token, that staked token is sent to a staking contract. Zapper treats these as non-tokenized positions, as the user does not receive a token in return for the deposit.
 
 #### Common examples of non-tokenized positions
 
-Common examples of Non-tokenized Positions are:
+Common examples of non-tokenized Ppositions are:
 
 - Deposits into farms of liquidity mining programs. Common examples are staking your Curve LP tokens on Convex Finance, or staking your Sushi LP tokens on SushiSwap.
 - Deposits into staking contracts, where you do not receive a staking token in return. Common examples are [Gitcoin Staking](https://etherscan.io/address/0x0e3efd5be54cc0f4c64e0d186b0af4b7f2a0e95f)
@@ -70,7 +76,7 @@ Common examples of Non-tokenized Positions are:
 
 ## Position Interpreters
 
-### What is a Position Interpreter(PI)?
+### What is a position interpreter(PI)?
 
 Position Interpreters are used to index app-centric balances for users. A PI contains the logic telling Zapper how to interpret a user's balance in a specific app. This is done by defining the contract(s) that the PI applies to, and the methods to call on the contract to resolve the user's balance.
 
@@ -84,20 +90,20 @@ There are 3 main components of a Position Interpreter:
 
 ---
 
-## Components of an Position Interpreter
+#### Components of an Position Interpreter
 
-### Contracts & Network
+##### Contracts & Network
 
 Position Interpreters start with the basis of a contract address or a contract factory. The basic assumption is that the same PI template can be used to resolve all instances of the same contract produced by the contract factory. For example, the Uniswap V2 factory contract produces all Uniswap V2 pairs (100k+ positions!), and the same PI template can be used to resolve all Uniswap V2 pairs, as they all use the same contract ABI and contain the same methods.
 
-### Resolving Underlying Tokens
+##### Resolving Underlying Tokens
 
 Once the contract address or factory is defined, we then define how to resolve the underlying tokens. This can be done in a few ways:
 
 1. Directly from the contract itself - this is the best-case scenario, where the contract has a method that returns the underlying token(s). For example, the Uniswap V2 pair contract has `token0()` and `token1()` methods that return the underlying tokens.
 2. User input - in some cases, the underlying tokens are not directly resolvable from the contract, and the user must provide the underlying tokens. For example, [Aave ETH (aETH)](https://etherscan.io/token/0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04#readContract) does not contain a method on the contract call the ETH gas token contract, as it does not exist. In this case, the user must provide the underlying token address; in the case of Aave ETH, the user inputs `0x0000000000000000000000000000000000000000` as the underlying token address.
 
-### Price Per Share (Exchange Rate)
+##### Price Per Share (Exchange Rate)
 
 Finally, we define how many underlying tokens a position is redeemable for, or the exchange rate.
 

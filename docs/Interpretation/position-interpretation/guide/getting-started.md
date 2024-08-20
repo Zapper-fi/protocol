@@ -38,7 +38,7 @@ The key points of the following guide are also available in a video walkthrough 
 
 ### 1. Create a new Position Interpreter
 
-You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add a Balance" button. This will open a modal where you can select the Position Interpreter option.
+You can get started by navigating to your [Dashboard page](https://www.zapper.xyz/dashboard) and clicking the "Add Balance" button. This will open a modal where you can select the Position Interpreter option.
 
 !["Add Balance" button](/img/assets/Create-new-ATI.png)
 
