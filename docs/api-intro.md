@@ -12,6 +12,7 @@ Zapper Protocol's GraphQL API will be released in Q4 2024, at which time users o
 :::
 
 ---
+
 ## Data Types
 
 The Zapper Protocol API will offer the following data types:
@@ -28,10 +29,7 @@ Zapper Protocol will get developers access to interpreted events. For more infor
 
 Zapper Protocol will offer interpreted valuations for tokens, investments and NFTs. 
 
-For more information on Investment Valuation Interpretation, check out our [App Token Interpretation Overview](/docs/interpretation/app-token-interpretation/overview) and [App Contract Position Interpretation Overview](/docs/interpretation/contract-position-interpretation/overview).
-
-- **Interpreted App Tokens**: Valuation of tokenized investments in apps. The payload will include the token address, balance, the underlying tokens, and the fiat value. Data will be keyed on the token address, app name, and account address.
-- **Interpreted Contract Positions**: Valuation of non-tokenized investments in apps. The payload will include the contract address, balance, the underlying tokens, and the fiat value. Data will be keyed on the contract address, app name, and account address.
+For more information on Position Interpretation, check out our [position interpreter overview](/docs/interpretation/position-interpretation/overview.md).
 
 <!-- ### Trending Onchain Apps
 

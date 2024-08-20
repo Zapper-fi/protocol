@@ -14,9 +14,8 @@ To get started contributing to Zapper Protocol, visit one of our guides:
 
 | Guide                                | Link  |
 |--------------------------------------|-------|
-| App Token Interpretation             | [Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) |
+| Position Interpretation             | [Guide](/docs/Interpretation/position-interpretation/guide/getting-started.md) |
 | Event Interpretation               | [Guide](/docs/Interpretation/event-interpretation/guide/getting-started) |
-| App Contract Position Interpretation | [Guide](/docs/Interpretation/contract-position-interpretation/overview) |
 | Validation                            | [Guide](/docs/review) |
 
 ## Curator Leaderboard
