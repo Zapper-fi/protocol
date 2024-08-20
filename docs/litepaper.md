@@ -44,7 +44,7 @@ Indexing templates are built by interpreters. At their core, they are very simpl
 #### Examples
 
 - [Event Intepreter Example](/docs/interpretation/event-interpretation/overview#example-json-object-of-an-ei)
-- [App Token Interpreter Example](/docs/Interpretation/app-token-interpretation/overview#example-json-object-of-an-ati)
+- [Position Interpreter Example](/docs/Interpretation/position-interpretation/overview#example-json-object-of-an-position-interpreter)
 
 ---
 
@@ -76,7 +76,7 @@ They pay for readable data and use it to power their applications. Data is payab
 
 Since every template specifies a strict interface and format for returning the data, it's much easier to assure consistent quality across the board, as you know exactly what to expect. Current existing solutions are code sandboxes, which makes it very difficult to build good tests.
 
-For example, an app token interpreter for Aave V3 knows exactly that they need to return a balance for a user at the end, and each step of the way you need to specify strict data types to get there.
+For example, an position interpreter for Aave V3 knows exactly that they need to return a balance for a user at the end, and each step of the way you need to specify strict data types to get there.
 
 That said, while the problem of quality can be greatly reduced via automation, we still require a coordination layer at the protocol level to indicate which version of an interpreter is the best.
 
@@ -101,17 +101,11 @@ You are a wallet app that wants to display a readable transaction history to you
 
 Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information. You can read more about Event Interpreters [here](/docs/interpretation/event-interpretation/overview).
 
-#### App Token Interpreters
+#### Position Interpreters
 
-App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The majority of these tokens do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
+Position interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2, or a uni-v2 pool token staked in a farming contract. The majority of these positions do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
 
-You can read more about App Token Interpreters [here](/docs/interpretation/app-token-interpretation/overview).
-
-#### App Contract Position Interpreters
-
-Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is that these positions are not tokenized, and are a bit more arbitrary. Contract Position Interpreters index and standardize arbitrary positions for apps.
-
-You can read more about Contract Position Interpreters [here](/docs/interpretation/contract-position-interpretation/overview).
+You can read more about position interpreters [here](/docs/interpretation/position-interpretation/overview).
 
 #### Future Interpreters
 

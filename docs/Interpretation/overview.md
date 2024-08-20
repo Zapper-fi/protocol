@@ -11,13 +11,10 @@ Indexing Templates are the foundation from which interpretation is built.
 
 Indexing templates are their core are simple `JSON` files - and are formatted around different standards/types. You can view an example of a JSON file event interpreter [here](/docs/interpretation/event-interpretation/overview#example-json-object-of-an-ei).
 
-There currently exists 3 types of indexing templates within the protocol:
+There are 2
 
 - **Event Interpretation**
-- **App Token Interpretation**
-- **Contract Position Interpration**
-
-The last two are both a subset of what we call `position interpretation` which has as a goal to present contextual financial positions or assets in different onchain apps.
+- **Position Interpretation**
 
 ---
 
@@ -29,19 +26,11 @@ You can read more about Event Interpreters [here](/docs/interpretation/event-int
 
 ---
 
-## App Token Interpretation
+## Position Interpretation
 
-App Token Interpreters are used to index app-centric token balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2. The large majority of these tokens do not have a market price; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
+Position interpreters are used to index app-centric balances for users. This can be USDC lent on Aave (aUSDC), or a liquidity position for USDC/ETH you hold on Uniswap V2, or a staked token held in a contract. The large majority of these positions do not have a market price and are not tradeable; rather, they have a redeemable price to unlock an underlying token. To surface these to users, we first need to interpret the contract interface that manages these positions.
 
-You can read more about App Token Interpreters [here](/docs/interpretation/app-token-interpretation/overview).
-
----
-
-## Contract Position Interpretation
-
-Like App Token Interpreters, Contract Position Interpreters are used to index redeemable onchain positions onchain. The key difference is that these positions are not tokenized, and are a bit more arbitrary. Contract Position Interpreters index and standardize arbitrary positions for apps.
-
-You can read more about Contract Position Interpreters [here](/docs/interpretation/contract-position-interpretation/overview).
+You can read more about position interpreters [here](/docs/interpretation/position-interpretation/overview).
 
 ---
 
