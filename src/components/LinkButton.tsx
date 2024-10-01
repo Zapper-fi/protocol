@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../pages/index.module.scss";
 import Link from "@docusaurus/Link";
 
-enum ButtonType {
+export enum ButtonType {
 	Primary = "primary",
 	Secondary = "secondary",
 }

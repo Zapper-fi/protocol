@@ -1,28 +1,14 @@
 import React from 'react';
-import { ApolloSandbox } from '@apollo/sandbox/react';
+import { ButtonType, LinkButton } from './LinkButton';
 
-const ApolloSandboxComponent: React.FC = () => (
-  <ApolloSandbox
-    initialEndpoint="https://public.zapper.xyz/graphql"
-    initialState={{
-      document: `query($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-      }
-    }
-  }
-}
-    `,
-      variables: {
-        addresses: ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045", "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"],
-      },
-    }}
-    className="apollo-sandbox"
-  />
-);
+const ApolloSandboxComponent: React.FC = () => {
+  return (
+    <LinkButton
+      type={ButtonType.Primary}
+      buttonCopy="Open Apollo Sandbox"
+      href="https://studio.apollographql.com/sandbox/explorer?endpoint=https://public.zapper.xyz/graphql"
+    />
+  );
+};
 
 export default ApolloSandboxComponent;
