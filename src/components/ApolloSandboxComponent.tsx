@@ -26,7 +26,7 @@ const ApolloSandboxComponent: React.FC = () => {
         },
         headers: {},
         displayOptions: {
-          showHeadersAndEnvVars: false,
+          showHeadersAndEnvVars: true,
           docsPanelState: 'open',
           theme: 'dark',
         },
