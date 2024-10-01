@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@apollo/explorer':
+    specifier: ^3.7.0
+    version: 3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1)
   '@apollo/sandbox':
     specifier: ^2.7.0
     version: 2.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)
@@ -50,6 +53,9 @@ dependencies:
   sass:
     specifier: ^1.77.2
     version: 1.77.2
+  use-deep-compare-effect:
+    specifier: ^1.8.1
+    version: 1.8.1(react@18.0.0)
 
 devDependencies:
   '@docusaurus/module-type-aliases':
@@ -211,6 +217,34 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+    dev: false
+
+  /@apollo/explorer@3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1):
+    resolution: {integrity: sha512-7Y6JuYSK2Or5bctRmG/hrccj5b7+gAj58XZBewRzvpIDS6NPoN67fcltOortstVkYyeIscR6bTca8oCsAMozgA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      use-deep-compare-effect: ^1.8.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      use-deep-compare-effect:
+        optional: true
+    dependencies:
+      '@types/whatwg-mimetype': 3.0.2
+      graphql-ws: 5.16.0(graphql@16.9.0)
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
+      use-deep-compare-effect: 1.8.1(react@18.0.0)
+      whatwg-mimetype: 3.0.0
+      zen-observable-ts: 1.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - graphql
+      - utf-8-validate
     dev: false
 
   /@apollo/sandbox@2.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0):
@@ -10301,6 +10335,17 @@ packages:
 
   /url-template@2.0.8:
     resolution: {integrity: sha512-XdVKMF4SJ0nP/O7XIPB0JwAEuT9lDIYnNsK8yGVe43y0AWoKeJNdv3ZNWh7ksJ6KqQFjOO6ox/VEitLnaVNufw==}
+    dev: false
+
+  /use-deep-compare-effect@1.8.1(react@18.0.0):
+    resolution: {integrity: sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13'
+    dependencies:
+      '@babel/runtime': 7.22.11
+      dequal: 2.0.3
+      react: 18.0.0
     dev: false
 
   /util-deprecate@1.0.2:
