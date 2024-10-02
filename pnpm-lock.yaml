@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@apollo/explorer':
+    specifier: ^3.7.0
+    version: 3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1)
   '@docusaurus/core':
     specifier: 3.4.0
     version: 3.4.0(@docusaurus/types@3.4.0)(react-dom@18.0.0)(react@18.0.0)(typescript@5.2.2)
@@ -47,6 +50,9 @@ dependencies:
   sass:
     specifier: ^1.77.2
     version: 1.77.2
+  use-deep-compare-effect:
+    specifier: ^1.8.1
+    version: 1.8.1(react@18.0.0)
 
 devDependencies:
   '@docusaurus/module-type-aliases':
@@ -208,6 +214,34 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+    dev: false
+
+  /@apollo/explorer@3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1):
+    resolution: {integrity: sha512-7Y6JuYSK2Or5bctRmG/hrccj5b7+gAj58XZBewRzvpIDS6NPoN67fcltOortstVkYyeIscR6bTca8oCsAMozgA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      use-deep-compare-effect: ^1.8.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      use-deep-compare-effect:
+        optional: true
+    dependencies:
+      '@types/whatwg-mimetype': 3.0.2
+      graphql-ws: 5.16.0(graphql@16.9.0)
+      react: 18.0.0
+      react-dom: 18.0.0(react@18.0.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
+      use-deep-compare-effect: 1.8.1(react@18.0.0)
+      whatwg-mimetype: 3.0.0
+      zen-observable-ts: 1.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - graphql
+      - utf-8-validate
     dev: false
 
   /@babel/code-frame@7.24.2:
@@ -3095,6 +3129,10 @@ packages:
   /@types/unist@3.0.2:
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
 
+  /@types/whatwg-mimetype@3.0.2:
+    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
+    dev: false
+
   /@types/ws@8.5.5:
     resolution: {integrity: sha512-lwhs8hktwxSjf9UaZ9tG5M03PGogvFaH8gUgLNbN9HKIg0dvv6q+gkSuJ8HN4/VbyxkuLzCjlN7GquQ0gUJfIg==}
     dependencies:
@@ -3109,6 +3147,10 @@ packages:
     resolution: {integrity: sha512-6i0aC7jV6QzQB8ne1joVZ0eSFIstHsCrobmOtghM11yGlH0j43FKL2UhWdELkyps0zuf7qVTUVCCR+tgSlyLLw==}
     dependencies:
       '@types/yargs-parser': 21.0.0
+    dev: false
+
+  /@types/zen-observable@0.8.3:
+    resolution: {integrity: sha512-fbF6oTd4sGGy0xjHPKAt+eS2CrxJ3+6gQ3FGcBoIJR2TLAyCkCyI8JqZNy+FeON0AhVgNJoUumVoZQjBFUqHkw==}
     dev: false
 
   /@ungap/structured-clone@1.2.0:
@@ -3522,6 +3564,10 @@ packages:
       '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.24.5)
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /backo2@1.0.2:
+    resolution: {integrity: sha512-zj6Z6M7Eq+PBZ7PQxl5NT665MvJdAkzp0f60nAJ+sLaSCBPMwVak5ZegFbgVCzFcCJTKFoMizvM5Ld7+JrRJHA==}
     dev: false
 
   /bail@2.0.2:
@@ -5155,6 +5201,10 @@ packages:
       require-like: 0.1.2
     dev: false
 
+  /eventemitter3@3.1.0:
+    resolution: {integrity: sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA==}
+    dev: false
+
   /eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
     dev: false
@@ -5625,6 +5675,20 @@ packages:
 
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  /graphql-ws@5.16.0(graphql@16.9.0):
+    resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      graphql: '>=0.11 <=16'
+    dependencies:
+      graphql: 16.9.0
+    dev: false
+
+  /graphql@16.9.0:
+    resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+    dev: false
 
   /gray-matter@4.0.3:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
@@ -6315,6 +6379,10 @@ packages:
   /isobject@3.0.1:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
+
+  /iterall@1.3.0:
+    resolution: {integrity: sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==}
+    dev: false
 
   /jackspeak@2.3.6:
     resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
@@ -9823,6 +9891,23 @@ packages:
     resolution: {integrity: sha512-bhtUjWd/z6ltJiQwg0dUfxEJ+W+jdqQd8TbWLWyeIJHlnsqmGLRFFd8e5mA0AZi/zx90smXRlN66YMTcaSFifg==}
     dev: false
 
+  /subscriptions-transport-ws@0.11.0(graphql@16.9.0):
+    resolution: {integrity: sha512-8D4C6DIH5tGiAIpp5I0wD/xRlNiZAPGHygzCe7VzyzUoxHtawzjNAY9SUTXU05/EY2NMY9/9GF0ycizkXr1CWQ==}
+    deprecated: The `subscriptions-transport-ws` package is no longer maintained. We recommend you use `graphql-ws` instead. For help migrating Apollo software to `graphql-ws`, see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws    For general help using `graphql-ws`, see https://github.com/enisdenjo/graphql-ws/blob/master/README.md
+    peerDependencies:
+      graphql: ^15.7.2 || ^16.0.0
+    dependencies:
+      backo2: 1.0.2
+      eventemitter3: 3.1.0
+      graphql: 16.9.0
+      iterall: 1.3.0
+      symbol-observable: 1.2.0
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
   /supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -9883,6 +9968,11 @@ packages:
       yargs: 17.7.2
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /symbol-observable@1.2.0:
+    resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
+    engines: {node: '>=0.10.0'}
     dev: false
 
   /symbol-tree@3.2.4:
@@ -10217,6 +10307,17 @@ packages:
 
   /url-template@2.0.8:
     resolution: {integrity: sha512-XdVKMF4SJ0nP/O7XIPB0JwAEuT9lDIYnNsK8yGVe43y0AWoKeJNdv3ZNWh7ksJ6KqQFjOO6ox/VEitLnaVNufw==}
+    dev: false
+
+  /use-deep-compare-effect@1.8.1(react@18.0.0):
+    resolution: {integrity: sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13'
+    dependencies:
+      '@babel/runtime': 7.22.11
+      dequal: 2.0.3
+      react: 18.0.0
     dev: false
 
   /util-deprecate@1.0.2:
@@ -10663,6 +10764,17 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+    dev: false
+
+  /zen-observable-ts@1.1.0:
+    resolution: {integrity: sha512-1h4zlLSqI2cRLPJUHJFL8bCWHhkpuXkF+dbGkRaWjgDIG26DmzyshUMrdV/rL3UnR+mhaX4fRq8LPouq0MYYIA==}
+    dependencies:
+      '@types/zen-observable': 0.8.3
+      zen-observable: 0.8.15
+    dev: false
+
+  /zen-observable@0.8.15:
+    resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
     dev: false
 
   /zwitch@2.0.4:
