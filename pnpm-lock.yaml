@@ -8,9 +8,6 @@ dependencies:
   '@apollo/explorer':
     specifier: ^3.7.0
     version: 3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1)
-  '@apollo/sandbox':
-    specifier: ^2.7.0
-    version: 2.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)
   '@docusaurus/core':
     specifier: 3.4.0
     version: 3.4.0(@docusaurus/types@3.4.0)(react-dom@18.0.0)(react@18.0.0)(typescript@5.2.2)
@@ -239,31 +236,6 @@ packages:
       react-dom: 18.0.0(react@18.0.0)
       subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
       use-deep-compare-effect: 1.8.1(react@18.0.0)
-      whatwg-mimetype: 3.0.0
-      zen-observable-ts: 1.1.0
-    transitivePeerDependencies:
-      - bufferutil
-      - graphql
-      - utf-8-validate
-    dev: false
-
-  /@apollo/sandbox@2.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0):
-    resolution: {integrity: sha512-17Xvdj0zSCFE1TPNRtfsZ7/dsgOoiFZ7rFdM+X9ca523PG+qQbZ1x2nvGvrHmb2UzPb66RvOVJC+oNC072c17Q==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@types/whatwg-mimetype': 3.0.2
-      eventemitter3: 3.1.0
-      graphql-ws: 5.16.0(graphql@16.9.0)
-      react: 18.0.0
-      react-dom: 18.0.0(react@18.0.0)
-      subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
       whatwg-mimetype: 3.0.0
       zen-observable-ts: 1.1.0
     transitivePeerDependencies:
