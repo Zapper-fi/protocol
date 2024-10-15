@@ -2,6 +2,12 @@
 sidebar_position: 5
 ---
 
+import { AuthButtonWrapper } from '@site/src/components/AuthButton';
+
+<div style={{ textAlign: 'right' }}>
+  <AuthButtonWrapper />
+</div>
+
 # API Overview
 
 Zapper Protocol will be offering a GraphQL API for developers to access interpreted data. This API will be the primary way for developers to access onchain data from Zapper Protocol.
