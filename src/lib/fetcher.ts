@@ -1,10 +1,10 @@
-// src/lib/fetcher.ts
 const API_ROUTE = process.env.NEXT_PUBLIC_ZAPPER_API || '';
 
 const fetcher = async (basePath: string, url: string, options?: RequestInit) => {
+  console.log("request : ", basePath, url, options);
   const response = await fetch(`${basePath}${url}`, options);
   let json: Record<any, any> = {};
-  
+  console.log("response : ", response);
   try {
     json = await response.json();
   } catch (e) {}

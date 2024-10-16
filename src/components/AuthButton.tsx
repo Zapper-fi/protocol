@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { PrivyProvider, useLogin, usePrivy } from '@privy-io/react-auth';
-import axios, { AxiosRequestConfig } from 'axios'; // You might need to install axios: npm install axios
 import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
-const API_BASE_URL = 'https://api.zapper.xyz'; // Replace with your actual API URL
-
-// Define a type for the fetcher function
-type FetcherFunction = (endpoint: string, options?: AxiosRequestConfig) => Promise<any>;
 
 export const AuthButton = () => {
   console.log("env var : " + process.env.NEXT_PUBLIC_ZAPPER_API);
