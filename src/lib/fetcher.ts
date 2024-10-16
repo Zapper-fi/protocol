@@ -1,5 +1,5 @@
 // src/lib/fetcher.ts
-// const API_ROUTE = process.env.NEXT_PUBLIC_ZAPPER_API || '';
+const API_ROUTE = process.env.NEXT_PUBLIC_ZAPPER_API || '';
 
 const fetcher = async (basePath: string, url: string, options?: RequestInit) => {
   const response = await fetch(`${basePath}${url}`, options);
@@ -16,3 +16,5 @@ const fetcher = async (basePath: string, url: string, options?: RequestInit) => 
 
   return json;
 };
+
+export { fetcher, API_ROUTE };

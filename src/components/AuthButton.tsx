@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PrivyProvider, useLogin, usePrivy } from '@privy-io/react-auth';
 import axios, { AxiosRequestConfig } from 'axios'; // You might need to install axios: npm install axios
+import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 const API_BASE_URL = 'https://api.zapper.xyz'; // Replace with your actual API URL
@@ -8,48 +9,11 @@ const API_BASE_URL = 'https://api.zapper.xyz'; // Replace with your actual API U
 // Define a type for the fetcher function
 type FetcherFunction = (endpoint: string, options?: AxiosRequestConfig) => Promise<any>;
 
-// Custom hook for API calls
-const useZapperApiFetcher = (): FetcherFunction | null => {
-  const [token, setToken] = useState<string | null>(null);
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem('authToken');
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }, []);
-
-  const fetcher: FetcherFunction = async (endpoint, options = {}) => {
-    if (!token) {
-      throw new Error('No authentication token available');
-    }
-
-    const url = `${API_BASE_URL}${endpoint}`;
-    const headers = {
-      ...options.headers,
-      'Authorization': `Bearer ${token}`,
-    };
-
-    try {
-      const response = await axios({
-        ...options,
-        url,
-        headers,
-      });
-      return response.data;
-    } catch (error) {
-      console.error('API call failed:', error);
-      throw error;
-    }
-  };
-
-  return token ? fetcher : null;
-};
-
 export const AuthButton = () => {
   console.log("env var : " + process.env.NEXT_PUBLIC_ZAPPER_API);
   const { ready, authenticated } = usePrivy();
   const [error, setError] = useState('');
+
   const fetcher = useZapperApiFetcher();
   const disableLogin = !ready || (ready && authenticated);
 
@@ -61,19 +25,16 @@ export const AuthButton = () => {
     onComplete: async (user, isNewUser) => {
       console.log("Login complete:", user, isNewUser);
 
-      if (true) {
+      if (fetcher) {
         try {
-          
           const result = await fetcher('/v1/users', {
             method: 'POST',
-            data: { privyDid: user.id },
+            body: JSON.stringify({ privyDid: user.id }),
           });
           console.log('User created/updated:', result);
         } catch (error) {
           setError('Failed to create/update user');
         }
-      } else {
-        console.log("Existing user account, please proceed");
       }
     },
   });
