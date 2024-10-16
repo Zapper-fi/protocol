@@ -7,7 +7,15 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config = {
 	title:
 		"An open protocol that incentivizes the interpretation and contextualization of onchain information.",
-	plugins: ["docusaurus-plugin-sass"],
+		plugins: [
+			"docusaurus-plugin-sass",
+			[
+				"docusaurus2-dotenv",
+				{
+					systemvars: true,
+				},
+			],
+		],	
 	tagline: "Illuminating the Onchain World.",
 	headTags: [
 	  {
