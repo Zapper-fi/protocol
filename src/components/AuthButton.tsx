@@ -9,6 +9,7 @@ export const AuthButton = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [clientData, setClientData] = useState(null);
+  const [message, setMessage] = useState('');
   const fetcher = useZapperApiFetcher();
   const disableLogin = !ready || (ready && authenticated) || loading;
 
@@ -37,17 +38,34 @@ export const AuthButton = () => {
           }
         `;
         
-        const result = await fetcher(query, { name: 'zapper-admin' });
+        const result = await fetcher(query, { name: user.email.address });
+        const client = result.data?.client;
+        setClientData(client);
         
-        console.log("Client data:", result);
-        if (!result.data?.client) {
-          throw new Error('No client data received');
+        if (isNewUser) {
+          if (client) {
+            // Call the mutation to update privyId
+            const mutation = `
+              mutation UpdatePrivyId($privyId: String!, $apiClientName: String!) {
+                updatePrivyId(privyId: $privyId, apiClientName: $apiClientName) {
+                  name
+                  privyId
+                }
+              }
+            `;
+            await fetcher(mutation, { privyId: user.id, apiClientName: user.email.address });
+            setMessage("Privy ID updated successfully!");
+          } else {
+            // Client not found, show "Check Zendesk"
+            setMessage("Check Zendesk for further instructions.");
+          }
+        } else {
+          // Existing user, signed in
+          setMessage("You're signed in!");
         }
-        
-        setClientData(result.data.client);
       } catch (error) {
-        console.error('Failed to fetch client data:', error);
-        setError(error.message || 'Failed to fetch client data');
+        console.error('Failed to fetch client data or update privyId:', error);
+        setError(error.message || 'An error occurred');
       } finally {
         setLoading(false);
       }
@@ -80,6 +98,12 @@ export const AuthButton = () => {
       {error && (
         <p className="mt-2 text-red-500">
           {error}
+        </p>
+      )}
+      
+      {message && (
+        <p className="mt-2 text-blue-500">
+          {message}
         </p>
       )}
       
