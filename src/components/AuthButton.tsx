@@ -1,50 +1,95 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { PrivyProvider, useLogin, usePrivy } from '@privy-io/react-auth';
 import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
 export const AuthButton = () => {
-  console.log("env var : " + process.env.NEXT_PUBLIC_ZAPPER_API);
   const { ready, authenticated } = usePrivy();
   const [error, setError] = useState('');
-
+  const [loading, setLoading] = useState(false);
+  const [clientData, setClientData] = useState(null);
   const fetcher = useZapperApiFetcher();
-  const disableLogin = !ready || (ready && authenticated);
+  const disableLogin = !ready || (ready && authenticated) || loading;
 
   const { login } = useLogin({
     onError: (error) => {
       console.error("Login error:", error);
       setError(String(error));
+      setLoading(false);
     },
     onComplete: async (user, isNewUser) => {
       console.log("Login complete:", user, isNewUser);
+      
+      if (!fetcher) {
+        setError('API configuration is missing');
+        return;
+      }
 
-      if (fetcher) {
-        try {
-          const result = await fetcher('/v1/users', {
-            method: 'POST',
-            body: JSON.stringify({ privyDid: user.id }),
-          });
-          console.log('User created/updated:', result);
-        } catch (error) {
-          setError('Failed to create/update user');
+      setLoading(true);
+      try {
+        const query = `
+          query GetClient($name: String!) {
+            client(name: $name) {
+              id
+              name
+            }
+          }
+        `;
+        
+        const result = await fetcher(query, { name: 'zapper-admin' });
+        
+        console.log("Client data:", result);
+        if (!result.data?.client) {
+          throw new Error('No client data received');
         }
+        
+        setClientData(result.data.client);
+      } catch (error) {
+        console.error('Failed to fetch client data:', error);
+        setError(error.message || 'Failed to fetch client data');
+      } finally {
+        setLoading(false);
       }
     },
   });
 
   const handleLogin = async () => {
     setError('');
-    await login();
+    setLoading(true);
+    try {
+      await login();
+    } catch (error) {
+      setError(String(error));
+      setLoading(false);
+    }
   };
 
   return (
-    <div>
-      <button disabled={disableLogin} onClick={handleLogin}>
-        Log in
+    <div className="p-4">
+      <button
+        className={`px-4 py-2 rounded ${
+          disableLogin ? 'bg-gray-300' : 'bg-blue-500 hover:bg-blue-600'
+        } text-white transition-colors`}
+        disabled={disableLogin}
+        onClick={handleLogin}
+      >
+        {loading ? 'Loading...' : 'Log in'}
       </button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      
+      {error && (
+        <p className="mt-2 text-red-500">
+          {error}
+        </p>
+      )}
+      
+      {clientData && (
+        <div className="mt-4 p-4 border rounded">
+          <h3 className="text-lg font-semibold">Client Info</h3>
+          <p>Client ID: {clientData.id}</p>
+          <p>Client Name: {clientData.name}</p>
+        </div>
+      )}
     </div>
   );
 };
