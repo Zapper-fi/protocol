@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { PrivyProvider, useLogin, usePrivy } from '@privy-io/react-auth';
+import { PrivyProvider, useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
+import PointsPurchaseButton from './PointsPurchaseButton';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
@@ -29,6 +30,7 @@ export const AuthButton = () => {
 
       setLoading(true);
       try {
+        // Get client info based on user email
         const query = `
           query GetClient($name: String!) {
             client(name: $name) {
@@ -72,6 +74,15 @@ export const AuthButton = () => {
     },
   });
 
+  const { logout } = useLogout({
+    onSuccess: () => {
+      console.log('User logged out');
+      setClientData(null);
+      setMessage('You have logged out');
+      setLoading(false); // Reset loading to false after logout
+    }
+  });
+
   const handleLogin = async () => {
     setError('');
     setLoading(true);
@@ -83,17 +94,38 @@ export const AuthButton = () => {
     }
   };
 
+  const handleLogout = async () => {
+    setError('');
+    setLoading(true);
+    try {
+      await logout();
+    } catch (error) {
+      setError(String(error));
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="p-4">
-      <button
-        className={`px-4 py-2 rounded ${
-          disableLogin ? 'bg-gray-300' : 'bg-blue-500 hover:bg-blue-600'
-        } text-white transition-colors`}
-        disabled={disableLogin}
-        onClick={handleLogin}
-      >
-        {loading ? 'Loading...' : 'Log in'}
-      </button>
+      {authenticated ? (
+        <button
+          className="px-4 py-2 rounded bg-red-500 hover:bg-red-600 text-white transition-colors"
+          onClick={handleLogout}
+          disabled={loading} // Disable button only when loading
+        >
+          {loading ? 'Logging out...' : 'Logout'}
+        </button>
+      ) : (
+        <button
+          className={`px-4 py-2 rounded ${
+            disableLogin ? 'bg-gray-300' : 'bg-blue-500 hover:bg-blue-600'
+          } text-white transition-colors`}
+          disabled={disableLogin}
+          onClick={handleLogin}
+        >
+          {loading ? 'Loading...' : 'Log in'}
+        </button>
+      )}
       
       {error && (
         <p className="mt-2 text-red-500">
@@ -112,6 +144,11 @@ export const AuthButton = () => {
           <h3 className="text-lg font-semibold">Client Info</h3>
           <p>Client ID: {clientData.id}</p>
           <p>Client Name: {clientData.name}</p>
+        </div>
+      )}
+      {authenticated && (
+        <div className="mt-4">
+          <PointsPurchaseButton />
         </div>
       )}
     </div>
