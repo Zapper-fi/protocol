@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { PrivyProvider, useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
 import PointsPurchaseButton from './PointsPurchaseButton';
+import FundWalletButton from './FundWalletButton'; // Import the new FundWalletButton
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
 export const AuthButton = () => {
-  const { ready, authenticated } = usePrivy();
+  const { ready, authenticated, user } = usePrivy();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [clientData, setClientData] = useState(null);
@@ -22,7 +23,7 @@ export const AuthButton = () => {
     },
     onComplete: async (user, isNewUser) => {
       console.log("Login complete:", user, isNewUser);
-      
+
       if (!fetcher) {
         setError('API configuration is missing');
         return;
@@ -39,11 +40,11 @@ export const AuthButton = () => {
             }
           }
         `;
-        
+
         const result = await fetcher(query, { name: user.email.address });
         const client = result.data?.client;
         setClientData(client);
-        
+
         if (isNewUser) {
           if (client) {
             // Call the mutation to update privyId
@@ -108,13 +109,19 @@ export const AuthButton = () => {
   return (
     <div className="p-4">
       {authenticated ? (
-        <button
-          className="px-4 py-2 rounded bg-red-500 hover:bg-red-600 text-white transition-colors"
-          onClick={handleLogout}
-          disabled={loading} // Disable button only when loading
-        >
-          {loading ? 'Logging out...' : 'Logout'}
-        </button>
+        <>
+          <button
+            className="px-4 py-2 rounded bg-red-500 hover:bg-red-600 text-white transition-colors"
+            onClick={handleLogout}
+            disabled={loading} // Disable button only when loading
+          >
+            {loading ? 'Logging out...' : 'Logout'}
+          </button>
+
+          {/* Show FundWalletButton if authenticated */}
+          <FundWalletButton /> {/* Use the new FundWalletButton component */}
+
+        </>
       ) : (
         <button
           className={`px-4 py-2 rounded ${
@@ -146,6 +153,7 @@ export const AuthButton = () => {
           <p>Client Name: {clientData.name}</p>
         </div>
       )}
+
       {authenticated && (
         <div className="mt-4">
           <PointsPurchaseButton />
@@ -167,6 +175,12 @@ export const AuthButtonWrapper = () => {
         },
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
+        },
+        fundingMethodConfig: { 
+          moonpay: { 
+            paymentMethod: 'credit_debit_card', // Choose payment method.
+            uiConfig: { accentColor: '#696FFD', theme: 'light' }, // Customize MoonPay's UI.
+          }, 
         },
       }}
     >

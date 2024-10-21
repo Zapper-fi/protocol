@@ -32,7 +32,8 @@
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"redoc": "^2.1.4",
-		"sass": "^1.77.2"
+		"sass": "^1.77.2",
+		"viem": "^2.21.32"
 	},
 	"devDependencies": {
 		"@docusaurus/module-type-aliases": "3.4.0",
