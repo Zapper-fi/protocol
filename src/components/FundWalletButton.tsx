@@ -8,10 +8,14 @@ const FundWalletButton = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const handleError = (message) => {
+    setError(message);
+    setLoading(false);
+  };
+
   const handleFundWallet = async () => {
     if (!user?.wallet?.address) {
-      setError('No wallet found to fund');
-      return;
+      return handleError('No wallet found to fund');
     }
 
     setError('');
@@ -25,9 +29,7 @@ const FundWalletButton = () => {
       });
       setLoading(false);
     } catch (error) {
-      console.error("Funding error:", error);
-      setError('Failed to fund wallet');
-      setLoading(false);
+      handleError('Failed to fund wallet');
     }
   };
 
@@ -43,9 +45,7 @@ const FundWalletButton = () => {
         </button>
       )}
       {error && (
-        <p className="mt-2 text-red-500">
-          {error}
-        </p>
+        <p className="mt-2 text-red-500">{error}</p>
       )}
     </>
   );
