@@ -19,7 +19,7 @@ const AuthButton = () => {
   const handleClientData = async (email) => {
     const query = `
       query GetClient($name: String!) {
-        client(name: $name) {
+        clientByName(name: $name) {
           id
           name
         }
