@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { usePrivy, useFundWallet } from '@privy-io/react-auth';
-import { mainnet } from 'viem/chains'; // Import the correct chain object
+import { mainnet } from 'viem/chains';
 
 const FundWalletButton = () => {
   const { user } = usePrivy();
@@ -14,21 +14,20 @@ const FundWalletButton = () => {
       return;
     }
 
-    setError(''); // Clear any previous errors
-    setLoading(true); // Set loading state
+    setError('');
+    setLoading(true);
 
     try {
-      // Trigger the funding flow using fundWallet hook
       await fundWallet(user.wallet.address, {
-        chain: mainnet,  // Use the chain object imported from 'viem/chains'
-        asset: 'native-currency',  // Fund with the chain's native currency (e.g., ETH)
-        amount: '0.01',  // Specify the amount to fund
+        chain: mainnet,
+        asset: 'native-currency',
+        amount: '0.01',
       });
-      setLoading(false); // Reset loading state
+      setLoading(false);
     } catch (error) {
       console.error("Funding error:", error);
       setError('Failed to fund wallet');
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
   };
 
@@ -38,7 +37,7 @@ const FundWalletButton = () => {
         <button
           className="px-4 py-2 rounded bg-green-500 hover:bg-green-600 text-white transition-colors"
           onClick={handleFundWallet}
-          disabled={loading} // Disable button when loading
+          disabled={loading}
         >
           {loading ? 'Funding...' : 'Fund Wallet'}
         </button>

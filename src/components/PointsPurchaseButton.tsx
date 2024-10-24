@@ -6,7 +6,7 @@ const PointsPurchaseButton = () => {
   const { authenticated, user } = usePrivy();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [pointsPurchased, setPointsPurchased] = useState(0);
+  const [pointsPurchased] = useState(0);
   const fetcher = useZapperApiFetcher();
 
   const createCharge = async (pointsAmount) => {
@@ -15,7 +15,6 @@ const PointsPurchaseButton = () => {
     }
 
     try {
-      // Use GraphQL mutation to create the charge via backend
       const mutation = `
         mutation CreateCharge($pointsAmount: Int!, $userId: String!, $userEmail: String!) {
           createCharge(pointsAmount: $pointsAmount, userId: $userId, userEmail: $userEmail) {
@@ -25,7 +24,6 @@ const PointsPurchaseButton = () => {
         }
       `;
 
-      // Send the mutation request to the backend
       const result = await fetcher(mutation, {
         pointsAmount,
         userId: user.id,

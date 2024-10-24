@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { PrivyProvider, useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
-import PointsPurchaseButton from './PointsPurchaseButton';
-import FundWalletButton from './FundWalletButton'; // Import the new FundWalletButton
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
@@ -23,7 +21,6 @@ export const AuthButton = () => {
     },
     onComplete: async (user, isNewUser) => {
       console.log("Login complete:", user, isNewUser);
-
       if (!fetcher) {
         setError('API configuration is missing');
         return;
@@ -31,7 +28,6 @@ export const AuthButton = () => {
 
       setLoading(true);
       try {
-        // Get client info based on user email
         const query = `
           query GetClient($name: String!) {
             client(name: $name) {
@@ -47,7 +43,6 @@ export const AuthButton = () => {
 
         if (isNewUser) {
           if (client) {
-            // Call the mutation to update privyId
             const mutation = `
               mutation UpdatePrivyId($privyId: String!, $apiClientName: String!) {
                 updatePrivyId(privyId: $privyId, apiClientName: $apiClientName) {
@@ -59,11 +54,9 @@ export const AuthButton = () => {
             await fetcher(mutation, { privyId: user.id, apiClientName: user.email.address });
             setMessage("Privy ID updated successfully!");
           } else {
-            // Client not found, show "Check Zendesk"
             setMessage("Check Zendesk for further instructions.");
           }
         } else {
-          // Existing user, signed in
           setMessage("You're signed in!");
         }
       } catch (error) {
@@ -80,7 +73,7 @@ export const AuthButton = () => {
       console.log('User logged out');
       setClientData(null);
       setMessage('You have logged out');
-      setLoading(false); // Reset loading to false after logout
+      setLoading(false);
     }
   });
 
@@ -113,14 +106,10 @@ export const AuthButton = () => {
           <button
             className="px-4 py-2 rounded bg-red-500 hover:bg-red-600 text-white transition-colors"
             onClick={handleLogout}
-            disabled={loading} // Disable button only when loading
+            disabled={loading} 
           >
             {loading ? 'Logging out...' : 'Logout'}
           </button>
-
-          {/* Show FundWalletButton if authenticated */}
-          <FundWalletButton /> {/* Use the new FundWalletButton component */}
-
         </>
       ) : (
         <button
@@ -135,15 +124,11 @@ export const AuthButton = () => {
       )}
       
       {error && (
-        <p className="mt-2 text-red-500">
-          {error}
-        </p>
+        <p className="mt-2 text-red-500">{error}</p>
       )}
       
       {message && (
-        <p className="mt-2 text-blue-500">
-          {message}
-        </p>
+        <p className="mt-2 text-blue-500">{message}</p>
       )}
       
       {clientData && (
@@ -153,38 +138,8 @@ export const AuthButton = () => {
           <p>Client Name: {clientData.name}</p>
         </div>
       )}
-
-      {authenticated && (
-        <div className="mt-4">
-          <PointsPurchaseButton />
-        </div>
-      )}
     </div>
   );
 };
 
-export const AuthButtonWrapper = () => {
-  return (
-    <PrivyProvider
-      appId={PRIVY_APP_ID}
-      config={{
-        appearance: {
-          theme: 'light',
-          accentColor: '#676FFF',
-          logo: 'https://protocol.zapper.xyz/img/logo.png',
-        },
-        embeddedWallets: {
-          createOnLogin: 'users-without-wallets',
-        },
-        fundingMethodConfig: { 
-          moonpay: { 
-            paymentMethod: 'credit_debit_card', // Choose payment method.
-            uiConfig: { accentColor: '#696FFD', theme: 'light' }, // Customize MoonPay's UI.
-          }, 
-        },
-      }}
-    >
-      <AuthButton />
-    </PrivyProvider>
-  );
-};
+export default AuthButton;
