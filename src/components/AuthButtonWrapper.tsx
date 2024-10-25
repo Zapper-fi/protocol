@@ -4,25 +4,27 @@ import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
 import PointsPurchaseButton from './PointsPurchaseButton';
 import FundWalletButton from './FundWalletButton'; 
 import AuthButton from './AuthButton';
+import ClientInfo from './ClientInfo';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
 export const AuthSection = () => {
-  const { authenticated } = usePrivy();
-
-  return (
-    <div className="p-4">
-      <AuthButton />
-
-      {authenticated && (
-        <div className="mt-4">
-          <FundWalletButton />
-          <PointsPurchaseButton />
-        </div>
-      )}
-    </div>
-  );
-};
+    const { authenticated } = usePrivy();
+  
+    return (
+      <div className="p-4">
+        <AuthButton />
+  
+        {authenticated && (
+          <div className="mt-4">
+            <FundWalletButton />
+            <PointsPurchaseButton />
+            <ClientInfo />
+          </div>
+        )}
+      </div>
+    );
+  };
 
 export const AuthButtonWrapper = () => {
   return (

@@ -4,7 +4,7 @@ sidebar_position: 5
 
 import { AuthButtonWrapper } from '@site/src/components/AuthButtonWrapper';
 
-<div style={{ textAlign: 'right' }}>
+<div>
   <AuthButtonWrapper />
 </div>
 
