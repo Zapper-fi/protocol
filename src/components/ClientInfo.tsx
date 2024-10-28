@@ -22,6 +22,7 @@ const ClientInfo = () => {
                 amount
                 creditsPurchased
                 createdAt
+                status
               }
             }
           }
@@ -40,7 +41,7 @@ const ClientInfo = () => {
     if (authenticated) {
       fetchClientData();
     }
-  }, [user, fetcher, authenticated]);
+  }, [authenticated]);
 
   if (!authenticated) {
     return <p>Please login to see your information</p>;
@@ -74,6 +75,7 @@ const ClientInfo = () => {
             <tr>
               <th className="border px-2 py-1">Amount</th>
               <th className="border px-2 py-1">Credits Purchased</th>
+              <th className="border px-2 py-1">Status</th>
               <th className="border px-2 py-1">Date</th>
             </tr>
           </thead>
@@ -84,6 +86,7 @@ const ClientInfo = () => {
                 <tr key={index}>
                   <td className="border px-2 py-1">{payment.amount}</td>
                   <td className="border px-2 py-1">{payment.creditsPurchased}</td>
+                  <td className="border px-2 py-1">{payment.status}</td>
                   <td className="border px-2 py-1">
                     {new Date(payment.createdAt).toLocaleDateString()}
                   </td>

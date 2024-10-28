@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PrivyProvider, usePrivy } from '@privy-io/react-auth';
-import { useZapperApiFetcher } from '../hooks/useZapperApiFetcher';
+import {UserPill} from '@privy-io/react-auth/ui';
+
 import PointsPurchaseButton from './PointsPurchaseButton';
-import FundWalletButton from './FundWalletButton'; 
-import AuthButton from './AuthButton';
 import ClientInfo from './ClientInfo';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
@@ -13,11 +12,15 @@ export const AuthSection = () => {
   
     return (
       <div className="p-4">
-        <AuthButton />
+        {/* UserPill replaces AuthButton and FundWalletButton */}
+        <UserPill
+          action={{ type: 'login', options: { loginMethods: ['email'] } }}
+          size={32}
+          expanded
+        />
   
         {authenticated && (
           <div className="mt-4">
-            <FundWalletButton />
             <PointsPurchaseButton />
             <ClientInfo />
           </div>

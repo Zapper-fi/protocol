@@ -56,6 +56,9 @@ dependencies:
   sass:
     specifier: ^1.77.2
     version: 1.77.2
+  ui:
+    specifier: link:@privy-io/react-auth/ui
+    version: link:@privy-io/react-auth/ui
   viem:
     specifier: ^2.21.32
     version: 2.21.32(typescript@5.2.2)
@@ -8088,6 +8091,7 @@ packages:
 
   /file-uri-to-path@1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: false
 
   /filesize@8.0.7:
