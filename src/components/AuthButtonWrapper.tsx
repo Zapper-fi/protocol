@@ -1,6 +1,5 @@
 import React from 'react';
 import { PrivyProvider, usePrivy } from '@privy-io/react-auth';
-import {UserPill} from '@privy-io/react-auth/ui';
 
 import PointsPurchaseButton from './PointsPurchaseButton';
 import ClientInfo from './ClientInfo';
