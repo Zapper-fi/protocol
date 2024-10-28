@@ -4,6 +4,8 @@ import {UserPill} from '@privy-io/react-auth/ui';
 
 import PointsPurchaseButton from './PointsPurchaseButton';
 import ClientInfo from './ClientInfo';
+import AuthButton from './AuthButton';
+import FundWalletButton from './FundWalletButton';
 
 const PRIVY_APP_ID = 'cm2ateeqj0531q8pbixyb92qu';
 
@@ -13,14 +15,13 @@ export const AuthSection = () => {
     return (
       <div className="p-4">
         {/* UserPill replaces AuthButton and FundWalletButton */}
-        <UserPill
-          action={{ type: 'login', options: { loginMethods: ['email'] } }}
-          size={32}
-          expanded
-        />
+        <AuthButton />
+
   
         {authenticated && (
           <div className="mt-4">
+            <FundWalletButton/>
+
             <PointsPurchaseButton />
             <ClientInfo />
           </div>
