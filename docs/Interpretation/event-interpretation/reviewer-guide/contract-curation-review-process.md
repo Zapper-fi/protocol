@@ -14,6 +14,8 @@ Once a user submits an association, it is then put into a queue for review by Re
 
 Once approved, this app-contract association will then be used across Zapper, associating all balances and transactions with the app in portfolios, bundles, trends pages, activity feeds and more.
 
+![Modal preview](/img/assets/review-apps-all.png)
+
 ## Reviewer responsibilities
 
 Reviewers are responsible for reviewing contract curation submissions to ensure that the contract is associated with the correct app. Reviewers are expected to confirm the association by verifying the app is truly the owner of the contract. This can be done by referring to the contract's source code, the contract's creator, the app's website or github.
@@ -24,6 +26,8 @@ Reviewers are responsible for reviewing contract curation submissions to ensure 
 2. Open the contract in a chain explorer or search for it in a search engine, github or other source
 3. Confirm that the contract is associated with the app the user has submitted
 4. Approve or Reject
+
+![Panel Preview](/img/assets/review-apps-modal.png)
 
 ---
 
@@ -45,4 +49,4 @@ After hitting the “Reject” button and selecting a reason, the submission sta
 
 - Exploring the contract address on a chain explorer
 - Searching for the contract in a search engine, to see if its listed on app's website, such as on their docsite
-- Search for the contract on Github
+- Search for the contract on Github. [Example query for the Immutable chain contract 0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6](https://github.com/search?q=0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6&type=code)
