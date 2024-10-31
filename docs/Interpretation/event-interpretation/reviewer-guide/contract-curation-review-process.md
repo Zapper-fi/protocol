@@ -12,7 +12,7 @@ Users can submit contracts to be associated with an app through a few different 
 
 Once a user submits an association, it is then put into a queue for review by Reviewers, to confirm that the contract is indeed associated with the app the user has submitted.
 
-Once approved, this app<>contract association will then be used across Zapper, associating all balances and transactions with the app in portfolios, bundles, trends pages, activity feeds and more.
+Once approved, this app-contract association will then be used across Zapper, associating all balances and transactions with the app in portfolios, bundles, trends pages, activity feeds and more.
 
 ## Reviewer responsibilities
 
