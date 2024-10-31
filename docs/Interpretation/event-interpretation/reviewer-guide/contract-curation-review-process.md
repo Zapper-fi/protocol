@@ -14,7 +14,7 @@ Once a user submits an association, it is then put into a queue for review by Re
 
 Once approved, this app<>contract association will then be used across Zapper, associating all balances and transactions with the app in portfolios, bundles, trends pages, activity feeds and more.
 
-![Edit-type](/img/assets/review-apps-all.png)
+<!-- ![Modal preview](/img/assets/review-apps-all.png) -->
 
 ## Reviewer responsibilities
 
@@ -27,7 +27,7 @@ Reviewers are responsible for reviewing contract curation submissions to ensure 
 3. Confirm that the contract is associated with the app the user has submitted
 4. Approve or Reject
 
-![Edit-type](/img/assets/review-apps-modal.png)
+<!-- ![Edit-type](/img/assets/review-apps-modal.png) -->
 
 ---
 
