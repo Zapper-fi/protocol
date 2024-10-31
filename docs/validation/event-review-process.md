@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
+sidebar_label: EI Reviewing
 ---
 
 # Event Review Process

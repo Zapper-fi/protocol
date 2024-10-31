@@ -1,5 +1,6 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
+sidebar_label: App-Contract Reviewing
 ---
 
 # Contract Curation Review Process
@@ -49,4 +50,4 @@ After hitting the “Reject” button and selecting a reason, the submission sta
 
 - Exploring the contract address on a chain explorer
 - Searching for the contract in a search engine, to see if its listed on app's website, such as on their docsite
-- Search for the contract on Github. [Example query for the Immutable chain contract 0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6](https://github.com/search?q=0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6&type=code)
+- Search for the contract on Github. [Here is an example Github search for an Immutable chain contract 0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6.](https://github.com/search?q=0xba5e35e26ae59c7aea6f029b68c6460de2d13eb6&type=code)
