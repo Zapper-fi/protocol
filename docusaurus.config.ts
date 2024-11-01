@@ -38,7 +38,7 @@ const config = {
 					editUrl: "https://github.com/Zapper-fi/protocol/tree/main/",
 				},
 				theme: {
-					customCss: require.resolve("./src/scss/custom.scss"),
+					customCss: require.resolve("./src/css/custom.scss"),
 				},
 			} satisfies Preset.Options,
 		],
