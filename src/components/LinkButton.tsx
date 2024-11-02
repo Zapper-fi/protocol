@@ -1,5 +1,4 @@
 import type React from 'react';
-import styles from '../pages/index.module.scss';
 import Link from '@docusaurus/Link';
 
 enum ButtonType {
