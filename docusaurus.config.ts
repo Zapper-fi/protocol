@@ -88,6 +88,12 @@ const config = {
 					to: 'docs/api-intro',
 					activeBaseRegex: 'docs/api-intro',
 				},
+				{
+					position: 'left',
+					label: 'Dashboard',
+					to: 'dashboard',
+					activeBaseRegex: 'dashboard',
+				},
 			],
 		},
 
