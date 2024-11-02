@@ -1,14 +1,14 @@
-import React from "react";
-import { Section } from "../../components/Section";
-import { LinkButton } from "../../components/LinkButton";
-import { PortfolioTracking } from "./PortfolioTracking";
-import { AccountTimelines } from "./AccountTimelines";
-import { Labelling } from "./Labelling";
+import React from 'react';
+import { Section } from '../../components/Section';
+import { LinkButton } from '../../components/LinkButton';
+import { PortfolioTracking } from './PortfolioTracking';
+import { AccountTimelines } from './AccountTimelines';
+import { Labelling } from './Labelling';
 
 enum TabEnum {
-	Portfolio = "portfolio",
-	Timeline = "timeline",
-	Labels = "labels",
+	Portfolio = 'portfolio',
+	Timeline = 'timeline',
+	Labels = 'labels',
 }
 
 export const ApiSection: React.FC = () => {
@@ -16,26 +16,26 @@ export const ApiSection: React.FC = () => {
 
 	return (
 		<div>
-			<div style={{ display: "flex", flexDirection: "column" }}>
+			<div style={{ display: 'flex', flexDirection: 'column' }}>
 				<div
 					style={{
-						display: "flex",
-						gap: "24px",
-						width: "100%",
-						flexDirection: "column",
-						alignItems: "center",
+						display: 'flex',
+						gap: '24px',
+						width: '100%',
+						flexDirection: 'column',
+						alignItems: 'center',
 					}}
 				>
 					<div
 						style={{
-							fontSize: "12px",
-							textTransform: "uppercase",
-							borderStyle: "solid",
-							borderWidth: "1px",
-							padding: "8px 24px",
-							borderRadius: "16px",
-							width: "fit-content",
-							fontWeight: "600",
+							fontSize: '12px',
+							textTransform: 'uppercase',
+							borderStyle: 'solid',
+							borderWidth: '1px',
+							padding: '8px 24px',
+							borderRadius: '16px',
+							width: 'fit-content',
+							fontWeight: '600',
 						}}
 						className="border text-alt-color"
 					>
@@ -43,18 +43,18 @@ export const ApiSection: React.FC = () => {
 					</div>
 					<div
 						style={{
-							display: "flex",
-							flexDirection: "column",
-							gap: "16px",
-							alignItems: "center",
+							display: 'flex',
+							flexDirection: 'column',
+							gap: '16px',
+							alignItems: 'center',
 							flex: 1,
 						}}
 					>
 						<h1
 							style={{
 								flex: 1,
-								fontWeight: "600",
-								textAlign: "center",
+								fontWeight: '600',
+								textAlign: 'center',
 							}}
 						>
 							The Ultimate Human-Readable API
@@ -62,9 +62,9 @@ export const ApiSection: React.FC = () => {
 						<p
 							className="text-alt-color"
 							style={{
-								fontWeight: "300",
-								textAlign: "center",
-								maxWidth: "720px",
+								fontWeight: '300',
+								textAlign: 'center',
+								maxWidth: '720px',
 							}}
 						>
 							Access the most comprehensive onchain data built on top of our
@@ -82,35 +82,35 @@ export const ApiSection: React.FC = () => {
 			<Section
 				className="border mobile-padding hide-mobile"
 				style={{
-					margin: "32px 0px",
-					alignItems: "center",
+					margin: '32px 0px',
+					alignItems: 'center',
 				}}
 			>
 				<div
 					className="full-width-mobile"
 					style={{
-						display: "flex",
-						gap: "16px",
-						width: "100%",
-						maxWidth: "600px",
-						justifyContent: "space-between",
+						display: 'flex',
+						gap: '16px',
+						width: '100%',
+						maxWidth: '600px',
+						justifyContent: 'space-between',
 					}}
 				>
 					<div
 						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Portfolio)}
 						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "120px",
-							maxWidth: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "16px",
-							cursor: "pointer",
+							display: 'flex',
+							flexDirection: 'column',
+							width: '120px',
+							maxWidth: '100%',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: '16px',
+							cursor: 'pointer',
 						}}
 					>
-						<div className="card" style={{ padding: "16px" }}>
+						<div className="card" style={{ padding: '16px' }}>
 							<img
 								width="48px"
 								height="48px"
@@ -121,35 +121,35 @@ export const ApiSection: React.FC = () => {
 
 						<p
 							style={{
-								marginBottom: "0px",
-								textAlign: "center",
-								fontWeight: "500",
+								marginBottom: '0px',
+								textAlign: 'center',
+								fontWeight: '500',
 							}}
 						>
 							Portfolio Tracking
 						</p>
 						<div
 							className={
-								activeTab === TabEnum.Portfolio ? "accent-background" : ""
+								activeTab === TabEnum.Portfolio ? 'accent-background' : ''
 							}
-							style={{ height: "2px", display: "block", width: "48px" }}
+							style={{ height: '2px', display: 'block', width: '48px' }}
 						/>
 					</div>
 					<div
 						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Timeline)}
 						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "120px",
-							maxWidth: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "16px",
-							cursor: "pointer",
+							display: 'flex',
+							flexDirection: 'column',
+							width: '120px',
+							maxWidth: '100%',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: '16px',
+							cursor: 'pointer',
 						}}
 					>
-						<div className="card" style={{ padding: "16px" }}>
+						<div className="card" style={{ padding: '16px' }}>
 							<img
 								width="48px"
 								height="48px"
@@ -160,35 +160,35 @@ export const ApiSection: React.FC = () => {
 
 						<p
 							style={{
-								marginBottom: "0px",
-								textAlign: "center",
-								fontWeight: "500",
+								marginBottom: '0px',
+								textAlign: 'center',
+								fontWeight: '500',
 							}}
 						>
 							Account Timelines
 						</p>
 						<div
 							className={
-								activeTab === TabEnum.Timeline ? "accent-background" : ""
+								activeTab === TabEnum.Timeline ? 'accent-background' : ''
 							}
-							style={{ height: "2px", display: "block", width: "48px" }}
+							style={{ height: '2px', display: 'block', width: '48px' }}
 						/>
 					</div>
 					<div
 						className="opacity-hover"
 						onClick={() => setActiveTab(TabEnum.Labels)}
 						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "120px",
-							maxWidth: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "16px",
-							cursor: "pointer",
+							display: 'flex',
+							flexDirection: 'column',
+							width: '120px',
+							maxWidth: '100%',
+							justifyContent: 'center',
+							alignItems: 'center',
+							gap: '16px',
+							cursor: 'pointer',
 						}}
 					>
-						<div className="card" style={{ padding: "16px" }}>
+						<div className="card" style={{ padding: '16px' }}>
 							<img
 								width="48px"
 								height="48px"
@@ -199,18 +199,18 @@ export const ApiSection: React.FC = () => {
 
 						<p
 							style={{
-								marginBottom: "0px",
-								textAlign: "center",
-								fontWeight: "500",
+								marginBottom: '0px',
+								textAlign: 'center',
+								fontWeight: '500',
 							}}
 						>
 							Contract Labelling
 						</p>
 						<div
 							className={
-								activeTab === TabEnum.Labels ? "accent-background" : ""
+								activeTab === TabEnum.Labels ? 'accent-background' : ''
 							}
-							style={{ height: "2px", display: "block", width: "48px" }}
+							style={{ height: '2px', display: 'block', width: '48px' }}
 						/>
 					</div>
 				</div>

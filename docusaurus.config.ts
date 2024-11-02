@@ -10,13 +10,13 @@ const config = {
 	plugins: ["docusaurus-plugin-sass"],
 	tagline: "Illuminating the Onchain World.",
 	headTags: [
-	  {
-	    tagName: 'meta',
-	    attributes: {
-	      property: 'og:image',
-	      content: 'https://protocol.zapper.xyz/img/logo.png',
-     	    },
-	   },
+		{
+			tagName: "meta",
+			attributes: {
+				property: "og:image",
+				content: "https://protocol.zapper.xyz/img/logo.png",
+			},
+		},
 	],
 	url: "https://protocol.zapper.xyz",
 	baseUrl: "/",

@@ -1,6 +1,6 @@
-import { Card } from "../../components/Card";
-import { Section } from "../../components/Section";
-import React from "react";
+import { Card } from '../../components/Card';
+import { Section } from '../../components/Section';
+import type React from 'react';
 
 export const Problem: React.FC = () => {
 	return (
@@ -10,21 +10,21 @@ export const Problem: React.FC = () => {
 					<h2
 						style={{
 							flex: 1,
-							fontFamily: "monospace",
-							fontSize: "38px",
-							fontWeight: "600",
-							minWidth: "400px",
+							fontFamily: 'monospace',
+							fontSize: '38px',
+							fontWeight: '600',
+							minWidth: '400px',
 						}}
 					>
 						Onchain information is disorganized and unreadable.
 					</h2>
 				</div>
 				<div className="problem__section__description">
-					<h5 color="" style={{ fontWeight: "normal", lineHeight: "28px" }}>
+					<h5 color="" style={{ fontWeight: 'normal', lineHeight: '28px' }}>
 						The amount of onchain applications is increasing exponentially - no
 						centralized entity will be able to organize everything.
 					</h5>
-					<h5 style={{ fontWeight: "normal", lineHeight: "28px" }}>
+					<h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
 						Blockchains are bustling digital downtowns containing rich economic
 						opportunities, yet are very difficult to navigate.
 					</h5>
