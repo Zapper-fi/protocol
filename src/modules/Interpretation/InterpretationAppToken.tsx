@@ -1,8 +1,8 @@
 import type React from 'react';
-import { Section } from '../../components/Section';
 import { ButtonGroup } from '../../components/ButtonGroup';
 import { LinkButton } from '../../components/LinkButton';
 import { Media } from '../../components/Media';
+import { Section } from '../../components/Section';
 
 export const InterpretationAppToken: React.FC = () => {
 	return (

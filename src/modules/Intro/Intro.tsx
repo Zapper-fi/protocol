@@ -1,8 +1,8 @@
-import type React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from '../../pages/index.module.scss';
-import { LinkButton } from '../../components/LinkButton';
+import type React from 'react';
 import { ButtonGroup } from '../../components/ButtonGroup';
+import { LinkButton } from '../../components/LinkButton';
+import styles from '../../pages/index.module.scss';
 
 export const Intro: React.FC = () => {
 	const { siteConfig } = useDocusaurusContext();

@@ -1,6 +1,6 @@
+import type React from 'react';
 import { Card } from '../../components/Card';
 import { Section } from '../../components/Section';
-import type React from 'react';
 
 export const Problem: React.FC = () => {
 	return (

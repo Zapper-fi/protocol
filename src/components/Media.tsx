@@ -1,6 +1,6 @@
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import type React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Media: React.FC<{
 	src: string;

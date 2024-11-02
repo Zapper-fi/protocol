@@ -1,9 +1,9 @@
 import React from 'react';
-import { Section } from '../../components/Section';
 import { LinkButton } from '../../components/LinkButton';
-import { PortfolioTracking } from './PortfolioTracking';
+import { Section } from '../../components/Section';
 import { AccountTimelines } from './AccountTimelines';
 import { Labelling } from './Labelling';
+import { PortfolioTracking } from './PortfolioTracking';
 
 enum TabEnum {
 	Portfolio = 'portfolio',

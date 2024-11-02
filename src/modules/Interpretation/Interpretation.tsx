@@ -1,8 +1,8 @@
 import type React from 'react';
 import { Section } from '../../components/Section';
-import { InterpretationHeader } from './InterpretationHeader';
-import { InterpretationEvent } from './InterpretationEvent';
 import { InterpretationAppToken } from './InterpretationAppToken';
+import { InterpretationEvent } from './InterpretationEvent';
+import { InterpretationHeader } from './InterpretationHeader';
 
 export const Interpretation: React.FC = () => {
 	return (

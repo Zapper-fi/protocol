@@ -1,5 +1,5 @@
-import type React from 'react';
 import Link from '@docusaurus/Link';
+import type React from 'react';
 
 enum ButtonType {
 	Primary = 'primary',
