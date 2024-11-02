@@ -1,5 +1,6 @@
-import BrowserOnly from "@docusaurus/BrowserOnly";
-import React, { useState, useEffect } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 export const Media: React.FC<{
 	src: string;
@@ -23,21 +24,21 @@ const MediaContent: React.FC<{
 	height: `${number}px`;
 	mixBlendMode?: string;
 }> = ({ src, darkSrc, isVideo, height, mixBlendMode }) => {
-	const [theme, setTheme] = useState(localStorage.getItem("theme"));
+	const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
 	useEffect(() => {
 		const handleThemeChange = () => {
-			setTheme(localStorage.getItem("theme"));
+			setTheme(localStorage.getItem('theme'));
 		};
 
-		window.addEventListener("storage", handleThemeChange);
+		window.addEventListener('storage', handleThemeChange);
 
 		return () => {
-			window.removeEventListener("storage", handleThemeChange);
+			window.removeEventListener('storage', handleThemeChange);
 		};
 	}, []);
 
-	const isDarkMode = theme === "dark";
+	const isDarkMode = theme === 'dark';
 
 	const themeSrc = isDarkMode && darkSrc ? darkSrc : src;
 
@@ -54,7 +55,7 @@ const MediaContent: React.FC<{
 				playsInline
 				style={{
 					mixBlendMode: darkSrc && isDarkMode ? mixBlendMode : undefined,
-					objectFit: "cover",
+					objectFit: 'cover',
 				}}
 			>
 				<source src={themeSrc} />
@@ -64,6 +65,6 @@ const MediaContent: React.FC<{
 	}
 
 	return (
-		<img src={themeSrc} alt="media" style={{ width: "100%", height: "auto" }} />
+		<img src={themeSrc} alt="media" style={{ width: '100%', height: 'auto' }} />
 	);
 };

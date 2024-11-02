@@ -1,41 +1,41 @@
-import React from "react";
-import { Section } from "../../components/Section";
-import { ButtonGroup } from "../../components/ButtonGroup";
-import { LinkButton } from "../../components/LinkButton";
-import { Media } from "../../components/Media";
+import type React from 'react';
+import { ButtonGroup } from '../../components/ButtonGroup';
+import { LinkButton } from '../../components/LinkButton';
+import { Media } from '../../components/Media';
+import { Section } from '../../components/Section';
 
 export const InterpretationEvent: React.FC = () => {
 	return (
-		<Section className="no-padding-mobile" style={{ padding: "0px 32px" }}>
+		<Section className="no-padding-mobile" style={{ padding: '0px 32px' }}>
 			<div
 				style={{
-					display: "flex",
-					gap: "64px",
-					alignItems: "center",
-					flexWrap: "wrap",
-					position: "relative",
-					justifyContent: "space-between",
+					display: 'flex',
+					gap: '64px',
+					alignItems: 'center',
+					flexWrap: 'wrap',
+					position: 'relative',
+					justifyContent: 'space-between',
 				}}
 			>
 				<div
 					className="full-width-mobile"
 					style={{
-						display: "flex",
-						flexDirection: "column",
-						gap: "16px",
-						width: "500px",
-						height: "fit-content",
+						display: 'flex',
+						flexDirection: 'column',
+						gap: '16px',
+						width: '500px',
+						height: 'fit-content',
 					}}
 				>
 					<h2
 						className="mobile-wrap"
 						style={{
 							flex: 1,
-							fontWeight: "600",
-							whiteSpace: "nowrap",
+							fontWeight: '600',
+							whiteSpace: 'nowrap',
 						}}
 					>
-						Event{" "}
+						Event{' '}
 						<span className="text-alt-color" style={{ fontWeight: 500 }}>
 							Interpretation
 						</span>
@@ -60,16 +60,16 @@ export const InterpretationEvent: React.FC = () => {
 				<div
 					className="border"
 					style={{
-						textAlign: "center",
-						borderStyle: "solid",
-						borderWidth: "1px",
-						borderRadius: "16px",
-						overflow: "hidden",
-						display: "flex",
-						justifyContent: "center",
+						textAlign: 'center',
+						borderStyle: 'solid',
+						borderWidth: '1px',
+						borderRadius: '16px',
+						overflow: 'hidden',
+						display: 'flex',
+						justifyContent: 'center',
 						flex: 1,
-						minWidth: "50%",
-						maxWidth: "800px",
+						minWidth: '50%',
+						maxWidth: '800px',
 					}}
 				>
 					<Media
