@@ -1,6 +1,6 @@
+import { gql, useMutation } from '@apollo/client';
 import { useLogin } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
-import { gql, useMutation } from '@apollo/client';
 
 const UPDATE_USER = gql`
   mutation UpdateUser($privyId: String!, $apiClientName: String!) {

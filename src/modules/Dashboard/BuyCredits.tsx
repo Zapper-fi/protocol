@@ -1,6 +1,7 @@
 import { gql, useMutation } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
+import { useApiUser } from '../../helpers/useApiUser';
 
 const CREATE_CHARGE = gql`
 	mutation CreateCharge($pointsAmount: Int!, $userId: String!, $userEmail: String!) {
@@ -12,7 +13,10 @@ const CREATE_CHARGE = gql`
 
 export function BuyCredits() {
 	const { user } = usePrivy();
-	const [createCharge, { data, loading, error }] = useMutation(CREATE_CHARGE, {
+	const { data: apiUser } = useApiUser();
+	const { apiV2PointsRemaining = 0 } = apiUser?.apiClient || {};
+
+	const [createCharge, { loading, error }] = useMutation(CREATE_CHARGE, {
 		onCompleted: (data) => {
 			if (data?.createCharge.hostedUrl) {
 				const url = data.createCharge.hostedUrl;
@@ -44,6 +48,8 @@ export function BuyCredits() {
 	return (
 		<div className="mb-8">
 			<h2>Buy Credits</h2>
+
+			<p>Current balance: {Number(apiV2PointsRemaining)}</p>
 
 			{error && <p className="text-red-400">Error : {error.message}</p>}
 

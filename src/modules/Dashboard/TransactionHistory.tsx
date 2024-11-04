@@ -1,28 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
-import { usePrivy } from '@privy-io/react-auth';
 import { formatDate } from '../../helpers/formatDate';
-
-const QUERY = gql`
-  query TransactionHistory($privyId: String!) {
-    apiClient(privyId: $privyId) {
-      apiV1PointsRemaining
-			apiV2PointsRemaining
-      apiKey
-      payments {
-        amount
-        creditsPurchased
-        createdAt
-        status
-      }
-    }
-  }
-`;
+import { useApiUser } from '../../helpers/useApiUser';
 
 export function TransactionHistory() {
-	const { user } = usePrivy();
-	const { loading, error, data } = useQuery(QUERY, {
-		variables: { privyId: user.id },
-	});
+	const { data, loading, error } = useApiUser();
 
 	const { apiKey, payments } = data?.apiClient || {};
 
