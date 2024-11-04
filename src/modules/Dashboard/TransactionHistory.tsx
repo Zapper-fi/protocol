@@ -38,7 +38,7 @@ export function TransactionHistory() {
 			{!loading && !error && !payments ? (
 				<p>No data found</p>
 			) : (
-				<table>
+				<table className="table w-full">
 					<thead>
 						<tr>
 							<th>Date</th>

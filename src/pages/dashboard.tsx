@@ -9,41 +9,41 @@ import { TransactionHistory } from '../modules/Dashboard/TransactionHistory';
 import { Providers } from '../modules/Providers';
 
 function Dashboard() {
-  return (
-    <Providers>
-      <Layout>
-        <div className="flex">
-          <aside className="w-[300px]">{/* Sidebar */}</aside>
+	return (
+		<Providers>
+			<Layout>
+				<div className="flex">
+					<aside className="w-[300px]">{/* Sidebar */}</aside>
 
-          <main className="flex-1">
-            <div className="container">
-              <nav className="h-16">{/* Breadcrumbs */}</nav>
+					<main className="flex-1">
+						<div className="container w-auto mr-[25%]">
+							<nav className="h-16">{/* Breadcrumbs */}</nav>
 
-              <div className="flex justify-between">
-                <h1>API Dashboard</h1>
+							<div className="flex justify-between">
+								<h1>API Dashboard</h1>
 
-                <SignedIn>
-                  <SignOutButton />
-                </SignedIn>
-              </div>
+								<SignedIn>
+									<SignOutButton />
+								</SignedIn>
+							</div>
 
-              <SignedOut>
-                <p>Please log in or sign up to continue</p>
+							<SignedOut>
+								<p>Please log in or sign up to continue</p>
 
-                <SignInButton />
-              </SignedOut>
+								<SignInButton />
+							</SignedOut>
 
-              <SignedIn>
-                <BuyCredits />
+							<SignedIn>
+								<BuyCredits />
 
-                <TransactionHistory />
-              </SignedIn>
-            </div>
-          </main>
-        </div>
-      </Layout>
-    </Providers>
-  );
+								<TransactionHistory />
+							</SignedIn>
+						</div>
+					</main>
+				</div>
+			</Layout>
+		</Providers>
+	);
 }
 
 export default Dashboard;
