@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
+import { formatDate } from '../../helpers/formatDate';
 
 const QUERY = gql`
   query GetApiClient($privyId: String!) {
@@ -56,7 +57,7 @@ export function TransactionHistory() {
 						) : (
 							payments?.map((payment) => (
 								<tr key={payment.createdAt}>
-									<td>{payment.createdAt}</td>
+									<td>{formatDate(payment.createdAt)}</td>
 									<td>{payment.amount}</td>
 									<td>{payment.creditsPurchased}</td>
 									<td>{payment.status}</td>
