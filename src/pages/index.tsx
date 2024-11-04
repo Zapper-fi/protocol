@@ -9,22 +9,19 @@ import { Recall } from '../modules/Recall/Recall';
 import { Token } from '../modules/Token/Token';
 
 const Home: React.FC = () => {
-	return (
-		<Layout>
-			<Intro />
-			<div
-				className="container"
-				style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}
-			>
-				<Problem />
-				<ApiSection />
-				<Interpretation />
-				<Metrics />
-				<Token />
-				<Recall />
-			</div>
-		</Layout>
-	);
+  return (
+    <Layout>
+      <Intro />
+      <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
+        <Problem />
+        <ApiSection />
+        <Interpretation />
+        <Metrics />
+        <Token />
+        <Recall />
+      </div>
+    </Layout>
+  );
 };
 
 export default Home;
