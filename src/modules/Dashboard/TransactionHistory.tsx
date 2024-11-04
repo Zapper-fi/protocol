@@ -3,9 +3,10 @@ import { usePrivy } from '@privy-io/react-auth';
 import { formatDate } from '../../helpers/formatDate';
 
 const QUERY = gql`
-  query GetApiClient($privyId: String!) {
+  query TransactionHistory($privyId: String!) {
     apiClient(privyId: $privyId) {
-      totalPointsRemaining
+      apiV1PointsRemaining
+			apiV2PointsRemaining
       apiKey
       payments {
         amount
