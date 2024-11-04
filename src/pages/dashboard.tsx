@@ -10,25 +10,33 @@ function Dashboard() {
 	return (
 		<AuthProvider>
 			<Layout>
-				<main>
-					<h1>API Dashboard</h1>
+				<div className="flex">
+					<aside className="w-[300px]">{/* Sidebar */}</aside>
 
-					<SignedOut>
-						<p>Please log in or sign up to continue</p>
+					<main>
+						<div className="container">
+							<nav className="h-16">{/* Breadcrumbs */}</nav>
 
-						<SignInButton />
-					</SignedOut>
+							<h1>API Dashboard</h1>
 
-					<SignedIn>
-						<h2>Buy Credits</h2>
-						<p>TODO: Buy credits goes here</p>
+							<SignedOut>
+								<p>Please log in or sign up to continue</p>
 
-						<h2>Transaction History</h2>
-						<p>TODO: Transaction history goes here</p>
+								<SignInButton />
+							</SignedOut>
 
-						<SignOutButton />
-					</SignedIn>
-				</main>
+							<SignedIn>
+								<h2>Buy Credits</h2>
+								<p>TODO: Buy credits goes here</p>
+
+								<h2>Transaction History</h2>
+								<p>TODO: Transaction history goes here</p>
+
+								<SignOutButton />
+							</SignedIn>
+						</div>
+					</main>
+				</div>
 			</Layout>
 		</AuthProvider>
 	);
