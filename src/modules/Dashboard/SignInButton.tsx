@@ -1,5 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
-import { useLogin } from '@privy-io/react-auth';
+import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
 
 const UPDATE_USER = gql`
@@ -14,6 +14,8 @@ const UPDATE_USER = gql`
 export function SignInButton() {
 	const [updateUser, { loading, error }] = useMutation(UPDATE_USER);
 
+	const { authenticated } = usePrivy();
+	const { logout } = useLogout();
 	const { login } = useLogin({
 		onComplete: (user, isNewUser) => {
 			if (isNewUser) {
@@ -27,9 +29,13 @@ export function SignInButton() {
 		},
 	});
 
+	const handleClick = () => {
+		authenticated ? logout() : login();
+	};
+
 	return (
-		<Button type="button" variant="primary" onClick={login}>
-			Login
+		<Button type="button" variant="primary" onClick={handleClick}>
+			{authenticated ? 'Logout' : 'Login'}
 		</Button>
 	);
 }

@@ -22,15 +22,11 @@ function Dashboard() {
 							<div className="flex justify-between">
 								<h1>API Dashboard</h1>
 
-								<SignedIn>
-									<SignOutButton />
-								</SignedIn>
+								<SignInButton />
 							</div>
 
 							<SignedOut>
 								<p>Please log in or sign up to continue</p>
-
-								<SignInButton />
 							</SignedOut>
 
 							<SignedIn>
