@@ -1,8 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
+sidebar_label: EI Reviewing
 ---
 
-# Review Process
+# Event Review Process
 
 ## Page Overview
 
@@ -15,10 +16,11 @@ On the right side, you will find a preview feed to confirm if the event has been
 ![Preview](/img/assets/Page-Overview-2.png)
 
 ---
+
 ## Steps to Review an Event
 
 1. Choose an event to review
-2.  Get more context on the chosen event
+2. Get more context on the chosen event
 3. Review the submission
 4. Approve or Reject
 
@@ -27,6 +29,7 @@ Start with events on apps you are familiar with or types of transactions you hav
 :::
 
 ---
+
 ## Resources for Reviewing
 
 - The contract address
@@ -34,6 +37,7 @@ Start with events on apps you are familiar with or types of transactions you hav
 - The chain explorer
 
 ---
+
 ## Decision Making and Checklist
 
 To ensure quality across all interpretations, validate key elements of the EI before approving it.

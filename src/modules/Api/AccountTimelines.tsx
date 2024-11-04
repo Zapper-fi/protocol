@@ -1,10 +1,10 @@
-import React from "react";
-import { Section } from "../../components/Section";
+import React from 'react';
+import { Section } from '../../components/Section';
 
 enum AccountTimelineType {
-	Timeline = "App Holdings",
-	Transaction = "Transaction",
-	Feeds = "Feeds",
+	Timeline = 'App Holdings',
+	Transaction = 'Transaction',
+	Feeds = 'Feeds',
 }
 
 export const AccountTimelines: React.FC = () => {
@@ -15,52 +15,52 @@ export const AccountTimelines: React.FC = () => {
 	return (
 		<Section
 			className="border hide-mobile"
-			style={{ borderWidth: "1px", borderStyle: "solid", padding: "64px 32px" }}
+			style={{ borderWidth: '1px', borderStyle: 'solid', padding: '64px 32px' }}
 		>
 			<div
 				style={{
-					display: "flex",
-					gap: "64px",
-					alignItems: "center",
-					flexWrap: "wrap",
+					display: 'flex',
+					gap: '64px',
+					alignItems: 'center',
+					flexWrap: 'wrap',
 				}}
 			>
 				<div
 					style={{
-						display: "flex",
-						flexDirection: "column",
-						gap: "4px",
+						display: 'flex',
+						flexDirection: 'column',
+						gap: '4px',
 						flex: 1,
-						height: "fit-content",
-						minWidth: "500px",
+						height: 'fit-content',
+						minWidth: '500px',
 					}}
 				>
 					<div
 						className="opacity-hover"
 						style={{
-							cursor: "pointer",
-							width: "100%",
-							flexDirection: "column",
+							cursor: 'pointer',
+							width: '100%',
+							flexDirection: 'column',
 						}}
 						onClick={() => setSelectedType(AccountTimelineType.Timeline)}
 					>
 						<div
 							style={{
-								display: "flex",
-								alignItems: "center",
-								width: "100%",
-								justifyContent: "space-between",
+								display: 'flex',
+								alignItems: 'center',
+								width: '100%',
+								justifyContent: 'space-between',
 							}}
 						>
 							<h5>Account Timelines</h5>
 							<span
 								style={{
-									fontSize: "24px",
-									marginTop: "-24px",
+									fontSize: '24px',
+									marginTop: '-24px',
 									transform:
 										selectedType === AccountTimelineType.Timeline
-											? "rotate(180deg)"
-											: "initial",
+											? 'rotate(180deg)'
+											: 'initial',
 								}}
 							>
 								⌄
@@ -76,29 +76,29 @@ export const AccountTimelines: React.FC = () => {
 					<div
 						className="opacity-hover"
 						style={{
-							cursor: "pointer",
-							width: "100%",
-							flexDirection: "column",
+							cursor: 'pointer',
+							width: '100%',
+							flexDirection: 'column',
 						}}
 						onClick={() => setSelectedType(AccountTimelineType.Transaction)}
 					>
 						<div
 							style={{
-								display: "flex",
-								alignItems: "center",
-								width: "100%",
-								justifyContent: "space-between",
+								display: 'flex',
+								alignItems: 'center',
+								width: '100%',
+								justifyContent: 'space-between',
 							}}
 						>
 							<h5>Transaction</h5>
 							<span
 								style={{
-									fontSize: "24px",
-									marginTop: "-24px",
+									fontSize: '24px',
+									marginTop: '-24px',
 									transform:
 										selectedType === AccountTimelineType.T
-											? "rotate(180deg)"
-											: "initial",
+											? 'rotate(180deg)'
+											: 'initial',
 								}}
 							>
 								⌄
@@ -114,29 +114,29 @@ export const AccountTimelines: React.FC = () => {
 					<div
 						className="opacity-hover"
 						style={{
-							cursor: "pointer",
-							width: "100%",
-							flexDirection: "column",
+							cursor: 'pointer',
+							width: '100%',
+							flexDirection: 'column',
 						}}
 						onClick={() => setSelectedType(AccountTimelineType.Feeds)}
 					>
 						<div
 							style={{
-								display: "flex",
-								alignItems: "center",
-								width: "100%",
-								justifyContent: "space-between",
+								display: 'flex',
+								alignItems: 'center',
+								width: '100%',
+								justifyContent: 'space-between',
 							}}
 						>
 							<h5>Feeds</h5>
 							<span
 								style={{
-									fontSize: "24px",
-									marginTop: "-24px",
+									fontSize: '24px',
+									marginTop: '-24px',
 									transform:
 										selectedType === AccountTimelineType.Feeds
-											? "rotate(180deg)"
-											: "initial",
+											? 'rotate(180deg)'
+											: 'initial',
 								}}
 							>
 								⌄
@@ -149,14 +149,14 @@ export const AccountTimelines: React.FC = () => {
 						)}
 					</div>
 				</div>
-				<div style={{ flex: 1, textAlign: "center", height: "420px" }}>
+				<div style={{ flex: 1, textAlign: 'center', height: '420px' }}>
 					{selectedType === AccountTimelineType.Timeline && (
 						<img
 							height="100%"
 							width="100%"
 							src="./img/assets/User_Timeline.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: 'contain', minWidth: '500px' }}
 						/>
 					)}
 					{selectedType === AccountTimelineType.Transaction && (
@@ -165,7 +165,7 @@ export const AccountTimelines: React.FC = () => {
 							width="100%"
 							src="./img/assets/Transactions.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: 'contain', minWidth: '500px' }}
 						/>
 					)}
 					{selectedType === AccountTimelineType.Feeds && (
@@ -174,7 +174,7 @@ export const AccountTimelines: React.FC = () => {
 							width="100%"
 							src="./img/assets/App_Feeds.svg"
 							alt="placeholder"
-							style={{ objectFit: "contain", minWidth: "500px" }}
+							style={{ objectFit: 'contain', minWidth: '500px' }}
 						/>
 					)}
 				</div>

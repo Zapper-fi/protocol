@@ -1,4 +1,4 @@
-import React from "react";
+import type React from 'react';
 
 export const Card: React.FC<{
 	children: React.ReactNode;
@@ -9,8 +9,8 @@ export const Card: React.FC<{
 			className="card"
 			style={{
 				...style,
-				padding: "16px",
-				borderRadius: "16px",
+				padding: '16px',
+				borderRadius: '16px',
 			}}
 		>
 			{children}
