@@ -1,17 +1,17 @@
 import { PrivyProvider } from '@privy-io/react-auth';
 
-const privyAppId = 'cm2ateeqj0531q8pbixyb92qu';
+const privyAppId = 'cls53js9a00lfjw0npsb82scb';
 
 const privyConfig = {
-  appearance: {
-    theme: 'dark',
-  },
+	appearance: {
+		theme: 'dark',
+	},
 };
 
 export function AuthProvider({ children }) {
-  return (
-    <PrivyProvider appId={privyAppId} config={privyConfig}>
-      {children}
-    </PrivyProvider>
-  );
+	return (
+		<PrivyProvider appId={privyAppId} config={privyConfig}>
+			{children}
+		</PrivyProvider>
+	);
 }
