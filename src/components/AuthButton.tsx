@@ -26,7 +26,7 @@ const AuthButton = () => {
       }
     `;
     const result = await fetcher(query, { name: email });
-    return result.data?.client;
+    return result.data?.clientByName;
   };
 
   const updatePrivyId = async (privyId, apiClientName) => {
