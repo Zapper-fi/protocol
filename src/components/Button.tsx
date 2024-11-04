@@ -3,16 +3,7 @@ export function Button(props) {
 
 	return (
 		<button
-			style={{
-				border: 'none',
-				borderRadius: '8px',
-				padding: '0px 16px',
-				display: 'flex',
-				alignItems: 'center',
-				height: '48px',
-				fontSize: '16px',
-				fontWeight: 500,
-			}}
+			className="button--primary border-none rounded-lg px-4 display-flex align-items-center h-12 text-[16px] font-semibold opacity-100 hover:opacity-80 transition-all"
 			{...rest}
 		>
 			{children}

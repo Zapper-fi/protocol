@@ -5,7 +5,7 @@ export function SignOutButton() {
 	const { logout } = usePrivy();
 
 	return (
-		<Button type="button" className="button--primary" onClick={() => logout()}>
+		<Button type="button" variant="primary" onClick={() => logout()}>
 			Logout
 		</Button>
 	);

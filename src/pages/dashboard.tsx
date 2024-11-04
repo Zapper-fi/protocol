@@ -1,23 +1,31 @@
 import Layout from '@theme/Layout';
 import React from 'react';
-import { AuthProvider } from '../modules/Dashboard/AuthProvider';
+import { Providers } from '../modules/Providers';
 import { SignInButton } from '../modules/Dashboard/SignInButton';
 import { SignOutButton } from '../modules/Dashboard/SignOutButton';
 import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
+import { BuyCredits } from '../modules/Dashboard/BuyCredits';
+import { TransactionHistory } from '../modules/Dashboard/TransactionHistory';
 
 function Dashboard() {
 	return (
-		<AuthProvider>
+		<Providers>
 			<Layout>
 				<div className="flex">
 					<aside className="w-[300px]">{/* Sidebar */}</aside>
 
-					<main>
+					<main className="flex-1">
 						<div className="container">
 							<nav className="h-16">{/* Breadcrumbs */}</nav>
 
-							<h1>API Dashboard</h1>
+							<div className="flex justify-between">
+								<h1>API Dashboard</h1>
+
+								<SignedIn>
+									<SignOutButton />
+								</SignedIn>
+							</div>
 
 							<SignedOut>
 								<p>Please log in or sign up to continue</p>
@@ -26,19 +34,15 @@ function Dashboard() {
 							</SignedOut>
 
 							<SignedIn>
-								<h2>Buy Credits</h2>
-								<p>TODO: Buy credits goes here</p>
+								<BuyCredits />
 
-								<h2>Transaction History</h2>
-								<p>TODO: Transaction history goes here</p>
-
-								<SignOutButton />
+								<TransactionHistory />
 							</SignedIn>
 						</div>
 					</main>
 				</div>
 			</Layout>
-		</AuthProvider>
+		</Providers>
 	);
 }
 

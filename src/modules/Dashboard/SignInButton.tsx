@@ -5,7 +5,7 @@ export function SignInButton() {
 	const { login } = usePrivy();
 
 	return (
-		<Button type="button" className="button--primary" onClick={() => login()}>
+		<Button type="button" variant="primary" onClick={() => login()}>
 			Login
 		</Button>
 	);
