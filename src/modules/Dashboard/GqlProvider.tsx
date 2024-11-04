@@ -1,33 +1,28 @@
-import {
-	ApolloClient,
-	ApolloProvider,
-	createHttpLink,
-	InMemoryCache,
-} from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const API_KEY = 'ec0888a7-9bd1-4e11-b862-a8d44d157afd';
 
 const httpLink = createHttpLink({
-	uri: 'https://api.zapper.xyz/z/graphql',
+  uri: 'https://api.zapper.xyz/z/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-	const authorization = `Basic ${btoa(`${API_KEY}:`)}`;
+  const authorization = `Basic ${btoa(`${API_KEY}:`)}`;
 
-	return {
-		headers: {
-			...headers,
-			authorization,
-		},
-	};
+  return {
+    headers: {
+      ...headers,
+      authorization,
+    },
+  };
 });
 
 const client = new ApolloClient({
-	link: authLink.concat(httpLink),
-	cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 export function GqlProvider({ children }) {
-	return <ApolloProvider client={client}>{children}</ApolloProvider>;
+  return <ApolloProvider client={client}>{children}</ApolloProvider>;
 }
