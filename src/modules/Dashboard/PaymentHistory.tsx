@@ -3,7 +3,7 @@ import { formatDate } from '../../helpers/formatDate';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 
 const QUERY = gql`
-  query ApiClient($privyId: String!) {
+  query PaymentHistory($privyId: String!) {
     apiClient(privyId: $privyId) {
       payments {
         amount
@@ -15,14 +15,14 @@ const QUERY = gql`
   }
 `;
 
-export function TransactionHistory() {
+export function PaymentHistory() {
   const { data, loading, error } = useAuthQuery(QUERY);
 
   const { payments = [] } = data?.apiClient || {};
 
   return (
     <div className="mb-8">
-      <h2>Transaction History</h2>
+      <h2>Payment History</h2>
 
       {loading && <p>Loading...</p>}
 

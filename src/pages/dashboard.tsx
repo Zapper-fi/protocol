@@ -6,7 +6,7 @@ import { Profile } from '../modules/Dashboard/Profile';
 import { SignInButton } from '../modules/Dashboard/SignInButton';
 import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
-import { TransactionHistory } from '../modules/Dashboard/TransactionHistory';
+import { PaymentHistory } from '../modules/Dashboard/PaymentHistory';
 import { Providers } from '../modules/Providers';
 
 function Dashboard() {
@@ -37,7 +37,7 @@ function Dashboard() {
 
                 <BuyCredits />
 
-                <TransactionHistory />
+                <PaymentHistory />
               </SignedIn>
             </div>
           </main>
