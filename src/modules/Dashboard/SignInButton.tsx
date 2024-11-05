@@ -18,7 +18,7 @@ export function SignInButton() {
 	const { logout } = useLogout();
 	const { login } = useLogin({
 		onComplete: (user, isNewUser) => {
-			if (isNewUser) {
+			if (user) {
 				updateUser({
 					variables: {
 						privyId: user.id,

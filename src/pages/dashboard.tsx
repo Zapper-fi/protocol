@@ -7,6 +7,7 @@ import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
 import { TransactionHistory } from '../modules/Dashboard/TransactionHistory';
 import { Providers } from '../modules/Providers';
+import { Debug } from '../modules/Dashboard/Debug';
 
 function Dashboard() {
 	return (
@@ -24,6 +25,8 @@ function Dashboard() {
 
 								<SignInButton />
 							</div>
+
+							<Debug />
 
 							<SignedOut>
 								<p>Please log in or sign up to continue</p>
