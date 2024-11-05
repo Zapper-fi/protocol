@@ -73,18 +73,18 @@ export function BuyCredits() {
           </thead>
           <tbody>
             <tr>
-              <td>100</td>
-              <td>$10</td>
-              <td>
+              <td className="text-center">100</td>
+              <td className="text-center">$10</td>
+              <td className="text-center">
                 <Button type="submit" variant="primary" value="100" disabled={disabled}>
                   Buy for $10
                 </Button>
               </td>
             </tr>
             <tr>
-              <td>200</td>
-              <td>$20</td>
-              <td>
+              <td className="text-center">200</td>
+              <td className="text-center">$20</td>
+              <td className="text-center">
                 <Button type="submit" variant="primary" value="200" disabled={disabled}>
                   Buy for $20
                 </Button>

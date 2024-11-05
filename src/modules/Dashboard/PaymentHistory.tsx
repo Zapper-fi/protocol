@@ -34,10 +34,10 @@ export function PaymentHistory() {
         <table className="table w-full">
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Credits Purchased</th>
-              <th>Status</th>
+              <th className="text-start">Date</th>
+              <th className="text-end">Credits</th>
+              <th className="text-end">Amount</th>
+              <th className="text-center">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -51,9 +51,9 @@ export function PaymentHistory() {
               payments?.map((payment) => (
                 <tr key={payment.createdAt}>
                   <td>{formatDate(payment.createdAt)}</td>
-                  <td>{payment.amount}</td>
-                  <td>{payment.creditsPurchased}</td>
-                  <td>{payment.status}</td>
+                  <td className="text-end">{payment.creditsPurchased}</td>
+                  <td className="text-end">{payment.amount}</td>
+                  <td className="text-center">{payment.status}</td>
                 </tr>
               ))
             )}
