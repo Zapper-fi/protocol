@@ -14,10 +14,10 @@ function Dashboard() {
     <Providers>
       <Layout>
         <div className="flex">
-          <aside className="w-[300px]">{/* Sidebar */}</aside>
+          <aside className="lg:w-[300px]">{/* Sidebar */}</aside>
 
           <main className="flex-1">
-            <div className="container w-auto mr-[25%]">
+            <div className="container w-auto lg:mr-[25%]">
               <nav className="h-16">{/* Breadcrumbs */}</nav>
 
               <div className="flex justify-between">
