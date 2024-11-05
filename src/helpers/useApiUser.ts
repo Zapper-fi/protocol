@@ -18,12 +18,12 @@ const QUERY = gql`
 `;
 
 export function useApiUser() {
-	const { user } = usePrivy();
+  const { user } = usePrivy();
 
-	const result = useQuery(QUERY, {
-		variables: { privyId: user.id },
-		skip: !user,
-	});
+  const result = useQuery(QUERY, {
+    variables: { privyId: user.id },
+    skip: !user,
+  });
 
-	return result;
+  return result;
 }

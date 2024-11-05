@@ -12,30 +12,30 @@ const UPDATE_USER = gql`
 `;
 
 export function SignInButton() {
-	const [updateUser, { loading, error }] = useMutation(UPDATE_USER);
+  const [updateUser, { loading, error }] = useMutation(UPDATE_USER);
 
-	const { authenticated } = usePrivy();
-	const { logout } = useLogout();
-	const { login } = useLogin({
-		onComplete: (user, isNewUser) => {
-			if (user) {
-				updateUser({
-					variables: {
-						privyId: user.id,
-						apiClientName: user.email.address,
-					},
-				});
-			}
-		},
-	});
+  const { authenticated } = usePrivy();
+  const { logout } = useLogout();
+  const { login } = useLogin({
+    onComplete: (user, isNewUser) => {
+      if (user) {
+        updateUser({
+          variables: {
+            privyId: user.id,
+            apiClientName: user.email.address,
+          },
+        });
+      }
+    },
+  });
 
-	const handleClick = () => {
-		authenticated ? logout() : login();
-	};
+  const handleClick = () => {
+    authenticated ? logout() : login();
+  };
 
-	return (
-		<Button type="button" variant="primary" onClick={handleClick}>
-			{authenticated ? 'Logout' : 'Login'}
-		</Button>
-	);
+  return (
+    <Button type="button" variant="primary" onClick={handleClick}>
+      {authenticated ? 'Logout' : 'Login'}
+    </Button>
+  );
 }

@@ -12,88 +12,78 @@ const CREATE_CHARGE = gql`
 `;
 
 export function BuyCredits() {
-	const { user } = usePrivy();
-	const { data: apiUser } = useApiUser();
-	const { apiV2PointsRemaining = 0 } = apiUser?.apiClient || {};
+  const { user } = usePrivy();
+  const { data: apiUser } = useApiUser();
+  const { apiV2PointsRemaining = 0 } = apiUser?.apiClient || {};
 
-	const [createCharge, { loading, error }] = useMutation(CREATE_CHARGE, {
-		onCompleted: (data) => {
-			if (data?.createCharge.hostedUrl) {
-				const url = data.createCharge.hostedUrl;
-				window.open(url, '_blank');
-			}
-		},
-	});
+  const [createCharge, { loading, error }] = useMutation(CREATE_CHARGE, {
+    onCompleted: (data) => {
+      if (data?.createCharge.hostedUrl) {
+        const url = data.createCharge.hostedUrl;
+        window.open(url, '_blank');
+      }
+    },
+  });
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-		if (!user) {
-			return;
-		}
+    if (!user) {
+      return;
+    }
 
-		const pointsAmount = Number(e.nativeEvent.submitter.value);
+    const pointsAmount = Number(e.nativeEvent.submitter.value);
 
-		createCharge({
-			variables: {
-				pointsAmount,
-				userId: user.id,
-				userEmail: user.email.address,
-			},
-		});
-	};
+    createCharge({
+      variables: {
+        pointsAmount,
+        userId: user.id,
+        userEmail: user.email.address,
+      },
+    });
+  };
 
-	const disabled = loading || !user;
+  const disabled = loading || !user;
 
-	return (
-		<div className="mb-8">
-			<h2>Buy Credits</h2>
+  return (
+    <div className="mb-8">
+      <h2>Buy Credits</h2>
 
-			<p>Current balance: {Number(apiV2PointsRemaining)}</p>
+      <p>Current balance: {Number(apiV2PointsRemaining)}</p>
 
-			{error && <p className="text-red-400">Error : {error.message}</p>}
+      {error && <p className="text-red-400">Error : {error.message}</p>}
 
-			<form onSubmit={handleSubmit}>
-				<table className="table w-full">
-					<thead>
-						<tr>
-							<th>API Credits</th>
-							<th>Amount</th>
-							<th>Purchase</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>100</td>
-							<td>$10</td>
-							<td>
-								<Button
-									type="submit"
-									variant="primary"
-									value="100"
-									disabled={disabled}
-								>
-									Buy for $10
-								</Button>
-							</td>
-						</tr>
-						<tr>
-							<td>200</td>
-							<td>$20</td>
-							<td>
-								<Button
-									type="submit"
-									variant="primary"
-									value="200"
-									disabled={disabled}
-								>
-									Buy for $20
-								</Button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</form>
-		</div>
-	);
+      <form onSubmit={handleSubmit}>
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th>API Credits</th>
+              <th>Amount</th>
+              <th>Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100</td>
+              <td>$10</td>
+              <td>
+                <Button type="submit" variant="primary" value="100" disabled={disabled}>
+                  Buy for $10
+                </Button>
+              </td>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>$20</td>
+              <td>
+                <Button type="submit" variant="primary" value="200" disabled={disabled}>
+                  Buy for $20
+                </Button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  );
 }
