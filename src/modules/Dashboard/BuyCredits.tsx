@@ -4,7 +4,7 @@ import { Button } from '../../components/Button';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 
 const QUERY = gql`
-  query ApiClient($privyId: String!) {
+  query BuyCredits($privyId: String!) {
     apiClient(privyId: $privyId) {
       apiV1PointsRemaining
       apiV2PointsRemaining
