@@ -2,8 +2,8 @@ import Layout from '@theme/Layout';
 import React from 'react';
 import { BuyCredits } from '../modules/Dashboard/BuyCredits';
 import { Debug } from '../modules/Dashboard/Debug';
+import { Profile } from '../modules/Dashboard/Profile';
 import { SignInButton } from '../modules/Dashboard/SignInButton';
-import { SignOutButton } from '../modules/Dashboard/SignOutButton';
 import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
 import { TransactionHistory } from '../modules/Dashboard/TransactionHistory';
@@ -33,6 +33,8 @@ function Dashboard() {
               </SignedOut>
 
               <SignedIn>
+                <Profile />
+
                 <BuyCredits />
 
                 <TransactionHistory />

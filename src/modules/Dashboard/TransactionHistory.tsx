@@ -1,16 +1,28 @@
+import { gql } from '@apollo/client';
 import { formatDate } from '../../helpers/formatDate';
-import { useApiUser } from '../../helpers/useApiUser';
+import { useAuthQuery } from '../../helpers/useAuthQuery';
+
+const QUERY = gql`
+  query ApiClient($privyId: String!) {
+    apiClient(privyId: $privyId) {
+      payments {
+        amount
+        creditsPurchased
+        createdAt
+        status
+      }
+    }
+  }
+`;
 
 export function TransactionHistory() {
-  const { data, loading, error } = useApiUser();
+  const { data, loading, error } = useAuthQuery(QUERY);
 
-  const { apiKey, payments } = data?.apiClient || {};
+  const { payments = [] } = data?.apiClient || {};
 
   return (
     <div className="mb-8">
       <h2>Transaction History</h2>
-
-      {apiKey && <p>Recent purchases for API key: {apiKey}</p>}
 
       {loading && <p>Loading...</p>}
 
