@@ -26,8 +26,6 @@ function Dashboard() {
                 <SignInButton />
               </div>
 
-              <Debug />
-
               <SignedOut>
                 <p>Please log in or sign up to continue</p>
               </SignedOut>
@@ -35,9 +33,15 @@ function Dashboard() {
               <SignedIn>
                 <Profile />
 
+                <hr />
+
                 <BuyCredits />
 
+                <hr />
+
                 <PaymentHistory />
+
+                <Debug />
               </SignedIn>
             </div>
           </main>
