@@ -4,12 +4,10 @@ export function Debug() {
   const { authenticated, user } = usePrivy();
 
   return (
-    <div className="mb-8">
-      <details>
-        <summary>Debug</summary>
+    <details className="mb-8">
+      <summary>Debug</summary>
 
-        <textarea rows={10} className="w-full" value={JSON.stringify(user, null, 2)} />
-      </details>
-    </div>
+      <textarea rows={10} className="w-full" defaultValue={JSON.stringify(user, null, 2)} />
+    </details>
   );
 }

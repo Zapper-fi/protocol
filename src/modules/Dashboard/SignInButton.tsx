@@ -12,13 +12,13 @@ const UPDATE_USER = gql`
 `;
 
 export function SignInButton() {
-  const [updateUser, { loading, error }] = useMutation(UPDATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER);
 
   const { authenticated } = usePrivy();
   const { logout } = useLogout();
   const { login } = useLogin({
     onComplete: (user, isNewUser) => {
-      if (user) {
+      if (user.email) {
         updateUser({
           variables: {
             privyId: user.id,
@@ -26,6 +26,7 @@ export function SignInButton() {
           },
         });
       }
+      // TODO: If wallet login is enabled, we need to capture email separately
     },
   });
 
