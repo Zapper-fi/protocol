@@ -1,58 +1,50 @@
 {
-	"name": "zapper-protocol-website",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"docusaurus": "docusaurus",
-		"start": "docusaurus start",
-		"build": "docusaurus build",
-		"swizzle": "docusaurus swizzle",
-		"deploy": "docusaurus deploy",
-		"clear": "docusaurus clear",
-		"serve": "docusaurus serve",
-		"write-translations": "docusaurus write-translations",
-		"write-heading-ids": "docusaurus write-heading-ids",
-		"typecheck": "tsc",
-		"dev": "docusaurus start",
-		"check": "biome check src"
-	},
-	"dependencies": {
-		"@docusaurus/core": "3.6.0",
-		"@docusaurus/preset-classic": "3.6.0",
-		"@docusaurus/theme-classic": "^3.6.0",
-		"@docusaurus/theme-mermaid": "^3.6.0",
-		"@mdx-js/react": "^3.0.0",
-		"clsx": "^2.0.0",
-		"docusaurus-plugin-remote-content": "^4.0.0",
-		"docusaurus-plugin-sass": "^0.2.5",
-		"install": "^0.13.0",
-		"prism-react-renderer": "^2.3.0",
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0",
-		"redoc": "^2.1.4",
-		"sass": "^1.77.2"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@docusaurus/module-type-aliases": "3.4.0",
-		"@docusaurus/tsconfig": "3.4.0",
-		"@docusaurus/types": "3.4.0",
-		"typescript": "~5.2.2"
-	},
-	"browserslist": {
-		"production": [
-			">0.5%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 3 chrome version",
-			"last 3 firefox version",
-			"last 5 safari version"
-		]
-	},
-	"engines": {
-		"node": ">=18.0"
-	},
-	"description": "Zapper Protocol Website"
+  "name": "zapper-protocol-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc",
+    "dev": "docusaurus start",
+    "check": "biome check src"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.6.0",
+    "@docusaurus/preset-classic": "3.6.0",
+    "@docusaurus/theme-classic": "^3.6.0",
+    "@docusaurus/theme-mermaid": "^3.6.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-remote-content": "^4.0.0",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "install": "^0.13.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "redoc": "^2.1.4",
+    "sass": "^1.77.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "3.4.0",
+    "@docusaurus/types": "3.4.0",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [">0.5%", "not dead", "not op_mini all"],
+    "development": ["last 3 chrome version", "last 3 firefox version", "last 5 safari version"]
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "description": "Zapper Protocol Website"
 }
