@@ -14,8 +14,11 @@ app balances test
 Code snippet test:
 
 ```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
+query GetAppBalancesQuery(
+  $addresses: [Address!]!
+  $networks: [Network!]!
+  $appIds: [String!]
+) 
 ```
 
 'v2/balances/tokens'
