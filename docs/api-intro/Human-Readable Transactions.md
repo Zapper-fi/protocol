@@ -10,6 +10,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 
 Please note that the textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
 
+*List Human-readable transactions from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic*
 
 ```sh
 query SummaryTimelineQuery(
@@ -24,13 +25,12 @@ query SummaryTimelineQuery(
   $isSigner: Boolean
 )
 ```
-> List Human-readable transactions from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic
 
 ## App Feeds
 
 Receive a paginated payload of interpreted events for a given app and network
 
-Code snippet test:
+*List Human-readable transactions made using an application, ordered by date, paginated, across chains*
 
 ```sh
 query AppTimelineQuery(
@@ -42,11 +42,11 @@ query AppTimelineQuery(
   $outboundFirst: Int
 )
 ```
-> List Human-readable transactions made using an application, ordered by date, paginated, across chains
+
 
 ## Received Tokens
 
-List Latest tokens received by wallet where the wallet is not the signer of the transaction
+*List Latest tokens received by wallet where the wallet is not the signer of the transaction*
 
 ```sh
 query SummaryReceivedTimelineQuery(
