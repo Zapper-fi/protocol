@@ -6,9 +6,6 @@ export function useAuthQuery(query, options = {}) {
 
   return useQuery(query, {
     ...options,
-    variables: {
-      privyId: user?.id,
-    },
     skip: !user,
   });
 }

@@ -3,8 +3,8 @@ import { formatDate } from '../../helpers/formatDate';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 
 const QUERY = gql`
-  query PaymentHistory($privyId: String!) {
-    apiClient(privyId: $privyId) {
+  query PaymentHistory {
+    apiClient {
       payments {
         amount
         creditsPurchased

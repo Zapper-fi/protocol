@@ -5,8 +5,8 @@ import { useAuthQuery } from '../../helpers/useAuthQuery';
 import { openPopup } from '../../helpers/openPopup';
 
 const QUERY = gql`
-  query BuyCredits($privyId: String!) {
-    apiClient(privyId: $privyId) {
+  query BuyCredits {
+    apiClient {
       apiV1PointsRemaining
       apiV2PointsRemaining
     }

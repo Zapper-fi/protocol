@@ -3,8 +3,8 @@ import { useAuthQuery } from '../../helpers/useAuthQuery';
 import { usePrivy } from '@privy-io/react-auth';
 
 const QUERY = gql`
-  query Profile($privyId: String!) {
-    apiClient(privyId: $privyId) {
+  query Profile {
+    apiClient {
       name
       apiKey
     }
