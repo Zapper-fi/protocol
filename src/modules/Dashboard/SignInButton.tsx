@@ -28,7 +28,7 @@ export function SignInButton() {
 
         const clientId = data?.upsertApiClient?.id || '';
         if (clientId) {
-          sessionStorage.setItem('clientId', clientId);
+          localStorage.setItem('zapper.clientId', clientId);
         }
       }
 

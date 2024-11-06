@@ -9,7 +9,7 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   const authorization = `Basic ${btoa(`${API_KEY}:`)}`;
-  const clientId = sessionStorage.getItem('clientId');
+  const clientId = localStorage.getItem('zapper.clientId');
 
   return {
     headers: {
