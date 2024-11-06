@@ -44,7 +44,7 @@ query AppTimelineQuery(
 ```
 > List Human-readable transactions made using an application, ordered by date, paginated, across chains
 
-## App Feeds
+## Received Tokens
 
 List Latest tokens received by wallet where the wallet is not the signer of the transaction
 
