@@ -4,7 +4,7 @@ sidebar_position: 4
 
 
 
-hi this is a test wow
+app balances test
 
 
 :::tip
