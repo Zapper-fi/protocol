@@ -7,6 +7,8 @@ sidebar_position: 1
 
 Access the onchain data curated by the Zapper Protocol through a Graph QL API. The endpoints provide complete onchain portfolio data, human-readable transactions, token prices, and more.
 
+---
+
 ## Get an API key
 
 Visit protocol.zapper.xyz/dashboard to get your API key.
