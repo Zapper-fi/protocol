@@ -6,7 +6,7 @@ import { openPopup } from '../../helpers/openPopup';
 
 const QUERY = gql`
   query BuyCredits {
-    apiClient {
+    apiClientById {
       apiV1PointsRemaining
       apiV2PointsRemaining
     }

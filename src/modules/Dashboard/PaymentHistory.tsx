@@ -4,7 +4,7 @@ import { useAuthQuery } from '../../helpers/useAuthQuery';
 
 const QUERY = gql`
   query PaymentHistory {
-    apiClient {
+    apiClientById {
       payments {
         amount
         creditsPurchased

@@ -4,7 +4,7 @@ import { usePrivy } from '@privy-io/react-auth';
 
 const QUERY = gql`
   query Profile {
-    apiClient {
+    apiClientById {
       name
       apiKey
     }
