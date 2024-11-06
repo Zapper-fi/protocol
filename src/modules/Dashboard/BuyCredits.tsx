@@ -52,7 +52,7 @@ export function BuyCredits() {
     });
   };
 
-  const { apiV2PointsRemaining = 0 } = data?.apiClient || {};
+  const { apiV2PointsRemaining = 0 } = data?.apiClientById || {};
   const disabled = loading || !user;
 
   return (

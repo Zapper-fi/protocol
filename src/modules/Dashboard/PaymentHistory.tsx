@@ -18,7 +18,7 @@ const QUERY = gql`
 export function PaymentHistory() {
   const { data, loading, error } = useAuthQuery(QUERY);
 
-  const { payments = [] } = data?.apiClient || {};
+  const { payments = [] } = data?.apiClientById || {};
 
   return (
     <div className="mb-8">

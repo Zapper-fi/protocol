@@ -14,7 +14,7 @@ const QUERY = gql`
 export function Profile() {
   const { data } = useAuthQuery(QUERY);
 
-  const { apiKey, name } = data?.apiClient || {};
+  const { apiKey, name } = data?.apiClientById || {};
 
   return (
     <div>
