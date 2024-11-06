@@ -45,9 +45,11 @@ export function ConsumptionStats() {
 
   const consumptionStats = data?.apiConsumptionStats || [];
 
-  const handleTimeFrameChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setTimeFrame(event.target.value as 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'YEAR');
+  const handleTimeFrameChange = (newTimeFrame: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'YEAR') => {
+    setTimeFrame(newTimeFrame);
   };
+
+  const timeFrames = ['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'] as const;
 
   const labels = consumptionStats.map((item: any) =>
     new Date(item.intervalStart).toLocaleDateString()
@@ -63,16 +65,20 @@ export function ConsumptionStats() {
         label: 'Request Count',
         data: requestCountData,
         fill: false,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: '#8884d8',
+        backgroundColor: 'rgba(120,79,254,255)',
+        borderColor: 'rgb(193,172,252)',
+        borderWidth: 2,
+        pointRadius: 2,
         tension: 0.1,
       },
       {
         label: 'Total Cost',
         data: totalCostData,
         fill: false,
-        backgroundColor: 'rgba(153,102,255,0.4)',
-        borderColor: '#82ca9d',
+        backgroundColor: 'rgb(118,181,197)',
+        borderColor: '#8dd8e3',
+        borderWidth: 2,
+        pointRadius: 2,
         tension: 0.1,
       },
     ],
@@ -102,20 +108,20 @@ export function ConsumptionStats() {
       <h2>API Consumption Stats</h2>
 
       <div className="my-4">
-        <label htmlFor="timeFrame" className="mr-2">
-          Select Time Frame:
-        </label>
-        <select id="timeFrame" value={timeFrame} onChange={handleTimeFrameChange}>
-          <option value="HOUR">Hour</option>
-          <option value="DAY">Day</option>
-          <option value="WEEK">Week</option>
-          <option value="MONTH">Month</option>
-          <option value="YEAR">Year</option>
-        </select>
+        <div className="timeframe-selector">
+          {timeFrames.map((tf) => (
+            <button
+              key={tf}
+              onClick={() => handleTimeFrameChange(tf)}
+              className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
+            >
+              {tf.charAt(0) + tf.slice(1).toLowerCase()}
+            </button>
+          ))}
+        </div>
       </div>
 
       {loading && <p>Loading...</p>}
-
       {error && <p className="text-red-400">Error: {error.message}</p>}
 
       {!loading && !error && consumptionStats.length === 0 ? (
