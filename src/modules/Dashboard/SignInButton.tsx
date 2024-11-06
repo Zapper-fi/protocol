@@ -5,8 +5,8 @@ import { Button } from '../../components/Button';
 const UPSERT_USER = gql`
   mutation UpsertApiClient($email: String!, $privyId: String!) {
     upsertApiClient(email: $email, privyId: $privyId) {
+      id
       name
-      privyId
     }
   }
 `;
@@ -17,15 +17,21 @@ export function SignInButton() {
   const { authenticated } = usePrivy();
   const { logout } = useLogout();
   const { login } = useLogin({
-    onComplete: (user) => {
+    onComplete: async (user) => {
       if (user.email) {
-        upsertUser({
+        const { data } = await upsertUser({
           variables: {
             email: user.email.address,
             privyId: user.id,
           },
         });
+
+        const clientId = data?.upsertApiClient?.id || '';
+        if (clientId) {
+          sessionStorage.setItem('clientId', clientId);
+        }
       }
+
       // TODO: If wallet login is enabled, we need to capture email separately
     },
   });
