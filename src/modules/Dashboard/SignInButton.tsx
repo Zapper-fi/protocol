@@ -2,9 +2,9 @@ import { gql, useMutation } from '@apollo/client';
 import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
 
-const UPDATE_USER = gql`
-  mutation UpdateUser($privyId: String!, $apiClientName: String!) {
-    updatePrivyId(privyId: $privyId, apiClientName: $apiClientName) {
+const UPSERT_USER = gql`
+  mutation UpsertApiClient($email: String!, $privyId: String!) {
+    upsertApiClient(email: $email, privyId: $privyId) {
       name
       privyId
     }
@@ -12,17 +12,17 @@ const UPDATE_USER = gql`
 `;
 
 export function SignInButton() {
-  const [updateUser] = useMutation(UPDATE_USER);
+  const [upsertUser] = useMutation(UPSERT_USER);
 
   const { authenticated } = usePrivy();
   const { logout } = useLogout();
   const { login } = useLogin({
-    onComplete: (user, isNewUser) => {
+    onComplete: (user) => {
       if (user.email) {
-        updateUser({
+        upsertUser({
           variables: {
+            email: user.email.address,
             privyId: user.id,
-            apiClientName: user.email.address,
           },
         });
       }
