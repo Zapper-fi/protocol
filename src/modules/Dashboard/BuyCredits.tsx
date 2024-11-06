@@ -2,6 +2,7 @@ import { gql, useMutation } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
+import { openPopup } from '../../helpers/openPopup';
 
 const QUERY = gql`
   query BuyCredits($privyId: String!) {
@@ -28,7 +29,7 @@ export function BuyCredits() {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
         const url = data.createCharge.hostedUrl;
-        window.open(url, '_blank');
+        openPopup({ url });
       }
     },
   });
