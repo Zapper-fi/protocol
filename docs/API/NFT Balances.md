@@ -4,7 +4,6 @@ sidebar_position: 3
 
 ---
 
-# NFT Balances
 
 hi this is a test wow
 

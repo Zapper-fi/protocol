@@ -2,9 +2,7 @@
 sidebar_position: 4
 ---
 
----
 
-# App Balances
 
 hi this is a test wow
 

@@ -2,9 +2,6 @@
 sidebar_position: 1
 ---
 
----
-
-# Human-readable Transactions
 
 hi this is a test wow
 

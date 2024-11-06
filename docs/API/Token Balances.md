@@ -2,9 +2,7 @@
 sidebar_position: 2
 ---
 
----
 
-# Token Balances 
 
 hi this is a test wow
 
