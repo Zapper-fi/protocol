@@ -3,6 +3,14 @@ sidebar_position: 2
 ---
 
 
+---
 
-hi this is a test wow
 
+*I want all indexed token balances for an account address on a set of networks.*
+
+```sh
+query GetTokenBalances(
+  $addresses: [Address!]!
+  $networks: [Network!]!
+)
+```
