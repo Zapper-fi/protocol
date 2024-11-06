@@ -17,3 +17,5 @@ Code snippet test:
 cd dillinger
 docker build -t <youruser>/dillinger:${package.json.version} .
 ```
+
+'v2/balances/tokens'
