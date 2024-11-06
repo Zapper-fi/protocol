@@ -8,6 +8,7 @@ import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
 import { PaymentHistory } from '../modules/Dashboard/PaymentHistory';
 import { Providers } from '../modules/Providers';
+import { ConsumptionStats } from '../modules/Dashboard/ConsumptionStats';
 
 function Dashboard() {
   return (
@@ -41,6 +42,7 @@ function Dashboard() {
 
                 <PaymentHistory />
 
+                <ConsumptionStats/>
                 <Debug />
               </SignedIn>
             </div>
