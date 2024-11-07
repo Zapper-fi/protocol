@@ -21,14 +21,14 @@ Arguments for `accountsTimeline`
 
 | Name      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Description goes here.       | `Network!` | 
-| `first`      | Description goes here.       | `Int!` | 
-| `after`      | Description goes here.       | `String!` | 
-| `spamFilter`      | Description goes here.       | `Boolean = true` | 
-| `realtimeInterpretation`      | Description goes here.       | `Boolean = true` | 
-| `addresses`      | Description goes here.       | `String!` | 
-| `tokenAddresses`      | Description goes here.       | `Address!` | 
-| `isSigner`      | Description goes here.       | `Boolean` | 
+| `network`      | Description goes here.       | `Network!`        | 
+| `first`      | Description goes here.       | `Int!`        | 
+| `after`      | Description goes here.       | `String!`        | 
+| `spamFilter`      | Description goes here.       | `Boolean = true`        | 
+| `realtimeInterpretation`      | Description goes here.       | `Boolean = true`        | 
+| `addresses`      | Description goes here.       | `String!`        | 
+| `tokenAddresses`      | Description goes here.       | `Address!`        | 
+| `isSigner`      | Description goes here.       | `Boolean`        | 
 
 Fields for `accountsTimeline`
 
