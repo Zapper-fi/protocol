@@ -2,8 +2,6 @@
 sidebar_position: 7
 ---
 
-Description of the category of queries goes here. How it could be used in applications...etc.etc.
-
 ---
 
 ### `balanceJobStatus`
