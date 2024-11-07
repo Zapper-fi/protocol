@@ -4,7 +4,7 @@ sidebar_position: 2
 
 
 ---
-`GetTokenBalances` returns all tokens balances for an address on a set of networks.
+`GetTokenBalances` returns all token balances for an address on a set of networks.
 
 
 ```sh

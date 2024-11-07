@@ -18,5 +18,4 @@ uery NftUserTokenListQuery(
   $first: Int!
 )
 ```
-
-*Get most valuable NFTs owned by a user. *
+*Get most valuable NFTs owned by a user*
