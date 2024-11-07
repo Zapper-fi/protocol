@@ -14,9 +14,9 @@ Typically, a single transaction generates multiple timeline events: one for each
 
 :::
 
-### `GetAppBalancesQuery`
+### `AppBalance`
 
-Returns all indexed DeFi or other app balances for an account address on a set of networks (and optionally, for a set of app slugs)
+Returns indexed DeFi or other app balances for an account address on a set of networks (and optionally, for a set of app slugs)
 
 
 ```sh
