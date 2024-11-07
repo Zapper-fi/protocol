@@ -19,6 +19,7 @@ Returns indexed DeFi or other app balances for an account address on a set of ne
 
 <ApolloSandboxComponent />
 
+
 :::note
 
 Smart accounts accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
