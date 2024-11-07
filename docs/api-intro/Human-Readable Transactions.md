@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 ### `SummaryTimelineQuery`
 
- `SummaryTimelineQuery` provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
+Provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
 
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
@@ -28,9 +28,9 @@ query SummaryTimelineQuery(
 *List Human-readable transactions from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic*
 
 
-## App Feeds
+### `AppTimelineQuery`
 
-`AppTimelineQuery` returns a paginated payload of interpreted events for a given app and network
+Returns a paginated payload of interpreted events for a given app and network
 
 
 ```sh
@@ -46,10 +46,9 @@ query AppTimelineQuery(
 *List Human-readable transactions made using an application, ordered by date, paginated, across chains*
 
 
+### `SummaryReceivedTimelineQuery`
 
-## Received Tokens
-
-`SummaryTimelineQuery` returns a timeline of events where tokens were received by the address but the address is not the signer of the transaction.
+Returns a timeline of events where tokens were received by the address but the address is not the signer of the transaction.
 
 ```sh
 query SummaryReceivedTimelineQuery(
