@@ -44,10 +44,10 @@ Fields for `account`
 | `followStats`      | Data on followers & following     | `FollowerStats!` | 
 | `followers`      | Returns followers     | `FollowerConnection!` | 
 | `following`      | Returns following     | `FollowingConnection!` | 
-| `ensRecord`      | Returns following     | `EnsRecord!` | 
-| `lensProfile`      | Returns following     | `LensProfile!` | 
-| `farcasterProfile`      | Returns following     | `FarcasterProfile!` | 
-| `label`      | Returns following     | `String!` | 
+| `ensRecord`      | -     | `EnsRecord!` | 
+| `lensProfile`      | -     | `LensProfile!` | 
+| `farcasterProfile`      | -     | `FarcasterProfile!` | 
+| `label`      | -     | `String!` | 
 
 ### `accounts`
 
