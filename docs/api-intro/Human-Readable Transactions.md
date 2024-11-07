@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 ---
-## Account Timelines
+### `SummaryTimelineQuery`
 
  `SummaryTimelineQuery` provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
 
