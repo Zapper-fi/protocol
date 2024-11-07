@@ -24,6 +24,9 @@ query($addresses: [Address!]!) {
 )
 ```
 
+**Apollo Sandbox Goes Here**
+
+
 Arguments for `nftBalances`
 
 | Argument      | Description | Type |

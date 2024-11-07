@@ -27,6 +27,10 @@ query($addresses: [Address!]!) {
     }
 ```
 
+**Apollo Sandbox Goes Here**
+
+
+
 Arguments for `AppBalance`
 
 | Argument      | Description | Type |

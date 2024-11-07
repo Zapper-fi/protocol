@@ -18,6 +18,9 @@ Returns human-readable transactions that offer a descriptive summary of the tran
 query accountsTimeline(addresses: $addresses) {
   }
 ```
+
+**Apollo Sandbox Goes Here**
+
 Arguments for `accountsTimeline`
 
 | Argument      | Description | Type |

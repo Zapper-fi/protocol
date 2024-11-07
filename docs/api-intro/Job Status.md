@@ -16,6 +16,9 @@ query Query($jobId: String!) {
   }
 ```
 
+**Apollo Sandbox Goes Here**
+
+
 Arguments for `balanceJobStatus`
 
 | Argument      | Description | Type |

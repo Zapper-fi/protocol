@@ -18,6 +18,9 @@ query($addresses: [Address!]!) {
     }
 ```
 
+**Apollo Sandbox Goes Here**
+
+
 Arguments for `tokenBalances`
 
 | Argument      | Description | Type |
