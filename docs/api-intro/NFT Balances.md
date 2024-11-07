@@ -24,11 +24,15 @@ query($addresses: [Address!]!) {
     }
 )
 ```
+### Sandbox
 
 <ApolloSandboxComponent />
 
 
-Arguments for `nftBalances`
+### Reference
+
+<details>
+<summary>Arguments for nftBalances</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -36,9 +40,17 @@ Arguments for `nftBalances`
 | `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned      | `Network!` | 
 | `withOverrides`      | Include user value overrides, default off.      | `Boolean = false` | 
 
+</details>
+
+<details>
+<summary>Fields for nftBalances</summary>
+
 Fields for `nftBalances`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Returns the network that an NFT is on      | `Network!`       |
 | `balanceUSD`      | Returns the estimated USD value      | `Float!` | 
+
+</details>
+

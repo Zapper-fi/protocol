@@ -21,10 +21,15 @@ query($addresses: [Address!]!) {
     }
 ```
 
+### Sandbox
+
 <ApolloSandboxComponent />
 
 
-Arguments for `tokenBalances`
+### Reference
+
+<details>
+<summary>Arguments for tokenBalances</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -33,7 +38,10 @@ Arguments for `tokenBalances`
 | `appIds`      | -       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 
 
-Fields for `tokenBalances`
+</details>
+
+<details>
+<summary>Fields for tokenBalances</summary>
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -46,3 +54,5 @@ Fields for `tokenBalances`
 | `baseToken`      | -       | `WalletTokenBalance!` | 
 | `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
 | `balanceRaw`      | Balance in units of the token address       | `String!` | 
+
+</details>

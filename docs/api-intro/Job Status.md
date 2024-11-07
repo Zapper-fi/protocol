@@ -15,18 +15,29 @@ query Query($jobId: String!) {
   }
 ```
 
+### Sandbox
+
 <ApolloSandboxComponent />
 
+### Reference
 
-Arguments for `balanceJobStatus`
+<details>
+<summary>Arguments for balanceJobStatus</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `jobId`      | -       | `String!` | 
 
-Fields for `balanceJobStatus`
+</details>
+
+<details>
+<summary>Fields for balanceJobStatus</summary>
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `jobId`      | -       | `String!`       |
 | `status`      | -       | `String!` | 
+
+</details>
+
+

@@ -19,16 +19,24 @@ query($address: Address!) {
   }
 }
 ```
+### Sandbox
 
 <ApolloSandboxComponent />
 
-Arguments for `account`
+
+### Reference
+
+<details>
+<summary>Arguments for account</summary>
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Get data for address       | `String!` | 
 
-Fields for `account`
+</details>
+
+<details>
+<summary>Fields for account</summary>
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -51,9 +59,14 @@ Fields for `account`
 | `farcasterProfile`      | -     | `FarcasterProfile!` | 
 | `label`      | -     | `String!` | 
 
+
+</details>
+
+
 ### `accounts`
 
 Returns identity and other information for many addresses.
+
 
 ```sh
 query($addresses: [Address!]!) {
@@ -62,8 +75,12 @@ query($addresses: [Address!]!) {
   }
 ```
 
-Arguments for `accounts`
+<details>
+<summary>Arguments for accounts</summary>
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `addresses`      | Get data for one or more addresses      | `String!` | 
+
+</details>
+
