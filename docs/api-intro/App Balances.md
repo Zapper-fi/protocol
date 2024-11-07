@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
