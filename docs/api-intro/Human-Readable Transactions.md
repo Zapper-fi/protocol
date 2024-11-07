@@ -5,7 +5,7 @@ sidebar_position: 1
 Description of the category of queries goes here. How it could be used in applications...etc.etc.
 
 ---
-### `SummaryTimelineQuery`
+### `accountsTimeline`
 
 Returns human-readable transactions that offer a descriptive summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
@@ -14,24 +14,45 @@ Textual description of each transaction is presented from the perspective of the
 :::
 
 ```sh
-query SummaryTimelineQuery(
-  $addresses: [Address!]!
-  $after: String
-  $first: Int
-  $inboundFirst: Int
-  $outboundFirst: Int
-  $realtimeInterpretation: Boolean
-  $network: Network
-  $tokenAddresses: [Address!]
-  $isSigner: Boolean
-)
+query {
+  accountsTimeline {
+      }
 ```
+Arguments for `accountsTimeline`
 
-Fields for `SummaryTimelineQuery`
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `network`      | Description goes here.       | `Network!` | 
+| `first`      | Description goes here.       | `Int!` | 
+| `after`      | Description goes here.       | `String!` | 
+| `spamFilter`      | Description goes here.       | `Boolean = true` | 
+| `realtimeInterpretation`      | Description goes here.       | `Boolean = true` | 
+| `addresses`      | Description goes here.       | `String!` | 
+| `tokenAddresses`      | Description goes here.       | `Address!` | 
+| `isSigner`      | Description goes here.       | `Boolean` | 
 
-| Name      | Description |
-| ----------- | ----------- |
-| `name`      | Description goes here.       |
+Fields for `accountsTimeline`
+
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `key`      | Description goes here.       | `String!`       |
+| `network`      | Description goes here.       | `Network!`       |
+| `source`      | Description goes here.       | `String!`       |
+| `eventType`      | Description goes here.       | `String!`       |
+| `isAbiAvailable`      | Description goes here.       | `Boolean!`       |
+| `isEditable`      | Description goes here.       | `Boolean!`       |
+| `interpreterId`      | Description goes here.       | `String!`       |
+| `interpreter`      | Description goes here.       | `ActivityEventInterpreter!`       |
+| `actors`      | Description goes here.       | `ActorDisplayItem!`       |
+| `timestamp`      | Description goes here.       | `Timestamp!`       |
+| `perspective`      | Description goes here.       | `ActivityPerspective!`       |
+| `interpretation`      | Description goes here.       | `ActivityInterpretation!`       |
+| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
+| `similarEventCount`      | Description goes here.       | `String!`       |
+| `app`      | Description goes here.       | `Int!`       |
+| `accountDeltas`      | Description goes here.       | `ActivityAccountDelta!`       |
+| `perspectiveDelta`      | Description goes here.       | `ActivityAccountDelta!`       |
+| `sigHash`      | Description goes here.       | `String!`       |
 
 
 ### `AppTimelineQuery`
@@ -50,13 +71,6 @@ query AppTimelineQuery(
 )
 ```
 
-Fields for `AppTimelineQuery`
-
-| Name      | Description |
-| ----------- | ----------- |
-| `name`      | Description goes here.       |
-
-
 
 ### `SummaryReceivedTimelineQuery`
 
@@ -73,17 +87,3 @@ query SummaryReceivedTimelineQuery(
   $isSigner: Boolean
 ) 
 ```
-
-Fields for `SummaryReceivedTimelineQuery`
-
-| Name      | Description |
-| ----------- | ----------- |
-| `timestamp`      | ex: 1730939855000       |
-| `network`   | Network name ex: `BASE_MAINNET`     |
-| `price`   | Onchain price in USD ex: `2810.08`       |
-| `totalLiquidity`   | Total token liquidity in USD.        |
-| `imageUrl`   | A URL path with an image.      |
-| `symbol`   | Ex: `ETH`        |
-| `id`   | ??        |
-| `amount`   | Quantity of token receieved        |
-| `address`   | Token address recevied        |

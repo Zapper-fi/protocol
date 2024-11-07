@@ -38,5 +38,5 @@ Fields for `tokenBalances`
 | `updatedAt`      | Description goes here.       | `Timestamp!` | 
 | `balance`      | Description goes here.       | `Float!` | 
 | `baseToken`      | Description goes here.       | `WalletTokenBalance!` | 
-| `balanceUSD`      | Description goes here.       | `Float!` | 
-| `balanceRaw`      | Description goes here.       | `String!` | 
+| `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
+| `balanceRaw`      | Balance in units of the token address       | `String!` | 
