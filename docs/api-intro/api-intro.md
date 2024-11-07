@@ -5,9 +5,22 @@ sidebar_position: 1
 
 # Getting Started
 
-Access the onchain data curated by the Zapper Protocol through a Graph QL API. The endpoints provide complete onchain portfolio data, human-readable transactions, token prices, and more.
+
+Access onchain data curated by the Zapper protocol for building onchain applications. 
 
 ---
+
+## What do I get?
+
+This Graph QL API is your portal to human-freidnly onchain data.
+
+**[Human-Readable Transactions](/docs/api-intro/Human-Readable%20Transactions)**
+Simplify onchain transactions for your users with human-friendly descriptions
+
+
+
+ The endpoints provide complete onchain portfolio data, human-readable transactions, token prices, and more.
+
 
 ## Get an API key
 
