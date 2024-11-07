@@ -21,9 +21,14 @@ query accountsTimeline(addresses: $addresses) {
   }
 ```
 
+### Sandbox
+
 <ApolloSandboxComponent />
 
-Arguments for `accountsTimeline`
+### Reference
+
+<details>
+<summary>Arguments for accountsTimeline</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -36,7 +41,11 @@ Arguments for `accountsTimeline`
 | `tokenAddresses`      | Filter by token address        | `Address!`        | 
 | `isSigner`      | Filter by signer        | `Boolean`        | 
 
-Fields for `accountsTimeline`
+</details>
+
+<details>
+<summary>Fields for accountsTimeline</summary>
+
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -58,36 +67,4 @@ Fields for `accountsTimeline`
 | `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
 | `sigHash`      | -       | `String!`       |
 
-
-### `AppTimelineQuery`
-
-Returns human-readable transactions made using an application, ordered by date, paginated, across chains.
-
-
-```sh
-query AppTimelineQuery(
-  $appSlug: String!
-  $after: String
-  $first: Int
-  $network: Network
-  $inboundFirst: Int
-  $outboundFirst: Int
-)
-```
-
-
-### `SummaryReceivedTimelineQuery`
-
-Returns a timeline of events where tokens were received by the address but the address is not the signer of the transaction.
-
-```sh
-query SummaryReceivedTimelineQuery(
-  $addresses: [Address!]!
-  $after: String
-  $first: Int
-  $realtimeInterpretation: Boolean
-  $network: Network
-  $tokenAddresses: [Address!]
-  $isSigner: Boolean
-) 
-```
+</details>

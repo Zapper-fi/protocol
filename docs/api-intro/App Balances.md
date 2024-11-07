@@ -30,7 +30,11 @@ query($addresses: [Address!]!) {
     }
 ```
 
+### Sandbox
+
 <ApolloSandboxComponent />
+
+### Reference
 
 <details>
 <summary>Arguments for AppBalance</summary>
