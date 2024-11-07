@@ -2,6 +2,9 @@
 sidebar_position: 3
 ---
 
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+
 Surfaces any onchain token balances held by an address.
 
 ---
@@ -18,7 +21,7 @@ query($addresses: [Address!]!) {
     }
 ```
 
-**Apollo Sandbox Goes Here**
+<ApolloSandboxComponent />
 
 
 Arguments for `tokenBalances`

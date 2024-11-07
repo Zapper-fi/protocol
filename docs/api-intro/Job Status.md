@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 ---
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 ---
 
@@ -14,7 +15,7 @@ query Query($jobId: String!) {
   }
 ```
 
-**Apollo Sandbox Goes Here**
+<ApolloSandboxComponent />
 
 
 Arguments for `balanceJobStatus`

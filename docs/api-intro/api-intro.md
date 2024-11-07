@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 
 # Getting Started
@@ -39,4 +40,4 @@ You can track your usage and purchase additional credits at **[protocol.zapper.x
 
 ## Test Endpoints
 
-Chris's Apollo iframe?
+<ApolloSandboxComponent />

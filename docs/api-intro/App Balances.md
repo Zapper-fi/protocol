@@ -2,6 +2,9 @@
 sidebar_position: 4
 ---
 
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+
 Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
 
 ---
@@ -27,7 +30,7 @@ query($addresses: [Address!]!) {
     }
 ```
 
-**Apollo Sandbox Goes Here**
+<ApolloSandboxComponent />
 
 <details>
 <summary>Test Collapsable</summary>

@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 ---
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
 
 Presents onchain activity in a simple descriptive summary. Great for use in account histories, social feeds, or app specific feeds.
 
@@ -19,7 +21,7 @@ query accountsTimeline(addresses: $addresses) {
   }
 ```
 
-**Apollo Sandbox Goes Here**
+<ApolloSandboxComponent />
 
 Arguments for `accountsTimeline`
 

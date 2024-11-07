@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 ---
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 ---
 
@@ -24,7 +25,7 @@ query($addresses: [Address!]!) {
 )
 ```
 
-**Apollo Sandbox Goes Here**
+<ApolloSandboxComponent />
 
 
 Arguments for `nftBalances`

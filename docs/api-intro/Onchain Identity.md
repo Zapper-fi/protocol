@@ -2,6 +2,9 @@
 sidebar_position: 2
 ---
 
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+
 Surfaces various pieces of onchain identity for an address. Can be used to enhance the identity of users in your application.
 
 ---
@@ -17,8 +20,7 @@ query($address: Address!) {
 }
 ```
 
-**Apollo Sandbox Goes Here**
-
+<ApolloSandboxComponent />
 
 Arguments for `account`
 
