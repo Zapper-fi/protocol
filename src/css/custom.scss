@@ -133,6 +133,11 @@
     --text-color: #002237;
     --text-color-alt: #4b5871;
   }
+
+/* Table overrides */
+table tr:nth-child(2n) {
+  background-color: inherit !important;
+}
   
   /* For readability concerns, you should choose a lighter palette in dark mode. */
   [data-theme='dark'] {
@@ -369,4 +374,3 @@
       display: none !important;
     }
   }
-
