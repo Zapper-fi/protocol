@@ -30,3 +30,9 @@ uery NftUserTokenListQuery(
 )
 ```
 *Get most valuable NFTs owned by a user*
+
+Fields for `NftUserTokenListQuery`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |

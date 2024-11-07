@@ -26,3 +26,9 @@ query GetAppBalancesQuery(
   $appIds: [String!]
 )
 ```
+
+Fields for `GetAppBalancesQuery`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |

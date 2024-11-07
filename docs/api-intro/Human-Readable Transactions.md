@@ -30,6 +30,13 @@ query SummaryTimelineQuery(
 *List Human-readable transactions from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic*
 
 
+Fields for `SummaryTimelineQuery`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |
+
+
 ### `AppTimelineQuery`
 
 Returns a paginated payload of interpreted events for a given app and network
@@ -46,6 +53,13 @@ query AppTimelineQuery(
 )
 ```
 *List Human-readable transactions made using an application, ordered by date, paginated, across chains*
+
+Fields for `AppTimelineQuery`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |
+
 
 
 ### `SummaryReceivedTimelineQuery`

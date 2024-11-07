@@ -18,6 +18,11 @@ Retrieve basic token & onchain pricing information.
 query FungibleToken($address: Address!, $network: Network!, $currency: Currency)
 ```
 
+Fields for `FungibleToken`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |
 
 
 ---
@@ -29,6 +34,11 @@ query FungibleToken($address: Address!, $network: Network!, $currency: Currency)
 query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency: Currency!, $timeFrame: TimeFrame!)
 ```
 
+Fields for `FungibleTokenPriceChart`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |
 ---
 
 ### `FungibleTokenLatestSwaps`
@@ -38,3 +48,9 @@ Returns the most recent onchain swaps for a given fungible token.
 ```sh
 query FungibleTokenLatestSwaps($address: Address!, $network: Network!, $currency: Currency!, $first: Int)
 ```
+
+Fields for `FungibleTokenLatestSwaps`
+
+| Name      | Description |
+| ----------- | ----------- |
+| `name`      | Description goes here.       |
