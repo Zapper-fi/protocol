@@ -33,7 +33,7 @@ query($addresses: [Address!]!) {
 <ApolloSandboxComponent />
 
 <details>
-<summary>Test Collapsable</summary>
+<summary>Arguments for AppBalance</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -44,16 +44,9 @@ query($addresses: [Address!]!) {
 
 </details>
 
-Arguments for `AppBalance`
+<details>
+<summary>Fields for AppBalance</summary>
 
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `address`      | Addresses for which to retrieve balances, inputted as an array.     | `String!` | 
-| `networks`      | Networks for which to retrieve balances, inputted an array.       | `Network!` | 
-| `appIds`      | Filter by a specific app.       | `String!` | 
-| `withOverrides`      | -       | `Boolean = false` | 
-
-Fields for `AppBalance`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -66,3 +59,5 @@ Fields for `AppBalance`
 | `updatedAt`      | Timestamp at which time this wallet's balance for this app was calculated   | `Timestamp!`       |
 | `balanceUSD`      | Value of all positions associated with this app on this network for this wallet, in USD      | `Float!` | 
 | `products`      | Object containing details on all products owned by this wallet       | `ProductItem!`       |
+
+</details>
