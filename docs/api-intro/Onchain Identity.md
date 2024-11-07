@@ -44,3 +44,20 @@ Fields for `account`
 | `lensProfile`      | Returns following     | `LensProfile!` | 
 | `farcasterProfile`      | Returns following     | `FarcasterProfile!` | 
 | `label`      | Returns following     | `String!` | 
+
+### `accounts`
+
+Returns identity and other information for many addresses.
+
+```sh
+query($addresses: [Address!]!) {
+  accounts(addresses: $addresses) {
+  }
+  }
+```
+
+Arguments for `accounts`
+
+| Arguement      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `addresses`      | One or more addresses      | `String!` | 
