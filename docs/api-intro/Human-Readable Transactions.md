@@ -21,8 +21,6 @@ query accountsTimeline(addresses: $addresses) {
   }
 ```
 
-test
-
 <ApolloSandboxComponent />
 
 Arguments for `accountsTimeline`

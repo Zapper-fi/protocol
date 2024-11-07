@@ -35,7 +35,12 @@ query($addresses: [Address!]!) {
 <details>
 <summary>Test Collapsable</summary>
 
-BODY CONTENT
+| Argument      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `address`      | Addresses for which to retrieve balances, inputted as an array.     | `String!` | 
+| `networks`      | Networks for which to retrieve balances, inputted an array.       | `Network!` | 
+| `appIds`      | Filter by a specific app.       | `String!` | 
+| `withOverrides`      | -       | `Boolean = false` | 
 
 </details>
 
