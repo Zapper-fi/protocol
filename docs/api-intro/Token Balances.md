@@ -3,6 +3,7 @@ sidebar_position: 2
 ---
 
 Surfaces any onchain token balances held by an address.
+
 ---
 
 ### `tokenBalances`

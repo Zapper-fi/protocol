@@ -3,6 +3,7 @@ sidebar_position: 6
 ---
 
 Surfaces various pieces of onchain identity for an address. Can be used to enhance the identity of users in your application.
+
 ---
 
 ### `account`
