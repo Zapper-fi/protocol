@@ -14,6 +14,8 @@ query FungibleToken($address: Address!, $network: Network!, $currency: Currency)
 
 *Retrieve basic token & onchain pricing information*
 
+---
+
 
 ```sh
 query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency: Currency!, $timeFrame: TimeFrame!)
@@ -21,6 +23,7 @@ query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency:
 
 *Retrieve historical price points to populate a price chart*
 
+---
 
 ```sh
 query FungibleTokenLatestSwaps($address: Address!, $network: Network!, $currency: Currency!, $first: Int)
