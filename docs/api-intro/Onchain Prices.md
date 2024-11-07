@@ -2,6 +2,9 @@
 sidebar_position: 5
 ---
 
+Description of the category of queries goes here. How it could be used in applications...etc.etc.
+
+
 ---
 
 Onchain token prices are provided from this resolver along with onchain sourced pricing data, current and historical, for any given token that has an `onchainMarketData` (that has an available onchain market).

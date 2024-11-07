@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+Description of the category of queries goes here. How it could be used in applications...etc.etc.
+
 ---
 ### `SummaryTimelineQuery`
 

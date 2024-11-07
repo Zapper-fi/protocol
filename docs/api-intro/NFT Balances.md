@@ -2,6 +2,9 @@
 sidebar_position: 3
 ---
 
+Description of the category of queries goes here. How it could be used in applications...etc.etc.
+
+
 ---
 
 Note: NFT tokens estimated value in USD is calculated using in-house built algorithm. NFT valuation can be overridden to be the top offer, last sale or any other user hard coded value. NFT tokens can be set as hidden to remove them from the default portfolio view.
