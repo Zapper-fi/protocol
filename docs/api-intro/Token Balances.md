@@ -4,10 +4,11 @@ sidebar_position: 2
 
 Description of the category of queries goes here. How it could be used in applications...etc.etc.
 
-
 ---
-`GetTokenBalances` returns all token balances for an address on a set of networks.
 
+### `GetTokenBalances`
+
+Returns all token balances for an address on a set of networks.
 
 ```sh
 query GetTokenBalances(
