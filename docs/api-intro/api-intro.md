@@ -24,7 +24,7 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 #### [Portfolio Balances](/docs/api-intro/Token%20Balances)
 
-A set of portfolio queries to access tokens, NFTs, DeFi Positions, and other App Balances.
+A set of portfolio queries to fetch tokens, NFTs, DeFi Positions, and other App Balances.
 
 
 ## Get an API key

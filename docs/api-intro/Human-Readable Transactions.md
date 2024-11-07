@@ -4,7 +4,7 @@ sidebar_position: 1
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 
-Presents onchain activity in a simple descriptive summary. Great for use in account histories, social feeds, or app specific feeds.
+Presents onchain activity in a simple descriptive summary including references to dynamic elements of the transaction such as tokens, NFTs, and accounts. Great for use in account histories, social feeds, or app specific feeds.
 
 ---
 
