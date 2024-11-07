@@ -7,7 +7,7 @@ import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent'
 # Getting Started
 
 
-Access powerful onchain data curated by the Zapper protocol to build your applications.
+Access powerful onchain data curated by the Zapper protocol with a GraphQL API for your applications.
 
 ---
 
