@@ -2,8 +2,7 @@
 sidebar_position: 2
 ---
 
-Description of the category of queries goes here. How it could be used in applications...etc.etc.
-
+Surfaces any onchain token balances held by an address.
 ---
 
 ### `tokenBalances`

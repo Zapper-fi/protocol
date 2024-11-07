@@ -2,8 +2,7 @@
 sidebar_position: 6
 ---
 
-Description of the category of queries goes here. How it could be used in applications...etc.etc.
-
+Surfaces various pieces of onchain identity for an address. Can be used to enhance the identity of users in your application.
 ---
 
 ### `account`

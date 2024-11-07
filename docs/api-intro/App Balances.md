@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-Description of the category of queries goes here. How it could be used in applications...etc.etc.
+Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
 
 ---
 
