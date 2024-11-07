@@ -14,7 +14,7 @@ Access powerful onchain data curated by the Zapper protocol to build your applic
 
 #### [Human-Readable Transactions](/docs/api-intro/Human-Readable%20Transactions)
 
-Simplify onchain transactions for your users with human-friendly descriptions
+Simplify onchain transactions with human-friendly descriptions.
 
 #### [Onchain Identity](/docs/api-intro/Onchain%20Identity)
 
