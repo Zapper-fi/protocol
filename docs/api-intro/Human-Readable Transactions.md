@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 ## Account Timelines
 
-The `SummaryTimelineQuery` provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
+ `SummaryTimelineQuery` provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
 
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 

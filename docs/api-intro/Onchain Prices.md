@@ -17,6 +17,9 @@ query FungibleToken($address: Address!, $network: Network!, $currency: Currency)
 ---
 
 
+ `FungibleTokenPriceChart` returns historical price data to populate price charts.
+
+
 ```sh
 query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency: Currency!, $timeFrame: TimeFrame!)
 ```
@@ -24,6 +27,9 @@ query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency:
 *Retrieve historical price points to populate a price chart*
 
 ---
+
+ `FungibleTokenLatestSwaps` returns the most recent swaps for a given fungible token.
+
 
 ```sh
 query FungibleTokenLatestSwaps($address: Address!, $network: Network!, $currency: Currency!, $first: Int)
