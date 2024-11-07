@@ -38,6 +38,6 @@ Zapper API uses a credit system to manage how many queries an API key can perfor
 You can track your usage and purchase additional credits at **[protocol.zapper.xyz/dashboard]((https://protocol.zapper.xyz/dashboard))**
 
 
-## Test Endpoints
+## Try it in Sandbox
 
 <ApolloSandboxComponent />
