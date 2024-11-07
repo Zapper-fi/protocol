@@ -18,7 +18,7 @@ Simplify onchain transactions for your users with human-friendly descriptions
 
 #### [Onchain Identity](/docs/api-intro/Onchain%20Identity)
 
-Enrich your app by surfacing the onchain identity of users.
+Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
 
 #### [Portfolio Balances](/docs/api-intro/Token%20Balances)
