@@ -29,7 +29,7 @@ query($addresses: [Address!]!) {
 
 Arguments for `nftBalances`
 
-| Name      | Description | Type |
+| Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Description goes here.       | `String!` | 
 | `networks`      | Description goes here.       | `Network!` | 
@@ -38,7 +38,7 @@ Arguments for `nftBalances`
 
 Fields for `nftBalances`
 
-| Name      | Description | Type |
+| Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Description goes here.       | `Network!`       |
 | `balanceUSD`      | Description goes here.       | `Float!` | 

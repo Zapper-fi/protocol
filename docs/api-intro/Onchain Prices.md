@@ -20,7 +20,7 @@ query FungibleToken($address: Address!, $network: Network!, $currency: Currency)
 
 Fields for `FungibleToken`
 
-| Name      | Description |
+| Field      | Description |
 | ----------- | ----------- |
 | `name`      | Description goes here.       |
 
@@ -36,7 +36,7 @@ query FungibleTokenPriceChart($address: Address!, $network: Network!, $currency:
 
 Fields for `FungibleTokenPriceChart`
 
-| Name      | Description |
+| Field      | Description |
 | ----------- | ----------- |
 | `name`      | Description goes here.       |
 ---
@@ -51,6 +51,6 @@ query FungibleTokenLatestSwaps($address: Address!, $network: Network!, $currency
 
 Fields for `FungibleTokenLatestSwaps`
 
-| Name      | Description |
+| Field      | Description |
 | ----------- | ----------- |
 | `name`      | Description goes here.       |

@@ -19,7 +19,7 @@ query accountsTimeline(addresses: $addresses) {
 ```
 Arguments for `accountsTimeline`
 
-| Name      | Description | Type |
+| Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Description goes here.       | `Network!`        | 
 | `first`      | Description goes here.       | `Int!`        | 
@@ -32,7 +32,7 @@ Arguments for `accountsTimeline`
 
 Fields for `accountsTimeline`
 
-| Name      | Description | Type |
+| Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Description goes here.       | `String!`       |
 | `network`      | Description goes here.       | `Network!`       |

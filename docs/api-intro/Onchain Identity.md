@@ -19,13 +19,13 @@ query($address: Address!) {
 
 Arguments for `account`
 
-| Name      | Description | Type |
+| Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Description goes here.       | `String!` | 
 
 Fields for `account`
 
-| Name      | Description | Type |
+| Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `id`      | Description goes here.       | `ID!`       |
 | `address`      | Description goes here.       | `DisplayName!` | 

@@ -29,7 +29,7 @@ query($addresses: [Address!]!) {
 
 Arguments for `AppBalance`
 
-| Name      | Description | Type |
+| Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Description goes here.       | `String!` | 
 | `networks`      | Description goes here.       | `Network!` | 
@@ -38,7 +38,7 @@ Arguments for `AppBalance`
 
 Fields for `AppBalance`
 
-| Name      | Description | Type |
+| Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Description goes here.       | `String!`       |
 | `address`      | Description goes here.       | `String!`       |
