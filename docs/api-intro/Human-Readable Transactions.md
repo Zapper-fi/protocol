@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-Present onchain activity in a simple descriptive summary. Great for use in account histories, social feeds, or app specific feeds.
+Presents onchain activity in a simple descriptive summary. Great for use in account histories, social feeds, or app specific feeds.
 
 ---
 
