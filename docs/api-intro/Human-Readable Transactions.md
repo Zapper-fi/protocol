@@ -14,9 +14,8 @@ Textual description of each transaction is presented from the perspective of the
 :::
 
 ```sh
-query {
-  accountsTimeline {
-      }
+query accountsTimeline(addresses: $addresses) {
+  }
 ```
 Arguments for `accountsTimeline`
 
@@ -50,7 +49,6 @@ Fields for `accountsTimeline`
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `similarEventCount`      | Description goes here.       | `String!`       |
 | `app`      | Description goes here.       | `Int!`       |
-| `accountDeltas`      | Description goes here.       | `ActivityAccountDelta!`       |
 | `perspectiveDelta`      | Description goes here.       | `ActivityAccountDelta!`       |
 | `sigHash`      | Description goes here.       | `String!`       |
 
