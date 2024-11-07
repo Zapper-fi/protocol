@@ -6,6 +6,8 @@ sidebar_position: 5
 
 The `FungibleToken` queries are what you would expect from the ERC-20 standard. The standardized context is provided from this resolver along with onchain sourced pricing data, current and historical, for any given token that has an `onchainMarketData` (that has an available onchain market).
 
+The price can be sourced from multiple onchain sources. If that is the case the price returned is the average price.
+
 
 
 ```sh
