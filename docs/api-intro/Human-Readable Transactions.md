@@ -29,7 +29,7 @@ Arguments for `accountsTimeline`
 | `first`      | Description goes here.       | `Int!`        | 
 | `after`      | Description goes here.       | `String!`        | 
 | `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
-| `realtimeInterpretation`      | Human-readable transactions       | `Boolean = true`        | 
+| `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
 | `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
 | `tokenAddresses`      | Filter by token address        | `Address!`        | 
 | `isSigner`      | Filter by signer        | `Boolean`        | 
