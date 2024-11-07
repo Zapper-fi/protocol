@@ -23,11 +23,11 @@ Arguments for `balanceJobStatus`
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `jobId`      | Description goes here.       | `String!` | 
+| `jobId`      | -       | `String!` | 
 
 Fields for `balanceJobStatus`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `jobId`      | Description goes here.       | `String!`       |
-| `status`      | Description goes here.       | `String!` | 
+| `jobId`      | -       | `String!`       |
+| `status`      | -       | `String!` | 

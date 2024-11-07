@@ -30,14 +30,14 @@ Fields for `account`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `id`      | Description goes here.       | `ID!`       |
-| `address`      | Description goes here.       | `DisplayName!` | 
+| `id`      | -       | `ID!`       |
+| `address`      | -       | `DisplayName!` | 
 | `avatar`      | Gets avatar       | `AccountAvatar!` | 
 | `description`      | Gets description.       | `Description!` | 
 | `socialLinks`      | Gets social links.      | `AccountSocialLink!` | 
-| `contract`      | Description goes here.       | `String!` | 
-| `metadata`      | Description goes here.       | `AddressMetadataObject!` | 
-| `isContract`      | Balance in USD ex: `2810.08`      | `Boolean!` | 
+| `contract`      | -       | `String!` | 
+| `metadata`      | -       | `AddressMetadataObject!` | 
+| `isContract`      | -       | `Boolean!` | 
 | `openenURI`      | Returns a Opepen URI       | `String!` | 
 | `blockiesURI`      | Returns a Blockie URI        | `String!` | 
 | `isFollowedBy`      | Takes an argument `address` and returns true/false       | `Boolean!` | 

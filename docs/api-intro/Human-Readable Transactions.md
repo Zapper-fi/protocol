@@ -26,8 +26,8 @@ Arguments for `accountsTimeline`
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
-| `first`      | Description goes here.       | `Int!`        | 
-| `after`      | Description goes here.       | `String!`        | 
+| `first`      | -      | `Int!`        | 
+| `after`      | -      | `String!`        | 
 | `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
 | `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
@@ -40,21 +40,21 @@ Fields for `accountsTimeline`
 | ----------- | ----------- | ----------- |
 | `key`      | A unique identifier       | `String!`       |
 | `network`      | Network the transaction happened on     | `Network!`       |
-| `source`      | Description goes here.       | `String!`       |
+| `source`      | -       | `String!`       |
 | `eventType`      | Returns the event type       | `String!`       |
-| `isAbiAvailable`      | Description goes here.       | `Boolean!`       |
-| `isEditable`      | Description goes here.       | `Boolean!`       |
-| `interpreterId`      | Description goes here.       | `String!`       |
-| `interpreter`      | Description goes here.       | `ActivityEventInterpreter!`       |
-| `actors`      | Description goes here.       | `ActorDisplayItem!`       |
-| `timestamp`      | Description goes here.       | `Timestamp!`       |
-| `perspective`      | Description goes here.       | `ActivityPerspective!`       |
-| `interpretation`      | Description goes here.       | `ActivityInterpretation!`       |
+| `isAbiAvailable`      | -       | `Boolean!`       |
+| `isEditable`      | -       | `Boolean!`       |
+| `interpreterId`      | -      | `String!`       |
+| `interpreter`      | -      | `ActivityEventInterpreter!`       |
+| `actors`      | -       | `ActorDisplayItem!`       |
+| `timestamp`      | -       | `Timestamp!`       |
+| `perspective`      | -       | `ActivityPerspective!`       |
+| `interpretation`      | -      | `ActivityInterpretation!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
-| `similarEventCount`      | Description goes here.       | `String!`       |
+| `similarEventCount`      | -       | `String!`       |
 | `app`      | Associated app for the transaction     | `Int!`       |
-| `perspectiveDelta`      | Description goes here.       | `ActivityAccountDelta!`       |
-| `sigHash`      | Description goes here.       | `String!`       |
+| `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
+| `sigHash`      | -       | `String!`       |
 
 
 ### `AppTimelineQuery`
