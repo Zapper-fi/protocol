@@ -6,7 +6,7 @@ sidebar_position: 1
 # Getting Started
 
 
-Access onchain data curated by the Zapper protocol to build your app. 
+Access powerful onchain data curated by the Zapper protocol to build your app. 
 
 ---
 
