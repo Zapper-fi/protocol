@@ -7,12 +7,11 @@ Description of the category of queries goes here. How it could be used in applic
 ---
 ### `SummaryTimelineQuery`
 
-Provides a chronological sequence of transactions, or `events`, each accompanied by a human-readable interpretation. These entries offer a descriptive summary of the transaction's details, including the application involved and a list of tokens transferred.
+Returns human-readable transactions that offer a descriptive summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
-Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
-
-Please note that the textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
-
+:::note
+Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
+:::
 
 ```sh
 query SummaryTimelineQuery(
@@ -27,8 +26,6 @@ query SummaryTimelineQuery(
   $isSigner: Boolean
 )
 ```
-*List Human-readable transactions from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic*
-
 
 Fields for `SummaryTimelineQuery`
 
@@ -39,7 +36,7 @@ Fields for `SummaryTimelineQuery`
 
 ### `AppTimelineQuery`
 
-Returns a paginated payload of interpreted events for a given app and network
+Returns human-readable transactions made using an application, ordered by date, paginated, across chains.
 
 
 ```sh
@@ -52,7 +49,6 @@ query AppTimelineQuery(
   $outboundFirst: Int
 )
 ```
-*List Human-readable transactions made using an application, ordered by date, paginated, across chains*
 
 Fields for `AppTimelineQuery`
 

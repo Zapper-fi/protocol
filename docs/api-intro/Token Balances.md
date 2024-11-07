@@ -17,8 +17,6 @@ query GetTokenBalances(
 )
 ```
 
-*I want all indexed token balances for an account address on a set of networks.*
-
 Fields for `GetTokenBalances`
 
 | Name      | Description |
