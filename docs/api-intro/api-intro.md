@@ -27,6 +27,10 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 A set of portfolio queries to fetch tokens, NFTs, DeFi Positions, and other App Balances.
 
 
+#### [Onchain Prices](/docs/api-intro/Onchain%20Prices)
+
+A price for every token that has an onchain market, including historical data. 
+
 ## Get an API key
 
 Visit **[protocol.zapper.xyz/dashboard]((https://protocol.zapper.xyz/dashboard))** to get your API key.
