@@ -4,8 +4,7 @@ sidebar_position: 3
 
 ---
 
-
-*Get most valuable NFTs owned by a user. *
+`NftUserTokenListQuery` returns the the NFTs owned by an address.
 
 ```sh
 uery NftUserTokenListQuery(
@@ -19,3 +18,5 @@ uery NftUserTokenListQuery(
   $first: Int!
 )
 ```
+
+*Get most valuable NFTs owned by a user. *
