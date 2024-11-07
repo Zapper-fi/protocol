@@ -63,3 +63,17 @@ query SummaryReceivedTimelineQuery(
   $isSigner: Boolean
 ) 
 ```
+
+Fields for `SummaryReceivedTimelineQuery`
+
+| Name      | Example |
+| ----------- | ----------- |
+| `timestamp`      | ex: 1730939855000       |
+| `network`   | Network Name ex: `BASE_MAINNET`     |
+| `price`   | in USD ex: `2810.08`       |
+| `totalLiquidity`   | in USD        |
+| `imageUrl`   | URL path        |
+| `symbol`   | Ex: `ETH`        |
+| `id`   | ??        |
+| `amount`   | Quantity Receieved        |
+| `address`   | Token Address        |
