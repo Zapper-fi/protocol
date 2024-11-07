@@ -15,15 +15,6 @@ NFT tokens estimated value in USD is calculated using in-house built algorithm. 
 
 Returns the the NFTs owned by an address.
 
-```sh
-query($addresses: [Address!]!) {
-    portfolio(addresses: $addresses) {
-      nftBalances {
-        
-      }
-    }
-)
-```
 ### Sandbox
 
 <ApolloSandboxComponent />

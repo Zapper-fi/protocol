@@ -13,12 +13,6 @@ Surfaces various pieces of onchain identity for an address. Can be used to enhan
 
 Returns identity and other information relating to an address.
 
-```sh
-query($address: Address!) {
-  account(address: $address) {
-  }
-}
-```
 ### Sandbox
 
 <ApolloSandboxComponent />

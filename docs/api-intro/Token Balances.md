@@ -13,13 +13,6 @@ Surfaces any onchain token balances held by an address.
 
 Returns all token balances for an address on a set of networks.
 
-```sh
-query($addresses: [Address!]!) {
-    portfolio(addresses: $addresses) {
-      tokenBalances {
-      }
-    }
-```
 
 ### Sandbox
 
