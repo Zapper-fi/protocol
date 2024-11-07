@@ -25,12 +25,12 @@ Arguments for `accountsTimeline`
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Filter by specific chain       | `Network!`        | 
+| `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
 | `first`      | Description goes here.       | `Int!`        | 
 | `after`      | Description goes here.       | `String!`        | 
-| `spamFilter`      | Filter for spam       | `Boolean = true`        | 
+| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
 | `realtimeInterpretation`      | Human-readable transactions       | `Boolean = true`        | 
-| `addresses`      | Filter by address     | `String!`        | 
+| `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
 | `tokenAddresses`      | Filter by token address        | `Address!`        | 
 | `isSigner`      | Filter by signer        | `Boolean`        | 
 
@@ -38,8 +38,8 @@ Fields for `accountsTimeline`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `key`      | Description goes here.       | `String!`       |
-| `network`      | Returns the chain for each transaction      | `Network!`       |
+| `key`      | A unique identifier       | `String!`       |
+| `network`      | Network the transaction happened on     | `Network!`       |
 | `source`      | Description goes here.       | `String!`       |
 | `eventType`      | Returns the event type       | `String!`       |
 | `isAbiAvailable`      | Description goes here.       | `Boolean!`       |

@@ -31,14 +31,13 @@ Arguments for `nftBalances`
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Filter by Address       | `String!` | 
-| `networks`      | Filter by chain       | `Network!` | 
-| `appIds`      | Filter by app      | `String!` | 
-| `withOverrides`      | Include user value overrides       | `Boolean = false` | 
+| `address`      | Addresses for which to retrieve       | `String!` | 
+| `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned      | `Network!` | 
+| `withOverrides`      | Include user value overrides, default off.      | `Boolean = false` | 
 
 Fields for `nftBalances`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Returns the chain      | `Network!`       |
+| `network`      | Returns the network that an NFT is on      | `Network!`       |
 | `balanceUSD`      | Returns the estimated USD value      | `Float!` | 
