@@ -29,7 +29,12 @@ query($addresses: [Address!]!) {
 
 **Apollo Sandbox Goes Here**
 
+<details>
+<summary>Test Collapsable</summary>
 
+BODY CONTENT
+
+</details>
 
 Arguments for `AppBalance`
 
