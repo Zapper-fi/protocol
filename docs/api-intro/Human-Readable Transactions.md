@@ -25,23 +25,23 @@ Arguments for `accountsTimeline`
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Description goes here.       | `Network!`        | 
+| `network`      | Filter by specific chain       | `Network!`        | 
 | `first`      | Description goes here.       | `Int!`        | 
 | `after`      | Description goes here.       | `String!`        | 
-| `spamFilter`      | Description goes here.       | `Boolean = true`        | 
-| `realtimeInterpretation`      | Description goes here.       | `Boolean = true`        | 
-| `addresses`      | Description goes here.       | `String!`        | 
-| `tokenAddresses`      | Description goes here.       | `Address!`        | 
-| `isSigner`      | Description goes here.       | `Boolean`        | 
+| `spamFilter`      | Filter for spam       | `Boolean = true`        | 
+| `realtimeInterpretation`      | Human-readable transactions       | `Boolean = true`        | 
+| `addresses`      | Filter by address     | `String!`        | 
+| `tokenAddresses`      | Filter by token address        | `Address!`        | 
+| `isSigner`      | Filter by signer        | `Boolean`        | 
 
 Fields for `accountsTimeline`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Description goes here.       | `String!`       |
-| `network`      | Description goes here.       | `Network!`       |
+| `network`      | Returns the chain for each transaction      | `Network!`       |
 | `source`      | Description goes here.       | `String!`       |
-| `eventType`      | Description goes here.       | `String!`       |
+| `eventType`      | Returns the event type       | `String!`       |
 | `isAbiAvailable`      | Description goes here.       | `Boolean!`       |
 | `isEditable`      | Description goes here.       | `Boolean!`       |
 | `interpreterId`      | Description goes here.       | `String!`       |
@@ -52,7 +52,7 @@ Fields for `accountsTimeline`
 | `interpretation`      | Description goes here.       | `ActivityInterpretation!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `similarEventCount`      | Description goes here.       | `String!`       |
-| `app`      | Description goes here.       | `Int!`       |
+| `app`      | Associated app for the transaction     | `Int!`       |
 | `perspectiveDelta`      | Description goes here.       | `ActivityAccountDelta!`       |
 | `sigHash`      | Description goes here.       | `String!`       |
 

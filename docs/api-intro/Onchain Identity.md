@@ -24,7 +24,7 @@ Arguments for `account`
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Description goes here.       | `String!` | 
+| `address`      | Get data for address       | `String!` | 
 
 Fields for `account`
 
@@ -32,9 +32,9 @@ Fields for `account`
 | ----------- | ----------- | ----------- |
 | `id`      | Description goes here.       | `ID!`       |
 | `address`      | Description goes here.       | `DisplayName!` | 
-| `avatar`      | Description goes here.       | `AccountAvatar!` | 
-| `description`      | Description goes here.       | `Description!` | 
-| `socialLinks`      | Description goes here.       | `AccountSocialLink!` | 
+| `avatar`      | Gets avatar       | `AccountAvatar!` | 
+| `description`      | Gets description.       | `Description!` | 
+| `socialLinks`      | Gets social links.      | `AccountSocialLink!` | 
 | `contract`      | Description goes here.       | `String!` | 
 | `metadata`      | Description goes here.       | `AddressMetadataObject!` | 
 | `isContract`      | Balance in USD ex: `2810.08`      | `Boolean!` | 
@@ -64,4 +64,4 @@ Arguments for `accounts`
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | One or more addresses      | `String!` | 
+| `addresses`      | Get data for one or more addresses      | `String!` | 

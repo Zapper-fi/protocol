@@ -31,14 +31,14 @@ Arguments for `nftBalances`
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Description goes here.       | `String!` | 
-| `networks`      | Description goes here.       | `Network!` | 
-| `appIds`      | Description goes here.       | `String!` | 
-| `withOverrides`      | Description goes here.       | `Boolean = false` | 
+| `address`      | Filter by Address       | `String!` | 
+| `networks`      | Filter by chain       | `Network!` | 
+| `appIds`      | Filter by app      | `String!` | 
+| `withOverrides`      | Include user value overrides       | `Boolean = false` | 
 
 Fields for `nftBalances`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Description goes here.       | `Network!`       |
-| `balanceUSD`      | Description goes here.       | `Float!` | 
+| `network`      | Returns the chain      | `Network!`       |
+| `balanceUSD`      | Returns the estimated USD value      | `Float!` | 
