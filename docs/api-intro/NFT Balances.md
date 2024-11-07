@@ -5,12 +5,6 @@ import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent'
 
 ---
 
-:::note
-
-NFT tokens estimated value in USD is calculated using in-house built algorithm. NFT valuation can be overridden to be the top offer, last sale or any other user hard coded value. NFT tokens can be set as hidden to remove them from the default portfolio view.
-
-:::
-
 ### `nftBalances`
 
 Returns the the NFTs owned by an address.
@@ -19,6 +13,11 @@ Returns the the NFTs owned by an address.
 
 <ApolloSandboxComponent />
 
+:::note
+
+NFT tokens estimated value in USD is calculated using in-house built algorithm. NFT valuation can be overridden to be the top offer, last sale or any other user hard coded value. NFT tokens can be set as hidden to remove them from the default portfolio view.
+
+:::
 
 ### Reference
 
