@@ -13,25 +13,32 @@ NFT tokens estimated value in USD is calculated using in-house built algorithm. 
 
 :::
 
-### `NftUserTokenListQuery`
+### `nftBalances`
 
 Returns the the NFTs owned by an address.
 
 ```sh
-uery NftUserTokenListQuery(
-  $network: Network
-  $owners: [Address!]!
-  $minEstimatedValueUsd: Float
-  $collectionIds: [ID!]
-  $standard: NftStandard
-  $onlyHidden: Boolean
-  $withOverrides: Boolean
-  $first: Int!
+query($addresses: [Address!]!) {
+    portfolio(addresses: $addresses) {
+      nftBalances {
+        
+      }
+    }
 )
 ```
 
-Fields for `NftUserTokenListQuery`
+Arguments for `nftBalances`
 
-| Name      | Description |
-| ----------- | ----------- |
-| `name`      | Description goes here.       |
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `address`      | Description goes here.       | `String!` | 
+| `networks`      | Description goes here.       | `Network!` | 
+| `appIds`      | Description goes here.       | `String!` | 
+| `withOverrides`      | Description goes here.       | `Boolean = false` | 
+
+Fields for `nftBalances`
+
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `network`      | Description goes here.       | `Network!`       |
+| `balanceUSD`      | Description goes here.       | `Float!` | 

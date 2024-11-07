@@ -6,19 +6,37 @@ Description of the category of queries goes here. How it could be used in applic
 
 ---
 
-### `GetTokenBalances`
+### `tokenBalances`
 
 Returns all token balances for an address on a set of networks.
 
 ```sh
-query GetTokenBalances(
-  $addresses: [Address!]!
-  $networks: [Network!]!
-)
+query($addresses: [Address!]!) {
+    portfolio(addresses: $addresses) {
+      tokenBalances {
+      }
+    }
 ```
 
-Fields for `GetTokenBalances`
+Arguments for `tokenBalances`
 
-| Name      | Description |
-| ----------- | ----------- |
-| `name`      | Description goes here.       |
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `address`      | Description goes here.       | `String!` | 
+| `networks`      | Description goes here.       | `Network!` | 
+| `appIds`      | Description goes here.       | `String!` | 
+| `withOverrides`      | Description goes here.       | `Boolean = false` | 
+
+Fields for `tokenBalances`
+
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `key`      | Description goes here.       | `String!`       |
+| `address`      | Description goes here.       | `String!` | 
+| `network`      | Description goes here.       | `Network!` | 
+| `token`      | Description goes here.       | `BaseTokenBalance!` | 
+| `updatedAt`      | Description goes here.       | `Timestamp!` | 
+| `balance`      | Description goes here.       | `Float!` | 
+| `baseToken`      | Description goes here.       | `WalletTokenBalance!` | 
+| `balanceUSD`      | Description goes here.       | `Float!` | 
+| `balanceRaw`      | Description goes here.       | `String!` | 

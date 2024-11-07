@@ -20,15 +20,32 @@ Returns all indexed DeFi or other app balances for an account address on a set o
 
 
 ```sh
-query GetAppBalancesQuery(
-  $addresses: [Address!]!
-  $networks: [Network!]!
-  $appIds: [String!]
-)
+query($addresses: [Address!]!) {
+    portfolio(addresses: $addresses) {
+      appBalances {
+      }
+    }
 ```
 
-Fields for `GetAppBalancesQuery`
+Arguments for `AppBalance`
 
-| Name      | Description |
-| ----------- | ----------- |
-| `name`      | Description goes here.       |
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `address`      | Description goes here.       | `String!` | 
+| `networks`      | Description goes here.       | `Network!` | 
+| `appIds`      | Description goes here.       | `String!` | 
+| `withOverrides`      | Description goes here.       | `Boolean = false` | 
+
+Fields for `AppBalance`
+
+| Name      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `key`      | Description goes here.       | `String!`       |
+| `address`      | Description goes here.       | `String!`       |
+| `appId`      | Description goes here.       | `String!`       |
+| `appName`      | Description goes here.       | `String!`       |
+| `appImage`      | Description goes here.       | `String!`       |
+| `network`      | Description goes here.       | `Network!`       |
+| `updatedAt`      | Description goes here.       | `Timestamp!`       |
+| `balanceUSD`      | Description goes here.       | `Float!` | 
+| `products`      | Description goes here.       | `ProductItem!`       |
