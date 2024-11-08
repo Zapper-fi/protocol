@@ -24,10 +24,6 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'Zapper Protocol',
   projectName: 'Zapper Protocol Website',
-  themes: ['@docusaurus/theme-mermaid'],
-  markdown: {
-    mermaid: true,
-  },
   presets: [
     [
       'classic',
