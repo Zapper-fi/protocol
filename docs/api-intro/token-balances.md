@@ -26,9 +26,12 @@ export const tokenBalancesVars = {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
 };
 
+# Token Balances
+
 Surfaces any onchain token balances held by an address.
 
 ---
+
 
 ### `tokenBalances`
 
