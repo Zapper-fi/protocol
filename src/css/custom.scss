@@ -134,9 +134,15 @@
     --text-color-alt: #4b5871;
   }
 
-/* Table overrides */
+/* Zapper overrides */
 table tr:nth-child(2n) {
   background-color: inherit !important;
+}
+
+details[class*='details_'] {
+  --docusaurus-details-decoration-color: var(--ifm-border-color);
+  border: 1px solid var(--ifm-border-color);
+  background-color: var(--ifm-card-background) !important;
 }
   
   /* For readability concerns, you should choose a lighter palette in dark mode. */
