@@ -20,9 +20,6 @@ importers:
       '@docusaurus/preset-classic':
         specifier: 3.6.0
         version: 3.6.0(@algolia/client-search@4.19.1)(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.0.0))(@types/react@18.2.21)(bufferutil@4.0.8)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)(search-insights@2.13.0)(typescript@5.2.2)(utf-8-validate@5.0.10)
-      '@docusaurus/theme-classic':
-        specifier: ^3.6.0
-        version: 3.6.0(@types/react@18.2.21)(bufferutil@4.0.8)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)(typescript@5.2.2)(utf-8-validate@5.0.10)
       '@mdx-js/react':
         specifier: ^3.0.0
         version: 3.0.0(@types/react@18.2.21)(react@18.0.0)
@@ -9795,7 +9792,7 @@ snapshots:
       tslib: 2.6.2
       unist-util-visit: 5.0.0
       utility-types: 3.10.0
-      webpack: 5.88.2
+      webpack: 5.96.1
     transitivePeerDependencies:
       - '@docusaurus/faster'
       - '@mdx-js/react'
@@ -9836,7 +9833,7 @@ snapshots:
       react-dom: 18.0.0(react@18.0.0)
       tslib: 2.6.2
       utility-types: 3.10.0
-      webpack: 5.88.2
+      webpack: 5.96.1
     transitivePeerDependencies:
       - '@docusaurus/faster'
       - '@mdx-js/react'
@@ -9868,7 +9865,7 @@ snapshots:
       react: 18.0.0
       react-dom: 18.0.0(react@18.0.0)
       tslib: 2.6.2
-      webpack: 5.88.2
+      webpack: 5.96.1
     transitivePeerDependencies:
       - '@docusaurus/faster'
       - '@mdx-js/react'
