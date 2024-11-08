@@ -13,21 +13,21 @@ Access powerful onchain data curated by the Zapper protocol with a GraphQL API f
 
 ## What do I get?
 
-#### [Human-Readable Transactions](/docs/api-intro/Human-Readable%20Transactions)
+#### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions)
 
 Simplify onchain transactions with human-friendly descriptions.
 
-#### [Onchain Identity](/docs/api-intro/Onchain%20Identity)
+#### [Onchain Identity](/docs/api-intro/onchain-identity)
 
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
 
-#### [Portfolio Balances](/docs/api-intro/Token%20Balances)
+#### [Portfolio Balances](/docs/api-intro/token-balances)
 
 A set of portfolio queries to fetch tokens, NFTs, DeFi Positions, and other App Balances.
 
 
-#### [Onchain Prices](/docs/api-intro/Onchain%20Prices)
+#### [Onchain Prices](/docs/api-intro/app-balances)
 
 A price for every token that has an onchain market, including historical data. 
 

@@ -25,7 +25,7 @@ export const nftBalancesVars = {
 
 ### `nftBalances`
 
-Returns the the NFTs owned by an address.
+Returns the esimated value in USD of NFTs owned by an address across networks.
 
 ### Sandbox
 
