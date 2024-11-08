@@ -2,6 +2,10 @@
 sidebar_position: 6
 ---
 
+---
+title: My Page Title
+---
+
 Coming soon.
 
 ---
