@@ -2,7 +2,25 @@
 sidebar_position: 2
 ---
 
-Surfaces various pieces of onchain identity for an address. Can be used to enhance the identity of users in your application.
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+export const accountsQuery = `query Account($address: Address!) {
+  account(address: $address) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
+  }
+}`;
+
+export const accountsVariables = {
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+};
+
+Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
 ---
 
@@ -10,23 +28,27 @@ Surfaces various pieces of onchain identity for an address. Can be used to enhan
 
 Returns identity and other information relating to an address.
 
-```sh
-query($address: Address!) {
-  account(address: $address) {
-  }
-}
-```
 
-**Apollo Sandbox Goes Here**
+### Sandbox
 
+<ApolloSandboxComponent 
+  query={accountsQuery}
+  variables={accountsVariables}
+/>
 
-Arguments for `account`
+### Reference
+
+<details>
+<summary>Arguments for account</summary>
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Get data for address       | `String!` | 
 
-Fields for `account`
+</details>
+
+<details>
+<summary>Fields for account</summary>
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -49,9 +71,14 @@ Fields for `account`
 | `farcasterProfile`      | -     | `FarcasterProfile!` | 
 | `label`      | -     | `String!` | 
 
+
+</details>
+
+
 ### `accounts`
 
 Returns identity and other information for many addresses.
+
 
 ```sh
 query($addresses: [Address!]!) {
@@ -60,8 +87,12 @@ query($addresses: [Address!]!) {
   }
 ```
 
-Arguments for `accounts`
+<details>
+<summary>Arguments for accounts</summary>
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `addresses`      | Get data for one or more addresses      | `String!` | 
+
+</details>
+

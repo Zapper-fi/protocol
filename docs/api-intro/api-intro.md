@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
 ---
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 
 # Getting Started
 
 
-Access powerful onchain data curated by the Zapper protocol to build your applications.
+Access powerful onchain data curated by the Zapper protocol with a GraphQL API for your applications.
 
 ---
 
@@ -23,8 +24,12 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 #### [Portfolio Balances](/docs/api-intro/Token%20Balances)
 
-A set of portfolio queries to access tokens, NFTs, DeFi Positions, and other App Balances.
+A set of portfolio queries to fetch tokens, NFTs, DeFi Positions, and other App Balances.
 
+
+#### [Onchain Prices](/docs/api-intro/Onchain%20Prices)
+
+A price for every token that has an onchain market, including historical data. 
 
 ## Get an API key
 
@@ -37,6 +42,6 @@ Zapper API uses a credit system to manage how many queries an API key can perfor
 You can track your usage and purchase additional credits at **[protocol.zapper.xyz/dashboard]((https://protocol.zapper.xyz/dashboard))**
 
 
-## Test Endpoints
+## Try it in Sandbox
 
-Chris's Apollo iframe?
+<ApolloSandboxComponent />

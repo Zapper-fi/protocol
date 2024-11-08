@@ -2,6 +2,29 @@
 sidebar_position: 3
 ---
 
+import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+export const tokenBalancesQuery = `query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    tokenBalances {
+      address
+      network
+      token {
+        balanceUSD
+        balance
+        baseToken {
+          symbol
+        }
+      }
+      updatedAt
+    }
+  }
+}`;
+
+export const tokenBalancesVars = {
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+};
+
 Surfaces any onchain token balances held by an address.
 
 ---
@@ -10,18 +33,18 @@ Surfaces any onchain token balances held by an address.
 
 Returns all token balances for an address on a set of networks.
 
-```sh
-query($addresses: [Address!]!) {
-    portfolio(addresses: $addresses) {
-      tokenBalances {
-      }
-    }
-```
 
-**Apollo Sandbox Goes Here**
+### Sandbox
 
+<ApolloSandboxComponent 
+  query={tokenBalancesQuery}
+  variables={tokenBalancesVars}
+/>
 
-Arguments for `tokenBalances`
+### Reference
+
+<details>
+<summary>Arguments for tokenBalances</summary>
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -30,7 +53,10 @@ Arguments for `tokenBalances`
 | `appIds`      | -       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 
 
-Fields for `tokenBalances`
+</details>
+
+<details>
+<summary>Fields for tokenBalances</summary>
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -43,3 +69,5 @@ Fields for `tokenBalances`
 | `baseToken`      | -       | `WalletTokenBalance!` | 
 | `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
 | `balanceRaw`      | Balance in units of the token address       | `String!` | 
+
+</details>

@@ -384,6 +384,11 @@ hr {
   }
 }
 
+  .apollo-sandbox {
+    height: 600px;
+    overflow: hidden;
+  }
+  
 .hide-mobile {
   @media screen and (max-width: 750px) {
     display: none !important;

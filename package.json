@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
+    "@apollo/explorer": "^3.7.0",
     "@docusaurus/core": "3.6.0",
     "@docusaurus/preset-classic": "3.6.0",
     "@docusaurus/theme-classic": "^3.6.0",
