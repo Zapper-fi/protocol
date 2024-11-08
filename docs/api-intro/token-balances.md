@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+sidebar_label: Token Balances
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
