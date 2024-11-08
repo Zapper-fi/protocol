@@ -140,27 +140,33 @@
   --ifm-breadcrumb-size-multiplier: 0.8;
 }
 
-/* Table overrides */
+/* Zapper overrides */
 table tr:nth-child(2n) {
   background-color: inherit !important;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #a387ff;
-  --ifm-text-color-primary: white;
-  --ifm-text-color-alt: #9cabbb;
-  --ifm-color-primary-dark: #a387ff;
-  --ifm-color-primary-darker: #a387ff;
-  --ifm-color-primary-darkest: #a387ff;
-  --ifm-color-primary-light: #a387ff;
-  --ifm-color-primary-lighter: #a387ff;
-  --ifm-color-primary-lightest: #a387ff;
-  --ifm-card-background: #181c1f;
-  --ifm-border-color: #32383d;
-  --ifm-accent-color: #a387ff;
-  --ifm-default-background: #0c1013;
-  --ifm-text-alt-color: #c7d2da;
+details[class*='details_'] {
+  --docusaurus-details-decoration-color: var(--ifm-border-color);
+  border: 1px solid var(--ifm-border-color);
+  background-color: var(--ifm-card-background) !important;
+}
+  
+  /* For readability concerns, you should choose a lighter palette in dark mode. */
+  [data-theme='dark'] {
+    --ifm-color-primary: #a387ff;
+    --ifm-text-color-primary: white;
+    --ifm-text-color-alt: #9cabbb;
+    --ifm-color-primary-dark: #a387ff;
+    --ifm-color-primary-darker: #a387ff;
+    --ifm-color-primary-darkest: #a387ff;
+    --ifm-color-primary-light: #a387ff;
+    --ifm-color-primary-lighter: #a387ff;
+    --ifm-color-primary-lightest: #a387ff;
+    --ifm-card-background: #181c1f;
+    --ifm-border-color: #32383d;
+    --ifm-accent-color: #a387ff;
+    --ifm-default-background: #0c1013;
+    --ifm-text-alt-color: #c7d2da;
 
 
 
