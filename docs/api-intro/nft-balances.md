@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+sidebar_label: NFT Balances
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';

@@ -1,9 +1,6 @@
 ---
 sidebar_position: 6
----
-
----
-title: My Page Title
+sidebar_label: Onchain Prices
 ---
 
 Coming soon.

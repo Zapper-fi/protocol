@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+sidebar_label: Onchain Identity
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';

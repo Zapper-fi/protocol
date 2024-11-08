@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+sidebar_label: Human-Readable Transactions
 ---
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 

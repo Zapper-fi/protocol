@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+sidebar_label: Job Status
 ---
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
