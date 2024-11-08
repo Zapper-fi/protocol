@@ -10,7 +10,7 @@ dependencies:
     version: 3.11.8(@types/react@18.2.21)(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)
   '@apollo/explorer':
     specifier: ^3.7.0
-    version: 3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)
+    version: 3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1)
   '@docusaurus/core':
     specifier: 3.6.0
     version: 3.6.0(@docusaurus/types@3.4.0)(@mdx-js/react@3.0.0)(react-dom@18.0.0)(react@18.0.0)(typescript@5.2.2)
@@ -65,6 +65,9 @@ dependencies:
   sass:
     specifier: ^1.77.2
     version: 1.77.2
+  use-deep-compare-effect:
+    specifier: ^1.8.1
+    version: 1.8.1(react@18.0.0)
 
 devDependencies:
   '@biomejs/biome':
@@ -288,7 +291,7 @@ packages:
       - '@types/react'
     dev: false
 
-  /@apollo/explorer@3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0):
+  /@apollo/explorer@3.7.0(graphql@16.9.0)(react-dom@18.0.0)(react@18.0.0)(use-deep-compare-effect@1.8.1):
     resolution: {integrity: sha512-7Y6JuYSK2Or5bctRmG/hrccj5b7+gAj58XZBewRzvpIDS6NPoN67fcltOortstVkYyeIscR6bTca8oCsAMozgA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -307,6 +310,7 @@ packages:
       react: 18.0.0
       react-dom: 18.0.0(react@18.0.0)
       subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
+      use-deep-compare-effect: 1.8.1(react@18.0.0)
       whatwg-mimetype: 3.0.0
       zen-observable-ts: 1.2.5
     transitivePeerDependencies:
@@ -10002,7 +10006,7 @@ packages:
   /history@4.10.1:
     resolution: {integrity: sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==}
     dependencies:
-      '@babel/runtime': 7.25.7
+      '@babel/runtime': 7.26.0
       loose-envify: 1.4.0
       resolve-pathname: 3.0.0
       tiny-invariant: 1.3.1
@@ -15596,6 +15600,17 @@ packages:
 
   /url-template@2.0.8:
     resolution: {integrity: sha512-XdVKMF4SJ0nP/O7XIPB0JwAEuT9lDIYnNsK8yGVe43y0AWoKeJNdv3ZNWh7ksJ6KqQFjOO6ox/VEitLnaVNufw==}
+    dev: false
+
+  /use-deep-compare-effect@1.8.1(react@18.0.0):
+    resolution: {integrity: sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13'
+    dependencies:
+      '@babel/runtime': 7.26.0
+      dequal: 2.0.3
+      react: 18.0.0
     dev: false
 
   /use-sync-external-store@1.2.0(react@18.0.0):

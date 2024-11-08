@@ -36,7 +36,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.0.0",
     "redoc": "^2.1.4",
-    "sass": "^1.77.2"
+    "sass": "^1.77.2",
+    "use-deep-compare-effect": "^1.8.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
