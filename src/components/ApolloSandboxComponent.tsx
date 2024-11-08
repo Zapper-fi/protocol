@@ -9,6 +9,9 @@ interface ApolloSandboxComponentProps {
 }
 
 const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, variables }) => {
+  console.log('Current path:', location.pathname);
+  console.log('Current query:', query);
+
   // This is our rate limited, public API key, for free use in the Apollo Sandbox
   // It is meant to be public
   const API_KEY = 'Basic ODRjN2VjZGItM2Y5MS00ZWFjLWFjZDEtYjlkYWVjYjk3MTE1==';
