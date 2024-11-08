@@ -35,7 +35,7 @@ Surfaces any onchain token balances held by an address.
 
 ### `tokenBalances`
 
-Returns all token balances for an address on a set of networks.
+Returns all token balances with USD prics for an address on a set of networks.
 
 
 ### Sandbox
