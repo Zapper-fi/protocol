@@ -140,11 +140,17 @@
   --ifm-breadcrumb-size-multiplier: 0.8;
 }
 
-/* Table overrides */
+/* Zapper overrides */
 table tr:nth-child(2n) {
   background-color: inherit !important;
 }
 
+details[class*='details_'] {
+  --docusaurus-details-decoration-color: var(--ifm-border-color);
+  border: 1px solid var(--ifm-border-color);
+  background-color: var(--ifm-card-background) !important;
+}
+  
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #a387ff;
