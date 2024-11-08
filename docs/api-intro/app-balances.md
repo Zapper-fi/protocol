@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+sidebar_label: App Balances
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
