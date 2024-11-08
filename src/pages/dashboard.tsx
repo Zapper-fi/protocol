@@ -9,6 +9,7 @@ import { SignedOut } from '../modules/Dashboard/SignedOut';
 import { PaymentHistory } from '../modules/Dashboard/PaymentHistory';
 import { Providers } from '../modules/Providers';
 import { ConsumptionStats } from '../modules/Dashboard/ConsumptionStats';
+import { Breadcrumbs } from '../modules/Dashboard/Breadcrumbs';
 
 function Dashboard() {
   return (
@@ -17,9 +18,9 @@ function Dashboard() {
         <div className="flex">
           <aside className="lg:w-[300px]">{/* Sidebar */}</aside>
 
-          <main className="flex-1">
+          <main className="flex-1 py-4">
             <div className="container w-auto lg:mr-[25%]">
-              <nav className="h-16">{/* Breadcrumbs */}</nav>
+              <Breadcrumbs />
 
               <div className="flex justify-between">
                 <h1>API Dashboard</h1>
@@ -42,7 +43,7 @@ function Dashboard() {
 
                 <PaymentHistory />
 
-                <ConsumptionStats/>
+                <ConsumptionStats />
                 <Debug />
               </SignedIn>
             </div>
