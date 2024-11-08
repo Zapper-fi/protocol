@@ -1,7 +1,21 @@
 ---
 sidebar_position: 5
 ---
+
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
+
+export const nftBalancesQuery = `query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    nftBalances {
+      balanceUSD
+      network
+    }
+  }
+}`;
+
+export const nftBalancesVars = {
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+};
 
 ---
 
@@ -11,8 +25,10 @@ Returns the the NFTs owned by an address.
 
 ### Sandbox
 
-<ApolloSandboxComponent />
-
+<ApolloSandboxComponent 
+  query={nftBalancesQuery}
+  variables={nftBalancesVars}
+/>
 
 :::note
 

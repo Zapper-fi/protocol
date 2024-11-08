@@ -3,11 +3,41 @@ sidebar_position: 1
 ---
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
+export const accountsTimelineQuery = `query($addresses: [Address!]) {
+  accountsTimeline(addresses: $addresses) {
+    edges {
+      node {
+        transaction {
+          fromUser {
+            address
+            displayName {
+              value
+            }
+          }
+          toUser {
+            displayName {
+              value
+            }
+          }
+        }
+        interpretation {
+          processedDescription
+        }
+      }
+    }
+  }
+}`;
+
+export const accountsTimelineVariables = {
+  "addresses": [
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
+  ]
+};
 
 Presents onchain activity in a simple descriptive summary including references to dynamic elements of the transaction such as tokens, NFTs, and accounts. Great for use in account histories, social feeds, or app specific feeds.
 
 ---
-
 
 ### `accountsTimeline`
 
@@ -19,7 +49,10 @@ Textual description of each transaction is presented from the perspective of the
 
 ### Sandbox
 
-<ApolloSandboxComponent />
+<ApolloSandboxComponent 
+  query={accountsTimelineQuery}
+  variables={accountsTimelineVariables}
+/>
 
 ### Reference
 

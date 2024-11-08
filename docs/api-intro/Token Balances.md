@@ -4,6 +4,26 @@ sidebar_position: 3
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
+export const tokenBalancesQuery = `query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    tokenBalances {
+      address
+      network
+      token {
+        balanceUSD
+        balance
+        baseToken {
+          symbol
+        }
+      }
+      updatedAt
+    }
+  }
+}`;
+
+export const tokenBalancesVars = {
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+};
 
 Surfaces any onchain token balances held by an address.
 
@@ -16,8 +36,10 @@ Returns all token balances for an address on a set of networks.
 
 ### Sandbox
 
-<ApolloSandboxComponent />
-
+<ApolloSandboxComponent 
+  query={tokenBalancesQuery}
+  variables={tokenBalancesVars}
+/>
 
 ### Reference
 

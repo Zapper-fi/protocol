@@ -1,32 +1,23 @@
 import React from 'react';
 import { ApolloExplorer } from '@apollo/explorer/react';
 
-const ApolloSandboxComponent: React.FC = () => {
+interface ApolloSandboxComponentProps {
+  query: string;
+  variables: Record<string, any>;
+}
+
+const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, variables }) => {
   // This is our rate limited, public API key, for free use in the Apollo Sandbox
   // It is meant to be public
-  const API_KEY = "Basic YWQwMTUyN2UtODEzMy00YTY4LWFkNjctZmJmOGQ5MDQwYWQxOg==";
-  const TEST_ADDRESSES = ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045", "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"];
+  const API_KEY = "Basic ODRjN2VjZGItM2Y5MS00ZWFjLWFjZDEtYjlkYWVjYjk3MTE1==";
 
   return (
     <ApolloExplorer
       graphRef="zapper-public-api@current"
       persistExplorerState={false}
       initialState={{
-        document: `query($addresses: [Address!]!) {
-    portfolio(addresses: $addresses) {
-      tokenBalances {
-        address
-        network
-        token {
-          balanceUSD
-        }
-      }
-    }
-  }
-    `,
-        variables: {
-          addresses: TEST_ADDRESSES,
-        },
+        document: query,
+        variables: variables,
         headers: {
           Authorization: API_KEY,
         },

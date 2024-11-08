@@ -4,6 +4,26 @@ sidebar_position: 4
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
+export const appBalancesQuery = `query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    appBalances {
+      address
+      appName
+      balanceUSD
+      network
+      products {
+        label
+        assets {
+          address
+        }
+      }
+    }
+  }
+}`;
+
+export const appBalancesVars = {
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+};
 
 Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
 
@@ -17,7 +37,10 @@ Returns indexed DeFi or other app balances for an account address on a set of ne
 
 ### Sandbox
 
-<ApolloSandboxComponent />
+<ApolloSandboxComponent 
+  query={appBalancesQuery}
+  variables={appBalancesVars}
+/>
 
 
 :::note

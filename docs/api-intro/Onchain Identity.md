@@ -4,6 +4,21 @@ sidebar_position: 2
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
+export const accountsQuery = `query Account($address: Address!) {
+  account(address: $address) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
+  }
+}`;
+
+export const accountsVariables = {
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+};
 
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
@@ -16,8 +31,10 @@ Returns identity and other information relating to an address.
 
 ### Sandbox
 
-<ApolloSandboxComponent />
-
+<ApolloSandboxComponent 
+  query={accountsQuery}
+  variables={accountsVariables}
+/>
 
 ### Reference
 

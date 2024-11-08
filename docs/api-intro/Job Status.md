@@ -3,6 +3,16 @@ sidebar_position: 7
 ---
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
+export const jobIdQuery = `query BalanceJobStatus($jobId: String!) {
+  balanceJobStatus(jobId: $jobId) {
+    jobId
+  }
+}`;
+
+export const jobIdVars = {
+  "jobId": "Insert the job ID returned by your balance compute mutation"
+};
+
 ---
 
 ### `balanceJobStatus`
@@ -17,7 +27,10 @@ query Query($jobId: String!) {
 
 ### Sandbox
 
-<ApolloSandboxComponent />
+<ApolloSandboxComponent 
+  query={jobIdQuery}
+  variables={jobIdVars}
+/>
 
 ### Reference
 
