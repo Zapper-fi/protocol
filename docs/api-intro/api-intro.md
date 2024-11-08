@@ -33,13 +33,13 @@ A price for every token that has an onchain market, including historical data.
 
 ## Get an API key
 
-Visit **[protocol.zapper.xyz/dashboard]((https://protocol.zapper.xyz/dashboard))** to get your API key.
+Visit the **[Dashboard](/dashboard)** to get your API key.
 
 ## Buy credits
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from your credit balance.
 
-You can track your usage and purchase additional credits at **[protocol.zapper.xyz/dashboard]((https://protocol.zapper.xyz/dashboard))**
+You can track your usage and purchase additional credits on the API **[Dashboard](/dashboard)**
 
 
 ## Try it in Sandbox
