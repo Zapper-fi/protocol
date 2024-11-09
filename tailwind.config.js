@@ -7,6 +7,8 @@ module.exports = {
         primary: {
           default: '#A387FF',
         },
+        'alt-color': 'var(--ifm-text-alt-color)',
+        'accent-color': 'var(--ifm-accent-color)'
       },
     },
   },
