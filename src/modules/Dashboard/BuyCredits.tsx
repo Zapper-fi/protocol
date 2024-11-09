@@ -3,6 +3,7 @@ import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '../../components/Button';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 import { openPopup } from '../../helpers/openPopup';
+import { Card } from '../../components/Card';
 
 const QUERY = gql`
   query BuyCredits {
@@ -56,8 +57,8 @@ export function BuyCredits() {
   const disabled = loading || !user;
 
   return (
-    <div className="mb-8">
-      <h2>Buy Credits</h2>
+    <Card>
+      <h3>Buy Credits</h3>
 
       <p>Current balance: {Number(apiV2PointsRemaining)}</p>
 
@@ -94,6 +95,6 @@ export function BuyCredits() {
           </tbody>
         </table>
       </form>
-    </div>
+    </Card>
   );
 }

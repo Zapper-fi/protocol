@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 import { usePrivy } from '@privy-io/react-auth';
+import { Card } from '../../components/Card';
 
 const QUERY = gql`
   query Profile {
@@ -17,10 +18,10 @@ export function Profile() {
   const { apiKey, name } = data?.apiClientById || {};
 
   return (
-    <div>
-      <h2>Profile</h2>
+    <Card>
+      <h3>Profile</h3>
       <p>Account Name: {name}</p>
       <p>API Key: {apiKey}</p>
-    </div>
+    </Card>
   );
 }

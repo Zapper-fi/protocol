@@ -33,18 +33,17 @@ function Dashboard() {
               </SignedOut>
 
               <SignedIn>
-                <Profile />
+                <div className="flex flex-col gap-8">
+                  <Profile />
 
-                <hr />
+                  <ConsumptionStats />
 
-                <BuyCredits />
+                  <BuyCredits />
 
-                <hr />
+                  <PaymentHistory />
 
-                <PaymentHistory />
-
-                <ConsumptionStats />
-                <Debug />
+                  <Debug />
+                </div>
               </SignedIn>
             </div>
           </main>

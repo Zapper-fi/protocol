@@ -14,17 +14,9 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { Card } from '../../components/Card';
 
-ChartJS.register(
-  LineController,
-  LineElement,
-  PointElement,
-  LinearScale,
-  CategoryScale,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
 interface EndpointStat {
   intervalStart: number;
@@ -61,11 +53,19 @@ const ENDPOINT_QUERY = gql`
 export function ConsumptionStats() {
   const [timeFrame, setTimeFrame] = useState<'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'YEAR'>('MONTH');
 
-  const { data: consumptionData, loading: consumptionLoading, error: consumptionError } = useAuthQuery(CONSUMPTION_QUERY, {
+  const {
+    data: consumptionData,
+    loading: consumptionLoading,
+    error: consumptionError,
+  } = useAuthQuery(CONSUMPTION_QUERY, {
     variables: { timeFrame },
   });
 
-  const { data: endpointData, loading: endpointLoading, error: endpointError } = useAuthQuery(ENDPOINT_QUERY, {
+  const {
+    data: endpointData,
+    loading: endpointLoading,
+    error: endpointError,
+  } = useAuthQuery(ENDPOINT_QUERY, {
     variables: { timeFrame },
   });
 
@@ -79,9 +79,7 @@ export function ConsumptionStats() {
   const timeFrames = ['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'] as const;
 
   // Data preparation for the first chart (Overall consumption)
-  const lineLabels = consumptionStats.map((item) =>
-    new Date(item.intervalStart).toLocaleDateString()
-  );
+  const lineLabels = consumptionStats.map((item) => new Date(item.intervalStart).toLocaleDateString());
 
   const requestCountData = consumptionStats.map((item) => item.requestCount);
   const totalCostData = consumptionStats.map((item) => item.totalCost);
@@ -113,9 +111,9 @@ export function ConsumptionStats() {
   };
 
   // Data preparation for the second chart (Endpoints over time)
-  const uniqueDates = Array.from(new Set(endpointStats.map(item => item.intervalStart))).sort();
-  const uniqueEndpoints = Array.from(new Set(endpointStats.map(item => item.operationName)));
-  
+  const uniqueDates = Array.from(new Set(endpointStats.map((item) => item.intervalStart))).sort();
+  const uniqueEndpoints = Array.from(new Set(endpointStats.map((item) => item.operationName)));
+
   // Create a color palette for the endpoints
   const colors = [
     { bg: 'rgba(120,79,254,0.7)', border: 'rgb(193,172,252)' },
@@ -127,13 +125,11 @@ export function ConsumptionStats() {
   ];
 
   const endpointChartData = {
-    labels: uniqueDates.map(date => new Date(date).toLocaleDateString()),
+    labels: uniqueDates.map((date) => new Date(date).toLocaleDateString()),
     datasets: uniqueEndpoints.map((endpoint, index) => {
       const colorIndex = index % colors.length;
-      const data = uniqueDates.map(date => {
-        const dataPoint = endpointStats.find(
-          stat => stat.intervalStart === date && stat.operationName === endpoint
-        );
+      const data = uniqueDates.map((date) => {
+        const dataPoint = endpointStats.find((stat) => stat.intervalStart === date && stat.operationName === endpoint);
         return dataPoint ? dataPoint.requestCount : 0;
       });
 
@@ -173,8 +169,8 @@ export function ConsumptionStats() {
   const error = consumptionError || endpointError;
 
   return (
-    <div className="mb-8">
-      <h2>API Consumption Stats</h2>
+    <Card>
+      <h3>API Consumption Stats</h3>
 
       <div className="my-4">
         <div className="timeframe-selector">
@@ -201,13 +197,13 @@ export function ConsumptionStats() {
             <h3 className="mb-4">Overall Consumption</h3>
             <Line data={consumptionChartData} options={chartOptions} />
           </div>
-          
+
           <div>
             <h3 className="mb-4">Requests per Endpoint Over Time</h3>
             <Line data={endpointChartData} options={chartOptions} />
           </div>
         </div>
       )}
-    </div>
+    </Card>
   );
 }

@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import { formatDate } from '../../helpers/formatDate';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
+import { Card } from '../../components/Card';
 
 const QUERY = gql`
   query PaymentHistory {
@@ -21,8 +22,8 @@ export function PaymentHistory() {
   const { payments = [] } = data?.apiClientById || {};
 
   return (
-    <div className="mb-8">
-      <h2>Payment History</h2>
+    <Card>
+      <h3>Payment History</h3>
 
       {loading && <p>Loading...</p>}
 
@@ -60,6 +61,6 @@ export function PaymentHistory() {
           </tbody>
         </table>
       )}
-    </div>
+    </Card>
   );
 }
