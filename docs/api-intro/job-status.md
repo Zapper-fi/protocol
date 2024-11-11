@@ -14,6 +14,8 @@ export const jobIdVars = {
   "jobId": "Insert the job ID returned by your balance compute mutation"
 };
 
+# Job Status
+
 ---
 
 ### `balanceJobStatus`

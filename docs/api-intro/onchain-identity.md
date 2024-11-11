@@ -21,6 +21,8 @@ export const accountsVariables = {
   "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
 };
 
+# Onchain Identity
+
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
 ---

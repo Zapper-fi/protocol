@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+sidebar_label: Token Balances
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
@@ -25,13 +26,16 @@ export const tokenBalancesVars = {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
 };
 
+# Token Balances
+
 Surfaces any onchain token balances held by an address.
 
 ---
 
+
 ### `tokenBalances`
 
-Returns all token balances for an address on a set of networks.
+Returns all token balances with USD prics for an address on a set of networks.
 
 
 ### Sandbox

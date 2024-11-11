@@ -3,6 +3,8 @@ sidebar_position: 6
 sidebar_label: Onchain Prices
 ---
 
+# Onchain Prices
+
 Coming soon.
 
 ---

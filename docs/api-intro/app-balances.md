@@ -26,6 +26,8 @@ export const appBalancesVars = {
   "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
 };
 
+# App Balances
+
 Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
 
 ---
