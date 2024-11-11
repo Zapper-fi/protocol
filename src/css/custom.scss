@@ -138,9 +138,19 @@
   --text-color-alt: #4b5871;
 
   --ifm-breadcrumb-size-multiplier: 0.8;
+  --ifm-table-border-color: var(--ifm-border-color);
 }
 
 /* Zapper overrides */
+table th,
+table td {
+  border-width: 0;
+}
+
+table {
+  border: 1px solid var(--ifm-border-color);
+}
+
 table tr:nth-child(2n) {
   background-color: inherit !important;
 }
@@ -150,7 +160,7 @@ details[class*='details_'] {
   border: 1px solid var(--ifm-border-color);
   background-color: var(--ifm-card-background) !important;
 }
-  
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #a387ff;
@@ -390,11 +400,11 @@ hr {
   }
 }
 
-  .apollo-sandbox {
-    height: 600px;
-    overflow: hidden;
-  }
-  
+.apollo-sandbox {
+  height: 600px;
+  overflow: hidden;
+}
+
 .hide-mobile {
   @media screen and (max-width: 750px) {
     display: none !important;
