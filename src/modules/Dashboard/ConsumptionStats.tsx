@@ -168,41 +168,45 @@ export function ConsumptionStats() {
   const isLoading = consumptionLoading || endpointLoading;
   const error = consumptionError || endpointError;
 
+  const noData = !isLoading && !error && (consumptionStats.length === 0 || endpointStats.length === 0);
+
   return (
     <Card>
       <h3>API Consumption Stats</h3>
 
-      <div className="my-4">
-        <div className="timeframe-selector">
-          {timeFrames.map((tf) => (
-            <button
-              key={tf}
-              onClick={() => handleTimeFrameChange(tf)}
-              className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
-            >
-              {tf.charAt(0) + tf.slice(1).toLowerCase()}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {isLoading && <p>Loading...</p>}
-      {error && <p className="text-red-400">Error: {error.message}</p>}
-
-      {!isLoading && !error && (consumptionStats.length === 0 || endpointStats.length === 0) ? (
+      {noData ? (
         <p>No data found</p>
       ) : (
-        <div className="space-y-8">
-          <div>
-            <h3 className="mb-4">Overall Consumption</h3>
-            <Line data={consumptionChartData} options={chartOptions} />
+        <>
+          <div className="my-4">
+            <div className="timeframe-selector">
+              {timeFrames.map((tf) => (
+                <button
+                  key={tf}
+                  onClick={() => handleTimeFrameChange(tf)}
+                  className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
+                >
+                  {tf.charAt(0) + tf.slice(1).toLowerCase()}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <h3 className="mb-4">Requests per Endpoint Over Time</h3>
-            <Line data={endpointChartData} options={chartOptions} />
+          {isLoading && <p>Loading...</p>}
+          {error && <p className="text-red-400">Error: {error.message}</p>}
+
+          <div className="space-y-8">
+            <div>
+              <h3 className="mb-4">Overall Consumption</h3>
+              <Line data={consumptionChartData} options={chartOptions} />
+            </div>
+
+            <div>
+              <h3 className="mb-4">Requests per Endpoint Over Time</h3>
+              <Line data={endpointChartData} options={chartOptions} />
+            </div>
           </div>
-        </div>
+        </>
       )}
     </Card>
   );
