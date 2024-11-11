@@ -3,7 +3,6 @@ import React from 'react';
 import { BuyCredits } from '../modules/Dashboard/BuyCredits';
 import { Debug } from '../modules/Dashboard/Debug';
 import { Profile } from '../modules/Dashboard/Profile';
-import { SignInButton } from '../modules/Dashboard/SignInButton';
 import { SignedIn } from '../modules/Dashboard/SignedIn';
 import { SignedOut } from '../modules/Dashboard/SignedOut';
 import { PaymentHistory } from '../modules/Dashboard/PaymentHistory';
@@ -22,8 +21,6 @@ function Dashboard() {
 
             <div className="flex justify-between">
               <h1>API Dashboard</h1>
-
-              <SignInButton />
             </div>
 
             <SignedOut>

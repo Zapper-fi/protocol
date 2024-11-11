@@ -101,6 +101,10 @@ const config = {
           to: 'dashboard',
           activeBaseRegex: 'dashboard',
         },
+        {
+          type: 'custom-NavbarItem',
+          position: 'right',
+        },
       ],
     },
 
