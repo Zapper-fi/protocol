@@ -1,5 +1,6 @@
 import type React from 'react';
 import { ApolloExplorer } from '@apollo/explorer/react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
 
@@ -37,4 +38,6 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, 
   );
 };
 
-export default ApolloSandboxComponent;
+export default function ClientApolloSandboxComponent() {
+  return <BrowserOnly>{() => <ApolloSandboxComponent />}</BrowserOnly>;
+}
