@@ -2,7 +2,6 @@ import { gql } from '@apollo/client';
 import { formatDate } from '../../helpers/formatDate';
 import { useAuthQuery } from '../../helpers/useAuthQuery';
 import { Card } from '../../components/Card';
-import { Pill } from '../../components/Pill';
 
 const QUERY = gql`
   query PaymentHistory {
@@ -33,7 +32,7 @@ export function PaymentHistory() {
       {!loading && !error && !payments ? (
         <p>No data found</p>
       ) : (
-        <table className="table w-full">
+        <table className="table w-full text-sm">
           <thead>
             <tr>
               <th className="text-start">Date</th>
@@ -56,7 +55,7 @@ export function PaymentHistory() {
                   <td className="text-center">{payment.creditsPurchased}</td>
                   <td className="text-end">{payment.amount}</td>
                   <td className="text-start">
-                    <Pill variant={mapStatus[payment.status]}>{payment.status}</Pill>
+                    <span className={mapStatus[payment.status]}>{payment.status}</span>
                   </td>
                 </tr>
               ))
@@ -69,7 +68,7 @@ export function PaymentHistory() {
 }
 
 const mapStatus = {
-  confirmed: 'success',
-  pending: 'warning',
-  failed: 'error',
+  confirmed: 'text-green-400',
+  pending: 'text-yellow-400',
+  failed: 'text-red-400',
 };

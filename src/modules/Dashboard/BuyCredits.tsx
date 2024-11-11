@@ -65,7 +65,7 @@ export function BuyCredits() {
       {error && <p className="text-red-400">Error : {error.message}</p>}
 
       <form onSubmit={handleSubmit}>
-        <table className="table w-full">
+        <table className="table w-full text-sm">
           <thead>
             <tr>
               <th>API Credits</th>
