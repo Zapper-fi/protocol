@@ -1,5 +1,5 @@
-import { AuthProvider } from './Dashboard/AuthProvider';
-import { GqlProvider } from './Dashboard/GqlProvider';
+import { AuthProvider } from './AuthProvider';
+import { GqlProvider } from './GqlProvider';
 
 export function Providers({ children }) {
   return (
