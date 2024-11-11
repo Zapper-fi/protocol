@@ -38,6 +38,6 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, 
   );
 };
 
-export default function ClientApolloSandboxComponent() {
-  return <BrowserOnly>{() => <ApolloSandboxComponent />}</BrowserOnly>;
+export default function ClientApolloSandboxComponent(props) {
+  return <BrowserOnly>{() => <ApolloSandboxComponent {...props} />}</BrowserOnly>;
 }
