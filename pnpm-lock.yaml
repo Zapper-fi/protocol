@@ -41,6 +41,9 @@ dependencies:
   install:
     specifier: ^0.13.0
     version: 0.13.0
+  lucide-react:
+    specifier: ^0.456.0
+    version: 0.456.0(react@18.3.1)
   prism-react-renderer:
     specifier: ^2.3.0
     version: 2.3.0(react@18.3.1)
@@ -10753,6 +10756,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: false
+
+  /lucide-react@0.456.0(react@18.3.1):
+    resolution: {integrity: sha512-DIIGJqTT5X05sbAsQ+OhA8OtJYyD4NsEMCA/HQW/Y6ToPQ7gwbtujIoeAaup4HpHzV35SQOarKAWH8LYglB6eA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /lunr@2.3.9:

@@ -21,6 +21,11 @@ export function PaymentHistory() {
 
   const { payments = [] } = data?.apiClientById || {};
 
+  // Sort payments by createdAt in descending order
+  const sortedPayments = [...payments].sort((a, b) => {
+    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  });
+
   return (
     <div className="space-y-2">
       <h3>Payment History</h3>
@@ -42,14 +47,14 @@ export function PaymentHistory() {
               </tr>
             </thead>
             <tbody>
-              {payments?.length === 0 ? (
+              {sortedPayments?.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="text-center">
                     No purchases found
                   </td>
                 </tr>
               ) : (
-                payments?.map((payment) => (
+                sortedPayments?.map((payment) => (
                   <tr key={payment.createdAt}>
                     <td>{formatDate(payment.createdAt)}</td>
                     <td className="text-center">{payment.creditsPurchased}</td>
