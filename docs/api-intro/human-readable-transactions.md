@@ -51,7 +51,7 @@ Returns human-readable transactions that offer a descriptive summary of the tran
 
 ##### Onchain Activity Feed
 
-Let's say you want an activity feed for the onchain activity of any given address(s) in a human-readable with network and app that was used. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Example of the response below:
+Let's say you want to show users an activity feed for their onchain transactions in a human-readable format with network and app information. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Example of the response below:
 
 ```json
 {
@@ -61,7 +61,7 @@ Let's say you want an activity feed for the onchain activity of any given addres
           "value": "0xjasper.eth"
           }
     }
-    
+
     "interpretation": {
       "processedDescription": "Swapped 4,272.399 STABLE for 0.0102 ETH"
       },
@@ -73,11 +73,6 @@ Let's say you want an activity feed for the onchain activity of any given addres
       },
 }
 ```
-
-
-An app specific activity feed showing all the in-app actions that users are taking. 
-
-
 
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
