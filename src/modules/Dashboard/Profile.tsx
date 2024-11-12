@@ -22,9 +22,21 @@ export function Profile() {
   return (
     <Card>
       <h3>Profile</h3>
-      <p>Account Name: {name}</p>
-      <p>Wallet: {user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
-      <p>API Key: {apiKey}</p>
+      <div>
+        <strong>Email</strong>
+        <p>{name}</p>
+      </div>
+      <div>
+        <strong>Wallet</strong>
+        <p>Wallet: {user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
+      </div>
+      <div>
+        <strong>API Key</strong>
+        <p>This API key is used to query the Zapper GraphQL endpoint</p>
+        <p>
+          <input type="text" className="w-full p-2 text-base bg-none border-none" readOnly value={apiKey} />
+        </p>
+      </div>
     </Card>
   );
 }
