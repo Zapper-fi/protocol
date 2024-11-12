@@ -19,7 +19,7 @@ Surfaces balances that a user might hold inside of an onchain application. Use c
 The `appBalances` query takes an `address` with optional `networks` or `appIds` and returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
 
 
-### Common Uses
+### Use Cases
 
 ##### App Holdings
 
