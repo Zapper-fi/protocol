@@ -14,14 +14,75 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 ### `account`
 
-Returns identity and other information relating to an address.
+The `account` query takes an `address` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+
+
+### Use Case
+
+##### Social Profile
+
+Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Example of the response below:
+
+```json
+{
+  "data": {
+    "account": {
+      "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+      "displayName": {
+        "value": "0xjasper.eth"
+      },
+      "ensRecord": {
+        "name": "0xjasper.eth"
+      },
+      "description": {
+        "value": "designer of stuff at Zapper",
+        "source": "ENS"
+      },
+      "farcasterProfile": {
+        "fid": 177
+      },
+      "lensProfile": {
+        "handle": "0xjasper"
+      }
+    }
+  }
+}
+
+```
+
+### Example Query
+
+```graphql
+query Account($address: Address!) {
+  account(address: $address) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+}
+```
+
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
 
 ### Reference
 
 <details>
 <summary>Arguments for account</summary>
 
-| Argument      | Description | Type |
+| Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Get data for address       | `String!` | 
 
@@ -51,59 +112,19 @@ Returns identity and other information relating to an address.
 | `farcasterProfile`      | -     | `FarcasterProfile!` | 
 | `label`      | -     | `String!` | 
 
+
 </details>
+
 
 ### `accounts`
 
-Returns identity and other information for many addresses.
-
-### Example Query
-
-```graphql
-query($addresses: [Address!]!) {
-  accounts(addresses: $addresses) {
-    address
-    displayName {
-      value
-    }
-    ensRecord {
-      name
-    }
-  }
-}
-```
+The `accounts` query takes 1 or more `addresses` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
 
 <details>
 <summary>Arguments for accounts</summary>
 
-| Argument      | Description | Type |
+| Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `addresses`      | Get data for one or more addresses      | `String!` | 
 
 </details>
-
-### Example Query
-
-```graphql
-query Account($address: Address!) {
-  account(address: $address) {
-    address
-    displayName {
-      value
-    }
-    ensRecord {
-      name
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
-}
-```
-
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

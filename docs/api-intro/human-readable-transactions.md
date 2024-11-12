@@ -8,60 +8,45 @@ import Link from '@docusaurus/Link';
 
 # Human-Readable Transactions
 
+
 Presents onchain activity in a simple descriptive summary including references to dynamic elements of the transaction such as tokens, NFTs, and accounts. Great for use in account histories, social feeds, or app specific feeds.
 
 ---
 
 ### `accountsTimeline`
 
-Returns human-readable transactions that offer a descriptive summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
+The `accountsTimeline` query returns a descriptive and human-readable summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
+
+### Use Case
+
+##### Transaction History
+
+Let's say you want to show users an activity feed for their onchain transactions in a human-readable format with network and app information. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Part of the response below:
+
+```json
+{
+  "fromUser": {
+    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+      "displayName": {
+          "value": "0xjasper.eth"
+          }
+    }
+
+    "interpretation": {
+      "processedDescription": "Started battle with sebaudet.eth"
+      },
+  
+      "network": "BASE_MAINNET"
+
+    "app": {
+      "name": "Tokiemon",
+      },
+}
+```
 
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
 :::
-
-### Reference
-
-<details>
-<summary>Arguments for accountsTimeline</summary>
-
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
-| `first`      | -      | `Int!`        | 
-| `after`      | -      | `String!`        | 
-| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
-| `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
-| `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
-| `tokenAddresses`      | Filter by token address        | `Address!`        | 
-| `isSigner`      | Filter by signer        | `Boolean`        | 
-
-</details>
-
-<details>
-<summary>Fields for accountsTimeline</summary>
-
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `key`      | A unique identifier       | `String!`       |
-| `network`      | Network the transaction happened on     | `Network!`       |
-| `source`      | -       | `String!`       |
-| `eventType`      | Returns the event type       | `String!`       |
-| `isAbiAvailable`      | -       | `Boolean!`       |
-| `isEditable`      | -       | `Boolean!`       |
-| `interpreterId`      | -      | `String!`       |
-| `interpreter`      | -      | `ActivityEventInterpreter!`       |
-| `actors`      | -       | `ActorDisplayItem!`       |
-| `timestamp`      | -       | `Timestamp!`       |
-| `perspective`      | -       | `ActivityPerspective!`       |
-| `interpretation`      | -      | `ActivityInterpretation!`       |
-| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
-| `similarEventCount`      | -       | `String!`       |
-| `app`      | Associated app for the transaction     | `Int!`       |
-| `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
-| `sigHash`      | -       | `String!`       |
-
-</details>
 
 ### Example Query
 
@@ -104,3 +89,53 @@ query($addresses: [Address!]) {
 ```
 
 <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+
+### Reference
+
+<details>
+<summary>Arguments for accountsTimeline</summary>
+
+| Argument      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
+| `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
+| `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
+| `tokenAddresses`      | Filter by token address        | `Address!`        | 
+| `isSigner`      | Filter by signer        | `Boolean`        | 
+| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
+| `first`      | -      | `Int!`        | 
+| `after`      | -      | `String!`        | 
+
+
+
+</details>
+
+<details>
+<summary>Fields for accountsTimeline</summary>
+
+
+| Field      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `key`      | A unique identifier.       | `String!`       |
+| `network`      | Network on which the transaction happened.     | `Network!`       |
+| `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
+| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
+| `app`      | The app that is associate with the transaction.     | `Int!`       |
+| `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
+| `toUser`      | The address that the transaction interacted with.     | `Int!`       |
+| `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
+| `source`      | -       | `String!`       |
+| `eventType`      | Returns the event type.       | `String!`       |
+| `isAbiAvailable`      | -       | `Boolean!`       |
+| `isEditable`      | -       | `Boolean!`       |
+| `interpreterId`      | -      | `String!`       |
+| `interpreter`      | -      | `ActivityEventInterpreter!`       |
+| `actors`      | -       | `ActorDisplayItem!`       |
+| `timestamp`      | -       | `Timestamp!`       |
+| `perspective`      | -       | `ActivityPerspective!`       |
+| `similarEventCount`      | -       | `String!`       |
+| `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
+| `sigHash`      | -       | `String!`       |
+
+</details>
