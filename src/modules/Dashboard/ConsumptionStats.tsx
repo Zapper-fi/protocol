@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { gql } from '@apollo/client';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
+import { Button } from '@site/src/components/Button';
 
 import {
   Chart as ChartJS,
@@ -168,16 +169,13 @@ export function ConsumptionStats() {
     <div className="space-y-4">
       <h3>API Consumption Stats</h3>
 
-      <div className="timeframe-selector">
+      <div className="timeframe-selector flex">
         {timeFrames.map((tf) => (
-          <button
-            key={tf}
-            type="button"
-            onClick={() => handleTimeFrameChange(tf)}
-            className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
-          >
-            {tf.charAt(0) + tf.slice(1).toLowerCase()}
-          </button>
+          <div key={tf} className="mr-2">
+            <Button type="button" onClick={() => handleTimeFrameChange(tf)} className="font-normal">
+              {tf.charAt(0) + tf.slice(1).toLowerCase()}
+            </Button>
+          </div>
         ))}
       </div>
 

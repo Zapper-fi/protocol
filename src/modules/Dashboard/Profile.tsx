@@ -37,7 +37,7 @@ export function Profile() {
       <div>
         <div className="flex items-center gap-2">
           <code className="text-xl font-mono bg-gray-800 p-3 rounded flex-1 overflow-x-auto">{apiKey}</code>
-          <Button type="button" onClick={handleCopyApiKey}>
+          <Button type="button" onClick={handleCopyApiKey} className="w-10 px-0 justify-center">
             <Copy size={24} />
           </Button>
         </div>
