@@ -20,23 +20,25 @@ export function Profile() {
   const { apiKey, name } = data?.apiClientById || {};
 
   return (
-    <Card>
+    <div className="space-y-2">
       <h3>Profile</h3>
-      <div>
-        <strong>Email</strong>
-        <p>{name}</p>
-      </div>
-      <div>
-        <strong>Wallet</strong>
-        <p>Wallet: {user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
-      </div>
-      <div>
-        <strong>API Key</strong>
-        <p>This API key is used to query the Zapper GraphQL endpoint</p>
-        <p>
-          <input type="text" className="w-full p-2 text-base bg-none border-none" readOnly value={apiKey} />
-        </p>
-      </div>
-    </Card>
+      <Card>
+        <div>
+          <strong>Email</strong>
+          <p>{name}</p>
+        </div>
+        <div>
+          <strong>Wallet</strong>
+          <p>Wallet: {user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
+        </div>
+        <div>
+          <strong>API Key</strong>
+          <p>This API key is used to query the Zapper GraphQL endpoint</p>
+          <p>
+            <input type="text" className="w-full p-2 text-base bg-none border-none" readOnly value={apiKey} />
+          </p>
+        </div>
+      </Card>
+    </div>
   );
 }

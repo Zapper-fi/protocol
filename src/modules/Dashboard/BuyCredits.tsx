@@ -57,44 +57,45 @@ export function BuyCredits() {
   const disabled = loading || !user;
 
   return (
-    <Card>
+    <div className="space-y-2">
       <h3>Buy Credits</h3>
+      <Card>
+        <p>Current balance: {Number(apiV2PointsRemaining)}</p>
 
-      <p>Current balance: {Number(apiV2PointsRemaining)}</p>
+        {error && <p className="text-red-400">Error : {error.message}</p>}
 
-      {error && <p className="text-red-400">Error : {error.message}</p>}
-
-      <form onSubmit={handleSubmit}>
-        <table className="table w-full text-sm">
-          <thead>
-            <tr>
-              <th>API Credits</th>
-              <th>Amount</th>
-              <th>Purchase</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="text-center">100</td>
-              <td className="text-center">$10</td>
-              <td className="text-center">
-                <Button type="submit" variant="primary" value="100" disabled={disabled}>
-                  Buy for $10
-                </Button>
-              </td>
-            </tr>
-            <tr>
-              <td className="text-center">200</td>
-              <td className="text-center">$20</td>
-              <td className="text-center">
-                <Button type="submit" variant="primary" value="200" disabled={disabled}>
-                  Buy for $20
-                </Button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
-    </Card>
+        <form onSubmit={handleSubmit}>
+          <table className="table w-full text-sm">
+            <thead>
+              <tr>
+                <th>API Credits</th>
+                <th>Amount</th>
+                <th>Purchase</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="text-center">100</td>
+                <td className="text-center">$10</td>
+                <td className="text-center">
+                  <Button type="submit" variant="primary" value="100" disabled={disabled}>
+                    Buy for $10
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <td className="text-center">200</td>
+                <td className="text-center">$20</td>
+                <td className="text-center">
+                  <Button type="submit" variant="primary" value="200" disabled={disabled}>
+                    Buy for $20
+                  </Button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </Card>
+    </div>
   );
 }

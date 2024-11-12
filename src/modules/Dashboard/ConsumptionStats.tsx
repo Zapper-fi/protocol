@@ -114,7 +114,6 @@ export function ConsumptionStats() {
   const uniqueDates = Array.from(new Set(endpointStats.map((item) => item.intervalStart))).sort();
   const uniqueEndpoints = Array.from(new Set(endpointStats.map((item) => item.operationName)));
 
-  // Create a color palette for the endpoints
   const colors = [
     { bg: 'rgba(120,79,254,0.7)', border: 'rgb(193,172,252)' },
     { bg: 'rgba(118,181,197,0.7)', border: '#8dd8e3' },
@@ -165,49 +164,54 @@ export function ConsumptionStats() {
     },
   };
 
-  const isLoading = consumptionLoading || endpointLoading;
-  const error = consumptionError || endpointError;
-
-  const noData = !isLoading && !error && (consumptionStats.length === 0 || endpointStats.length === 0);
-
   return (
-    <Card>
+    <div className="space-y-4">
       <h3>API Consumption Stats</h3>
 
-      {noData ? (
-        <p>No data found</p>
-      ) : (
-        <>
-          <div className="my-4">
-            <div className="timeframe-selector">
-              {timeFrames.map((tf) => (
-                <button
-                  key={tf}
-                  onClick={() => handleTimeFrameChange(tf)}
-                  className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
-                >
-                  {tf.charAt(0) + tf.slice(1).toLowerCase()}
-                </button>
-              ))}
-            </div>
-          </div>
+      <div className="timeframe-selector">
+        {timeFrames.map((tf) => (
+          <button
+            key={tf}
+            type="button"
+            onClick={() => handleTimeFrameChange(tf)}
+            className={`timeframe-button ${timeFrame === tf ? 'selected' : ''}`}
+          >
+            {tf.charAt(0) + tf.slice(1).toLowerCase()}
+          </button>
+        ))}
+      </div>
 
-          {isLoading && <p>Loading...</p>}
-          {error && <p className="text-red-400">Error: {error.message}</p>}
-
-          <div className="space-y-8">
-            <div>
-              <h3 className="mb-4">Overall Consumption</h3>
+      <div className="space-y-8">
+        <div>
+          <h3 className="mb-4">Overall Consumption</h3>
+          <Card>
+            {consumptionLoading ? (
+              <p>Loading...</p>
+            ) : consumptionError ? (
+              <p className="text-red-400">Error: {consumptionError.message}</p>
+            ) : consumptionStats.length === 0 ? (
+              <p>No consumption data available for this time period</p>
+            ) : (
               <Line data={consumptionChartData} options={chartOptions} />
-            </div>
+            )}
+          </Card>
+        </div>
 
-            <div>
-              <h3 className="mb-4">Requests per Endpoint Over Time</h3>
+        <div>
+          <h3 className="mb-4">Requests per Endpoint Over Time</h3>
+          <Card>
+            {endpointLoading ? (
+              <p>Loading...</p>
+            ) : endpointError ? (
+              <p className="text-red-400">Error: {endpointError.message}</p>
+            ) : endpointStats.length === 0 ? (
+              <p>No endpoint data available for this time period</p>
+            ) : (
               <Line data={endpointChartData} options={chartOptions} />
-            </div>
-          </div>
-        </>
-      )}
-    </Card>
+            )}
+          </Card>
+        </div>
+      </div>
+    </div>
   );
 }
