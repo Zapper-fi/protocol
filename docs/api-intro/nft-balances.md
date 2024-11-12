@@ -25,7 +25,7 @@ export const nftBalancesVars = {
 
 ### `nftBalances`
 
-The `nftBalances` query takes an `address` with optional `networks` and returns `balanceUSD` useful for getting estimated NFT values for addresses.
+The `nftBalances` query takes an `address` with optional `networks` and returns `balanceUSD` — useful for getting estimated NFT values for addresses.
 
 ### Sandbox
 
