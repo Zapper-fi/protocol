@@ -28,14 +28,14 @@ export const tokenBalancesVars = {
 
 # Portfolio Totals
 
-Surfaces various aggregations of onchain data including total networth, claimables, debts, and more.
+Surfaces various aggregations of onchain portfolio data including total net worth, claimables, debts, and more.
 
 ---
 
 
 ### `totals`
 
-TBD
+The `totals` object contains fields such as `claimables`, `debts`, `holdings`, and other aggregations of portfolio data.
 
 ### Common Uses
 
