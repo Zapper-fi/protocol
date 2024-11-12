@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 ---
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 
 # Getting Started
@@ -40,8 +39,3 @@ Visit the **[Dashboard](/dashboard)** to get your API key.
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from your credit balance.
 
 You can track your usage and purchase additional credits on the API **[Dashboard](/dashboard)**
-
-
-## Try it in Sandbox
-
-<ApolloSandboxComponent />
