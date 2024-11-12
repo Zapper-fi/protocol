@@ -32,6 +32,38 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 Returns identity and other information relating to an address.
 
 
+### Common Uses
+
+##### Social Profile
+
+Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Example of the response below:
+
+```json
+{
+  "data": {
+    "account": {
+      "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+      "displayName": {
+        "value": "0xjasper.eth"
+      },
+      "ensRecord": {
+        "name": "0xjasper.eth"
+      },
+      "description": {
+        "value": "designer of stuff at Zapper",
+        "source": "ENS"
+      },
+      "farcasterProfile": {
+        "fid": 177
+      },
+      "lensProfile": {
+        "handle": "0xjasper"
+      }
+    }
+  }
+}
+
+
 ### Sandbox
 
 <ApolloSandboxComponent 
