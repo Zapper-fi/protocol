@@ -15,8 +15,8 @@ const QUERY = gql`
 `;
 
 const CREATE_CHARGE = gql`
-	mutation CreateCharge($pointsAmount: Int!, $userId: String!, $userEmail: String!) {
-		createCharge(pointsAmount: $pointsAmount, userId: $userId, userEmail: $userEmail) {
+	mutation CreateCharge($pointsAmount: Int!, $userEmail: String!) {
+		createCharge(pointsAmount: $pointsAmount, userEmail: $userEmail) {
 			hostedUrl
 		}
 	}
