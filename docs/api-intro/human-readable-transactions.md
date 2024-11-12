@@ -103,6 +103,4 @@ query($addresses: [Address!]) {
 }
 ```
 
-<Link to="/sandbox">
-  <LinkButton href="/docs/api-intro/sandbox" type="primary" buttonCopy="Try in sandbox" />
-</Link>
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

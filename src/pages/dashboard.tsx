@@ -17,7 +17,7 @@ function Dashboard() {
 
         <main className="flex-1 py-4">
           <div className="container w-auto lg:mr-[25%]">
-            <Breadcrumbs />
+            <Breadcrumbs title="Dashboard" />
 
             <div className="flex justify-between">
               <h1>API Dashboard</h1>
