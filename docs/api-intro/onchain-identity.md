@@ -50,21 +50,6 @@ Let's say you are building a profile for users and want to surface some of the s
 
 ```
 
-
-
-### `accounts`
-
-The `accounts` query takes 1 or more `addresses` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
-
-<details>
-<summary>Arguments for accounts</summary>
-
-| Arguement      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `addresses`      | Get data for one or more addresses      | `String!` | 
-
-</details>
-
 ### Example Query
 
 ```graphql
@@ -90,6 +75,7 @@ query Account($address: Address!) {
 ```
 
 <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
 
 ### Reference
 
@@ -126,5 +112,19 @@ query Account($address: Address!) {
 | `farcasterProfile`      | -     | `FarcasterProfile!` | 
 | `label`      | -     | `String!` | 
 
+
+</details>
+
+
+### `accounts`
+
+The `accounts` query takes 1 or more `addresses` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+
+<details>
+<summary>Arguments for accounts</summary>
+
+| Arguement      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `addresses`      | Get data for one or more addresses      | `String!` | 
 
 </details>

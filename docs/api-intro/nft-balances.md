@@ -21,8 +21,6 @@ NFT tokens estimated value in USD is calculated using in-house built algorithm. 
 :::
 
 
-
-
 ### Example Query
 
 ```graphql

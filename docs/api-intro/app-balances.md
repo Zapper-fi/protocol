@@ -49,9 +49,6 @@ Imagine you want to surface all positions a user has across in every onchain app
 }
 ```
 
-
-### Sandbox
-
 :::note
 
 Smart accounts accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
