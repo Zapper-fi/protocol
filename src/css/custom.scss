@@ -142,6 +142,10 @@
 }
 
 /* Zapper overrides */
+table {
+  display: table;
+}
+
 table th,
 table td {
   border-width: 0;
