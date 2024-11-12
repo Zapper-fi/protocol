@@ -165,6 +165,12 @@ details[class*='details_'] {
   background-color: var(--ifm-card-background) !important;
 }
 
+/* Privy */
+#privy-dialog {
+  --privy-color-background: var(--ifm-card-background);
+}
+
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #a387ff;

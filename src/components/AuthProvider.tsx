@@ -1,9 +1,9 @@
-import { PrivyProvider } from '@privy-io/react-auth';
+import { type PrivyClientConfig, PrivyProvider } from '@privy-io/react-auth';
 
 // TODO: Replace with env variable for development and production
 const privyAppId = 'cls53js9a00lfjw0npsb82scb';
 
-const privyConfig = {
+const privyConfig: PrivyClientConfig = {
   appearance: {
     theme: 'dark',
   },
