@@ -42,7 +42,7 @@ The `totals` query takes an `address` with optional `networks` and returns field
 
 ##### Claimables
 
-Let's say you are want to show a user all the tokens can claim across all the onchain apps they have used and how much it is in USD. You would pass `address` for the user and return the `portfolio` object, with fields such as `token`, `address`, `balanceUSD`, `symbol`, and `price`. Example of the response below:
+Let's say you want to show a user all the tokens they can claim across all the onchain apps they have used and how much it's worth in USD. You would pass `address` for the user and return the `portfolio` object, with fields such as `token`, `address`, `balanceUSD`, `symbol`, and `price`. Example of the response below:
 
 ```json
 {
