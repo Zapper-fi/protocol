@@ -1,8 +1,6 @@
 ---
 sidebar_position: 1
 ---
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-
 
 # Getting Started
 
