@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { gql } from '@apollo/client';
-import { useAuthQuery } from '../../helpers/useAuthQuery';
+import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 
 import {
   Chart as ChartJS,
@@ -14,7 +14,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { Card } from '../../components/Card';
+import { Card } from '@site/src/components/Card';
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 

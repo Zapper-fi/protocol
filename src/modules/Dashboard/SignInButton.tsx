@@ -1,6 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
-import { Button } from '../../components/Button';
+import { Button } from '@site/src/components/Button';
 
 const UPSERT_USER = gql`
   mutation UpsertApiClient($email: String!, $privyId: String!) {

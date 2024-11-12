@@ -1,13 +1,13 @@
 import Layout from '@theme/Layout';
 import React from 'react';
-import { BuyCredits } from '../modules/Dashboard/BuyCredits';
-import { Debug } from '../modules/Dashboard/Debug';
-import { Profile } from '../modules/Dashboard/Profile';
-import { SignedIn } from '../modules/Dashboard/SignedIn';
-import { SignedOut } from '../modules/Dashboard/SignedOut';
-import { PaymentHistory } from '../modules/Dashboard/PaymentHistory';
-import { ConsumptionStats } from '../modules/Dashboard/ConsumptionStats';
-import { Breadcrumbs } from '../modules/Dashboard/Breadcrumbs';
+import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
+import { Debug } from '@site/src/modules/Dashboard/Debug';
+import { Profile } from '@site/src/modules/Dashboard/Profile';
+import { SignedIn } from '@site/src/modules/Dashboard/SignedIn';
+import { SignedOut } from '@site/src/modules/Dashboard/SignedOut';
+import { PaymentHistory } from '@site/src/modules/Dashboard/PaymentHistory';
+import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
+import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 
 function Dashboard() {
   return (

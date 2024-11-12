@@ -1,9 +1,9 @@
 import { gql, useMutation } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
-import { Button } from '../../components/Button';
-import { useAuthQuery } from '../../helpers/useAuthQuery';
-import { openPopup } from '../../helpers/openPopup';
-import { Card } from '../../components/Card';
+import { Button } from '@site/src/components/Button';
+import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
+import { openPopup } from '@site/src/helpers/openPopup';
+import { Card } from '@site/src/components/Card';
 
 const QUERY = gql`
   query BuyCredits {

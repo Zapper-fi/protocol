@@ -1,6 +1,6 @@
 import Layout from '@theme/Layout';
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-import { Breadcrumbs } from '../modules/Dashboard/Breadcrumbs';
+import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 
 function Sandbox() {
   return (

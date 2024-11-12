@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
-import { useAuthQuery } from '../../helpers/useAuthQuery';
-import { usePrivy } from '@privy-io/react-auth';
-import { Card } from '../../components/Card';
+import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
+import { Card } from '@site/src/components/Card';
 
 const QUERY = gql`
   query Profile {

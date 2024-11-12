@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
-import { formatDate } from '../../helpers/formatDate';
-import { useAuthQuery } from '../../helpers/useAuthQuery';
-import { Card } from '../../components/Card';
+import { formatDate } from '@site/src/helpers/formatDate';
+import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
+import { Card } from '@site/src/components/Card';
 
 const QUERY = gql`
   query PaymentHistory {
