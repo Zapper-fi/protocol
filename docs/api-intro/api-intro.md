@@ -44,4 +44,4 @@ You can track your usage and purchase additional credits on the API **[Dashboard
 
 ## Try it in Sandbox
 
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+<ApolloSandboxComponent />
