@@ -49,19 +49,28 @@ Returns human-readable transactions that offer a descriptive summary of the tran
 
 ### Common Uses
 
-An activity feed for a users onchain activity in a human-readable way. The most simple version of this is to pass `addresses` for the user's activity you are want to fetch and return `realtimeInterpretation`.
+##### Onchain Activity Feed
+
+Let's say you want an activity feed for the onchain activity of any given address(s) in a human-readable with network and app that was used. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Example of the response below:
 
 ```json
 {
-  "interpretation": {
-      "processedDescription": "Swapped 0.01 ETH for 372,142.7995 BOTE"
-  }
+  "fromUser": {
+    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+      "displayName": {
+          "value": "0xjasper.eth"
+          }
+    }
+    
+    "interpretation": {
+      "processedDescription": "Swapped 4,272.399 STABLE for 0.0102 ETH"
+      },
+  
+      "network": "BASE_MAINNET"
 
-  "interpretation": {
-      "processedDescription": "Swapped 0.01 ETH for 372,142.7995 BOTE"
-  }
-
-  ...
+    "app": {
+      "name": "Li.Fi",
+      },
 }
 ```
 
