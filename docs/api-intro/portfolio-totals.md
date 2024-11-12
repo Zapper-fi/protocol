@@ -132,7 +132,7 @@ You want to show a user the USD value of their entire onchain holdings across to
 | ----------- | ----------- | ----------- |
 | `appsTotal`      | Returns total USD value of app holdings       | `Float!`       |
 | `claimables`      | Object with fields `address`, `appId`, and `token` for returning claimables.      | `ClaimableToken!` | 
-| `debts`      | Object with fields `address`, `appId`, and `token` for returning claimables.       | `ClaimableToken!` | 
+| `debts`      | Object with fields `address`, `appId`, and `token` for returning debts.       | `ClaimableToken!` | 
 | `holdings`      | Returns USD total across categories such as Tokens, NFTs, and apps.       | `BaseTokenBalance!` | 
 | `total`      | Returns a single USD total value.      | `Float!` | 
 | `totalByAddress`      | Returns USD totals by address.        | `totalByAddress!` | 
