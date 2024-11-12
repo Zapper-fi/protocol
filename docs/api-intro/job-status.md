@@ -2,38 +2,19 @@
 sidebar_position: 7
 sidebar_label: Job Status
 ---
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
-export const jobIdQuery = `query BalanceJobStatus($jobId: String!) {
-  balanceJobStatus(jobId: $jobId) {
-    jobId
-  }
-}`;
-
-export const jobIdVars = {
-  "jobId": "Insert the job ID returned by your balance compute mutation"
-};
+import { LinkButton } from '@site/src/components/LinkButton';
+import Link from '@docusaurus/Link';
 
 # Job Status
+
+Returns the status of a specific `jobId`
 
 ---
 
 ### `balanceJobStatus`
 
 Returns the status of a specific `jobId`
-
-```sh
-query Query($jobId: String!) {
-  balanceJobStatus(jobId: $jobId) {
-  }
-```
-
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={jobIdQuery}
-  variables={jobIdVars}
-/>
 
 ### Reference
 
@@ -56,4 +37,25 @@ query Query($jobId: String!) {
 
 </details>
 
+### Example Query
 
+```graphql
+query BalanceJobStatus($jobId: String!) {
+  balanceJobStatus(jobId: $jobId) {
+    jobId
+    status
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "jobId": "Insert the job ID returned by your balance compute mutation"
+}
+```
+
+<Link to="/sandbox">
+  <LinkButton href="/docs/api-intro/sandbox" type="primary" buttonCopy="Try in sandbox" />
+</Link>

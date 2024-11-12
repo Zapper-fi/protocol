@@ -3,28 +3,8 @@ sidebar_position: 4
 sidebar_label: App Balances
 ---
 
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-
-export const appBalancesQuery = `query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    appBalances {
-      address
-      appName
-      balanceUSD
-      network
-      products {
-        label
-        assets {
-          address
-        }
-      }
-    }
-  }
-}`;
-
-export const appBalancesVars = {
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-};
+import { LinkButton } from '@site/src/components/LinkButton';
+import Link from '@docusaurus/Link';
 
 # App Balances
 
@@ -32,23 +12,13 @@ Surfaces balances that a user might hold inside of an onchain application. Use c
 
 ---
 
-
-
 ### `AppBalance`
 
 Returns indexed DeFi or other app balances for an account address on a set of networks (and optionally, for a set of app slugs)
 
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={appBalancesQuery}
-  variables={appBalancesVars}
-/>
-
-
 :::note
 
-Smart accounts accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
+Smart accounts accounts like Maker's `DSProxy` are automatically included in the balance response as part of an "implicit" bundle.
 
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
@@ -71,7 +41,6 @@ Typically, a single transaction generates multiple timeline events: one for each
 <details>
 <summary>Fields for AppBalance</summary>
 
-
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Description goes here.       | `String!`       |
@@ -85,3 +54,36 @@ Typically, a single transaction generates multiple timeline events: one for each
 | `products`      | Object containing details on all products owned by this wallet       | `ProductItem!`       |
 
 </details>
+
+### Example Query
+
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    appBalances {
+      address
+      appName
+      balanceUSD
+      network
+      products {
+        label
+        assets {
+          address
+        }
+      }
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+```
+
+<Link to="/sandbox">
+  <LinkButton href="/docs/api-intro/sandbox" type="primary" buttonCopy="Try in sandbox" />
+</Link>

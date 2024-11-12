@@ -3,28 +3,8 @@ sidebar_position: 3
 sidebar_label: Token Balances
 ---
 
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-
-export const tokenBalancesQuery = `query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-        balance
-        baseToken {
-          symbol
-        }
-      }
-      updatedAt
-    }
-  }
-}`;
-
-export const tokenBalancesVars = {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-};
+import { LinkButton } from '@site/src/components/LinkButton';
+import Link from '@docusaurus/Link';
 
 # Token Balances
 
@@ -32,18 +12,9 @@ Surfaces any onchain token balances held by an address.
 
 ---
 
-
 ### `tokenBalances`
 
-Returns all token balances with USD prics for an address on a set of networks.
-
-
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={tokenBalancesQuery}
-  variables={tokenBalancesVars}
-/>
+Returns all token balances with USD prices for an address on a set of networks.
 
 ### Reference
 
@@ -75,3 +46,36 @@ Returns all token balances with USD prics for an address on a set of networks.
 | `balanceRaw`      | Balance in units of the token address       | `String!` | 
 
 </details>
+
+### Example Query
+
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    tokenBalances {
+      address
+      network
+      token {
+        balanceUSD
+        balance
+        baseToken {
+          symbol
+        }
+      }
+      updatedAt
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+}
+```
+
+<Link to="/sandbox">
+  <LinkButton href="/docs/api-intro/sandbox" type="primary" buttonCopy="Try in sandbox" />
+</Link>

@@ -3,23 +3,8 @@ sidebar_position: 2
 sidebar_label: Onchain Identity
 ---
 
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-
-export const accountsQuery = `query Account($address: Address!) {
-  account(address: $address) {
-    address
-    displayName {
-      value
-    }
-    ensRecord {
-      name
-    }
-  }
-}`;
-
-export const accountsVariables = {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
-};
+import { LinkButton } from '@site/src/components/LinkButton';
+import Link from '@docusaurus/Link';
 
 # Onchain Identity
 
@@ -31,20 +16,12 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 Returns identity and other information relating to an address.
 
-
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={accountsQuery}
-  variables={accountsVariables}
-/>
-
 ### Reference
 
 <details>
 <summary>Arguments for account</summary>
 
-| Arguement      | Description | Type |
+| Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Get data for address       | `String!` | 
 
@@ -74,28 +51,61 @@ Returns identity and other information relating to an address.
 | `farcasterProfile`      | -     | `FarcasterProfile!` | 
 | `label`      | -     | `String!` | 
 
-
 </details>
-
 
 ### `accounts`
 
 Returns identity and other information for many addresses.
 
+### Example Query
 
-```sh
+```graphql
 query($addresses: [Address!]!) {
   accounts(addresses: $addresses) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
   }
-  }
+}
 ```
 
 <details>
 <summary>Arguments for accounts</summary>
 
-| Arguement      | Description | Type |
+| Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `addresses`      | Get data for one or more addresses      | `String!` | 
 
 </details>
 
+### Example Query
+
+```graphql
+query Account($address: Address!) {
+  account(address: $address) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+}
+```
+
+<Link to="/sandbox">
+  <LinkButton href="/docs/api-intro/sandbox" type="primary" buttonCopy="Try in sandbox" />
+</Link>

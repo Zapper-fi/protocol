@@ -9,21 +9,44 @@ interface ApolloSandboxComponentProps {
   variables: Record<string, JsonValue>;
 }
 
-const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, variables }) => {
-  console.log('Current path:', location.pathname);
-  console.log('Current query:', query);
-
+const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = () => {
   // This is our rate limited, public API key, for free use in the Apollo Sandbox
   // It is meant to be public
   const API_KEY = 'Basic ODRjN2VjZGItM2Y5MS00ZWFjLWFjZDEtYjlkYWVjYjk3MTE1==';
+  const TEST_ADDRESSES = ['0xd8da6bf26964af9d7eed9e03e53415d37aa96045', '0x6f6e75fb472ee39d847d825cc7c9a613e227e261'];
 
   return (
     <ApolloExplorer
       graphRef="zapper-public-api@current"
       persistExplorerState={false}
       initialState={{
-        document: query,
-        variables: variables,
+        document: `query($addresses: [Address!]) {
+          accountsTimeline(addresses: $addresses) {
+            edges {
+              node {
+                transaction {
+                  fromUser {
+                    address
+                    displayName {
+                      value
+                    }
+                  }
+                  toUser {
+                    displayName {
+                      value
+                    }
+                  }
+                }
+                interpretation {
+                  processedDescription
+                }
+              }
+            }
+          }
+        }`,
+        variables: {
+          addresses: TEST_ADDRESSES,
+        },
         headers: {
           Authorization: API_KEY,
         },
@@ -38,6 +61,6 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = ({ query, 
   );
 };
 
-export default function ClientApolloSandboxComponent(props) {
-  return <BrowserOnly>{() => <ApolloSandboxComponent {...props} />}</BrowserOnly>;
+export default function ClientApolloSandboxComponent() {
+  return <BrowserOnly>{() => <ApolloSandboxComponent />}</BrowserOnly>;
 }
