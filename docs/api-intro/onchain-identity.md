@@ -29,7 +29,7 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 ### `account`
 
-Returns identity and other information relating to an address.
+The `account` object contains fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
 
 
 ### Common Uses

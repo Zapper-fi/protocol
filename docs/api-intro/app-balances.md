@@ -36,7 +36,8 @@ Surfaces balances that a user might hold inside of an onchain application. Use c
 
 ### `AppBalance`
 
-Returns indexed DeFi or other app balances for an account address on a set of networks (and optionally, for a set of app slugs)
+The `AppBalance` query takes an `address` with optional `networks` or `appIds` and returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
+
 
 ### Sandbox
 

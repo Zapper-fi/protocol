@@ -35,14 +35,14 @@ Surfaces any onchain token balances held by an address.
 
 ### `tokenBalances`
 
-Returns all token balances with USD prics for an address on a set of networks.
+The `tokenBalances` object contains fields such as `address`, `network`, `balanceUSD`, `balance`, and other fields useful for token balance use cases.
 
 
 ### Common Uses
 
 ##### Wallet Holdings
 
-Let's say you are building a wallet and want users to be able to filter their tokens by chain. You would pass `address` for the user and return the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, and `symbol`. Example of the response below:
+Let's say you are building a wallet and want users to be able to filter their tokens by chain. You would pass `address` for the user and `network` for the selected chain returning the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, and `symbol`. Example of the response below:
 
 
 ```json

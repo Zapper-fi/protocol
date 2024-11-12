@@ -35,7 +35,7 @@ Surfaces various aggregations of onchain portfolio data including total net wort
 
 ### `totals`
 
-The `totals` object contains fields such as `claimables`, `debts`, `holdings`, and other aggregations of portfolio data.
+The `totals` query takes an `address` with optional `networks` and returns fields such as `claimables`, `debts`, `holdings`, and other aggregations of portfolio data.
 
 ### Common Uses
 
