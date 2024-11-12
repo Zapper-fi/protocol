@@ -11,11 +11,8 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      // TODO: Get Privy auth token from cookie in the BE then remove this
+      // TODO: Cleanup
       'privy-token': token ? JSON.parse(token) : '',
-
-      // TODO: Remove this once token parsing is implemented
-      authorization: `Basic ${btoa('ec0888a7-9bd1-4e11-b862-a8d44d157afd:')}`,
     },
   };
 });
