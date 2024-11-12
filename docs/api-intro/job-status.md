@@ -16,26 +16,6 @@ Returns the status of a specific `jobId`
 
 Returns the status of a specific `jobId`
 
-### Reference
-
-<details>
-<summary>Arguments for balanceJobStatus</summary>
-
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `jobId`      | -       | `String!` | 
-
-</details>
-
-<details>
-<summary>Fields for balanceJobStatus</summary>
-
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `jobId`      | -       | `String!`       |
-| `status`      | -       | `String!` | 
-
-</details>
 
 ### Example Query
 
@@ -57,3 +37,24 @@ query BalanceJobStatus($jobId: String!) {
 ```
 
 <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+### Reference
+
+<details>
+<summary>Arguments for balanceJobStatus</summary>
+
+| Argument      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `jobId`      | -       | `String!` | 
+
+</details>
+
+<details>
+<summary>Fields for balanceJobStatus</summary>
+
+| Field      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `jobId`      | -       | `String!`       |
+| `status`      | -       | `String!` | 
+
+</details>

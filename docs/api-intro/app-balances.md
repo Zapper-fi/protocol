@@ -52,12 +52,6 @@ Imagine you want to surface all positions a user has across in every onchain app
 
 ### Sandbox
 
-<ApolloSandboxComponent 
-  query={appBalancesQuery}
-  variables={appBalancesVars}
-/>
-
-
 :::note
 
 Smart accounts accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
@@ -65,6 +59,39 @@ Smart accounts accounts like Maker’s `DSProxy` are automatically included in t
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
 :::
+
+
+### Example Query
+
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    appBalances {
+      address
+      appName
+      balanceUSD
+      network
+      products {
+        label
+        assets {
+          address
+        }
+      }
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+```
+
+  <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
 
 ### Reference
 
@@ -97,34 +124,3 @@ Typically, a single transaction generates multiple timeline events: one for each
 | `products`      | Object containing details on all products owned by this wallet       | `ProductItem!`       |
 
 </details>
-
-### Example Query
-
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    appBalances {
-      address
-      appName
-      balanceUSD
-      network
-      products {
-        label
-        assets {
-          address
-        }
-      }
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-}
-```
-
-  <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

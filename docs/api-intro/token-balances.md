@@ -59,14 +59,36 @@ Let's say you are building a wallet and want users to be able to filter their to
 }
 }
 ```
+### Example Query
 
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    tokenBalances {
+      address
+      network
+      token {
+        balanceUSD
+        balance
+        baseToken {
+          symbol
+        }
+      }
+      updatedAt
+    }
+  }
+}
+```
 
-### Sandbox
+### Example Variables
 
-<ApolloSandboxComponent 
-  query={tokenBalancesQuery}
-  variables={tokenBalancesVars}
-/>
+```json
+{
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+}
+```
+
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
 
 ### Reference
 
@@ -98,34 +120,3 @@ Let's say you are building a wallet and want users to be able to filter their to
 | `balanceRaw`      | Balance in units of the token address       | `String!` | 
 
 </details>
-
-### Example Query
-
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-        balance
-        baseToken {
-          symbol
-        }
-      }
-      updatedAt
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
-```
-
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

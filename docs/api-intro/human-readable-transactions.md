@@ -48,12 +48,48 @@ Let's say you want to show users an activity feed for their onchain transactions
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
 :::
 
-### Sandbox
+### Example Query
 
-<ApolloSandboxComponent 
-  query={accountsTimelineQuery}
-  variables={accountsTimelineVariables}
-/>
+```graphql
+query($addresses: [Address!]) {
+  accountsTimeline(addresses: $addresses) {
+    edges {
+      node {
+        transaction {
+          fromUser {
+            address
+            displayName {
+              value
+            }
+          }
+          toUser {
+            displayName {
+              value
+            }
+          }
+        }
+        interpretation {
+          processedDescription
+        }
+      }
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": [
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
+  ]
+}
+```
+
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
 
 ### Reference
 
@@ -103,45 +139,3 @@ Textual description of each transaction is presented from the perspective of the
 | `sigHash`      | -       | `String!`       |
 
 </details>
-
-### Example Query
-
-```graphql
-query($addresses: [Address!]) {
-  accountsTimeline(addresses: $addresses) {
-    edges {
-      node {
-        transaction {
-          fromUser {
-            address
-            displayName {
-              value
-            }
-          }
-          toUser {
-            displayName {
-              value
-            }
-          }
-        }
-        interpretation {
-          processedDescription
-        }
-      }
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": [
-    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
-  ]
-}
-```
-
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

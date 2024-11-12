@@ -14,18 +14,37 @@ import Link from '@docusaurus/Link';
 
 The `nftBalances` query takes an `address` with optional `networks` and returns `balanceUSD` — useful for getting estimated NFT values for addresses.
 
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={nftBalancesQuery}
-  variables={nftBalancesVars}
-/>
-
 :::note
 
 NFT tokens estimated value in USD is calculated using in-house built algorithm. NFT valuation can be overridden to be the top offer, last sale or any other user hard coded value. NFT tokens can be set as hidden to remove them from the default portfolio view.
 
 :::
+
+
+
+
+### Example Query
+
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    nftBalances {
+      balanceUSD
+      network
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+```
+
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
 
 ### Reference
 
@@ -51,27 +70,3 @@ Fields for `nftBalances`
 | `balanceUSD`      | Returns the estimated USD value      | `Float!` | 
 
 </details>
-
-
-### Example Query
-
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    nftBalances {
-      balanceUSD
-      network
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-}
-```
-
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />

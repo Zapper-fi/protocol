@@ -50,50 +50,6 @@ Let's say you are building a profile for users and want to surface some of the s
 
 ```
 
-### Sandbox
-
-<ApolloSandboxComponent 
-  query={accountsQuery}
-  variables={accountsVariables}
-/>
-
-### Reference
-
-<details>
-<summary>Arguments for account</summary>
-
-| Arguement      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `address`      | Get data for address       | `String!` | 
-
-</details>
-
-<details>
-<summary>Fields for account</summary>
-
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `id`      | -       | `ID!`       |
-| `address`      | -       | `DisplayName!` | 
-| `avatar`      | Gets avatar       | `AccountAvatar!` | 
-| `description`      | Gets description.       | `Description!` | 
-| `socialLinks`      | Gets social links.      | `AccountSocialLink!` | 
-| `contract`      | -       | `String!` | 
-| `metadata`      | -       | `AddressMetadataObject!` | 
-| `isContract`      | -       | `Boolean!` | 
-| `openenURI`      | Returns a Opepen URI       | `String!` | 
-| `blockiesURI`      | Returns a Blockie URI        | `String!` | 
-| `isFollowedBy`      | Takes an argument `address` and returns true/false       | `Boolean!` | 
-| `followStats`      | Data on followers & following     | `FollowerStats!` | 
-| `followers`      | Returns followers     | `FollowerConnection!` | 
-| `following`      | Returns following     | `FollowingConnection!` | 
-| `ensRecord`      | -     | `EnsRecord!` | 
-| `lensProfile`      | -     | `LensProfile!` | 
-| `farcasterProfile`      | -     | `FarcasterProfile!` | 
-| `label`      | -     | `String!` | 
-
-
-</details>
 
 
 ### `accounts`
@@ -134,3 +90,41 @@ query Account($address: Address!) {
 ```
 
 <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+### Reference
+
+<details>
+<summary>Arguments for account</summary>
+
+| Arguement      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `address`      | Get data for address       | `String!` | 
+
+</details>
+
+<details>
+<summary>Fields for account</summary>
+
+| Field      | Description | Type |
+| ----------- | ----------- | ----------- |
+| `id`      | -       | `ID!`       |
+| `address`      | -       | `DisplayName!` | 
+| `avatar`      | Gets avatar       | `AccountAvatar!` | 
+| `description`      | Gets description.       | `Description!` | 
+| `socialLinks`      | Gets social links.      | `AccountSocialLink!` | 
+| `contract`      | -       | `String!` | 
+| `metadata`      | -       | `AddressMetadataObject!` | 
+| `isContract`      | -       | `Boolean!` | 
+| `openenURI`      | Returns a Opepen URI       | `String!` | 
+| `blockiesURI`      | Returns a Blockie URI        | `String!` | 
+| `isFollowedBy`      | Takes an argument `address` and returns true/false       | `Boolean!` | 
+| `followStats`      | Data on followers & following     | `FollowerStats!` | 
+| `followers`      | Returns followers     | `FollowerConnection!` | 
+| `following`      | Returns following     | `FollowingConnection!` | 
+| `ensRecord`      | -     | `EnsRecord!` | 
+| `lensProfile`      | -     | `LensProfile!` | 
+| `farcasterProfile`      | -     | `FarcasterProfile!` | 
+| `label`      | -     | `String!` | 
+
+
+</details>

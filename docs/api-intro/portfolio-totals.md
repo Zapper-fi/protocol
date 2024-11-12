@@ -104,12 +104,36 @@ You want to show a user the USD value of their entire onchain holdings across to
 ```
 
 
-### Sandbox
+### Example Query
 
-<ApolloSandboxComponent 
-  query={tokenBalancesQuery}
-  variables={tokenBalancesVars}
-/>
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    tokenBalances {
+      address
+      network
+      token {
+        balanceUSD
+        balance
+        baseToken {
+          symbol
+        }
+      }
+      updatedAt
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+}
+```
+
+<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
 
 ### Reference
 
@@ -141,34 +165,3 @@ You want to show a user the USD value of their entire onchain holdings across to
 | `totalWithNFT`      | Returns a single USD total value including NFTs.      | `Float!` | 
 
 </details>
-
-### Example Query
-
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-        balance
-        baseToken {
-          symbol
-        }
-      }
-      updatedAt
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
-```
-
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
