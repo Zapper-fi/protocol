@@ -38,6 +38,49 @@ Surfaces any onchain token balances held by an address.
 Returns all token balances with USD prics for an address on a set of networks.
 
 
+### Common Uses
+
+##### Wallet Holdings
+
+Let's say you are building a wallet and want users to be able to filter their tokens by chain. You would pass `address` for the user and return the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, and `symbol`. Example of the response below:
+
+
+```json
+{
+  "data": {
+    "portfolio": {
+      "tokenBalances": [
+        {
+          "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+          "network": "DEGEN_MAINNET",
+          "token": {
+            "balanceUSD": 10.320882111461026,
+            "balance": 530.9972537369096,
+            "baseToken": {
+              "symbol": "DEGEN"
+            }
+          },
+          "updatedAt": 1731379366504
+        },
+
+        {
+          "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+          "network": "DEGEN_MAINNET",
+          "token": {
+            "balanceUSD": 4.76944166703876,
+            "balance": 6555103.710150876,
+            "baseToken": {
+              "symbol": "THINGS"
+            }
+          },
+          "updatedAt": 1731379366504
+        },
+}
+}
+}
+```
+
+
 ### Sandbox
 
 <ApolloSandboxComponent 
