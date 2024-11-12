@@ -3,8 +3,8 @@ import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 
 const UPSERT_USER = gql`
-  mutation UpsertApiClient($email: String!, $privyId: String!) {
-    upsertApiClient(email: $email, privyId: $privyId) {
+  mutation UpsertApiClient($email: String!) {
+    upsertApiClient(email: $email) {
       id
       name
     }
@@ -21,8 +21,7 @@ export function SignInButton() {
       if (user.email) {
         const { data } = await upsertUser({
           variables: {
-            email: user.email.address,
-            privyId: user.id,
+            email: user.email.address
           },
         });
 
