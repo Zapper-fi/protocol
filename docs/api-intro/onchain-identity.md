@@ -113,15 +113,7 @@ Let's say you are building a profile for users and want to surface some of the s
 
 ### `accounts`
 
-Returns identity and other information for many addresses.
-
-
-```sh
-query($addresses: [Address!]!) {
-  accounts(addresses: $addresses) {
-  }
-  }
-```
+The `accounts` query takes 1 or more `addresses` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
 
 <details>
 <summary>Arguments for accounts</summary>
