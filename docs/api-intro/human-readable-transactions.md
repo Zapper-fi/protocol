@@ -49,7 +49,24 @@ Returns human-readable transactions that offer a descriptive summary of the tran
 
 ### Common Uses
 
-You want to surface a users onchain activity in a human-readable way.   a feed for any addresses
+An activity feed for a users onchain activity in a human-readable way. The most simple version of this is to pass `addresses` for the user's activity you are want to fetch and return `realtimeInterpretation`.
+
+```json
+{
+  "interpretation": {
+      "processedDescription": "Swapped 0.01 ETH for 372,142.7995 BOTE"
+  }
+
+  "interpretation": {
+      "processedDescription": "Swapped 0.01 ETH for 372,142.7995 BOTE"
+  }
+
+  ...
+}
+```
+
+
+An app specific activity feed showing all the in-app actions that users are taking. 
 
 
 
@@ -72,13 +89,15 @@ Textual description of each transaction is presented from the perspective of the
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
-| `first`      | -      | `Int!`        | 
-| `after`      | -      | `String!`        | 
-| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
 | `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
 | `tokenAddresses`      | Filter by token address        | `Address!`        | 
 | `isSigner`      | Filter by signer        | `Boolean`        | 
+| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
+| `first`      | -      | `Int!`        | 
+| `after`      | -      | `String!`        | 
+
+
 
 </details>
 
@@ -88,10 +107,16 @@ Textual description of each transaction is presented from the perspective of the
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `key`      | A unique identifier       | `String!`       |
-| `network`      | Network the transaction happened on     | `Network!`       |
+| `key`      | A unique identifier.       | `String!`       |
+| `network`      | Network on which the transaction happened.     | `Network!`       |
+| `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
+| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
+| `app`      | The app that is associate with the transaction.     | `Int!`       |
+| `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
+| `toUser`      | The address that the transaction interacted with.     | `Int!`       |
+| `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
 | `source`      | -       | `String!`       |
-| `eventType`      | Returns the event type       | `String!`       |
+| `eventType`      | Returns the event type.       | `String!`       |
 | `isAbiAvailable`      | -       | `Boolean!`       |
 | `isEditable`      | -       | `Boolean!`       |
 | `interpreterId`      | -      | `String!`       |
@@ -99,10 +124,7 @@ Textual description of each transaction is presented from the perspective of the
 | `actors`      | -       | `ActorDisplayItem!`       |
 | `timestamp`      | -       | `Timestamp!`       |
 | `perspective`      | -       | `ActivityPerspective!`       |
-| `interpretation`      | -      | `ActivityInterpretation!`       |
-| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `similarEventCount`      | -       | `String!`       |
-| `app`      | Associated app for the transaction     | `Int!`       |
 | `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
 | `sigHash`      | -       | `String!`       |
 
