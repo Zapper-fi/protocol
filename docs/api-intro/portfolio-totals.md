@@ -70,7 +70,7 @@ Let's say you are want to show a user all the tokens can claim across all the on
 
 ##### Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetwork`. Example of the response below:
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Example of the response below:
 
 
 ```json
