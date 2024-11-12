@@ -63,13 +63,13 @@ Let's say you want to show users an activity feed for their onchain transactions
     }
 
     "interpretation": {
-      "processedDescription": "Swapped 4,272.399 STABLE for 0.0102 ETH"
+      "processedDescription": "Started battle with sebaudet.eth"
       },
   
       "network": "BASE_MAINNET"
 
     "app": {
-      "name": "Li.Fi",
+      "name": "Tokiemon",
       },
 }
 ```
