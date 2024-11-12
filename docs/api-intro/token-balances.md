@@ -18,7 +18,7 @@ Surfaces any onchain token balances held by an address.
 The `tokenBalances` object contains fields such as `address`, `network`, `balanceUSD`, `balance`, and other fields useful for token balance use cases.
 
 
-### Use Cases
+### Use Case
 
 ##### Wallet Holdings
 

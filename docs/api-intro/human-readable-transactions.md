@@ -17,7 +17,7 @@ Presents onchain activity in a simple descriptive summary including references t
 
 The `accountsTimeline` query returns a descriptive and human-readable summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
-### Use Cases
+### Use Case
 
 ##### Transaction History
 
