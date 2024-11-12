@@ -52,9 +52,9 @@ Returns all token balances with USD prics for an address on a set of networks.
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | -       | `String!` | 
-| `networks`      | -       | `Network!` | 
-| `appIds`      | -       | `String!` | 
+| `address`      | Required: Address you are querying balances for    | `String!` | 
+| `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
+| `appIds`      | Filter by a specific app       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 
 
 </details>
@@ -64,12 +64,12 @@ Returns all token balances with USD prics for an address on a set of networks.
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `key`      | -       | `String!`       |
-| `address`      | -       | `String!` | 
+| `key`      | Unique identifier on the token object that is used to aggregate token balances across multiple addresses.       | `String!`       |
+| `address`      | Address the position queried is for       | `String!` | 
 | `network`      | -       | `Network!` | 
-| `token`      | -       | `BaseTokenBalance!` | 
-| `updatedAt`      | -       | `Timestamp!` | 
-| `balance`      | -       | `Float!` | 
+| `token`      | Object containing details about the token, such as metadata, price and balanc       | `BaseTokenBalance!` | 
+| `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint      | `Timestamp!` | 
+| `balance`      |        | `Float!` | 
 | `baseToken`      | -       | `WalletTokenBalance!` | 
 | `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
 | `balanceRaw`      | Balance in units of the token address       | `String!` | 

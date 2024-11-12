@@ -47,6 +47,12 @@ Presents onchain activity in a simple descriptive summary including references t
 
 Returns human-readable transactions that offer a descriptive summary of the transaction's details from one or multiple wallets, along with tokens transferred, paginated, chain-agnostic. Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
+### Common Uses
+
+You want to surface a users onchain activity in a human-readable way.   a feed for any addresses
+
+
+
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
 :::
