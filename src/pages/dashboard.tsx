@@ -36,8 +36,6 @@ function Dashboard() {
                 <BuyCredits />
 
                 <PaymentHistory />
-
-                <Debug />
               </div>
             </SignedIn>
           </div>
