@@ -4,24 +4,7 @@ sidebar_label: Totals, Claimables, and Debt
 ---
 
 import { LinkButton } from '@site/src/components/LinkButton';
-import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
-
-export const tokenBalancesQuery = `query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-        balance
-        baseToken {
-          symbol
-        }
-      }
-      updatedAt
-    }
-  }
-}`;
+import Link from '@docusaurus/Link';
 
 export const tokenBalancesVars = {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
