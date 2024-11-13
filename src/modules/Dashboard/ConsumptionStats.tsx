@@ -148,6 +148,7 @@ export function ConsumptionStats() {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         type: 'category' as const,
