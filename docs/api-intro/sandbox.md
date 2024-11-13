@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: GraphQL Sandbox
+hide_table_of_contents: true
 ---
 
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
