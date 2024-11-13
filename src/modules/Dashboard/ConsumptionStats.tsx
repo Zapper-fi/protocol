@@ -79,18 +79,48 @@ export function ConsumptionStats() {
 
   const timeFrames = ['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'] as const;
 
-  // Data preparation for the first chart (Overall consumption)
-  const lineLabels = consumptionStats.map((item) => new Date(item.intervalStart).toLocaleDateString());
-
-  const requestCountData = consumptionStats.map((item) => item.requestCount);
-  const totalCostData = consumptionStats.map((item) => item.totalCost);
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'category' as const,
+        title: {
+          display: true,
+          text: 'Date',
+        },
+        ticks: {
+          autoSkip: true,
+          maxTicksLimit: 10,
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Value',
+        },
+        min: 0,
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'circle',
+          boxWidth: 6,
+          boxHeight: 6,
+          padding: 15,
+        },
+      },
+    },
+  };
 
   const consumptionChartData = {
-    labels: lineLabels,
+    labels: consumptionStats.map((item) => new Date(item.intervalStart).toLocaleDateString()),
     datasets: [
       {
         label: 'Request Count',
-        data: requestCountData,
+        data: consumptionStats.map((item) => item.requestCount),
         fill: false,
         backgroundColor: 'rgba(120,79,254,255)',
         borderColor: 'rgb(193,172,252)',
@@ -100,7 +130,7 @@ export function ConsumptionStats() {
       },
       {
         label: 'Total Cost',
-        data: totalCostData,
+        data: consumptionStats.map((item) => item.totalCost),
         fill: false,
         backgroundColor: 'rgb(118,181,197)',
         borderColor: '#8dd8e3',
@@ -146,31 +176,6 @@ export function ConsumptionStats() {
     }),
   };
 
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      x: {
-        type: 'category' as const,
-        title: {
-          display: true,
-          text: 'Date',
-        },
-        ticks: {
-          autoSkip: true,
-          maxTicksLimit: 10,
-        },
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Value',
-        },
-        min: 0,
-      },
-    },
-  };
-
   return (
     <div className="space-y-4">
       <h3>API Consumption Stats</h3>
@@ -193,7 +198,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h3 className="mb-4">Consuption Amount & Cost</h3>
+          <h3 className="mb-4">Consumption Amount & Cost</h3>
           <Card>
             {consumptionLoading ? (
               <p>Loading...</p>
