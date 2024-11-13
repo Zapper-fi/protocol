@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: Totals, Claimables, and Debt
+sidebar_label: Portfolio Totals
 ---
 
 import { LinkButton } from '@site/src/components/LinkButton';
@@ -13,6 +13,7 @@ export const tokenBalancesVars = {
 # Portfolio Totals
 
 Surfaces various aggregations of onchain portfolio data.
+
 ---
 
 
@@ -20,7 +21,7 @@ Surfaces various aggregations of onchain portfolio data.
 
 The `totals` object contains takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
-### Example Use Case: Net Worth
+### Example use case: Net Worth
 
 You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Part of the response is show below:
 

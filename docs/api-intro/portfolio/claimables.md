@@ -21,7 +21,7 @@ Surfaces all available claimable tokens for a given address across all indexed o
 
 The `claimables` query takes `addresses` inputted an array, with optional `networks` and returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token such as `address`, `balance`, `balanceUSD`, and `price`.
 
-### Example Use Case: Claimables
+### Example use case: Claimables
 
 Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`. Part of the response is show below:
 

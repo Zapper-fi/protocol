@@ -16,7 +16,7 @@ Surfaces balances that a user might hold inside of an onchain application.
 
 The `appBalances` query takes an `address` with optional `networks` or `appIds` and returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
 
-### Example Use Case: App Positions
+### Example use case: App Positions
 
 Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`. Part of the response is show below:
 
