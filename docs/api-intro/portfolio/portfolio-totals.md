@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Portfolio Totals
+sidebar_label: Totals, Claimables, and Debt
 ---
 
 import { LinkButton } from '@site/src/components/LinkButton';
