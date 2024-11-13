@@ -100,7 +100,6 @@ query Portfolio($addresses: [Address!]!) {
 | `addresses`      | Required: Address you are querying balances for, inputted an array.    | `String!` | 
 | `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app       | `String!` | 
-| `withOverrides`      | -       | `Boolean = false` | 
 
 </details>
 
@@ -111,12 +110,12 @@ query Portfolio($addresses: [Address!]!) {
 | ----------- | ----------- | ----------- |
 | `key`      | Unique identifier on the token object that is used to aggregate token balances across multiple addresses.       | `String!`       |
 | `address`      | Address the position queried is for       | `String!` | 
-| `network`      | -       | `Network!` | 
-| `token`      | Object containing details about the token, such as metadata, price and balanc       | `BaseTokenBalance!` | 
+| `network`      | Returns the network the token is on.       | `Network!` | 
+| `token`      | Object containing `balance`, `balanceRaw`, `balanceUSD`, and `baseToken`.       | `BaseTokenBalance!` | 
 | `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint      | `Timestamp!` | 
-| `balance`      |        | `Float!` | 
-| `baseToken`      | -       | `WalletTokenBalance!` | 
+| `balance`      | Balance in native units of the token adjusted for decimals.        | `Float!` | 
+| `baseToken`      | Returns fields such as `address`, `symbol`, `price`, `imgUrl`, and other data useful for tokens.        | `WalletTokenBalance!` | 
 | `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
-| `balanceRaw`      | Balance in units of the token address       | `String!` | 
+| `balanceRaw`      | Balance in native units of the token not adjusted for decimals.       | `String!` | 
 
 </details>

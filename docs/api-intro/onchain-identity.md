@@ -81,7 +81,7 @@ query Account($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Addresses to retrive.       | `String!` | 
+| `address`      | Address to retrive data for.       | `String!` | 
 
 </details>
 
@@ -91,23 +91,23 @@ query Account($address: Address!) {
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `id`      | -       | `ID!`       |
-| `address`      | -       | `DisplayName!` | 
-| `avatar`      | Gets avatar       | `AccountAvatar!` | 
-| `description`      | Gets description.       | `Description!` | 
-| `socialLinks`      | Gets social links.      | `AccountSocialLink!` | 
-| `contract`      | -       | `String!` | 
-| `metadata`      | -       | `AddressMetadataObject!` | 
-| `isContract`      | -       | `Boolean!` | 
+| `address`      | Returns the address that was queried for.   | `Address!` | 
+| `avatar`      | Returns the avatar object, which contains avatar informatiom from multiple sources such as ENS, Farcaster, or Lens.      | `AccountAvatar!` | 
+| `description`      | Returns a description along with the source from either ENS, Farcaster, or Lens.       | `Description!` | 
+| `displayName`      | Returns a display name along with the source from either Zapper's Indexed Labels, ENS, Farcaster, or Lens.    | `DisplayName!` | 
+| `ensRecord`      | Returns an ENS record associated with the address as well as its metadata.     | `EnsRecord!` | 
+| `lensProfile`      | Returns a Lens profile associated with the address as well as its metadata.     | `LensProfile!` | 
+| `farcasterProfile`      | Returns a Farcaster profile associated with the address as well as its metadata.     | `FarcasterProfile!` | 
+| `label`      | Returns a label that has been indexed by Zapper. Useful for contracts.     | `String!` | 
+| `socialLinks`      | Returns social links such as Warpcast or Hey.      | `AccountSocialLink!` | 
 | `openenURI`      | Returns a Opepen URI       | `String!` | 
 | `blockiesURI`      | Returns a Blockie URI        | `String!` | 
 | `isFollowedBy`      | Takes an argument `address` and returns true/false       | `Boolean!` | 
-| `followStats`      | Data on followers & following     | `FollowerStats!` | 
-| `followers`      | Returns followers     | `FollowerConnection!` | 
-| `following`      | Returns following     | `FollowingConnection!` | 
-| `ensRecord`      | -     | `EnsRecord!` | 
-| `lensProfile`      | -     | `LensProfile!` | 
-| `farcasterProfile`      | -     | `FarcasterProfile!` | 
-| `label`      | -     | `String!` | 
+| `followStats`      | Data on Zapper followers & following     | `FollowerStats!` | 
+| `followers`      | Returns Zapper followers     | `FollowerConnection!` | 
+| `following`      | Returns Zapper following     | `FollowingConnection!` | 
+| `isContract`      | Returns true/false for whether this address is a contract.       | `Boolean!` | 
+| `contract`      | -       | `String!` | 
 
 
 </details>

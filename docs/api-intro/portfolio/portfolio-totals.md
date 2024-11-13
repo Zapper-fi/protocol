@@ -95,7 +95,7 @@ query($addresses: [Address!]!) {
 | `addresses`      | Required: Address you are querying balances for, inputted an array.    | `String!` | 
 | `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app       | `String!` | 
-| `withOverrides`      | -       | `Boolean = false` | 
+| `withOverrides`      | Include user submitted NFT value overrides, default off.       | `Boolean = false` | 
 
 </details>
 

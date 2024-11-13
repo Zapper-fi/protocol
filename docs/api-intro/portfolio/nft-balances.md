@@ -53,7 +53,7 @@ query Portfolio($addresses: [Address!]!) {
 | ----------- | ----------- | ----------- |
 | `addresses`      | Required: Address you are querying balances for, inputted an array.       | `String!` | 
 | `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned      | `Network!` | 
-| `withOverrides`      | Include user value overrides, default off.      | `Boolean = false` | 
+| `withOverrides`      | Include user submitted NFT value overrides, default off.      | `Boolean = false` | 
 
 </details>
 

@@ -98,7 +98,6 @@ query Portfolio($addresses: [Address!]!) {
 | `addresses`      | Required: Address you are querying balances for, inputted an array.     | `String!` | 
 | `networks`      | Networks for which to retrieve balances, inputted an array.       | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
-| `withOverrides`      | -       | `Boolean = false` | 
 
 </details>
 
@@ -108,14 +107,14 @@ query Portfolio($addresses: [Address!]!) {
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `key`      | Description goes here.       | `String!`       |
 | `address`      | Address the position queried is for       | `String!`       |
 | `appId`      | ID of the app      | `String!`       |
-| `appName`      | Display name of app       | `String!`       |
 | `appImage`      | Icon of the app      | `String!`       |
-| `network`      | Network(s) the app is on.       | `Network!`       |
-| `updatedAt`      | Timestamp at which time this wallet's balance for this app was calculated   | `Timestamp!`       |
+| `appName`      | Display name of app       | `String!`       |
 | `balanceUSD`      | Value of all positions associated with this app on this network for this wallet, in USD      | `Float!` | 
+| `key`      | Description goes here.       | `String!`       |
+| `network`      | Network(s) the app is on.       | `Network!`       |
 | `products`      | Object containing details on all products owned by this wallet       | `ProductItem!`       |
+| `updatedAt`      | Timestamp at which time this wallet's balance for this app was calculated   | `Timestamp!`       |
 
 </details>

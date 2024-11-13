@@ -105,8 +105,8 @@ query($addresses: [Address!]) {
 | `tokenAddresses`      | Filter by token address        | `Address!`        | 
 | `isSigner`      | Filter by signer        | `Boolean`        | 
 | `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
-| `first`      | -      | `Int!`        | 
-| `after`      | -      | `String!`        | 
+| `first`      | Used for pagination.      | `Int!`        | 
+| `after`      | Used for pagination.       | `String!`        | 
 
 
 
