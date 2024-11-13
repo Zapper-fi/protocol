@@ -83,7 +83,7 @@ query($addresses: [Address!]!) {
 }
 ```
 
-<LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
+<LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
 
 ### Reference
 
