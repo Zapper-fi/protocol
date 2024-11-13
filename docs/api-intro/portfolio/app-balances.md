@@ -80,6 +80,9 @@ query Portfolio($addresses: [Address!]!) {
 {
   "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
 }
+{
+  "networks": "OPTIMISM_MAINNET",
+}
 ```
 
   <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
