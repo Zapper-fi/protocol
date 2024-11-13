@@ -96,12 +96,6 @@ const config = {
           activeBaseRegex: 'docs/api-intro',
         },
         {
-          position: 'left',
-          label: 'Dashboard',
-          to: 'dashboard',
-          activeBaseRegex: 'dashboard',
-        },
-        {
           type: 'custom-NavbarItem',
           position: 'right',
         },

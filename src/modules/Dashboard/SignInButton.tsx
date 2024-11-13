@@ -1,6 +1,7 @@
 import { gql, useMutation } from '@apollo/client';
 import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
+import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 
 const UPSERT_USER = gql`
   mutation UpsertApiClient($email: String!) {
@@ -13,15 +14,15 @@ const UPSERT_USER = gql`
 
 export function SignInButton() {
   const [upsertUser] = useMutation(UPSERT_USER);
-
-  const { authenticated } = usePrivy();
+  const { authenticated, ready, user } = usePrivy();
   const { logout } = useLogout();
+
   const { login } = useLogin({
     onComplete: async (user) => {
       if (user.email) {
         const { data } = await upsertUser({
           variables: {
-            email: user.email.address
+            email: user.email.address,
           },
         });
 
@@ -30,18 +31,35 @@ export function SignInButton() {
           localStorage.setItem('zapper.clientId', clientId);
         }
       }
-
-      // TODO: If wallet login is enabled, we need to capture email separately
     },
   });
 
-  const handleClick = () => {
-    authenticated ? logout() : login();
-  };
+  if (!ready) {
+    return null;
+  }
 
-  return (
-    <Button type="button" variant="primary" onClick={handleClick}>
-      {authenticated ? 'Logout' : 'Login'}
+  return authenticated ? (
+    <DropdownNavbarItem
+      label={user.email.address}
+      items={[
+        {
+          label: 'Dashboard',
+          to: 'dashboard',
+        },
+        {
+          label: 'Contact Support',
+          href: 'https://help.zapper.xyz/hc/en-us',
+        },
+        {
+          label: 'Logout',
+          href: '/',
+          onClick: logout,
+        },
+      ]}
+    />
+  ) : (
+    <Button type="button" variant="primary" onClick={login}>
+      Login
     </Button>
   );
 }
