@@ -3,6 +3,7 @@ sidebar_position: 3
 sidebar_label: Portfolio Totals
 ---
 
+import { LinkButton } from '@site/src/components/LinkButton';
 import ApolloSandboxComponent from '@site/src/components/ApolloSandboxComponent';
 
 export const tokenBalancesQuery = `query Portfolio($addresses: [Address!]!) {
