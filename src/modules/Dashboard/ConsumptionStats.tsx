@@ -186,8 +186,10 @@ export function ConsumptionStats() {
             <button
               type="button"
               onClick={() => handleTimeFrameChange(tf)}
-              className={`w-full font-normal bg-transparent border-none text-purple-400 cursor-pointer ${
-                timeFrame === tf ? 'font-bold' : ''
+              className={`w-full border-none cursor-pointer ${
+                timeFrame === tf
+                  ? 'font-extrabold text-purple-400 bg-transparent'
+                  : 'font-medium text-purple-400 bg-transparent'
               }`}
             >
               {tf.charAt(0) + tf.slice(1).toLowerCase()}
