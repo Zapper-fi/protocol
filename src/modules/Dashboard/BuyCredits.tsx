@@ -5,6 +5,8 @@ import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
+import { Info } from 'lucide-react';
+import ReactDOM from 'react-dom';
 
 const QUERY = gql`
   query BuyCredits {
@@ -22,6 +24,48 @@ const CREATE_CHARGE = gql`
     }
   }
 `;
+
+const Toast = ({ message, position }) => {
+  return ReactDOM.createPortal(
+    <div
+      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px] whitespace-normal"
+      style={{
+        top: position.top,
+        left: position.left + 10,
+      }}
+    >
+      {message}
+    </div>,
+    document.body,
+  );
+};
+
+const InfoIcon = ({ message }) => {
+  const [showToast, setShowToast] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+
+  const handleMouseEnter = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition({
+      top: rect.top + window.scrollY + rect.height,
+      left: rect.left + window.scrollX,
+    });
+    setShowToast(true);
+  };
+
+  return (
+    <div className="relative inline-flex items-center">
+      <div
+        className="cursor-pointer flex items-center"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={() => setShowToast(false)}
+      >
+        <Info className="h-3 w-3 text-gray-400" />
+      </div>
+      {showToast && <Toast message={message} position={position} />}
+    </div>
+  );
+};
 
 const MIN_POINTS = 50;
 
@@ -83,13 +127,25 @@ export function BuyCredits() {
     });
   };
 
-  const { apiV2PointsRemaining = 0 } = data?.apiClientById || {};
+  const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
   const disabled = loading || !user;
 
   return (
     <div className="space-y-2">
-      <h3>Buy Credits</h3>
-      <p>Current balance: {Number(apiV2PointsRemaining)}</p>
+      <div className="flex justify-between items-start">
+        <h3>Buy Credits</h3>
+        <div className="text-right">
+          <p>
+            Credit balance: <span className="font-bold">{Number(apiV2PointsRemaining)}</span>
+          </p>
+          {Number(apiV1PointsRemaining) > 0 && (
+            <p className="flex items-center justify-end gap-1">
+              Legacy REST API credits: <span className="font-bold">{Number(apiV1PointsRemaining)}</span>
+              <InfoIcon message="These credits are still available for use with the legacy REST API" />
+            </p>
+          )}
+        </div>
+      </div>
 
       <Card>
         {errorMessage && <p className="text-red-400">{errorMessage}</p>}
