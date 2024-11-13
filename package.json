@@ -27,6 +27,7 @@
     "clsx": "^2.0.0",
     "docusaurus-plugin-remote-content": "^4.0.0",
     "docusaurus-plugin-sass": "^0.2.5",
+    "docusaurus2-dotenv": "^1.4.0",
     "graphql": "^16.9.0",
     "install": "^0.13.0",
     "lucide-react": "^0.456.0",
