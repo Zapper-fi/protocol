@@ -84,7 +84,7 @@ query Account($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Get data for address       | `String!` | 
+| `address`      | Addresses to retrive.       | `String!` | 
 
 </details>
 
@@ -125,6 +125,6 @@ The `accounts` query takes 1 or more `addresses` and returns fields such as `dis
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | Get data for one or more addresses      | `String!` | 
+| `addresses`      | Addresses to retrive, inputted as an array.      | `String!` | 
 
 </details>
