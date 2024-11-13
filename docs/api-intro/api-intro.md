@@ -55,6 +55,8 @@ You can track your usage and purchase additional credits on the **[Dashboard](/d
 
 :::info
 
-The Zapper Graph QL API is in private beta. If you run into any issues please share your feedback, it's much appreciated.
+The Zapper Graph QL API is in beta. If you run into any issues please share your feedback, it's much appreciated. If you are looking for the legacy REST API you can find it [here](https://studio.zapper.xyz/docs/apis/getting-started) however we are asking all existing clients to migrate to the new Graph QL endpoints.
+
+Please reach out to ops@zapper.xyz if you have any questions.
 
 :::
