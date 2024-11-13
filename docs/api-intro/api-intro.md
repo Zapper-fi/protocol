@@ -10,7 +10,7 @@ Access powerful onchain data curated by the Zapper protocol with a GraphQL API f
 
 ---
 
-## What do I get?
+## What can I get?
 
 #### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions)
 
@@ -33,6 +33,28 @@ A price for every token that has an onchain market, including historical data.
 ## Get an API key
 
 Visit the **[Dashboard](/dashboard)** to get your API key.
+
+## Quickstart
+
+Grab your API Key, store it in a safe location, and now you can use it to securely access the API. 
+
+#### Curl Example
+``` graphql
+curl -G https://public.zapper.xyz/graphql \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer {{YOUR_API_KEY}}" \
+  -d '{ "query":....
+
+```
+
+#### Apollo Example
+
+
+``` graphql
+not sure haha
+```
+
+#### Curl
 
 ## Buy credits
 
