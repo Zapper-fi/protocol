@@ -83,6 +83,9 @@ query Portfolio($addresses: [Address!]!) {
 {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
 }
+{
+  "networks": "DEGEN_MAINNET",
+}
 ```
 
 <LinkButton href="/sandbox" type="primary" buttonCopy="Try in sandbox" />
@@ -94,7 +97,7 @@ query Portfolio($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Required: Address you are querying balances for    | `String!` | 
+| `addresses`      | Required: Address you are querying balances for, inputted an array.    | `String!` | 
 | `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 

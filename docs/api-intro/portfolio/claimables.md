@@ -93,7 +93,7 @@ query Claimables($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Required: Address you are querying balances for    | `String!` | 
+| `addresses`      | Required: Address you are querying balances for, inputted an array.       | `String!` | 
 | `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 

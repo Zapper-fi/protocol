@@ -92,7 +92,7 @@ query Portfolio($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Addresses for which to retrieve balances, inputted as an array.     | `String!` | 
+| `addresses`      | Required: Address you are querying balances for, inputted an array.     | `String!` | 
 | `networks`      | Networks for which to retrieve balances, inputted an array.       | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 

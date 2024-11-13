@@ -23,7 +23,7 @@ The `totals` object contains takes an `address` with optional `networks` and ret
 
 ### Example use case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Part of the response is show below:
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`. Part of the response is show below:
 
 
 ```json
@@ -92,7 +92,7 @@ query($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Required: Address you are querying balances for    | `String!` | 
+| `addresses`      | Required: Address you are querying balances for, inputted an array.    | `String!` | 
 | `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app       | `String!` | 
 | `withOverrides`      | -       | `Boolean = false` | 
