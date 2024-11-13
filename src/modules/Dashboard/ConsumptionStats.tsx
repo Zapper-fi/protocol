@@ -177,11 +177,13 @@ export function ConsumptionStats() {
 
       <div className="timeframe-selector flex">
         {timeFrames.map((tf) => (
-          <div key={tf} className="mr-2">
+          <div key={tf} className="mr-2 min-w-[60px]">
             <button
               type="button"
               onClick={() => handleTimeFrameChange(tf)}
-              className="font-normal bg-transparent border-none text-purple-400 cursor-pointer"
+              className={`w-full font-normal bg-transparent border-none text-purple-400 cursor-pointer ${
+                timeFrame === tf ? 'font-bold' : ''
+              }`}
             >
               {tf.charAt(0) + tf.slice(1).toLowerCase()}
             </button>
