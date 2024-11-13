@@ -15,7 +15,7 @@ function Dashboard() {
       <div className="flex">
         <aside className="lg:w-[300px]">{/* Sidebar */}</aside>
 
-        <main className="flex-1 py-4">
+        <main className="flex-1 pt-4 pb-16">
           <div className="container mx-auto !pr-[25%]">
             <Breadcrumbs title="Dashboard" />
 
