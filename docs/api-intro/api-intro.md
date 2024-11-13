@@ -30,13 +30,13 @@ A set of portfolio queries to fetch [Tokens](/docs/api-intro/portfolio/token-bal
 
 A price for every token that has an onchain market, including historical data. 
 
-## Get an API key
+## 1) Get an API key
 
 Visit the **[Dashboard](/dashboard)** to get your API key.
 
-## Quickstart
+## 2) Quickstart
 
-Grab your API Key, store it in a safe location, and now you can use it to securely access the API. 
+Grab your API Key, store it in a safe place, and now you can use it to securely access the API. 
 
 #### Curl Example
 ``` graphql
@@ -55,7 +55,7 @@ not sure haha
 ```
 
 
-## Buy credits
+## 3) Buy credits
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from your credit balance.
 
