@@ -64,11 +64,6 @@ export function Profile() {
       <Card>
         <div className="space-y-4">
           <div>
-            <strong className="block mb-1">Email</strong>
-            <p>{name}</p>
-          </div>
-
-          <div>
             <strong className="block mb-1">Wallet</strong>
             <p>{user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
           </div>
