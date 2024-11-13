@@ -21,28 +21,28 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = () => {
       persistExplorerState={false}
       initialState={{
         document: `query($addresses: [Address!]) {
-          accountsTimeline(addresses: $addresses) {
-            edges {
-              node {
-                transaction {
-                  fromUser {
-                    address
-                    displayName {
-                      value
-                    }
-                  }
-                  toUser {
-                    displayName {
-                      value
-                    }
-                  }
+      accountsTimeline(addresses: $addresses) {
+        edges {
+          node {
+            transaction {
+              fromUser {
+                address
+                displayName {
+                  value
                 }
-                interpretation {
-                  processedDescription
+              }
+              toUser {
+                displayName {
+                  value
                 }
               }
             }
+            interpretation {
+              processedDescription
+            }
           }
+        }
+      }
         }`,
         variables: {
           addresses: TEST_ADDRESSES,
