@@ -140,25 +140,66 @@
   --ifm-breadcrumb-size-multiplier: 0.8;
   --ifm-table-border-color: var(--ifm-border-color);
 }
-
-/* Zapper overrides */
 table {
-  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--ifm-border-color);  /* Updated to match row borders */
+  overflow: hidden;
 }
 
-table th,
+th {
+  padding: 8px 16px;
+  background-color: var(--ifm-card-background);
+  border-top: 0;
+  border-bottom: 1px solid var(--ifm-border-color);
+  
+  &:first-child {
+    border-top-left-radius: var(--radius);
+  }
+  
+  &:last-child {
+    border-top-right-radius: var(--radius);
+  }
+}
+
 table td {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+table th {
   border-width: 0;
 }
 
-table {
-  border: 1px solid var(--ifm-border-color);
+td {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--ifm-border-color);
+  background-color: var(--ifm-card-background);
 }
 
-table tr:nth-child(2n) {
-  background-color: inherit !important;
+tr:last-child {
+  td:first-child {
+    border-bottom-left-radius: var(--radius);
+  }
+  
+  td:last-child {
+    border-bottom-right-radius: var(--radius);
+  }
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
 details[class*='details_'] {
   --docusaurus-details-decoration-color: var(--ifm-border-color);
   border: 1px solid var(--ifm-border-color);

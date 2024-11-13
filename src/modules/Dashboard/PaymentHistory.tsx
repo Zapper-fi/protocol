@@ -1,10 +1,9 @@
 import { gql } from '@apollo/client';
+import { Card } from '@site/src/components/Card';
 import { formatDate } from '@site/src/helpers/formatDate';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
-import { Card } from '@site/src/components/Card';
 import { Info } from 'lucide-react';
 import { useState } from 'react';
-import styles from '@site/src/pages/index.module.scss';
 import ReactDOM from 'react-dom';
 
 const QUERY = gql`
@@ -35,13 +34,10 @@ const mapStatus = {
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className={styles.popup}
+      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px] whitespace-normal"
       style={{
         top: position.top,
         left: position.left + 10,
-        maxWidth: '200px',
-        whiteSpace: 'normal',
-        fontSize: '12px',
       }}
     >
       {message}
@@ -63,13 +59,13 @@ const InfoIcon = ({ message }) => {
     setShowToast(true);
   };
 
-  const handleMouseLeave = () => {
-    setShowToast(false);
-  };
-
   return (
     <div className="relative inline-flex items-center">
-      <div className="cursor-pointer flex items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div
+        className="cursor-pointer flex items-center"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={() => setShowToast(false)}
+      >
         <Info className="h-3 w-3 text-gray-400" />
       </div>
       {showToast && <Toast message={message} position={position} />}
@@ -79,59 +75,67 @@ const InfoIcon = ({ message }) => {
 
 export function PaymentHistory() {
   const { data, loading, error } = useAuthQuery(QUERY);
-
   const { payments = [] } = data?.apiClientById || {};
 
-  const sortedPayments = [...payments].sort((a, b) => {
-    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-  });
+  const sortedPayments = [...payments].sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  );
+
+  if (loading) {
+    return (
+      <div className="p-4">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-4">
+        <p className="text-red-500">Error: {error.message}</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="space-y-2">
-      <h3>Payment History</h3>
-      <Card>
-        {loading && <p>Loading...</p>}
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold">Payment History</h3>
 
-        {error && <p className="text-red-400">Error: {error.message}</p>}
-
-        {!loading && !error && payments.length === 0 ? (
-          <p>No purchases found</p>
-        ) : (
-          <table className="table w-full text-sm">
-            <thead>
-              <tr>
-                <th className="text-left">Date</th>
-                <th className="text-left">Credits</th>
-                <th className="text-left">Amount</th>
-                <th className="text-left">Status</th>
+      <table className="table w-full text-sm">
+        <thead>
+          <tr>
+            <th className="text-left">Date</th>
+            <th className="text-right">Credits</th>
+            <th className="text-right">Amount</th>
+            <th className="text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedPayments.length === 0 ? (
+            <tr>
+              <td colSpan={4} className="text-center text-gray-500">
+                No purchases found
+              </td>
+            </tr>
+          ) : (
+            sortedPayments.map((payment) => (
+              <tr key={payment.createdAt}>
+                <td>{formatDate(payment.createdAt)}</td>
+                <td className="text-right">{payment.creditsPurchased}</td>
+                <td className="text-right">{payment.amount}</td>
+                <td>
+                  <div className="flex items-center gap-1">
+                    <span className={mapStatus[payment.status]}>{payment.status}</span>
+                    <InfoIcon message={statusInfo[payment.status]} />
+                  </div>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {sortedPayments.length === 0 ? (
-                <tr>
-                  <td colSpan={4} className="text-center">
-                    No purchases found
-                  </td>
-                </tr>
-              ) : (
-                sortedPayments.map((payment) => (
-                  <tr key={payment.createdAt}>
-                    <td className="text-left">{formatDate(payment.createdAt)}</td>
-                    <td className="text-left">{payment.creditsPurchased}</td>
-                    <td className="text-left">{payment.amount}</td>
-                    <td className="text-left">
-                      <div className="flex items-center gap-1">
-                        <span className={mapStatus[payment.status]}>{payment.status}</span>
-                        <InfoIcon message={statusInfo[payment.status]} />
-                      </div>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        )}
-      </Card>
+            ))
+          )}
+        </tbody>
+      </table>
     </div>
   );
 }
+
+export default PaymentHistory;
