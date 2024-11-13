@@ -215,7 +215,7 @@ export function ConsumptionStats() {
             ) : endpointError ? (
               <p className="text-red-400">Error: {endpointError.message}</p>
             ) : endpointStats.length === 0 ? (
-              <p>No endpoint data available for this time period</p>
+              <p>No endpoints queried in this time period</p>
             ) : (
               <Line data={endpointChartData} options={chartOptions} />
             )}
