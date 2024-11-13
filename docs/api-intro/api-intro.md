@@ -2,9 +2,7 @@
 sidebar_position: 1
 ---
 
-
 # Getting Started
-
 
 Access powerful onchain data curated by the Zapper protocol with a GraphQL API for your applications.
 
@@ -20,15 +18,13 @@ Simplify onchain transactions with human-friendly descriptions.
 
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
-
 #### [Portfolio Data](/docs/api-intro/portfolio/claimables)
 
 A set of portfolio queries to fetch [Tokens](/docs/api-intro/portfolio/token-balances), [NFTs](/docs/api-intro/portfolio/nft-balances), [App Balances](/docs/api-intro/portfolio/app-balances), [Portfolio Totals](/docs/api-intro/portfolio/portfolio-totals), and [Claimables](/docs/api-intro/portfolio/claimables).
 
-
 #### [Onchain Prices](/docs/api-intro/onchain-prices)
 
-A price for every token that has an onchain market, including historical data. 
+A price for every token that has an onchain market, including historical data.
 
 ## Quickstart
 
@@ -38,23 +34,21 @@ Visit the **[Dashboard](/dashboard)** to get your API key.
 
 #### 2) Get Set up
 
-Grab your API Key, store it in a safe place, and now you can use it to securely access the API. 
+Grab your API Key, store it in a safe place, and now you can use it to securely access the API.
 
 #### Curl Example
-``` graphql
-curl -G https://public.zapper.xyz/graphql \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer {{YOUR_API_KEY}}" \
-  -d '{ "query":....
 
+```graphql
+curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header 'Authorization: YOUR_API_KEY_ENCODED --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!, $withOverrides: Boolean) { portfolio(addresses: $addresses, networks: $networks, withOverrides: $withOverrides) { tokenBalances { address network token { balance balanceUSD balanceRaw baseToken { name label symbol address } } } appBalances { address network updatedAt balanceUSD appName } nftBalances { balanceUSD network } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f","0x6f6e75fb472ee39d847d825cc7c9a613e227e261"],"networks":["BASE_MAINNET","ETHEREUM_MAINNET"]}}'
 ```
 
-#### Apollo Example
+:::note
+The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization header. For example, if your API key is `my-api-key`, you would encode it as Base64 and use: `Authorization: Basic bXktYXBpLWtleQ==`
+:::
 
-
-``` graphql
-not sure haha
-```
+:::note
+The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization header. For example, if your API key is `my-api-key`, you would encode it as Base64 and use: `Authorization: Basic bXktYXBpLWtleQ==`
+:::
 
 
 #### 3) Buy credits
