@@ -21,9 +21,9 @@ Simplify onchain transactions with human-friendly descriptions.
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
 
-#### [Portfolio Data](/docs/api-intro/portfolio/portfolio-totals)
+#### [Portfolio Data](/docs/api-intro/portfolio/claimables)
 
-A set of portfolio queries to fetch [Tokens](/docs/api-intro/portfolio/token-balances), [NFTs](/docs/api-intro/portfolio/nft-balances), [App Balances](/docs/api-intro/portfolio/app-balances), and [Portfolio Totals](/docs/api-intro/portfolio/portfolio-totals) like `claimables` and `debt`.
+A set of portfolio queries to fetch [Tokens](/docs/api-intro/portfolio/token-balances), [NFTs](/docs/api-intro/portfolio/nft-balances), [App Balances](/docs/api-intro/portfolio/app-balances), [Portfolio Totals](/docs/api-intro/portfolio/portfolio-totals), and [Claimables](/docs/api-intro/portfolio/claimables).
 
 
 #### [Onchain Prices](/docs/api-intro/app-balances)

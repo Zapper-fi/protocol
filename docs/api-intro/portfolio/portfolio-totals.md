@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: Totals, Claimables, and Debt
 ---
 
@@ -19,39 +19,9 @@ Surfaces various aggregations of onchain portfolio data including total net wort
 
 ### `totals`
 
-The `totals` query takes an `address` with optional `networks` and returns fields such as `claimables`, `debts`, `holdings`, and other aggregations of portfolio data.
+The `totals` query takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
-### Use Cases
-
-##### Claimables
-
-Let's say you want to show a user all the tokens they can claim across all the onchain apps they have used and how much it's worth in USD. You would pass `address` for the user and return the `portfolio` object, with fields such as `token`, `address`, `balanceUSD`, `symbol`, and `price`. Example of the response below:
-
-```json
-{
-  "data": {
-    "portfolio": {
-      "totals": {
-        "claimables": [
-          {
-            "address": "0xe321bd63cde8ea046b382f82964575f2a5586474",
-            "appId": "uniswap-v3",
-            "token": {
-              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-              "balanceUSD": 3.987004980732349,
-              "balance": "0.001211064192315766",
-              "symbol": "WETH",
-              "price": 3292.15,
-              "network": "ETHEREUM_MAINNET"
-              }
-          },
-          },
-}
-}
-}
-```
-
-##### Net Worth
+### Example Use Case: Net Worth
 
 You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Example of the response below:
 
@@ -62,7 +32,7 @@ You want to show a user the USD value of their entire onchain holdings across to
     "portfolio": {
       "totals": {
         "total": 11252.6887398181,
-        "totalByNetwork": [
+        "totalByNetworkWithNFT": [
           {
             "network": "ETHEREUM_MAINNET",
             "total": 2936.7837588270454
@@ -90,19 +60,13 @@ You want to show a user the USD value of their entire onchain holdings across to
 ### Example Query
 
 ```graphql
-query Portfolio($addresses: [Address!]!) {
+query($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
-    tokenBalances {
-      address
-      network
-      token {
-        balanceUSD
-        balance
-        baseToken {
-          symbol
-        }
+    totals {
+      totalByNetworkWithNFT {
+        network
+        total
       }
-      updatedAt
     }
   }
 }
@@ -112,7 +76,10 @@ query Portfolio($addresses: [Address!]!) {
 
 ```json
 {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+  "addresses": [
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
+  ]
 }
 ```
 
