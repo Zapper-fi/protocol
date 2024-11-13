@@ -56,7 +56,7 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = () => {
           theme: 'dark',
         },
       }}
-      className="apollo-sandbox"
+      className="min-h-[600px] overflow-hidden"
     />
   );
 };
