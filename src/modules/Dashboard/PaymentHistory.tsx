@@ -20,8 +20,8 @@ const QUERY = gql`
 `;
 
 const statusInfo = {
-  confirmed: 'The payment has been completed, and your points have been added.',
-  pending: "We've received the payment and it's now being processed. You'll receive your points in a few minutes.",
+  confirmed: 'The payment has been completed, and your credits have been added.',
+  pending: "We've received the payment and it's now being processed. You'll receive your credits in a few minutes.",
   failed: 'The payment has failed. Please contact us if the issue persists.',
 };
 
