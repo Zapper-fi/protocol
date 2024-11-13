@@ -99,7 +99,7 @@ export function PaymentHistory() {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold">Payment History</h3>
+      <h3>Payment History</h3>
 
       <table className="table w-full text-sm">
         <thead>
