@@ -155,12 +155,17 @@ export function ConsumptionStats() {
           display: true,
           text: 'Date',
         },
+        ticks: {
+          autoSkip: true,
+          maxTicksLimit: 10,
+        },
       },
       y: {
         title: {
           display: true,
           text: 'Value',
         },
+        min: 0,
       },
     },
   };
@@ -172,9 +177,13 @@ export function ConsumptionStats() {
       <div className="timeframe-selector flex">
         {timeFrames.map((tf) => (
           <div key={tf} className="mr-2">
-            <Button type="button" onClick={() => handleTimeFrameChange(tf)} className="font-normal">
+            <button
+              type="button"
+              onClick={() => handleTimeFrameChange(tf)}
+              className="font-normal bg-transparent border-none text-purple-400 cursor-pointer"
+            >
               {tf.charAt(0) + tf.slice(1).toLowerCase()}
-            </Button>
+            </button>
           </div>
         ))}
       </div>
