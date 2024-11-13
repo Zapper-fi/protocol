@@ -54,7 +54,6 @@ curl -G https://public.zapper.xyz/graphql \
 not sure haha
 ```
 
-#### Curl
 
 ## Buy credits
 
