@@ -19,7 +19,7 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 ### Example use case: Transaction History
 
-Let's say you want to show users an activity feed for their onchain transactions in a human-readable format with network and app information. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Part of the response is show below:
+Let's say you want to show users activity for their onchain transactions in a human-readable format with the network it was on and what app was used. You would pass `addresses` for the user and return `processedDescription`, `network`, and the `app` object with `name` and `imgUrl`. Part of the response is show below:
 
 ```json
 {
@@ -33,12 +33,13 @@ Let's say you want to show users an activity feed for their onchain transactions
     "interpretation": {
       "processedDescription": "Started battle with sebaudet.eth"
       },
-  
-      "network": "BASE_MAINNET"
 
-    "app": {
-      "name": "Tokiemon",
-      },
+      "app": {
+            "name": "Tokiemon",
+            "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
+            },
+
+      "network": "BASE_MAINNET"
 }
 ```
 
@@ -60,15 +61,17 @@ query($addresses: [Address!]) {
               value
             }
           }
-          toUser {
-            displayName {
-              value
-            }
-          }
         }
         interpretation {
           processedDescription
         }
+         app {
+          name
+          imgUrl
+        }
+        network
+        }
+
       }
     }
   }
@@ -80,7 +83,7 @@ query($addresses: [Address!]) {
 ```json
 {
   "addresses": [
-    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x52c8ff44260056f896e20d8a43610dd88f05701b",
     "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
   ]
 }
