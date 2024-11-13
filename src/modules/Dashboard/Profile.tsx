@@ -35,8 +35,8 @@ export function Profile() {
       <h3>API Key</h3>
 
       <div>
-        <div className="flex items-center gap-2">
-          <code className="text-base font-mono bg-gray-800 py-2 px-4 rounded flex-1 overflow-x-auto">{apiKey}</code>
+        <div className="flex gap-2">
+          <code className="flex-1 text-base font-mono  py-2 px-4 rounded">{apiKey}</code>
           <Button type="button" onClick={handleCopyApiKey} className="w-10 grid place-content-center">
             <Copy size={18} />
           </Button>
