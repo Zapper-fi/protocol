@@ -7,6 +7,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'An open protocol that incentivizes the interpretation and contextualization of onchain information.',
   plugins: [
+    'docusaurus2-dotenv',
     'docusaurus-plugin-sass',
     async function myPlugin(context, options) {
       return {
