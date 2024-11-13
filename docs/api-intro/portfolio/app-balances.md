@@ -8,11 +8,9 @@ import Link from '@docusaurus/Link';
 
 # App Balances
 
-Surfaces balances that a user might hold inside of an onchain application. Use cases include showing DeFi positions, claimables, or portfolio tracking.
+Surfaces balances that a user might hold inside of an onchain application.
 
 ---
-
-
 
 ### `appBalances`
 
@@ -20,7 +18,7 @@ The `appBalances` query takes an `address` with optional `networks` or `appIds` 
 
 ### Example Use Case: App Positions
 
-Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`. Example of the response below:
+Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`. Part of the response is show below:
 
 
 ```json

@@ -21,7 +21,7 @@ The `account` query takes an `address` and returns fields such as `displayName`,
 
 ##### Social Profile
 
-Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Example of the response below:
+Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Part of the response is show below:
 
 ```json
 {

@@ -21,7 +21,7 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 ##### Transaction History
 
-Let's say you want to show users an activity feed for their onchain transactions in a human-readable format with network and app information. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Part of the response below:
+Let's say you want to show users an activity feed for their onchain transactions in a human-readable format with network and app information. You would pass `addresses` for the user and return `processedDescription`, `network`, and `app`. Part of the response is show below:
 
 ```json
 {

@@ -12,18 +12,17 @@ export const tokenBalancesVars = {
 
 # Portfolio Totals
 
-Surfaces various aggregations of onchain portfolio data including total net worth, claimables, debts, and more.
-
+Surfaces various aggregations of onchain portfolio data.
 ---
 
 
 ### `totals`
 
-The `totals` query takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
+The `totals` object contains takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
 ### Example Use Case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Example of the response below:
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` for the user and return the `portfolio` object, with the fields `totals`, and `totalByNetworkWithNFT`. Part of the response is show below:
 
 
 ```json
