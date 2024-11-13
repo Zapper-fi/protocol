@@ -104,8 +104,8 @@ export function ConsumptionStats() {
         fill: false,
         backgroundColor: 'rgb(118,181,197)',
         borderColor: '#8dd8e3',
-        borderWidth: 2,
-        pointRadius: 2,
+        borderWidth: 1,
+        pointRadius: 1,
         tension: 0.1,
       },
     ],
@@ -139,8 +139,8 @@ export function ConsumptionStats() {
         fill: false,
         backgroundColor: colors[colorIndex].bg,
         borderColor: colors[colorIndex].border,
-        borderWidth: 2,
-        pointRadius: 2,
+        borderWidth: 1,
+        pointRadius: 1,
         tension: 0.1,
       };
     }),
@@ -193,7 +193,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h3 className="mb-4">Overall Consumption</h3>
+          <h3 className="mb-4">Consuption Amount & Cost</h3>
           <Card>
             {consumptionLoading ? (
               <p>Loading...</p>
@@ -208,7 +208,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h3 className="mb-4">Requests per Endpoint Over Time</h3>
+          <h3 className="mb-4">Endpoints Queried</h3>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>
