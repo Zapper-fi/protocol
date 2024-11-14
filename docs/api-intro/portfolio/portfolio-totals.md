@@ -75,9 +75,9 @@ query($addresses: [Address!]!) {
             "network": "BASE_MAINNET",
             "total": 104.79617114576013
           },
-}
-}
-}
+        }
+      }
+    }
 }
 
 ```
@@ -90,7 +90,7 @@ query($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 | `withOverrides`      | Include user submitted NFT value overrides, default is off.       | `Boolean = false` | 
