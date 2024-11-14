@@ -34,7 +34,7 @@ Visit the [Dashboard](/dashboard) to get an API key.
 
 ### 2) Get set up
 
-Grab the API Key, store it in a safe place, and use it to securely access the API.
+Grab the API key, store it in a safe place, and use it to securely access the API.
 
 #### Curl Request Example
 
