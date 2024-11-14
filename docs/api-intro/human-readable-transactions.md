@@ -56,7 +56,8 @@ query($addresses: [Address!]) {
 ```json
 {
   "addresses": [
-    "0x52c8ff44260056f896e20d8a43610dd88f05701b"
+    "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+    "0xe321bd63cde8ea046b382f82964575f2a5586474"
   ]
 }
 ```
@@ -84,7 +85,10 @@ query($addresses: [Address!]) {
       "network": "BASE_MAINNET"
 }
 ```
+
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+---
 
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
