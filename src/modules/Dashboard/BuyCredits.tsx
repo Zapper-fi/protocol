@@ -8,6 +8,7 @@ import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
+const GRACE_PERIOD = 10000;
 const QUERY = gql`
   query BuyCredits {
     apiClientById {
@@ -128,10 +129,7 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
-  const displayV2Points =
-    apiV2PointsRemaining < 0
-      ? 10000 + apiV2PointsRemaining // Convert negative points to remaining free credits
-      : apiV2PointsRemaining;
+  const displayV2Points = apiV2PointsRemaining < 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
   const isNegativeBalance = apiV2PointsRemaining < 0;
   const disabled = loading || !user;
 
