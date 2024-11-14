@@ -131,7 +131,7 @@ query($addresses: [Address!]) {
 | `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
 | `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2`, `nftDeltasV2`,       | `ActivityAccountDelta!`       |
 | `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
-| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well `attachment` which surfaces other NFT specific fields.       | `FungibleTokenDeltaConnection!!`       |
+| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
 | `interpreterId`      | Unique Identifier for the Zapper Protocol Interpreter      | `String!`       |
 | `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
 | `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
