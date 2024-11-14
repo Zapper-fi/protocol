@@ -31,9 +31,8 @@ Let's say you want to surface all positions a user has in every onchain app on a
 
 #### Example Query
 
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
+query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
+  portfolio(addresses: $addresses, networks: $networks) {
     appBalances {
       address
       appName
@@ -59,19 +58,21 @@ query Portfolio($addresses: [Address!]!) {
     "balanceUSD": 46.05200420761579,
     "network": "OPTIMISM_MAINNET",
     "products": [
-      {
-        "label": "Lending",
-           "assets": [
-              {
-                "address": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff"
-              },
-              {
-                "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd"
-              },
-              {
-               "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8"
-                }
-        }
+    {
+       "label": "Lending",
+       "assets": [
+         {
+           "address": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff"
+         },
+         {
+           "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd"
+         },
+         {
+           "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8"
+         }
+       ]
+     }
+   ]
 }
 ```
 
@@ -92,7 +93,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.        | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.        | `Address!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 

@@ -25,10 +25,8 @@ Let's say you are building a wallet and want users to be able to filter their to
 
 ```json
 {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
-{
-  "networks": "DEGEN_MAINNET",
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
+  "networks": ["DEGEN_MAINNET"]
 }
 ```
 
@@ -74,7 +72,6 @@ query Portfolio($addresses: [Address!]!) {
           },
           "updatedAt": 1731379366504
         },
-
         {
           "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
           "network": "DEGEN_MAINNET",
@@ -86,9 +83,10 @@ query Portfolio($addresses: [Address!]!) {
             }
           },
           "updatedAt": 1731379366504
-        },
-}
-}
+        }
+      ]
+    }
+  }
 }
 ```
 
@@ -101,7 +99,7 @@ query Portfolio($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
