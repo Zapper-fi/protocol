@@ -51,7 +51,7 @@ export function SignInButton() {
           href: 'https://help.zapper.xyz/hc/en-us',
         },
         {
-          label: 'Logout',
+          label: 'Sign Out',
           href: '/',
           onClick: logout,
         },
@@ -59,7 +59,7 @@ export function SignInButton() {
     />
   ) : (
     <Button type="button" variant="primary" onClick={login}>
-      Login
+      Sign In
     </Button>
   );
 }
