@@ -23,7 +23,7 @@ The `claimables` query takes `addresses` inputted an array, with optional `netwo
 
 ### Example Use Case: Claimables
 
-Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`. Part of the response is show below:
+Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`. Part of the response is shown below:
 
 ```json
 {

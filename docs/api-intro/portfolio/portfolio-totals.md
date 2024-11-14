@@ -23,7 +23,7 @@ The `totals` object contains takes an `address` with optional `networks` and ret
 
 ### Example Use Case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`. Part of the response is show below:
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`. Part of the response is shown below:
 
 
 ```json

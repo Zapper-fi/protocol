@@ -19,7 +19,7 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 ### Example Use Case: Transaction History
 
-Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`. Part of the response is show below:
+Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`. Part of the response is shown below:
 
 ```json
 {
