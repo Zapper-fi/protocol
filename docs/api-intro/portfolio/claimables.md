@@ -23,7 +23,7 @@ The `claimables` field from the `portfolio` query takes `addresses` input as an 
 
 ### Example Use Case: Claimables
 
-Let's say you want to show a user the tokens they can claim in USD on all onchain apps. Start by passing `address` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
+Let's say you want to show a user the tokens they can claim in USD on all onchain apps. Start by passing `addresses` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
 
 #### Example Variable
