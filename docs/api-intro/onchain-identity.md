@@ -132,7 +132,7 @@ query($address: Address!) {
 
 ### `accounts`
 
-The `accounts` query takes 1 or more `addresses` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+The `accounts` query takes one or more `addresses` input as an array. It returns the same fields as `account`.
 
 <details>
 <summary>Arguments for accounts</summary>
