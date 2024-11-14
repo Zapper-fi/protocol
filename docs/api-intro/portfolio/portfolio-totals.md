@@ -111,7 +111,7 @@ query($addresses: [Address!]!) {
 | `holdings`      | Returns the total value across categories such as tokens, NFTs, and apps in USD.      | `BaseTokenBalance!` | 
 | `total`      | Returns the total value of an address in USD excluding NFTs.      | `Float!` | 
 | `totalByAddress`      | Returns the total value excluding NFTs by address.        | `totalByAddress!` | 
-| `totalByNetwork`      | Returns the total value excluding NFTs by network.       | `totalByNetwork!` | fi
+| `totalByNetwork`      | Returns the total value excluding NFTs by network.       | `totalByNetwork!` |
 | `totalByNetworkWithNFT`      | Returns the total value including NFTs by network.     | `totalByNetworkWithNFT!` | 
 | `totalWithNFT`      | Returns the total value of an address in USD including NFTs.      | `Float!` | 
 
