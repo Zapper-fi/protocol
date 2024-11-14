@@ -88,11 +88,11 @@ query($addresses: [Address!]) {
 
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
 
----
-
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
 :::
+
+---
 
 ### Reference
 
@@ -101,7 +101,7 @@ Textual description of each transaction is presented from the perspective of the
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
+| `network`      | Networks for which to retrieve, input as an array.    | `Network!`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
 | `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
 | `tokenAddresses`      | Filter by token address.        | `Address!`        | 
