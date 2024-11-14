@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import '../modules/Intro/Intro.scss';
 
 
@@ -132,11 +136,51 @@
   --theme: #784ffe;
   --text-color: #002237;
   --text-color-alt: #4b5871;
+
+  --ifm-breadcrumb-size-multiplier: 0.8;
+  --ifm-table-border-color: var(--ifm-border-color);
 }
 
-/* Zapper overrides */
-table tr:nth-child(2n) {
-  background-color: inherit !important;
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--ifm-border-color);
+  /* Updated to match row borders */
+  overflow: hidden;
+}
+
+th {
+  padding: 8px 16px;
+  background-color: var(--ifm-card-background);
+  border-top: 0;
+}
+
+table td {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+table th {
+  border-width: 0;
+}
+
+td {
+  padding: 8px 16px;
+  background-color: var(--ifm-card-background);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 details[class*='details_'] {
@@ -144,6 +188,15 @@ details[class*='details_'] {
   border: 1px solid var(--ifm-border-color);
   background-color: var(--ifm-card-background) !important;
 }
+
+/* Privy */
+#privy-dialog {
+  --privy-color-background: var(--ifm-card-background);
+  --privy-color-background-2: var(--ifm-default-background);
+  --privy-color-foreground: var(--ifm-text-color-primary);
+  --privy-color-foreground-2: var(--ifm-text-color-primary);
+}
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
