@@ -6,7 +6,7 @@ sidebar_position: 6
 
 | **Term** | **Definition** |
 | --- | --- |
-| App | A crypto service that has created and owns smart contracts. These are often DeFi apps, but can also be NFT marketplaces, social networks, or any other service that uses smart contracts. The service must own at least 1 smart contract to be an app. |
+| App | An onchain application that uses smart contracts. These are often DeFi apps, but can also be NFT marketplaces, social networks, or any other service that uses smart contracts. The service must have one associated smart contract to be considered an onchain app. |
 | Position Interpreter (PI) | A ruleset that defines how to interpret a position balance relating to a smart contract. This can be a token balance in a DeFi app, NFT collection, or any other type of app. The position may be "tokenized" or "non-tokenized". |
 | Balance | The amount of a token or position held by a user. This can be a token balance, a liquidity position, a collateral position, or any other type of financial position. |
 | Tokenized position | A position that is represented by an ERC20 token. This token can be transferred, traded, and redeemed for the underlying token, and the balance held by the user represents the balance the user holds in the position. |

@@ -14,17 +14,17 @@ Surfaces balances that a user might hold inside of an onchain application.
 
 ### `appBalances`
 
-The `appBalances` query takes an `address` with optional `networks` or `appIds` and returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
+The `appBalances` query takes an `address` with optional `networks` or `appIds`. It returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
 
 ### Example Use Case: App Positions
 
-Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`.
+Let's say you want to surface all positions a user has in every onchain app on a particular network. Start by passing `address` for the user and `network` for the selected network. Then return the `appBalances` object, with the fields `address`, `appName`, `balanceUSD`, `network`, and `products`.
 
 #### Example Variables
 
 ```json
 {
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+  "addresses": ["0xe321bd63cde8ea046b382f82964575f2a5586474"]
 }
 {
   "networks": "OPTIMISM_MAINNET",
@@ -79,7 +79,7 @@ query Portfolio($addresses: [Address!]!) {
 
 :::note
 
-Smart accounts accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
+Smart accounts like Maker’s `DSProxy` are automatically included in the balance response as part of an “implicit” bundle.
 
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
@@ -110,14 +110,14 @@ Typically, a single transaction generates multiple timeline events: one for each
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Address the position queried is for       | `String!`       |
-| `appId`      | ID of the app      | `String!`       |
-| `appImage`      | Icon of the app      | `String!`       |
-| `appName`      | Display name of app       | `String!`       |
-| `balanceUSD`      | Value of all positions associated with this app on this network for this wallet, in USD      | `Float!` | 
-| `key`      | Description goes here.       | `String!`       |
-| `network`      | Network(s) the app is on.       | `Network!`       |
-| `products`      | Object containing details on all products owned by this wallet       | `ProductItem!`       |
-| `updatedAt`      | Timestamp at which time this wallet's balance for this app was calculated   | `Timestamp!`       |
+| `address`      | Address that owns the position.       | `String!`       |
+| `appId`      | ID of the app.      | `String!`       |
+| `appImage`      | URL containing the logo image of the app.      | `String!`       |
+| `appName`      | Display name of app.       | `String!`       |
+| `balanceUSD`      | Value of all positions for the specified app in USD.      | `Float!` | 
+| `network`      | Network the position is on.       | `Network!`       |
+| `products`      | Object containing details on all products owned by the specified address.       | `ProductItem!`       |
+| `updatedAt`      | Timestamp of when the balance was calculated.   | `Timestamp!`       |
+| `key`      | -      | `String!`       |
 
 </details>

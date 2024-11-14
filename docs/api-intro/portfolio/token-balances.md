@@ -19,7 +19,7 @@ The `tokenBalances` object contains fields such as `address`, `network`, `balanc
 
 ### Example Use Case: Wallet Holdings
 
-Let's say you are building a wallet and want users to be able to filter their tokens by chain. You would pass `address` for the user and `network` for the selected chain returning the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, and `symbol`.
+Let's say you are building a wallet and want users to be able to filter their tokens by chain. Start by passing `address` for the user and `network` for the selected chain. Then return the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, `symbol`, and `updatedAt`.
 
 #### Example Variables
 
@@ -36,7 +36,8 @@ Let's say you are building a wallet and want users to be able to filter their to
 
 ```graphql
 query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
+  portfolio(addresses: $addresses,
+  networks: $networks) {
     tokenBalances {
       address
       network
@@ -104,7 +105,7 @@ query Portfolio($addresses: [Address!]!) {
 | ----------- | ----------- | ----------- |
 | `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
-| `appIds`      | Filter by a specific app       | `String!` | 
+| `appIds`      | Filter by a specific app.       | `String!` | 
 
 </details>
 
@@ -114,13 +115,13 @@ query Portfolio($addresses: [Address!]!) {
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Unique identifier on the token object that is used to aggregate token balances across multiple addresses.       | `String!`       |
-| `address`      | Address the position queried is for       | `String!` | 
+| `address`      | Address of the owner of the token.      | `String!` | 
 | `network`      | Returns the network the token is on.       | `Network!` | 
 | `token`      | Object containing `balance`, `balanceRaw`, `balanceUSD`, and `baseToken`.       | `BaseTokenBalance!` | 
-| `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint      | `Timestamp!` | 
+| `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint.      | `Timestamp!` | 
 | `balance`      | Balance in native units of the token adjusted for decimals.        | `Float!` | 
-| `baseToken`      | Returns fields such as `address`, `symbol`, `price`, `imgUrl`, and other data useful for tokens.        | `WalletTokenBalance!` | 
-| `balanceUSD`      | Balance in USD ex: `2810.08`      | `Float!` | 
+| `baseToken`      | Returns fields such as `address`, `symbol`, `price`, `imgUrl`, `name`,`network`,`decimals`,`verified`, and `id`.        | `WalletTokenBalance!` | 
+| `balanceUSD`      | Balance in USD. ex: `2810.08`      | `Float!` | 
 | `balanceRaw`      | Balance in native units of the token not adjusted for decimals.       | `String!` | 
 
 </details>

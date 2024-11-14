@@ -12,20 +12,31 @@ import Link from '@docusaurus/Link';
 
 ### `nftBalances`
 
-The `nftBalances` query takes an `address` with optional `networks` and returns `balanceUSD` — useful for getting estimated NFT values for addresses.
+The `nftBalances` query takes an `address` with optional `networks`. It returns `balanceUSD` — an aggregation of estimated NFTs values.
 
 :::note
 
-NFT tokens estimated value in USD is calculated using in-house built algorithm. NFT valuation can be overridden to be the top offer, last sale or any other user hard coded value. NFT tokens can be set as hidden to remove them from the default portfolio view.
+Estimated value in USD for NFTs is calculated using Zapper's algorithm. It can be overridden to be the top offer, last sale, or a user submitted value. NFTs can also be set as hidden by the owner to remove them from the default portfolio view — removing its value from `nftBalances`.
 
 :::
 
 
+### Example Variable
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+{
+  "networks": ["BASE_MAINNET"]
+}
+```
+
 ### Example Query
 
 ```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
+query($addresses: [Address!]!, $networks: [Network!]) {
+  portfolio(addresses: $addresses, networks: $networks) {
     nftBalances {
       balanceUSD
       network
@@ -34,15 +45,26 @@ query Portfolio($addresses: [Address!]!) {
 }
 ```
 
-### Example Variables
+#### Example Response
 
 ```json
 {
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+  "data": {
+    "portfolio": {
+      "nftBalances": [
+        {
+          "balanceUSD": 1662.061734333,
+          "network": "BASE_MAINNET"
+        }
+      ]
+    }
+  }
 }
 ```
 
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+---
 
 ### Reference
 
@@ -51,9 +73,9 @@ query Portfolio($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | Required: Address you are querying balances for, inputted an array.       | `String!` | 
-| `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned      | `Network!` | 
-| `withOverrides`      | Include user submitted NFT value overrides, default off.      | `Boolean = false` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned.      | `Network!` | 
+| `withOverrides`      | Includes user submitted NFT value overrides, default is off.      | `Boolean = false` | 
 
 </details>
 
@@ -64,7 +86,7 @@ Fields for `nftBalances`
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Returns the network that an NFT is on      | `Network!`       |
-| `balanceUSD`      | Returns the estimated USD value      | `Float!` | 
+| `network`      | Returns the network for balances.     | `Network!`       |
+| `balanceUSD`      | Returns the estimated USD value.      | `Float!` | 
 
 </details>
