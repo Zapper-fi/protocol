@@ -128,6 +128,11 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
+  const displayV2Points =
+    apiV2PointsRemaining < 0
+      ? 10000 + apiV2PointsRemaining // Convert negative points to remaining free credits
+      : apiV2PointsRemaining;
+  const isNegativeBalance = apiV2PointsRemaining < 0;
   const disabled = loading || !user;
 
   return (
@@ -135,8 +140,12 @@ export function BuyCredits() {
       <div className="flex justify-between items-start">
         <h3>Buy Credits</h3>
         <div className="text-right">
-          <p>
-            Credit balance: <span className="font-bold">{Number(apiV2PointsRemaining)}</span>
+          <p className="flex items-center justify-end gap-1">
+            Credit balance:{' '}
+            <span className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}>
+              {Number(displayV2Points)}
+            </span>
+            {isNegativeBalance && <InfoIcon message="You are now consuming the free 10 000 credit grant from Zapper" />}
           </p>
           {Number(apiV1PointsRemaining) > 0 && (
             <p className="flex items-center justify-end gap-1">
