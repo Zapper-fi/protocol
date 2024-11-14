@@ -57,7 +57,7 @@ Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
 The Zapper GraphQL API is in beta. If you run into any issues please share your feedback, it is much appreciated. 
 
-If you are a client of the legacy REST API you automatically have access to the new GraphQL endpoints with your exisiting API key. You can manage your account on the new [Dashboard](/dashboard), purchase new credits for the GraphQL API, as well as view your legacy REST API credits. Log in with the email associated with your exisiting account to gain access.
+If you are a client of the legacy REST API you automatically have access to the new GraphQL endpoints with your exisiting API key, upon sign in to the Zapper Protocol Dashboard. You can manage your account on the new [Dashboard](/dashboard), purchase credits for the new GraphQL API, as well as view your legacy REST API credits. Log in with the email associated with your exisiting account to gain access.
 
 You can also find the legacy REST API documentation [here](https://studio.zapper.xyz/docs/apis/getting-started) however we are asking all existing clients to migrate to the new GraphQL endpoints.
 
