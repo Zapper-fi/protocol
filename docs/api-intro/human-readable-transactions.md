@@ -126,17 +126,14 @@ query($addresses: [Address!]) {
 | `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
 | `toUser`      | The address that the transaction interacted with.     | `Int!`       |
 | `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
-| `source`      | -       | `String!`       |
-| `eventType`      | Returns the event type.       | `String!`       |
-| `isAbiAvailable`      | -       | `Boolean!`       |
-| `isEditable`      | -       | `Boolean!`       |
-| `interpreterId`      | -      | `String!`       |
-| `interpreter`      | -      | `ActivityEventInterpreter!`       |
-| `actors`      | -       | `ActorDisplayItem!`       |
-| `timestamp`      | -       | `Timestamp!`       |
-| `perspective`      | -       | `ActivityPerspective!`       |
-| `similarEventCount`      | -       | `String!`       |
-| `perspectiveDelta`      | -       | `ActivityAccountDelta!`       |
-| `sigHash`      | -       | `String!`       |
+| `actors`      | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.      | `ActorDisplayItem!`       |
+| `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
+| `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
+| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2`, `nftDeltasV2`,       | `ActivityAccountDelta!`       |
+| `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
+| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well `attachment` which surfaces other NFT specific fields.       | `FungibleTokenDeltaConnection!!`       |
+| `interpreterId`      | Unique Identifier for the Zapper Protocol Interpreter      | `String!`       |
+| `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
+| `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
 
 </details>

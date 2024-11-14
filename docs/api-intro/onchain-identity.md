@@ -90,7 +90,6 @@ query Account($address: Address!) {
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `id`      | -       | `ID!`       |
 | `address`      | Returns the address that was queried for.   | `Address!` | 
 | `avatar`      | Returns the avatar object, which contains avatar informatiom from multiple sources such as ENS, Farcaster, or Lens.      | `AccountAvatar!` | 
 | `description`      | Returns a description along with the source from either ENS, Farcaster, or Lens.       | `Description!` | 
@@ -108,6 +107,7 @@ query Account($address: Address!) {
 | `following`      | Returns Zapper following     | `FollowingConnection!` | 
 | `isContract`      | Returns true/false for whether this address is a contract.       | `Boolean!` | 
 | `contract`      | -       | `String!` | 
+| `id`      | -       | `ID!`       |
 
 
 </details>
