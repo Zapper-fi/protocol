@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Getting Started
 
-Access powerful onchain data curated by the Zapper Protocol with a GraphQL API for your applications.
+Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ---
 
