@@ -77,8 +77,8 @@ query Claimables($addresses: [Address!]!) {
               }
           },
           },
-}
-}
+      }
+  }
 }
 ```
 
