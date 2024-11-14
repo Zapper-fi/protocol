@@ -55,11 +55,11 @@ Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
 :::info
 
-The Zapper Graph QL API is in beta. If you run into any issues please share your feedback, it's much appreciated. 
+The Zapper GraphQL API is in beta. If you run into any issues please share your feedback, it's much appreciated. 
 
-If you are a client of the legacy REST API you automatically have access to the new Graph QL endpoints. You can view and manage your legacy credits on the new [Dashboard](/dashboard) by logging in with the email associated with your exisiting account.
+If you are a client of the legacy REST API you automatically have access to the new GraphQL endpoints. You can view and manage your legacy credits on the new [Dashboard](/dashboard) by logging in with the email associated with your exisiting account.
 
-You can also find the legacy REST API documentation [here](https://studio.zapper.xyz/docs/apis/getting-started) however we are asking all existing clients to migrate to the new Graph QL endpoints.
+You can also find the legacy REST API documentation [here](https://studio.zapper.xyz/docs/apis/getting-started) however we are asking all existing clients to migrate to the new GraphQL endpoints.
 
 Please reach out to ops@zapper.xyz if you have any questions.
 
