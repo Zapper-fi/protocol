@@ -47,7 +47,7 @@ The API key must be Base64 encoded and passed with the `Basic` prefix in the Aut
 :::
 
 
-#### 3) Buy credits
+#### 3) Buy Credits
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from your credit balance.
 
