@@ -30,7 +30,7 @@ A price for every token that has an onchain market, including historical data.
 
 ### 1) Get an API key
 
-Visit the **[Dashboard](/dashboard)** to get an API key.
+Visit the [Dashboard](/dashboard) to get an API key.
 
 ### 2) Get set up
 
