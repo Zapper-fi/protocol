@@ -19,35 +19,9 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 ### Example Use Case: Transaction History
 
-Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`. Part of the response is shown below:
+Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`.
 
-```json
-{
-  "fromUser": {
-    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-      "displayName": {
-          "value": "0xjasper.eth"
-          }
-    }
-
-    "interpretation": {
-      "processedDescription": "Started battle with sebaudet.eth"
-      },
-
-      "app": {
-            "name": "Tokiemon",
-            "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
-            },
-
-      "network": "BASE_MAINNET"
-}
-```
-
-:::note
-Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction is not available, yet.
-:::
-
-### Example Query
+#### Example Query
 
 ```graphql
 query($addresses: [Address!]) {
@@ -77,20 +51,44 @@ query($addresses: [Address!]) {
   }
 }
 ```
-
-### Example Variables
+#### Example Variables
 
 ```json
 {
   "addresses": [
-    "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
+    "0x52c8ff44260056f896e20d8a43610dd88f05701b"
   ]
 }
 ```
 
+#### Example Response
+
+```json
+{
+  "fromUser": {
+    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+      "displayName": {
+          "value": "0xjasper.eth"
+          }
+    }
+
+    "interpretation": {
+      "processedDescription": "Started battle with sebaudet.eth"
+      },
+
+      "app": {
+            "name": "Tokiemon",
+            "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
+            },
+
+      "network": "BASE_MAINNET"
+}
+```
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
 
+:::note
+Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
+:::
 
 ### Reference
 
