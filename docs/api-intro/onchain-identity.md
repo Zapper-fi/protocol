@@ -18,20 +18,32 @@ The `account` query takes an `address` and returns fields such as `displayName`,
 
 ### Example Use Case: Social Profile
 
-Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Part of the response is below:
+Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName` and `description` with their sources as well as information from `ensRecord`, `farcasterProfile`, and `lensProfile`. Part of the response is below:
 
 
 #### Example Query
 
 ```graphql
-query Account($address: Address!) {
+query($address: Address!) {
   account(address: $address) {
     address
     displayName {
       value
+      source
+    }
+    description {
+      value
+      source
     }
     ensRecord {
       name
+    }
+    farcasterProfile {
+      username
+      fid
+    }
+    lensProfile {
+      handle
     }
   }
 }
@@ -41,7 +53,7 @@ query Account($address: Address!) {
 
 ```json
 {
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+  "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
 }
 ```
 
@@ -53,7 +65,8 @@ query Account($address: Address!) {
     "account": {
       "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
       "displayName": {
-        "value": "0xjasper.eth"
+        "value": "0xjasper.eth",
+        "source": "ENS"
       },
       "ensRecord": {
         "name": "0xjasper.eth"
@@ -63,6 +76,7 @@ query Account($address: Address!) {
         "source": "ENS"
       },
       "farcasterProfile": {
+        "username": "jasper",
         "fid": 177
       },
       "lensProfile": {
