@@ -19,7 +19,7 @@ Surfaces various aggregations of onchain portfolio data.
 
 ### `totals`
 
-The `totals` object takes an `address` with optional `networks`. It returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
+The `totals` field from the `portfolio` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
 ### Example Use Case: Net Worth
 
@@ -27,11 +27,9 @@ You want to show a user the USD value of their entire onchain holdings across to
 
 #### Example Variable
 
-```json
+```js
 {
-  "addresses": [
-    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-  ]
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
 }
 ```
 
@@ -52,7 +50,7 @@ query($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {
@@ -75,9 +73,9 @@ query($addresses: [Address!]!) {
             "network": "BASE_MAINNET",
             "total": 104.79617114576013
           },
-}
-}
-}
+        }
+      }
+    }
 }
 
 ```
@@ -90,7 +88,7 @@ query($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 | `withOverrides`      | Include user submitted NFT value overrides, default is off.       | `Boolean = false` | 

@@ -25,7 +25,7 @@ Let's say you want to show users their onchain transactions in a human-readable 
 
 #### Example Variable
 
-```json
+```js
 {
   "addresses": [
     "0x52c8ff44260056f896e20d8a43610dd88f05701b"
@@ -64,7 +64,7 @@ query($addresses: [Address!]) {
 
 #### Example Response
 
-```json
+```js
 {
   "fromUser": {
     "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
@@ -83,7 +83,10 @@ query($addresses: [Address!]) {
 }
 ```
 
+
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+---
 
 :::note
 Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
@@ -97,7 +100,7 @@ Textual description of each transaction is presented from the perspective of the
 | ----------- | ----------- | ----------- |
 | `network`      | The network(s) to retreive, input as an array.    | `Network!`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
-| `addresses`      | The address(s) that is being queried, input as an array.   | `String!`        | 
+| `addresses`      | The address(s) that is being queried, input as an array.   | `Address!`        | 
 | `tokenAddresses`      | Filter by token address.        | `Address!`        | 
 | `isSigner`      | Filter by signer.        | `Boolean`        | 
 | `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 

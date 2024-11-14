@@ -22,7 +22,7 @@ Let's say you are building a profile for users and want to surface their identit
 
 #### Example Variable
 
-```json
+```js
 {
   "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
 }
@@ -58,7 +58,7 @@ query($address: Address!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "account": {
@@ -96,7 +96,7 @@ query($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | The address that is being queried.       | `String!` | 
+| `address`      | The address that is being queried.       | `Address!` | 
 
 ### Fields
 
@@ -130,4 +130,4 @@ The `accounts` query takes one or more `addresses` input as an array. It returns
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.      | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.      | `Address!` | 

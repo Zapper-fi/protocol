@@ -19,16 +19,16 @@ Surfaces all available claimable tokens for a given address across all indexed o
 
 ### `claimables`
 
-The `claimables` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token.
+The `claimables` field from the `portfolio` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token.
 
 ### Example Use Case: Claimables
 
-Let's say you want to show a user the tokens they can claim in USD all onchain apps. Start by passing `address` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
+Let's say you want to show a user the tokens they can claim in USD on all onchain apps. Start by passing `address` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
 
 #### Example Variable
 
-```json
+```js
 {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
 }
@@ -58,7 +58,7 @@ query Claimables($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {
@@ -98,6 +98,6 @@ query Claimables($addresses: [Address!]!) {
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Address of the claimable token.      | `String!`       |
+| `address`      | Address of the claimable token.      | `Address!`       |
 | `appID`      | The app that the token is claimable in.     | `String!`       |
 | `token`      | An object containing fields pertaining to the token including `address`, `balance`, `balanceUSD`, `symbol`, `network`, `price`, `decimals`, and `type`.     | `AbstractToken!`       |

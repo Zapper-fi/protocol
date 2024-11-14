@@ -15,7 +15,7 @@ Surfaces any onchain token balances held by an address.
 
 ### `tokenBalances`
 
-The `tokenBalances` object contains fields such as `address`, `network`, `balanceUSD`, `balance`, and other fields useful for token balance use cases.
+The `tokenBalances` field from the `portfolio` query takes `addresses` input as an array, with optional `networks`. It returns `address`, `network`, `balanceUSD`, `balance`, and other fields useful for token balance use cases.
 
 ### Example Use Case: Wallet Holdings
 
@@ -23,12 +23,10 @@ Let's say you are building a wallet and want users to be able to filter their to
 
 #### Example Variables
 
-```json
+```js
 {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
-{
-  "networks": "DEGEN_MAINNET",
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
+  "networks": ["DEGEN_MAINNET"]
 }
 ```
 
@@ -57,7 +55,7 @@ query Portfolio($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {
@@ -74,7 +72,6 @@ query Portfolio($addresses: [Address!]!) {
           },
           "updatedAt": 1731379366504
         },
-
         {
           "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
           "network": "DEGEN_MAINNET",
@@ -86,9 +83,10 @@ query Portfolio($addresses: [Address!]!) {
             }
           },
           "updatedAt": 1731379366504
-        },
-}
-}
+        }
+      ]
+    }
+  }
 }
 ```
 
@@ -101,7 +99,7 @@ query Portfolio($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
@@ -110,7 +108,7 @@ query Portfolio($addresses: [Address!]!) {
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Unique identifier on the token object that is used to aggregate token balances across multiple addresses.       | `String!`       |
-| `address`      | Address of the owner of the token.      | `String!` | 
+| `address`      | Address of the owner of the token.      | `Address!` | 
 | `network`      | Returns the network the token is on.       | `Network!` | 
 | `token`      | Object containing `balance`, `balanceRaw`, `balanceUSD`, and `baseToken`.       | `BaseTokenBalance!` | 
 | `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint.      | `Timestamp!` | 
