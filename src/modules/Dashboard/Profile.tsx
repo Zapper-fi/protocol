@@ -61,14 +61,12 @@ export function Profile() {
         </div>
       </div>
 
-      <Card>
-        <div className="space-y-4">
+      <strong className="block mb-1">Wallet</strong>
+        <div>
           <div>
-            <strong className="block mb-1">Wallet</strong>
             <p>{user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
           </div>
         </div>
-      </Card>
     </div>
   );
 }

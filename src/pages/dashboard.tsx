@@ -2,6 +2,7 @@ import Layout from '@theme/Layout';
 import React from 'react';
 import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
 import { Debug } from '@site/src/modules/Dashboard/Debug';
+import { Note } from '@site/src/modules/Dashboard/Note';
 import { Profile } from '@site/src/modules/Dashboard/Profile';
 import { SignedIn } from '@site/src/modules/Dashboard/SignedIn';
 import { SignedOut } from '@site/src/modules/Dashboard/SignedOut';
@@ -29,6 +30,8 @@ function Dashboard() {
 
             <SignedIn>
               <div className="flex flex-col gap-8">
+                
+                <Note />
                 <Profile />
 
                 <ConsumptionStats />
