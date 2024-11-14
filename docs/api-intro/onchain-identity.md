@@ -14,7 +14,7 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 ### `account`
 
-The `account` query takes an `address` and returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+The `account` query takes an `address`. It returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
 
 ### Example Use Case: Social Profile
 

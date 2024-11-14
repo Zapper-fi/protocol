@@ -25,6 +25,7 @@ The `claimables` query takes `addresses` input as an array, with optional `netwo
 
 Let's say you want to show a user the tokens they can claim in USD all onchain apps. Start by passing `address` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
+
 ### Example Variable
 
 ```json
@@ -105,7 +106,7 @@ query Claimables($addresses: [Address!]!) {
 | ----------- | ----------- | ----------- |
 | `address`      | Address of the claimable token.      | `String!`       |
 | `appID`      | The app that the token is claimable in.     | `String!`       |
-| `token`      | An object containing fields pertaining to the token including `address`, `balance`, `balanceUSD`, and `price`.     | `AbstractToken!`       |
+| `token`      | An object containing fields pertaining to the token including `address`, `balance`, `balanceUSD`, `symbol`, `network`, `price`, `decimals`, and `type`.     | `AbstractToken!`       |
 
 
 </details>

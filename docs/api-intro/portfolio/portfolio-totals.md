@@ -19,19 +19,18 @@ Surfaces various aggregations of onchain portfolio data.
 
 ### `totals`
 
-The `totals` object contains takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
+The `totals` object takes an `address` with optional `networks`. It returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
 ### Example Use Case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`.
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps — broken down by chain. Start by passing `address` into the `portfolio` and `totals` object. Then return `totalByNetworkWithNFT`, `network`, and `total`.
 
-#### Example Variables
+#### Example Variable
 
 ```json
 {
   "addresses": [
     "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
   ]
 }
 ```
@@ -96,8 +95,8 @@ query($addresses: [Address!]!) {
 | ----------- | ----------- | ----------- |
 | `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
-| `appIds`      | Filter by a specific app       | `String!` | 
-| `withOverrides`      | Include user submitted NFT value overrides, default off.       | `Boolean = false` | 
+| `appIds`      | Filter by a specific app.       | `String!` | 
+| `withOverrides`      | Include user submitted NFT value overrides, default is off.       | `Boolean = false` | 
 
 </details>
 
@@ -106,14 +105,14 @@ query($addresses: [Address!]!) {
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `appsTotal`      | Returns total USD value of app holdings       | `Float!`       |
-| `claimables`      | Object with fields `address`, `appId`, and `token` for returning claimables.      | `ClaimableToken!` | 
-| `debts`      | Object with fields `address`, `appId`, and `token` for returning debts.       | `ClaimableToken!` | 
-| `holdings`      | Returns USD total across categories such as Tokens, NFTs, and apps.       | `BaseTokenBalance!` | 
-| `total`      | Returns a single USD total value.      | `Float!` | 
-| `totalByAddress`      | Returns USD totals by address.        | `totalByAddress!` | 
-| `totalByNetwork`      | Returns USD totals by network.       | `totalByNetwork!` | 
-| `totalByNetworkWithNFT`      | Returns USD totals by network including NFTs.     | `totalByNetworkWithNFT!` | 
-| `totalWithNFT`      | Returns a single USD total value including NFTs.      | `Float!` | 
+| `appsTotal`      | Returns the total value of app holdings in USD      | `Float!`       |
+| `claimables`      | Object that contains the fields `address`, `appId`, and `token`.    | `ClaimableToken!` | 
+| `debts`      | Object that contains the fields `address`, `appId`, and `token`.       | `ClaimableToken!` | 
+| `holdings`      | Returns the total value across categories such as tokens, NFTs, and apps in USD.      | `BaseTokenBalance!` | 
+| `total`      | Returns the total value of an address in USD excluding NFTs.      | `Float!` | 
+| `totalByAddress`      | Returns the total value excluding NFTs by address.        | `totalByAddress!` | 
+| `totalByNetwork`      | Returns the total value excluding NFTs by network.       | `totalByNetwork!` | fi
+| `totalByNetworkWithNFT`      | Returns the total value including NFTs by network.     | `totalByNetworkWithNFT!` | 
+| `totalWithNFT`      | Returns the total value of an address in USD including NFTs.      | `Float!` | 
 
 </details>
