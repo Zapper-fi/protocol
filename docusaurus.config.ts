@@ -96,7 +96,12 @@ const config = {
         },
       ],
     },
-
+    algolia: {
+      appId: 'MAIGR0NEB5',
+      apiKey: 'b13a9ebe7be5d19ebb034f4d4572688b',
+      indexName: 'protocol-zapper',
+      contextualSearch: true,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
