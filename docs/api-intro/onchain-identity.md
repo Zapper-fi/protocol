@@ -20,6 +20,33 @@ The `account` query takes an `address` and returns fields such as `displayName`,
 
 Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName`, `ensRecord`, `description`,`farcasterProfile`, and `lensProfile`. Part of the response is below:
 
+
+#### Example Query
+
+```graphql
+query Account($address: Address!) {
+  account(address: $address) {
+    address
+    displayName {
+      value
+    }
+    ensRecord {
+      name
+    }
+  }
+}
+```
+
+#### Example Variables
+
+```json
+{
+  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
+}
+```
+
+#### Example Response
+
 ```json
 {
   "data": {
@@ -47,32 +74,9 @@ Let's say you are building a profile for users and want to surface some of the s
 
 ```
 
-### Example Query
-
-```graphql
-query Account($address: Address!) {
-  account(address: $address) {
-    address
-    displayName {
-      value
-    }
-    ensRecord {
-      name
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
-}
-```
-
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
 
+---
 
 ### Reference
 

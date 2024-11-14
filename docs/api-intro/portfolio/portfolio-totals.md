@@ -23,8 +23,35 @@ The `totals` object contains takes an `address` with optional `networks` and ret
 
 ### Example Use Case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`. Part of the response is shown below:
+You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`.
 
+#### Example Query
+
+```graphql
+query($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    totals {
+      totalByNetworkWithNFT {
+        network
+        total
+      }
+    }
+  }
+}
+```
+
+#### Example Variables
+
+```json
+{
+  "addresses": [
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
+  ]
+}
+```
+
+#### Example Response
 
 ```json
 {
@@ -56,34 +83,9 @@ You want to show a user the USD value of their entire onchain holdings across to
 
 ```
 
-
-### Example Query
-
-```graphql
-query($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    totals {
-      totalByNetworkWithNFT {
-        network
-        total
-      }
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": [
-    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    "0x6f6e75fb472ee39d847d825cc7c9a613e227e261"
-  ]
-}
-```
-
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+---
 
 ### Reference
 

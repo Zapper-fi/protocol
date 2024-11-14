@@ -23,34 +23,9 @@ The `claimables` query takes `addresses` inputted an array, with optional `netwo
 
 ### Example Use Case: Claimables
 
-Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`. Part of the response is shown below:
+Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
-```json
-{
-  "data": {
-    "portfolio": {
-      "totals": {
-        "claimables": [
-          {
-            "address": "0xe321bd63cde8ea046b382f82964575f2a5586474",
-            "appId": "uniswap-v3",
-            "token": {
-              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-              "balanceUSD": 3.987004980732349,
-              "balance": "0.001211064192315766",
-              "symbol": "WETH",
-              "price": 3292.15,
-              "network": "ETHEREUM_MAINNET"
-              }
-          },
-          },
-}
-}
-}
-```
-
-
-### Example Query
+#### Example Query
 
 ```graphql
 query Claimables($addresses: [Address!]!) {
@@ -84,7 +59,35 @@ query Claimables($addresses: [Address!]!) {
 }
 ```
 
+#### Example Response
+
+```json
+{
+  "data": {
+    "portfolio": {
+      "totals": {
+        "claimables": [
+          {
+            "address": "0xe321bd63cde8ea046b382f82964575f2a5586474",
+            "appId": "uniswap-v3",
+            "token": {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "balanceUSD": 3.987004980732349,
+              "balance": "0.001211064192315766",
+              "symbol": "WETH",
+              "price": 3292.15,
+              "network": "ETHEREUM_MAINNET"
+              }
+          },
+          },
+}
+}
+}
+```
+
 <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+---
 
 ### Reference
 

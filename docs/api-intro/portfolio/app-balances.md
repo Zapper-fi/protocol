@@ -18,8 +18,41 @@ The `appBalances` query takes an `address` with optional `networks` or `appIds` 
 
 ### Example Use Case: App Positions
 
-Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`. Part of the response is shown below:
+Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`.
 
+#### Example Query
+
+```graphql
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
+    appBalances {
+      address
+      appName
+      balanceUSD
+      network
+      products {
+        label
+        assets {
+          address
+        }
+      }
+    }
+  }
+}
+```
+
+### Example Variables
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+{
+  "networks": "OPTIMISM_MAINNET",
+}
+```
+
+#### Example Response
 
 ```json
   {
@@ -53,39 +86,9 @@ Typically, a single transaction generates multiple timeline events: one for each
 :::
 
 
-### Example Query
-
-```graphql
-query Portfolio($addresses: [Address!]!) {
-  portfolio(addresses: $addresses) {
-    appBalances {
-      address
-      appName
-      balanceUSD
-      network
-      products {
-        label
-        assets {
-          address
-        }
-      }
-    }
-  }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-}
-{
-  "networks": "OPTIMISM_MAINNET",
-}
-```
-
   <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+
+  ---
 
 
 ### Reference

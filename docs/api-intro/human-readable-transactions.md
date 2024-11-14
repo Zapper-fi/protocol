@@ -102,11 +102,11 @@ Textual description of each transaction is presented from the perspective of the
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | Networks for which to retrieve, inputted as an array.    | `Network!`        | 
-| `realtimeInterpretation`      | Human-readable transactions, default is on       | `Boolean = true`        | 
+| `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
 | `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
-| `tokenAddresses`      | Filter by token address        | `Address!`        | 
-| `isSigner`      | Filter by signer        | `Boolean`        | 
-| `spamFilter`      | Filter for spam, default is on      | `Boolean = true`        | 
+| `tokenAddresses`      | Filter by token address.        | `Address!`        | 
+| `isSigner`      | Filter by signer.        | `Boolean`        | 
+| `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 
 | `first`      | Used for pagination.      | `Int!`        | 
 | `after`      | Used for pagination.       | `String!`        | 
 
@@ -131,10 +131,10 @@ Textual description of each transaction is presented from the perspective of the
 | `actors`      | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.      | `ActorDisplayItem!`       |
 | `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
 | `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
-| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2`, `nftDeltasV2`,       | `ActivityAccountDelta!`       |
+| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
 | `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
-| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
-| `interpreterId`      | Unique Identifier for the Zapper Protocol Interpreter      | `String!`       |
+| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
+| `interpreterId`      | Unique identifier for the Interpreter.      | `String!`       |
 | `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
 | `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
 
