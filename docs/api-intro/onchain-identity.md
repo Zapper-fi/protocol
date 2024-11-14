@@ -18,9 +18,9 @@ The `account` query takes an `address` and returns fields such as `displayName`,
 
 ### Example Use Case: Social Profile
 
-Let's say you are building a profile for users and want to surface their identity primitives. Start by passing `addresses` for the user then return `displayName` and `description` with their sources as well as information from `ensRecord`, `farcasterProfile`, and `lensProfile`.
+Let's say you are building a profile for users and want to surface their identity primitives. Start by passing `addresses` for the user. Then return `displayName` and `description` with their sources as well as information from `ensRecord`, `farcasterProfile`, and `lensProfile`.
 
-#### Example Variables
+#### Example Variable
 
 ```json
 {
@@ -98,7 +98,7 @@ query($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Address to retrive.       | `String!` | 
+| `address`      | The address that is being queried.       | `String!` | 
 
 </details>
 
@@ -139,6 +139,6 @@ The `accounts` query takes one or more `addresses` input as an array. It returns
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | Addresses to retrive, inputted as an array.      | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.      | `String!` | 
 
 </details>

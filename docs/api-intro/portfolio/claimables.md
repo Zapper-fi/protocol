@@ -19,13 +19,13 @@ Surfaces all available claimable tokens for a given address across all indexed o
 
 ### `claimables`
 
-The `claimables` query takes `addresses` inputted an array, with optional `networks` and returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token such as `address`, `balance`, `balanceUSD`, and `price`.
+The `claimables` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token.
 
 ### Example Use Case: Claimables
 
-Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
+Let's say you want to show a user the tokens they can claim in USD all onchain apps. Start by passing `address` for the user. Then return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
-### Example Variables
+### Example Variable
 
 ```json
 {
@@ -44,11 +44,11 @@ query Claimables($addresses: [Address!]!) {
         appId
         token {
           address
-          balance
           balanceUSD
-          network
-          price
+          balance
           symbol
+          price
+          network
         }
       }
     }
@@ -92,9 +92,9 @@ query Claimables($addresses: [Address!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | Required: Address you are querying balances for, inputted an array.       | `String!` | 
-| `networks`      | Networks for which to retrieve balances for, inputted an array.      | `Network!` | 
-| `appIds`      | Filter by a specific app.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.      | `String!` | 
+| `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
+| `appIds`      | Query by a specific app.       | `String!` | 
 
 </details>
 

@@ -19,9 +19,9 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 ### Example Use Case: Transaction History
 
-Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`.
+Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user. Then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`.
 
-#### Example Variables
+#### Example Variable
 
 ```json
 {
@@ -101,9 +101,9 @@ Textual description of each transaction is presented from the perspective of the
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | Networks for which to retrieve, input as an array.    | `Network!`        | 
+| `network`      | The network(s) to retreive, input as an array.    | `Network!`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
-| `addresses`      | Addresses to retrive, inputted as an array.   | `String!`        | 
+| `addresses`      | The address(s) that is being queried, input as an array.   | `String!`        | 
 | `tokenAddresses`      | Filter by token address.        | `Address!`        | 
 | `isSigner`      | Filter by signer.        | `Boolean`        | 
 | `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 
