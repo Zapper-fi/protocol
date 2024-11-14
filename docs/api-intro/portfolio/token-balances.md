@@ -25,7 +25,7 @@ Let's say you are building a wallet and want users to be able to filter their to
 
 ```js
 {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
+  "addresses": ["0x52c8ff44260056f896e20d8a43610dd88f05701b"],
   "networks": ["DEGEN_MAINNET"]
 }
 ```
