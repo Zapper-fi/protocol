@@ -93,8 +93,7 @@ Textual description of each transaction is presented from the perspective of the
 
 ### Reference
 
-<details>
-<summary>Arguments for accountsTimeline</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -108,12 +107,7 @@ Textual description of each transaction is presented from the perspective of the
 | `after`      | Used for pagination.       | `String!`        | 
 
 
-
-</details>
-
-<details>
-<summary>Fields for accountsTimeline</summary>
-
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -134,5 +128,3 @@ Textual description of each transaction is presented from the perspective of the
 | `interpreterId`      | Unique identifier for the Interpreter.      | `String!`       |
 | `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
 | `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
-
-</details>
