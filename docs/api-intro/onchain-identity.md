@@ -96,7 +96,7 @@ query($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | The address that is being queried.       | `String!` | 
+| `address`      | The address that is being queried.       | `Address!` | 
 
 ### Fields
 
@@ -130,4 +130,4 @@ The `accounts` query takes one or more `addresses` input as an array. It returns
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.      | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.      | `Address!` | 

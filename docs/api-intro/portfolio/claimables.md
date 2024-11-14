@@ -98,6 +98,6 @@ query Claimables($addresses: [Address!]!) {
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Address of the claimable token.      | `String!`       |
+| `address`      | Address of the claimable token.      | `Address!`       |
 | `appID`      | The app that the token is claimable in.     | `String!`       |
 | `token`      | An object containing fields pertaining to the token including `address`, `balance`, `balanceUSD`, `symbol`, `network`, `price`, `decimals`, and `type`.     | `AbstractToken!`       |

@@ -108,7 +108,7 @@ query Portfolio($addresses: [Address!]!) {
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `key`      | Unique identifier on the token object that is used to aggregate token balances across multiple addresses.       | `String!`       |
-| `address`      | Address of the owner of the token.      | `String!` | 
+| `address`      | Address of the owner of the token.      | `Address!` | 
 | `network`      | Returns the network the token is on.       | `Network!` | 
 | `token`      | Object containing `balance`, `balanceRaw`, `balanceUSD`, and `baseToken`.       | `BaseTokenBalance!` | 
 | `updatedAt`      | Time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via this endpoint.      | `Timestamp!` | 

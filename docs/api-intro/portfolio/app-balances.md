@@ -102,7 +102,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | Address that owns the position.       | `String!`       |
+| `address`      | Address that owns the position.       | `Address!`       |
 | `appId`      | ID of the app.      | `String!`       |
 | `appImage`      | URL containing the logo image of the app.      | `String!`       |
 | `appName`      | Display name of app.       | `String!`       |
