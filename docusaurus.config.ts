@@ -80,15 +80,15 @@ const config = {
       items: [
         {
           position: 'left',
-          label: 'Interpretation Docs',
-          to: 'docs/interpretation/overview',
-          activeBaseRegex: 'docs/interpretation/overview',
-        },
-        {
-          position: 'left',
           label: 'API',
           to: 'docs/api-intro',
           activeBaseRegex: 'docs/api-intro',
+        },
+        {
+          position: 'left',
+          label: 'Interpretation Docs',
+          to: 'docs/interpretation/overview',
+          activeBaseRegex: 'docs/interpretation/overview',
         },
         {
           type: 'custom-NavbarItem',
