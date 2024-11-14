@@ -181,7 +181,7 @@ export function BuyCredits() {
               <div className="h-10 flex items-center">
                 <div
                   id="cost-display"
-                  className="font-extrabold text-purple-400 bg-transparent"
+                  className="font-extrabold text-[#A387FF] bg-transparent"
                   aria-label={`Cost: $${calculateCost(displayPoints)}`}
                 >
                   USD ${calculateCost(displayPoints)}
