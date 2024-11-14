@@ -24,10 +24,8 @@ Let's say you want to surface all positions a user has in every onchain app on a
 
 ```json
 {
-  "addresses": ["0xe321bd63cde8ea046b382f82964575f2a5586474"]
-}
-{
-  "networks": "OPTIMISM_MAINNET",
+  "addresses": ["0xe321bd63cde8ea046b382f82964575f2a5586474"],
+  "networks": ["OPTIMISM_MAINNET"]
 }
 ```
 

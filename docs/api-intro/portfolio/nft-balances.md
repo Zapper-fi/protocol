@@ -25,9 +25,7 @@ Estimated value in USD for NFTs is calculated using Zapper's algorithm. It can b
 
 ```json
 {
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-}
-{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"],
   "networks": ["BASE_MAINNET"]
 }
 ```
@@ -70,7 +68,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `String!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 | `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned.      | `Network!` | 
 | `withOverrides`      | Includes user submitted NFT value overrides, default is off.      | `Boolean = false` | 
 
