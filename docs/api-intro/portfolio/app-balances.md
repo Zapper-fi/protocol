@@ -90,11 +90,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 
   ---
 
-
-### Reference
-
-<details>
-<summary>Arguments for appBalances</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -102,11 +98,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
-</details>
-
-<details>
-<summary>Fields for appBalances</summary>
-
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -119,5 +111,3 @@ Typically, a single transaction generates multiple timeline events: one for each
 | `products`      | Object containing details on all products owned by the specified address.       | `ProductItem!`       |
 | `updatedAt`      | Timestamp of when the balance was calculated.   | `Timestamp!`       |
 | `key`      | -      | `String!`       |
-
-</details>

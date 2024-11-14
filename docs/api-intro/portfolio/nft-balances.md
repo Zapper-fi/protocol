@@ -66,10 +66,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 
 ---
 
-### Reference
-
-<details>
-<summary>Arguments for nftBalances</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -77,10 +74,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 | `networks`      | Returns only NFTs from network provided. If not provided, NFTs across all supported chains for NFTs will be returned.      | `Network!` | 
 | `withOverrides`      | Includes user submitted NFT value overrides, default is off.      | `Boolean = false` | 
 
-</details>
-
-<details>
-<summary>Fields for nftBalances</summary>
+#### Fields
 
 Fields for `nftBalances`
 
@@ -88,5 +82,3 @@ Fields for `nftBalances`
 | ----------- | ----------- | ----------- |
 | `network`      | Returns the network for balances.     | `Network!`       |
 | `balanceUSD`      | Returns the estimated USD value.      | `Float!` | 
-
-</details>

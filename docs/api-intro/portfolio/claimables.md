@@ -86,10 +86,7 @@ query Claimables($addresses: [Address!]!) {
 
 ---
 
-### Reference
-
-<details>
-<summary>Arguments for claimables</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -97,16 +94,10 @@ query Claimables($addresses: [Address!]!) {
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Query by a specific app.       | `String!` | 
 
-</details>
-
-<details>
-<summary>Fields for claimables</summary>
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | Address of the claimable token.      | `String!`       |
 | `appID`      | The app that the token is claimable in.     | `String!`       |
 | `token`      | An object containing fields pertaining to the token including `address`, `balance`, `balanceUSD`, `symbol`, `network`, `price`, `decimals`, and `type`.     | `AbstractToken!`       |
-
-
-</details>

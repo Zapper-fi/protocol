@@ -86,10 +86,7 @@ query($addresses: [Address!]!) {
 
 ---
 
-### Reference
-
-<details>
-<summary>Arguments for totals</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -98,10 +95,7 @@ query($addresses: [Address!]!) {
 | `appIds`      | Filter by a specific app.       | `String!` | 
 | `withOverrides`      | Include user submitted NFT value overrides, default is off.       | `Boolean = false` | 
 
-</details>
-
-<details>
-<summary>Fields for totals</summary>
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -114,5 +108,3 @@ query($addresses: [Address!]!) {
 | `totalByNetwork`      | Returns the total value excluding NFTs by network.       | `totalByNetwork!` |
 | `totalByNetworkWithNFT`      | Returns the total value including NFTs by network.     | `totalByNetworkWithNFT!` | 
 | `totalWithNFT`      | Returns the total value of an address in USD including NFTs.      | `Float!` | 
-
-</details>

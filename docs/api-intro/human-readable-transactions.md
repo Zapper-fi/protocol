@@ -91,8 +91,6 @@ Textual description of each transaction is presented from the perspective of the
 
 ---
 
-### Reference
-
 #### Arguments
 
 | Argument      | Description | Type |

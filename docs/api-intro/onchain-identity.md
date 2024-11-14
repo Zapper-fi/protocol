@@ -91,19 +91,14 @@ query($address: Address!) {
 
 ---
 
-### Reference
 
-<details>
-<summary>Arguments for account</summary>
+#### Arguments
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | The address that is being queried.       | `String!` | 
 
-</details>
-
-<details>
-<summary>Fields for account</summary>
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -127,18 +122,12 @@ query($address: Address!) {
 | `id`      | -       | `ID!`       |
 
 
-</details>
-
-
 ### `accounts`
 
 The `accounts` query takes one or more `addresses` input as an array. It returns the same fields as `account`.
 
-<details>
-<summary>Arguments for accounts</summary>
+#### Arguments
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `addresses`      | The address(s) that is being queried, input as an array.      | `String!` | 
-
-</details>

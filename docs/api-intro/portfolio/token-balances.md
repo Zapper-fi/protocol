@@ -96,10 +96,8 @@ query Portfolio($addresses: [Address!]!) {
 
 ---
 
-### Reference
 
-<details>
-<summary>Arguments for tokenBalances</summary>
+#### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -107,10 +105,7 @@ query Portfolio($addresses: [Address!]!) {
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
-</details>
-
-<details>
-<summary>Fields for tokenBalances</summary>
+#### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -124,4 +119,3 @@ query Portfolio($addresses: [Address!]!) {
 | `balanceUSD`      | Balance in USD. ex: `2810.08`      | `Float!` | 
 | `balanceRaw`      | Balance in native units of the token not adjusted for decimals.       | `String!` | 
 
-</details>
