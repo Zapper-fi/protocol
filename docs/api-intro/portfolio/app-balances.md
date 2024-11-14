@@ -31,6 +31,7 @@ Let's say you want to surface all positions a user has in every onchain app on a
 
 #### Example Query
 
+```
 query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
   portfolio(addresses: $addresses, networks: $networks) {
     appBalances {
