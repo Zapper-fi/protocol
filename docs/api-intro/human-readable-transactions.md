@@ -73,17 +73,14 @@ query($addresses: [Address!]) {
       "displayName": {
           "value": "0xjasper.eth"
           }
-    }
-
+    },
     "interpretation": {
       "processedDescription": "Started battle with sebaudet.eth"
       },
-
       "app": {
             "name": "Tokiemon",
             "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
             },
-
       "network": "BASE_MAINNET"
 }
 ```
