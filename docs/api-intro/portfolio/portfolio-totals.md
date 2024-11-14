@@ -21,7 +21,7 @@ Surfaces various aggregations of onchain portfolio data.
 
 The `totals` object contains takes an `address` with optional `networks` and returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
-### Example use case: Net Worth
+### Example Use Case: Net Worth
 
 You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps. You also want to break it down by chain. You would pass `address` into the `portfolio` and `totals` object, and return `totalByNetworkWithNFT`, `network`, and `total`. Part of the response is show below:
 

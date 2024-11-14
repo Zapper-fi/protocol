@@ -10,31 +10,31 @@ Access powerful onchain data curated by the Zapper protocol with a GraphQL API f
 
 ## What can I get?
 
-#### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions)
+### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions)
 
 Simplify onchain transactions with human-friendly descriptions.
 
-#### [Onchain Identity](/docs/api-intro/onchain-identity)
+### [Onchain Identity](/docs/api-intro/onchain-identity)
 
-Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
+Surface onchain identity such as avatars, ENS, Farcaster, and more.
 
-#### [Portfolio Data](/docs/api-intro/portfolio/claimables)
+### [Portfolio Data](/docs/api-intro/portfolio/claimables)
 
 A set of portfolio queries to fetch [Tokens](/docs/api-intro/portfolio/token-balances), [NFTs](/docs/api-intro/portfolio/nft-balances), [App Balances](/docs/api-intro/portfolio/app-balances), [Portfolio Totals](/docs/api-intro/portfolio/portfolio-totals), and [Claimables](/docs/api-intro/portfolio/claimables).
 
-#### [Onchain Prices](/docs/api-intro/onchain-prices)
+### [Onchain Prices](/docs/api-intro/onchain-prices)
 
 A price for every token that has an onchain market, including historical data.
 
 ## Quickstart
 
-#### 1) Get an API key
+### 1) Get an API key
 
-Visit the **[Dashboard](/dashboard)** to get your API key.
+Visit the **[Dashboard](/dashboard)** to get an API key.
 
-#### 2) Get Set up
+### 2) Get set up
 
-Grab your API Key, store it in a safe place, and now you can use it to securely access the API.
+Grab the API Key, store it in a safe place, and use it to securely access the API.
 
 #### Curl Request Example
 
@@ -43,15 +43,15 @@ curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: appl
 ```
 
 :::note
-The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization header. For example, if your API key is `my-api-key`, you would encode it as Base64 and use: `Authorization: Basic bXktYXBpLWtleQ==`
+The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization Header. For example, if the API key is `my-api-key`, you would encode it as Base64 and use: `Authorization: Basic bXktYXBpLWtleQ==`
 :::
 
 
 #### 3) Buy Credits
 
-Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from your credit balance.
+Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from the accounts credit balance.
 
-You can track your usage and purchase additional credits on the **[Dashboard](/dashboard)**
+Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
 :::info
 
