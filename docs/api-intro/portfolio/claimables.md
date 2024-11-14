@@ -19,7 +19,7 @@ Surfaces all available claimable tokens for a given address across all indexed o
 
 ### `claimables`
 
-The `claimables` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token.
+The `claimables` field from the `portfolio` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `address`, `appId`, and the `token` object which contains useful information about a claimable token.
 
 ### Example Use Case: Claimables
 

@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 
 ### `nftBalances`
 
-The `nftBalances` query takes an `address` with optional `networks`. It returns `balanceUSD` — an aggregation of estimated NFTs values.
+The `nftBalances` field from the `portfolio` query takes an `address` with optional `networks`. It returns `balanceUSD` — an aggregation of estimated NFTs values.
 
 :::note
 

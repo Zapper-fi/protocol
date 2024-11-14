@@ -14,7 +14,7 @@ Surfaces balances that a user might hold inside of an onchain application.
 
 ### `appBalances`
 
-The `appBalances` query takes an `address` with optional `networks` or `appIds`. It returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
+The `appBalances` field from the `portfolio` query takes an `address` with optional `networks` or `appIds`. It returns fields such as `appId`, `appName`, `balanceUSD`, `assets`, `label` and other data useful for app balance use cases.
 
 ### Example Use Case: App Positions
 

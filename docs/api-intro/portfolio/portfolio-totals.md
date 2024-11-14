@@ -19,7 +19,7 @@ Surfaces various aggregations of onchain portfolio data.
 
 ### `totals`
 
-The `totals` object takes an `address` with optional `networks`. It returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
+The `totals` field from the `portfolio` query takes `addresses` input as an array, with optional `networks`. It returns fields such as `total`, `totalWithNFT`, `totalByAddress`, `totalByNetwork`, and other aggregations of portfolio data.
 
 ### Example Use Case: Net Worth
 
