@@ -21,6 +21,16 @@ The `accountsTimeline` query returns a descriptive and human-readable summary of
 
 Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`.
 
+#### Example Variables
+
+```json
+{
+  "addresses": [
+    "0x52c8ff44260056f896e20d8a43610dd88f05701b"
+  ]
+}
+```
+
 #### Example Query
 
 ```graphql
@@ -49,16 +59,6 @@ query($addresses: [Address!]) {
       }
     }
   }
-}
-```
-#### Example Variables
-
-```json
-{
-  "addresses": [
-    "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-    "0xe321bd63cde8ea046b382f82964575f2a5586474"
-  ]
 }
 ```
 

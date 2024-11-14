@@ -25,6 +25,14 @@ The `claimables` query takes `addresses` inputted an array, with optional `netwo
 
 Let's say you want to show a user the tokens they can claim across all the onchain apps they have used. You want to surface this in USD and include the name of the App. You would pass `address` for the user and return the `claimables` object, with fields such as `address`, `appId`, `balanceUSD`, `balance`, `symbol`, `price`, and `network`.
 
+### Example Variables
+
+```json
+{
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+}
+```
+
 #### Example Query
 
 ```graphql
@@ -45,14 +53,6 @@ query Claimables($addresses: [Address!]!) {
       }
     }
   }
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
 ```
 
 #### Example Response

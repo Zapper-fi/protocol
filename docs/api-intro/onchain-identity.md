@@ -18,8 +18,15 @@ The `account` query takes an `address` and returns fields such as `displayName`,
 
 ### Example Use Case: Social Profile
 
-Let's say you are building a profile for users and want to surface some of the social aspects of an onchain identity. Here we will pass `addresses` for the user and return `displayName` and `description` with their sources as well as information from `ensRecord`, `farcasterProfile`, and `lensProfile`. Part of the response is below:
+Let's say you are building a profile for users and want to surface their identity primitives. Start by passing `addresses` for the user then return `displayName` and `description` with their sources as well as information from `ensRecord`, `farcasterProfile`, and `lensProfile`.
 
+#### Example Variables
+
+```json
+{
+  "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
+}
+```
 
 #### Example Query
 
@@ -46,14 +53,6 @@ query($address: Address!) {
       handle
     }
   }
-}
-```
-
-#### Example Variables
-
-```json
-{
-  "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
 }
 ```
 

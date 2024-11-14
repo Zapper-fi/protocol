@@ -21,6 +21,17 @@ The `tokenBalances` object contains fields such as `address`, `network`, `balanc
 
 Let's say you are building a wallet and want users to be able to filter their tokens by chain. You would pass `address` for the user and `network` for the selected chain returning the `tokenBalances` object, with fields such as `address`, `network`, `balanceUSD`, `balance`, and `symbol`.
 
+#### Example Variables
+
+```json
+{
+  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+}
+{
+  "networks": "DEGEN_MAINNET",
+}
+```
+
 #### Example Query
 
 ```graphql
@@ -42,16 +53,6 @@ query Portfolio($addresses: [Address!]!) {
 }
 ```
 
-#### Example Variables
-
-```json
-{
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
-}
-{
-  "networks": "DEGEN_MAINNET",
-}
-```
 
 #### Example Response
 

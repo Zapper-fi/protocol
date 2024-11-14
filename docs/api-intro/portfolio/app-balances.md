@@ -20,6 +20,17 @@ The `appBalances` query takes an `address` with optional `networks` or `appIds` 
 
 Imagine you want to surface all positions a user has across in every onchain app they have used for a particular network. You would pass `address` for the user and `network` for the selected chain returning the `appBalances` object, with fields such as `address`, `appName`, `balanceUSD`, `network`, and `products`.
 
+#### Example Variables
+
+```json
+{
+  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
+}
+{
+  "networks": "OPTIMISM_MAINNET",
+}
+```
+
 #### Example Query
 
 ```graphql
@@ -38,17 +49,6 @@ query Portfolio($addresses: [Address!]!) {
       }
     }
   }
-}
-```
-
-### Example Variables
-
-```json
-{
-  "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
-}
-{
-  "networks": "OPTIMISM_MAINNET",
 }
 ```
 
