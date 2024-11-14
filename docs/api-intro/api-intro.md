@@ -43,7 +43,14 @@ curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: appl
 ```
 
 :::note
-The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization Header. For example, if the API key is `my-api-key`, you would encode it as Base64 and use: `Authorization: Basic bXktYXBpLWtleQ==`
+The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization Header.
+
+Example:
+
+Header Key : "Authorization"
+Header Value : "Basic YOUR_API_KEY_BASE_64=="
+
+ `Authorization: Basic YOUR_API_KEY_BASE_64==`
 :::
 
 
