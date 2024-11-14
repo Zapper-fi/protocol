@@ -86,7 +86,7 @@ query($addresses: [Address!]!) {
 
 ---
 
-#### Arguments
+### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -95,7 +95,7 @@ query($addresses: [Address!]!) {
 | `appIds`      | Filter by a specific app.       | `String!` | 
 | `withOverrides`      | Include user submitted NFT value overrides, default is off.       | `Boolean = false` | 
 
-#### Fields
+### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |

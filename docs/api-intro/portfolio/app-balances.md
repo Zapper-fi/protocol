@@ -90,7 +90,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 
   ---
 
-#### Arguments
+### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -98,7 +98,7 @@ Typically, a single transaction generates multiple timeline events: one for each
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
-#### Fields
+### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |

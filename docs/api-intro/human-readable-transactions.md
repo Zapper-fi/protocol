@@ -91,7 +91,7 @@ Textual description of each transaction is presented from the perspective of the
 
 ---
 
-#### Arguments
+### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -105,7 +105,7 @@ Textual description of each transaction is presented from the perspective of the
 | `after`      | Used for pagination.       | `String!`        | 
 
 
-#### Fields
+### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |

@@ -97,7 +97,7 @@ query Portfolio($addresses: [Address!]!) {
 ---
 
 
-#### Arguments
+### Arguments
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
@@ -105,7 +105,7 @@ query Portfolio($addresses: [Address!]!) {
 | `networks`      | The network(s) to retreive balances on, input as an array.      | `Network!` | 
 | `appIds`      | Filter by a specific app.       | `String!` | 
 
-#### Fields
+### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |

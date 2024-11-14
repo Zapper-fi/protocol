@@ -92,13 +92,13 @@ query($address: Address!) {
 ---
 
 
-#### Arguments
+### Arguments
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `address`      | The address that is being queried.       | `String!` | 
 
-#### Fields
+### Fields
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
