@@ -57,11 +57,9 @@ query($addresses: [Address!]) {
         }
         network
         }
-
       }
     }
   }
-}
 ```
 
 #### Example Response
