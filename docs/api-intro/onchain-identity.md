@@ -68,12 +68,12 @@ query($address: Address!) {
         "value": "0xjasper.eth",
         "source": "ENS"
       },
-      "ensRecord": {
-        "name": "0xjasper.eth"
-      },
       "description": {
         "value": "designer of stuff at Zapper",
         "source": "ENS"
+      },
+      "ensRecord": {
+        "name": "0xjasper.eth"
       },
       "farcasterProfile": {
         "username": "jasper",
