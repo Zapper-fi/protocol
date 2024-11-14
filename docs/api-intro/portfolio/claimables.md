@@ -28,7 +28,7 @@ Let's say you want to show a user the tokens they can claim in USD on all onchai
 
 #### Example Variable
 
-```json
+```js
 {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
 }
@@ -58,7 +58,7 @@ query Claimables($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {

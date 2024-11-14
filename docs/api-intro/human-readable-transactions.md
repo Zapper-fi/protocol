@@ -25,7 +25,7 @@ Let's say you want to show users their onchain transactions in a human-readable 
 
 #### Example Variable
 
-```json
+```js
 {
   "addresses": [
     "0x52c8ff44260056f896e20d8a43610dd88f05701b"
@@ -64,7 +64,7 @@ query($addresses: [Address!]) {
 
 #### Example Response
 
-```json
+```js
 {
   "fromUser": {
     "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",

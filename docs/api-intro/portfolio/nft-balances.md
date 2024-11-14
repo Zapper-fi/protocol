@@ -23,7 +23,7 @@ Estimated value in USD for NFTs is calculated using Zapper's algorithm. It can b
 
 ### Example Variable
 
-```json
+```js
 {
   "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"],
   "networks": ["BASE_MAINNET"]
@@ -45,7 +45,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {

@@ -27,7 +27,7 @@ You want to show a user the USD value of their entire onchain holdings across to
 
 #### Example Variable
 
-```json
+```js
 {
   "addresses": ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]
 }
@@ -50,7 +50,7 @@ query($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {

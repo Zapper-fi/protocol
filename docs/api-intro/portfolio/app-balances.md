@@ -22,7 +22,7 @@ Let's say you want to surface all positions a user has in every onchain app on a
 
 #### Example Variables
 
-```json
+```js
 {
   "addresses": ["0xe321bd63cde8ea046b382f82964575f2a5586474"],
   "networks": ["OPTIMISM_MAINNET"]
@@ -52,7 +52,7 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
 
 #### Example Response
 
-```json
+```js
   {
     "address": "0xe321bd63cde8ea046b382f82964575f2a5586474",
     "appName": "Aave V3",

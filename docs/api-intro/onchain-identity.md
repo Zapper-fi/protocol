@@ -22,7 +22,7 @@ Let's say you are building a profile for users and want to surface their identit
 
 #### Example Variable
 
-```json
+```js
 {
   "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
 }
@@ -58,7 +58,7 @@ query($address: Address!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "account": {

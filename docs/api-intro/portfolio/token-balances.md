@@ -23,7 +23,7 @@ Let's say you are building a wallet and want users to be able to filter their to
 
 #### Example Variables
 
-```json
+```js
 {
   "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
   "networks": ["DEGEN_MAINNET"]
@@ -55,7 +55,7 @@ query Portfolio($addresses: [Address!]!) {
 
 #### Example Response
 
-```json
+```js
 {
   "data": {
     "portfolio": {
