@@ -124,7 +124,7 @@ Textual description of each transaction is presented from the perspective of the
 | `network`      | Network on which the transaction happened.     | `Network!`       |
 | `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
-| `app`      | The app that is associate with the transaction.     | `Int!`       |
+| `app`      | The app that is associated with the transaction.     | `Int!`       |
 | `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
 | `toUser`      | The address that the transaction interacted with.     | `Int!`       |
 | `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
