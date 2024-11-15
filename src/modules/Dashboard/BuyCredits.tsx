@@ -196,7 +196,7 @@ export function BuyCredits() {
           </div>
 
           <Button type="submit" variant="primary" disabled={disabled} className="w-full">
-            Buy for USD ${calculateCost(points)}
+            <span className="font-extrabold">Buy for USD ${calculateCost(points)}</span>
           </Button>
         </form>
       </Card>
