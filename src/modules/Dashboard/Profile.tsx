@@ -59,13 +59,6 @@ export function Profile() {
           </div>
         </div>
       </div>
-
-      <strong className="block mb-1">Wallet</strong>
-        <div>
-          <div>
-            <p>{user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
-          </div>
-        </div>
     </div>
   );
 }

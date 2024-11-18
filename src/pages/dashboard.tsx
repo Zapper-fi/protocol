@@ -1,7 +1,6 @@
 import Layout from '@theme/Layout';
 import React from 'react';
 import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
-import { Debug } from '@site/src/modules/Dashboard/Debug';
 import { Note } from '@site/src/modules/Dashboard/Note';
 import { Profile } from '@site/src/modules/Dashboard/Profile';
 import { SignedIn } from '@site/src/modules/Dashboard/SignedIn';
