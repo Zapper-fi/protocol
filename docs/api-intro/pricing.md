@@ -57,5 +57,5 @@ Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/doc
 After the alpha concludes, discounts will be offered for purchasing larger amounts of credits. There will be more information provided on this soon.
 
 :::note
-API calls are initially rate limited at **30 times per minute**. Please contact us at ops@zapper.xyz to request a higher limit.
+API calls are initially rate limited at **30 times per minute**. Please contact us at ops@zapper.xyz to increase your limit.
 :::
