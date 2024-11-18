@@ -29,7 +29,7 @@ const CREATE_CHARGE = gql`
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px] whitespace-normal"
+      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px]"
       style={{
         top: position.top,
         left: position.left + 10,
@@ -61,7 +61,7 @@ const InfoIcon = ({ message }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowToast(false)}
       >
-        <Info className="h-3 w-3 text-gray-400" />
+        <Info className="h-3 w-3" />
       </div>
       {showToast && <Toast message={message} position={position} />}
     </div>
@@ -129,8 +129,8 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
-  const displayV2Points = apiV2PointsRemaining <= 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
-  const isNegativeBalance = apiV2PointsRemaining <= 0;
+  const displayV2Points = apiV2PointsRemaining < 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
+  const isNegativeBalance = apiV2PointsRemaining < 0;
   const disabled = loading || !user;
 
   return (
@@ -139,15 +139,15 @@ export function BuyCredits() {
         <h3>Buy Credits</h3>
         <div className="text-right">
           <p className="flex items-center justify-end gap-1">
-            Credit balance:{' '}
+            Credit balance:
             <span className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}>
-              {Number(displayV2Points)}
+              {displayV2Points}
             </span>
             {isNegativeBalance && <InfoIcon message="You are now consuming the free 10 000 credit grant from Zapper" />}
           </p>
           {Number(apiV1PointsRemaining) > 0 && (
             <p className="flex items-center justify-end gap-1">
-              Legacy REST API credits: <span className="font-bold">{Number(apiV1PointsRemaining)}</span>
+              Legacy REST API credits: <span className="font-bold">{apiV1PointsRemaining}</span>
               <InfoIcon message="These credits are still available for use with the legacy REST API" />
             </p>
           )}
@@ -157,10 +157,8 @@ export function BuyCredits() {
       <Card>
         {errorMessage && <p className="text-red-400">{errorMessage}</p>}
 
-        {error && <p className="text-red-400">Error: {error.message}</p>}
-
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4 items-center">
+          <div className="grid grid-cols-2 ">
             <div className="space-y-2">
               <label htmlFor="points-input" className="text-sm font-medium">
                 Credit Amount
@@ -188,17 +186,17 @@ export function BuyCredits() {
               <div className="h-10 flex items-center">
                 <div
                   id="cost-display"
-                  className="font-extrabold text-[#A387FF] bg-transparent"
+                  className="font-extrabold text-primary-default bg-transparent"
                   aria-label={`Cost: $${calculateCost(displayPoints)}`}
                 >
-                  USD ${calculateCost(displayPoints)}
+                  USD ${calculateCost(points)}
                 </div>
               </div>
             </div>
           </div>
 
           <Button type="submit" variant="primary" disabled={disabled} className="w-full">
-            Buy for USD ${calculateCost(points)}
+            <span className="font-extrabold">Buy for USD ${calculateCost(points)}</span>
           </Button>
         </form>
       </Card>

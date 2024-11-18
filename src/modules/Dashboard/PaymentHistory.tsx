@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-import { Card } from '@site/src/components/Card';
 import { formatDate } from '@site/src/helpers/formatDate';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { Info } from 'lucide-react';

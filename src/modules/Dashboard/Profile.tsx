@@ -1,6 +1,5 @@
 import { gql } from '@apollo/client';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
-import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { usePrivy } from '@privy-io/react-auth';
 import { Copy } from 'lucide-react';

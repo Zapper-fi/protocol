@@ -31,6 +31,14 @@ interface ConsumptionStat {
   totalCost: number;
 }
 
+const generateColor = (index: number, opacity = 0.7) => {
+  const hue = (index * 137.508) % 360;
+  return {
+    bg: `hsla(${hue}, 70%, 85%, ${opacity})`,
+    border: `hsl(${hue}, 70%, 75%)`,
+  };
+};
+
 const CONSUMPTION_QUERY = gql`
   query GetConsumptionStats($timeFrame: ApiRoundtripStatsTimeFrame!) {
     apiConsumptionStats(timeFrame: $timeFrame) {
@@ -58,17 +66,13 @@ export function ConsumptionStats() {
     data: consumptionData,
     loading: consumptionLoading,
     error: consumptionError,
-  } = useAuthQuery(CONSUMPTION_QUERY, {
-    variables: { timeFrame },
-  });
+  } = useAuthQuery(CONSUMPTION_QUERY, { variables: { timeFrame } });
 
   const {
     data: endpointData,
     loading: endpointLoading,
     error: endpointError,
-  } = useAuthQuery(ENDPOINT_QUERY, {
-    variables: { timeFrame },
-  });
+  } = useAuthQuery(ENDPOINT_QUERY, { variables: { timeFrame } });
 
   const consumptionStats = (consumptionData?.apiConsumptionStats || []) as ConsumptionStat[];
   const endpointStats = (endpointData?.apiConsumptionStatsPerEndpoint || []) as EndpointStat[];
@@ -141,23 +145,13 @@ export function ConsumptionStats() {
     ],
   };
 
-  // Data preparation for the second chart (Endpoints over time)
   const uniqueDates = Array.from(new Set(endpointStats.map((item) => item.intervalStart))).sort();
   const uniqueEndpoints = Array.from(new Set(endpointStats.map((item) => item.operationName)));
-
-  const colors = [
-    { bg: 'rgba(120,79,254,0.7)', border: 'rgb(193,172,252)' },
-    { bg: 'rgba(118,181,197,0.7)', border: '#8dd8e3' },
-    { bg: 'rgba(255,99,132,0.7)', border: 'rgb(255,99,132)' },
-    { bg: 'rgba(75,192,192,0.7)', border: 'rgb(75,192,192)' },
-    { bg: 'rgba(255,159,64,0.7)', border: 'rgb(255,159,64)' },
-    { bg: 'rgba(153,102,255,0.7)', border: 'rgb(153,102,255)' },
-  ];
 
   const endpointChartData = {
     labels: uniqueDates.map((date) => new Date(date).toLocaleDateString()),
     datasets: uniqueEndpoints.map((endpoint, index) => {
-      const colorIndex = index % colors.length;
+      const color = generateColor(index);
       const data = uniqueDates.map((date) => {
         const dataPoint = endpointStats.find((stat) => stat.intervalStart === date && stat.operationName === endpoint);
         return dataPoint ? dataPoint.requestCount : 0;
@@ -167,8 +161,8 @@ export function ConsumptionStats() {
         label: endpoint,
         data: data,
         fill: false,
-        backgroundColor: colors[colorIndex].bg,
-        borderColor: colors[colorIndex].border,
+        backgroundColor: color.bg,
+        borderColor: color.border,
         borderWidth: 1,
         pointRadius: 1,
         tension: 0.1,
@@ -188,8 +182,8 @@ export function ConsumptionStats() {
               onClick={() => handleTimeFrameChange(tf)}
               className={`w-full border-none cursor-pointer ${
                 timeFrame === tf
-                  ? 'font-extrabold text-[#A387FF] bg-transparent'
-                  : 'font-medium text-[#A387FF] bg-transparent'
+                  ? 'font-extrabold text-primary-default bg-transparent'
+                  : 'font-medium text-primary-default bg-transparent'
               }`}
             >
               {tf.charAt(0) + tf.slice(1).toLowerCase()}
@@ -200,7 +194,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h3 className="mb-4">Consumption Amount & Cost</h3>
+          <h3>Consumption Amount & Cost</h3>
           <Card>
             {consumptionLoading ? (
               <p>Loading...</p>
@@ -215,7 +209,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h3 className="mb-4">Endpoints Queried</h3>
+          <h3>Endpoints Queried</h3>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>

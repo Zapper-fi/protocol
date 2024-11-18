@@ -25,12 +25,11 @@ function Dashboard() {
             </div>
 
             <SignedOut>
-              <p>Please log in or sign up to continue</p>
+              <p>Please sign in to continue.</p>
             </SignedOut>
 
             <SignedIn>
               <div className="flex flex-col gap-8">
-                
                 <Note />
                 <Profile />
 
