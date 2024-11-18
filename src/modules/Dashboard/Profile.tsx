@@ -19,10 +19,9 @@ const QUERY = gql`
 
 export function Profile() {
   const { data } = useAuthQuery(QUERY);
-  const { user, linkWallet } = usePrivy();
   const [showToast, setShowToast] = useState(false);
 
-  const { apiKey, name } = data?.apiClientById || {};
+  const { apiKey } = data?.apiClientById || {};
 
   useEffect(() => {
     if (showToast) {
@@ -59,13 +58,6 @@ export function Profile() {
           </div>
         </div>
       </div>
-
-      <strong className="block mb-1">Wallet</strong>
-        <div>
-          <div>
-            <p>{user?.wallet?.address || <Button onClick={linkWallet}>Link wallet</Button>}</p>
-          </div>
-        </div>
     </div>
   );
 }
