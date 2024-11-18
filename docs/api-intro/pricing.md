@@ -16,7 +16,11 @@ The Zapper API uses a credit system to manage how many queries an API key can pe
 
 ### Buying Credits
 
-Credits are purchased upfont and then spent for API usage. Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
+Credits can be purchased onchain with any wallet and payment is supported in over a hundred different tokens. Once purchased, credits can be spent for API usage. If you run out of credits, and you have used your 10,000 free tier credits, then you will need to purchase additional credits in order to continue querying the API.
+
+
+Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
+
 
 ### Free Tier
 
@@ -26,13 +30,19 @@ Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/doc
 
 ### Query Prices
 
-To make the API pricing as simple as possible, portfolio related queries such as balaces, totals, or claimables have a fixed cost of 4 credits. All other queries cost 2 credits.
+To make the API pricing simple, any portfolio related queries such as balaces, totals, or claimables have a fixed cost of 4 credits. All other queries cost 2 credits.
 
+Please reference the table below to idenitfy how much certain queries will cost:
 
-| Type      | Queries | Price |
-| ----------- | ----------- | ----------- |
-| Portfolio      | Includes `appBalances`, `nftBalances`, `tokenBalances`,`claimables`, and `totals`.  | 4 Credits | 
-| Other   | Includes `account`, `accountsTimeline`, and `timelineEvent`.    | 2 Credits | 
+| Queries | Price |
+| ----------- | ----------- |
+| `appBalances` | 4 Credits | 
+| `nftBalances` | 4 Credits | 
+| `tokenBalances` | 4 Credits | 
+| `claimables` | 4 Credits | 
+| `totals` | 4 Credits | 
+| `account` | 2 Credits | 
+| `accountsTimeline` | 2 Credits | 
 
 
 :::info
