@@ -40,7 +40,7 @@ export function SignInButton() {
 
   return authenticated ? (
     <DropdownNavbarItem
-      label={user.email.address}
+      label={<span className="text-sm">{user.email.address}</span>}
       items={[
         {
           label: 'Dashboard',
@@ -58,8 +58,8 @@ export function SignInButton() {
       ]}
     />
   ) : (
-    <Button type="button" variant="primary" onClick={login}>
-      Sign In
+    <Button height="h-8" textSize="text-[12px]" type="button" variant="primary" onClick={login}>
+      Sign in
     </Button>
   );
 }
