@@ -43,18 +43,14 @@ When making a query, each address counts as 1 query, even if multiple addresses 
 
 ### Free Tier
 
-All API clients can use up to 10,000 credits for free. This gives clients at least 2,500 queries without having to purchase credits and can be a great way to test various endpoints.
+All API clients can use up to 10,000 credits for free. This gives clients at least 2,500 queries without having to purchase credits and can be a great way to try the API.
 
 
-Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API Keys with the goal of accumulating free credits.
+Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API keys with the goal of accumulating free credits.
 
 
 <LinkButton href="./dashboard" type="primary" buttonCopy="Get Started" />
 
-
-### Discounts for Credit Purchases
-
-After the alpha concludes, discounts will be offered for purchasing larger amounts of credits. There will be more information provided on this soon.
 
 :::note
 API calls are initially rate limited at **30 times per minute**. Please contact us at ops@zapper.xyz to increase your limit.
