@@ -25,7 +25,7 @@ Clients can track query usage and credits over time and purchase additional cred
 
 ### Query Prices
 
-All portfolio related queries such as token, NFT, or app balaces, as well as totals such as claimables have a fixed cost of 4 credits. All other queries cost 2 credits.
+All [Portfolio](/claimables) related queries have a fixed cost of 4 credits. All other queries cost 2 credits.
 
 | Queries | Credit Price |
 | ----------- | ----------- |
