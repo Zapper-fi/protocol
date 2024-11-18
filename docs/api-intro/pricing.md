@@ -14,10 +14,12 @@ The Zapper API uses a credit system to manage how many queries an API key can pe
 
 ### Buying Credits
 
-Credits can be purchased onchain with any wallet and payment is supported in over a hundred different tokens. Once purchased, credits can be spent for API usage. If you run out of credits, and you have used your 10,000 free tier credits, then you will need to purchase additional credits in order to continue querying the API.
+Credits can be purchased onchain with any wallet. Payment is supported in over a hundred different tokens including ETH, MATIC, USDC, USDT, DAI, and much more. Once purchased, credits can be spent for API usage. 
 
 The rate for purchasing credits is $1 USD = 1,333 Credits.
 
+
+If you run out of credits, and you have used your 10,000 free tier credits, then you will need to purchase additional credits in order to continue querying the API.
 
 Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
 
