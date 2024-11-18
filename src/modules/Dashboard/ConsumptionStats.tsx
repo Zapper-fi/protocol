@@ -141,7 +141,6 @@ export function ConsumptionStats() {
     ],
   };
 
-  // Data preparation for the second chart (Endpoints over time)
   const uniqueDates = Array.from(new Set(endpointStats.map((item) => item.intervalStart))).sort();
   const uniqueEndpoints = Array.from(new Set(endpointStats.map((item) => item.operationName)));
 
@@ -188,8 +187,8 @@ export function ConsumptionStats() {
               onClick={() => handleTimeFrameChange(tf)}
               className={`w-full border-none cursor-pointer ${
                 timeFrame === tf
-                  ? 'font-extrabold text-[#A387FF] bg-transparent'
-                  : 'font-medium text-[#A387FF] bg-transparent'
+                  ? 'font-extrabold text-primary-default bg-transparent'
+                  : 'font-medium text-primary-default bg-transparent'
               }`}
             >
               {tf.charAt(0) + tf.slice(1).toLowerCase()}
@@ -200,7 +199,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h3 className="mb-4">Consumption Amount & Cost</h3>
+          <h3>Consumption Amount & Cost</h3>
           <Card>
             {consumptionLoading ? (
               <p>Loading...</p>
@@ -215,7 +214,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h3 className="mb-4">Endpoints Queried</h3>
+          <h3>Endpoints Queried</h3>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>
