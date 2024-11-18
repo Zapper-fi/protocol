@@ -57,7 +57,7 @@ Header Value : "Basic YOUR_API_KEY_BASE_64=="
 
 #### 3) Buy Credits
 
-Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits which can be found by visiting [Pricing](/pricing). All credits spent on API queries are deducted from the accounts credit balance.
+Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits which can be found by visiting [Pricing](/docs/api-intro/pricing). All credits spent on API queries are deducted from the accounts credit balance.
 
 Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
