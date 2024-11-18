@@ -58,7 +58,7 @@ export function SignInButton() {
       ]}
     />
   ) : (
-    <Button height="h-8" textSize="text-[12px]" type="button" variant="primary" onClick={login}>
+    <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
       Sign in
     </Button>
   );
