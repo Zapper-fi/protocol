@@ -21,7 +21,7 @@ The rate for purchasing credits is **$1 USD = 1,000 Credits**.
 
 If you run out of credits and have used your 5,000 credit free tier, then you will need to purchase more credits in order to continue using the API.
 
-Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/docs/api-intro/dashboard).
+Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
 
 ### Query Prices
 
