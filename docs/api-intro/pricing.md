@@ -30,12 +30,12 @@ All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fix
 | Queries | Credit Price |
 | ----------- | ----------- |
 | [`appBalances`](/docs/api-intro/portfolio/app-balances) | 4 | 
-| `nftBalances` | 4 | 
-| `tokenBalances` | 4 | 
-| `claimables` | 4 | 
+| [`nftBalances`](/docs/api-intro/portfolio/nft-balances) | 4 | 
+| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 4 | 
+| [`claimables`](/docs/api-intro/portfolio/claimables) | 4 | 
 | `totals` | 4 | 
-| `account` | 2 | 
-| `accountsTimeline` | 2 | 
+| [`account`](/docs/api-intro/onchain-identity) | 2 | 
+| [`accountsTimeline`](/docs/api-intro/human-readable-transactions) | 2 | 
 
 :::info
 When making a query, each address counts as 1 query, even if multiple addresses are bundled into 1 call.
