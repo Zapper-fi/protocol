@@ -12,7 +12,7 @@ The Zapper API uses a credit system to manage how many queries an API key can pe
 
 ---
 
-## Buying Credits
+### Buying Credits
 
 Credits can be purchased onchain with any wallet. Payment is supported in over a hundred different tokens including ETH, MATIC, USDC, USDT, DAI, and much more. Once purchased, credits can be spent for API usage. 
 
@@ -23,7 +23,7 @@ If you run out of credits and have used your 10,000 credit free tier, then you w
 
 Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
 
-## Query Prices
+### Query Prices
 
 All [Portfolio](/claimables) related queries have a fixed cost of 4 credits. All other queries cost 2 credits.
 
@@ -41,7 +41,7 @@ All [Portfolio](/claimables) related queries have a fixed cost of 4 credits. All
 When making a query, each address counts as 1 query, even if multiple addresses are bundled into 1 call.
 :::
 
-## Free Tier
+### Free Tier
 
 All API clients can use up to 10,000 credits for free. This gives clients at least 2,500 queries without having to purchase credits and can be a great way to try the API.
 
@@ -51,6 +51,7 @@ Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/doc
 
 <LinkButton href="./dashboard" type="primary" buttonCopy="Get Started" />
 
+---
 
 :::note
 API calls are initially rate limited at **30 times per minute**. Please contact us at ops@zapper.xyz to increase your limit.
