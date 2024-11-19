@@ -60,7 +60,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 }
 ```
 
-<LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+<LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
 
 ---
 
