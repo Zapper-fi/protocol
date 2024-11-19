@@ -56,5 +56,5 @@ Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/doc
 ---
 
 :::note
-API calls are initially rate limited at **30 times per minute**. Please contact us at ops@zapper.xyz to increase your limit.
+API calls are initially rate limited at **30 requests per minute**. Please contact us at ops@zapper.xyz to increase your limit.
 :::
