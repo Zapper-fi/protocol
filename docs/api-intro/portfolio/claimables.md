@@ -30,7 +30,7 @@ Let's say you want to show a user the tokens they can claim in USD on all onchai
 
 ```js
 {
-  "addresses": ["0x3d280fde2ddb59323c891cf30995e1862510342f"]
+  "addresses": ["0xe321bd63cde8ea046b382f82964575f2a5586474"]
 }
 ```
 
@@ -41,8 +41,8 @@ query Claimables($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
     totals {
       claimables {
-        address
         appId
+        address
         token {
           address
           balanceUSD
@@ -54,6 +54,7 @@ query Claimables($addresses: [Address!]!) {
       }
     }
   }
+}
 ```
 
 #### Example Response
