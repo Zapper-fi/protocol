@@ -21,11 +21,11 @@ The rate for purchasing credits is **$1 USD = 1,333 Credits**.
 
 If you run out of credits and have used your 10,000 credit free tier, then you will need to purchase more credits in order to continue using the API.
 
-Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
+Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/docs/api-intro/dashboard).
 
 ### Query Prices
 
-All [Portfolio](/claimables) related queries have a fixed cost of 4 credits. All other queries cost 2 credits.
+All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fixed cost of 4 credits. All other queries cost 2 credits.
 
 | Queries | Credit Price |
 | ----------- | ----------- |
