@@ -30,12 +30,12 @@ Clients can track query usage and credits over time and purchase additional cred
 The `portfolio` query can be called with one or more of the following fields for **3 credits**:
 
 | Query | Description
-| ----------- | ----------- | ----------- |
-| [`appBalances`](/docs/api-intro/portfolio/app-balances)  | blah blah |
-| [`nftBalances`](/docs/api-intro/portfolio/nft-balances)  | blah blah |
-| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 3 |
-| [`claimables`](/docs/api-intro/portfolio/claimables) | 3 |
-| [`totals`](/docs/api-intro/portfolio/portfolio-totals) | 3 |
+| ----------- | ----------- |
+| [`appBalances`](/docs/api-intro/portfolio/app-balances)  | Surfaces balances that a user might hold inside of an onchain application.|
+| [`nftBalances`](/docs/api-intro/portfolio/nft-balances)  | Returns an aggregation of estimated NFTs values. |
+| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | Surfaces any onchain token balances held by an address. |
+| [`claimables`](/docs/api-intro/portfolio/claimables) | Surfaces all available claimable tokens for a given address across all indexed onchain apps.|
+| [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
 
 
 #### [`accountsTimeline`](/docs/api-intro/human-readable-transactions): 2 Credits ($2.00/1,000 Queries)
