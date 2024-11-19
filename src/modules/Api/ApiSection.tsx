@@ -119,7 +119,7 @@ export const ApiSection: React.FC = () => {
               Portfolio Tracking
             </p>
             <div
-              className={activeTab === TabEnum.Portfolio ? 'accent-background' : ''}
+              className={activeTab === TabEnum.Portfolio ? 'bg-accent-color' : ''}
               style={{ height: '2px', display: 'block', width: '48px' }}
             />
           </div>
@@ -151,7 +151,7 @@ export const ApiSection: React.FC = () => {
               Account Timelines
             </p>
             <div
-              className={activeTab === TabEnum.Timeline ? 'accent-background' : ''}
+              className={activeTab === TabEnum.Timeline ? 'bg-accent-color' : ''}
               style={{ height: '2px', display: 'block', width: '48px' }}
             />
           </div>
@@ -183,7 +183,7 @@ export const ApiSection: React.FC = () => {
               Contract Labelling
             </p>
             <div
-              className={activeTab === TabEnum.Labels ? 'accent-background' : ''}
+              className={activeTab === TabEnum.Labels ? 'bg-accent-color' : ''}
               style={{ height: '2px', display: 'block', width: '48px' }}
             />
           </div>
