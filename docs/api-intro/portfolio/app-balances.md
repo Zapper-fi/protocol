@@ -84,7 +84,7 @@ Smart accounts like Maker’s `DSProxy` are automatically included in the balanc
 :::
 
 
-  <LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+  <LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
 
   ---
 
