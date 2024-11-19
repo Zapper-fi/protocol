@@ -143,12 +143,12 @@ export function BuyCredits() {
             <span className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}>
               {displayV2Points}
             </span>
-            {isNegativeBalance && <InfoIcon message="You are now consuming the free 10 000 credit grant from Zapper" />}
+            {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
           </p>
           {Number(apiV1PointsRemaining) > 0 && (
             <p className="flex items-center justify-end gap-1">
               Legacy REST API credits: <span className="font-bold">{apiV1PointsRemaining}</span>
-              <InfoIcon message="These credits are still available for use with the legacy REST API" />
+              <InfoIcon message="These credits are available for use with the legacy REST API. After the alpha, you will be able to convert these into new credits to use on the GraphQL queries." />
             </p>
           )}
         </div>
@@ -175,7 +175,7 @@ export function BuyCredits() {
                     borderRadius: '8px',
                     padding: '8px 12px',
                   }}
-                  placeholder="Enter points amount"
+                  placeholder="Enter credits amount"
                 />
               </div>
             </div>
