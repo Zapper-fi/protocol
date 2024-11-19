@@ -43,7 +43,7 @@ The `portfolio` query can be called with one or more of the following fields for
 #### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits
 
 :::info
-Each address used in a query counts as 1 query. If you bundle multiple addresses into 1 call the cost = query price * # of addresses.
+Each address used in a query counts as a query. If you bundle multiple addresses into a single call the cost = query price multiplied by the # of addresses.
 :::
 
 ### Free Tier
