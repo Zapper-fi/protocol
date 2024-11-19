@@ -18,7 +18,7 @@ export function SignInButton() {
   const { logout } = useLogout();
 
   const { login } = useLogin({
-    onComplete: async (user) => {
+    onComplete: async (user, isNewUser) => {
       if (user.email) {
         const { data } = await upsertUser({
           variables: {
@@ -30,6 +30,10 @@ export function SignInButton() {
         if (clientId) {
           localStorage.setItem('zapper.clientId', clientId);
         }
+      }
+
+      if (isNewUser) {
+        window.location.reload();
       }
     },
   });
