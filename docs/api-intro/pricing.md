@@ -25,11 +25,11 @@ Clients can track query usage and credits over time and purchase additional cred
 
 ### Query Prices
 
-#### `portfolio`: 3 Credits
+#### Portfolio Data: 3 Credits
 
 The `portfolio` query can be called with one or more of the following fields for **3 credits**:
 
-| Query | Description |
+| Field | Description |
 | ----------- | ----------- |
 | [`appBalances`](/docs/api-intro/portfolio/app-balances)  | Surfaces balances that a user might hold inside of an onchain application.|
 | [`nftBalances`](/docs/api-intro/portfolio/nft-balances)  | Returns an aggregation of estimated NFTs values. |
