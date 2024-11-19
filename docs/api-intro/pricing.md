@@ -49,7 +49,7 @@ All API clients can use up to 10,000 credits for free. This gives clients at lea
 Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API keys with the goal of accumulating free credits.
 
 
-<LinkButton href="./dashboard" type="primary" buttonCopy="Get Started" />
+<LinkButton href="/dashboard" type="primary" buttonCopy="Get Started" />
 
 ---
 
