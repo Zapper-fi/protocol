@@ -8,7 +8,7 @@ import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
-const GRACE_PERIOD = 10000;
+const GRACE_PERIOD = 5000;
 const QUERY = gql`
   query BuyCredits {
     apiClientById {
@@ -68,7 +68,7 @@ const InfoIcon = ({ message }) => {
   );
 };
 
-const MIN_POINTS = 50;
+const MIN_POINTS = 5000;
 
 export function BuyCredits() {
   const { user } = usePrivy();
@@ -87,13 +87,13 @@ export function BuyCredits() {
   });
 
   const calculateCost = (points) => {
-    return (points / 10).toFixed(2);
+    return (points / 1000).toFixed(2);
   };
 
   const normalizePoints = (value) => {
     const numValue = Number.parseInt(value) || 0;
     if (numValue < MIN_POINTS) {
-      setErrorMessage(`Minimum points amount is ${MIN_POINTS}`);
+      setErrorMessage(`Minimum credit amount is ${MIN_POINTS}`);
       return MIN_POINTS;
     }
     setErrorMessage('');
