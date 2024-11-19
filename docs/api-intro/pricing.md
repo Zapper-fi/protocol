@@ -25,7 +25,7 @@ Clients can track query usage and credits over time and purchase additional cred
 
 ### Query Prices
 
-All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fixed cost of 4 credits. All other queries cost 2 credits.
+All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fixed cost of 3 credits. All other queries cost 2 credits.
 
 | Queries | Credit Price | USD per 1,000 Queries |
 | ----------- | ----------- | ----------- |
