@@ -16,7 +16,7 @@ The Zapper API uses a credit system to manage how many queries an API key can pe
 
 Credits can be purchased onchain with any wallet. Payment is supported in over a hundred different tokens including ETH, MATIC, USDC, USDT, DAI, and much more. Once purchased, credits can be spent for API usage. 
 
-The rate for purchasing credits is **$1 USD = 1,333 Credits**.
+The rate for purchasing credits is **$1 USD = 1,000 Credits**.
 
 
 If you run out of credits and have used your 10,000 credit free tier, then you will need to purchase more credits in order to continue using the API.
@@ -29,10 +29,10 @@ All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fix
 
 | Queries | Credit Price |
 | ----------- | ----------- |
-| [`appBalances`](/docs/api-intro/portfolio/app-balances) | 4 | 
-| [`nftBalances`](/docs/api-intro/portfolio/nft-balances) | 4 | 
-| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 4 | 
-| [`claimables`](/docs/api-intro/portfolio/claimables) | 4 | 
+| [`appBalances`](/docs/api-intro/portfolio/app-balances) | 3 | 
+| [`nftBalances`](/docs/api-intro/portfolio/nft-balances) | 3 | 
+| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 3 | 
+| [`claimables`](/docs/api-intro/portfolio/claimables) | 3 | 
 | `totals` | 4 | 
 | [`account`](/docs/api-intro/onchain-identity) | 2 | 
 | [`accountsTimeline`](/docs/api-intro/human-readable-transactions) | 2 | 
@@ -43,7 +43,7 @@ When making a query, each address counts as 1 query, even if multiple addresses 
 
 ### Free Tier
 
-All API clients can use up to 10,000 credits for free. This gives clients at least 2,500 queries without having to purchase credits and can be a great way to try the API.
+All API clients can use up to 10,000 credits for free. This gives clients at least 3,300 queries without having to purchase credits and can be a great way to try the API.
 
 
 Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API keys with the goal of accumulating free credits.

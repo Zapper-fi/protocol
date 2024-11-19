@@ -8,7 +8,7 @@ export function Note() {
         <Info className="h-5 w-5 text-primary-default flex-shrink-0" />
         <p className="text-sm">
           Welcome to the Zapper Protocol Dashboard. While the API is in alpha, each client may query up to 10,000 credits
-          for free, providing at least 2,500 queries to test the API. Please note that query costs may change in the future.
+          for free, providing at least 3,300 queries to test the API. Please note that query costs may change in the future.
         </p>
       </div>
     </Card>
