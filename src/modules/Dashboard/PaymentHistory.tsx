@@ -121,7 +121,7 @@ export function PaymentHistory() {
               <tr key={payment.createdAt}>
                 <td>{formatDate(payment.createdAt)}</td>
                 <td className="text-right">{payment.creditsPurchased}</td>
-                <td className="text-right">{payment.amount}</td>
+                <td className="text-right">USD ${payment.amount}</td>
                 <td>
                   <div className="flex items-center gap-1">
                     <span className={mapStatus[payment.status]}>{payment.status}</span>
