@@ -35,7 +35,7 @@ All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fix
 | [`claimables`](/docs/api-intro/portfolio/claimables) | 3 |  $3.00 |
 | [`totals`](/docs/api-intro/portfolio/portfolio-totals) | 3 |  $3.00 |
 | [`account`](/docs/api-intro/onchain-identity) | 2 |  $2.00 |
-| [`accountsTimeline`](/docs/api-intro/human-readable-transactions) |  $2.00 | 
+| [`accountsTimeline`](/docs/api-intro/human-readable-transactions) | 2 |  $2.00 |
 
 :::info
 When making a query, each address counts as 1 query, even if multiple addresses are bundled into 1 call.
