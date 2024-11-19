@@ -29,7 +29,7 @@ All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fix
 
 | Queries | Credit Price |
 | ----------- | ----------- |
-| `appBalances` | 4 | 
+| [`appBalances`](/docs/api-intro/portfolio/app-balances) | 4 | 
 | `nftBalances` | 4 | 
 | `tokenBalances` | 4 | 
 | `claimables` | 4 | 
