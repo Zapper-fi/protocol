@@ -23,7 +23,7 @@ The `totals` field from the `portfolio` query takes `addresses` input as an arra
 
 ### Example Use Case: Net Worth
 
-You want to show a user the USD value of their entire onchain holdings across tokens, NFTs, and apps — broken down by chain. Start by passing `address` into the `portfolio` and `totals` object. Then return `totalByNetworkWithNFT`, `network`, and `total`.
+You want to show a user the USD value of their entire onchain holdings across all tokens and apps — broken down by chain. Start by passing `address` into the `portfolio` and `totals` object. Then return `totalByNetwork`, `network`, and `total`.
 
 #### Example Variable
 
@@ -39,7 +39,7 @@ You want to show a user the USD value of their entire onchain holdings across to
 query($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
     totals {
-      totalByNetworkWithNFT {
+      totalByNetwork {
         network
         total
       }
@@ -56,7 +56,7 @@ query($addresses: [Address!]!) {
     "portfolio": {
       "totals": {
         "total": 11252.6887398181,
-        "totalByNetworkWithNFT": [
+        "totalByNetwork": [
           {
             "network": "ETHEREUM_MAINNET",
             "total": 2936.7837588270454
@@ -104,5 +104,5 @@ query($addresses: [Address!]!) {
 | `total`      | Returns the total value of an address in USD excluding NFTs.      | `Float!` | 
 | `totalByAddress`      | Returns the total value excluding NFTs by address.        | `totalByAddress!` | 
 | `totalByNetwork`      | Returns the total value excluding NFTs by network.       | `totalByNetwork!` |
-| `totalByNetworkWithNFT`      | Returns the total value including NFTs by network.     | `totalByNetworkWithNFT!` | 
-| `totalWithNFT`      | Returns the total value of an address in USD including NFTs.      | `Float!` | 
+| `totalByNetworkWithNFT`      | Returns the total value of NFTs by network.     | `totalByNetworkWithNFT!` | 
+| `totalWithNFT`      | Returns the total NFT value of an address in USD.      | `Float!` | 
