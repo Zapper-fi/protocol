@@ -143,7 +143,7 @@ export function BuyCredits() {
             <span className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}>
               {displayV2Points}
             </span>
-            {isNegativeBalance && <InfoIcon message="You are now consuming the free 10 000 credit grant from Zapper" />}
+            {isNegativeBalance && <InfoIcon message="You are now consuming the 10,000 credit free tier" />}
           </p>
           {Number(apiV1PointsRemaining) > 0 && (
             <p className="flex items-center justify-end gap-1">
@@ -175,7 +175,7 @@ export function BuyCredits() {
                     borderRadius: '8px',
                     padding: '8px 12px',
                   }}
-                  placeholder="Enter points amount"
+                  placeholder="Enter credits amount"
                 />
               </div>
             </div>
