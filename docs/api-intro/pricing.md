@@ -25,20 +25,25 @@ Clients can track query usage and credits over time and purchase additional cred
 
 ### Query Prices
 
-All [Portfolio](/docs/api-intro/portfolio/claimables) related queries have a fixed cost of 3 credits. All other queries cost 2 credits.
+#### `portfolio`: 3 Credits ($3.00/1,000 Queries)
 
-| Queries | Credit Price | USD per 1,000 Queries |
+The `portfolio` query can be called with one or more of the following fields for **3 credits**:
+
+| Query | Description
 | ----------- | ----------- | ----------- |
-| [`appBalances`](/docs/api-intro/portfolio/app-balances) | 3 | $3.00 |
-| [`nftBalances`](/docs/api-intro/portfolio/nft-balances) | 3 |  $3.00 |
-| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 3 |  $3.00 |
-| [`claimables`](/docs/api-intro/portfolio/claimables) | 3 |  $3.00 |
-| [`totals`](/docs/api-intro/portfolio/portfolio-totals) | 3 |  $3.00 |
-| [`account`](/docs/api-intro/onchain-identity) | 2 |  $2.00 |
-| [`accountsTimeline`](/docs/api-intro/human-readable-transactions) | 2 |  $2.00 |
+| [`appBalances`](/docs/api-intro/portfolio/app-balances)  | blah blah |
+| [`nftBalances`](/docs/api-intro/portfolio/nft-balances)  | blah blah |
+| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | 3 |
+| [`claimables`](/docs/api-intro/portfolio/claimables) | 3 |
+| [`totals`](/docs/api-intro/portfolio/portfolio-totals) | 3 |
+
+
+#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions): 2 Credits ($2.00/1,000 Queries)
+
+#### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits ($2.00/1,000 Queries)
 
 :::info
-When making a query, each address counts as 1 query, even if multiple addresses are bundled into 1 call.
+Each address used in a query counts as 1 query. If you bundle multiple addresses into 1 call the cost = query price * # of addresses.
 :::
 
 ### Free Tier
