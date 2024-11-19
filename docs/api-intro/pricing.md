@@ -25,7 +25,7 @@ Clients can track query usage and credits over time and purchase additional cred
 
 ### Query Prices
 
-#### `portfolio`: 3 Credits ($3.00/1,000 Queries)
+#### `portfolio`: 3 Credits
 
 The `portfolio` query can be called with one or more of the following fields for **3 credits**:
 
@@ -38,9 +38,9 @@ The `portfolio` query can be called with one or more of the following fields for
 | [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
 
 
-#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions): 2 Credits ($2.00/1,000 Queries)
+#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions): 2 Credits
 
-#### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits ($2.00/1,000 Queries)
+#### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits
 
 :::info
 Each address used in a query counts as 1 query. If you bundle multiple addresses into 1 call the cost = query price * # of addresses.
