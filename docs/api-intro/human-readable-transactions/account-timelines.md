@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: Human-Readable Transactions
+sidebar_label: Account Timelines
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
