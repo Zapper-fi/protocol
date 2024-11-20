@@ -3,7 +3,7 @@ sidebar_position: 4
 sidebar_label: App Balances
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # App Balances
@@ -84,7 +84,7 @@ Smart accounts like Maker’s `DSProxy` are automatically included in the balanc
 :::
 
 
-  <LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
+  <SandboxButton/>
 
   ---
 

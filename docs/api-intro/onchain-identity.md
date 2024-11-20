@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: Onchain Identity
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # Onchain Identity
@@ -87,7 +87,7 @@ query($address: Address!) {
 
 ```
 
-<LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton/>
 
 ---
 
