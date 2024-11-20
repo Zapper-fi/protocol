@@ -3,7 +3,7 @@ sidebar_position: 10
 sidebar_label: Pricing
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # Pricing
@@ -56,7 +56,7 @@ The GraphQL [Sandbox](/docs/api-intro/sandbox) can also be used to test queries 
 Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API keys with the goal of accumulating free credits.
 
 
-<LinkButton href="/dashboard" type="primary" buttonCopy="Get Started" />
+<SandboxButton/>
 
 ---
 

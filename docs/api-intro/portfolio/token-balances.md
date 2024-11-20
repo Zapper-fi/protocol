@@ -3,7 +3,7 @@ sidebar_position: 3
 sidebar_label: Token Balances
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # Token Balances
@@ -90,7 +90,7 @@ query Portfolio($addresses: [Address!]!) {
 }
 ```
 
-<LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton/>
 
 ---
 

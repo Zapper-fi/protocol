@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: Portfolio Totals
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 export const tokenBalancesVars = {
@@ -80,7 +80,7 @@ query($addresses: [Address!]!) {
 
 ```
 
-<LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton/>
 
 ---
 

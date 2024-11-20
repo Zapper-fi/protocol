@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Human-Readable Transactions
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # Human-Readable Transactions
@@ -82,7 +82,7 @@ query($addresses: [Address!]) {
 ```
 
 
-<LinkButton href="./sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton/>
 
 ---
 

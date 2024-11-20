@@ -3,7 +3,7 @@ sidebar_position: 5
 sidebar_label: NFT Balances
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 # NFT Balances
@@ -60,7 +60,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 }
 ```
 
-<LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton/>
 
 ---
 

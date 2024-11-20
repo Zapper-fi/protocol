@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Claimables
 ---
 
-import { LinkButton } from '@site/src/components/LinkButton';
+import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
 export const tokenBalancesVars = {
@@ -83,7 +83,7 @@ query Claimables($addresses: [Address!]!) {
 }
 ```
 
-<LinkButton href="../sandbox" type="primary" buttonCopy="Try in sandbox" />
+<SandboxButton />
 
 ---
 
