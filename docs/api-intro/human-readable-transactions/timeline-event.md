@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 # Timeline Events
 
 
-Presents any onchain transaction in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
+Presents the details of an onchain transactions with a simple descriptive summary, dynamic elements such as apps, tokens, NFTs, and accounts, as well as other transaction details.
 
 ---
 

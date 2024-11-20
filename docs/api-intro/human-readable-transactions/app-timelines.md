@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 # App Timelines
 
 
-Displays a timeline of events that interacted with the smart contracts of a particular onchain app.
+Displays a timeline of events that interacted with a particular onchain app via their smart contracts.
 
 ---
 
