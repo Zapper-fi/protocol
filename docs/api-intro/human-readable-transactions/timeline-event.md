@@ -6,22 +6,21 @@ sidebar_label: Timeline Events
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# Human-Readable Transactions
+# Timeline Events
 
 
-Presents onchain activity in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts. Great for use in account histories, social feeds, or app-specific feeds.
+Presents any onchain transaction in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
 ---
 
-### `accountsTimeline`
+### `timelineEvent`
 
-The `accountsTimeline` query takes `addresses` input as an array, with optional `networks`. It returns a descriptive and human-readable summary of the transaction's details from one or multiple wallets with tokens transferred — paginated and chain-agnostic.
+The `timelineEvent` query takes `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with tokens transferred (`accountDetlasV2`), `app`, `gasUsed`, `sigHash`, and many other transaction details.
 
-Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 
-### Example Use Case: Transaction History
+### Example Use Case: Transaction Details
 
-Let's say you want to show users their onchain transactions in a human-readable format with network and app information. Start by passing `addresses` for the user. Then return `processedDescription`, `network`, and the `app` object with the fields `name` and `imgUrl`.
+Let's say you want to surface details about a particular onchain transaction in a human-readable format with network, app information, and the tokens transferred. Start by passing `transactionHash` and `network`. Then return `description`, `network`, the `app` object with the fields `name` and `imgUrl`, and ...
 
 #### Example Variable
 
