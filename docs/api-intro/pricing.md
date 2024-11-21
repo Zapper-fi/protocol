@@ -37,8 +37,11 @@ The `portfolio` query can be called with one or more of the following fields for
 | [`claimables`](/docs/api-intro/portfolio/claimables) | Surfaces all available claimable tokens for a given address across all indexed onchain apps.|
 | [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
 
+#### [`timelineEvent`](/docs/api-intro/human-readable-transactions/timeline-event): 2 Credits
 
-#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions): 2 Credits
+#### [`timelineForApp`](/docs/api-intro/human-readable-transactions/app-timelines): 2 Credits
+
+#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions/account-timelines): 2 Credits
 
 #### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits
 

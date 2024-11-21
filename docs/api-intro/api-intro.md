@@ -10,9 +10,9 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ## What can I get?
 
-### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions)
+### [Human-Readable Transactions](/docs/api-intro/human-readable-transactions/timeline-event)
 
-Simplify onchain transactions with human-friendly descriptions.
+Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api-intro/human-readable-transactions/timeline-event), [App Timelines](/docs/api-intro/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api-intro/human-readable-transactions/account-timelines)
 
 ### [Onchain Identity](/docs/api-intro/onchain-identity)
 
