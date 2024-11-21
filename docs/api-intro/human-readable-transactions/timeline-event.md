@@ -15,68 +15,134 @@ Presents the details of an onchain transactions with a simple descriptive summar
 
 ### `timelineEvent`
 
-The `timelineEvent` query takes `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with tokens transferred (`accountDetlasV2`), `app`, `gasUsed`, `sigHash`, and many other transaction details.
+The `timelineEvent` query takes `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with `descriptionDisplayItems` such as tokens, NFTs, or accounts involved.  transferred (`accountDetlasV2`), `app`, `gasUsed`, `sigHash`, and many other transaction details.
 
 
 ### Example Use Case: Transaction Details
 
-Let's say you want to surface details about a particular onchain transaction in a human-readable format with network, app information, and the tokens transferred. Start by passing `transactionHash` and `network`. Then return `description`, `network`, the `app` object with the fields `name` and `imgUrl`, and ...
+Let's say you want to surface details about an onchain transaction in a human-readable format with network, app information, and the tokens or accounts interacted with. Start by passing `transactionHash` and `network`. Then return `description`. The description will contain a human-readble format with variable references to the `descriptionDisplayItems` object. This will allow us to surface dynamic onchain elements such as tokens, NFTs, or accounts that might be involved in the transaction. To do this, we will add a catch for `TokenDisplayItem`, `NFTDisplayItem`, `NFTCollectionDisplayItem`, and `ActorDisplayItem` in the case that these types appear in the transaction. This can be useful if you want to link out to a token page, or account page for example.
 
 #### Example Variable
 
 ```js
 {
-  "addresses": ["0x52c8ff44260056f896e20d8a43610dd88f05701b"]
+  "transactionHash": "0x804bae8da222170bb398ed8f7a32fa9f48ed3410bf2d8fa63b06db21f6f62d15",
+  "network": "BASE_MAINNET"
 }
 ```
 
 #### Example Query
 
 ```graphql
-query($addresses: [Address!]) {
-  accountsTimeline(addresses: $addresses) {
-    edges {
-      node {
-        transaction {
-          fromUser {
-            address
+query($transactionHash: String!, $network: Network!) {
+  timelineEvent(transactionHash: $transactionHash, network: $network) {
+    interpretation {
+      description
+      descriptionDisplayItems {
+        ... on TokenDisplayItem {
+          type
+          network
+          tokenAddress
+          amountRaw
+          id
+          tokenV2 {
+            symbol
+          }
+        }
+        ... on NFTDisplayItem {
+          type
+          network
+          collectionAddress
+          tokenId
+          quantity
+          nftToken {
+            tokenId
+          }
+          isMint
+          isBurn
+        }
+        ... on NFTCollectionDisplayItem {
+          type
+          network
+          collectionAddress
+          quantity
+
+        }
+        ... on ActorDisplayItem {
+          type
+          address
+          account {
             displayName {
+              source
               value
             }
           }
         }
-        interpretation {
-          processedDescription
-        }
-         app {
-          name
-          imgUrl
-        }
-        network
-        }
+      }
+    }
+    app {
+      app {
+        displayName
+        imgUrl
       }
     }
   }
+}
 ```
+
+:::tip
+It's useful to include all types of `descriptionDisplayItems` to account for any possible types that could appear in the transaction. This also includes `AppDisplayItem`, `AppContractNetworkDisplayItem`, `NetworkDisplayItem`, `NumberDisplayItem`, `StringDisplayItem`, `TokenContractDisplayItem`, `TransactionDisplayItem`, `ProposalDisplayItemObject`, `ImageDisplayItem`, `CompositeDisplayItem`, and `ChatChannelDisplayItem`
+:::
 
 #### Example Response
 
 ```js
 {
-  "fromUser": {
-    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-      "displayName": {
-          "value": "0xjasper.eth"
+  "data": {
+    "timelineEvent": {
+      "interpretation": {
+        "description": "Swapped $1 for $2 and sent to $3",
+        "descriptionDisplayItems": [
+          {
+            "type": "token",
+            "network": "BASE_MAINNET",
+            "tokenAddress": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
+            "amountRaw": "17713611200960235617207",
+            "id": "VG9rZW5EaXNwbGF5SXRlbU9iamVjdC1iYXNlOjB4YWMxYmQyNDg2YWFmM2I1YzBmYzNmZDg2ODU1OGIwODJhNTMxYjJiNDoxNzcxMzYxMTIwMDk2MDIzNTYxNzIwNw==",
+            "tokenV2": {
+              "symbol": "TOSHI"
+            }
+          },
+          {
+            "type": "token",
+            "network": "BASE_MAINNET",
+            "tokenAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "amountRaw": "4950000",
+            "id": "VG9rZW5EaXNwbGF5SXRlbU9iamVjdC1iYXNlOjB4ODMzNTg5ZmNkNmVkYjZlMDhmNGM3YzMyZDRmNzFiNTRiZGEwMjkxMzo0OTUwMDAw",
+            "tokenV2": {
+              "symbol": "USDC"
+            }
+          },
+          {
+            "type": "actor",
+            "address": "0x9b3a20176d2c5d0a22dae382496416a1a8934b30",
+            "account": {
+              "displayName": {
+                "source": "ADDRESS",
+                "value": "0x9b3a...4b30"
+              }
+            }
           }
-    },
-    "interpretation": {
-      "processedDescription": "Started battle with sebaudet.eth"
+        ]
       },
       "app": {
-            "name": "Tokiemon",
-            "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
-            },
-      "network": "BASE_MAINNET"
+        "app": {
+          "displayName": "Coinbase Commerce",
+          "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Fcoinbase-commerce.png"
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -86,7 +152,7 @@ query($addresses: [Address!]) {
 ---
 
 :::note
-Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
+In this example, the variable references in `description` $1 and $2 make reference to the `type: "token"` display items. $3 makes reference to the `type: "actor"` item which in this example is the address that received the token transfer.
 :::
 
 ---

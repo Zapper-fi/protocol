@@ -15,69 +15,80 @@ Displays a timeline of events that interacted with a particular onchain app via 
 
 ### `timelineForApp`
 
-The `timelineForApp` query takes `app`...
+The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` along with `descriptionDisplayItems` such as `TokenDisplayItem` that are useful for surfacing tokens, NFTs, or accounts involed in the transaction.
 
 
 ### Example Use Case: App Feed
 
-Let's say you want to to add an actibity feed inside of your app that shows all the users onchain activity in a human-readable format. Start by passing `app`.....
+Let's say you want to to add an activity feed inside of your app that shows all the users onchain activity in a human-readable format. Start by passing `slug` for the app name. Then return `processedDescription`, `account` with `displayName` and `value`. Inlcude the `transaction` object with `timestamp` and `hash` to display when it happened and use the transaction hash to link to a block explorer.
 
 #### Example Variable
 
 ```js
 {
-  "addresses": ["0x52c8ff44260056f896e20d8a43610dd88f05701b"]
+  "slug": "cat-town"
 }
 ```
 
 #### Example Query
 
 ```graphql
-query($addresses: [Address!]) {
-  accountsTimeline(addresses: $addresses) {
+query($slug: String!) {
+  timelineForApp(slug: $slug) {
     edges {
       node {
-        transaction {
-          fromUser {
+        interpretation {
+          processedDescription
+        }
+        actors {
+          account {
             address
             displayName {
               value
             }
           }
         }
-        interpretation {
-          processedDescription
-        }
-         app {
-          name
-          imgUrl
-        }
-        network
+        transaction {
+          timestamp
+          hash
         }
       }
     }
   }
+}
 ```
 
 #### Example Response
 
 ```js
-{
-  "fromUser": {
-    "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-      "displayName": {
-          "value": "0xjasper.eth"
-          }
-    },
-    "interpretation": {
-      "processedDescription": "Started battle with sebaudet.eth"
-      },
-      "app": {
-            "name": "Tokiemon",
-            "imgUrl": "https://storage.googleapis.com/zapper-fi-assets/apps%2Ftokiemon.png"
+
+          "node": {
+            "interpretation": {
+              "processedDescription": "Sold 4 Cat Town | Items for 3,020 KIBBLE"
             },
-      "network": "BASE_MAINNET"
-}
+            "actors": [
+              {
+                "account": {
+                  "address": "0xd11d977c262793ab3c39339a0fdf2d1687ec81da",
+                  "displayName": {
+                    "value": "meowww.base.eth"
+                  }
+                }
+              },
+              {
+                "account": {
+                  "address": "0x10a77395a07917c5eb71feeb86696b7612f9730f",
+                  "displayName": {
+                    "value": "0x10a7...730f"
+                  }
+                }
+              }
+            ],
+            "transaction": {
+              "timestamp": 1732171389000,
+              "hash": "0xc6733c9f822bd1f71a6e97ccce34dcd6e46aee7286f22f1a8199a0beeebb1ee6"
+            }
+          }
 ```
 
 
@@ -95,11 +106,9 @@ Textual description of each transaction is presented from the perspective of the
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | The network(s) to retreive, input as an array.    | `Network!`        | 
+| `network`      | A networks to retreive.    | `Network`        | 
+| `networks`      | The networks to retreive, input as an array.    | `Network!`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
-| `addresses`      | The address(s) that is being queried, input as an array.   | `Address!`        | 
-| `tokenAddresses`      | Filter by token address.        | `Address!`        | 
-| `isSigner`      | Filter by signer.        | `Boolean`        | 
 | `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 
 | `first`      | Used for pagination.      | `Int!`        | 
 | `after`      | Used for pagination.       | `String!`        | 
@@ -109,18 +118,17 @@ Textual description of each transaction is presented from the perspective of the
 
 | Field      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `key`      | A unique identifier.       | `String!`       |
+| `key`      | A transaction hash.     | `String!`       |
 | `network`      | Network on which the transaction happened.     | `Network!`       |
 | `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `app`      | The app that is associated with the transaction.     | `Int!`       |
-| `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
-| `toUser`      | The address that the transaction interacted with.     | `Int!`       |
+| `actors`      | The address(s) involved in the transaction, includes the object `account` that can surface data such as `address`, `displayName`,and `avatar`.    | `ActorDisplayItem!`      |
 | `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
-| `actors`      | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.      | `ActorDisplayItem!`       |
 | `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
 | `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
 | `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
+| `accountDeltasV2`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
 | `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
 | `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
 | `interpreterId`      | Unique identifier for the Interpreter.      | `String!`       |
