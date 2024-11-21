@@ -161,14 +161,10 @@ In this example, the variables $1 and $2 in the `description` make reference to 
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `network`      | The network(s) to retreive, input as an array.    | `Network!`        | 
+| `transactionHash`      | The transaction hash to retreive information for.    | `String!`        | 
+| `network`      | The network that the transaction happened on.   | `Network!`        | 
 | `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
-| `addresses`      | The address(s) that is being queried, input as an array.   | `Address!`        | 
-| `tokenAddresses`      | Filter by token address.        | `Address!`        | 
-| `isSigner`      | Filter by signer.        | `Boolean`        | 
-| `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 
-| `first`      | Used for pagination.      | `Int!`        | 
-| `after`      | Used for pagination.       | `String!`        | 
+
 
 
 ### Fields
@@ -177,11 +173,12 @@ In this example, the variables $1 and $2 in the `description` make reference to 
 | ----------- | ----------- | ----------- |
 | `key`      | A unique identifier.       | `String!`       |
 | `network`      | Network on which the transaction happened.     | `Network!`       |
-| `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
+| `interpretation`      | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.     | `Network!`       |
+| `description`      | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.      | `String!`       |
+| `processedDescription`      | The human-readble description of the transaction.      | `String!`       |
+| `descriptionDisplayItems`      | Contains the fields which the variables in `description` make reference to.      | `ActivityFeedDisplayItem!!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `app`      | The app that is associated with the transaction.     | `Int!`       |
-| `fromUser`      | The address that the transaction was initiated from.     | `Int!`       |
-| `toUser`      | The address that the transaction interacted with.     | `Int!`       |
 | `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
 | `actors`      | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.      | `ActorDisplayItem!`       |
 | `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |

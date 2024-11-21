@@ -120,7 +120,10 @@ If you want to surface tokens, NFTs, accounts, or other onchain items embedded w
 | ----------- | ----------- | ----------- |
 | `key`      | A transaction hash.     | `String!`       |
 | `network`      | Network on which the transaction happened.     | `Network!`       |
-| `processedDescription`      | The human-readble description of the transaction.      | `ActivityInterpretation!`       |
+| `interpretation`      | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.     | `Network!`       |
+| `description`      | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.      | `String!`       |
+| `processedDescription`      | The human-readble description of the transaction.      | `String!`       |
+| `descriptionDisplayItems`      | Contains the fields which the variables in `description` make reference to.      | `ActivityFeedDisplayItem!!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `app`      | The app that is associated with the transaction.     | `Int!`       |
 | `actors`      | The address(s) involved in the transaction, includes the object `account` that can surface data such as `address`, `displayName`,and `avatar`.    | `ActorDisplayItem!`      |
