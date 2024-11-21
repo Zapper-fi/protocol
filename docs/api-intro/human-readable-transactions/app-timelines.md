@@ -96,8 +96,8 @@ query($slug: String!) {
 
 ---
 
-:::note
-Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
+:::tip
+If you want to surface tokens, NFTs, accounts, or other onchain items embedded within the human-readable description of a transaction, you should return `description` and `descriptionDisplayItems`. For more information  view the example for [Single Transactions](/docs/Interpretation/overview).
 :::
 
 ---
