@@ -165,7 +165,6 @@ In this example, the variables $1 and $2 in the `description` make reference to 
 | ----------- | ----------- | ----------- |
 | `transactionHash`      | The transaction hash to retreive information for.    | `String!`        | 
 | `network`      | The network that the transaction happened on.   | `Network!`        | 
-| `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
 
 
 

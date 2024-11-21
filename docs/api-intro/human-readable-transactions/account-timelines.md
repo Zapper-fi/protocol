@@ -97,7 +97,6 @@ Textual description of each transaction is presented from the perspective of the
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
 | `network`      | The network(s) to retreive, input as an array.    | `Network!`        | 
-| `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
 | `addresses`      | The address(s) that is being queried, input as an array.   | `Address!`        | 
 | `tokenAddresses`      | Filter by token address.        | `Address!`        | 
 | `isSigner`      | Filter by signer.        | `Boolean`        | 
