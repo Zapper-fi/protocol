@@ -62,6 +62,10 @@ query($slug: String!) {
 }
 ```
 
+:::note
+Pagination is highly recommended using the arguments `first` and `after` to ensure fast query response times.
+:::
+
 #### Example Response
 
 ```js
