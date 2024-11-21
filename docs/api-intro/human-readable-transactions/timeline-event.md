@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 # Single Transactions
 
 
-Presents the details of an onchain transaction with a simple descriptive summary, dynamic elements such as apps, tokens, NFTs, and accounts, as well as other transaction details.
+Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts.
 
 ---
 
