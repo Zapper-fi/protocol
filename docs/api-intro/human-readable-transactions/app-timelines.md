@@ -97,7 +97,7 @@ query($slug: String!) {
 ---
 
 :::tip
-If you want to surface tokens, NFTs, accounts, or other onchain items embedded within the human-readable description of a transaction, you should return `description` and `descriptionDisplayItems`. For more information  view the example for [Single Transactions](/docs/Interpretation/overview).
+If you want to surface tokens, NFTs, accounts, or other onchain items embedded within the human-readable description of a transaction, you should return `description` and `descriptionDisplayItems`. To learn more about how to use these check out the example query for [Single Transactions](/docs/api-intro/human-readable-transactions/timeline-event).
 :::
 
 ---
