@@ -37,6 +37,7 @@ Let's say you want to surface details about an onchain transaction in a human-re
 query($transactionHash: String!, $network: Network!) {
   timelineEvent(transactionHash: $transactionHash, network: $network) {
     interpretation {
+      processedDescription
       description
       descriptionDisplayItems {
         ... on TokenDisplayItem {
@@ -101,6 +102,7 @@ It's useful to include all types of `descriptionDisplayItems` to account for the
   "data": {
     "timelineEvent": {
       "interpretation": {
+        "processedDescription": "Swapped 17,713.6112 TOSHI for 4.95 USDC and sent to 0x9b3a...4b30",
         "description": "Swapped $1 for $2 and sent to $3",
         "descriptionDisplayItems": [
           {
