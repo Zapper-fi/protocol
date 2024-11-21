@@ -1,15 +1,15 @@
 ---
-sidebar_position: 1
-sidebar_label: Human-Readable Transactions
+sidebar_position: 2
+sidebar_label: Account Timelines
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# Human-Readable Transactions
+# Account Timelines
 
 
-Presents onchain activity in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts. Great for use in account histories, social feeds, or app-specific feeds.
+Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
 ---
 
