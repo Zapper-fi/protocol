@@ -9,18 +9,18 @@ import Link from '@docusaurus/Link';
 # Single Transactions
 
 
-Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts.
+Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts. Can be useful for building an activity feed of onchain transactions or surfacing specific transaction details.
 
 ---
 
 ### `timelineEvent`
 
-The `timelineEvent` query takes `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with `descriptionDisplayItems` such as tokens, NFTs, or accounts involved.
+The `timelineEvent` query takes a `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with `descriptionDisplayItems` such as tokens, NFTs, or accounts involved.
 
 
 ### Example Use Case: Transaction Details
 
-Let's say you want to surface details about an onchain transaction in a human-readable format with the network, app, and tokens or accounts involved. Start by passing `transactionHash` and `network`. Then return `description`. The description will contain a human-readble format with variables in the form of `$1, $2, $3,...` that reference fields from the `descriptionDisplayItems` object. This allows us to surface dynamic onchain elements embedded in the human-readable description. To make these references, add the fields `TokenDisplayItem`, `NFTDisplayItem`, `NFTCollectionDisplayItem`, and `ActorDisplayItem`. These will be returned when their type appears in the transaction. This can be useful if you want to do things such as adding token images into the sentence, linking to an NFT, or linking to an account for example. We will also display the app name and logo so we will return `app` with the fields `displayName` and `imgUrl`.
+Let's say you want to surface details about an onchain transaction in a human-readable format with the network, app, and tokens or accounts involved. Start by passing a `transactionHash` and `network`. Then return `description`. The description will contain a human-readble format with variables in the form of `$1, $2, $3,...`. These variables reference fields from the `descriptionDisplayItems` object. This allows us to surface dynamic onchain elements embedded in the human-readable description. To make these references, add the fields `TokenDisplayItem`, `NFTDisplayItem`, `NFTCollectionDisplayItem`, and `ActorDisplayItem`. These will be returned when their type appears in the transaction. This can be useful if you want to do things such as adding token images into the sentence, linking to an NFT, or linking to an account for example. We will also display the app name and logo so we will return `app` with the fields `displayName` and `imgUrl`.
 
 #### Example Variable
 

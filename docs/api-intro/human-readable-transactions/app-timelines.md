@@ -18,13 +18,13 @@ Displays a timeline of transactions that happened in a particular onchain app vi
 The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` or `description`. If returning `description`, `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
 
 :::tip
-To find the correct `slug` for the app you are trying to reference, find the app on Zapper, and the slug is the last part of the URL. For example for https://zapper.xyz/apps/cat-town, the slug is `cat-town`. 
+To find the correct `slug` for the app you are trying to reference, find the app on Zapper. The slug is the last part of the URL. For example: https://zapper.xyz/apps/cat-town, has the slug `cat-town`. 
 :::
 
 
 ### Example Use Case: App Activity Feed
 
-Let's say you want to to add an activity feed inside of your app that shows your users onchain activity in a human-readable format. Start by passing `slug` for the app name. Then return `processedDescription`, the `account` object with `displayName` and `value`. Also include the `transaction` object with `timestamp` and `hash` so you can display when the transaction happened and use the hash to link out to a block explorer.
+Let's say you want to to add an activity feed inside of your app that shows your users onchain activity in a human-readable format. Start by passing `slug` for the app name. Then return `processedDescription` and the `account` object with the fields `displayName` and `value`. Also include the `transaction` object with `timestamp` and `hash` so you can display when the transaction happened and use the hash to link out to a block explorer.
 
 #### Example Variable
 
