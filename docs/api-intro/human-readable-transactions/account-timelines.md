@@ -27,37 +27,44 @@ Let's say you want to show users their onchain transactions in a human-readable 
 
 ```js
 {
-  "addresses": ["0x52c8ff44260056f896e20d8a43610dd88f05701b"]
+  "addresses": ["0x52c8ff44260056f896e20d8a43610dd88f05701b"],
+  "isSigner": "true",
+  "realtimeInterpretation": "true"
 }
 ```
+
+:::tip
+When `isSigner` is set to `true` it returns transactions initiated from the specified address. When this is set to `false`, it returns all transactions the address was a part of.
+:::
 
 #### Example Query
 
 ```graphql
-query($addresses: [Address!]) {
-  accountsTimeline(addresses: $addresses) {
-    edges {
-      node {
-        transaction {
-          fromUser {
-            address
-            displayName {
-              value
+query($addresses: [Address!],
+        $realtimeInterpretation: Boolean, $isSigner: Boolean) {
+      accountsTimeline(addresses: $addresses, realtimeInterpretation: $realtimeInterpretation, isSigner: $isSigner) {
+        edges {
+          node {
+            transaction {
+              fromUser {
+                address
+                displayName {
+                  value
+                }
+              }
+              toUser {
+                displayName {
+                  value
+                }
+              }
+            }
+            interpretation {
+              processedDescription
             }
           }
         }
-        interpretation {
-          processedDescription
-        }
-         app {
-          name
-          imgUrl
-        }
-        network
-        }
       }
-    }
-  }
+        }
 ```
 
 #### Example Response
