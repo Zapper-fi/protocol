@@ -407,8 +407,40 @@ hr {
 .DocSearch-Hit-content-wrapper {
   padding: 4px 8px !important;
 }
-
-.DocSearch-Button-Placeholder,
-.DocSearch-Button-Keys {
+.DocSearch-Button-Placeholder, .DocSearch-Button-Keys {
   display: none !important;
+ }
+
+ .popup {
+  position: absolute;
+  left: 100%;
+  margin-left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(31, 41, 55);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(10px, -50%);
+  }
 }

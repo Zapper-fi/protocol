@@ -1,12 +1,10 @@
 import { gql } from '@apollo/client';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { Button } from '@site/src/components/Button';
-import { usePrivy } from '@privy-io/react-auth';
 import { Copy } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import styles from '@site/src/pages/index.module.scss';
 
-const Toast = ({ message }) => <div className={styles.popup}>{message}</div>;
+const Toast = ({ message }) => <div className="popup">{message}</div>;
 
 const QUERY = gql`
   query Profile {
