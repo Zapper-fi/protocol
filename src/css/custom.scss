@@ -425,3 +425,22 @@ hr {
   white-space: nowrap;
   animation: fadeInOut 2s ease-in-out;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(10px, -50%);
+  }
+}
