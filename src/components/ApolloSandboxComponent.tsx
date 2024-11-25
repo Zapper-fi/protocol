@@ -20,8 +20,9 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = () => {
       graphRef="zapper-public-api@current"
       persistExplorerState={false}
       initialState={{
-        document: `query($addresses: [Address!]) {
-      accountsTimeline(addresses: $addresses) {
+        document: `query($addresses: [Address!],
+        $realtimeInterpretation: Boolean, $isSigner: Boolean) {
+      accountsTimeline(addresses: $addresses, realtimeInterpretation: $realtimeInterpretation, isSigner: $isSigner) {
         edges {
           node {
             transaction {
