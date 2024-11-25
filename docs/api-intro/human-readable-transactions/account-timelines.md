@@ -34,7 +34,7 @@ Let's say you want to show users their onchain transactions in a human-readable 
 ```
 
 :::tip
-When `isSigner` is set to `true` it only returns transactions initiated from the specified address. When this is set to `false`, it returns every transactions that this address was a part of.
+When `isSigner` is set to `true` it only returns transactions initiated from the specified address. When this is set to `false`, it returns every transaction that this address was a part of.
 :::
 
 #### Example Query
