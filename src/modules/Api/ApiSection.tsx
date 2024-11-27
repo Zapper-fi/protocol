@@ -71,7 +71,7 @@ export const ApiSection: React.FC = () => {
               portfolios, onchain prices to contextualized transaction histories.
             </p>
           </div>
-          <LinkButton href="/docs/api-intro" type="primary" buttonCopy="Learn More" />
+          <LinkButton href="docs/api-intro" type="primary" buttonCopy="Learn More" />
         </div>
       </div>
       <Section
