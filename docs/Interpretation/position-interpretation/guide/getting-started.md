@@ -10,7 +10,7 @@ This guide will walk you through building an Position Interpreter. An Position I
 ## Components of a Position Interpreter
 
 :::note
-This guide assumes that you have already read about what positions are. If you haven't, please read the [overview of Positions](/docs/Interpretation/position-interpretation/overview.md).
+This guide assumes that you have already read about what positions are. If you haven't, please read the [overview of Positions](../overview.md).
 :::
 
 There are 3 key components of an Position Interpreter:
@@ -47,7 +47,7 @@ Also, check out this video guide to creating an Position Interpreter for tokeniz
   allowfullscreen
 ></iframe>
 
-For more video guides, check out the [Learning Center](/docs/learning-center).
+For more video guides, check out the [Learning Center](../../../learning-center.md).
 
 ### 1. Create a new Position Interpreter
 
@@ -59,7 +59,7 @@ You can get started by navigating to your [Dashboard page](https://www.zapper.xy
 
 ### 2. Input the contract address
 
-Input the contract address of the position you want to interpret. This guide will start with a single contract address, but you can also build an interpreter for multiple contract addresses as once using a contract factory. To do do this, see the [Position Interpreter Factory Guide](/docs/Interpretation/app-token-interpretation/guide/getting-started) for more information.
+Input the contract address of the position you want to interpret. This guide will start with a single contract address, but you can also build an interpreter for multiple contract addresses as once using a contract factory. To do do this, see the [Position Interpreter Factory Guide](getting-started.md) for more information.
 
 - A good contract to practice with, that is being used in this guide, is the Compound's cUSDC token. The token address is `0x39AA39c021dfbaE8faC545936693aC917d5E7563` on Ethereum mainnet. You'd just paste the sting in to the input box.
 

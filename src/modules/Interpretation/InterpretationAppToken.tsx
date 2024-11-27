@@ -52,11 +52,11 @@ export const InterpretationAppToken: React.FC = () => {
           </p>
           <ButtonGroup>
             <LinkButton
-              href="/docs/interpretation/app-token-interpretation/guide/getting-started"
+              href="docs/Interpretation/position-interpretation/guide/getting-started"
               buttonCopy="Get Started"
             />
             <LinkButton
-              href="/docs/interpretation/app-token-interpretation/overview"
+              href="docs/Interpretation/position-interpretation/overview"
               buttonCopy="Learn More"
               type="secondary"
             />

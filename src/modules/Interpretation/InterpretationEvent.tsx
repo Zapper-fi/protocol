@@ -46,11 +46,11 @@ export const InterpretationEvent: React.FC = () => {
           </p>
           <ButtonGroup>
             <LinkButton
-              href="/docs/interpretation/event-interpretation/guide/getting-started"
+              href="docs/Interpretation/event-interpretation/guide/getting-started"
               buttonCopy="Get Started"
             />
             <LinkButton
-              href="/docs/interpretation/event-interpretation/overview"
+              href="docs/Interpretation/event-interpretation/overview"
               buttonCopy="Learn More"
               type="secondary"
             />

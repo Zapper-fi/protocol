@@ -14,9 +14,9 @@ To get started contributing to Zapper Protocol, visit one of our guides:
 
 | Guide                                | Link  |
 |--------------------------------------|-------|
-| Position Interpretation             | [Guide](/docs/Interpretation/position-interpretation/guide/getting-started.md) |
-| Event Interpretation               | [Guide](/docs/Interpretation/event-interpretation/guide/getting-started) |
-| Validation                            | [Guide](/docs/review) |
+| Position Interpretation             | [Guide](position-interpretation/guide/getting-started.md) |
+| Event Interpretation               | [Guide](event-interpretation/guide/getting-started.md) |
+| Validation                            | [Guide](../validation/becoming-a-reviewer.md) |
 
 ## Curator Leaderboard
 

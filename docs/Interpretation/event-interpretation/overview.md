@@ -54,15 +54,15 @@ An event interpreter is built out of different key components. Put together thes
 
 ### 1. Description
 
-Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. Click [here](/docs/interpretation/event-interpretation/guide/action-verb) to learn more about how to add the Description of an event.
+Could be as simple as a single action verb, the Description will explain, in words, what happened in the transaction. Click [here](guide/action-verb.md) to learn more about how to add the Description of an event.
 
 ### 2. Items involved
 
-Items could be tokens, NFTs, or any information contained in the onchain transaction. Click [here](/docs/interpretation/event-interpretation/guide/item-types) to learn more about the different items that can be part of an event.
+Items could be tokens, NFTs, or any information contained in the onchain transaction. Click [here](guide/item-types.md) to learn more about the different items that can be part of an event.
 
 ### 3. App
 
-The app through which the transaction occured is the last piece of the puzzle. Click [here](/docs/interpretation/event-interpretation/guide/adding-app) to learn more about Description of an event.
+The app through which the transaction occured is the last piece of the puzzle. Click [here](guide/adding-app.md) to learn more about Description of an event.
 
 Together, these three elements give us a clear summary of the event:
 
