@@ -47,7 +47,7 @@ Also, check out this video guide to creating an Position Interpreter for tokeniz
   allowfullscreen
 ></iframe>
 
-For more video guides, check out the [Learning Center](/docs/learning-center).
+For more video guides, check out the [Learning Center](../../../learning-center.md).
 
 ### 1. Create a new Position Interpreter
 
