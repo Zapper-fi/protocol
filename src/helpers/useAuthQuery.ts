@@ -3,10 +3,10 @@ import { usePrivy } from '@privy-io/react-auth';
 
 /** useQuery that is enabled only if authenticated */
 export function useAuthQuery(query, options = {}) {
-  const { user } = usePrivy();
+  const { ready, user } = usePrivy();
 
   return useQuery(query, {
     ...options,
-    skip: !user,
+    skip: !ready || !user,
   });
 }
