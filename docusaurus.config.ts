@@ -32,7 +32,6 @@ const config = {
   ],
   url: 'https://protocol.zapper.xyz',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Zapper Protocol',
