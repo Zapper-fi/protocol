@@ -43,7 +43,7 @@ export const Recall: React.FC = () => {
               Join our community, and help us make blockchains readable to everyone!
             </h5>
           </div>
-          <LinkButton href="/docs/interpretation/contribute" type="primary" buttonCopy="Get Started" />
+          <LinkButton href="docs/Interpretation/contribute" type="primary" buttonCopy="Get Started" />
         </div>
       </div>
     </div>

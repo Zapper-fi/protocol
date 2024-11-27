@@ -79,16 +79,16 @@ const config = {
       },
       items: [
         {
+          type: 'doc',
           position: 'left',
           label: 'API',
-          to: 'docs/api-intro',
-          activeBaseRegex: 'docs/api-intro',
+          docId: 'api-intro/api-intro',
         },
         {
+          type: 'doc',
           position: 'left',
           label: 'Interpretation Docs',
-          to: 'docs/interpretation/overview',
-          activeBaseRegex: 'docs/interpretation/overview',
+          docId: 'Interpretation/overview',
         },
         {
           type: 'custom-NavbarItem',
