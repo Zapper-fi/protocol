@@ -36,23 +36,7 @@ Visit the [Dashboard](/dashboard) to get an API key.
 
 Grab the API key, store it in a safe place, and use it to securely access the API.
 
-#### Curl Request Example
-
-```graphql
-curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header 'Authorization: YOUR_API_KEY_ENCODED --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!, $withOverrides: Boolean) { portfolio(addresses: $addresses, networks: $networks, withOverrides: $withOverrides) { tokenBalances { address network token { balance balanceUSD balanceRaw baseToken { name label symbol address } } } appBalances { address network updatedAt balanceUSD appName } nftBalances { balanceUSD network } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f","0x6f6e75fb472ee39d847d825cc7c9a613e227e261"],"networks":["BASE_MAINNET","ETHEREUM_MAINNET"]}}'
-```
-
-:::note
-The API key must be Base64 encoded and passed with the `Basic` prefix in the Authorization Header.
-
-Example: `Authorization: Basic YOUR_API_KEY_BASE_64==`
-
-Header Key : "Authorization"
-
-Header Value : "Basic YOUR_API_KEY_BASE_64=="
-
-
-:::
+We provide code samples in multiple popular languages and frameworks available in our [Code Sample](/docs/api-intro/code-samples) section. Additionally, our [API Sandbox](/docs/api-intro/sandbox)  lets you try our endpoints in one click.
 
 
 #### 3) Buy Credits
