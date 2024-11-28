@@ -4,7 +4,7 @@ const privyAppId = process.env.PRIVY_APP_ID || '';
 
 const privyConfig: PrivyClientConfig = {
   appearance: {
-    landingHeader: 'Sign in to Zapper Protocol',
+    landingHeader: 'Sign in to Zapper API',
     theme: 'dark',
   },
 };
