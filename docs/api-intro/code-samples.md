@@ -246,7 +246,7 @@ def fetch_portfolio() -> Dict[str, Any]:
                     'networks': ['ETHEREUM_MAINNET']
                 }
             },
-            timeout=30  # Add timeout
+            timeout=30
         )
         
         response.raise_for_status()
