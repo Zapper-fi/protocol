@@ -159,7 +159,7 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
-  const displayV2Points = apiV2PointsRemaining < 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
+  const displayV2Points = apiV2PointsRemaining <= 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
   const isNegativeBalance = apiV2PointsRemaining < 0;
   const disabled = loading || !user;
   const formatPrice = (price) => price.toFixed(2);
