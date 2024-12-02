@@ -47,13 +47,6 @@ Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
 :::info
 
-The Zapper GraphQL API is in alpha. If you run into any issues please share your feedback, it is much appreciated. 
-
-If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started) you automatically have access to the new GraphQL endpoints with your existing API key. Access the new [Dashboard](/dashboard) by signing in with the email associated with your existing account.
-
-Please note that the alpha is primarily meant for testing. During beta, you will be able migrate your existing legacy credits to use on the new queries as we will ask all existing clients to begin migrating to the new GraphQL endpoints. Bulk purchase discounts will also be introduced at this time.
-
-
-Please reach out to ops@zapper.xyz if you have any questions.
+If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started) you automatically have access to the new GraphQL endpoints with your existing API key - simply sign into the new [Dashboard](/dashboard) with your email associated with your existing account. Please contact us at *ops.zapper.fi* to get your points migrated to the new GraphQL API.
 
 :::
