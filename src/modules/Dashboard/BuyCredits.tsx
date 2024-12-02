@@ -81,7 +81,7 @@ export function BuyCredits() {
   const { user } = usePrivy();
   const { data } = useAuthQuery(QUERY);
   const [points, setPoints] = useState(MIN_POINTS);
-  const [displayPoints, setDisplayPoints] = useState();
+  const [displayPoints, setDisplayPoints] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [price, setPrice] = useState(0);
 
@@ -106,7 +106,6 @@ export function BuyCredits() {
   const normalizePoints = (value) => {
     const numValue = Number.parseInt(value) || 0;
     if (numValue < MIN_POINTS) {
-      setErrorMessage(`Minimum credit amount is ${MIN_POINTS}`);
       return MIN_POINTS;
     }
     setErrorMessage('');
@@ -115,8 +114,9 @@ export function BuyCredits() {
 
   const debouncedUpdatePrice = useCallback(
     debounce(async (points) => {
+      const normalizedPoints = normalizePoints(points);
       const { data } = await getPrice({
-        variables: { creditAmount: Number(points) },
+        variables: { creditAmount: normalizedPoints },
       });
       setPrice(data?.getCreditsPrice || 0);
     }, 300),
@@ -132,6 +132,11 @@ export function BuyCredits() {
   const handlePointsChange = (e) => {
     const rawValue = e.target.value.replace(/[^0-9]/g, '');
     setDisplayPoints(rawValue);
+    if (Number(rawValue) < MIN_POINTS) {
+      setErrorMessage(`Mininum ${MIN_POINTS} credits`);
+    } else {
+      setErrorMessage('');
+    }
     debouncedUpdatePrice(rawValue);
   };
 
@@ -193,28 +198,34 @@ export function BuyCredits() {
       </div>
 
       <Card>
-        {errorMessage && <p className="text-red-400">{errorMessage}</p>}
-
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 ">
+          <div className="grid grid-cols-2">
             <div className="space-y-2">
               <label htmlFor="points-input" className="text-sm font-medium">
                 Credit Amount
               </label>
               <div className="h-10 flex items-center">
-                <input
-                  id="points-input"
-                  type="text"
-                  value={displayPoints}
-                  onChange={handlePointsChange}
-                  onBlur={handleBlur}
-                  style={{
-                    border: '1px solid grey',
-                    borderRadius: '8px',
-                    padding: '8px 12px',
-                  }}
-                  placeholder="Enter credits amount"
-                />
+                <div className="relative w-[250px]">
+                  <input
+                    id="points-input"
+                    type="text"
+                    value={displayPoints}
+                    onChange={handlePointsChange}
+                    onBlur={handleBlur}
+                    style={{
+                      border: '1px solid grey',
+                      borderRadius: '8px',
+                      padding: '8px 12px',
+                      width: '100%',
+                    }}
+                    placeholder="Enter credits amount"
+                  />
+                  {errorMessage && (
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <span className="text-red-500 text-sm">{errorMessage}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="space-y-2">
