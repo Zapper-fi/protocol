@@ -194,7 +194,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h3>Consumption Amount & Cost</h3>
+          <h4>Consumption Amount & Cost</h4>
           <Card>
             {consumptionLoading ? (
               <p>Loading...</p>
@@ -209,7 +209,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h3>Endpoints Queried</h3>
+          <h4>Endpoints Queried</h4>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>

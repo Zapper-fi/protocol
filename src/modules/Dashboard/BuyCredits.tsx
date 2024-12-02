@@ -191,7 +191,7 @@ export function BuyCredits() {
           {Number(apiV1PointsRemaining) > 0 && (
             <p className="flex items-center justify-end gap-1">
               Legacy REST API credits: <span className="font-bold">{apiV1PointsRemaining}</span>
-              <InfoIcon message="These credits are available for use with the legacy REST API. After the alpha, you will be able to convert these into new credits to use on the GraphQL queries." />
+              <InfoIcon message="These credits are currently available for use with the legacy REST API. To migrate previously purchased credits to the new GraphQL API, please contact us at ops.zapper.fi." />
             </p>
           )}
         </div>
