@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+hide_table_of_contents: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,6 +16,13 @@ The API key must be base64 encoded for all requests.
 
 <Tabs>
   <TabItem value="react" label="React" default>
+
+### Setup
+1. Create new React project: `npx create-react-app my-app --template typescript`
+2. Install dependencies: `npm install @apollo/client graphql`
+3. Replace `src/App.tsx` with code below
+4. Replace YOUR_API_KEY with your actual key
+5. Run: `npm start`
 
 New to React? [Get started with Create React App](https://create-react-app.dev/docs/getting-started) or [Next.js](https://nextjs.org/docs/getting-started).
 
@@ -123,10 +131,17 @@ function App() {
 }
 
 export default App;
-
 ```
   </TabItem>
   <TabItem value="node" label="Node.js">
+
+### Setup
+1. Create new directory and enter it
+2. Run `npm init -y`
+3. Install axios: `npm install axios`
+4. Create `index.js` with code below
+5. Replace YOUR_API_KEY
+6. Run: `node index.js`
 
 New to Node.js? [Get started with the official guide](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs).
 
@@ -214,12 +229,17 @@ Then, run the cURL command using your encoded key :
 curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header "Authorization: Basic $ENCODED_KEY" --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) { portfolio(addresses: $addresses, networks: $networks) { tokenBalances { address network token { balance balanceUSD baseToken { name symbol } } } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f"],"networks":["ETHEREUM_MAINNET"]}}'
 ```
 
-:::note
-When using cURL, you need to Base64 encode your API key. Other languages handle this automatically.
-:::
-
   </TabItem>
   <TabItem value="python" label="Python">
+
+### Setup
+1. Create new directory: `mkdir python-portfolio && cd python-portfolio`
+2. Create virtual environment: `python3 -m venv venv`
+3. Activate virtual environment: `source venv/bin/activate`
+4. Install requests: `pip install requests`
+5. Create `portfolio.py` with code below
+6. Replace YOUR_API_KEY
+7. Run: `python portfolio.py`
 
 New to Python? [Get started with the official tutorial](https://docs.python.org/3/tutorial/).
 
@@ -301,6 +321,13 @@ if __name__ == "__main__":
 ```
   </TabItem>
   <TabItem value="ruby" label="Ruby">
+
+### Setup
+1. Install Ruby if not installed: `brew install ruby` (macOS) or follow [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/)
+2. Create new directory: `mkdir ruby-portfolio && cd ruby-portfolio`
+3. Create `portfolio.rb` with code below
+4. Replace YOUR_API_KEY
+5. Run: `ruby portfolio.rb`
 
 New to Ruby? [Get started with Ruby in 20 minutes](https://www.ruby-lang.org/en/documentation/quickstart/).
 
