@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { gql, useMutation } from '@apollo/client';
+import React, { useState, useCallback, useEffect } from 'react';
+import { debounce } from 'lodash';
+import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
@@ -9,6 +10,8 @@ import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
 const GRACE_PERIOD = 5000;
+const MIN_POINTS = 5000;
+
 const QUERY = gql`
   query BuyCredits {
     apiClientById {
@@ -23,6 +26,12 @@ const CREATE_CHARGE = gql`
     createCharge(pointsAmount: $pointsAmount, userEmail: $userEmail) {
       hostedUrl
     }
+  }
+`;
+
+const GET_CREDITS_PRICE = gql`
+  query GetCreditsPrice($creditAmount: Int!) {
+    getCreditsPrice(creditAmount: $creditAmount)
   }
 `;
 
@@ -68,16 +77,17 @@ const InfoIcon = ({ message }) => {
   );
 };
 
-const MIN_POINTS = 5000;
-
 export function BuyCredits() {
   const { user } = usePrivy();
   const { data } = useAuthQuery(QUERY);
   const [points, setPoints] = useState(MIN_POINTS);
-  const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
+  const [displayPoints, setDisplayPoints] = useState();
   const [errorMessage, setErrorMessage] = useState('');
+  const [price, setPrice] = useState(0);
 
-  const [createCharge, { loading, error }] = useMutation(CREATE_CHARGE, {
+  const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
+
+  const [createCharge, { loading }] = useMutation(CREATE_CHARGE, {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
         const url = data.createCharge.hostedUrl;
@@ -86,8 +96,11 @@ export function BuyCredits() {
     },
   });
 
-  const calculateCost = (points) => {
-    return (points / 1000).toFixed(2);
+  const updatePrice = async (points) => {
+    const { data } = await getPrice({
+      variables: { creditAmount: Number(points) },
+    });
+    setPrice(data?.getCreditsPrice || 0);
   };
 
   const normalizePoints = (value) => {
@@ -100,15 +113,33 @@ export function BuyCredits() {
     return Math.floor(numValue / 50) * 50;
   };
 
+  const debouncedUpdatePrice = useCallback(
+    debounce(async (points) => {
+      const { data } = await getPrice({
+        variables: { creditAmount: Number(points) },
+      });
+      setPrice(data?.getCreditsPrice || 0);
+    }, 300),
+    [],
+  );
+
+  useEffect(() => {
+    return () => {
+      debouncedUpdatePrice.cancel();
+    };
+  }, [debouncedUpdatePrice]);
+
   const handlePointsChange = (e) => {
     const rawValue = e.target.value.replace(/[^0-9]/g, '');
     setDisplayPoints(rawValue);
+    debouncedUpdatePrice(rawValue);
   };
 
   const handleBlur = () => {
     const normalizedPoints = normalizePoints(displayPoints);
     setPoints(normalizedPoints);
     setDisplayPoints(normalizedPoints.toString());
+    updatePrice(normalizedPoints);
   };
 
   const handleSubmit = (e) => {
@@ -122,7 +153,6 @@ export function BuyCredits() {
     createCharge({
       variables: {
         pointsAmount: normalizedPoints,
-        userId: user.id,
         userEmail: user.email.address,
       },
     });
@@ -132,11 +162,19 @@ export function BuyCredits() {
   const displayV2Points = apiV2PointsRemaining < 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
   const isNegativeBalance = apiV2PointsRemaining < 0;
   const disabled = loading || !user;
+  const formatPrice = (price) => price.toFixed(2);
 
   return (
     <div className="space-y-2">
       <div className="flex justify-between items-start">
-        <h3>Buy Credits</h3>
+        <div className="space-y-1">
+          <h3>Buy Credits</h3>
+          <div className="text-left">
+            <a href="/docs/api-intro/pricing" className="text-primary-default hover:underline">
+              See how credit costs are calculated
+            </a>
+          </div>
+        </div>
         <div className="text-right">
           <p className="flex items-center justify-end gap-1">
             Credit balance:
@@ -187,16 +225,16 @@ export function BuyCredits() {
                 <div
                   id="cost-display"
                   className="font-extrabold text-primary-default bg-transparent"
-                  aria-label={`Cost: $${calculateCost(displayPoints)}`}
+                  aria-label={`Cost: $${formatPrice(price)}`}
                 >
-                  USD ${calculateCost(points)}
+                  USD ${formatPrice(price)}
                 </div>
               </div>
             </div>
           </div>
 
           <Button type="submit" variant="primary" disabled={disabled} className="w-full">
-            <span className="font-extrabold">Buy for USD ${calculateCost(points)}</span>
+            <span className="font-extrabold">Buy for USD ${formatPrice(price)}</span>
           </Button>
         </form>
       </Card>

@@ -49,6 +49,21 @@ The `portfolio` query can be called with one or more of the following fields for
 Each address used in a query counts as a query. If you bundle multiple addresses into a single call the cost = query price multiplied by the # of addresses.
 :::
 
+### Credit Pricing Tiers
+
+We offer volume-based discounts through our tiered pricing system:
+
+| Tier | Credit Range | Price per Credit | Price per 1,000 Credits | Discount |
+|------|--------------|------------------|------------------------|----------|
+| 1 | 0-100,000 | $0.001 | $1.00 | - |
+| 2 | 100,001-500,000 | $0.0008 | $0.80 | 20% |
+| 3 | 500,000+ | $0.0007 | $0.70 | 30% |
+
+For example, purchasing 600,000 credits would cost:
+- First 100,000 credits at $0.001 each
+- Next 400,000 credits at $0.0008 each
+- Final 100,000 credits at $0.0007 each
+
 ### Free Tier
 
 All API clients can use up to 5,000 credits for free. This gives clients at least 1,500 queries without having to purchase credits and can be a great way to try the API.
