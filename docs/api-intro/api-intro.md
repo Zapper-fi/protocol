@@ -16,7 +16,7 @@ Simplify onchain transactions with human-friendly descriptions. Queries for [Sin
 
 ### [Onchain Identity](/docs/api-intro/onchain-identity)
 
-Surface onchain identity such as avatars, ENS, Farcaster, and more.
+Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.
 
 ### [Portfolio Data](/docs/api-intro/portfolio/claimables)
 
