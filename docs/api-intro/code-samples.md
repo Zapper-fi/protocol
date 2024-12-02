@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+hide_table_of_contents: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,13 +10,24 @@ import TabItem from '@theme/TabItem';
 
 Below are examples for working with the Zapper API across different languages and frameworks. Each example shows how to fetch portfolio data for provided addresses, across the chosen chains.
 
+:::note
+The API key must be base64 encoded for all requests.
+:::
+
 <Tabs>
   <TabItem value="react" label="React" default>
+
+### Setup
+1. Create new React project: `npx create-react-app my-app --template typescript`
+2. Install dependencies: `npm install @apollo/client graphql`
+3. Replace `src/App.tsx` with code below
+4. Replace YOUR_API_KEY with your actual key
+5. Run: `npm start`
 
 New to React? [Get started with Create React App](https://create-react-app.dev/docs/getting-started) or [Next.js](https://nextjs.org/docs/getting-started).
 
 ```typescript
-import { ApolloClient, InMemoryCache, createHttpLink, gql, useQuery } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink, gql, useQuery, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 // Types for the GraphQL response
@@ -47,18 +59,21 @@ const httpLink = createHttpLink({
   uri: 'https://public.zapper.xyz/graphql',
 });
 
+const API_KEY = 'YOUR_API_KEY';
+const encodedKey = btoa(API_KEY);
+
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: 'Basic YOUR_API_KEY'
-    }
-  }
+      authorization: `Basic ${encodedKey}`,
+    },
+  };
 });
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 const PortfolioQuery = gql`
@@ -83,8 +98,8 @@ const PortfolioQuery = gql`
 function Portfolio() {
   const { loading, error, data } = useQuery<PortfolioData>(PortfolioQuery, {
     variables: {
-      addresses: ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
-      networks: ["ETHEREUM_MAINNET"]
+      addresses: ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+      networks: ['ETHEREUM_MAINNET'],
     },
   });
 
@@ -107,10 +122,26 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Portfolio />
+    </ApolloProvider>
+  );
+}
+
+export default App;
 ```
   </TabItem>
   <TabItem value="node" label="Node.js">
+
+### Setup
+1. Create new directory and enter it
+2. Run `npm init -y`
+3. Install axios: `npm install axios`
+4. Create `index.js` with code below
+5. Replace YOUR_API_KEY
+6. Run: `node index.js`
 
 New to Node.js? [Get started with the official guide](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs).
 
@@ -118,6 +149,7 @@ New to Node.js? [Get started with the official guide](https://nodejs.org/en/lear
 const axios = require('axios');
 
 const API_KEY = 'YOUR_API_KEY';
+const encodedKey = Buffer.from(API_KEY).toString('base64');
 
 const query = `
   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -145,7 +177,7 @@ async function fetchPortfolio() {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${API_KEY}`,
+        'Authorization': `Basic ${encodedKey}`,
       },
       data: {
         query,
@@ -197,20 +229,27 @@ Then, run the cURL command using your encoded key :
 curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header "Authorization: Basic $ENCODED_KEY" --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) { portfolio(addresses: $addresses, networks: $networks) { tokenBalances { address network token { balance balanceUSD baseToken { name symbol } } } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f"],"networks":["ETHEREUM_MAINNET"]}}'
 ```
 
-:::note
-When using cURL, you need to Base64 encode your API key. Other languages handle this automatically.
-:::
-
   </TabItem>
   <TabItem value="python" label="Python">
+
+### Setup
+1. Create new directory: `mkdir python-portfolio && cd python-portfolio`
+2. Create virtual environment: `python3 -m venv venv`
+3. Activate virtual environment: `source venv/bin/activate`
+4. Install requests: `pip install requests`
+5. Create `portfolio.py` with code below
+6. Replace YOUR_API_KEY
+7. Run: `python portfolio.py`
 
 New to Python? [Get started with the official tutorial](https://docs.python.org/3/tutorial/).
 
 ```python
 import requests
+import base64
 from typing import Dict, Any
 
 API_KEY = 'YOUR_API_KEY'
+encoded_key = base64.b64encode(API_KEY.encode()).decode()
 
 query = """
 query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -237,7 +276,7 @@ def fetch_portfolio() -> Dict[str, Any]:
             'https://public.zapper.xyz/graphql',
             headers={
                 'Content-Type': 'application/json',
-                'Authorization': f'Basic {API_KEY}'
+                'Authorization': f'Basic {encoded_key}'
             },
             json={
                 'query': query,
@@ -267,7 +306,6 @@ def fetch_portfolio() -> Dict[str, Any]:
         print(f"Unexpected error: {e}")
         raise
 
-# Example usage
 if __name__ == "__main__":
     try:
         portfolio_data = fetch_portfolio()
@@ -284,14 +322,23 @@ if __name__ == "__main__":
   </TabItem>
   <TabItem value="ruby" label="Ruby">
 
+### Setup
+1. Install Ruby if not installed: `brew install ruby` (macOS) or follow [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/)
+2. Create new directory: `mkdir ruby-portfolio && cd ruby-portfolio`
+3. Create `portfolio.rb` with code below
+4. Replace YOUR_API_KEY
+5. Run: `ruby portfolio.rb`
+
 New to Ruby? [Get started with Ruby in 20 minutes](https://www.ruby-lang.org/en/documentation/quickstart/).
 
 ```ruby
 require 'net/http'
 require 'uri'
 require 'json'
+require 'base64'
 
 API_KEY = 'YOUR_API_KEY'
+encoded_key = Base64.strict_encode64(API_KEY)
 
 query = <<-GRAPHQL
   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -321,7 +368,7 @@ def fetch_portfolio
 
   request = Net::HTTP::Post.new(uri)
   request['Content-Type'] = 'application/json'
-  request['Authorization'] = "Basic #{API_KEY}"
+  request['Authorization'] = "Basic #{encoded_key}"
   request.body = {
     query: query,
     variables: {
@@ -349,7 +396,6 @@ rescue StandardError => e
   raise "Error fetching portfolio: #{e.message}"
 end
 
-# Example usage
 begin
   portfolio = fetch_portfolio
   puts "Portfolio data:"
