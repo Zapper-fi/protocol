@@ -110,7 +110,7 @@ export function BuyCredits() {
       return MIN_POINTS;
     }
     setErrorMessage('');
-    return Math.floor(numValue / 50) * 50;
+    return Math.floor(numValue / MIN_POINTS) * MIN_POINTS;
   };
 
   const debouncedUpdatePrice = useCallback(
