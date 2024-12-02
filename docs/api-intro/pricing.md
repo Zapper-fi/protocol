@@ -55,14 +55,14 @@ We offer volume-based discounts through our tiered pricing system:
 
 | Tier | Credit Range | Price per Credit | Price per 1,000 Credits | Discount |
 |------|--------------|------------------|------------------------|----------|
-| 1 | 0-100,000 | $0.001 | $1.00 | - |
-| 2 | 100,001-500,000 | $0.0008 | $0.80 | 20% |
-| 3 | 500,000+ | $0.0007 | $0.70 | 30% |
+| 1 | 0-15,000,000 | $0.001 | $1.00 | - |
+| 2 | 15,000,001-50,000,000 | $0.0008 | $0.80 | 20% |
+| 3 | 50,000,001+ | $0.0007 | $0.70 | 30% |
 
-For example, purchasing 600,000 credits would cost:
-- First 100,000 credits at $0.001 each
-- Next 400,000 credits at $0.0008 each
-- Final 100,000 credits at $0.0007 each
+For example, purchasing 60,000,000 credits would cost:
+- First 15,000,000 credits at $0.001 each
+- Next 35,000,000 credits at $0.0008 each
+- Final 10,000,000 credits at $0.0007 each
 
 ### Free Tier
 

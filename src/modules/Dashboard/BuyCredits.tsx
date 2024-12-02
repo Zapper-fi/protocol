@@ -30,7 +30,7 @@ const CREATE_CHARGE = gql`
 `;
 
 const GET_CREDITS_PRICE = gql`
-  query GetCreditsPrice($creditAmount: Int!) {
+  query GetCreditsPrice($creditAmount: Float!) {
     getCreditsPrice(creditAmount: $creditAmount)
   }
 `;
