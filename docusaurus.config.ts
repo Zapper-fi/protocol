@@ -78,16 +78,14 @@ const config = {
       },
       items: [
         {
-          type: 'doc',
           position: 'left',
           label: 'API',
-          docId: 'api-intro/api-intro',
+          to: '/docs/api-intro/',
         },
         {
-          type: 'doc',
           position: 'left',
           label: 'Interpretation Docs',
-          docId: 'Interpretation/overview',
+          to: '/docs/Interpretation/overview',
         },
         {
           type: 'custom-NavbarItem',
