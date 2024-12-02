@@ -9,13 +9,17 @@ import TabItem from '@theme/TabItem';
 
 Below are examples for working with the Zapper API across different languages and frameworks. Each example shows how to fetch portfolio data for provided addresses, across the chosen chains.
 
+:::note
+The API key must be base64 encoded for all requests.
+:::
+
 <Tabs>
   <TabItem value="react" label="React" default>
 
 New to React? [Get started with Create React App](https://create-react-app.dev/docs/getting-started) or [Next.js](https://nextjs.org/docs/getting-started).
 
 ```typescript
-import { ApolloClient, InMemoryCache, createHttpLink, gql, useQuery } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink, gql, useQuery, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 // Types for the GraphQL response
@@ -47,18 +51,21 @@ const httpLink = createHttpLink({
   uri: 'https://public.zapper.xyz/graphql',
 });
 
+const API_KEY = 'YOUR_API_KEY';
+const encodedKey = btoa(API_KEY);
+
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: 'Basic YOUR_API_KEY'
-    }
-  }
+      authorization: `Basic ${encodedKey}`,
+    },
+  };
 });
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 const PortfolioQuery = gql`
@@ -83,8 +90,8 @@ const PortfolioQuery = gql`
 function Portfolio() {
   const { loading, error, data } = useQuery<PortfolioData>(PortfolioQuery, {
     variables: {
-      addresses: ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
-      networks: ["ETHEREUM_MAINNET"]
+      addresses: ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+      networks: ['ETHEREUM_MAINNET'],
     },
   });
 
@@ -107,7 +114,16 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Portfolio />
+    </ApolloProvider>
+  );
+}
+
+export default App;
+
 ```
   </TabItem>
   <TabItem value="node" label="Node.js">
@@ -118,6 +134,7 @@ New to Node.js? [Get started with the official guide](https://nodejs.org/en/lear
 const axios = require('axios');
 
 const API_KEY = 'YOUR_API_KEY';
+const encodedKey = Buffer.from(API_KEY).toString('base64');
 
 const query = `
   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -145,7 +162,7 @@ async function fetchPortfolio() {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${API_KEY}`,
+        'Authorization': `Basic ${encodedKey}`,
       },
       data: {
         query,
@@ -208,9 +225,11 @@ New to Python? [Get started with the official tutorial](https://docs.python.org/
 
 ```python
 import requests
+import base64
 from typing import Dict, Any
 
 API_KEY = 'YOUR_API_KEY'
+encoded_key = base64.b64encode(API_KEY.encode()).decode()
 
 query = """
 query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -237,7 +256,7 @@ def fetch_portfolio() -> Dict[str, Any]:
             'https://public.zapper.xyz/graphql',
             headers={
                 'Content-Type': 'application/json',
-                'Authorization': f'Basic {API_KEY}'
+                'Authorization': f'Basic {encoded_key}'
             },
             json={
                 'query': query,
@@ -267,7 +286,6 @@ def fetch_portfolio() -> Dict[str, Any]:
         print(f"Unexpected error: {e}")
         raise
 
-# Example usage
 if __name__ == "__main__":
     try:
         portfolio_data = fetch_portfolio()
@@ -290,8 +308,10 @@ New to Ruby? [Get started with Ruby in 20 minutes](https://www.ruby-lang.org/en/
 require 'net/http'
 require 'uri'
 require 'json'
+require 'base64'
 
 API_KEY = 'YOUR_API_KEY'
+encoded_key = Base64.strict_encode64(API_KEY)
 
 query = <<-GRAPHQL
   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
@@ -321,7 +341,7 @@ def fetch_portfolio
 
   request = Net::HTTP::Post.new(uri)
   request['Content-Type'] = 'application/json'
-  request['Authorization'] = "Basic #{API_KEY}"
+  request['Authorization'] = "Basic #{encoded_key}"
   request.body = {
     query: query,
     variables: {
@@ -349,7 +369,6 @@ rescue StandardError => e
   raise "Error fetching portfolio: #{e.message}"
 end
 
-# Example usage
 begin
   portfolio = fetch_portfolio
   puts "Portfolio data:"
