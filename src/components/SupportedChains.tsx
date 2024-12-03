@@ -31,15 +31,17 @@ function SupportedChainsTable() {
       <thead>
         <tr>
           <th colSpan={2}>Chain</th>
+          <th>Enum</th>
         </tr>
       </thead>
       <tbody>
-        {supportedChains.map(({ name, iconUrl }) => (
-          <tr key={name}>
+        {supportedChains.map(({ iconUrl, name, enumValue }) => (
+          <tr key={enumValue}>
             <td>
               <img src={iconUrl} alt={name} className="size-8 rounded-full" />
             </td>
             <td>{name}</td>
+            <td>{enumValue}</td>
           </tr>
         ))}
       </tbody>
