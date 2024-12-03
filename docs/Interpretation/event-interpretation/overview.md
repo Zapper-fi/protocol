@@ -5,11 +5,9 @@ pagination_label: Transaction Interpretation Overview
 
 # Overview
 
-## What is an transaction?
-
 ### Types of transactions
 
-The different types of transactions happening onchain grows exponentially. Here are a few examples that we see more frequently.
+The types of transactions happening onchain is growing exponentially. Here are a few examples that we see most frequently.
 
 - **DeFi:** Transfer, Swap, Bridge, Stake, etc.
 - **NFT:** Mints, Sales, etc.

@@ -35,7 +35,7 @@ export const InterpretationEvent: React.FC = () => {
               whiteSpace: 'nowrap',
             }}
           >
-            Event{' '}
+            Transaction{' '}
             <span className="text-alt-color" style={{ fontWeight: 500 }}>
               Interpretation
             </span>
