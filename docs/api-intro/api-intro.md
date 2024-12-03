@@ -39,7 +39,7 @@ Grab the API key, store it in a safe place, and use it to securely access the AP
 We provide code samples in multiple popular languages and frameworks available in our [Code Sample](/docs/api-intro/code-samples) section. Additionally, our [API Sandbox](/docs/api-intro/sandbox)  lets you try our endpoints in one click.
 
 
-#### 3) Buy Credits
+### 3) Buy Credits
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits which can be found by visiting [Pricing](/docs/api-intro/pricing). All credits spent on API queries are deducted from the accounts credit balance.
 

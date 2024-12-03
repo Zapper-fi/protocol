@@ -3,7 +3,7 @@ import { Section } from '../components/Section';
 
 export const Metrics: React.FC = () => {
   return (
-    <Section className="no-padding-mobile" style={{ padding: '128px 32px' }}>
+    <Section className="no-padding-mobile" style={{ padding: '64px 32px' }}>
       <div
         style={{
           display: 'flex',
