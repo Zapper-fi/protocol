@@ -34,9 +34,9 @@ function SupportedChainsTable() {
         </tr>
       </thead>
       <tbody>
-        {supportedChains.map((chain) => (
-          <tr key={chain}>
-            <td>{chain}</td>
+        {supportedChains.map(({ name, iconUrl }) => (
+          <tr key={name}>
+            <td>{name}</td>
           </tr>
         ))}
       </tbody>
