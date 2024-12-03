@@ -41,7 +41,9 @@ function SupportedChainsTable() {
               <img src={iconUrl} alt={name} className="size-8 rounded-full" />
             </td>
             <td>{name}</td>
-            <td>{enumValue}</td>
+            <td>
+              <code>{enumValue}</code>
+            </td>
           </tr>
         ))}
       </tbody>
