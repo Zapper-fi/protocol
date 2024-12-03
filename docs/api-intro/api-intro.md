@@ -452,6 +452,6 @@ Track usage and purchase additional credits on the [Dashboard](/dashboard).
 
 :::info
 
-If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started), you have access to the new GraphQL endpoints with your existing API key after signing in to the new [Dashboard](/dashboard) with the email associated with your existing account. Please contact us at *api@zapper.xyz* to get your points migrated to the new GraphQL API.
+If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started), you have access to the new GraphQL endpoints with your existing API key, after signing in to the new [Dashboard](/dashboard) with the email associated with your existing account. Please contact us at *api@zapper.xyz* to get your purchased points migrated to the new GraphQL API.
 
 :::
