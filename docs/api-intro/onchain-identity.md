@@ -12,9 +12,9 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 ---
 
-### `account`
+### `accounts`
 
-The `account` query takes an `address`. It returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+The `accounts` query takes one or more `addresses` in input, as an array. It returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
 
 ### Example Use Case: Social Profile
 
@@ -31,16 +31,15 @@ Let's say you are building a profile for users and want to surface their identit
 #### Example Query
 
 ```graphql
-query($address: Address!) {
-  account(address: $address) {
-    address
+query($addresses: [Address!]!) {
+  accounts(addresses: $addresses) {
     displayName {
-      value
       source
+      value
     }
     description {
-      value
       source
+      value
     }
     ensRecord {
       name
@@ -61,27 +60,48 @@ query($address: Address!) {
 ```js
 {
   "data": {
-    "account": {
-      "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b",
-      "displayName": {
-        "value": "0xjasper.eth",
-        "source": "ENS"
+    "accounts": [
+      {
+        "displayName": {
+          "source": "ENS",
+          "value": "0xjasper.eth"
+        },
+        "description": {
+          "source": "ENS",
+          "value": "designer of stuff at Zapper"
+        },
+        "ensRecord": {
+          "name": "0xjasper.eth"
+        },
+        "farcasterProfile": {
+          "username": "jasper",
+          "fid": 177
+        },
+        "lensProfile": {
+          "handle": "0xjasper"
+        }
       },
-      "description": {
-        "value": "designer of stuff at Zapper",
-        "source": "ENS"
-      },
-      "ensRecord": {
-        "name": "0xjasper.eth"
-      },
-      "farcasterProfile": {
-        "username": "jasper",
-        "fid": 177
-      },
-      "lensProfile": {
-        "handle": "0xjasper"
+      {
+        "displayName": {
+          "source": "ENS",
+          "value": "vitalik.eth"
+        },
+        "description": {
+          "source": "LENS",
+          "value": "Ethereum\n\nFable of the Dragon Tyrant (not mine but it's important): https://www.youtube.com/watch?v=cZYNADOHhVY\n\nAbolish daylight savings time and leap seconds"
+        },
+        "ensRecord": {
+          "name": "vitalik.eth"
+        },
+        "farcasterProfile": {
+          "username": "vitalik.eth",
+          "fid": 5650
+        },
+        "lensProfile": {
+          "handle": "vitalik"
+        }
       }
-    }
+    ]
   }
 }
 
@@ -96,7 +116,7 @@ query($address: Address!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `address`      | The address that is being queried.       | `Address!` | 
+| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
 
 ### Fields
 
@@ -121,13 +141,3 @@ query($address: Address!) {
 | `contract`      | -       | `String!` | 
 | `id`      | -       | `ID!`       |
 
-
-### `accounts`
-
-The `accounts` query takes one or more `addresses` input as an array. It returns the same fields as `account`.
-
-#### Arguments
-
-| Arguement      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.      | `Address!` | 
