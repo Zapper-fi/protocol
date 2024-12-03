@@ -16,7 +16,7 @@ export const Problem: React.FC = () => {
               minWidth: '400px',
             }}
           >
-            Onchain information is disorganized and unreadable.
+            Build on a scalable onchain data source.
           </h2>
         </div>
         <div className="problem__section__description">
@@ -25,8 +25,7 @@ export const Problem: React.FC = () => {
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-            Blockchains are bustling digital downtowns containing rich economic opportunities, yet are very difficult to
-            navigate.
+          The Zapper API uses a distributed community of curators to make onchain data human-readable and cover the exponential growth of onchain applications.
           </h5>
         </div>
       </div>
