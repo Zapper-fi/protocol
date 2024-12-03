@@ -80,7 +80,9 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>33</h3>
+            <h3 style={{ marginBottom: '0px' }}>
+              <a href="/docs/api-intro/supported-chains">33</a>
+            </h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Chains Supported</p>
           </div>
         </div>
