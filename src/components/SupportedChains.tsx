@@ -30,14 +30,14 @@ function SupportedChainsTable() {
     <table>
       <thead>
         <tr>
-          <th>Chain</th>
+          <th colSpan={2}>Chain</th>
         </tr>
       </thead>
       <tbody>
         {supportedChains.map(({ name, iconUrl }) => (
           <tr key={name}>
             <td>
-              <img src={iconUrl} alt={name} className="size-16 rounded-full" />
+              <img src={iconUrl} alt={name} className="size-8 rounded-full" />
             </td>
             <td>{name}</td>
           </tr>
