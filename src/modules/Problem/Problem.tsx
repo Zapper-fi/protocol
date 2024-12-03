@@ -16,17 +16,16 @@ export const Problem: React.FC = () => {
               minWidth: '400px',
             }}
           >
-            Onchain information is disorganized and unreadable.
+            Build onchain applications with the deepest data source.
           </h2>
         </div>
         <div className="problem__section__description">
           <h5 color="" style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-            The amount of onchain applications is increasing exponentially - no centralized entity will be able to
+            The quantity of onchain data is increasing exponentially - no centralized entity can
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-            Blockchains are bustling digital downtowns containing rich economic opportunities, yet are very difficult to
-            navigate.
+            The Zapper API uses a distributed community of curators to make onchain data human-readable and cover the long-tail of onchain applications.
           </h5>
         </div>
       </div>

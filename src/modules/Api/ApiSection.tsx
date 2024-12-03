@@ -57,7 +57,7 @@ export const ApiSection: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              The Ultimate Human-Readable API
+              The Complete Onchain API
             </h1>
             <p
               className="text-alt-color"
@@ -67,8 +67,7 @@ export const ApiSection: React.FC = () => {
                 maxWidth: '720px',
               }}
             >
-              Access the most comprehensive onchain data built on top of our powerful interpretation stack. From DeFi
-              portfolios, onchain prices to contextualized transaction histories.
+              A single API to access all DeFi positions, tokens, apps, NFT collections, and human-readable transaction histories across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
           <LinkButton href="docs/api-intro" type="primary" buttonCopy="Learn More" />
