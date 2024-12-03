@@ -1,22 +1,30 @@
-import { gql, useQuery } from '@apollo/client';
-import React from 'react';
-import { useAuthQuery } from '../helpers/useAuthQuery';
+import React, { useEffect, useState } from 'react';
 
-const QUERY = gql`
-  query SupportedChains {
-    networks {
-      name
-      enabled
+async function fetchSupportedChains() {
+  try {
+    const response = await fetch('https://zapper.xyz/api/networks');
+
+    if (!response.ok) {
+      return [];
     }
+
+    return response.json();
+  } catch {
+    return [];
   }
-`;
+}
 
 function SupportedChainsTable() {
-  const { data } = useQuery(QUERY);
+  const [supportedChains, setSupportedChains] = useState([]);
 
-  const supportedChains = Object.values(data?.networks)
-    .filter((n) => n.enabled)
-    .map((n) => n.name);
+  useEffect(() => {
+    const getSupportedChains = async () => {
+      const chains = await fetchSupportedChains();
+      setSupportedChains(chains);
+    };
+
+    getSupportedChains();
+  }, []);
 
   return (
     <table>
