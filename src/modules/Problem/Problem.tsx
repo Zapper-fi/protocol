@@ -16,7 +16,7 @@ export const Problem: React.FC = () => {
               minWidth: '400px',
             }}
           >
-            Build on a scalable onchain data source.
+            Onchain information is disorganized and unreadable.
           </h2>
         </div>
         <div className="problem__section__description">
