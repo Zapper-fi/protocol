@@ -6,7 +6,7 @@ sidebar_position: 7
 
 ## Position Interpretation - tokenized position
 
-This video will guide you through the process of creating anPostion Interpreter for tokenized position.
+This video will guide you through the process of creating a Postion Interpreter for tokenized position.
 
 <iframe
   width="560"
@@ -21,7 +21,7 @@ This video will guide you through the process of creating anPostion Interpreter 
 
 ## Position Interpretation - using a contract factory
 
-This video will guide you through the process of creating an Position Interpreter for multiple positions using a contract factory.
+This video will guide you through the process of creating a Position Interpreter for multiple positions using a contract factory.
 
 <iframe
   width="560"
@@ -36,7 +36,7 @@ This video will guide you through the process of creating an Position Interprete
 
 ## Position Interpretation - multiple underlying tokens
 
-This video will guide you through the process of creating an Position Interpreter for positions with multiple underlying tokens.
+This video will guide you through the process of creating a Position Interpreter for positions with multiple underlying tokens.
 
 <iframe
   width="560"
@@ -48,15 +48,15 @@ This video will guide you through the process of creating an Position Interprete
   allowfullscreen
 ></iframe>
 
-## Event Interpretation
+## Transaction Interpretation
 
-Here you will find a video to guide you through the process of creating an Event Intepretation with a **String** item type.
+Here you will find a video to guide you through the process of creating a Transation Interpreter with a **String** item type.
 
 <iframe
   width="560"
   height="315"
   src="https://www.youtube.com/embed/gZGSxaShxgA"
-  title="Submit an EI with String item type"
+  title="Submit an TI with String item type"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerpolicy="strict-origin-when-cross-origin"
@@ -64,13 +64,13 @@ Here you will find a video to guide you through the process of creating an Event
 ></iframe>
 
 ---
-This next video will guide you through the process of creating an Event Interpretation with a **Actor** item type.
+This next video will guide you through the process of creating an Transaction Interpreter with a **Actor** item type.
 
 <iframe
   width="560"
   height="315"
   src="https://www.youtube.com/embed/PkRWBTRcOb0"
-  title="Submitting an EI with an Actor item type"
+  title="Submitting an TI with an Actor item type"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerpolicy="strict-origin-when-cross-origin"

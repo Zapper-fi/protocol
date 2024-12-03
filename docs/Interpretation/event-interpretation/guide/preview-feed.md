@@ -21,7 +21,7 @@ Failed transactions can appear in the preview. You can ignore these transaction 
 :::
 
 ---
-## Submitting your EI
+## Submitting your TI
 
 Before submitting your interpretation, double check that you have filled out the required information, and that all the transactions in the preview feed are correctly interpreted.
 
@@ -36,7 +36,7 @@ At any time, you can monitor the status of your submissions and see rejection re
 :::
 
 ---
-## Non-interpretable Events
+## Non-interpretable Transactions
 
 - **Multi-sig transactions** - We're working on interpreting these at-scale
 - **Proxy contract transactions** - We're also working on interpreting transactions interacting with Maker’s DSProxy contracts.

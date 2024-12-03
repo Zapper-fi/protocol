@@ -41,7 +41,7 @@ export const InterpretationEvent: React.FC = () => {
             </span>
           </h2>
           <p className="text-alt-color">
-            Event Interpreters are used on onchain transactions to translate them into human-readable output, and
+            Transaction Interpreters are used on onchain transactions to translate them into human-readable output, and
             augment them with contextual, and often off-chain, information.
           </p>
           <ButtonGroup>

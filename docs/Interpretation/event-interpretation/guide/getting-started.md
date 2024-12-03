@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-pagination_label: Getting Started with EIs
+pagination_label: Getting Started with TIs
 ---
 
 # Getting Started
 
 ## Where to start
 
-### 1. Find an event to interpret
+### 1. Find an transaction to interpret
 
 The best place to start is by connecting your wallet on [Zapper](https://zapper.xyz/) and looking at your activity feed. Look for transactions that are rendered as "did something" in the activity tab. We recommend this since understanding the purpose of a transaction can be tricky if you didn't execute it.
 
@@ -23,11 +23,11 @@ First, let's assume you have basic knowledge of the transaction's purpose, such 
 - Search online for the contract address to see what the app is, this will provide important context (NFT-related app, DeFi app, DEX, lending protocol, etc.)
 
 ---
-### 3. Build your event
+### 3. Build your submission
 
-Once you feel confident that you have a good understanding of what happened, it is now time to build your event!
+Once you feel confident that you have a good understanding of what happened, it is now time to build your submission!
 
-Interpreting an event is simple! There are three areas to fill for an uninterpreted transaction (and not all need to be filled if unnecessary):
+Interpreting an transaction is simple! There are three areas to fill for an uninterpreted transaction (and not all need to be filled if unnecessary):
 
 1. **[Description](/docs/Interpretation/event-interpretation/guide/action-verb)**
 2. **[Item type(s)](/docs/Interpretation/event-interpretation/guide/item-types)** involved
@@ -37,7 +37,7 @@ Here is where to add each element in the curation tool:
 
 ![image](/img/assets/Buildyourevent.png)
 
-Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. To create an event, you simply have to combine these three building blocks to interpret the event. 
+Together, these elements create a standardized format: This **(1)** happened, with these **(2)** items, on that **(3)** app. To create a submission, you simply have to combine these three building blocks to interpret the transaction. 
 
 :::tip 
 

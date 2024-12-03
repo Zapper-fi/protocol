@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# Event Description
+# Transaction Description
 
 Often, the first element you will add in your interpretation is the verb or text describing what happened. The verb describes the action taken by the account that initiated the transaction. Common verbs include deposited, minted, swapped, claimed, borrowed, and bridged. However, these can get more complex if needed, such as Bought a Powershart Pack, Toggled nesting, or Bought a raffle ticket. The main goal is to accurately describe what action was taken in the transaction.
 
 :::tip  
 
-Looking at Method Parameters can be a great way to understand the action in an event. The method name often indicates the action taken. For example, "deposit" usually means the user sent tokens to an app.
+Looking at Method Parameters can be a great way to understand the action taken. The method name often indicates the action taken. For example, "deposit" usually means the user sent tokens to an app.
 
 :::
 
@@ -20,7 +20,7 @@ Not all actions will be covered by the standard verbs provided here. This table 
 
 :::
 
-| Action verb | Description | General event description | Typical flows and variables included in the description |
+| Action verb | Description | Action description | Typical flows and variables included in the description |
 |-------------|-------------|--------------------------|-------------------------------------------------------|
 | Unpooled    | Removing tokens from a liquidity pool in a decentralized exchange (like Uniswap, Aerodrome) | Unpooled $1 | $1 = all token inflow to the “from” address |
 | Pooled      | Adding tokens to a liquidity pool on a decentralized exchange | Pooled $1 | $1 = all token outflow from the “from” address |

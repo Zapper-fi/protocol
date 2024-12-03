@@ -9,20 +9,20 @@ pagination_label: Interpretation Overview
 
 Indexing Templates are the foundation from which interpretation is built.
 
-Indexing templates are their core are simple `JSON` files - and are formatted around different standards/types. You can view an example of a JSON file event interpreter [here](event-interpretation/overview.md#example-json-object-of-an-ei).
+Indexing templates are their core are simple `JSON` files - and are formatted around different standards/types. You can view an example of a JSON file transaction interpreter [here](event-interpretation/overview.md#example-json-object-of-an-ei).
 
 There are 2 main types of indexing templates:
 
-- **Event Interpretation**
+- **Transaction Interpretation**
 - **Position Interpretation**
 
 ---
 
-## Event Interpretation
+## Transaction Interpretation
 
-Event Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information.
+Transaction Interpreters are used on onchain transactions to translate them into human-readable output and augment them with contextual, and often off-chain, information.
 
-You can read more about Event Interpreters [here](event-interpretation/overview.md).
+You can read more about Transaction Interpreters [here](event-interpretation/overview.md).
 
 ---
 

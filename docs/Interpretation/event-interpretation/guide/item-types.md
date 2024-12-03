@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Item Types
 
-Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some events may not require to include any items, while others may have more than one to give an accurate description of the event. 
+Use the drop-down menu to detail what happened in the transaction. There are nine item types to choose from. Some transactions may not require to include any items, while others may have more than one to give an accurate description. 
 
 | **Type**            | **Description**                                                                                                                                                                  | **Example**                            |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -14,13 +14,13 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 | **Accounts**        | References any wallet involved in the transaction, including intermediaries. Can be displayed as a full address or aliased as an ENS.                                             | ![image](/img/assets/SendToken.png)    |
 | **NFT**             | Points to a specific NFT not moving in or out of the wallet. Requires the NFT collection address and token ID data.                                                              | ![image](/img/assets/SingleNFT.png)    |
 | **Network**         | Refers to a network ID in the transaction, useful for bridging transactions to reference a destination chain.                                                                     | ![image](/img/assets/Network.png)      |
-| **String**          | Surfaces any text in an event, such as a comment made on a vote.                                                                                                                 | ![image](/img/assets/String.png)       |
+| **String**          | Surfaces any text in an transaction, such as a comment made on a vote.                                                                                                                 | ![image](/img/assets/String.png)       |
 | **Number**          | References a number, such as the number of proposals a user voted on.                                                                                                            | ![image](/img/assets/Number.png)       |
 | **Duration**        | Refers to a time period, like locking funds for a certain period. The source scale is the contract's duration, and the target scale is how you want to display it (e.g., minutes to months). | ![image](/img/assets/Duration.png)     |
 
 :::tip 
 
-Watch [this video](/docs/learning-center#event-interpretation) to see an example of an EI using a "String" item to interpret. 
+Watch [this video](/docs/learning-center#event-interpretation) to see an example of an TI using a "String" item to interpret. 
 
 :::
 

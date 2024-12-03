@@ -39,7 +39,7 @@ export const Metrics: React.FC = () => {
             }}
           >
             <h3 style={{ marginBottom: '0px' }}>22.91 Billion</h3>
-            <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Total Human Readable Transactions</p>
+            <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Human-Readable Transactions</p>
           </div>
           <div
             style={{
@@ -67,7 +67,7 @@ export const Metrics: React.FC = () => {
             }}
           >
             <h3 style={{ marginBottom: '0px' }}>12,000</h3>
-            <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Event Interpreters</p>
+            <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Transaction Interpreters</p>
           </div>
           <div
             style={{

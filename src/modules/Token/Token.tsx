@@ -41,7 +41,7 @@ export const Token: React.FC = () => {
                 textTransform: 'uppercase',
               }}
             >
-              Coming Q4
+              Coming Soon
             </div>
           </div>
 
