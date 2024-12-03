@@ -38,7 +38,7 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>4.59 Billion</h3>
+            <h3 style={{ marginBottom: '0px' }}>22.91 Billion</h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Total Human Readable Transactions</p>
           </div>
           <div
@@ -52,7 +52,7 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>2,500</h3>
+            <h3 style={{ marginBottom: '0px' }}>4,400</h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Position Interpreters</p>
           </div>
           <div
@@ -66,7 +66,7 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>7,200</h3>
+            <h3 style={{ marginBottom: '0px' }}>12,000</h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Event Interpreters</p>
           </div>
           <div
@@ -80,7 +80,7 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>12</h3>
+            <h3 style={{ marginBottom: '0px' }}>33</h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Chains Supported</p>
           </div>
         </div>
