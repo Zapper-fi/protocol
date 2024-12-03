@@ -20,6 +20,7 @@ export const Intro: React.FC = () => {
         <div className="intro__content">
           <div className="intro__content__child">
             <h1 className={styles.title}>{siteConfig.tagline}</h1>
+            <LinkButton href="docs/api-intro" type="primary" buttonCopy="Start Building" />
             <div
               style={{
                 display: 'flex',
