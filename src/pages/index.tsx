@@ -14,9 +14,9 @@ const Home: React.FC = () => {
       <Intro />
       <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
         <Problem />
+        <Metrics />
         <ApiSection />
         <Interpretation />
-        <Metrics />
         <Token />
         <Recall />
       </div>
