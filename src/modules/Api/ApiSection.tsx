@@ -57,7 +57,7 @@ export const ApiSection: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              The Complete Onchain API
+              A Complete Onchain API
             </h1>
             <p
               className="text-alt-color"
