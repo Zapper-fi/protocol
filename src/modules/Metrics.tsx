@@ -38,7 +38,7 @@ export const Metrics: React.FC = () => {
               justifyContent: 'center',
             }}
           >
-            <h3 style={{ marginBottom: '0px' }}>4.59 Billion</h3>
+            <h3 style={{ marginBottom: '0px' }}>4.69 Billion</h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Total Human Readable Transactions</p>
           </div>
           <div
