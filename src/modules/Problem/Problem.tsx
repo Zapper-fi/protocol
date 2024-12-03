@@ -21,7 +21,7 @@ export const Problem: React.FC = () => {
         </div>
         <div className="problem__section__description">
           <h5 color="" style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-            The amount of onchain applications is increasing exponentially - no centralized entity will be able to
+            The quantity of onchain applications is increasing exponentially - no centralized entity will be able to
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
