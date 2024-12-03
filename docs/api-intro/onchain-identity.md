@@ -116,7 +116,7 @@ query($addresses: [Address!]!) {
 
 | Arguement      | Description | Type |
 | ----------- | ----------- | ----------- |
-| `addresses`      | The address(s) that is being queried, input as an array.       | `Address!` | 
+| `addresses`      | The addresses being queried, as an array.       | `Address!` | 
 
 ### Fields
 
