@@ -36,6 +36,9 @@ function SupportedChainsTable() {
       <tbody>
         {supportedChains.map(({ name, iconUrl }) => (
           <tr key={name}>
+            <td>
+              <img src={iconUrl} alt={name} className="size-16 rounded-full" />
+            </td>
             <td>{name}</td>
           </tr>
         ))}
