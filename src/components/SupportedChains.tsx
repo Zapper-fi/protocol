@@ -31,7 +31,7 @@ function SupportedChainsTable() {
       <thead>
         <tr>
           <th colSpan={2}>Chain</th>
-          <th>Enum</th>
+          <th>Zapper API enum</th>
         </tr>
       </thead>
       <tbody>
