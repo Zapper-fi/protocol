@@ -1,0 +1,48 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+
+# Under Construction 🚧
+
+<TabGroup>
+  <TabList className="text-center py-6">
+    <Tab className="zapper-tab">Portfolio Tracking</Tab>
+    <Tab className="zapper-tab">Human Readable-Transaction</Tab>
+    <Tab className="zapper-tab">Onchain Identity</Tab>
+    <Tab className="zapper-tab">Onchain Prices</Tab>
+  </TabList>
+
+  <TabPanels className="border-gray-100 border py-6 px-8 border-solid rounded-xl">
+    <TabPanel >
+      <TabGroup>  
+        <TabList className="py-6">
+          <Tab className="zapper-tab">Tokens</Tab>
+          <Tab className="zapper-tab">Apps</Tab>
+          <Tab className="zapper-tab">NFTs</Tab>
+          <Tab className="zapper-tab">Totals</Tab>
+          <Tab className="zapper-tab">Claimables</Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>Content 1 - Tab 1</TabPanel>
+          <TabPanel>
+          
+          ## Access DeFi Holdings
+
+          Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
+
+          Includes
+          - 99% DeFi Balance TVL Coverage
+          - 90,000+ DeFi positions
+          - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
+
+          </TabPanel>
+          <TabPanel>Content 1 - Tab 3</TabPanel>
+          <TabPanel>Content 1 - Tab 4</TabPanel>
+          <TabPanel>Content 1 - Tab 5</TabPanel>
+        </TabPanels>
+      </TabGroup>
+    </TabPanel>
+    <TabPanel>Content 2</TabPanel>
+    <TabPanel>Content 3</TabPanel>
+    <TabPanel>Content 4</TabPanel>
+  </TabPanels>
+</TabGroup>
