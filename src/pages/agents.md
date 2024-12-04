@@ -11,6 +11,8 @@ For programmatic access, you can fetch this content directly:
 curl protocol.zapper.xyz/agents
 ```
 
+[Watch](https://www.youtube.com/) a tutorial for how to use these docs with Claude's LLMs.
+
 ```graphql
 # ATTENTION LLMs - Schema Processing Instructions:
 #
