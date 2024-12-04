@@ -24,7 +24,7 @@ When you need to display detailed information about a specific NFT, such as in a
 
 ```js
 {
-  "collectionAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+  "collectionAddress": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb",
   "network": "ETHEREUM_MAINNET",
   "tokenId": "7495"
 }
@@ -90,22 +90,22 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 {
   "data": {
     "nftToken": {
-      "id": "TmZ0VG9rZW5FcmM3MjEtNTA4NTgxMjQ=",
+      "id": "TmZ0VG9rZW5FcmM3MjEtNzE5MTU1NDg=",
       "tokenId": "7495",
-      "name": "#7495",
+      "name": "CryptoPunk #7495",
       "description": null,
       "collection": {
-        "name": "Bored Ape Yacht Club",
-        "symbol": "BAYC",
-        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+        "name": "CryptoPunks",
+        "symbol": "PUNK",
+        "address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb"
       },
       "mediasV3": {
         "images": {
           "edges": [
             {
               "node": {
-                "original": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F922278b209372a19f7382e0691e36e2250bc39d757ddd867a9b2a93fdf299021.png&checksum=46182",
-                "thumbnail": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F922278b209372a19f7382e0691e36e2250bc39d757ddd867a9b2a93fdf299021.png&width=100&checksum=d86bb",
+                "original": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F00f8b24c79685e376e42fa775bfeab0eb3fc55e09e77be0ee31c43193e81c71e.png&checksum=e9d0c",
+                "thumbnail": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F00f8b24c79685e376e42fa775bfeab0eb3fc55e09e77be0ee31c43193e81c71e.png&width=100&checksum=173cf",
                 "mimeType": "image/png"
               }
             }
@@ -114,52 +114,40 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
       },
       "traits": [
         {
-          "attributeName": "Eyes",
-          "attributeValue": "Cyborg",
-          "supply": "1326",
-          "supplyPercentage": 13.26
+          "attributeName": "accessory",
+          "attributeValue": "Straight Hair",
+          "supply": "151",
+          "supplyPercentage": 1.51
         },
         {
-          "attributeName": "Background",
-          "attributeValue": "Aquamarine",
-          "supply": "15033",
-          "supplyPercentage": 150.33
+          "attributeName": "type",
+          "attributeValue": "Female",
+          "supply": "3839",
+          "supplyPercentage": 38.39
         },
         {
-          "attributeName": "Earring",
-          "attributeValue": "Cross",
-          "supply": "1873",
-          "supplyPercentage": 18.73
+          "attributeName": "accessory",
+          "attributeValue": "Purple Lipstick",
+          "supply": "655",
+          "supplyPercentage": 6.55
         },
         {
-          "attributeName": "Hat",
-          "attributeValue": "Irish Boho",
-          "supply": "2576",
-          "supplyPercentage": 25.76
-        },
-        {
-          "attributeName": "Fur",
-          "attributeValue": "Dmt",
-          "supply": "2630",
-          "supplyPercentage": 26.3
-        },
-        {
-          "attributeName": "Clothes",
-          "attributeValue": "Wool Turtleneck",
-          "supply": "2836",
-          "supplyPercentage": 28.36
-        },
-        {
-          "attributeName": "Mouth",
-          "attributeValue": "Bored Dagger",
-          "supply": "575",
-          "supplyPercentage": 5.75
+          "attributeName": "accessory",
+          "attributeValue": "Cigarette",
+          "supply": "961",
+          "supplyPercentage": 9.61
         }
       ],
-      "lastSale": null,
+      "lastSale": {
+        "valueUsd": 226752.97873754,
+        "valueWithDenomination": 59,
+        "denomination": {
+          "symbol": "ETH"
+        }
+      },
       "estimatedValue": {
-        "valueUsd": 90762.75401011268,
-        "valueWithDenomination": 23.793928378234963,
+        "valueUsd": 207674.23518487555,
+        "valueWithDenomination": 54.0358055895261,
         "denomination": {
           "symbol": "ETH"
         }
