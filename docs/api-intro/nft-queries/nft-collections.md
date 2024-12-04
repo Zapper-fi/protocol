@@ -8,7 +8,7 @@ import Link from '@docusaurus/Link';
 
 # NFT Collections
 
-Surfaces balances that a user might hold inside of an onchain application.
+Surfaces information about any ERC721 or ERC1155 NFT collection.
 
 ---
 

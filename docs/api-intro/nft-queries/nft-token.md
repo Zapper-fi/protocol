@@ -6,9 +6,9 @@ sidebar_label: Single NFTs
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-### Single NFT
+# Single NFTs
 
-Query detailed information about a specific NFT token, including its metadata, traits, and ownership information.
+Query detailed information about a specific NFT token (ERC721 or ERC1155), including its metadata, traits, and ownership information.
 
 ---
 
