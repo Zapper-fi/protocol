@@ -37,23 +37,15 @@ The `portfolio` query can be called with one or more of the following fields for
 | [`claimables`](/docs/api-intro/portfolio/claimables) | Surfaces all available claimable tokens for a given address across all indexed onchain apps.|
 | [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
 
-#### Portfolio Data: 3 Credits
+#### Other Queries: 2 Credits
 
 | Field | Description | Credit Price |
 | ----------- | ----------- | ----------- |
-| [`timelineEvent`](/docs/api-intro/human-readable-transactions/timeline-event)(/docs/api-intro/portfolio/app-balances)  | Presents the details of a single onchain transaction.| 2 |
-| [`nftBalances`](/docs/api-intro/portfolio/nft-balances)  | Returns an aggregation of estimated NFTs values. |
-| [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | Surfaces any onchain token balances held by an address. |
-| [`claimables`](/docs/api-intro/portfolio/claimables) | Surfaces all available claimable tokens for a given address across all indexed onchain apps.|
-| [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
+| [`timelineEvent`](/docs/api-intro/human-readable-transactions/timeline-event)  | Returns the details of a single onchain transaction. |
+| [`timelineForApp`](/docs/api-intro/human-readable-transactions/app-timelines) | Returns a timeline of transactions that happened in a particular onchain app via their smart contracts. |
+| [`accountsTimeline`](/docs/api-intro/human-readable-transactions/account-timelines) | Returns the onchain activity of a specific address(s).|
+| [`accounts`](/docs/api-intro/onchain-identity#accounts) | Surfaces various aggregations of onchain portfolio data. |
 
-#### [`timelineEvent`](/docs/api-intro/human-readable-transactions/timeline-event): 2 Credits
-
-#### [`timelineForApp`](/docs/api-intro/human-readable-transactions/app-timelines): 2 Credits
-
-#### [`accountsTimeline`](/docs/api-intro/human-readable-transactions/account-timelines): 2 Credits
-
-#### [`account`](/docs/api-intro/onchain-identity) and [`accounts`](/docs/api-intro/onchain-identity#accounts): 2 Credits
 
 :::info
 Each address used in a query counts as a query. If you bundle multiple addresses into a single call the cost = query price multiplied by the # of addresses.
