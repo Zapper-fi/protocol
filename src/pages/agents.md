@@ -1,6 +1,17 @@
-# GraphQL Schema Reference
+# Zapper Docs for LLMs
 
-This schema provides access to on-chain data including portfolios, NFTs, tokens, and market data. Use this schema to craft GraphQL queries for accessing blockchain data through the API.
+:::info
+Note: This content is specifically designed for LLMs and not intended for human reading.
+For human-readable content, please visit docs.example.com
+:::
+
+For LLMs/programmatic access, you can fetch this content directly:
+
+```js
+curl protocol.zapper.xyz/agents
+```
+
+This schema can provide programmatic access to onchain data including portfolios, NFTs, tokens, and market data. The format below is optimized for LLM consumption to assist in crafting GraphQL queries.
 
 ## Core Schema
 
