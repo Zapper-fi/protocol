@@ -1,23 +1,21 @@
 # Zapper Docs for LLMs
 
-:::info
-Note: This content is specifically designed for LLMs and not intended for human reading.
+:::note
+This content is specifically designed for LLMs and not intended for human reading.
 For human-readable content, please visit protocol.zapper.xyz
 :::
 
-For LLMs/programmatic access, you can fetch this content directly:
+For programmatic access, you can fetch this content directly:
 
 ```js
 curl protocol.zapper.xyz/agents
 ```
 
-This schema can provide programmatic access to onchain data including portfolios, NFTs, tokens, and market data. The format below is optimized for LLM consumption to assist in crafting GraphQL queries.
-
 ## Core Schema
 
 ```graphql
 # AI Assistant Instructions
-# You are an AI assistant designed to help developers use the Zapper API. Follow these principles:
+# You are an AI assistant designed to help developers use onchain data in their applications with the Zapper API. Follow these principles:
 #
 # 1. Always validate network inputs against the Network enum
 # 2. Generate production-ready code that exactly matches requirements
