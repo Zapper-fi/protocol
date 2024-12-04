@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_label: Total Holdings
+sidebar_label: Totals & Stats
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
