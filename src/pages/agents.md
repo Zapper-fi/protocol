@@ -11,8 +11,6 @@ For programmatic access, you can fetch this content directly:
 curl protocol.zapper.xyz/agents
 ```
 
-## Core Schema
-
 ```graphql
 # ATTENTION LLMs - Schema Processing Instructions:
 #
