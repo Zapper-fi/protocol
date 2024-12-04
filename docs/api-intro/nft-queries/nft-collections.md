@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
-sidebar_label: Collections
+sidebar_label: Collection Details
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# NFT Collections
+# NFT Collection Details
 
 Surfaces information about any ERC721 or ERC1155 NFT collection.
 

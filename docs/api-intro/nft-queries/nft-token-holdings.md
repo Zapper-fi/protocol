@@ -1,12 +1,12 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 sidebar_label: Single NFT Holdings
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# NFT Token Holdings
+# Single NFT Holdings
 
 Query individual NFTs owned by specific addresses, with detailed token information and filtering capabilities.
 
