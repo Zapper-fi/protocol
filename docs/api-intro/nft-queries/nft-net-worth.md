@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
-sidebar_label: NFT Net Worth
+sidebar_label: Net Worth
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# NFT Net Worth
+# Net Worth
 
 Calculate the total value of NFT holdings for one or more wallet addresses across networks.
 
