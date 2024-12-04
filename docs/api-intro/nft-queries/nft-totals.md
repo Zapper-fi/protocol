@@ -6,7 +6,7 @@ sidebar_label: Totals & Stats
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-# NFT Holdings Totals
+# Totals & Stats
 
 Get aggregate statistics for NFT holdings, including total count and total value of NFTs owned by specified addresses.
 
