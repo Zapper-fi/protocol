@@ -117,11 +117,11 @@ query NftCollections($collections: [NftCollectionInput!]!) {
 
 ### Arguments
 
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `collections` | Array of inputs specifying `collectionAddress` and `network`. | `[NftCollectionInput!]!` |
-| `collectionAddress`      | The address of the NFT collection.        | `String!` | 
-| `network`      | The network where the NFT exists.    | `Network!` | 
+| Argument | Description | Type | Required |
+| -------- | ----------- | ---- | -------- |
+| `collections` | Array of inputs specifying `collectionAddress` and `network`. | `[NftCollectionInput!]!` | Yes |
+| `collectionAddress` | The address of the NFT collection.   | `String!` | Yes |
+| `network` | The network where the NFT exists.  | `Network!` | Yes |
 
 ### Fields
 
