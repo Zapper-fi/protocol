@@ -94,10 +94,3 @@ query GetNFTCollection($collectionAddress: String!, $network: Network!, $tokenId
 2. Paste the schema into your AI assistant or query building tool
 3. Ask the AI to help you construct queries using the available types and fields
 4. Test your queries against the API endpoint
-
-## Tips for Query Construction
-
-- Start with the example queries and modify them for your needs
-- Use the schema to explore available fields and relationships
-- Remember to include required fields (marked with !)
-- Consider query complexity and depth when making requests
