@@ -15,9 +15,7 @@ Displays a timeline of transactions that happened in a particular onchain app vi
 
 ### `timelineForApp`
 
-Let's say you want to show a feed of all activities happening in the app Cat Town. Start by passing the app's `slug`. Then return details about each activity including the `timestamp`, `eventType`, `processedDescription` and `description`. Use the `first` argument to specify how many events to load at once, and the `after` cursor for pagination to load more events.
-
-When returning `description`, the `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
+The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` or `description`. If returning `description`, `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
 
 
 :::tip
@@ -27,7 +25,11 @@ To find the correct `slug` for the app you are trying to reference, find the app
 
 ### Example Use Case: App Activity Feed
 
-Let's say you want to to add an activity feed inside of your app that shows your users onchain activity in a human-readable format. Start by passing `slug` for the app name. Then return `processedDescription` and the `account` object with the fields `displayName` and `value`. Also include the `transaction` object with `timestamp` and `hash` so you can display when the transaction happened and use the hash to link out to a block explorer.
+Let's say you want to show a feed of all activities happening in the app Cat Town. Start by passing the app's `slug`. Then return details about each activity including the `timestamp`, `eventType`, `processedDescription` and `description`. Use the `first` argument to specify how many events to load at once, and the `after` cursor for pagination to load more events.
+
+When returning `description`, the `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
+
+
 
 #### Example Variable
 
