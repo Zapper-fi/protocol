@@ -26,7 +26,7 @@ Let's say you want to surface some important details about a specific NFT collec
 {
   "collections": [
     {
-      "collectionAddress": "0x7533e410ed2780807488b0068399788b2932b4e1",
+      "collectionAddress": "0xa449b4f43d9a33fcdcf397b9cc7aa909012709fd",
       "network": "BASE_MAINNET"
     }
   ]
@@ -39,9 +39,13 @@ Let's say you want to surface some important details about a specific NFT collec
 query NftCollections($collections: [NftCollectionInput!]!) {
   nftCollections(collections: $collections) {
     name
+    description
     network
     nftStandard
     supply
+    holders {
+      totalCount
+    }
     floorPrice {
       valueUsd
     }
@@ -52,6 +56,10 @@ query NftCollections($collections: [NftCollectionInput!]!) {
       logo {
         url
       }
+    }
+    socialLinks {
+      name
+      url
     }
   }
 }
@@ -64,21 +72,39 @@ query NftCollections($collections: [NftCollectionInput!]!) {
   "data": {
     "nftCollections": [
       {
-        "name": "dGEN1",
+        "name": "onchain gaias",
+        "description": "https://warpcast.com/~/channel/ogs",
         "network": "BASE_MAINNET",
         "nftStandard": "ERC_721",
-        "supply": "4875",
+        "supply": "5222",
+        "holders": {
+          "totalCount": 2388
+        },
         "floorPrice": {
-          "valueUsd": 434.1226573032
+          "valueUsd": 2421.565563951965
         },
         "topOfferPrice": {
-          "valueUsd": 394.32808038374
+          "valueUsd": 2271.5367039448
         },
         "medias": {
           "logo": {
-            "url": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2Fe4d8820677ebcf1d78d9b524baa106053ff77673b0a6626a91bdd61b6a22a2ab.png&checksum=d952f"
+            "url": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fcollections%2Fbase%2F0xa449b4f43d9a33fcdcf397b9cc7aa909012709fd%2Flogo.png&checksum=a34b1"
           }
-        }
+        },
+        "socialLinks": [
+          {
+            "name": "opensea",
+            "url": "https://opensea.io/collection/onchain-gaias"
+          },
+          {
+            "name": "website",
+            "url": "https://warpcast.com/~/channel/ogs"
+          },
+          {
+            "name": "twitter",
+            "url": "https://twitter.com/onchaingaias"
+          }
+        ]
       }
     ]
   }
