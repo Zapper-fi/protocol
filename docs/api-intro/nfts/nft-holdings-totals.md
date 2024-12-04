@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_label: NFT Total Holdings
+sidebar_label: Total Holdings
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';

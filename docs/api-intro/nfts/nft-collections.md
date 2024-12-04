@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: NFT Collections
+sidebar_label: Collections
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';

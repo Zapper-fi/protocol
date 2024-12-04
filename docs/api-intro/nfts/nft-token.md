@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: Single NFT
+sidebar_label: Single NFTs
 ---
 
 import { SandboxButton } from '@site/src/components/SandboxButton';
