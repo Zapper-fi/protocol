@@ -11,7 +11,14 @@ For programmatic access, you can fetch this content directly:
 curl protocol.zapper.xyz/agents
 ```
 
-[Watch](https://www.youtube.com/) a tutorial for how to use these docs with Claude's LLMs.
+### Usage Instructions
+
+1. Copy the schema below.
+2. Paste into your AI assistant.
+3. Ask the AI to help you construct queries, asking for certain onchain data you need.
+4. Test the queries against the API [Sandbox](/docs/api-intro/sandbox).
+
+[Watch](https://www.youtube.com/) a tutorial for how to use this.
 
 ```graphql
 # ATTENTION LLMs - Schema Processing Instructions:
@@ -88,9 +95,3 @@ query GetNFTCollection($collectionAddress: String!, $network: Network!, $tokenId
 }
 ```
 
-## Usage Instructions
-
-1. Copy the schema above
-2. Paste the schema into your AI assistant or query building tool
-3. Ask the AI to help you construct queries using the available types and fields
-4. Test your queries against the API endpoint
