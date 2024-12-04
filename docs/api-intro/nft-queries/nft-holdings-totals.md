@@ -18,7 +18,7 @@ The `nftUsersTokensTotals` query returns aggregate statistics about NFTs owned b
 
 ### Example Use Case: Portfolio Summary
 
-When you need to display summary statistics of a user's NFT holdings, such as total number of NFTs and their combined value, this query provides the aggregated data with various filtering options.
+Let's say you want to show the total value and count of NFTs in a user's portfolio. Start by passing the `owners` addresses you want to check. Then return the `count` of NFTs matching your filters, the `totalCount` of all NFTs owned, and the combined `balanceUSD` value. You can optionally specify a `network` or other filters to narrow down the results.
 
 #### Example Variables
 
