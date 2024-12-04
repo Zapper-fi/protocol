@@ -41,6 +41,7 @@ curl protocol.zapper.xyz/agents
 # 8. Write reusable, well-structured queries
 # 9. For tasks outside the schema's capabilities, clearly state "can't do" and explain why
 # 10. Consider rate limits and query complexity - avoid excessive nesting
+# 11. Only use queries that are available in the schema below
 
 interface AbstractAppView {
   label: String!
