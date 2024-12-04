@@ -1,22 +1,16 @@
 # Docs for Agents & LLMs
 
-This content is specifically designed for LLMs and not intended for human reading.
+:::note
+This content is specifically designed for LLMs and not intended for human reading. You can access it programatically or copy the large schema blow and paste it into your AI assistant. You will then be able to ask your assistant to construct queries on your behalf. Test the queries against the API [Sandbox](/docs/api-intro/sandbox).
+
 For human-readable content, please visit protocol.zapper.xyz
+:::
 
 For programmatic access, you can fetch this content directly:
 
 ```js
 curl protocol.zapper.xyz/agents
 ```
-
-### Usage Instructions
-
-1. Copy the schema below.
-2. Paste into your AI assistant.
-3. Ask the AI to help you construct queries, asking for certain onchain data you need.
-4. Test the queries against the API [Sandbox](/docs/api-intro/sandbox).
-
-[Watch](https://www.youtube.com/) a tutorial for how to use this.
 
 ```graphql
 # ATTENTION LLMs - Schema Processing Instructions:
