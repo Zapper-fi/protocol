@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 sidebar_label: NFT Collections
 ---
 
@@ -94,11 +94,29 @@ query NftCollections($collections: [NftCollectionInput!]!) {
 
 | Argument      | Description | Type |
 | ----------- | ----------- | ----------- |
+| `collections` | Array of inputs specifying `collectionAddress` and `network`. | `[NftCollectionInput!]!` |
 | `collectionAddress`      | The address of the NFT collection.        | `String!` | 
 | `network`      | The network where the NFT exists.    | `Network!` | 
 
 ### Fields
 
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `-`      | -      | `-`       |
+| Field | Description | Type |
+| ----- | ----------- | ---- |
+| `id` | Unique identifier for the collection | `ID!` |
+| `address` | Contract address of the collection | `Address!` |
+| `name` | Name of the collection | `String!` |
+| `symbol` | Symbol/ticker of the collection | `String!` |
+| `description` | Description of the collection | `String!` |
+| `network` | Network where the collection exists | `Network!` |
+| `socialLinks` | Array of social media links | `[SocialLink!]!` |
+| `supply` | Total supply of the collection | `BigDecimal!` |
+| `holdersCount` | Number of unique holders | `BigDecimal!` |
+| `floorPrice` | Current floor price with USD and native token values | `NftValueDenomination` |
+| `topOfferPrice` | Highest current offer with USD and native token values | `NftValueDenomination` |
+| `nftStandard` | Token standard (ERC721 or ERC1155) | `NftStandard!` |
+| `type` | Type of collection (GENERAL, BADGE, etc.) | `NftCollectionType!` |
+| `medias` | Collection media assets (banner, logo, etc.) | `NftCollectionMedias!` |
+| `traitGroups` | Groups of traits for the collection | `[NftCollectionTraitGroupBase!]!` |
+| `disabled` | Whether the collection is disabled | `Boolean!` |
+| `circulatingSupply` | Number of tokens in circulation | `BigDecimal!` |
+| `marketCap` | Market capitalization of the collection | `BigDecimal` |
