@@ -56,7 +56,6 @@ query($slug: String!, $first: Int, $after: String, $spamFilter: Boolean) {
         key
         timestamp
         network
-        eventType
         source
         transaction {
           hash
@@ -127,7 +126,6 @@ Pagination is highly recommended using the arguments `first` and `after` to ensu
             "key": "0xf8d5e339ea4d3035c3d31b1b5cdc3edc4cb932d5a692ce77e9a3d8d647105a68:0xbe1aee2292848dfc84f1a5886ae30785a1513d0e",
             "timestamp": 1733354963000,
             "network": "BASE_MAINNET",
-            "eventType": "b71686fe-7a31-4db1-a185-e35f72b3c5fe",
             "source": "TRANSACTION",
             "transaction": {
               "hash": "0xf8d5e339ea4d3035c3d31b1b5cdc3edc4cb932d5a692ce77e9a3d8d647105a68",
@@ -154,7 +152,6 @@ Pagination is highly recommended using the arguments `first` and `after` to ensu
             "key": "0x2de9580f898bb38f064032004e0b31ab51f8d0cf90daba93d1cabb2c341a636b:0x1ad761cf71f0e0236dc8be1b1e850108dc55fec6",
             "timestamp": 1733354719000,
             "network": "BASE_MAINNET",
-            "eventType": "e38209e7-bf49-43b0-9719-7e11dd2869fc",
             "source": "TRANSACTION",
             "transaction": {
               "hash": "0x2de9580f898bb38f064032004e0b31ab51f8d0cf90daba93d1cabb2c341a636b",
