@@ -47,7 +47,7 @@ curl protocol.zapper.xyz/agents
 # 1. First look at the Query type in the schema
 # 2. Find the appropriate query for the task (ex: nftUsersTokens)
 # 3. Use that exact query name from the schema
-# 4. Double check that the output query matches a realk query from the schema and has the required parameters and return types
+# 4. Double check that the output query matches a real query from the schema and has the required parameters and return types
 
 
 interface AbstractAppView {
