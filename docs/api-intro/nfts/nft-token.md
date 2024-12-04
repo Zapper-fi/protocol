@@ -171,9 +171,9 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 ```
 
 
-  <SandboxButton/>
+<SandboxButton/>
 
-  ---
+---
 
 ### Arguments
 

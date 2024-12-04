@@ -85,10 +85,9 @@ query NftCollections($collections: [NftCollectionInput!]!) {
 }
 ```
 
+<SandboxButton/>
 
-  <SandboxButton/>
-
-  ---
+---
 
 ### Arguments
 

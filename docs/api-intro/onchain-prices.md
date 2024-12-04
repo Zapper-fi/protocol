@@ -3,16 +3,13 @@ sidebar_position: 6
 sidebar_label: Onchain Prices
 ---
 
+import { SandboxButton } from '@site/src/components/SandboxButton';
+import Link from '@docusaurus/Link';
+
 # Onchain Prices (Coming Soon)
 
----
-
-
-
-
-# Onchain Prices
-
 Get comprehensive onchain prices current and historical, for any token that has an onchain market across supported networks.
+
 
 ---
 
@@ -79,6 +76,10 @@ query($address: Address!, $network: Network!) {
   }
 }
 ```
+
+<SandboxButton/>
+
+---
 
 #### Example Response
 

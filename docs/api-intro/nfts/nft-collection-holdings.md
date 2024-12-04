@@ -183,6 +183,8 @@ query($owners: [Address!]!, $network: Network, $minCollectionValueUsd: Float, $f
 }
 ```
 
+<SandboxButton/>
+
 ---
 
 ### Arguments
