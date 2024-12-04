@@ -3,7 +3,7 @@
 :::note
 This content is specifically designed for LLMs and not intended for human reading. You can access it programatically or copy the large schema below and paste it into your AI assistant. You will then be able to ask your assistant to construct queries on your behalf. Test the queries against the API [Sandbox](/docs/api-intro/sandbox).
 
-For human-readable content, please visit protocol.zapper.xyz
+For human-readable content, please visit the [API Docs](/docs/api-intro).
 :::
 
 For programmatic access, you can fetch this content directly:
