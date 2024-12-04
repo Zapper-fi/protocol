@@ -25,10 +25,11 @@ When you need to display the total value of a user's NFT portfolio, either acros
 ```js
 {
   "addresses": [
-    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "0x3d280fde2ddb59323c891cf30995e1862510342f",
     "0x52c8ff44260056f896e20d8a43610dd88f05701b"
   ],
-  "network": "ETHEREUM_MAINNET"
+  "network": "ETHEREUM_MAINNET",
+  "withOverrides": false
 }
 ```
 
@@ -49,7 +50,7 @@ query($addresses: [Address!]!, $network: Network, $withOverrides: Boolean) {
 ```js
 {
   "data": {
-    "nftNetWorth": "32614.18746971089491"
+    "nftNetWorth": "674674.21588506319435"
   }
 }
 ```
