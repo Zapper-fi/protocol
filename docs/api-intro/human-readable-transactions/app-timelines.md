@@ -111,7 +111,7 @@ query($slug: String!, $first: Int, $after: String, $spamFilter: Boolean) {
 ```
 
 :::note
-Pagination is highly recommended using the arguments `first` and `after` to ensure fast query response times.
+Pagination is highly recommended using `first` and `after` to ensure fast query response times.
 :::
 
 #### Example Response
