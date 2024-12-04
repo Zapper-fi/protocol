@@ -1,4 +1,4 @@
-# Zapper Docs for Autonomous Agents & LLMs
+# Docs for Agents & LLMs
 
 :::note
 This content is specifically designed for LLMs and not intended for human reading.
