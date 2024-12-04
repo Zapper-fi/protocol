@@ -29,6 +29,8 @@ Clients can track query usage and credits over time and purchase additional cred
 
 The `portfolio` query can be called with one or more of the following fields for **3 credits**:
 
+
+
 | Field | Description |
 | ----------- | ----------- |
 | [`appBalances`](/docs/api-intro/portfolio/app-balances)  | Surfaces balances that a user might hold inside of an onchain application.|
@@ -36,6 +38,10 @@ The `portfolio` query can be called with one or more of the following fields for
 | [`tokenBalances`](/docs/api-intro/portfolio/token-balances) | Surfaces any onchain token balances held by an address. |
 | [`claimables`](/docs/api-intro/portfolio/claimables) | Surfaces all available claimable tokens for a given address across all indexed onchain apps.|
 | [`totals`](/docs/api-intro/portfolio/portfolio-totals) | Surfaces various aggregations of onchain portfolio data. |
+
+:::tip
+You can combine as many of the portfolio fields into a single `portfolio` query for the same price of **3 credits**.
+:::
 
 #### Other Queries: 2 Credits
 
