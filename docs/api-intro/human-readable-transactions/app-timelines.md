@@ -25,7 +25,7 @@ To find the correct `slug` for the app you are trying to reference, find the app
 
 ### Example Use Case: App Activity Feed
 
-Let's say you want to show a feed of all activities happening in the app Cat Town. Start by passing the app's `slug`. Then return details about each activity including the `timestamp`, `eventType`, `processedDescription` and `description`. Use the `first` argument to specify how many events to load at once, and the `after` cursor for pagination to load more events.
+Let's say you want to show a feed of all activities happening in the app Cat Town. Start by passing the app's `slug`. Then return details about each transaction including the `timestamp`, `eventType`, `processedDescription` and `description`. Use the `first` argument to specify how many events to load at once, and the `after` cursor for pagination to load more events.
 
 When returning `description`, the `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
 
