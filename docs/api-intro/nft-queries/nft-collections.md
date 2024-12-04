@@ -18,7 +18,7 @@ The `NftCollections` query takes a required `address` and `network`. It returns 
 
 ### Example Use Case: Collection Details
 
-Let's say you want to surface some important details about a specific NFT collection. Start by passing `address` for the collection address and `network` for the chain where the NFTs exist. We will return a few important details like `name`, `nftStandard`, `floorprice`,`topOfferPrice`, as well as the `medias` object to return the `url` for the collection `logo`.
+Let's say you want to surface some important details about a specific NFT collection. Start by passing `address` for the collection address and `network` for the chain where the NFTs exist. Then return details such as `name`, `nftStandard`, `floorprice`,`topOfferPrice`, as well as the `medias` object to return the `url` for the collection `logo`.
 
 #### Example Variables
 

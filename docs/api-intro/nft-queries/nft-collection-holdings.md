@@ -8,46 +8,42 @@ import Link from '@docusaurus/Link';
 
 # NFT Collection Holdings
 
-Query NFT collections owned by specific addresses, with detailed collection information and filtering options.
+Get information about NFT collections owned by specific wallet addresses.
 
 ---
 
 ### `nftUsersCollections`
 
-The `nftUsersCollections` query returns collections owned by specified addresses with support for filtering by network, minimum value, and specific collections. It includes information about collection floor prices, total value, and metadata.
+The `nftUsersCollections` query takes an array of `owners` addresses and returns data about their NFT collections with support for various filtering options.
 
 ### Example Use Case: User's NFT Portfolio
 
-When displaying a user's NFT portfolio grouped by collections, this query provides comprehensive collection data with filtering capabilities for better organization and display.
+Let's say you want to display all NFT collections owned by a user or group of users. Start by passing the `owners` addresses you want to query. Then return details about each collection including its `name`, `medias` for displaying images, and current `floorPrice`. You can filter results by `network` or minimum value, and use pagination with `first` and `after` arguments to load results in batches.
 
 #### Example Variables
 
 ```js
 {
-  "owners": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
+  "owners": [
+    "0x3d280fde2ddb59323c891cf30995e1862510342f", "0xc8f8e2f59dd95ff67c3d39109eca2e2a017d4c8a"],
   "network": "ETHEREUM_MAINNET",
-  "minCollectionValueUsd": 1000,
-  "first": 10,
-  "withOverrides": true
+  "first": 12
 }
 ```
 
 #### Example Query
 
 ```graphql
-query($owners: [Address!]!, $network: Network, $minCollectionValueUsd: Float, $first: Int, $withOverrides: Boolean) {
+query($owners: [Address!]!, $network: Network, $first: Int) {
   nftUsersCollections(
     owners: $owners
     network: $network
-    minCollectionValueUsd: $minCollectionValueUsd
     first: $first
-    withOverrides: $withOverrides
   ) {
     edges {
       node {
         id
         name
-        symbol
         description
         network
         supply
@@ -94,14 +90,13 @@ query($owners: [Address!]!, $network: Network, $minCollectionValueUsd: Float, $f
           "node": {
             "id": "TmZ0Q29sbGVjdGlvbi03NTQ5NDA=",
             "name": "Opepen Edition",
-            "symbol": "OPEPEN",
             "description": "This artwork may or may not be handmade.",
             "network": "ETHEREUM_MAINNET",
             "supply": "16000",
-            "holdersCount": "3725",
+            "holdersCount": "3721",
             "floorPrice": {
-              "valueUsd": 763.589709030906,
-              "valueWithDenomination": 0.1998,
+              "valueUsd": 766.321752560448,
+              "valueWithDenomination": 0.1984,
               "denomination": {
                 "symbol": "ETH"
               }
@@ -136,14 +131,13 @@ query($owners: [Address!]!, $network: Network, $minCollectionValueUsd: Float, $f
           "node": {
             "id": "TmZ0Q29sbGVjdGlvbi00MTMxOA==",
             "name": "CryptoPunks",
-            "symbol": "PUNK",
             "description": "CryptoPunks launched as a fixed set of 10,000 items in mid-2017 and became one of the inspirations for the ERC-721 standard. They have been featured in places like The New York Times, Christie’s of London, Art|Basel Miami, and The PBS NewsHour.",
             "network": "ETHEREUM_MAINNET",
             "supply": "10000",
             "holdersCount": "3861",
             "floorPrice": {
-              "valueUsd": 169113.3364595475,
-              "valueWithDenomination": 44.25,
+              "valueUsd": 171497.70971136808,
+              "valueWithDenomination": 44.4006,
               "denomination": {
                 "symbol": "ETH"
               }
@@ -172,6 +166,47 @@ query($owners: [Address!]!, $network: Network, $minCollectionValueUsd: Float, $f
               {
                 "name": "twitter",
                 "url": "https://twitter.com/cryptopunksnfts"
+              }
+            ],
+            "nftStandard": "ERC_721",
+            "type": "GENERAL"
+          }
+        },
+        {
+          "node": {
+            "id": "TmZ0Q29sbGVjdGlvbi03ODkxNTY=",
+            "name": "Checks - VV Originals",
+            "description": "This artwork may or may not be notable.",
+            "network": "ETHEREUM_MAINNET",
+            "supply": "11023",
+            "holdersCount": "1542",
+            "floorPrice": {
+              "valueUsd": 1324.84052988021,
+              "valueWithDenomination": 0.343,
+              "denomination": {
+                "symbol": "ETH"
+              }
+            },
+            "medias": {
+              "banner": {
+                "url": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fcollections%2Fethereum%2F0x036721e5a769cc48b3189efbb9cce4471e8a48b1%2Fbanner.svg&checksum=d7d40"
+              },
+              "logo": {
+                "url": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fcollections%2Fethereum%2F0x036721e5a769cc48b3189efbb9cce4471e8a48b1%2Flogo.png&checksum=5d8a6"
+              }
+            },
+            "socialLinks": [
+              {
+                "name": "opensea",
+                "url": "https://opensea.io/collection/vv-checks-originals"
+              },
+              {
+                "name": "website",
+                "url": "https://checks.art"
+              },
+              {
+                "name": "twitter",
+                "url": "https://twitter.com/jackbutcher"
               }
             ],
             "nftStandard": "ERC_721",

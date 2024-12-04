@@ -16,9 +16,9 @@ Query detailed information about a specific NFT token (ERC721 or ERC1155), inclu
 
 The `nftToken` query takes a collection address, network, and token ID to return comprehensive information about a specific NFT token. This includes its metadata, traits, current ownership, and transfer history.
 
-### Example Use Case: NFT Details
+### Example Use Case: NFT Display
 
-When you need to display detailed information about a specific NFT, such as in a marketplace listing or NFT portfolio view, you can use this query to fetch all relevant token data.
+Let's say you want to display a specific NFT. Start by passing the `collectionAddress`, `network`, and `tokenId` to identify the NFT. Then return information about the token including its `name`, `description`, current `estimatedValue`, and media assets from `mediasV3`. You can also get trait information and current sale data.
 
 #### Example Variables
 
@@ -40,7 +40,6 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
     tokenId: $tokenId
   ) {
     id
-    tokenId
     name
     description
     collection {
@@ -54,7 +53,6 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
           node {
             original
             thumbnail
-            mimeType
           }
         }
       }
@@ -65,13 +63,6 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
       supply
       supplyPercentage
     }
-    lastSale {
-      valueUsd
-      valueWithDenomination
-      denomination {
-        symbol
-      }
-    }
     estimatedValue {
       valueUsd
       valueWithDenomination
@@ -79,7 +70,13 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
         symbol
       }
     }
-    holdersCount
+    lastSale {
+      valueUsd
+      valueWithDenomination
+      denomination {
+        symbol
+      }
+    }
   }
 }
 ```
@@ -91,7 +88,6 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
   "data": {
     "nftToken": {
       "id": "TmZ0VG9rZW5FcmM3MjEtNzE5MTU1NDg=",
-      "tokenId": "7495",
       "name": "CryptoPunk #7495",
       "description": null,
       "collection": {
@@ -105,8 +101,7 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
             {
               "node": {
                 "original": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F00f8b24c79685e376e42fa775bfeab0eb3fc55e09e77be0ee31c43193e81c71e.png&checksum=e9d0c",
-                "thumbnail": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F00f8b24c79685e376e42fa775bfeab0eb3fc55e09e77be0ee31c43193e81c71e.png&width=100&checksum=173cf",
-                "mimeType": "image/png"
+                "thumbnail": "https://zapper.xyz/z/images/?url=https%3A%2F%2Fstorage.googleapis.com%2Fzapper-fi-assets%2Fnfts%2Fmedias%2F00f8b24c79685e376e42fa775bfeab0eb3fc55e09e77be0ee31c43193e81c71e.png&width=100&checksum=173cf"
               }
             }
           ]
@@ -138,21 +133,20 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
           "supplyPercentage": 9.61
         }
       ],
-      "lastSale": {
-        "valueUsd": 226752.97873754,
-        "valueWithDenomination": 59,
-        "denomination": {
-          "symbol": "ETH"
-        }
-      },
       "estimatedValue": {
-        "valueUsd": 207674.23518487555,
+        "valueUsd": 209038.47669524065,
         "valueWithDenomination": 54.0358055895261,
         "denomination": {
           "symbol": "ETH"
         }
       },
-      "holdersCount": "1"
+      "lastSale": {
+        "valueUsd": 228242.5512207,
+        "valueWithDenomination": 59,
+        "denomination": {
+          "symbol": "ETH"
+        }
+      }
     }
   }
 }
@@ -165,11 +159,11 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 
 ### Arguments
 
-| Argument | Description | Type |
-| -------- | ----------- | ---- |
-| `collectionAddress` | The contract address of the NFT collection | `String!` |
-| `network` | The blockchain network where the NFT exists | `Network!` |
-| `tokenId` | The unique identifier of the NFT within its collection | `String!` |
+| Argument | Description | Type | Required |
+| -------- | ----------- | ---- | -------- |
+| `collectionAddress` | The contract address of the NFT collection | `String!` | Yes |
+| `network` | The blockchain network where the NFT exists | `Network!` | Yes |
+| `tokenId` | The unique identifier of the NFT within its collection | `String!` | Yes |
 
 ### Fields
 
@@ -184,10 +178,15 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 | `traits` | Array of NFT traits/attributes | `[NftTrait!]!` |
 | `lastSale` | Details of the most recent sale | `NftValueDenomination` |
 | `estimatedValue` | Current estimated value | `NftValueDenomination` |
-| `holdersCount` | Number of current holders (relevant for ERC-1155) | `BigDecimal!` |
 | `supply` | Total supply of this token | `BigDecimal!` |
 | `circulatingSupply` | Number of tokens in circulation | `BigDecimal!` |
-| `transfers` | History of token transfers | `NftTransferConnection` |
 | `holders` | Current token holders | `NftHolderConnection!` |
-| `socialLinks` | Associated social media links | `[SocialLink!]!` |
+| `transfers` | History of token transfers | `NftTransferConnection` |
 | `isHidden` | Whether the token is hidden by owner | `Boolean!` |
+
+### Notes
+- Returns comprehensive NFT metadata
+- Includes current value estimates and last sale data
+- Provides access to high-quality media assets
+- Shows detailed trait information
+- Includes ownership and transfer history
