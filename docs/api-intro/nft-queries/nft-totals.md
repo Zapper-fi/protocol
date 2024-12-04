@@ -92,3 +92,85 @@ query($owners: [Address!]!, $network: Network, $minEstimatedValueUsd: Float, $wi
 - Values include both ERC721 and ERC1155 tokens
 - USD values are based on floor prices and recent sales data
 - When `withOverrides` is true, includes any manual value overrides in the calculations
+
+
+---
+
+
+### `nftUsersCollectionsTotals`
+
+The `nftUsersCollectionsTotals` query takes an array of `owners` addresses and returns aggregate statistics about their NFT collection holdings.
+
+### Example Use Case: Collection Statistics
+
+Let's say you want to show summary statistics about a user's NFT collections. Start by passing the `owners` addresses you want to check. Then return the `count` of collections matching your filters, the `totalCount` of all collections owned, and the combined `balanceUSD` value. You can optionally specify a `network` or minimum value to filter the results.
+
+#### Example Variables
+
+```js
+{
+  "owners": ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
+  "network": "ETHEREUM_MAINNET"
+}
+```
+
+#### Example Query
+
+```graphql
+query($owners: [Address!]!, $network: Network) {
+  nftUsersCollectionsTotals(
+    owners: $owners
+    network: $network
+  ) {
+    count
+    totalCount
+    balanceUSD
+  }
+}
+```
+
+#### Example Response
+
+```js
+{
+  "data": {
+    "nftUsersCollectionsTotals": {
+      "count": "216",
+      "totalCount": "216",
+      "balanceUSD": "669563.3800342071"
+    }
+  }
+}
+```
+
+<SandboxButton/>
+
+---
+
+### Arguments
+
+| Argument | Description | Type | Required |
+| -------- | ----------- | ---- | -------- |
+| `owners` | Wallet addresses to check collection holdings | `[Address!]!` | Yes |
+| `network` | Filter collections by specific network | `Network` | No |
+| `minCollectionValueUsd` | Minimum USD value threshold for collections | `Float` | No |
+| `collectionIds` | Only count specific collections | `[ID!]` | No |
+| `standard` | Filter by NFT standard (ERC721/ERC1155) | `NftStandard` | No |
+| `search` | Search string to filter collections | `String` | No |
+| `onlyHidden` | Show only hidden collections | `Boolean` | No |
+| `withOverrides` | Include manual value overrides | `Boolean` | No |
+
+### Fields
+
+| Field | Description | Type |
+| ----- | ----------- | ---- |
+| `count` | Number of collections matching your filters | `BigDecimal!` |
+| `totalCount` | Total number of collections owned, regardless of filters | `BigDecimal` |
+| `balanceUSD` | Total value in USD of collections matching your filters | `BigDecimal!` |
+
+### Notes
+- Perfect for collection portfolio summaries
+- Works across multiple wallet addresses
+- Can filter by network, value, and NFT standard
+- Values are based on floor prices and recent sales
+- Supports both ERC721 and ERC1155 collections
