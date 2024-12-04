@@ -27,9 +27,6 @@ Clients can track query usage and credits over time and purchase additional cred
 
 #### Portfolio Data: 3 Credits
 
-The `portfolio` query can be called with one or more of the following fields for **3 credits**:
-
-
 
 | Field | Description |
 | ----------- | ----------- |
