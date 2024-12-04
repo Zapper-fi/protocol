@@ -2,7 +2,7 @@
 
 :::info
 Note: This content is specifically designed for LLMs and not intended for human reading.
-For human-readable content, please visit docs.example.com
+For human-readable content, please visit protocol.zapper.xyz
 :::
 
 For LLMs/programmatic access, you can fetch this content directly:
