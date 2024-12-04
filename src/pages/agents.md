@@ -1,14 +1,10 @@
-// agents.tsx
-import React from 'react';
-
-const AgentsPage = () => {
-  const markdownContent = `# GraphQL Schema Reference
+# GraphQL Schema Reference
 
 This schema provides access to on-chain data including portfolios, NFTs, tokens, and market data. Use this schema to craft GraphQL queries for accessing blockchain data through the API.
 
 ## Core Schema
 
-\`\`\`graphql
+```graphql
 interface AbstractAppView {
   label: String!
   type: AppViewType!
@@ -51,7 +47,7 @@ query GetNFTCollection($collectionAddress: String!, $network: Network!, $tokenId
     }
   }
 }
-\`\`\`
+```
 
 ## Usage Instructions
 
@@ -65,15 +61,4 @@ query GetNFTCollection($collectionAddress: String!, $network: Network!, $tokenId
 - Start with the example queries and modify them for your needs
 - Use the schema to explore available fields and relationships
 - Remember to include required fields (marked with !)
-- Consider query complexity and depth when making requests`;
-
-  return (
-    <div className="prose max-w-none p-6">
-      <pre className="whitespace-pre-wrap font-mono text-sm">
-        {markdownContent}
-      </pre>
-    </div>
-  );
-};
-
-export default AgentsPage;
+- Consider query complexity and depth when making requests
