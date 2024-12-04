@@ -17,12 +17,11 @@ curl protocol.zapper.xyz/agents
 #
 # You are about to receive a comprehensive GraphQL schema for blockchain data access.
 # This schema includes interfaces, types, and example queries for accessing:
-# - Portfolio data
-# - NFT collections and tokens
+# - Portfolio data (Tokens, App Positions, NFTs)
+# - Onchain Token Prices (Current and Historical)
+# - Account primitives such as ENS, Farcaster, and Lens.
+# - Onchain transaction histories for addresses and apps.
 # - Network information
-# - Token balances and prices
-# - Account details
-# - On-chain activities
 #
 # The schema is extensive and includes many nested types. When processing:
 # 1. Index the full schema for future reference
