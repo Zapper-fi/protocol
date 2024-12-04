@@ -1,9 +1,7 @@
 # Docs for Agents & LLMs
 
-:::note
 This content is specifically designed for LLMs and not intended for human reading.
 For human-readable content, please visit protocol.zapper.xyz
-:::
 
 For programmatic access, you can fetch this content directly:
 
