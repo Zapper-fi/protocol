@@ -42,6 +42,13 @@ curl protocol.zapper.xyz/agents
 # 9. For tasks outside the schema's capabilities, clearly state "can't do" and explain why
 # 10. Consider rate limits and query complexity - avoid excessive nesting
 # 11. Only use queries that are available in the schema below
+#
+# IMPORTANT FOR CREATING QUERY DO NOT IGNORE
+# 1. First look at the Query type in the schema
+# 2. Find the appropriate query for the task (ex: nftUsersTokens)
+# 3. Use that exact query name from the schema
+# 4. Double check that the output query matches a realk query from the schema and has the required parameters and return types
+
 
 interface AbstractAppView {
   label: String!
