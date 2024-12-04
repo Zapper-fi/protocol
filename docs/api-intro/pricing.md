@@ -47,7 +47,7 @@ You can combine as many of the portfolio fields into a single `portfolio` query 
 | [`timelineEvent`](/docs/api-intro/human-readable-transactions/timeline-event)  | Returns the details of a single onchain transaction. |
 | [`timelineForApp`](/docs/api-intro/human-readable-transactions/app-timelines) | Returns a timeline of transactions that happened in a particular onchain app via their smart contracts. |
 | [`accountsTimeline`](/docs/api-intro/human-readable-transactions/account-timelines) | Returns the onchain activity of a specific address(s).|
-| [`accounts`](/docs/api-intro/onchain-identity#accounts) | Surfaces various aggregations of onchain portfolio data. |
+| [`accounts`](/docs/api-intro/onchain-identity#accounts) | Returns onchain identity primitives such as ENS, Farcaster, Lens and more. |
 
 
 :::info
