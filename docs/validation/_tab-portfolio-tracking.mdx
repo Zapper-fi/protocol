@@ -1,11 +1,6 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { CodeImage } from '@site/src/components/CodeImage'
 
-export const CodeDemo = ({ src, children }) => (
-  <div className="relative">
-    <div className="">{children}</div>
-    <img src={src} className="absolute bottom-0 right-4 w-64" />
-  </div>
-)
 
 <TabGroup>  
   <TabList className="py-6">
@@ -30,7 +25,7 @@ export const CodeDemo = ({ src, children }) => (
       </div>
 
       <div className="basis-2/5">
-        <CodeDemo src="/img/code/Portfolio_Tokens.png">
+        <CodeImage src="/img/code/Portfolio_Tokens.png">
           ```graphql
           query {
             portfolio(addresses: ["0x..."]) {
@@ -55,7 +50,7 @@ export const CodeDemo = ({ src, children }) => (
             }
           }
           ```
-        </CodeDemo>
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -71,7 +66,7 @@ export const CodeDemo = ({ src, children }) => (
       </div>
 
       <div className="basis-2/5">
-        <CodeDemo src="/img/code/Portfolio_Apps.png">
+        <CodeImage src="/img/code/Portfolio_Apps.png">
           ```graphql
           query {
             portfolio(addresses: ["0x..."]) {
@@ -104,7 +99,7 @@ export const CodeDemo = ({ src, children }) => (
             }
           }
           ```
-        </CodeDemo>
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -121,7 +116,7 @@ export const CodeDemo = ({ src, children }) => (
       </div>
 
       <div className="basis-2/5">
-        <CodeDemo src="/img/code/Portfolio_NFTs.png">
+        <CodeImage src="/img/code/Portfolio_NFTs.png">
           ```graphql
           query {
             nftToken(
@@ -176,7 +171,7 @@ export const CodeDemo = ({ src, children }) => (
             }
           }
           ```
-        </CodeDemo>
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -192,7 +187,7 @@ export const CodeDemo = ({ src, children }) => (
       </div>
 
       <div className="basis-2/5">
-        <CodeDemo src="/img/code/Portfolio_Totals.png">
+        <CodeImage src="/img/code/Portfolio_Totals.png">
           ```graphql
           portfolio(addresses: ["0x..."]) {
               totals {
@@ -220,7 +215,7 @@ export const CodeDemo = ({ src, children }) => (
               }
             }
           ```
-        </CodeDemo>
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -235,7 +230,7 @@ export const CodeDemo = ({ src, children }) => (
       </div>
 
       <div className="basis-2/5">
-        <CodeDemo src="/img/code/Portfolio_Claimables.png">
+        <CodeImage src="/img/code/Portfolio_Claimables.png">
           ```graphql
           query {
             portfolio(addresses: ["0x..."]) {
@@ -257,7 +252,7 @@ export const CodeDemo = ({ src, children }) => (
               }
             }
           ```
-        </CodeDemo>
+        </CodeImage>
       </div>
     </TabPanel>
   </TabPanels>
