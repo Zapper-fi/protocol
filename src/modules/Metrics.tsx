@@ -81,7 +81,7 @@ export const Metrics: React.FC = () => {
             }}
           >
             <h3 style={{ marginBottom: '0px' }}>
-              <a href="/docs/api-intro/supported-chains">33</a>
+              <a href="/docs/api/supported-chains">33</a>
             </h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Chains Supported</p>
           </div>
