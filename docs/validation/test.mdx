@@ -56,16 +56,21 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
 
             <div className="basis-2/5">
               ```graphql
-              query TokenHoldings($address: String!, $network: String!) {
-                tokens(address: $address, network: $network) {
-                  symbol
-                  balance
-                  value
-                  price
-                  tokenInfo {
-                    name
-                    decimals
-                    logo
+              query($addresses: [Address!]!) {
+                portfolio(addresses: $addresses) {
+                  tokenBalances {
+                    address
+                    network
+                    token {
+                      balanceUSD
+                      balance
+                      baseToken {
+                        imgUrl
+                        price
+                        symbol
+                      }
+                    }
+                    updatedAt
                   }
                 }
               }
