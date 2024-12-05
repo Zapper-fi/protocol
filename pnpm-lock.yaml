@@ -40,10 +40,10 @@ importers:
         version: 4.0.0(@docusaurus/core@3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10))
       docusaurus-plugin-sass:
         specifier: ^0.2.5
-        version: 0.2.5(@docusaurus/core@3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10))(sass@1.77.2)(webpack@5.96.1)
+        version: 0.2.5(@docusaurus/core@3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10))(sass@1.77.2)(webpack@5.88.2)
       docusaurus2-dotenv:
         specifier: ^1.4.0
-        version: 1.4.0(webpack@5.96.1)
+        version: 1.4.0(webpack@5.88.2)
       graphql:
         specifier: ^16.9.0
         version: 16.9.0
@@ -68,6 +68,9 @@ importers:
       react-dom:
         specifier: ^18.0.0
         version: 18.0.0(react@18.3.1)
+      react-icons:
+        specifier: ^5.4.0
+        version: 5.4.0(react@18.3.1)
       redoc:
         specifier: ^2.1.4
         version: 2.1.4(bufferutil@4.0.8)(core-js@3.32.1)(encoding@0.1.13)(mobx@6.12.3)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(utf-8-validate@5.0.10)
@@ -6322,6 +6325,11 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
 
+  react-icons@5.4.0:
+    resolution: {integrity: sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==}
+    peerDependencies:
+      react: '*'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -9741,7 +9749,7 @@ snapshots:
       '@slorber/remark-comment': 1.0.0
       escape-html: 1.0.3
       estree-util-value-to-estree: 3.1.1
-      file-loader: 6.2.0(webpack@5.96.1)
+      file-loader: 6.2.0(webpack@5.88.2)
       fs-extra: 11.2.0
       image-size: 1.0.2
       mdast-util-mdx: 3.0.0
@@ -13293,19 +13301,19 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  docusaurus-plugin-sass@0.2.5(@docusaurus/core@3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10))(sass@1.77.2)(webpack@5.96.1):
+  docusaurus-plugin-sass@0.2.5(@docusaurus/core@3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10))(sass@1.77.2)(webpack@5.88.2):
     dependencies:
       '@docusaurus/core': 3.6.0(@docusaurus/types@3.4.0(react-dom@18.0.0(react@18.3.1))(react@18.3.1))(@mdx-js/react@3.0.0(@types/react@18.2.21)(react@18.3.1))(bufferutil@4.0.8)(react-dom@18.0.0(react@18.3.1))(react@18.3.1)(typescript@5.2.2)(utf-8-validate@5.0.10)
       sass: 1.77.2
-      sass-loader: 10.5.2(sass@1.77.2)(webpack@5.96.1)
+      sass-loader: 10.5.2(sass@1.77.2)(webpack@5.88.2)
     transitivePeerDependencies:
       - fibers
       - node-sass
       - webpack
 
-  docusaurus2-dotenv@1.4.0(webpack@5.96.1):
+  docusaurus2-dotenv@1.4.0(webpack@5.88.2):
     dependencies:
-      dotenv-webpack: 1.7.0(webpack@5.96.1)
+      dotenv-webpack: 1.7.0(webpack@5.88.2)
     transitivePeerDependencies:
       - webpack
 
@@ -13366,10 +13374,10 @@ snapshots:
     dependencies:
       dotenv: 6.2.0
 
-  dotenv-webpack@1.7.0(webpack@5.96.1):
+  dotenv-webpack@1.7.0(webpack@5.88.2):
     dependencies:
       dotenv-defaults: 1.1.1
-      webpack: 5.96.1
+      webpack: 5.88.2
 
   dotenv@16.4.5: {}
 
@@ -13765,6 +13773,12 @@ snapshots:
   figures@3.2.0:
     dependencies:
       escape-string-regexp: 1.0.5
+
+  file-loader@6.2.0(webpack@5.88.2):
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.88.2
 
   file-loader@6.2.0(webpack@5.96.1):
     dependencies:
@@ -16322,6 +16336,10 @@ snapshots:
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
 
+  react-icons@5.4.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
@@ -16675,14 +16693,14 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@10.5.2(sass@1.77.2)(webpack@5.96.1):
+  sass-loader@10.5.2(sass@1.77.2)(webpack@5.88.2):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.4
       neo-async: 2.6.2
       schema-utils: 3.3.0
       semver: 7.5.4
-      webpack: 5.96.1
+      webpack: 5.88.2
     optionalDependencies:
       sass: 1.77.2
 

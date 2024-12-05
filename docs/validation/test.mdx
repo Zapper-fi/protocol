@@ -1,16 +1,36 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri'
 
 # Under Construction 🚧
 
 <TabGroup>
-  <TabList className="text-center py-6">
-    <Tab className="zapper-tab">Portfolio Tracking</Tab>
-    <Tab className="zapper-tab">Human Readable-Transaction</Tab>
-    <Tab className="zapper-tab">Onchain Identity</Tab>
-    <Tab className="zapper-tab">Onchain Prices</Tab>
+  {
+  <TabList className="flex gap-4 text-center py-6">
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiDonutChartFill /> Portfolio Tracking
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiListCheck2 /> Human Readable-Transaction
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiPassportLine />
+        Onchain Identity
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiCoinsLine />
+        Onchain Prices
+      </span>
+      </Tab>
   </TabList>
-
-  <TabPanels className="border-gray-100 border py-6 px-8 border-solid rounded-xl">
+  }
+  <TabPanels className="border-gray-100 border py-6 px-8 border-solid rounded-3xl">
     <TabPanel>
       <TabGroup>  
         <TabList className="py-6">
@@ -22,56 +42,189 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
         </TabList>
 
         <TabPanels>
-          <TabPanel>
-            ## Surface Token Balances
+          <TabPanel className="flex">
+            <div className="basis-3/5">
+              ## Surface Token Balances
 
-            Surfaces onchain token balances held by an address. [Learn More](/docs/api-intro/portfolio/token-balances)
+              Surfaces onchain token balances held by an address. [Learn More](/docs/api-intro/portfolio/token-balances)
 
-            Includes:
-            - Real-time balance updates
-            - Coverage of every token from memecoins to bluechips
-            - Token metadata and prices
+              Includes:
+              - Real-time balance updates
+              - Coverage of every token from memecoins to bluechips
+              - Token metadata and prices
+            </div>
 
-            ```graphql
-            query TokenHoldings($address: String!, $network: String!) {
-              tokens(address: $address, network: $network) {
-                symbol
-                balance
-                value
-                price
-                tokenInfo {
-                  name
-                  decimals
-                  logo
-                }
-              }
-            }
-            ```
-          </TabPanel>
-          <TabPanel>
-            ## Access DeFi Holdings
-
-            Leverage Zapper's deep coverage of DeFi integrations.
-
-            Includes:
-            - 99%+ DeFi balance TVL coverage
-            - 90,000+ DeFi positions
-            - New apps appear automatically in the API response once approved
-
-            ```graphql
-            query DeFiPositions($address: String!) {
-              defiPositions(address: $address) {
-                protocol
-                positionType
-                balance
-                value
-                rewards {
+            <div className="basis-2/5">
+              ```graphql
+              query TokenHoldings($address: String!, $network: String!) {
+                tokens(address: $address, network: $network) {
                   symbol
+                  balance
+                  value
+                  price
+                  tokenInfo {
+                    name
+                    decimals
+                    logo
+                  }
+                }
+              }
+              ```
+            </div>
+          </TabPanel>
+          <TabPanel className="flex">
+            <div className="basis-3/5">
+              ## Access DeFi Holdings
+
+              Leverage Zapper's deep coverage of DeFi integrations.
+
+              Includes:
+              - 99%+ DeFi balance TVL coverage
+              - 90,000+ DeFi positions
+              - New apps appear automatically in the API response once approved
+            </div>
+
+            <div className="basis-2/5">
+              ```graphql
+              query DeFiPositions($address: String!) {
+                defiPositions(address: $address) {
+                  protocol
+                  positionType
+                  balance
+                  value
+                  rewards {
+                    symbol
+                    balance
+                    value
+                    price
+                    tokenInfo {
+                      name
+                      decimals
+                      logo
+                    }
+                  }
+                }
+                ```
+            </div>
+          </TabPanel>
+          <TabPanel className="flex">
+            <div className='basis-3/5'>
+              ## Access DeFi Holdings
+
+              Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
+
+              Includes:
+              - 99%+ DeFi Balance TVL Coverage
+              - 90,000+ DeFi positions
+              - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
+            </div>
+
+            <div className='basis-2/5'>
+              ```graphql
+              query DeFiPositions($address: String!) {
+                defiPositions(address: $address) {
+                  protocol
+                  positionType
+                  balance
+                  value
+                  rewards {
+                    symbol
+                    amount
+                  }
+                }
+              }
+              ```
+            </div>
+          </TabPanel>
+          <TabPanel className="flex">
+            <div className='basis-3/5'>
+              ## Estimated value & metadata for every NFT Collection
+
+              Detailed data with for NFT collections you care about across 20+ chains.
+
+              Features:
+              - Full Marketplace data 
+              - Estimated Values based on historical sales and traits
+              - Complete metadata with high-quality media files, thumbnail, and blurhash
+            </div>
+
+            <div className='basis-2/5'>
+              ```graphql
+              query NFTHoldings($address: String!) {
+                nfts(address: $address) {
+                  collection
+                  tokenId
+                  floorPrice
+                  rarity
+                  lastSalePrice
+                  metadata {
+                    name
+                    image
+                    attributes
+                  }
+                }
+              }
+              ```
+            </div>
+          </TabPanel>
+          <TabPanel className="flex">
+            <div className="basis-3/5">
+              ## Access Total Onchain Net Worth
+
+              Surfaces various aggregations of onchain portfolio data.
+
+              Includes:
+              - Across 35+ chains
+              - Bullet Point 2
+              - Bullet Point 3
+            </div>
+
+            <div className="basis-2/5">
+              ```graphql
+              query PortfolioTotals($address: String!) {
+                portfolio(address: $address) {
+                  totalValue
+                  performance {
+                    daily
+                    weekly
+                    monthly
+                  }
+                  allocation {
+                    category
+                    percentage
+                  }
+                }
+              }
+              ```
+            </div>
+          </TabPanel>
+          <TabPanel className="flex">
+            <div className="basis-3/5">
+              ## Delight users with Claimables
+
+              Surfaces all available claimable tokens for a given address across all indexed onchain apps.
+
+              Features:
+              - Across 90,000+ DeFi positions
+              - Bullet Point 2
+              - Bullet Point 3
+            </div>
+
+            <div className="basis-2/5">
+              ```graphql
+              query ClaimableRewards($address: String!) {
+                claimables(address: $address) {
+                  type
+                  protocol
+                  token
                   amount
+                  value
+                  claimDeadline
                 }
               }
             }
             ```
+            </div>
           </TabPanel>
           <TabPanel>
             ## Estimated value & metadata for NFTs
