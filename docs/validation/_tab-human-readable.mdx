@@ -1,0 +1,105 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+
+<TabGroup>
+  <TabList className="py-6">
+    <Tab className="zapper-tab">Transactions</Tab>
+    <Tab className="zapper-tab">Account Timelines</Tab>
+    <Tab className="zapper-tab">App Timelines</Tab>
+  </TabList>
+
+  <TabPanels>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Transactions made simple
+
+        Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views. [Learn More](/docs/api-intro/human-readable-transactions/timeline-event)
+
+        Features:
+        - Human-readable interpretations of complex contract interactions
+        - Parse items involved in the transaction for UI rendering (tokens, NFTs, accounts, apps, etc.) 
+        - Coverage across 35+ chains
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query TransactionDetails($txHash: String!) {
+          transaction(hash: $txHash) {
+            description
+            value
+            gasUsed
+            tokens {
+              token
+              amount
+              direction
+            }
+            interactions {
+              protocol
+              action
+            }
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Wallet Activity at a Glance
+
+        Presents the onchain activity of a specific address(s) in a simple descriptive summary with
+        references to items involved in the transaction such as tokens, NFTs, and accounts. [Learn More](/docs/api-intro/human-readable-transactions/account-timelines)
+        Features:
+        - Activity history across 35+ chains in real-time
+        - Filterable by Receieved or Submitted
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
+          accountActivity(
+            address: $address
+            startTime: $startTime
+            endTime: $endTime
+          ) {
+            transactions {
+              timestamp
+              type
+              value
+              description
+            }
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## App Activity Feeds
+
+        Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn More](/docs/api-intro/human-readable-transactions/app-timelines)
+
+        Features:
+        - Support for every indexed onchain app
+        - Spam filtering for clean, relevant activity feeds
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query ProtocolTimeline($protocol: String!, $address: String!) {
+          protocolActivity(protocol: $protocol, address: $address) {
+            interactions {
+              timestamp
+              action
+              value
+              success
+            }
+            metrics {
+              totalValue
+              frequency
+            }
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>

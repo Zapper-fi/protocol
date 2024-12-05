@@ -1,0 +1,177 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+
+<TabGroup>  
+  <TabList className="py-6">
+    <Tab className="zapper-tab">Tokens</Tab>
+    <Tab className="zapper-tab">Apps</Tab>
+    <Tab className="zapper-tab">NFTs</Tab>
+    <Tab className="zapper-tab">Totals</Tab>
+    <Tab className="zapper-tab">Claimables</Tab>
+  </TabList>
+
+  <TabPanels>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Surface Token Balances
+
+        Surfaces onchain token balances held by an address. [Learn More](/docs/api-intro/portfolio/token-balances)
+
+        Includes:
+        - Real-time balance updates
+        - Coverage of every token from memecoins to bluechips
+        - Token metadata and prices
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query($addresses: [Address!]!) {
+          portfolio(addresses: $addresses) {
+            tokenBalances {
+              address
+              network
+              token {
+                balanceUSD
+                balance
+                baseToken {
+                  imgUrl
+                  price
+                  symbol
+                }
+              }
+              updatedAt
+            }
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Access DeFi Holdings
+
+        Leverage Zapper's deep coverage of DeFi integrations. [Learn More](/docs/api-intro/portfolio/app-balances)
+
+        Includes:
+        - 99%+ DeFi balance TVL coverage
+        - 90,000+ DeFi positions
+        - New apps appear automatically in the API response once approved
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query DeFiPositions($address: String!) {
+          defiPositions(address: $address) {
+            protocol
+            positionType
+            balance
+            value
+            rewards {
+              symbol
+              balance
+              value
+              price
+              tokenInfo {
+                name
+                decimals
+                logo
+              }
+            }
+          }
+          ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Estimated value & metadata for NFTs
+
+        The ultimate source for NFT data. [Learn More](/docs/api-intro/portfolio/nft-balances)
+
+        Features:
+        - Real-time floor prices, top offers, last sales from multiple marketplaces
+        - Estimated Values based on historical sales and trait rarity
+        - Complete metadata including traits, supply, holders, and more...
+        - High-quality media assets with multiple resolution options
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query test($address: String!) {
+          defiPositions(address: $address) {
+            protocol
+            positionType
+            balance
+            value
+            rewards {
+              symbol
+              balance
+              value
+              price
+              tokenInfo {
+                name
+                decimals
+                logo
+              }
+            }
+          }
+          ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Access Total Net Worth
+
+        Surfaces various aggregations of onchain portfolio value. [Learn More](/docs/api-intro/portfolio/portfolio-totals)
+
+        Includes:
+        - Cross-network portfolio value aggregation
+        - Sourced from real-time onchain prices
+        - Detailed breakdown by network and token type
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query PortfolioTotals($address: String!) {
+          portfolio(address: $address) {
+            totalValue
+            performance {
+              daily
+              weekly
+              monthly
+            }
+            allocation {
+              category
+              percentage
+            }
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+    <TabPanel className="flex">
+      <div className="basis-3/5">
+        ## Everybody Loves Claimables
+
+        Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api-intro/portfolio/claimables)
+
+        Features:
+        - Real-time tracking of unclaimed rewards
+        - Detailed reward token metadata and values
+      </div>
+
+      <div className="basis-2/5">
+        ```graphql
+        query ClaimableRewards($address: String!) {
+          claimables(address: $address) {
+            type
+            protocol
+            token
+            amount
+            value
+            claimDeadline
+          }
+        }
+        ```
+      </div>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>
