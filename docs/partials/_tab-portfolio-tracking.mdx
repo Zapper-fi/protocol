@@ -2,7 +2,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { CodeImage } from '@site/src/components/CodeImage'
 
 <TabGroup className="">  
-  <TabList className="w-1/2 -mb-10 h-10">
+  <TabList className="-mb-10 h-10">
     <Tab className="zapper-tab text-lg">Tokens</Tab>
     <Tab className="zapper-tab text-lg">Apps</Tab>
     <Tab className="zapper-tab text-lg">NFTs</Tab>
@@ -11,7 +11,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
   </TabList>
 
   <TabPanels>
-    <TabPanel className="md:flex gap-8">
+    <TabPanel className="lg:flex gap-8">
       <div className="basis-1/2 mt-14">
         ## Surface Token Balances
 
@@ -52,7 +52,7 @@ query {
         </CodeImage>
       </div>
     </TabPanel>
-    <TabPanel className="md:flex gap-8">
+    <TabPanel className="lg:flex gap-8">
       <div className="basis-1/2 mt-14">
         ## Access DeFi Holdings
 
@@ -102,7 +102,7 @@ query {
         </CodeImage>
       </div>
     </TabPanel>
-    <TabPanel className="md:flex gap-8">
+    <TabPanel className="lg:flex gap-8">
       <div className="basis-1/2 mt-14">
         ## Estimated value & metadata for NFTs
 
@@ -173,7 +173,7 @@ query {
         </CodeImage>
       </div>
     </TabPanel>
-    <TabPanel className="md:flex gap-8">
+    <TabPanel className="lg:flex gap-8">
       <div className="basis-1/2 mt-14">
         ## Access Total Net Worth
 
@@ -218,7 +218,7 @@ query {
         </CodeImage>
       </div>
     </TabPanel>
-    <TabPanel className="md:flex gap-8">
+    <TabPanel className="lg:flex gap-8">
       <div className="basis-1/2 mt-14">
         ## Everybody Loves Claimables
 
