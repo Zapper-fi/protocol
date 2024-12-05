@@ -236,3 +236,145 @@ enum Currency {
 - Supports multiple price currencies (default: USD)
 - Tracks liquidity and market cap data
 - Includes token holders statistics when available
+
+### `fungibleTokensByAddresses`
+
+The `fungibleTokensByAddresses` query returns detailed information about multiple tokens in a single request, including their onchain market data and price history.
+
+### Example Use Case: Multi-Token Dashboard
+
+Let's say you want to create a dashboard showing price information and market data for multiple tokens simultaneously:
+
+#### Example Variables
+
+```js
+{
+  "tokens": [
+    {
+      "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "network": "BASE_MAINNET"
+    },
+    {
+      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "network": "ARBITRUM_MAINNET"
+    }
+  ]
+}
+```
+
+#### Example Query
+
+```graphql
+query fungibleTokensByAddresses($tokens: [FungibleTokenInput!]!) {
+  fungibleTokensByAddresses(tokens: $tokens) {
+    id
+    address
+    name
+    symbol
+    decimals
+    totalSupply
+    networkId
+    credibility
+    rank
+    securityRisk {
+      reason
+      strategy
+    }
+    isHoldersSupported
+    network
+    imageUrl
+    onchainMarketData {
+      type
+      isExchangeable
+      price(currency: USD)
+      marketCap
+      totalLiquidity(currency: USD)
+      totalGasTokenLiquidity
+      priceChange5m
+      priceChange1h
+      priceChange24h
+      priceTicks(currency: USD, timeFrame: DAY) {
+        median
+        open
+        close
+        high
+        low
+        timestamp
+      }
+    }
+    isVerified
+    holders(first: 3) {
+      edges {
+        node {
+          holderAddress
+          value
+          percentileShare
+        }
+      }
+      totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
+```
+
+<SandboxButton/>
+
+### Arguments
+
+| Argument | Description | Type | Required |
+| -------- | ----------- | ---- | -------- |
+| `tokens` | Array of token inputs | `[FungibleTokenInput!]!` | Yes |
+
+### FungibleTokenInput
+
+The `FungibleTokenInput` type is used to specify a token's identifying information. Each input must include both the token's contract address and the network it exists on.
+
+#### Structure
+```graphql
+input FungibleTokenInput {
+  address: Address!
+  network: Network!
+}
+```
+
+#### Examples
+
+Single token input:
+```js
+{
+  "tokens": [
+    {
+      "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "network": "BASE_MAINNET"
+    }
+  ]
+}
+```
+
+Multiple tokens input:
+```js
+{
+  "tokens": [
+    {
+      "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "network": "BASE_MAINNET"
+    },
+    {
+      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "network": "ARBITRUM_MAINNET"
+    },
+    {
+      "address": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+      "network": "ARBITRUM_MAINNET"
+    }
+  ]
+}
+```
+
+### Return Fields
+
+The query returns an array of FungibleToken objects, each containing the same fields as the single `fungibleToken` query. Please refer to the Fields section above for detailed field descriptions.
