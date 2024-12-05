@@ -246,6 +246,8 @@ async function fetchPortfolio() {
   </TabItem>
   <TabItem value="curl" label="cURL">
 
+#### Setup
+
 cURL is usually pre-installed on Unix-based systems. For Windows, [download it here](https://curl.se/windows/).
 
 ```bash
