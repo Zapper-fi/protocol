@@ -454,6 +454,6 @@ hr {
 
   /* Tabs */
   .zapper-tab {
-    @apply border-0 font-semibold whitespace-nowrap bg-transparent data-[selected]:bg-card data-[selected]:text-primary-default text-white py-2 px-4 rounded-full cursor-pointer;
+    @apply border-0 font-semibold whitespace-nowrap bg-transparent data-[selected]:bg-card data-[selected]:text-primary-default py-2 px-4 rounded-full cursor-pointer;
   }
 }
