@@ -123,11 +123,55 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_NFTs.png">
           ```graphql
-          query GetNFTBalances($addresses: [Address!]!) {
-            portfolio(addresses: $addresses) {
-              nftBalances {
-                network
-                balanceUSD
+          query GetNFTData($collectionAddress: String!, $network: Network!, $tokenId: String!) {
+            nftToken(
+              collectionAddress: $collectionAddress
+              network: $network
+              tokenId: $tokenId
+            ) {
+              tokenId
+              name
+              description
+              estimatedValue {
+                valueUsd
+                valueWithDenomination
+                denomination {
+                  symbol
+                  network
+                  address
+                }
+              }
+              collection {
+                name
+                symbol
+                floorPrice {
+                  valueUsd
+                  valueWithDenomination
+                }
+                description
+                supply
+                holdersCount
+              }
+              traits {
+                attributeName
+                attributeValue
+                supply
+                supplyPercentage
+              }
+              mediasV3 {
+                images {
+                  edges {
+                    node {
+                      original
+                      thumbnail
+                      medium
+                      large
+                      mimeType
+                      width
+                      height
+                    }
+                  }
+                }
               }
             }
           }
