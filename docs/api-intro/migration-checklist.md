@@ -8,34 +8,6 @@ import Link from '@docusaurus/Link';
 
 # Zapper API Migration Guide: REST to GraphQL
 
-[Dashboard](/dashboard).
-
-:::note
-API calls are initially rate limited at **30 requests per minute**. Please contact us at api@zapper.xyz to increase your limit.
-:::
-
-
-## Table of Contents
-1. [Access and Payment Changes](#1-access-and-payment-changes)
-   - [Existing API Client Checklist](#existing-api-client-checklist)
-   - [New Payment System](#new-payment-system)
-   - [Credit Management](#credit-management)
-2. [Query Migration Guide](#2-query-migration-guide)
-   - [Portfolio & Balance Queries](#portfolio--balance-queries)
-   - [NFT Query Migration](#nft-query-migration)
-   - [App Data Queries](#app-data-queries)
-3. [Network Enumeration Changes](#3-network-enumeration-changes)
-4. [Token Data Structure](#4-token-data-structure)
-5. [Account System Changes](#5-account-system-changes)
-6. [Best Practices](#6-best-practices)
-   - [Field Selection](#field-selection)
-   - [Pagination Implementation](#pagination-implementation)
-   - [Error Handling](#error-handling)
-7. [Performance Considerations](#7-performance-considerations)
-8. [Testing Checklist](#8-testing-checklist)
-9. [Deprecation Notes](#9-deprecation-notes)
-10. [Documentation and Support](#10-documentation-and-support)
-
 ## 1. Access and Payment Changes
 
 ### Existing API Client Checklist
