@@ -71,7 +71,7 @@ export const ApiSection: React.FC = () => {
               across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
-          <LinkButton href="/docs/api-intro#quickstart" type="primary" buttonCopy="Get Your API Key" />
+          <LinkButton href="/dashboard" type="primary" buttonCopy="Get Your API Key" />
         </div>
       </div>
     </div>
