@@ -2,6 +2,8 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri'
 import TabPortfolioTracking from './_tab-portfolio-tracking.mdx'
 import TabHumanReadable from './_tab-human-readable.mdx'
+import { CodeImage } from '@site/src/components/CodeImage'
+
 
 # Under Construction 🚧
 
@@ -53,6 +55,7 @@ import TabHumanReadable from './_tab-human-readable.mdx'
       </div>
 
       <div className="basis-2/5">
+        <CodeImage src="/img/code/OnchainIdentity.png">
         ```graphql
         query {
           accounts(addresses: ["0x..."]) {
@@ -105,6 +108,7 @@ import TabHumanReadable from './_tab-human-readable.mdx'
           }
         }
         ```
+        </CodeImage>
       </div>
     </TabPanel>
 
@@ -121,6 +125,7 @@ import TabHumanReadable from './_tab-human-readable.mdx'
       </div>
 
       <div className="basis-2/5">
+        <CodeImage src="/img/code/OnchainPrices.png">
         ```graphql
         query {
           fungibleToken(
@@ -150,6 +155,7 @@ import TabHumanReadable from './_tab-human-readable.mdx'
           }
         }
         ```
+        </CodeImage>
       </div>
     </TabPanel>
   </TabPanels>
