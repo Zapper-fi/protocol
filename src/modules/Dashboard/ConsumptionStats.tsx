@@ -172,7 +172,7 @@ export function ConsumptionStats() {
 
   return (
     <div className="space-y-4">
-      <h3>API Consumption Stats</h3>
+      <h3>Consumption Stats</h3>
 
       <div className="timeframe-selector flex">
         {timeFrames.map((tf) => (

@@ -7,6 +7,7 @@ import { SignedOut } from '@site/src/modules/Dashboard/SignedOut';
 import { PaymentHistory } from '@site/src/modules/Dashboard/PaymentHistory';
 import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
+import { Card } from '../components/Card';
 
 function Dashboard() {
   return (
@@ -18,23 +19,26 @@ function Dashboard() {
           <div className="container mx-auto !pr-[25%]">
             <Breadcrumbs title="Dashboard" />
 
-            <div className="flex justify-between">
-              <h1>API Dashboard</h1>
-            </div>
-
             <SignedOut>
               <p>Please sign in to continue.</p>
             </SignedOut>
 
             <SignedIn>
-              <div className="flex flex-col gap-8">
-                <Profile />
+              <div className="flex gap-8">
+                <div className="flex flex-col gap-8" style={{ width: '100%' }}>
+                  <div className="flex justify-between">
+                    <h1>API Dashboard</h1>
+                  </div>
+                  <ConsumptionStats />
 
-                <ConsumptionStats />
-
-                <BuyCredits />
-
-                <PaymentHistory />
+                  <PaymentHistory />
+                </div>
+                <Card style={{ minWidth: '300px', maxWidth: '300px' }}>
+                  <div className="flex flex-col gap-8">
+                    <Profile />
+                    <BuyCredits />
+                  </div>
+                </Card>
               </div>
             </SignedIn>
           </div>

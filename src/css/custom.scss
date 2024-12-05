@@ -48,6 +48,7 @@
   --ifm-color-primary-light: #784ffe;
   --ifm-color-primary-lighter: #784ffe;
   --ifm-color-primary-lightest: #784ffe;
+  --ifm-input-background: #e9edf2;
   --ifm-card-background: #f7f7f8;
   --ifm-border-color: #d7dce5;
   --ifm-accent-color: #784ffe;
@@ -118,7 +119,7 @@
 
 
   /** Zapper Theme **/
-  --radius: 16px;
+  --radius: 12px;
   --sm: 8px;
   --md: 12px;
   --lg: 16px;
@@ -146,17 +147,29 @@ table {
   border: 1px solid var(--ifm-border-color);
   /* Updated to match row borders */
   overflow: hidden;
+  width: 100%;
 }
 
 th {
   padding: 8px 16px;
-  background-color: var(--ifm-card-background);
+  background-color: var(--ifm-input-background) !important;
   border-top: 0;
+  font-size: 14px;
+  text-align: left;
+
+}
+
+tr {
+  border-bottom: 0px !important;
+  border-top: 1px solid var(--ifm-border-color);
+
 }
 
 table td {
+  border-top-width: 1;
   border-right-width: 0;
   border-left-width: 0;
+  border-bottom-width: 0;
 }
 
 table th {
@@ -166,6 +179,8 @@ table th {
 td {
   padding: 8px 16px;
   background-color: var(--ifm-card-background);
+
+  border-bottom: 1px solid var(--ifm-border-color);
 }
 
 .text-right {
@@ -225,6 +240,7 @@ details[class*='details_'] {
   --ifm-color-primary-lightest: #a387ff;
   --ifm-card-background: #181c1f;
   --ifm-border-color: #32383d;
+  --ifm-input-background: #252a2e;
   --ifm-accent-color: #a387ff;
   --ifm-default-background: #0c1013;
   --ifm-text-alt-color: #c7d2da;
