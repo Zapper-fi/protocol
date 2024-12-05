@@ -122,21 +122,25 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
 
             <div className="basis-2/5">
               ```graphql
-              query NFTHoldings($address: String!) {
-                nfts(address: $address) {
-                  collection
-                  tokenId
-                  floorPrice
-                  rarity
-                  lastSalePrice
-                  metadata {
-                    name
-                    image
-                    attributes
+              query test($address: String!) {
+                defiPositions(address: $address) {
+                  protocol
+                  positionType
+                  balance
+                  value
+                  rewards {
+                    symbol
+                    balance
+                    value
+                    price
+                    tokenInfo {
+                      name
+                      decimals
+                      logo
+                    }
                   }
                 }
-              }
-              ```
+                ```
             </div>
           </TabPanel>
           <TabPanel className="flex">
