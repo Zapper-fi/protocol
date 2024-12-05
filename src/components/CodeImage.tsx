@@ -6,7 +6,7 @@ export function CodeImage({ src, alt, children }) {
       <div className="h-[400px] rounded-3xl grid overflow-y-auto">
         <CodeBlock language="graphql">{children}</CodeBlock>
       </div>
-      <img src={src} alt={alt} className="absolute bottom-0 right-4 h-full" />
+      <img src={src} alt={alt} className="absolute top-8 right-8 h-[calc(100%-2rem)]" />
     </div>
   );
 }
