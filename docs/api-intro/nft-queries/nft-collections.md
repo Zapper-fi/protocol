@@ -14,7 +14,7 @@ Surfaces information about any ERC721 or ERC1155 NFT collection.
 
 ### `NftCollections`
 
-The `NftCollections` query returns comprehensive information about NFT collections, including metadata, market data, traits, and events.
+Let's say you want to surface some important details about a specific NFT collection. Start by passing `address` for the collection address and `network` for the chain where the NFTs exist. Then return details such as `name`, `nftStandard`, `floorprice`,`topOfferPrice`, as well as the `medias` object to return the `url` for the collection `logo`.
 
 ### Example Use Case: Collection Details
 

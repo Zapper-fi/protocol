@@ -8,7 +8,7 @@ import Link from '@docusaurus/Link';
 
 # Single NFT Details
 
-Query detailed information about a specific NFT token (ERC721 or ERC1155), including its metadata, traits, and ownership information.
+Let's say you want to display a specific NFT. Start by passing the `collectionAddress`, `network`, and `tokenId` to identify the NFT. Then return information about the token including its `name`, `description`, current `estimatedValue`, and media assets from `mediasV3`. You can also get trait information and current sale data.
 
 ---
 
