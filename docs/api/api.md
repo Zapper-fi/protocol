@@ -40,6 +40,8 @@ Visit the [Dashboard](/dashboard) to get an API key.
 
 Below are examples for working with the Zapper API across different languages and frameworks. Each example shows how to fetch portfolio data for provided addresses, across the chosen chains. Additionally, our [API Sandbox](/docs/api/sandbox)  lets you try our endpoints in one click.
 
+If you are working with an AI agent, we also recommend providing our [customized prompt](/docs/api/agents) to start building efficiently.
+
 :::note
 The API key must be base64 encoded for all requests.
 :::
