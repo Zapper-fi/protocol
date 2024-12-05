@@ -80,7 +80,7 @@ const config = {
         {
           position: 'left',
           label: 'API',
-          to: '/docs/api-intro/',
+          to: '/docs/api/',
         },
         {
           position: 'left',

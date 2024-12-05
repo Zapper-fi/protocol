@@ -13,9 +13,9 @@ import Link from '@docusaurus/Link';
 ### Existing API Client Checklist
 
 #### 1. Access Verification
-- [ ] Visit [Get Started](/docs/api-intro/) to access the quickstart guide for the new GraphQL API
+- [ ] Visit [Get Started](/docs/api/) to access the quickstart guide for the new GraphQL API
 - [ ] Test your existing API key with a simple query
-- [ ] Verify you can access the GraphQL [Sandbox](/docs/api-intro/sandbox) 
+- [ ] Verify you can access the GraphQL [Sandbox](/docs/api/sandbox) 
 - [ ] Sign in to the new [Dashboard](/dashboard) with the email associated with your existing account 
 - [ ] Contact api@zapper.xyz if you have issues signng in to your account
 - [ ] Review and save your API key information
@@ -31,7 +31,7 @@ import Link from '@docusaurus/Link';
 - [ ] Test response formats match expectations
 
 #### 4. Documentation Review
-- [ ] Read updated GraphQL [Docs](/docs/api-intro/)
+- [ ] Read updated GraphQL [Docs](/docs/api/)
 - [ ] Save relevant example queries
 - [ ] Note new endpoint structures
 
@@ -45,7 +45,7 @@ import Link from '@docusaurus/Link';
   - USDC
   - USDT
   - DAI
-- Review query [Pricing](/docs/api-intro/pricing)
+- Review query [Pricing](/docs/api/pricing)
 - Consider purchasing credits in bulk to take advantage of 20-30% cost savings
 
 ### Credit Management
@@ -62,7 +62,7 @@ import Link from '@docusaurus/Link';
 ### Portfolio & Balance Queries
 
 :::tip
-You can now make a single `portfolio` query that includes the fields [`appBalances`](/docs/api-intro/portfolio/app-balances), [`nftBalances`](/docs/api-intro/portfolio/nft-balances), [`tokenBalances`](/docs/api-intro/portfolio/token-balances), [`claimables`](/docs/api-intro/portfolio/claimables), and [`totals`](/docs/api-intro/portfolio/portfolio-totals) for the price of a single query. With the REST API, you would have to make many seperate queries.
+You can now make a single `portfolio` query that includes the fields [`appBalances`](/docs/api/portfolio/app-balances), [`nftBalances`](/docs/api/portfolio/nft-balances), [`tokenBalances`](/docs/api/portfolio/token-balances), [`claimables`](/docs/api/portfolio/claimables), and [`totals`](/docs/api/portfolio/portfolio-totals) for the price of a single query. With the REST API, you would have to make many seperate queries.
 :::
 
 ### Batch Portfolio Fetching
@@ -192,7 +192,7 @@ query GetApp($appId: ID!) {
 ## 3. Network Enumeration Changes
 
 ### Update Network References
-- Use the new `Network` enum. See [Supported Chains](/docs/api-intro/supported-chains) for all the enums.
+- Use the new `Network` enum. See [Supported Chains](/docs/api/supported-chains) for all the enums.
   ```graphql
   enum Network {
     ETHEREUM_MAINNET
