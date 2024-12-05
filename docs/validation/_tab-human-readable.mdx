@@ -1,4 +1,6 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { CodeImage } from '@site/src/components/CodeImage'
+
 
 <TabGroup>
   <TabList className="py-6">
@@ -21,6 +23,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
+        <CodeImage src="/img/code/HRT_SingleTransaction.png">
         ```graphql
         query {
           timelineEvent(transactionHash: "0x...", network: ETHEREUM_MAINNET) {
@@ -77,6 +80,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           }
         }
         ```
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -91,6 +95,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
+        <CodeImage src="/img/code/HRT_AccountTimeline.png">
         ```graphql
         query {
           accountsTimeline(
@@ -134,6 +139,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           }
         }
         ```
+        </CodeImage>
       </div>
     </TabPanel>
     <TabPanel className="md:flex">
@@ -148,6 +154,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
+        <CodeImage src="/img/code/HRT_AppTimeline.png">
         ```graphql
         query {
           timelineForApp(
@@ -195,6 +202,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           }
         }
         ```
+        </CodeImage>
       </div>
     </TabPanel>
   </TabPanels>
