@@ -35,16 +35,17 @@ import Link from '@docusaurus/Link';
 - [ ] Save relevant example queries
 - [ ] Note new endpoint structures
 
-### New Payment System [Learn More](/docs/api-intro/pricing)
+### New Payment System 
 - $1 USD = 1,000 credits 
 - Previous payment flow is discontinued
-- All payments are now onchain
+- All payments are now onchain through the [Dashboard](/dashboard)
 - Payment supported in 100+ tokens including:
   - ETH
   - MATIC
   - USDC
   - USDT
   - DAI
+- Review query [Pricing](/docs/api-intro/pricing)
 
 ### Credit Management
 - Automated email notifications at:
@@ -288,25 +289,15 @@ query GetPaginatedData($first: Int!, $after: String) {
 - Use batch queries where appropriate
 - Review rate limiting requirements
 - Implement proper caching strategies
+- Use pagination when available
 
-## 8. Testing Checklist
-- [ ] Test ENS resolution across networks
-- [ ] Verify token balance accuracy
-- [ ] Test NFT collection data
-- [ ] Verify portfolio totals
-- [ ] Test activity feed functionality
-- [ ] Verify cross-chain data
-- [ ] Test pagination implementation
-- [ ] Verify error handling
-- [ ] Test rate limiting compliance
-
-## 9. Deprecation Notes
+## 8. Deprecation Notes
 - Remove usage of deprecated fields and types
 - Update to new naming conventions
 - Replace legacy endpoints with GraphQL equivalents
 - Update documentation references
 
-## 10. Documentation and Support
+## 9. Documentation and Support
 - Update internal documentation
 - Review new schema documentation
 - Document new error handling procedures
@@ -317,4 +308,3 @@ query GetPaginatedData($first: Int!, $after: String) {
 If you have questions or need assistance with the migration, please:
 1. Review the GraphQL schema documentation
 2. Contact api@zapper.xyz for migration support
-3. Join our Discord community for developer discussions
