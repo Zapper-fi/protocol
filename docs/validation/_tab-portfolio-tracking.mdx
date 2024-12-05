@@ -1,5 +1,12 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
+export const CodeDemo = ({ src, children }) => (
+  <div className="relative">
+    <div className="">{children}</div>
+    <img src={src} className="absolute bottom-0 right-4 w-64" />
+  </div>
+)
+
 <TabGroup>  
   <TabList className="py-6">
     <Tab className="zapper-tab">Tokens</Tab>
@@ -23,26 +30,28 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
-        ```graphql
-        query($addresses: [Address!]!) {
-          portfolio(addresses: $addresses) {
-            tokenBalances {
-              address
-              network
-              token {
-                balanceUSD
-                balance
-                baseToken {
-                  imgUrl
-                  price
-                  symbol
+        <CodeDemo src="/img/code/Portfolio_Tokens.png">
+          ```graphql
+          query($addresses: [Address!]!) {
+            portfolio(addresses: $addresses) {
+              tokenBalances {
+                address
+                network
+                token {
+                  balanceUSD
+                  balance
+                  baseToken {
+                    imgUrl
+                    price
+                    symbol
+                  }
                 }
+                updatedAt
               }
-              updatedAt
             }
           }
-        }
-        ```
+          ```
+        </CodeDemo>
       </div>
     </TabPanel>
     <TabPanel className="flex">
@@ -58,26 +67,28 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
-        ```graphql
-        query DeFiPositions($address: String!) {
-          defiPositions(address: $address) {
-            protocol
-            positionType
-            balance
-            value
-            rewards {
-              symbol
+        <CodeDemo src="/img/code/Portfolio_Apps.png">
+          ```graphql
+          query DeFiPositions($address: String!) {
+            defiPositions(address: $address) {
+              protocol
+              positionType
               balance
               value
-              price
-              tokenInfo {
-                name
-                decimals
-                logo
+              rewards {
+                symbol
+                balance
+                value
+                price
+                tokenInfo {
+                  name
+                  decimals
+                  logo
+                }
               }
             }
-          }
           ```
+        </CodeDemo>
       </div>
     </TabPanel>
     <TabPanel className="flex">
@@ -94,26 +105,28 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
-        ```graphql
-        query test($address: String!) {
-          defiPositions(address: $address) {
-            protocol
-            positionType
-            balance
-            value
-            rewards {
-              symbol
+        <CodeDemo src="/img/code/Portfolio_NFTs.png">
+          ```graphql
+          query test($address: String!) {
+            defiPositions(address: $address) {
+              protocol
+              positionType
               balance
               value
-              price
-              tokenInfo {
-                name
-                decimals
-                logo
+              rewards {
+                symbol
+                balance
+                value
+                price
+                tokenInfo {
+                  name
+                  decimals
+                  logo
+                }
               }
             }
-          }
           ```
+        </CodeDemo>
       </div>
     </TabPanel>
     <TabPanel className="flex">
@@ -129,22 +142,24 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
-        ```graphql
-        query PortfolioTotals($address: String!) {
-          portfolio(address: $address) {
-            totalValue
-            performance {
-              daily
-              weekly
-              monthly
-            }
-            allocation {
-              category
-              percentage
+        <CodeDemo src="/img/code/Portfolio_Totals.png">
+          ```graphql
+          query PortfolioTotals($address: String!) {
+            portfolio(address: $address) {
+              totalValue
+              performance {
+                daily
+                weekly
+                monthly
+              }
+              allocation {
+                category
+                percentage
+              }
             }
           }
-        }
-        ```
+          ```
+        </CodeDemo>
       </div>
     </TabPanel>
     <TabPanel className="flex">
@@ -159,18 +174,20 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       </div>
 
       <div className="basis-2/5">
-        ```graphql
-        query ClaimableRewards($address: String!) {
-          claimables(address: $address) {
-            type
-            protocol
-            token
-            amount
-            value
-            claimDeadline
+        <CodeDemo src="/img/code/Portfolio_Claimables.png">
+          ```graphql
+          query ClaimableRewards($address: String!) {
+            claimables(address: $address) {
+              type
+              protocol
+              token
+              amount
+              value
+              claimDeadline
+            }
           }
-        }
-        ```
+          ```
+        </CodeDemo>
       </div>
     </TabPanel>
   </TabPanels>
