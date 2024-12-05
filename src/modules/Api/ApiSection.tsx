@@ -71,7 +71,7 @@ export const ApiSection: React.FC = () => {
               across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
-          <LinkButton href="docs/api-intro" type="primary" buttonCopy="Integrate Zapper API seamlessly" />
+          <LinkButton href="docs/api-intro" type="primary" buttonCopy="Start Building in 60 Seconds" />
         </div>
       </div>
     </div>
