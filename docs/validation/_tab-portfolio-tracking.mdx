@@ -32,8 +32,8 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Tokens.png">
           ```graphql
-          query GetTokenBalances($addresses: [Address!]!) {
-            portfolio(addresses: $addresses) {
+          query {
+            portfolio(addresses: ["0x..."]) {
               tokenBalances {
                 key
                 address
@@ -73,8 +73,8 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Apps.png">
           ```graphql
-          query GetAppBalances($addresses: [Address!]!) {
-            portfolio(addresses: $addresses) {
+          query {
+            portfolio(addresses: ["0x..."]) {
               appBalances {
                 key
                 address
@@ -123,11 +123,11 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_NFTs.png">
           ```graphql
-          query GetNFTData($collectionAddress: String!, $network: Network!, $tokenId: String!) {
+          query {
             nftToken(
-              collectionAddress: $collectionAddress
-              network: $network
-              tokenId: $tokenId
+              collectionAddress: "0x..."
+              network: ETHEREUM_MAINNET
+              tokenId: "1"
             ) {
               tokenId
               name
@@ -194,8 +194,7 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Totals.png">
           ```graphql
-          query GetPortfolioTotals($addresses: [Address!]!) {
-            portfolio(addresses: $addresses) {
+          portfolio(addresses: ["0x..."]) {
               totals {
                 total
                 appsTotal
@@ -220,7 +219,6 @@ export const CodeDemo = ({ src, children }) => (
                 }
               }
             }
-          }
           ```
         </CodeDemo>
       </div>
@@ -239,8 +237,8 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Claimables.png">
           ```graphql
-          query GetClaimables($addresses: [Address!]!) {
-            portfolio(addresses: $addresses) {
+          query {
+            portfolio(addresses: ["0x..."]) {
               totals {
                 claimables {
                   appId
@@ -258,7 +256,6 @@ export const CodeDemo = ({ src, children }) => (
                 }
               }
             }
-          }
           ```
         </CodeDemo>
       </div>
