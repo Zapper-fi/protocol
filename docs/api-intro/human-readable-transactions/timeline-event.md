@@ -94,7 +94,7 @@ query($transactionHash: String!, $network: Network!) {
 ```
 
 :::tip
-It's useful to include all types of `descriptionDisplayItems` to account for the possible types that could appear in the transaction. You can explore all the fields available in the [Sandbox](/docs/api/sandbox).
+It's useful to include all types of `descriptionDisplayItems` to account for the possible types that could appear in the transaction. You can explore all the fields available in the [Sandbox](/docs/api-intro/sandbox).
 :::
 
 #### Example Response
