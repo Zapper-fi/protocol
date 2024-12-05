@@ -18,7 +18,7 @@ The `nftToken` query takes a collection address, network, and token ID to return
 
 ### Example Use Case: NFT Display
 
-Let's say you want to display a specific NFT. Start by passing the `collectionAddress`, `network`, and `tokenId` to identify the NFT. Then return information about the token including its `name`, `description`, current `estimatedValue`, and media assets from `mediasV3`. You can also get trait information and current sale data.
+Query the NFT details by passing the collection `collectionAddress`, `network`, and `tokenId`. This returns key information about the token including metadata, ownership, and market data.
 
 #### Example Variables
 
@@ -32,7 +32,7 @@ Let's say you want to display a specific NFT. Start by passing the `collectionAd
 
 #### Example Query
 
-```
+```graphql
 query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
   nftToken(
     collectionAddress: $collectionAddress
@@ -152,7 +152,6 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 }
 ```
 
-
 <SandboxButton/>
 
 ---
@@ -173,16 +172,111 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 | `tokenId` | Token ID within the collection | `String!` |
 | `name` | Name of the NFT | `String!` |
 | `description` | Description of the NFT | `String` |
-| `collection` | Information about the parent collection | `NftCollection!` |
-| `mediasV3` | Media assets associated with the NFT | `NftMedias!` |
-| `traits` | Array of NFT traits/attributes | `[NftTrait!]!` |
-| `lastSale` | Details of the most recent sale | `NftValueDenomination` |
-| `estimatedValue` | Current estimated value | `NftValueDenomination` |
 | `supply` | Total supply of this token | `BigDecimal!` |
 | `circulatingSupply` | Number of tokens in circulation | `BigDecimal!` |
+| `holdersCount` | Number of unique holders (ERC-1155) | `BigDecimal!` |
+| `socialLinks` | Social media links | `[SocialLink!]!` |
+| `collection` | Parent collection information | `NftCollection!` |
+| `traits` | Token traits/attributes | `[NftTrait!]!` |
+| `mediasV2` | Media assets (legacy format) | `[NftMediaV2!]!` |
+| `mediasV3` | Media assets (current format) | `NftMedias!` |
+| `transfers` | Transfer history | `NftTransferConnection` |
 | `holders` | Current token holders | `NftHolderConnection!` |
-| `transfers` | History of token transfers | `NftTransferConnection` |
-| `isHidden` | Whether the token is hidden by owner | `Boolean!` |
+| `holdersFollowedByAddress` | Holders followed by given address | `[NftHolder!]!` |
+| `isHidden` | Whether token is hidden by owner | `Boolean!` |
+| `estimatedValue` | Current estimated value | `NftValueDenomination` |
+| `lastSale` | Most recent sale details | `NftValueDenomination` |
+| `rarityRank` | Token rarity ranking (deprecated) | `Int` |
+| `lastSaleEth` | Last sale price in ETH (deprecated) | `BigDecimal` |
+| `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
+
+### Field Arguments
+
+#### transfers
+```graphql
+transfers(
+  first: Int
+  after: String
+  order: NftTransferConnectionOrderInput
+): NftTransferConnection
+```
+
+#### holders
+```graphql
+holders(
+  first: Int
+  after: String
+  last: Int
+  before: String
+  followedBy: Address
+): NftHolderConnection!
+```
+
+#### holdersFollowedByAddress
+```graphql
+holdersFollowedByAddress(
+  input: HoldersFollowedByAddressInput!
+): [NftHolder!]!
+```
+
+#### isHidden
+```graphql
+isHidden(
+  input: ByAddressInput!
+): Boolean!
+```
+
+### Type Definitions
+
+```graphql
+input NftTransferConnectionOrderInput {
+  orderBy: NftTransferSort!
+  orderDirection: OrderDirectionOption!
+}
+
+enum NftTransferSort {
+  TIMESTAMP
+}
+
+enum OrderDirectionOption {
+  DESC
+  ASC
+}
+
+input HoldersFollowedByAddressInput {
+  address: Address!
+}
+
+input ByAddressInput {
+  address: Address!
+}
+
+type SocialLink {
+  name: String!
+  label: String!
+  url: String!
+  logoUrl: String!
+}
+
+type NftMedias {
+  images: ImageConnection!
+  animations: AnimationConnection!
+  audios: AudioConnection!
+}
+
+type NftValueDenomination {
+  valueUsd: Float!
+  valueWithDenomination: Float!
+  denomination: NftDenomination!
+}
+
+type NftDenomination {
+  network: String!
+  address: String!
+  symbol: String!
+  imageUrl: String
+}
+```
 
 ### Notes
 - Returns comprehensive NFT metadata
@@ -190,3 +284,4 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 - Provides access to high-quality media assets
 - Shows detailed trait information
 - Includes ownership and transfer history
+- Supports both ERC721 and ERC1155 standards
