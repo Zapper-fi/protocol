@@ -1,9 +1,6 @@
 import React from 'react';
-import { LinkButton } from '../../components/LinkButton';
-import { Section } from '../../components/Section';
-import { AccountTimelines } from './AccountTimelines';
-import { Labelling } from './Labelling';
-import { PortfolioTracking } from './PortfolioTracking';
+import { Button } from '@site/src/components/Button';
+import { useSignIn } from '@site/src/helpers/useSignIn';
 
 enum TabEnum {
   Portfolio = 'portfolio',
@@ -12,7 +9,11 @@ enum TabEnum {
 }
 
 export const ApiSection: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState(TabEnum.Portfolio);
+  const onComplete = () => {
+    window.location.href = '/dashboard';
+  };
+
+  const { login } = useSignIn({ onComplete });
 
   return (
     <div>
@@ -71,7 +72,9 @@ export const ApiSection: React.FC = () => {
               across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
-          <LinkButton href="/dashboard" type="primary" buttonCopy="Get Your API Key" />
+          <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
+            Get Your API Key
+          </Button>
         </div>
       </div>
     </div>
