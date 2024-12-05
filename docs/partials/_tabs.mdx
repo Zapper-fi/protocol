@@ -55,56 +55,56 @@ import { CodeImage } from '@site/src/components/CodeImage'
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainIdentity.png">
 {`
-        query {
-          accounts(addresses: ["0x..."]) {
-            address
-            displayName {
-              value
-              source
-            }
-            description {
-              value
-              source
-            }
-            socialLinks {
-              name
-              url
-              source
-            }
-            ensRecord {
-              name
-              metadata {
-                avatar {
-                  ... on AvatarUrl {
-                    url
-                  }
-                }
-                description
-                email
-                twitter
-                github
-                website
-              }
-            }
-            farcasterProfile {
-              username
-              metadata {
-                displayName
-                description
-                warpcast
-                imageUrl
-              }
-            }
-            lensProfile {
-              handle
-              metadata {
-                name
-                description
-                imageUrl
-              }
-            }
+query {
+  accounts(addresses: ["0x..."]) {
+    address
+    displayName {
+      value
+      source
+    }
+    description {
+      value
+      source
+    }
+    socialLinks {
+      name
+      url
+      source
+    }
+    ensRecord {
+      name
+      metadata {
+        avatar {
+          ... on AvatarUrl {
+            url
           }
         }
+        description
+        email
+        twitter
+        github
+        website
+      }
+    }
+    farcasterProfile {
+      username
+      metadata {
+        displayName
+        description
+        warpcast
+        imageUrl
+      }
+    }
+    lensProfile {
+      handle
+      metadata {
+        name
+        description
+        imageUrl
+      }
+    }
+  }
+}
 `}
         </CodeImage>
       </div>
@@ -125,33 +125,33 @@ import { CodeImage } from '@site/src/components/CodeImage'
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainPrices.png">
 {`
-        query {
-          fungibleToken(
-            address: "0x..."
-            network: ETHEREUM_MAINNET
-          ) {
-            symbol
-            name
-            decimals
-            onchainMarketData {
-              price
-              marketCap
-              totalLiquidity
-              priceChange24h
-              priceTicks(
-                currency: USD
-                timeFrame: DAY
-              ) {
-                timestamp
-                median
-                high
-                low
-                open
-                close
-              }
-            }
-          }
-        }
+query {
+  fungibleToken(
+    address: "0x..."
+    network: ETHEREUM_MAINNET
+  ) {
+    symbol
+    name
+    decimals
+    onchainMarketData {
+      price
+      marketCap
+      totalLiquidity
+      priceChange24h
+      priceTicks(
+        currency: USD
+        timeFrame: DAY
+      ) {
+        timestamp
+        median
+        high
+        low
+        open
+        close
+      }
+    }
+  }
+}
 `}
         </CodeImage>
       </div>
