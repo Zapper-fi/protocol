@@ -30,7 +30,7 @@ Clients can track query usage and credits over time and purchase additional cred
 | Query | Description |
 | ----------- | ----------- |
 | [`fungibleToken`](/docs/api/onchain-prices#fungibletoken)  | Returns detailed information about a token including its onchain market data and price history.|
-| [`fungibleTokensByAddresses`](/docs/api/onchain-prices#fungibleTokensByAddresses)  | Returns detailed information about multiple tokens in a single request, including their onchain market data and price history.|
+| [`fungibleTokensByAddresses`](/docs/api-intro/onchain-prices#fungibletokensbyaddresses)  | Returns detailed information about multiple tokens in a single request, including their onchain market data and price history.|
 
 
 #### Portfolio Data: 3 Credits
