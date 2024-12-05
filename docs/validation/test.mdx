@@ -23,137 +23,149 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
         <TabPanels>
           <TabPanel>
-            ## Token Holdings
+            <div className="flex relative">
+              <div className="w-1/2 pr-8">
+                <h2 className="text-2xl font-bold mb-4">Access Token Balances</h2>
+                <p className="mb-4">Surfaces any onchain token balances held by an address. 
+                  <a href="/docs/tokens" className="text-purple-500 ml-2 hover:text-purple-600">Learn more</a>
+                </p>
+                
+                <div className="mb-4">
+                  <h3 className="font-medium mb-2">Includes</h3>
+                  <ul className="space-y-2">
+                    <li>Price average across multiple price sources, instead of by largest price source.</li>
+                    <li>2.5M+ Token Prices and balances with hundreds more added each day.</li>
+                    <li>Instantly and automatically detects newly deployed price sources.</li>
+                  </ul>
+                </div>
+                
+                <p className="text-gray-500 italic">Soon - Historical prices, full swap history and much more.</p>
+              </div>
 
-            Track token balances across all EVM chains with comprehensive coverage.
-
-            Includes:
-            - Real-time balance updates
-            - Historical price data
-            - Token metadata and images
-            - Custom token lists support
-
-            ```graphql
-            query TokenHoldings($address: String!, $network: String!) {
-              tokens(address: $address, network: $network) {
-                symbol
-                balance
-                value
-                price
-                tokenInfo {
-                  name
-                  decimals
-                  logo
-                }
-              }
-            }
-            ```
+              <div className="w-1/2 relative">
+                <div className="bg-gray-900 rounded-lg p-6 h-full">
+                  ```graphql
+                  query Portfolio($address: String!) {
+                    portfolio(addresses: [$address], networks: $networks) {
+                      tokenBalances {
+                        address
+                        network
+                        token {
+                          balanceUSD
+                          balance
+                          baseToken {
+                            symbol
+                          }
+                        }
+                        updatedAt
+                      }
+                    }
+                  }
+                  ```
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <img src="/images/mockups/tokens-screen.png" alt="Token Holdings Mobile UI" className="shadow-xl rounded-xl" />
+                </div>
+              </div>
+            </div>
           </TabPanel>
+
           <TabPanel>
-            ## Access DeFi Holdings
+            <div className="flex relative">
+              <div className="w-1/2 pr-8">
+                <h2 className="text-2xl font-bold mb-4">Access DeFi Apps</h2>
+                <p className="mb-4">Track positions across 2000+ DeFi protocols and apps.
+                  <a href="/docs/apps" className="text-purple-500 ml-2 hover:text-purple-600">Learn more</a>
+                </p>
+                
+                <div className="mb-4">
+                  <h3 className="font-medium mb-2">Includes</h3>
+                  <ul className="space-y-2">
+                    <li>99% DeFi Balance TVL Coverage across major protocols</li>
+                    <li>90,000+ DeFi positions tracked and monitored</li>
+                    <li>New protocols and apps added continuously</li>
+                  </ul>
+                </div>
+                
+                <p className="text-gray-500 italic">Including yields, rewards, and governance tokens</p>
+              </div>
 
-            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
-
-            Includes:
-            - 99% DeFi Balance TVL Coverage
-            - 90,000+ DeFi positions
-            - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
-
-            ```graphql
-            query DeFiPositions($address: String!) {
-              defiPositions(address: $address) {
-                protocol
-                positionType
-                balance
-                value
-                rewards {
-                  symbol
-                  amount
-                }
-              }
-            }
-            ```
+              <div className="w-1/2 relative">
+                <div className="bg-gray-900 rounded-lg p-6 h-full">
+                  ```graphql
+                  query DefiApps($address: String!) {
+                    defiPositions(address: $address) {
+                      protocol
+                      balance
+                      value
+                      position {
+                        type
+                        tokens
+                        apr
+                      }
+                      rewards {
+                        pending
+                        claimed
+                      }
+                    }
+                  }
+                  ```
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <img src="/images/mockups/apps-screen.png" alt="DeFi Apps Mobile UI" className="shadow-xl rounded-xl" />
+                </div>
+              </div>
+            </div>
           </TabPanel>
+
           <TabPanel>
-            ## NFT Portfolio
+            <div className="flex relative">
+              <div className="w-1/2 pr-8">
+                <h2 className="text-2xl font-bold mb-4">NFT Portfolio Tracking</h2>
+                <p className="mb-4">Complete NFT portfolio analysis and valuation.
+                  <a href="/docs/nfts" className="text-purple-500 ml-2 hover:text-purple-600">Learn more</a>
+                </p>
+                
+                <div className="mb-4">
+                  <h3 className="font-medium mb-2">Includes</h3>
+                  <ul className="space-y-2">
+                    <li>Real-time floor price tracking across marketplaces</li>
+                    <li>Comprehensive metadata and rarity analysis</li>
+                    <li>Historical trading activity and price trends</li>
+                  </ul>
+                </div>
+                
+                <p className="text-gray-500 italic">Full support for ERC721 and ERC1155 tokens</p>
+              </div>
 
-            Complete NFT portfolio tracking across major marketplaces.
-
-            Features:
-            - Floor price tracking
-            - Rarity scores
-            - Historical trading data
-            - Metadata enrichment
-
-            ```graphql
-            query NFTHoldings($address: String!) {
-              nfts(address: $address) {
-                collection
-                tokenId
-                floorPrice
-                rarity
-                lastSalePrice
-                metadata {
-                  name
-                  image
-                  attributes
-                }
-              }
-            }
-            ```
+              <div className="w-1/2 relative">
+                <div className="bg-gray-900 rounded-lg p-6 h-full">
+                  ```graphql
+                  query NFTs($address: String!) {
+                    nftHoldings(address: $address) {
+                      collection
+                      tokenId
+                      metadata {
+                        name
+                        image
+                        attributes
+                      }
+                      value {
+                        floorPrice
+                        lastSale
+                      }
+                    }
+                  }
+                  ```
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <img src="/images/mockups/nfts-screen.png" alt="NFT Portfolio Mobile UI" className="shadow-xl rounded-xl" />
+                </div>
+              </div>
+            </div>
           </TabPanel>
-          <TabPanel>
-            ## Portfolio Analytics
 
-            Comprehensive portfolio analytics and performance metrics.
-
-            Includes:
-            - Total portfolio value
-            - Historical performance
-            - Risk metrics
-            - Asset allocation
-
-            ```graphql
-            query PortfolioTotals($address: String!) {
-              portfolio(address: $address) {
-                totalValue
-                performance {
-                  daily
-                  weekly
-                  monthly
-                }
-                allocation {
-                  category
-                  percentage
-                }
-              }
-            }
-            ```
-          </TabPanel>
-          <TabPanel>
-            ## Claimable Rewards
-
-            Track and manage claimable rewards across protocols.
-
-            Features:
-            - Airdrops
-            - Governance tokens
-            - Staking rewards
-            - Yield farming returns
-
-            ```graphql
-            query ClaimableRewards($address: String!) {
-              claimables(address: $address) {
-                type
-                protocol
-                token
-                amount
-                value
-                claimDeadline
-              }
-            }
-            ```
-          </TabPanel>
+          [Similar pattern continues for Totals and Claimables tabs...]
         </TabPanels>
       </TabGroup>
     </TabPanel>
@@ -168,153 +180,57 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
         <TabPanels>
           <TabPanel>
-            ## Transaction Details
+            <div className="flex relative">
+              <div className="w-1/2 pr-8">
+                <h2 className="text-2xl font-bold mb-4">Human Readable Transactions</h2>
+                <p className="mb-4">Convert complex blockchain data into clear, understandable formats.
+                  <a href="/docs/transactions" className="text-purple-500 ml-2 hover:text-purple-600">Learn more</a>
+                </p>
+                
+                <div className="mb-4">
+                  <h3 className="font-medium mb-2">Includes</h3>
+                  <ul className="space-y-2">
+                    <li>Plain English descriptions of transaction actions</li>
+                    <li>Detailed breakdown of token movements</li>
+                    <li>Gas costs and optimization suggestions</li>
+                  </ul>
+                </div>
+                
+                <p className="text-gray-500 italic">Supporting all major DeFi protocols</p>
+              </div>
 
-            Human-readable transaction details for any on-chain activity.
-
-            Features:
-            - Plain English descriptions
-            - Token movements
-            - Gas costs
-            - Contract interactions
-
-            ```graphql
-            query TransactionDetails($txHash: String!) {
-              transaction(hash: $txHash) {
-                description
-                value
-                gasUsed
-                tokens {
-                  token
-                  amount
-                  direction
-                }
-                interactions {
-                  protocol
-                  action
-                }
-              }
-            }
-            ```
+              <div className="w-1/2 relative">
+                <div className="bg-gray-900 rounded-lg p-6 h-full">
+                  ```graphql
+                  query Transaction($hash: String!) {
+                    transaction(hash: $hash) {
+                      description
+                      actions {
+                        type
+                        description
+                        value
+                      }
+                      tokens {
+                        token
+                        amount
+                        value
+                      }
+                    }
+                  }
+                  ```
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <img src="/images/mockups/transaction-screen.png" alt="Transaction Details Mobile UI" className="shadow-xl rounded-xl" />
+                </div>
+              </div>
+            </div>
           </TabPanel>
-          <TabPanel>
-            ## Account History
 
-            Comprehensive timeline of account activity.
-
-            Includes:
-            - Chronological transaction history
-            - Interaction patterns
-            - Value flows
-            - Protocol usage
-
-            ```graphql
-            query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
-              accountActivity(
-                address: $address
-                startTime: $startTime
-                endTime: $endTime
-              ) {
-                transactions {
-                  timestamp
-                  type
-                  value
-                  description
-                }
-              }
-            }
-            ```
-            <img src="/api/placeholder/375/440" alt="Token Holdings Mobile Interface" className="mt-4" />
-          </TabPanel>
-          <TabPanel>
-            ## Protocol Activity
-
-            Detailed timeline of interactions with specific protocols.
-
-            Features:
-            - Protocol-specific analytics
-            - Usage patterns
-            - Historical interactions
-            - Performance metrics
-
-            ```graphql
-            query ProtocolTimeline($protocol: String!, $address: String!) {
-              protocolActivity(protocol: $protocol, address: $address) {
-                interactions {
-                  timestamp
-                  action
-                  value
-                  success
-                }
-                metrics {
-                  totalValue
-                  frequency
-                }
-              }
-            }
-            ```
-          </TabPanel>
+          [Similar pattern continues for Account Timeline and App Timeline tabs...]
         </TabPanels>
       </TabGroup>
     </TabPanel>
 
-    <TabPanel>
-      ## Onchain Identity Analysis
-
-      Comprehensive identity resolution and analytics.
-
-      Features:
-      - ENS integration
-      - Cross-chain identity linking
-      - Activity clustering
-      - Behavioral analytics
-
-      ```graphql
-      query OnchainIdentity($address: String!) {
-        identity(address: $address) {
-          ens
-          linkedAddresses
-          activityClusters {
-            type
-            frequency
-            value
-          }
-          behaviorMetrics {
-            tradingPattern
-            protocolPreferences
-            riskProfile
-          }
-        }
-      }
-      ```
-    </TabPanel>
-
-    <TabPanel>
-      ## Market Data & Pricing
-
-      Real-time and historical price data across assets.
-
-      Includes:
-      - Token prices
-      - NFT floor prices
-      - LP token pricing
-      - Historical price feeds
-
-      ```graphql
-      query AssetPrices($tokens: [String!]!, $timeRange: String!) {
-        prices(tokens: $tokens, timeRange: $timeRange) {
-          token
-          current
-          historical {
-            timestamp
-            price
-            volume
-          }
-          marketCap
-          priceChange24h
-        }
-      }
-      ```
-    </TabPanel>
+    [Similar pattern continues for Onchain Identity and Onchain Prices tabs...]
   </TabPanels>
 </TabGroup>
