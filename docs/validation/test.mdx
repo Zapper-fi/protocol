@@ -41,8 +41,44 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
         </TabPanels>
       </TabGroup>
     </TabPanel>
-    <TabPanel>Content 2</TabPanel>
-    <TabPanel>Content 3</TabPanel>
-    <TabPanel>Content 4</TabPanel>
+
+    <TabPanel>
+      <TabGroup>  
+          <TabList className="py-6">
+            <Tab className="zapper-tab">Single Transactions</Tab>
+            <Tab className="zapper-tab">Account Timelines</Tab>
+            <Tab className="zapper-tab">App Timelines</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+
+            ## Single Transactions
+            
+            </TabPanel>
+            <TabPanel>
+            
+            ## Account Timelines
+
+            </TabPanel>
+            <TabPanel>
+
+            ## App Timelines Timelines
+
+            </TabPanel>
+          </TabPanels>
+        </TabGroup>
+      </TabPanel>
+    
+    </TabPanel>
+    <TabPanel>
+
+    ## Onchain Identity
+    
+    </TabPanel>
+    <TabPanel>
+    
+    ## Onchain Identity
+    
+    </TabPanel>
   </TabPanels>
 </TabGroup>
