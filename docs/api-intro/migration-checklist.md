@@ -16,23 +16,21 @@ import Link from '@docusaurus/Link';
 - [ ] Visit [Get Started](/docs/api-intro/) to access the quickstart guide for the new GraphQL API
 - [ ] Test your existing API key with a simple query
 - [ ] Verify you can access the GraphQL [Sandbox](/docs/api-intro/sandbox) 
-
-#### 2. Account Access
 - [ ] Sign in to the new [Dashboard](/dashboard) with the email associated with your existing account 
 - [ ] Contact api@zapper.xyz if you have issues signng in to your account
 - [ ] Review and save your API key information
 
-#### 3. Existing Credits
+#### 2. Existing Credits
 - [ ] Check your remaining REST API credits on the [Dashboard](/dashboard) 
 - [ ] Email api@zapper.xyz to start transfering credits to the GraphQL queries.
 - [ ] Confirm new credits appear on the [Dashboard](/dashboard) 
 
-#### 4. Initial Testing
+#### 3. Initial Testing
 - [ ] Successfully make a test query
 - [ ] Explore the new visualizations for query usage and cost on the [Dashboard](/dashboard) 
 - [ ] Test response formats match expectations
 
-#### 5. Documentation Review
+#### 4. Documentation Review
 - [ ] Read updated GraphQL [Docs](/docs/api-intro/)
 - [ ] Save relevant example queries
 - [ ] Note new endpoint structures
