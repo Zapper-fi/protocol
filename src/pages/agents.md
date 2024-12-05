@@ -1128,7 +1128,7 @@ type FungibleToken implements Node {
   decimals: Int!
   totalSupply: String
   networkId: Int!
-  marketData: MarketData
+  marketData: MarketData @deprecated(reason: "Use onchainMarketData for EVM tokens")
   credibility: Float
   rank: Int
   securityRisk: FungibleTokenSecurityRisk
@@ -1160,6 +1160,11 @@ type FungibleTokenDeltaConnection {
 type FungibleTokenDeltaEdge {
   node: FungibleTokenDelta!
   cursor: String!
+}
+
+input FungibleTokenInput {
+  address: Address!
+  network: Network!
 }
 
 type FungibleTokenSecurityRisk {
@@ -2353,7 +2358,6 @@ type OnchainMarketData implements MarketData {
   priceChange5m: Float
   priceChange1h: Float
   priceChange24h: Float
-  latestSwaps(first: Int = 12, after: String): OnchainMarketDataLatestSwapConnection!
   priceTicks(currency: Currency!, timeFrame: TimeFrame!): [OnchainMarketDataPriceTick!]!
 }
 
@@ -2367,11 +2371,6 @@ type OnchainMarketDataLatestSwap implements Node {
   boughtTokenAddress: Address!
   gasTokenVolume: Float!
   volumeUsd: Float!
-}
-
-type OnchainMarketDataLatestSwapConnection {
-  edges: [OnchainMarketDataLatestSwapEdge!]!
-  pageInfo: PageInfo!
 }
 
 type OnchainMarketDataLatestSwapEdge {
@@ -2677,6 +2676,7 @@ type Query {
   nftToken(collectionAddress: String!, network: Network!, tokenId: String!): NFT
   nftCollections(collections: [NftCollectionInput!]!): [NftCollection!]!
   fungibleToken(address: Address!, network: Network!): FungibleToken
+  fungibleTokensByAddresses(tokens: [FungibleTokenInput!]!): [FungibleToken]!
 }
 
 type SocialLink {
