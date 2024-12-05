@@ -246,13 +246,179 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 | `node` | Collection information | `NftCollection!` |
 | `cursor` | Pagination cursor | `String!` |
 
-### Related Types
 
-- `NftCollection`: Detailed collection information
-- `NftValueDenomination`: Price information in USD and native currency
-- `NftCollectionMedias`: Collection media assets
-- `SocialLink`: Social media links
-- `PageInfo`: Pagination metadata
+### Fields in NftUserCollectionConnection
+
+| Field | Description | Type |
+| ----- | ----------- | ---- |
+| `edges` | Array of collection edges | `[NftUserCollectionEdge!]!` |
+| `pageInfo` | Pagination information | `PageInfo!` |
+
+### Fields in NftCollection (node)
+
+| Field | Description | Type |
+| ----- | ----------- | ---- |
+| `id` | Unique identifier | `ID!` |
+| `address` | Collection contract address | `Address!` |
+| `subCollectionIdentifier` | Sub-collection identifier | `String!` |
+| `name` | Collection name | `String!` |
+| `displayName` | Display name | `String` |
+| `symbol` | Collection symbol | `String!` |
+| `description` | Collection description | `String!` |
+| `network` | Blockchain network | `Network!` |
+| `socialLinks` | Social media links | `[SocialLink!]!` |
+| `supply` | Current supply | `BigDecimal!` |
+| `totalSupply` | Total supply | `BigDecimal!` |
+| `holdersCount` | Number of holders | `BigDecimal!` |
+| `nftStandard` | NFT standard (ERC721/1155) | `NftStandard!` |
+| `disabled` | Collection disabled status | `Boolean!` |
+| `type` | Collection type | `NftCollectionType!` |
+| `openseaId` | OpenSea identifier | `String` |
+| `spamScore` | Spam risk score | `BigDecimal` |
+| `floorPrice` | Current floor price | `NftValueDenomination` |
+| `topOfferPrice` | Highest current offer | `NftValueDenomination` |
+| `medias` | Collection media assets | `NftCollectionMedias!` |
+| `circulatingSupply` | Circulating supply | `BigDecimal!` |
+| `totalCirculatingSupply` | Total circulating supply | `BigDecimal!` |
+| `marketCap` | Market capitalization | `BigDecimal` |
+| `groups` | Collection groups | `[NftCollectionGroup!]!` |
+
+### Field Arguments
+
+#### nfts
+```graphql
+nfts(
+  first: Int = 25
+  after: String
+  tokenIds: [String!]
+  owners: [Address!]
+  traitIds: [String!]
+  order: NftTokenConnectionOrderInput
+  traits: [NftTokenTraitInput!]
+): NftTokenConnection!
+```
+
+#### events
+```graphql
+events(
+  first: Int! = 25
+  after: String
+  tokenIds: [String!]
+  owners: [Address!]
+  followedBy: Address
+  traits: [NftTokenTraitInput!]
+  period: NftPaymentStatsPeriod
+): CollectionEventConnection!
+```
+
+#### holders
+```graphql
+holders(
+  input: NftHolderConnectionInput
+  first: Int
+  after: String
+): PaginatedNftHolder!
+```
+
+#### traitGroupValues
+```graphql
+traitGroupValues(
+  input: NftCollectionTraitValuesArgs!
+): NftCollectionTraitValueConnection!
+```
+
+#### isApproved
+```graphql
+isApproved(
+  spenderAddress: Address!
+  ownerAddress: Address!
+): Boolean!
+```
+
+#### approvalTransaction
+```graphql
+approvalTransaction(
+  spenderAddress: Address!
+  ownerAddress: Address!
+): TransactionConfig!
+```
+
+#### revokeApprovalTransaction
+```graphql
+revokeApprovalTransaction(
+  spenderAddress: Address!
+  ownerAddress: Address!
+): TransactionConfig!
+```
+
+### Type Definitions
+
+```graphql
+enum NftStandard {
+  ERC_721
+  ERC_1155
+}
+
+enum NftCollectionType {
+  GENERAL
+  BRIDGED
+  BADGE
+  POAP
+  TICKET
+  ACCOUNT_BOUND
+  WRITING
+  GAMING
+  ART_BLOCKS
+  BRAIN_DROPS
+  LENS_PROFILE
+  LENS_FOLLOW
+  LENS_COLLECT
+  ZORA_ERC721
+  ZORA_ERC1155
+  BLUEPRINT
+}
+
+enum NftPaymentStatsPeriod {
+  Week
+  Month
+  Quarter
+}
+
+type NftCollectionMedias {
+  banner: Image
+  card: Image
+  logo: Image
+}
+
+type TransactionConfig {
+  data: String!
+  to: Address!
+  from: Address!
+}
+
+input NftTokenConnectionOrderInput {
+  orderBy: NftTokenSort!
+  orderDirection: OrderDirectionOption = ASC
+}
+
+enum NftTokenSort {
+  RARITY_RANK
+  LAST_SALE_ETH
+  ESTIMATED_VALUE_ETH
+}
+
+input NftTokenTraitInput {
+  type: String!
+  value: String!
+}
+
+input NftCollectionTraitValuesArgs {
+  first: Int = 10
+  after: String
+  traitName: String!
+  search: String
+}
+```
 
 ### Notes
 - Supports pagination for handling large collections
