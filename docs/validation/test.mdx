@@ -109,35 +109,6 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
           </TabPanel>
           <TabPanel className="flex">
             <div className='basis-3/5'>
-              ## Access DeFi Holdings
-
-              Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
-
-              Includes:
-              - 99%+ DeFi Balance TVL Coverage
-              - 90,000+ DeFi positions
-              - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
-            </div>
-
-            <div className='basis-2/5'>
-              ```graphql
-              query DeFiPositions($address: String!) {
-                defiPositions(address: $address) {
-                  protocol
-                  positionType
-                  balance
-                  value
-                  rewards {
-                    symbol
-                    amount
-                  }
-                }
-              }
-              ```
-            </div>
-          </TabPanel>
-          <TabPanel className="flex">
-            <div className='basis-3/5'>
               ## Estimated value & metadata for every NFT Collection
 
               Detailed data with for NFT collections you care about across 20+ chains.
