@@ -23,14 +23,14 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
         <TabPanels>
           <TabPanel>
-            ## Access Token Balances
+            ## Surface Token Balances
 
-            Surfaces any onchain token balances held by an address.
+            Surfaces onchain token balances held by an address.
 
             Includes:
             - Real-time balance updates
+            - Coverage of every token from memecoins to bluechips
             - Token metadata and prices
-            - Bullet 3
 
             ```graphql
             query TokenHoldings($address: String!, $network: String!) {
@@ -51,12 +51,12 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Access DeFi Holdings
 
-            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
+            Leverage Zapper's deep coverage of DeFi integrations.
 
             Includes:
-            - 99%+ DeFi Balance TVL Coverage
+            - 99%+ DeFi balance TVL coverage
             - 90,000+ DeFi positions
-            - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
+            - New apps appear automatically in the API response once approved
 
             ```graphql
             query DeFiPositions($address: String!) {
@@ -74,14 +74,15 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
             ```
           </TabPanel>
           <TabPanel>
-            ## Estimated value & metadata for every NFT Collection
+            ## Estimated value & metadata for NFTs
 
-            Detailed data with for NFT collections you care about across 20+ chains.
+            Detailed data for NFTs across 20+ chains.
 
             Features:
-            - Full Marketplace data 
-            - Estimated Values based on historical sales and traits
-            - Complete metadata with high-quality media files, thumbnail, and blurhash
+            - Real-time floor prices, top offers, last sales from multiple marketplaces
+            - Estimated Values based on historical sales and trait rarity
+            - Complete metadata including traits, supply, holders, and more...
+            - High-quality media assets with multiple resolution options
 
             ```graphql
             query NFTHoldings($address: String!) {
@@ -103,12 +104,12 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Access Total Onchain Net Worth
 
-            Surfaces various aggregations of onchain portfolio data.
+            Surfaces various aggregations of onchain portfolio value.
 
             Includes:
-            - Across 35+ chains
-            - Bullet Point 2
-            - Bullet Point 3
+            - Cross-network portfolio value aggregation
+            - Sourced from real-time onchain prices
+            - Detailed breakdown by network and token type
 
             ```graphql
             query PortfolioTotals($address: String!) {
@@ -128,14 +129,13 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
             ```
           </TabPanel>
           <TabPanel>
-            ## Delight users with Claimables
+            ## Delight Users with Claimables
 
-            Surfaces all available claimable tokens for a given address across all indexed onchain apps.
+            Surfaces available claimable tokens for a given address across all indexed onchain apps.
 
             Features:
-            - Across 90,000+ DeFi positions
-            - Bullet Point 2
-            - Bullet Point 3
+            - Real-time tracking of unclaimed rewards
+            - Detailed reward token metadata and values
 
             ```graphql
             query ClaimableRewards($address: String!) {
@@ -166,13 +166,12 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Onchain transactions made simple
 
-            Summarizes onchain transactions with optional references to apps, tokens, NFTs, and accounts. Ideal for activity feeds or detailed transaction views.
+            Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views.
 
             Features:
-            - Bullet 1
-            - Bullet 2
-            - Bullet 3
-
+            - Human-readable interpretations of complex contract interactions
+            - Parse items involved in the transaction for UI rendering (tokens, NFTs, accounts, apps, etc.) 
+            - Coverage across 35+ chains
             ```graphql
             query TransactionDetails($txHash: String!) {
               transaction(hash: $txHash) {
@@ -195,11 +194,11 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Explore Onchain Activity at a Glance
 
-            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
+            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to items involved in the transaction such as tokens, NFTs, and accounts.
 
             Features:
-            - Bullet 1
-            - Bullet 2
+            - Activity history across 35+ chains in real-time
+            - Filterable by Receieved or Submitted
 
             ```graphql
             query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
@@ -224,8 +223,8 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
             Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
             Features:
-            - Bullet 1
-            - Bullet 2
+            - Support for every indexed onchain app
+            - Spam filtering for clean, relevant activity feeds
 
             ```graphql
             query ProtocolTimeline($protocol: String!, $address: String!) {
@@ -251,11 +250,11 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
     <TabPanel>
       ## Build with Onchain Identity
 
-      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, and more.
+      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, Lens and more.
 
       Features:
-      - Bullet 1
-      - Bullet 2
+      - Cross-platform identity resolution (ENS, Lens, Farcaster)
+      - Rich metadata data including avatars, PFPs, descriptions and social links.
 
       ```graphql
       query OnchainIdentity($address: String!) {
@@ -283,7 +282,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
       Onchain token prices, current and historical, for any token with an onchain market.
 
       Includes:
-      - Price average across multiple price sources instead of by largest price source
+      - Price average across multiple price sources
       - 2.5M+ Token Prices and balances with hundreds more added each day
       - Instantly and automatically detects newly deployed price sources
 
