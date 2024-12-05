@@ -25,30 +25,30 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Tokens.png">
-          ```graphql
-          query {
-            portfolio(addresses: ["0x..."]) {
-              tokenBalances {
-                key
-                address
-                network
-                token {
-                  baseToken {
-                    address
-                    network
-                    symbol
-                    decimals
-                    imageUrl
-                  }
-                  balance
-                  balanceUSD
-                  balanceRaw
-                }
-                updatedAt
-              }
-            }
-          }
-          ```
+          {`
+query {
+  portfolio(addresses: ["0x..."]) {
+    tokenBalances {
+      key
+      address
+      network
+      token {
+        baseToken {
+          address
+          network
+          symbol
+          decimals
+          imageUrl
+        }
+        balance
+        balanceUSD
+        balanceRaw
+      }
+      updatedAt
+    }
+  }
+}
+          `}
         </CodeImage>
       </div>
     </TabPanel>
@@ -66,38 +66,39 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Apps.png">
-          ```graphql
-          query {
-            portfolio(addresses: ["0x..."]) {
-              appBalances {
-                key
-                address
-                appId
-                appName
-                appImage
-                network
-                balanceUSD
-                updatedAt
-                products {
-                  label
-                  assets {
-                    type
-                    address
-                    network
-                    balanceUSD
-                    key
-                    appId
-                    groupId
-                    displayProps {
-                      label
-                      images
-                    }
-                  }
-                }
-              }
-            }
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    appBalances {
+      key
+      address
+      appId
+      appName
+      appImage
+      network
+      balanceUSD
+      updatedAt
+      products {
+        label
+        assets {
+          type
+          address
+          network
+          balanceUSD
+          key
+          appId
+          groupId
+          displayProps {
+            label
+            images
           }
-          ```
+        }
+      }
+    }
+  }
+}
+`}
+
         </CodeImage>
       </div>
     </TabPanel>
@@ -116,60 +117,59 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_NFTs.png">
-          ```graphql
-          query {
-            nftToken(
-              collectionAddress: "0x..."
-              network: ETHEREUM_MAINNET
-              tokenId: "1"
-            ) {
-              tokenId
-              name
-              description
-              estimatedValue {
-                valueUsd
-                valueWithDenomination
-                denomination {
-                  symbol
-                  network
-                  address
-                }
-              }
-              collection {
-                name
-                symbol
-                floorPrice {
-                  valueUsd
-                  valueWithDenomination
-                }
-                description
-                supply
-                holdersCount
-              }
-              traits {
-                attributeName
-                attributeValue
-                supply
-                supplyPercentage
-              }
-              mediasV3 {
-                images {
-                  edges {
-                    node {
-                      original
-                      thumbnail
-                      medium
-                      large
-                      mimeType
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
+{`
+query {
+  nftToken(
+    collectionAddress: "0x..."
+    network: ETHEREUM_MAINNET
+    tokenId: "1"
+  ) {
+    tokenId
+    name
+    description
+    estimatedValue {
+      valueUsd
+      valueWithDenomination
+      denomination {
+        symbol
+        network
+        address
+      }
+    }
+    collection {
+      name
+      symbol
+      floorPrice {
+        valueUsd
+        valueWithDenomination
+      }
+      description
+      supply
+      holdersCount
+    }
+    traits {
+      attributeName
+      attributeValue
+      supply
+      supplyPercentage
+    }
+    mediasV3 {
+      images {
+        edges {
+          node {
+            original
+            thumbnail
+            medium
+            large
+            mimeType
+            width
+            height
           }
-          ```
+        }
+      }
+    }
+  }
+}`}
         </CodeImage>
       </div>
     </TabPanel>
@@ -187,33 +187,34 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Totals.png">
-          ```graphql
-          portfolio(addresses: ["0x..."]) {
-              totals {
-                total
-                appsTotal
-                totalWithNFT
-                totalByNetwork {
-                  network
-                  total
-                }
-                totalByNetworkWithNFT {
-                  network
-                  total
-                }
-                totalByAddress {
-                  address
-                  total
-                }
-                holdings {
-                  key
-                  label
-                  balanceUSD
-                  pct
-                }
-              }
-            }
-          ```
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    totals {
+      total
+      appsTotal
+      totalWithNFT
+      totalByNetwork {
+        network
+        total
+      }
+      totalByNetworkWithNFT {
+        network
+        total
+      }
+      totalByAddress {
+        address
+        total
+      }
+      holdings {
+        key
+        label
+        balanceUSD
+        pct
+      }
+    }
+  }
+`}
         </CodeImage>
       </div>
     </TabPanel>
@@ -230,27 +231,27 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Claimables.png">
-          ```graphql
-          query {
-            portfolio(addresses: ["0x..."]) {
-              totals {
-                claimables {
-                  appId
-                  address
-                  token {
-                    type
-                    address
-                    network
-                    balance
-                    balanceUSD
-                    price
-                    symbol
-                    decimals
-                  }
-                }
-              }
-            }
-          ```
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    totals {
+      claimables {
+        appId
+        address
+        token {
+          type
+          address
+          network
+          balance
+          balanceUSD
+          price
+          symbol
+          decimals
+        }
+      }
+    }
+  }
+`}
         </CodeImage>
       </div>
     </TabPanel>
