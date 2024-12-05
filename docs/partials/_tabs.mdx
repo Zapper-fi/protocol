@@ -54,7 +54,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainIdentity.png">
-        ```graphql
+{`
         query {
           accounts(addresses: ["0x..."]) {
             address
@@ -105,7 +105,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
             }
           }
         }
-        ```
+`}
         </CodeImage>
       </div>
     </TabPanel>
@@ -124,7 +124,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainPrices.png">
-        ```graphql
+{`
         query {
           fungibleToken(
             address: "0x..."
@@ -152,7 +152,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
             }
           }
         }
-        ```
+`}
         </CodeImage>
       </div>
     </TabPanel>

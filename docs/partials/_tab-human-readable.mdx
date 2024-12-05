@@ -24,62 +24,61 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2 min-w-0">
         <CodeImage src="/img/code/HRT_SingleTransaction.png">
-        ```graphql
-        query {
-          timelineEvent(transactionHash: "0x...", network: ETHEREUM_MAINNET) {
-            key
-            network
-            source
-            eventType
-            timestamp
-            interpretation {
-              description
-              descriptionDisplayItems
-              processedDescription
-              inboundAttachments {
-                ... on TokenDisplayItem {
-                  type
-                  network
-                  tokenAddress
-                  amountRaw
-                  token {
-                    symbol
-                    decimals
-                  }
-                }
-                ... on NFTDisplayItem {
-                  type
-                  network
-                  collectionAddress
-                  tokenId
-                  quantity
-                }
-              }
-              outboundAttachments {
-                ... on TokenDisplayItem {
-                  type
-                  network
-                  tokenAddress
-                  amountRaw
-                  token {
-                    symbol
-                    decimals
-                  }
-                }
-              }
-            }
-            transaction {
-              hash
-              from
-              to
-              value
-              gasPrice
-              gas
-              transactionFee
-            }
+{`
+query {
+  timelineEvent(transactionHash: "0x...", network: ETHEREUM_MAINNET) {
+    key
+    network
+    source
+    eventType
+    timestamp
+    interpretation {
+      description
+      descriptionDisplayItems
+      processedDescription
+      inboundAttachments {
+        ... on TokenDisplayItem {
+          type
+          network
+          tokenAddress
+          amountRaw
+          token {
+            symbol
+            decimals
           }
         }
-        ```
+        ... on NFTDisplayItem {
+          type
+          network
+          collectionAddress
+          tokenId
+          quantity
+        }
+      }
+      outboundAttachments {
+        ... on TokenDisplayItem {
+          type
+          network
+          tokenAddress
+          amountRaw
+          token {
+            symbol
+            decimals
+          }
+        }
+      }
+    }
+    transaction {
+      hash
+      from
+      to
+      value
+      gasPrice
+      gas
+      transactionFee
+    }
+  }
+}`}
         </CodeImage>
       </div>
     </TabPanel>
@@ -96,49 +95,48 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/HRT_AccountTimeline.png">
-        ```graphql
-        query {
-          accountsTimeline(
-            addresses: ["0x..."]
-            first: 10
-            spamFilter: true
-          ) {
-            edges {
-              node {
-                key
-                timestamp
-                eventType
-                interpretation {
-                  description
-                  processedDescription
-                  inboundAttachments {
-                    ... on TokenDisplayItem {
-                      type
-                      tokenAddress
-                      amountRaw
-                    }
-                    ... on NFTDisplayItem {
-                      type
-                      collectionAddress
-                      tokenId
-                    }
-                  }
-                }
-                transaction {
-                  hash
-                  network
-                  value
-                  transactionFee
-                }
-              }
+{`
+query {
+  accountsTimeline(
+    addresses: ["0x..."]
+    first: 10
+    spamFilter: true
+  ) {
+    edges {
+      node {
+        key
+        timestamp
+        eventType
+        interpretation {
+          description
+          processedDescription
+          inboundAttachments {
+            ... on TokenDisplayItem {
+              type
+              tokenAddress
+              amountRaw
             }
-            pageInfo {
-              hasNextPage
-              endCursor
+            ... on NFTDisplayItem {
+              type
+              collectionAddress
+              tokenId
             }
           }
         }
-        ```
+        transaction {
+          hash
+          network
+          value
+          transactionFee
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`}
         </CodeImage>
       </div>
     </TabPanel>
@@ -155,53 +153,52 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/HRT_AppTimeline.png">
-        ```graphql
-        query {
-          timelineForApp(
-            slug: "morpho"
-            first: 10
-            spamFilter: true
-          ) {
-            edges {
-              node {
-                key
-                timestamp
-                eventType
-                interpretation {
-                  description
-                  processedDescription
-                  inboundAttachments {
-                    ... on TokenDisplayItem {
-                      type
-                      tokenAddress
-                      amountRaw
-                    }
-                    ... on NFTDisplayItem {
-                      type
-                      collectionAddress
-                      tokenId
-                    }
-                  }
-                }
-                app {
-                  slug
-                  name
-                  imgUrl
-                }
-                transaction {
-                  hash
-                  network
-                  value
-                }
-              }
+{`
+query {
+  timelineForApp(
+    slug: "morpho"
+    first: 10
+    spamFilter: true
+  ) {
+    edges {
+      node {
+        key
+        timestamp
+        eventType
+        interpretation {
+          description
+          processedDescription
+          inboundAttachments {
+            ... on TokenDisplayItem {
+              type
+              tokenAddress
+              amountRaw
             }
-            pageInfo {
-              hasNextPage
-              endCursor
+            ... on NFTDisplayItem {
+              type
+              collectionAddress
+              tokenId
             }
           }
         }
-        ```
+        app {
+          slug
+          name
+          imgUrl
+        }
+        transaction {
+          hash
+          network
+          value
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`}
         </CodeImage>
       </div>
     </TabPanel>
