@@ -1,8 +1,8 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { CodeImage } from '@site/src/components/CodeImage'
 
-<TabGroup>  
-  <TabList className="py-6">
+<TabGroup className="">  
+  <TabList className="w-1/2 -mb-10">
     <Tab className="zapper-tab text-lg">Tokens</Tab>
     <Tab className="zapper-tab text-lg">Apps</Tab>
     <Tab className="zapper-tab text-lg">NFTs</Tab>
@@ -12,7 +12,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
   <TabPanels>
     <TabPanel className="md:flex gap-8">
-      <div className="basis-1/2">
+      <div className="basis-1/2 mt-14">
         ## Surface Token Balances
 
         Surfaces onchain token balances held by an address. [Learn More](/docs/api-intro/portfolio/token-balances)
@@ -53,7 +53,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
       </div>
     </TabPanel>
     <TabPanel className="md:flex gap-8">
-      <div className="basis-1/2">
+      <div className="basis-1/2 mt-14">
         ## Access DeFi Holdings
 
         Leverage Zapper's deep coverage of DeFi integrations. [Learn More](/docs/api-intro/portfolio/app-balances)
@@ -102,7 +102,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
       </div>
     </TabPanel>
     <TabPanel className="md:flex gap-8">
-      <div className="basis-1/2">
+      <div className="basis-1/2 mt-14">
         ## Estimated value & metadata for NFTs
 
         The ultimate source for NFT data. [Learn More](/docs/api-intro/portfolio/nft-balances)
@@ -174,7 +174,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
       </div>
     </TabPanel>
     <TabPanel className="md:flex gap-8">
-      <div className="basis-1/2">
+      <div className="basis-1/2 mt-14">
         ## Access Total Net Worth
 
         Surfaces various aggregations of onchain portfolio value. [Learn More](/docs/api-intro/portfolio/portfolio-totals)
@@ -218,7 +218,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
       </div>
     </TabPanel>
     <TabPanel className="md:flex gap-8">
-      <div className="basis-1/2">
+      <div className="basis-1/2 mt-14">
         ## Everybody Loves Claimables
 
         Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api-intro/portfolio/claimables)
