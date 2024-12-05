@@ -215,15 +215,99 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 | `after` | Cursor for pagination | `String` | No |
 | `withOverrides` | Include value overrides | `Boolean` | No |
 
+
 ### Fields
 
+#### NftUserTokenConnection
 | Field | Description | Type |
 | ----- | ----------- | ---- |
 | `edges` | Array of NFT edges | `[NftUserTokenEdge!]!` |
 | `pageInfo` | Pagination information | `PageInfo!` |
-| `node` | NFT token information | `NftToken!` |
-| `ownedAt` | Timestamp when the NFT was acquired | `DateTime` |
-| `balances` | Current ownership balances | `[NftUserTokenBalance!]!` |
+
+#### NftToken (node)
+| Field | Description | Type |
+| ----- | ----------- | ---- |
+| `id` | Unique identifier | `ID!` |
+| `tokenId` | Token ID within collection | `String!` |
+| `name` | Token name | `String!` |
+| `description` | Token description | `String` |
+| `supply` | Total token supply | `BigDecimal!` |
+| `circulatingSupply` | Circulating supply | `BigDecimal!` |
+| `holdersCount` | Number of token holders | `BigDecimal!` |
+| `socialLinks` | Social media links | `[SocialLink!]!` |
+| `collection` | Parent collection data | `NftCollection!` |
+| `traits` | Token attributes | `[NftTrait!]!` |
+| `mediasV2` | Legacy media assets | `[NftMediaV2!]!` |
+| `mediasV3` | Current media assets | `NftMedias!` |
+| `estimatedValue` | Current value estimate | `NftValueDenomination` |
+| `lastSale` | Last sale details | `NftValueDenomination` |
+| `rarityRank` | Token rarity ranking (deprecated) | `Int` |
+| `lastSaleEth` | Last sale in ETH (deprecated) | `BigDecimal` |
+| `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
+| `isHidden` | Hidden status | `Boolean!` |
+
+### Types
+
+#### transfers
+```graphql
+transfers(
+  first: Int
+  after: String
+  order: NftTransferConnectionOrderInput
+): NftTransferConnection
+```
+
+#### holders
+```graphql
+holders(
+  first: Int
+  after: String
+  last: Int
+  before: String
+  followedBy: Address
+): NftHolderConnection!
+```
+
+#### holdersFollowedByAddress
+```graphql
+holdersFollowedByAddress(
+  input: HoldersFollowedByAddressInput!
+): [NftHolder!]!
+```
+
+### Type Definitions
+```graphql
+type NftUserTokenBalance {
+  balance: BigDecimal!
+  valuationStrategy: NftValuationStrategy!
+  account: Account!
+}
+
+enum NftValuationStrategy {
+  TOP_OFFER
+  ESTIMATED_VALUE
+  OVERRIDE
+}
+
+type NftMedias {
+  images: ImageConnection!
+  animations: AnimationConnection!
+  audios: AudioConnection!
+}
+
+type NftValueDenomination {
+  valueUsd: Float!
+  valueWithDenomination: Float!
+  denomination: NftDenomination!
+}
+
+type NftDenomination {
+  network: String!
+  address: String!
+  symbol: String!
+  imageUrl: String
+}
+```
 
 ### Related Types
 
