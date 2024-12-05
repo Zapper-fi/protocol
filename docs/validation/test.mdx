@@ -23,133 +23,103 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
         <TabPanels>
           <TabPanel>
-            ## Token Holdings
+            ## Access Token Balances
 
-            Track token balances across all EVM chains with comprehensive coverage.
+            Surfaces any onchain token balances held by an address. [Learn more](/docs/tokens)
 
-            Includes:
             - Real-time balance updates
-            - Historical price data
-            - Token metadata and images
-            - Custom token lists support
+            - Token metadata and prices
+            - Bullet 3
 
             ```graphql
-            query TokenHoldings($address: String!, $network: String!) {
-              tokens(address: $address, network: $network) {
-                symbol
+            query TokenBalances($address: String!) {
+              tokens(address: $address) {
                 balance
-                value
-                price
-                tokenInfo {
+                token {
                   name
-                  decimals
-                  logo
+                  symbol
+                  metadata
                 }
               }
             }
             ```
           </TabPanel>
+
           <TabPanel>
-            ## Access DeFi Holdings
+            ## Access DeFi holdings
 
-            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
+            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address. [Learn more](/docs/apps)
 
-            Includes:
-            - 99% DeFi Balance TVL Coverage
+            - 99%+ DeFi Balance TVL Coverage
             - 90,000+ DeFi positions
             - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
 
             ```graphql
-            query DeFiPositions($address: String!) {
-              defiPositions(address: $address) {
+            query DefiHoldings($address: String!) {
+              apps(address: $address) {
                 protocol
-                positionType
                 balance
-                value
-                rewards {
-                  symbol
-                  amount
-                }
+                positions
               }
             }
             ```
           </TabPanel>
+
           <TabPanel>
-            ## NFT Portfolio
+            ## Estimated value & metadata for every NFT Collection
 
-            Complete NFT portfolio tracking across major marketplaces.
+            Detailed data with for NFT collections you care about across 20+ chains. [Learn more](/docs/nfts)
 
-            Features:
-            - Floor price tracking
-            - Rarity scores
-            - Historical trading data
-            - Metadata enrichment
+            - Full Marketplace data
+            - Estimated Values based on historical sales and traits
+            - Complete metadata with high-quality media files, thumbnail, and blurhash
 
             ```graphql
-            query NFTHoldings($address: String!) {
+            query NFTCollections($address: String!) {
               nfts(address: $address) {
-                collection
-                tokenId
-                floorPrice
-                rarity
-                lastSalePrice
-                metadata {
-                  name
-                  image
-                  attributes
-                }
-              }
-            }
-            ```
-          </TabPanel>
-          <TabPanel>
-            ## Portfolio Analytics
-
-            Comprehensive portfolio analytics and performance metrics.
-
-            Includes:
-            - Total portfolio value
-            - Historical performance
-            - Risk metrics
-            - Asset allocation
-
-            ```graphql
-            query PortfolioTotals($address: String!) {
-              portfolio(address: $address) {
-                totalValue
-                performance {
-                  daily
-                  weekly
-                  monthly
-                }
-                allocation {
-                  category
-                  percentage
-                }
-              }
-            }
-            ```
-          </TabPanel>
-          <TabPanel>
-            ## Claimable Rewards
-
-            Track and manage claimable rewards across protocols.
-
-            Features:
-            - Airdrops
-            - Governance tokens
-            - Staking rewards
-            - Yield farming returns
-
-            ```graphql
-            query ClaimableRewards($address: String!) {
-              claimables(address: $address) {
-                type
-                protocol
-                token
-                amount
+                collections
                 value
-                claimDeadline
+                metadata
+              }
+            }
+            ```
+          </TabPanel>
+
+          <TabPanel>
+            ## Access Total Onchain Net Worth
+
+            Surfaces various aggregations of onchain portfolio data. [Learn more](/docs/totals)
+
+            - Across 35+ chains
+            - Bullet Point 2
+            - Bullet Point 3
+
+            ```graphql
+            query TotalNetWorth($address: String!) {
+              totals(address: $address) {
+                netWorth
+                chains
+                breakdown
+              }
+            }
+            ```
+          </TabPanel>
+
+          <TabPanel>
+            ## Delight users with Claimables
+
+            Surfaces all available claimable tokens for a given address across all indexed onchain apps. [Learn more](/docs/claimables)
+
+            - Across 90,000+ DeFi positions
+            - Bullet Point 2
+            - Bullet Point 3
+
+            ```graphql
+            query Claimables($address: String!) {
+              claimables(address: $address) {
+                tokens
+                amounts
+                protocols
               }
             }
             ```
@@ -168,88 +138,58 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
         <TabPanels>
           <TabPanel>
-            ## Transaction Details
+            ## Onchain transactions made simple
 
-            Human-readable transaction details for any on-chain activity.
+            Summarizes onchain transactions with optional references to apps, tokens, NFTs, and accounts. Ideal for activity feeds or detailed transaction views. [Learn more](/docs/transactions)
 
-            Features:
-            - Plain English descriptions
-            - Token movements
-            - Gas costs
-            - Contract interactions
+            - Bullet 1
+            - Bullet 2
+            - Bullet 3
 
             ```graphql
-            query TransactionDetails($txHash: String!) {
-              transaction(hash: $txHash) {
-                description
-                value
-                gasUsed
-                tokens {
-                  token
-                  amount
-                  direction
-                }
-                interactions {
-                  protocol
-                  action
-                }
+            query Transaction($hash: String!) {
+              transaction(hash: $hash) {
+                summary
+                references
+                details
               }
             }
             ```
           </TabPanel>
+
           <TabPanel>
-            ## Account History
+            ## Explore Onchain Activity at a Glance
 
-            Comprehensive timeline of account activity.
+            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts. [Learn more](/docs/timeline)
 
-            Includes:
-            - Chronological transaction history
-            - Interaction patterns
-            - Value flows
-            - Protocol usage
+            - Bullet 1
+            - Bullet 2
 
             ```graphql
-            query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
-              accountActivity(
-                address: $address
-                startTime: $startTime
-                endTime: $endTime
-              ) {
-                transactions {
-                  timestamp
-                  type
-                  value
-                  description
-                }
+            query AccountActivity($address: String!) {
+              timeline(address: $address) {
+                activities
+                references
+                elements
               }
             }
             ```
-            <img src="/api/placeholder/375/440" alt="Token Holdings Mobile Interface" className="mt-4" />
           </TabPanel>
+
           <TabPanel>
-            ## Protocol Activity
+            ## App Activity Feeds
 
-            Detailed timeline of interactions with specific protocols.
+            Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn more](/docs/app-activity)
 
-            Features:
-            - Protocol-specific analytics
-            - Usage patterns
-            - Historical interactions
-            - Performance metrics
+            - Bullet 1
+            - Bullet 2
 
             ```graphql
-            query ProtocolTimeline($protocol: String!, $address: String!) {
-              protocolActivity(protocol: $protocol, address: $address) {
-                interactions {
-                  timestamp
-                  action
-                  value
-                  success
-                }
-                metrics {
-                  totalValue
-                  frequency
-                }
+            query AppActivity($appId: String!) {
+              appTimeline(appId: $appId) {
+                transactions
+                contracts
+                activity
               }
             }
             ```
@@ -259,59 +199,39 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
     </TabPanel>
 
     <TabPanel>
-      ## Onchain Identity Analysis
+      ## Build with Onchain Identity
 
-      Comprehensive identity resolution and analytics.
+      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, and more. [Learn more](/docs/identity)
 
-      Features:
-      - ENS integration
-      - Cross-chain identity linking
-      - Activity clustering
-      - Behavioral analytics
+      - Bullet 1
+      - Bullet 2
 
       ```graphql
       query OnchainIdentity($address: String!) {
         identity(address: $address) {
+          avatars
           ens
-          linkedAddresses
-          activityClusters {
-            type
-            frequency
-            value
-          }
-          behaviorMetrics {
-            tradingPattern
-            protocolPreferences
-            riskProfile
-          }
+          social
         }
       }
       ```
     </TabPanel>
 
     <TabPanel>
-      ## Market Data & Pricing
+      ## A price for every token, from memecoins to blue chips
 
-      Real-time and historical price data across assets.
+      Onchain token prices, current and historical, for any token with an onchain market. [Learn more](/docs/prices)
 
-      Includes:
-      - Token prices
-      - NFT floor prices
-      - LP token pricing
-      - Historical price feeds
+      - Price average across multiple price sources instead of by largest price source
+      - 2.5M+ Token Prices and balances with hundreds more added each day
+      - Instantly and automatically detects newly deployed price sources
 
       ```graphql
-      query AssetPrices($tokens: [String!]!, $timeRange: String!) {
-        prices(tokens: $tokens, timeRange: $timeRange) {
-          token
+      query TokenPrices($tokens: [String!]!) {
+        prices(tokens: $tokens) {
           current
-          historical {
-            timestamp
-            price
-            volume
-          }
-          marketCap
-          priceChange24h
+          historical
+          sources
         }
       }
       ```
