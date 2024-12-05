@@ -80,12 +80,12 @@ const config = {
         {
           position: 'left',
           label: 'API',
-          to: '/docs/api-intro/',
+          to: '/docs/api/',
         },
         {
           position: 'left',
           label: 'Interpretation Docs',
-          to: '/docs/Interpretation/overview',
+          to: '/docs/interpretation/overview',
         },
         {
           type: 'custom-NavbarItem',
