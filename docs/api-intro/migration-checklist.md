@@ -6,7 +6,7 @@ sidebar_label: Migration Checklist
 import { LinkButton } from '@site/src/components/LinkButton';
 import Link from '@docusaurus/Link';
 
-# Zapper API Migration Guide: REST to GraphQL
+# Migration Guide: REST to GraphQL
 
 ## 1. Access and Payment Changes
 
