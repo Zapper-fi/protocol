@@ -22,19 +22,57 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
       <div className="basis-2/5">
         ```graphql
-        query TransactionDetails($txHash: String!) {
-          transaction(hash: $txHash) {
-            description
-            value
-            gasUsed
-            tokens {
-              token
-              amount
-              direction
+        query {
+          timelineEvent(transactionHash: "0x...", network: ETHEREUM_MAINNET) {
+            key
+            network
+            source
+            eventType
+            timestamp
+            interpretation {
+              description
+              descriptionDisplayItems
+              processedDescription
+              inboundAttachments {
+                ... on TokenDisplayItem {
+                  type
+                  network
+                  tokenAddress
+                  amountRaw
+                  token {
+                    symbol
+                    decimals
+                  }
+                }
+                ... on NFTDisplayItem {
+                  type
+                  network
+                  collectionAddress
+                  tokenId
+                  quantity
+                }
+              }
+              outboundAttachments {
+                ... on TokenDisplayItem {
+                  type
+                  network
+                  tokenAddress
+                  amountRaw
+                  token {
+                    symbol
+                    decimals
+                  }
+                }
+              }
             }
-            interactions {
-              protocol
-              action
+            transaction {
+              hash
+              from
+              to
+              value
+              gasPrice
+              gas
+              transactionFee
             }
           }
         }
@@ -54,17 +92,44 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
       <div className="basis-2/5">
         ```graphql
-        query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
-          accountActivity(
-            address: $address
-            startTime: $startTime
-            endTime: $endTime
+        query {
+          accountsTimeline(
+            addresses: ["0x..."]
+            first: 10
+            spamFilter: true
           ) {
-            transactions {
-              timestamp
-              type
-              value
-              description
+            edges {
+              node {
+                key
+                timestamp
+                eventType
+                interpretation {
+                  description
+                  processedDescription
+                  inboundAttachments {
+                    ... on TokenDisplayItem {
+                      type
+                      tokenAddress
+                      amountRaw
+                    }
+                    ... on NFTDisplayItem {
+                      type
+                      collectionAddress
+                      tokenId
+                    }
+                  }
+                }
+                transaction {
+                  hash
+                  network
+                  value
+                  transactionFee
+                }
+              }
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
             }
           }
         }
@@ -84,17 +149,48 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 
       <div className="basis-2/5">
         ```graphql
-        query ProtocolTimeline($protocol: String!, $address: String!) {
-          protocolActivity(protocol: $protocol, address: $address) {
-            interactions {
-              timestamp
-              action
-              value
-              success
+        query {
+          timelineForApp(
+            slug: "morpho"
+            first: 10
+            spamFilter: true
+          ) {
+            edges {
+              node {
+                key
+                timestamp
+                eventType
+                interpretation {
+                  description
+                  processedDescription
+                  inboundAttachments {
+                    ... on TokenDisplayItem {
+                      type
+                      tokenAddress
+                      amountRaw
+                    }
+                    ... on NFTDisplayItem {
+                      type
+                      collectionAddress
+                      tokenId
+                    }
+                  }
+                }
+                app {
+                  slug
+                  name
+                  imgUrl
+                }
+                transaction {
+                  hash
+                  network
+                  value
+                }
+              }
             }
-            metrics {
-              totalValue
-              frequency
+            pageInfo {
+              hasNextPage
+              endCursor
             }
           }
         }
