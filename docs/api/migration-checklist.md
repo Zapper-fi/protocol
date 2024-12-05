@@ -13,27 +13,22 @@ import Link from '@docusaurus/Link';
 ### Existing API Client Checklist
 
 #### 1. Access Verification
-- [ ] Visit [Get Started](/docs/api/) to access the quickstart guide for the new GraphQL API
-- [ ] Test your existing API key with a simple query
-- [ ] Verify you can access the GraphQL [Sandbox](/docs/api/sandbox) 
-- [ ] Sign in to the new [Dashboard](/dashboard) with the email associated with your existing account 
-- [ ] Contact api@zapper.xyz if you have issues signng in to your account
-- [ ] Review and save your API key information
+- [ ] Sign in to the [Dashboard](/dashboard) with the same address you used for the REST API.
+- [ ] Once signed in, you'll see your API key : it is the same as the REST API.
+- [ ] Test your API key by querying any of the new endpoints at *public.zapper.xyz/graphql*. [See available endpoints](/docs/api/api).
+- [ ] Contact api@zapper.xyz if you have issues signng in to your account.
 
 #### 2. Existing Credits
-- [ ] Check your remaining REST API credits on the [Dashboard](/dashboard) 
-- [ ] Email api@zapper.xyz to start transfering credits to the GraphQL queries.
-- [ ] Confirm new credits appear on the [Dashboard](/dashboard) 
+- [ ] Check your remaining REST API credits in the [Dashboard](/dashboard). 
+- [ ] Email api@zapper.xyz to transfer purchased credits to the GraphQL API.
 
 #### 3. Initial Testing
-- [ ] Successfully make a test query
 - [ ] Explore the new visualizations for query usage and cost on the [Dashboard](/dashboard) 
 - [ ] Test response formats match expectations
 
 #### 4. Documentation Review
 - [ ] Read updated GraphQL [Docs](/docs/api/)
-- [ ] Save relevant example queries
-- [ ] Note new endpoint structures
+- [ ] Save relevant example queries & note new endpoint structures
 
 ### New Payment System 
 - $1 USD = 1,000 credits 
@@ -46,7 +41,7 @@ import Link from '@docusaurus/Link';
   - USDT
   - DAI
 - Review query [Pricing](/docs/api/pricing)
-- Consider purchasing credits in bulk to take advantage of 20-30% cost savings
+- Consider purchasing credits in bulk to take advantage of 20% and 30% cost savings
 
 ### Credit Management
 - Automated email notifications at:
@@ -55,7 +50,6 @@ import Link from '@docusaurus/Link';
   - 1 day before estimated credit depletion
   - When credits are fully depleted
 - Plan credit purchases based on usage patterns
-- Test onchain payment flow with preferred token
 
 ## 2. Query Migration Guide
 
@@ -189,10 +183,10 @@ query GetApp($appId: ID!) {
 }
 ```
 
-## 3. Network Enumeration Changes
+## 3. Network Enum Changes
 
 ### Update Network References
-- Use the new `Network` enum. See [Supported Chains](/docs/api/supported-chains) for all the enums.
+- Use the new `Network` enum. See [Supported Chains](/docs/api/supported-chains) for all enum values.
   ```graphql
   enum Network {
     ETHEREUM_MAINNET
