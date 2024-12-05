@@ -30,7 +30,7 @@ export const Intro: React.FC = () => {
               <h4 style={{ color: 'white' }} className={styles.subtitle}>
   <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
   <LinkButton 
-    href="docs/api-intro" 
+    href="/dashboard" 
     type="primary" 
     buttonCopy="Start Building in 60 Seconds"
   />
