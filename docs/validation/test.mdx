@@ -108,81 +108,93 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
             </div>
           </TabPanel>
           <TabPanel>
-            ## Estimated value & metadata for NFTs
+            <div className="basis-3/5">
+              ## Estimated value & metadata for NFTs
 
-           The ultimate source for NFT data. [Learn More](/docs/api-intro/portfolio/nft-balances)
+            The ultimate source for NFT data. [Learn More](/docs/api-intro/portfolio/nft-balances)
 
-            Features:
-            - Real-time floor prices, top offers, last sales from multiple marketplaces
-            - Estimated Values based on historical sales and trait rarity
-            - Complete metadata including traits, supply, holders, and more...
-            - High-quality media assets with multiple resolution options
+              Features:
+              - Real-time floor prices, top offers, last sales from multiple marketplaces
+              - Estimated Values based on historical sales and trait rarity
+              - Complete metadata including traits, supply, holders, and more...
+              - High-quality media assets with multiple resolution options
+            </div>
 
-            ```graphql
-            query NFTHoldings($address: String!) {
-              nfts(address: $address) {
-                collection
-                tokenId
-                floorPrice
-                rarity
-                lastSalePrice
-                metadata {
-                  name
-                  image
-                  attributes
+            <div className="basis-2/5">
+              ```graphql
+              query NFTHoldings($address: String!) {
+                nfts(address: $address) {
+                  collection
+                  tokenId
+                  floorPrice
+                  rarity
+                  lastSalePrice
+                  metadata {
+                    name
+                    image
+                    attributes
+                  }
                 }
               }
-            }
-            ```
+              ```
+            </div>
           </TabPanel>
           <TabPanel>
-            ## Access Total Net Worth
+            <div className="basis-3/5">
+              ## Access Total Net Worth
 
-            Surfaces various aggregations of onchain portfolio value. [Learn More](/docs/api-intro/portfolio/portfolio-totals)
+              Surfaces various aggregations of onchain portfolio value. [Learn More](/docs/api-intro/portfolio/portfolio-totals)
 
-            Includes:
-            - Cross-network portfolio value aggregation
-            - Sourced from real-time onchain prices
-            - Detailed breakdown by network and token type
+              Includes:
+              - Cross-network portfolio value aggregation
+              - Sourced from real-time onchain prices
+              - Detailed breakdown by network and token type
+            </div>
 
-            ```graphql
-            query PortfolioTotals($address: String!) {
-              portfolio(address: $address) {
-                totalValue
-                performance {
-                  daily
-                  weekly
-                  monthly
-                }
-                allocation {
-                  category
-                  percentage
+            <div className="basis-2/5">
+              ```graphql
+              query PortfolioTotals($address: String!) {
+                portfolio(address: $address) {
+                  totalValue
+                  performance {
+                    daily
+                    weekly
+                    monthly
+                  }
+                  allocation {
+                    category
+                    percentage
+                  }
                 }
               }
-            }
-            ```
+              ```
+            </div>
           </TabPanel>
           <TabPanel>
-            ## Everybody Loves Claimables
+            <div className="basis-3/5">
+              ## Everybody Loves Claimables
 
-            Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api-intro/portfolio/claimables)
+              Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api-intro/portfolio/claimables)
 
-            Features:
-            - Real-time tracking of unclaimed rewards
-            - Detailed reward token metadata and values
+              Features:
+              - Real-time tracking of unclaimed rewards
+              - Detailed reward token metadata and values
+            </div>
 
-            ```graphql
-            query ClaimableRewards($address: String!) {
-              claimables(address: $address) {
-                type
-                protocol
-                token
-                amount
-                value
-                claimDeadline
+            <div className="basis-2/5">
+              ```graphql
+              query ClaimableRewards($address: String!) {
+                claimables(address: $address) {
+                  type
+                  protocol
+                  token
+                  amount
+                  value
+                  claimDeadline
+                }
               }
-            }
-            ```
+              ```
+            </div>
           </TabPanel>
         </TabPanels>
       </TabGroup>
@@ -198,143 +210,164 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
 
         <TabPanels>
           <TabPanel>
-            ## Transactions made simple
+            <div className="basis-3/5">
+              ## Transactions made simple
 
-            Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views. [Learn More](/docs/api-intro/human-readable-transactions/timeline-event)
+              Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views. [Learn More](/docs/api-intro/human-readable-transactions/timeline-event)
 
-            Features:
-            - Human-readable interpretations of complex contract interactions
-            - Parse items involved in the transaction for UI rendering (tokens, NFTs, accounts, apps, etc.) 
-            - Coverage across 35+ chains
-            ```graphql
-            query TransactionDetails($txHash: String!) {
-              transaction(hash: $txHash) {
-                description
-                value
-                gasUsed
-                tokens {
-                  token
-                  amount
-                  direction
-                }
-                interactions {
-                  protocol
-                  action
-                }
-              }
-            }
-            ```
-          </TabPanel>
-          <TabPanel>
-            ## Wallet Activity at a Glance
+              Features:
+              - Human-readable interpretations of complex contract interactions
+              - Parse items involved in the transaction for UI rendering (tokens, NFTs, accounts, apps, etc.) 
+              - Coverage across 35+ chains
+            </div>
 
-            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to items involved in the transaction such as tokens, NFTs, and accounts. [Learn More](/docs/api-intro/human-readable-transactions/account-timelines)
-
-            Features:
-            - Activity history across 35+ chains in real-time
-            - Filterable by Receieved or Submitted
-
-            ```graphql
-            query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
-              accountActivity(
-                address: $address
-                startTime: $startTime
-                endTime: $endTime
-              ) {
-                transactions {
-                  timestamp
-                  type
-                  value
+            <div className="basis-2/5">
+              ```graphql
+              query TransactionDetails($txHash: String!) {
+                transaction(hash: $txHash) {
                   description
+                  value
+                  gasUsed
+                  tokens {
+                    token
+                    amount
+                    direction
+                  }
+                  interactions {
+                    protocol
+                    action
+                  }
                 }
               }
-            }
-            ```
+              ```
+            </div>
           </TabPanel>
           <TabPanel>
-            ## App Activity Feeds
+            <div className="basis-3/5">
+              ## Wallet Activity at a Glance
 
-            Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn More](/docs/api-intro/human-readable-transactions/app-timelines)
+              Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to items involved in the transaction such as tokens, NFTs, and accounts. [Learn More](/docs/api-intro/human-readable-transactions/account-timelines)
 
-            Features:
-            - Support for every indexed onchain app
-            - Spam filtering for clean, relevant activity feeds
+              Features:
+              - Activity history across 35+ chains in real-time
+              - Filterable by Receieved or Submitted
+            </div>
 
-            ```graphql
-            query ProtocolTimeline($protocol: String!, $address: String!) {
-              protocolActivity(protocol: $protocol, address: $address) {
-                interactions {
-                  timestamp
-                  action
-                  value
-                  success
-                }
-                metrics {
-                  totalValue
-                  frequency
+            <div className="basis-2/5">
+              ```graphql
+              query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
+                accountActivity(
+                  address: $address
+                  startTime: $startTime
+                  endTime: $endTime
+                ) {
+                  transactions {
+                    timestamp
+                    type
+                    value
+                    description
+                  }
                 }
               }
-            }
-            ```
+              ```
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="basis-3/5">
+              ## App Activity Feeds
+
+              Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn More](/docs/api-intro/human-readable-transactions/app-timelines)
+
+              Features:
+              - Support for every indexed onchain app
+              - Spam filtering for clean, relevant activity feeds
+            </div>
+
+            <div className="basis-2/5">
+              ```graphql
+              query ProtocolTimeline($protocol: String!, $address: String!) {
+                protocolActivity(protocol: $protocol, address: $address) {
+                  interactions {
+                    timestamp
+                    action
+                    value
+                    success
+                  }
+                  metrics {
+                    totalValue
+                    frequency
+                  }
+                }
+              }
+              ```
+            </div>
           </TabPanel>
         </TabPanels>
       </TabGroup>
     </TabPanel>
 
     <TabPanel>
-      ## Build with Onchain Identity
+      <div className="basis-3/5">
+        ## Build with Onchain Identity
 
-      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, Lens and more. [Learn More](/docs/api-intro/onchain-identity)
+        Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, Lens and more. [Learn More](/docs/api-intro/onchain-identity)
 
-      Features:
-      - Cross-platform identity resolution (ENS, Lens, Farcaster)
-      - Rich metadata data including avatars, PFPs, descriptions and social links.
+        Features:
+        - Cross-platform identity resolution (ENS, Lens, Farcaster)
+        - Rich metadata data including avatars, PFPs, descriptions and social links.
+      </div>
 
-      ```graphql
-      query OnchainIdentity($address: String!) {
-        identity(address: $address) {
-          ens
-          linkedAddresses
-          activityClusters {
-            type
-            frequency
-            value
-          }
-          behaviorMetrics {
-            tradingPattern
-            protocolPreferences
-            riskProfile
+      <div className="basis-2/5">
+        ```graphql
+        query OnchainIdentity($address: String!) {
+          identity(address: $address) {
+            ens
+            linkedAddresses
+            activityClusters {
+              type
+              frequency
+              value
+            }
+            behaviorMetrics {
+              tradingPattern
+              protocolPreferences
+              riskProfile
+            }
           }
         }
-      }
-      ```
+        ```
+      </div>
     </TabPanel>
 
     <TabPanel>
-      ## A price for every token, from memecoins to blue chips
+     <div className="basis-3/5">
+        ## A price for every token, from memecoins to blue chips
 
-      Onchain token prices, current and historical, for any token with an onchain market. [Learn More](/docs/api-intro/onchain-prices)
+        Onchain token prices, current and historical, for any token with an onchain market. [Learn More](/docs/api-intro/onchain-prices)
 
-      Includes:
-      - Price average across multiple price sources
-      - 2.5M+ Token Prices and balances with hundreds more added each day
-      - Instantly and automatically detects newly deployed price sources
+        Includes:
+        - Price average across multiple price sources
+        - 2.5M+ Token Prices and balances with hundreds more added each day
+        - Instantly and automatically detects newly deployed price sources
+      </div>
 
-      ```graphql
-      query AssetPrices($tokens: [String!]!, $timeRange: String!) {
-        prices(tokens: $tokens, timeRange: $timeRange) {
-          token
-          current
-          historical {
-            timestamp
-            price
-            volume
+      <div className="basis-2/5">
+        ```graphql
+        query AssetPrices($tokens: [String!]!, $timeRange: String!) {
+          prices(tokens: $tokens, timeRange: $timeRange) {
+            token
+            current
+            historical {
+              timestamp
+              price
+              volume
+            }
+            marketCap
+            priceChange24h
           }
-          marketCap
-          priceChange24h
         }
-      }
-      ```
+        ```
+      </div>
     </TabPanel>
   </TabPanels>
 </TabGroup>
