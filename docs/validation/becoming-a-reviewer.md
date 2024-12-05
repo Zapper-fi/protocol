@@ -11,7 +11,7 @@ To become a reviewer, you need to be proficient in transaction interpretations. 
 
 ## Steps to Join the Reviewer Community
 
-1. **Visit the Transaction Interpretation Guide**: If it’s your first time interpreting transactions, visit the [Transaction Interpretation Guide](../interpretation/event-interpretation/guide/getting-started.md).
+1. **Visit the Transaction Interpretation Guide**: If it’s your first time interpreting transactions, visit the [Transaction Interpretation Guide](../Interpretation/event-interpretation/guide/getting-started.md).
 2. **Join the Community**: Join our [Discord](https://zapper.xyz/discord) or [Telegram](https://t.me/+OE0wMq01sNc5MTMx) to express your interest in becoming a reviewer.
 
 Once you have reviewer access, you will see a new tab called Review under the curate section.

@@ -94,12 +94,12 @@ query($addresses: [Address!],
 ---
 
 :::tip
-If you want to surface tokens, NFTs, accounts, or other onchain items embedded within the human-readable description of a transaction, you should return `description` and `descriptionDisplayItems` instead of `processedDescription`. This can be useful for adding links to tokens, NFTs, or accounts (e.g., [vitalik.eth](https://zapper.xyz/account/0xd8da6bf26964af9d7eed9e03e53415d37aa96045) swapped [10 USDC](https://zapper.xyz/token/base/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/USDC/details)...). To learn more about how to use these check out the example for [Single Transactions](/docs/api/human-readable-transactions/timeline-event).
+If you want to surface tokens, NFTs, accounts, or other onchain items embedded within the human-readable description of a transaction, you should return `description` and `descriptionDisplayItems` instead of `processedDescription`. This can be useful for adding links to tokens, NFTs, or accounts (e.g., [vitalik.eth](https://zapper.xyz/account/0xd8da6bf26964af9d7eed9e03e53415d37aa96045) swapped [10 USDC](https://zapper.xyz/token/base/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/USDC/details)...). To learn more about how to use these check out the example for [Single Transactions](/docs/api-intro/human-readable-transactions/timeline-event).
 :::
 ---
 
 :::note
-Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/interpretation/overview).
+Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/Interpretation/overview).
 :::
 
 ---
