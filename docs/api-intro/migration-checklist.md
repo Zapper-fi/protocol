@@ -46,6 +46,7 @@ import Link from '@docusaurus/Link';
   - USDT
   - DAI
 - Review query [Pricing](/docs/api-intro/pricing)
+- Consider purchasing credits in bulk to take advantage of 20-30% cost savings
 
 ### Credit Management
 - Automated email notifications at:
