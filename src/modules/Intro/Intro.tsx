@@ -32,7 +32,7 @@ export const Intro: React.FC = () => {
   <LinkButton 
     href="docs/api-intro" 
     type="primary" 
-    buttonCopy="Start Building"
+    buttonCopy="Start Building in 60 Seconds"
   />
 </h4>
             </div>
