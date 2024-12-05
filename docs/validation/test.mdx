@@ -54,19 +54,53 @@ import TabHumanReadable from './_tab-human-readable.mdx'
 
       <div className="basis-2/5">
         ```graphql
-        query OnchainIdentity($address: String!) {
-          identity(address: $address) {
-            ens
-            linkedAddresses
-            activityClusters {
-              type
-              frequency
+        query {
+          accounts(addresses: ["0x..."]) {
+            address
+            displayName {
               value
+              source
             }
-            behaviorMetrics {
-              tradingPattern
-              protocolPreferences
-              riskProfile
+            description {
+              value
+              source
+            }
+            socialLinks {
+              name
+              url
+              source
+            }
+            ensRecord {
+              name
+              metadata {
+                avatar {
+                  ... on AvatarUrl {
+                    url
+                  }
+                }
+                description
+                email
+                twitter
+                github
+                website
+              }
+            }
+            farcasterProfile {
+              username
+              metadata {
+                displayName
+                description
+                warpcast
+                imageUrl
+              }
+            }
+            lensProfile {
+              handle
+              metadata {
+                name
+                description
+                imageUrl
+              }
             }
           }
         }
@@ -88,17 +122,31 @@ import TabHumanReadable from './_tab-human-readable.mdx'
 
       <div className="basis-2/5">
         ```graphql
-        query AssetPrices($tokens: [String!]!, $timeRange: String!) {
-          prices(tokens: $tokens, timeRange: $timeRange) {
-            token
-            current
-            historical {
-              timestamp
+        query {
+          fungibleToken(
+            address: "0x..."
+            network: ETHEREUM_MAINNET
+          ) {
+            symbol
+            name
+            decimals
+            onchainMarketData {
               price
-              volume
+              marketCap
+              totalLiquidity
+              priceChange24h
+              priceTicks(
+                currency: USD
+                timeFrame: DAY
+              ) {
+                timestamp
+                median
+                high
+                low
+                open
+                close
+              }
             }
-            marketCap
-            priceChange24h
           }
         }
         ```
