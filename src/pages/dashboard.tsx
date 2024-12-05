@@ -33,7 +33,7 @@ function Dashboard() {
 
                   <PaymentHistory />
                 </div>
-                <Card style={{ minWidth: '300px', maxWidth: '300px' }}>
+                <Card style={{ minWidth: '360px', maxWidth: '360px' }}>
                   <div className="flex flex-col gap-8">
                     <Profile />
                     <BuyCredits />
