@@ -25,101 +25,127 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Access Token Balances
 
-            Surfaces any onchain token balances held by an address. [Learn more](/docs/tokens)
+            Surfaces any onchain token balances held by an address.
 
+            Includes:
             - Real-time balance updates
             - Token metadata and prices
             - Bullet 3
 
             ```graphql
-            query TokenBalances($address: String!) {
-              tokens(address: $address) {
+            query TokenHoldings($address: String!, $network: String!) {
+              tokens(address: $address, network: $network) {
+                symbol
                 balance
-                token {
+                value
+                price
+                tokenInfo {
                   name
-                  symbol
-                  metadata
+                  decimals
+                  logo
                 }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
-            ## Access DeFi holdings
+            ## Access DeFi Holdings
 
-            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address. [Learn more](/docs/apps)
+            Leverage Zapper's 2,000+ bespoke DeFi integrations for any EVM address.
 
+            Includes:
             - 99%+ DeFi Balance TVL Coverage
             - 90,000+ DeFi positions
             - Any user-contributed DeFi integrations appear seamlessly in the API response once approved
 
             ```graphql
-            query DefiHoldings($address: String!) {
-              apps(address: $address) {
+            query DeFiPositions($address: String!) {
+              defiPositions(address: $address) {
                 protocol
+                positionType
                 balance
-                positions
+                value
+                rewards {
+                  symbol
+                  amount
+                }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
             ## Estimated value & metadata for every NFT Collection
 
-            Detailed data with for NFT collections you care about across 20+ chains. [Learn more](/docs/nfts)
+            Detailed data with for NFT collections you care about across 20+ chains.
 
-            - Full Marketplace data
+            Features:
+            - Full Marketplace data 
             - Estimated Values based on historical sales and traits
             - Complete metadata with high-quality media files, thumbnail, and blurhash
 
             ```graphql
-            query NFTCollections($address: String!) {
+            query NFTHoldings($address: String!) {
               nfts(address: $address) {
-                collections
-                value
-                metadata
+                collection
+                tokenId
+                floorPrice
+                rarity
+                lastSalePrice
+                metadata {
+                  name
+                  image
+                  attributes
+                }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
             ## Access Total Onchain Net Worth
 
-            Surfaces various aggregations of onchain portfolio data. [Learn more](/docs/totals)
+            Surfaces various aggregations of onchain portfolio data.
 
+            Includes:
             - Across 35+ chains
             - Bullet Point 2
             - Bullet Point 3
 
             ```graphql
-            query TotalNetWorth($address: String!) {
-              totals(address: $address) {
-                netWorth
-                chains
-                breakdown
+            query PortfolioTotals($address: String!) {
+              portfolio(address: $address) {
+                totalValue
+                performance {
+                  daily
+                  weekly
+                  monthly
+                }
+                allocation {
+                  category
+                  percentage
+                }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
             ## Delight users with Claimables
 
-            Surfaces all available claimable tokens for a given address across all indexed onchain apps. [Learn more](/docs/claimables)
+            Surfaces all available claimable tokens for a given address across all indexed onchain apps.
 
+            Features:
             - Across 90,000+ DeFi positions
             - Bullet Point 2
             - Bullet Point 3
 
             ```graphql
-            query Claimables($address: String!) {
+            query ClaimableRewards($address: String!) {
               claimables(address: $address) {
-                tokens
-                amounts
-                protocols
+                type
+                protocol
+                token
+                amount
+                value
+                claimDeadline
               }
             }
             ```
@@ -140,56 +166,80 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
           <TabPanel>
             ## Onchain transactions made simple
 
-            Summarizes onchain transactions with optional references to apps, tokens, NFTs, and accounts. Ideal for activity feeds or detailed transaction views. [Learn more](/docs/transactions)
+            Summarizes onchain transactions with optional references to apps, tokens, NFTs, and accounts. Ideal for activity feeds or detailed transaction views.
 
+            Features:
             - Bullet 1
             - Bullet 2
             - Bullet 3
 
             ```graphql
-            query Transaction($hash: String!) {
-              transaction(hash: $hash) {
-                summary
-                references
-                details
+            query TransactionDetails($txHash: String!) {
+              transaction(hash: $txHash) {
+                description
+                value
+                gasUsed
+                tokens {
+                  token
+                  amount
+                  direction
+                }
+                interactions {
+                  protocol
+                  action
+                }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
             ## Explore Onchain Activity at a Glance
 
-            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts. [Learn more](/docs/timeline)
+            Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
+            Features:
             - Bullet 1
             - Bullet 2
 
             ```graphql
-            query AccountActivity($address: String!) {
-              timeline(address: $address) {
-                activities
-                references
-                elements
+            query AccountTimeline($address: String!, $startTime: Int!, $endTime: Int!) {
+              accountActivity(
+                address: $address
+                startTime: $startTime
+                endTime: $endTime
+              ) {
+                transactions {
+                  timestamp
+                  type
+                  value
+                  description
+                }
               }
             }
             ```
           </TabPanel>
-
           <TabPanel>
             ## App Activity Feeds
 
-            Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn more](/docs/app-activity)
+            Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
+            Features:
             - Bullet 1
             - Bullet 2
 
             ```graphql
-            query AppActivity($appId: String!) {
-              appTimeline(appId: $appId) {
-                transactions
-                contracts
-                activity
+            query ProtocolTimeline($protocol: String!, $address: String!) {
+              protocolActivity(protocol: $protocol, address: $address) {
+                interactions {
+                  timestamp
+                  action
+                  value
+                  success
+                }
+                metrics {
+                  totalValue
+                  frequency
+                }
               }
             }
             ```
@@ -201,17 +251,27 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
     <TabPanel>
       ## Build with Onchain Identity
 
-      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, and more. [Learn more](/docs/identity)
+      Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, and more.
 
+      Features:
       - Bullet 1
       - Bullet 2
 
       ```graphql
       query OnchainIdentity($address: String!) {
         identity(address: $address) {
-          avatars
           ens
-          social
+          linkedAddresses
+          activityClusters {
+            type
+            frequency
+            value
+          }
+          behaviorMetrics {
+            tradingPattern
+            protocolPreferences
+            riskProfile
+          }
         }
       }
       ```
@@ -220,18 +280,25 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
     <TabPanel>
       ## A price for every token, from memecoins to blue chips
 
-      Onchain token prices, current and historical, for any token with an onchain market. [Learn more](/docs/prices)
+      Onchain token prices, current and historical, for any token with an onchain market.
 
+      Includes:
       - Price average across multiple price sources instead of by largest price source
       - 2.5M+ Token Prices and balances with hundreds more added each day
       - Instantly and automatically detects newly deployed price sources
 
       ```graphql
-      query TokenPrices($tokens: [String!]!) {
-        prices(tokens: $tokens) {
+      query AssetPrices($tokens: [String!]!, $timeRange: String!) {
+        prices(tokens: $tokens, timeRange: $timeRange) {
+          token
           current
-          historical
-          sources
+          historical {
+            timestamp
+            price
+            volume
+          }
+          marketCap
+          priceChange24h
         }
       }
       ```
