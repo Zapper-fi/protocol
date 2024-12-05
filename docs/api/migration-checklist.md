@@ -15,7 +15,7 @@ import Link from '@docusaurus/Link';
 #### 1. Access Verification
 - [ ] Sign in to the [Dashboard](/dashboard) with the same address you used for the REST API.
 - [ ] Once signed in, you'll see your API key : it is the same as the REST API.
-- [ ] Test your API key by querying any of the new endpoints at *public.zapper.xyz/graphql*. [See available endpoints](/docs/api/api).
+- [ ] Test your API key by querying any of the new endpoints at *public.zapper.xyz/graphql*. [See available endpoints](/docs/api).
 - [ ] Contact api@zapper.xyz if you have issues signng in to your account.
 
 #### 2. Existing Credits
