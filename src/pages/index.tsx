@@ -7,6 +7,7 @@ import { Metrics } from '../modules/Metrics';
 import { Problem } from '../modules/Problem/Problem';
 import { Recall } from '../modules/Recall/Recall';
 import { Token } from '../modules/Token/Token';
+import Tabs from '@site/docs/partials/_tabs.mdx';
 
 const Home: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
       <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
         <Problem />
         <ApiSection />
+        <Tabs />
         <Metrics />
         <Interpretation />
         <Token />

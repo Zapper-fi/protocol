@@ -57,7 +57,7 @@ export const ApiSection: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              The Ultimate Onchain API
+              The all-in-one Onchain API
             </h1>
             <p
               className="text-alt-color"
@@ -67,131 +67,13 @@ export const ApiSection: React.FC = () => {
                 maxWidth: '720px',
               }}
             >
-              One API to access all DeFi positions, tokens, apps, NFT collections,
-              and human-readable transaction feeds across 30+ chains 一 all available with a few lines of code.
+              One API to access all DeFi positions, tokens, apps, NFT collections, and human-readable transaction feeds
+              across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
-          <LinkButton href="docs/api-intro" type="primary" buttonCopy="Learn More" />
+          <LinkButton href="docs/api-intro" type="primary" buttonCopy="Integrate Zapper API seamlessly" />
         </div>
       </div>
-      <Section
-        className="border mobile-padding hide-mobile"
-        style={{
-          margin: '32px 0px',
-          alignItems: 'center',
-        }}
-      >
-        <div
-          className="full-width-mobile"
-          style={{
-            display: 'flex',
-            gap: '16px',
-            width: '100%',
-            maxWidth: '600px',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div
-            className="opacity-hover"
-            onClick={() => setActiveTab(TabEnum.Portfolio)}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '120px',
-              maxWidth: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '16px',
-              cursor: 'pointer',
-            }}
-          >
-            <div className="card" style={{ padding: '16px' }}>
-              <img width="48px" height="48px" src="./img/react-icons/RiDonutChartFill.svg" alt="DeFi" />
-            </div>
-
-            <p
-              style={{
-                marginBottom: '0px',
-                textAlign: 'center',
-                fontWeight: '500',
-              }}
-            >
-              Portfolio Tracking
-            </p>
-            <div
-              className={activeTab === TabEnum.Portfolio ? 'bg-accent-color' : ''}
-              style={{ height: '2px', display: 'block', width: '48px' }}
-            />
-          </div>
-          <div
-            className="opacity-hover"
-            onClick={() => setActiveTab(TabEnum.Timeline)}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '120px',
-              maxWidth: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '16px',
-              cursor: 'pointer',
-            }}
-          >
-            <div className="card" style={{ padding: '16px' }}>
-              <img width="48px" height="48px" src="./img/react-icons/FaTimeline.svg" alt="DeFi" />
-            </div>
-
-            <p
-              style={{
-                marginBottom: '0px',
-                textAlign: 'center',
-                fontWeight: '500',
-              }}
-            >
-              Account Timelines
-            </p>
-            <div
-              className={activeTab === TabEnum.Timeline ? 'bg-accent-color' : ''}
-              style={{ height: '2px', display: 'block', width: '48px' }}
-            />
-          </div>
-          <div
-            className="opacity-hover"
-            onClick={() => setActiveTab(TabEnum.Labels)}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '120px',
-              maxWidth: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '16px',
-              cursor: 'pointer',
-            }}
-          >
-            <div className="card" style={{ padding: '16px' }}>
-              <img width="48px" height="48px" src="./img/react-icons/RiDraftFill.svg" alt="DeFi" />
-            </div>
-
-            <p
-              style={{
-                marginBottom: '0px',
-                textAlign: 'center',
-                fontWeight: '500',
-              }}
-            >
-              Contract Labelling
-            </p>
-            <div
-              className={activeTab === TabEnum.Labels ? 'bg-accent-color' : ''}
-              style={{ height: '2px', display: 'block', width: '48px' }}
-            />
-          </div>
-        </div>
-      </Section>
-      {activeTab === TabEnum.Portfolio && <PortfolioTracking />}
-      {activeTab === TabEnum.Timeline && <AccountTimelines />}
-      {activeTab === TabEnum.Labels && <Labelling />}
     </div>
   );
 };
