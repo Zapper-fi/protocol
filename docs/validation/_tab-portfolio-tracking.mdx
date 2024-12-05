@@ -32,19 +32,23 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Tokens.png">
           ```graphql
-          query($addresses: [Address!]!) {
+          query GetTokenBalances($addresses: [Address!]!) {
             portfolio(addresses: $addresses) {
               tokenBalances {
+                key
                 address
                 network
                 token {
-                  balanceUSD
-                  balance
                   baseToken {
-                    imgUrl
-                    price
+                    address
+                    network
                     symbol
+                    decimals
+                    imageUrl
                   }
+                  balance
+                  balanceUSD
+                  balanceRaw
                 }
                 updatedAt
               }
@@ -69,24 +73,36 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Apps.png">
           ```graphql
-          query DeFiPositions($address: String!) {
-            defiPositions(address: $address) {
-              protocol
-              positionType
-              balance
-              value
-              rewards {
-                symbol
-                balance
-                value
-                price
-                tokenInfo {
-                  name
-                  decimals
-                  logo
+          query GetAppBalances($addresses: [Address!]!) {
+            portfolio(addresses: $addresses) {
+              appBalances {
+                key
+                address
+                appId
+                appName
+                appImage
+                network
+                balanceUSD
+                updatedAt
+                products {
+                  label
+                  assets {
+                    type
+                    address
+                    network
+                    balanceUSD
+                    key
+                    appId
+                    groupId
+                    displayProps {
+                      label
+                      images
+                    }
+                  }
                 }
               }
             }
+          }
           ```
         </CodeDemo>
       </div>
@@ -107,24 +123,14 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_NFTs.png">
           ```graphql
-          query test($address: String!) {
-            defiPositions(address: $address) {
-              protocol
-              positionType
-              balance
-              value
-              rewards {
-                symbol
-                balance
-                value
-                price
-                tokenInfo {
-                  name
-                  decimals
-                  logo
-                }
+          query GetNFTBalances($addresses: [Address!]!) {
+            portfolio(addresses: $addresses) {
+              nftBalances {
+                network
+                balanceUSD
               }
             }
+          }
           ```
         </CodeDemo>
       </div>
@@ -144,17 +150,30 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Totals.png">
           ```graphql
-          query PortfolioTotals($address: String!) {
-            portfolio(address: $address) {
-              totalValue
-              performance {
-                daily
-                weekly
-                monthly
-              }
-              allocation {
-                category
-                percentage
+          query GetPortfolioTotals($addresses: [Address!]!) {
+            portfolio(addresses: $addresses) {
+              totals {
+                total
+                appsTotal
+                totalWithNFT
+                totalByNetwork {
+                  network
+                  total
+                }
+                totalByNetworkWithNFT {
+                  network
+                  total
+                }
+                totalByAddress {
+                  address
+                  total
+                }
+                holdings {
+                  key
+                  label
+                  balanceUSD
+                  pct
+                }
               }
             }
           }
@@ -176,14 +195,24 @@ export const CodeDemo = ({ src, children }) => (
       <div className="basis-2/5">
         <CodeDemo src="/img/code/Portfolio_Claimables.png">
           ```graphql
-          query ClaimableRewards($address: String!) {
-            claimables(address: $address) {
-              type
-              protocol
-              token
-              amount
-              value
-              claimDeadline
+          query GetClaimables($addresses: [Address!]!) {
+            portfolio(addresses: $addresses) {
+              totals {
+                claimables {
+                  appId
+                  address
+                  token {
+                    type
+                    address
+                    network
+                    balance
+                    balanceUSD
+                    price
+                    symbol
+                    decimals
+                  }
+                }
+              }
             }
           }
           ```
