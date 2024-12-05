@@ -107,96 +107,6 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
                 ```
             </div>
           </TabPanel>
-          <TabPanel className="flex">
-            <div className='basis-3/5'>
-              ## Estimated value & metadata for every NFT Collection
-
-              Detailed data with for NFT collections you care about across 20+ chains.
-
-              Features:
-              - Full Marketplace data 
-              - Estimated Values based on historical sales and traits
-              - Complete metadata with high-quality media files, thumbnail, and blurhash
-            </div>
-
-            <div className='basis-2/5'>
-              ```graphql
-              query NFTHoldings($address: String!) {
-                nfts(address: $address) {
-                  collection
-                  tokenId
-                  floorPrice
-                  rarity
-                  lastSalePrice
-                  metadata {
-                    name
-                    image
-                    attributes
-                  }
-                }
-              }
-              ```
-            </div>
-          </TabPanel>
-          <TabPanel className="flex">
-            <div className="basis-3/5">
-              ## Access Total Onchain Net Worth
-
-              Surfaces various aggregations of onchain portfolio data.
-
-              Includes:
-              - Across 35+ chains
-              - Bullet Point 2
-              - Bullet Point 3
-            </div>
-
-            <div className="basis-2/5">
-              ```graphql
-              query PortfolioTotals($address: String!) {
-                portfolio(address: $address) {
-                  totalValue
-                  performance {
-                    daily
-                    weekly
-                    monthly
-                  }
-                  allocation {
-                    category
-                    percentage
-                  }
-                }
-              }
-              ```
-            </div>
-          </TabPanel>
-          <TabPanel className="flex">
-            <div className="basis-3/5">
-              ## Delight users with Claimables
-
-              Surfaces all available claimable tokens for a given address across all indexed onchain apps.
-
-              Features:
-              - Across 90,000+ DeFi positions
-              - Bullet Point 2
-              - Bullet Point 3
-            </div>
-
-            <div className="basis-2/5">
-              ```graphql
-              query ClaimableRewards($address: String!) {
-                claimables(address: $address) {
-                  type
-                  protocol
-                  token
-                  amount
-                  value
-                  claimDeadline
-                }
-              }
-            }
-            ```
-            </div>
-          </TabPanel>
           <TabPanel>
             ## Estimated value & metadata for NFTs
 
@@ -226,7 +136,7 @@ import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'rea
             ```
           </TabPanel>
           <TabPanel>
-            ## Access Total Onchain Net Worth
+            ## Access Total Net Worth
 
             Surfaces various aggregations of onchain portfolio value. [Learn More](/docs/api-intro/portfolio/portfolio-totals)
 
