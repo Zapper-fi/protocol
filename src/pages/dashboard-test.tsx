@@ -1,4 +1,4 @@
-function DashboardMockup() {
+export default function DashboardMockup() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
