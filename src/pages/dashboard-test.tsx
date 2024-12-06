@@ -9,15 +9,17 @@ export default function DashboardMockup() {
       {/* Main Content */}
       <div className="flex flex-col md:flex-row">
         {/* Tab Navigation */}
-        <nav className="md:w-64 md:border-r border-[#32383D] p-4">
-          <div className="flex md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-            <button className="p-2 rounded bg-[#A387FF] text-[#0C1013] font-medium">
-              Overview
-            </button>
-            <a href="#" className="p-2 text-[#C7D2DA] hover:text-[#FFFFFF] font-medium">
+        <nav className="md:w-64 md:border-r border-[#32383D] p-4 flex justify-center">
+          <div className="space-y-4">
+            <a href="#" className="flex justify-center p-2 text-[#C7D2DA] hover:text-[#FFFFFF] font-medium">
               Analytics
             </a>
-            <a href="#" className="p-2 text-[#C7D2DA] hover:text-[#FFFFFF] font-medium">
+            <div className="flex justify-center">
+              <button className="px-6 py-2 rounded bg-[#A387FF] text-[#0C1013] font-medium">
+                Overview
+              </button>
+            </div>
+            <a href="#" className="flex justify-center p-2 text-[#C7D2DA] hover:text-[#FFFFFF] font-medium">
               Buy Credits
             </a>
           </div>
@@ -39,13 +41,13 @@ export default function DashboardMockup() {
               <a href="#" className="px-4 py-2 bg-[#A387FF] text-[#0C1013] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
                 Quickstart
               </a>
-              <a href="#" className="px-4 py-2 bg-[#252A2E] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
+              <a href="#" className="px-4 py-2 bg-[#252A2E] text-[#FFFFFF] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
                 Use with Agents & LLMs
               </a>
-              <a href="#" className="px-4 py-2 bg-[#252A2E] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
+              <a href="#" className="px-4 py-2 bg-[#252A2E] text-[#FFFFFF] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
                 Pricing
               </a>
-              <a href="#" className="px-4 py-2 bg-[#252A2E] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
+              <a href="#" className="px-4 py-2 bg-[#252A2E] text-[#FFFFFF] rounded hover:bg-[#32383D] flex-1 md:flex-none font-medium">
                 Sandbox
               </a>
             </div>
