@@ -250,80 +250,21 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 | `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
 | `isHidden` | Hidden status | `Boolean!` |
 
-### Types
 
-#### transfers
-```graphql
-transfers(
-  first: Int
-  after: String
-  order: NftTransferConnectionOrderInput
-): NftTransferConnection
-```
 
-#### holders
+### Enums
 ```graphql
-holders(
-  first: Int
-  after: String
-  last: Int
-  before: String
-  followedBy: Address
-): NftHolderConnection!
-```
-
-#### holdersFollowedByAddress
-```graphql
-holdersFollowedByAddress(
-  input: HoldersFollowedByAddressInput!
-): [NftHolder!]!
-```
-
-### Type Definitions
-```graphql
-type NftUserTokenBalance {
-  balance: BigDecimal!
-  valuationStrategy: NftValuationStrategy!
-  account: Account!
-}
 
 enum NftValuationStrategy {
   TOP_OFFER
   ESTIMATED_VALUE
   OVERRIDE
 }
-
-type NftMedias {
-  images: ImageConnection!
-  animations: AnimationConnection!
-  audios: AudioConnection!
-}
-
-type NftValueDenomination {
-  valueUsd: Float!
-  valueWithDenomination: Float!
-  denomination: NftDenomination!
-}
-
-type NftDenomination {
-  network: String!
-  address: String!
-  symbol: String!
-  imageUrl: String
-}
 ```
-
-### Related Types
-
-- `NftToken`: Detailed token information
-- `NftValueDenomination`: Price information in USD and native currency
-- `NftMedias`: Token media assets
-- `NftTrait`: Token attributes and traits
-- `PageInfo`: Pagination metadata
 
 ### Notes
 - Supports pagination for handling large NFT collections
-- Can filter by network, value, and NFT standard
+- Filter by network, value, and NFT standard
 - Returns comprehensive token metadata including estimated values
 - Includes ownership information and acquisition dates
 - Supports both ERC721 and ERC1155 tokens

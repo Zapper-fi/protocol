@@ -175,7 +175,7 @@ query NftCollections($collections: [NftCollectionInput!]!) {
 | `groups` | Collection groups information | `[NftCollectionGroup!]!` |
 | `marketCap` | Market capitalization | `BigDecimal` |
 
-### Type Definitions
+### Enums
 
 ```graphql
 enum NftStandard {
@@ -216,97 +216,11 @@ enum NftPaymentStatsPeriod {
   Quarter
 }
 
-type TransactionConfig {
-  data: String!
-  to: Address!
-  from: Address!
-}
-
-type NftValueDenomination {
-  valueUsd: Float!
-  valueWithDenomination: Float!
-  denomination: NftDenomination!
-}
-
-type NftDenomination {
-  network: String!
-  address: String!
-  symbol: String!
-  imageUrl: String
-}
-
-type SocialLink {
-  name: String!
-  label: String!
-  url: String!
-  logoUrl: String!
-}
-
-type NftCollectionMedias {
-  banner: Image
-  card: Image
-  logo: Image
-}
-
-input NftTokenConnectionOrderInput {
-  orderBy: NftTokenSort!
-  orderDirection: OrderDirectionOption = ASC
-}
-
 enum NftTokenSort {
   RARITY_RANK
   LAST_SALE_ETH
   ESTIMATED_VALUE_ETH
 }
-
-input NftTokenTraitInput {
-  type: String!
-  value: String!
-}
-
-input NftCollectionTraitValuesArgs {
-  first: Int = 10
-  after: String
-  traitName: String!
-  search: String
-}
-```
-
-### Key Field Arguments
-
-#### nfts
-```graphql
-nfts(
-  first: Int = 25
-  after: String
-  tokenIds: [String!]
-  owners: [Address!]
-  traitIds: [String!]
-  order: NftTokenConnectionOrderInput
-  traits: [NftTokenTraitInput!]
-): NftTokenConnection!
-```
-
-#### events
-```graphql
-events(
-  first: Int! = 25
-  after: String
-  tokenIds: [String!]
-  owners: [Address!]
-  followedBy: Address
-  traits: [NftTokenTraitInput!]
-  period: NftPaymentStatsPeriod
-): CollectionEventConnection!
-```
-
-#### holders
-```graphql
-holders(
-  input: NftHolderConnectionInput
-  first: Int
-  after: String
-): PaginatedNftHolder!
 ```
 
 ### Notes

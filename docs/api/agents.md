@@ -7,7 +7,7 @@ sidebar_label: For Agents & LLMs
 # Docs for Agents & LLMs
 
 :::note
-This content is specifically designed for LLMs and not intended for human reading. Copy the large schema below and paste it into your AI assistant. Then ask your assistant to construct queries on your behalf, asking it for certain onchain information. Test the queries against the API [Sandbox](/docs/api/sandbox).
+This content is specifically designed for LLMs and not intended for human reading. Copy the large schema below and paste it into your AI assistant. Then, ask your assistant to construct queries on your behalf, asking it for certain onchain information. Generated queries can be tested via the API [Sandbox](/docs/api/sandbox).
 :::
 
 For programmatic access, you can fetch this content directly:

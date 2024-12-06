@@ -19,7 +19,7 @@ export function SignInDashboardButton() {
   };
 
   return (
-    <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={handleClick}>
+    <Button height="h-12" textSize="text-[14px]" type="button" variant="primary" onClick={handleClick}>
       Get Your API Key
     </Button>
   );
