@@ -12,7 +12,7 @@ const UPSERT_USER = gql`
 
 export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
   const [upsertUser] = useMutation(UPSERT_USER);
-  const { authenticated } = usePrivy();
+  const { authenticated, ready } = usePrivy();
   const { logout } = useLogout();
 
   const { login } = useLogin({
@@ -32,13 +32,14 @@ export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
 
       if (onComplete) {
         onComplete();
-      } else if (isNewUser) {
-        window.location.reload();
+      } else if (isNewUser && window.location.pathname === '/dashboard') {
+        // window.location.reload();
       }
     },
   });
 
   return {
+    ready,
     authenticated,
     login,
     logout,

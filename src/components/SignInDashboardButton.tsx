@@ -1,16 +1,17 @@
+import { useCallback } from 'react';
 import { Button } from '@site/src/components/Button';
 import { useSignIn } from '@site/src/helpers/useSignIn';
 
 export function SignInDashboardButton() {
-  const redirectToDashboard = () => {
+  const redirectToDashboard = useCallback(() => {
     window.location.href = '/dashboard';
-  };
+  }, []);
 
-  const { authenticated, login } = useSignIn({ onComplete: redirectToDashboard });
+  const { ready, authenticated, login } = useSignIn({ onComplete: redirectToDashboard });
 
   const handleClick = () => {
-    if (authenticated) {
-      redirectToDashboard();
+    if (ready && authenticated) {
+      // redirectToDashboard();
       return;
     }
 
