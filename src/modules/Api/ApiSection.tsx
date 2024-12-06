@@ -62,7 +62,7 @@ export const ApiSection: React.FC = () => {
               }}
             >
               One API to access all DeFi positions, tokens, apps, NFT collections, and human-readable transaction feeds
-              across 30+ chains 一 all available with a few lines of code.
+              across 35+ chains 一 all available with a few lines of code.
             </p>
           </div>
 
