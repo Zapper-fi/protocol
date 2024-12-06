@@ -124,7 +124,7 @@ query GetCompletePortfolio($addresses: [Address!]!) {
 | `appIds` | Filter by specific app(s) | `[String!]` |
 | `withOverrides` | Include user submitted NFT value overrides (default: false) | `Boolean` |
 
-## Portfolio Components
+## Portfolio Fields
 
 ### 1. Token Balances (`tokenBalances`)
 
