@@ -34,8 +34,6 @@ const sidebars = {
         },
       ],
     },
-    'glossary',
-    'learning-center',
   ],
 };
 
