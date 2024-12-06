@@ -1,6 +1,6 @@
 {
-  "label": "Human-Readable Transactions",
-  "position": 2,
+  "label": "Human-Readable Timelines",
+  "position": 3,
   "collapsible": true,
   "collapsed": true
 }
