@@ -4,6 +4,9 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Features } from '@site/src/components/Features';
+import { SignInDashboardButton } from '@site/src/components/SignInDashboardButton';
+
 
 # Getting Started
 
@@ -11,34 +14,14 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ---
 
-## What can I get?
-
-
-### [Portfolio Data](/docs/api/endpoints/portfolio)
-
-A set of portfolio queries to fetch [Tokens](/docs/api/endpoints/portfolio), [NFTs](/docs/api/endpoints/portfolio), [App Balances](/docs/api/endpoints/portfolio), [Portfolio Totals](/docs/api/endpoints/portfolio), and [Claimables](/docs/api/endpoints/portfolio/).
-
-### [Onchain Prices](/docs/api/endpoints/onchain-prices)
-
-Prices for every token that has an onchain market, including historical data for chart creation.
-
-### [Human-Readable Timelines](/docs/api/endpoints/human-readable-transactions/timeline-event)
-
-Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event), [App Timelines](/docs/api/endpoints/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api/endpoints/human-readable-transactions/account-timelines).
-
-### [NFTs](/docs/api/endpoints/nft-queries/nft-collections.md)
-
-In depth details on NFTs & collections, including holders and net worth.
-
-### [Onchain Identity](/docs/api/endpoints/onchain-identity)
-
-Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.
+<Features />
 
 ## Quickstart
 
 ### 1) Get an API key
 
-Visit the [Dashboard](/dashboard) to get an API key.
+<SignInDashboardButton />
+
 
 ### 2) Start working with the Zapper API
 

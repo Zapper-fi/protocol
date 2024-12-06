@@ -8,7 +8,9 @@ module.exports = {
           default: '#A387FF',
         },
         'alt-color': 'var(--ifm-text-alt-color)',
-        'accent-color': 'var(--ifm-accent-color)'
+        'accent-color': 'var(--ifm-accent-color)',
+        'card': 'var(--ifm-card-background)',
+        'border': 'var(--ifm-border-color)',
       },
     },
   },
