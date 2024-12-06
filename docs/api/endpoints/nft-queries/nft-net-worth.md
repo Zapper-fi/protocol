@@ -8,7 +8,7 @@ import Link from '@docusaurus/Link';
 
 # Net Worth
 
-Calculate the total value of NFT holdings for one or more wallet addresses across networks.
+Get the total value of NFT holdings for one or more wallet addresses across networks.
 
 
 ### `nftNetWorth`
@@ -77,6 +77,6 @@ query($addresses: [Address!]!, $network: Network, $withOverrides: Boolean) {
 
 ### Notes
 - Returns the combined value of all NFTs held by the specified addresses
-- When `network` is not specified, calculates value across all supported networks
+- When no `network` is specified, calculates value across all supported networks
 - Value is based on floor prices and recent sales data
 - The `withOverrides` parameter allows including manual value overrides if available

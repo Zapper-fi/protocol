@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 # Account Timelines
 
 
-Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
+Presents the onchain activity of provided addresses in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
 ### `accountsTimeline`
 Takes an array of `addresses` as input, with optional parameters for `network`, and `spamFilter`. It returns chronological on-chain activity including:

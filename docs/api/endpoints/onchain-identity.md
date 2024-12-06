@@ -140,6 +140,3 @@ query($addresses: [Address!]!) {
 | `followers`      | Returns Zapper followers.     | `FollowerConnection!` | 
 | `following`      | Returns Zapper following.     | `FollowingConnection!` | 
 | `isContract`      | Returns a true/false for whether this address is a contract.       | `Boolean!` | 
-| `contract`      | -       | `String!` | 
-| `id`      | -       | `ID!`       |
-
