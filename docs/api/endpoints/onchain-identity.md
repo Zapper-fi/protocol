@@ -26,7 +26,9 @@ Let's say you are building a profile for users and want to surface their identit
 
 ```js
 {
-  "address": "0x52c8ff44260056f896e20d8a43610dd88f05701b"
+  "addresses": [
+    "0x52c8ff44260056f896e20d8a43610dd88f05701b",
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"
 }
 ```
 
