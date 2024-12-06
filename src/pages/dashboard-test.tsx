@@ -92,6 +92,15 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+          </>
+        )}
+
+        {activeTab === 'analytics' && (
+          <div className="bg-[#252A2E] p-4 rounded-lg">
+            <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
+            {/* Add existing module for charts here */}
+=======
           </>
         )}
 
@@ -99,7 +108,18 @@ export default function Dashboard() {
           <div className="bg-[#252A2E] p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
             {/* Add your existing charts here */}
+>>>>>>> 29dde5e9e7711c9262ebd463891e279f3c2d185f
           </div>
+<<<<<<< HEAD
+        )}
+
+        {activeTab === 'credits' && (
+          <div className="bg-[#252A2E] p-4 rounded-lg">
+            <h2 className="text-lg font-semibold mb-2">Buy Credits Module</h2>
+            {/* Add existing module  here */}
+          </div>
+        )}
+=======
         )}
 
         {activeTab === 'billing' && (
@@ -128,6 +148,7 @@ export default function Dashboard() {
             {/* Add settings content */}
           </div>
         )}
+>>>>>>> 29dde5e9e7711c9262ebd463891e279f3c2d185f
       </div>
     </div>
   );
