@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 4
 sidebar_label: Supported Chains
 ---
 import SupportedChainsTable from '@site/src/components/SupportedChains'
