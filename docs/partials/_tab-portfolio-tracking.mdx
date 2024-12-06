@@ -1,0 +1,259 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { CodeImage } from '@site/src/components/CodeImage'
+
+<TabGroup className="">  
+  <TabList className="md:-mb-10 md:h-10">
+    <Tab className="zapper-tab text-lg">Tokens</Tab>
+    <Tab className="zapper-tab text-lg">Apps</Tab>
+    <Tab className="zapper-tab text-lg">NFTs</Tab>
+    <Tab className="zapper-tab text-lg">Totals</Tab>
+    <Tab className="zapper-tab text-lg">Claimables</Tab>
+  </TabList>
+
+  <TabPanels>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Surface Token Balances
+
+        Surfaces onchain token balances held by an address. [Learn More](/docs/api/endpoints/portfolio#1-token-balances-tokenbalances)
+
+        Includes:
+        - Real-time balance updates
+        - Coverage of every token from memecoins to bluechips
+        - Token metadata and prices
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/Portfolio_Tokens.png">
+          {`
+query {
+  portfolio(addresses: ["0x..."]) {
+    tokenBalances {
+      key
+      address
+      network
+      token {
+        baseToken {
+          address
+          network
+          symbol
+          decimals
+          imageUrl
+        }
+        balance
+        balanceUSD
+        balanceRaw
+      }
+      updatedAt
+    }
+  }
+}
+          `}
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Access DeFi Holdings
+
+        Leverage Zapper's deep coverage of DeFi integrations. [Learn More](/docs/api/endpoints/portfolio#2-app-balances-appbalances)
+
+        Includes:
+        - 99%+ DeFi balance TVL coverage
+        - 90,000+ DeFi positions
+        - New apps appear automatically in the API response once approved
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/Portfolio_Apps.png">
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    appBalances {
+      key
+      address
+      appId
+      appName
+      appImage
+      network
+      balanceUSD
+      updatedAt
+      products {
+        label
+        assets {
+          type
+          address
+          network
+          balanceUSD
+          key
+          appId
+          groupId
+          displayProps {
+            label
+            images
+          }
+        }
+      }
+    }
+  }
+}
+`}
+
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Estimated value & metadata for NFTs
+
+        The ultimate source for NFT data. [Learn More](/docs/api/endpoints/portfolio#3-nft-balances-nftbalances)
+
+        Features:
+        - Real-time floor prices, top offers, last sales from multiple marketplaces
+        - Estimated Values based on historical sales and trait rarity
+        - Complete metadata including traits, supply, holders, and more...
+        - High-quality media assets with multiple resolution options
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/Portfolio_NFTs.png">
+{`
+query {
+  nftToken(
+    collectionAddress: "0x..."
+    network: ETHEREUM_MAINNET
+    tokenId: "1"
+  ) {
+    tokenId
+    name
+    description
+    estimatedValue {
+      valueUsd
+      valueWithDenomination
+      denomination {
+        symbol
+        network
+        address
+      }
+    }
+    collection {
+      name
+      symbol
+      floorPrice {
+        valueUsd
+        valueWithDenomination
+      }
+      description
+      supply
+      holdersCount
+    }
+    traits {
+      attributeName
+      attributeValue
+      supply
+      supplyPercentage
+    }
+    mediasV3 {
+      images {
+        edges {
+          node {
+            original
+            thumbnail
+            medium
+            large
+            mimeType
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+}`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Access Total Net Worth
+
+        Surfaces various aggregations of onchain portfolio value. [Learn More](docs/api/endpoints/portfolio#4-portfolio-totals-totals)
+
+        Includes:
+        - Cross-network portfolio value aggregation
+        - Sourced from real-time onchain prices
+        - Detailed breakdown by network and token type
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/Portfolio_Totals.png">
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    totals {
+      total
+      appsTotal
+      totalWithNFT
+      totalByNetwork {
+        network
+        total
+      }
+      totalByNetworkWithNFT {
+        network
+        total
+      }
+      totalByAddress {
+        address
+        total
+      }
+      holdings {
+        key
+        label
+        balanceUSD
+        pct
+      }
+    }
+  }
+`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Everybody Loves Claimables
+
+        Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api/endpoints/portfolio#5-claimables)
+
+        Features:
+        - Real-time tracking of unclaimed rewards
+        - Detailed reward token metadata and values
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/Portfolio_Claimables.png">
+{`
+query {
+  portfolio(addresses: ["0x..."]) {
+    totals {
+      claimables {
+        appId
+        address
+        token {
+          type
+          address
+          network
+          balance
+          balanceUSD
+          price
+          symbol
+          decimals
+        }
+      }
+    }
+  }
+`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>

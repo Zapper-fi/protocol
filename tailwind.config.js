@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './docs/**/*.{md,mdx}'],
   theme: {
     extend: {
       colors: {
@@ -9,8 +9,8 @@ module.exports = {
         },
         'alt-color': 'var(--ifm-text-alt-color)',
         'accent-color': 'var(--ifm-accent-color)',
-        'card': 'var(--ifm-card-background)',
-        'border': 'var(--ifm-border-color)',
+        card: 'var(--ifm-card-background)',
+        border: 'var(--ifm-border-color)',
       },
     },
   },

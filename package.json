@@ -21,6 +21,7 @@
     "@apollo/explorer": "^3.7.0",
     "@docusaurus/core": "3.6.0",
     "@docusaurus/preset-classic": "3.6.0",
+    "@headlessui/react": "^2.2.0",
     "@mdx-js/react": "^3.0.0",
     "@privy-io/react-auth": "^1.92.6",
     "chart.js": "^4.4.6",
