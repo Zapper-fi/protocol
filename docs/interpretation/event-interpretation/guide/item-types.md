@@ -20,7 +20,7 @@ Use the drop-down menu to detail what happened in the transaction. There are nin
 
 :::tip 
 
-Watch [this video](/docs/learning-center#event-interpretation) to see an example of an TI using a "String" item to interpret. 
+Watch [this video](/docs/interpretation/learning-center#event-interpretation) to see an example of an TI using a "String" item to interpret. 
 
 :::
 

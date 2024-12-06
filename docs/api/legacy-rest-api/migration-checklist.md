@@ -56,7 +56,7 @@ import Link from '@docusaurus/Link';
 ### Portfolio & Balance Queries
 
 :::tip
-You can now make a single `portfolio` query that includes the fields [`appBalances`](/docs/api/endpoints/portfolio/app-balances), [`nftBalances`](/docs/api/endpoints/portfolio/nft-balances), [`tokenBalances`](/docs/api/endpoints/portfolio/token-balances), [`claimables`](/docs/api/endpoints/portfolio/claimables), and [`totals`](/docs/api/endpoints/portfolio/portfolio-totals) for the price of a single query. With the REST API, you would have to make many seperate queries.
+You can now make a single `portfolio` query that includes the fields [`appBalances`](/docs/api/endpoints/portfolio), [`nftBalances`](/docs/api/endpoints/portfolio), [`tokenBalances`](/docs/api/endpoints/portfolio), [`claimables`](/docs/api/endpoints/portfolio), and [`totals`](/docs/api/endpoints/portfolio) for the price of a single query. With the REST API, you would have to make many seperate queries.
 :::
 
 ### Batch Portfolio Fetching
