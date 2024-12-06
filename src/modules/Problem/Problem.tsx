@@ -21,11 +21,11 @@ export const Problem: React.FC = () => {
         </div>
         <div className="problem__section__description">
           <h5 color="" style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-            The quantity of onchain applications is increasing exponentially - no centralized entity will be able to
+            The quantity of onchain applications is increasing exponentially — no centralized entity will be able to
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-          To solve this problem, an open network of curators contribute to the Zapper Protocol — transforming onchain data and empowering builders.
+          To solve this problem, an open network of curators contribute to the Zapper Protocol — transforming onchain data and empowering builders with easy to use onchain data.
           </h5>
         </div>
       </div>
