@@ -14,9 +14,9 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 ## What can I get?
 
 
-### [Portfolio Data](/docs/api/endpoints/portfolio/claimables)
+### [Portfolio Data](/docs/api/endpoints/portfolio)
 
-A set of portfolio queries to fetch [Tokens](/docs/api/endpoints/portfolio/token-balances), [NFTs](/docs/api/endpoints/portfolio/nft-balances), [App Balances](/docs/api/endpoints/portfolio/app-balances), [Portfolio Totals](/docs/api/endpoints/portfolio/portfolio-totals), and [Claimables](/docs/api/endpoints/portfolio/claimables).
+A set of portfolio queries to fetch [Tokens](/docs/api/endpoints/portfolio), [NFTs](/docs/api/endpoints/portfolio), [App Balances](/docs/api/endpoints/portfolio), [Portfolio Totals](/docs/api/endpoints/portfolio), and [Claimables](/docs/api/endpoints/portfolio/).
 
 ### [Onchain Prices](/docs/api/endpoints/onchain-prices)
 

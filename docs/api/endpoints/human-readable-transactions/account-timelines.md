@@ -11,11 +11,12 @@ import Link from '@docusaurus/Link';
 
 Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
----
-
 ### `accountsTimeline`
-
-The `accountsTimeline` query takes `addresses` input as an array, with optional `networks`. It returns a descriptive and human-readable summary of the transaction's details from one or multiple wallets with tokens transferred — paginated and chain-agnostic.
+Takes an array of `addresses` as input, with optional parameters for `network`, and `spamFilter`. It returns chronological on-chain activity including:
+* Transaction history
+* Token transfers and swaps
+* NFT mints and trades
+* App interactions
 
 Typically, a single transaction generates multiple timeline events: one for each wallet impacted by the transaction and one for the associated application, if any.
 

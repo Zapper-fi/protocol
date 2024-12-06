@@ -11,7 +11,13 @@ import Link from '@docusaurus/Link';
 
 Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
----
+
+### `timelineForApp`
+Takes a `slug` parameter and optional `network` filters. Returns timeline of events for a specific application including:
+* App-specific transactions
+* Human-readable descriptions
+* Display items such as tokens, NFTs, accounts, and more.
+* Actor details
 
 ### `timelineForApp`
 
