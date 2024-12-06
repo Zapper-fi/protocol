@@ -29,9 +29,9 @@ Once you feel confident that you have a good understanding of what happened, it 
 
 Interpreting an transaction is simple! There are three areas to fill for an uninterpreted transaction (and not all need to be filled if unnecessary):
 
-1. **[Description](/docs/interpret/event-interpretation/guide/action-verb)**
-2. **[Item type(s)](/docs/interpret/event-interpretation/guide/item-types)** involved
-3. The **[app](/docs/interpret/event-interpretation/guide/adding-app)** through which the transaction occured
+1. **[Description](/docs/interpretation/event-interpretation/guide/action-verb)**
+2. **[Item type(s)](/docs/interpretation/event-interpretation/guide/item-types)** involved
+3. The **[app](/docs/interpretation/event-interpretation/guide/adding-app)** through which the transaction occured
 
 Here is where to add each element in the curation tool:
 

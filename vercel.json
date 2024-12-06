@@ -2,8 +2,8 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/docs/interpret/app-token-interpretation/guide/getting-started",
-      "destination": "/docs/interpret/position-interpretation/guide/getting-started",
+      "source": "/docs/interpretation/app-token-interpretation/guide/getting-started",
+      "destination": "/docs/interpretation/position-interpretation/guide/getting-started",
       "permanent": true
     }
   ]

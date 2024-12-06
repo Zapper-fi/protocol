@@ -85,7 +85,7 @@ const config = {
         {
           position: 'left',
           label: 'Interpretation Docs',
-          to: '/docs/interpret/overview',
+          to: '/docs/interpretation/overview',
         },
         {
           type: 'custom-NavbarItem',
