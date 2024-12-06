@@ -3,7 +3,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
 
 <TabGroup>
-  <TabList className="-mb-10 h-10">
+  <TabList className="md:-mb-10 md:h-10">
     <Tab className="zapper-tab text-lg">Transactions</Tab>
     <Tab className="zapper-tab text-lg">Account Timelines</Tab>
     <Tab className="zapper-tab text-lg">App Timelines</Tab>
@@ -11,7 +11,7 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
   <TabPanels>
     <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 mt-14">
+      <div className="basis-1/2 md:mt-14">
         ## Transactions made simple
 
         Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views. [Learn More](/docs/api-intro/human-readable-transactions/timeline-event)
@@ -83,7 +83,7 @@ query {
       </div>
     </TabPanel>
     <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 mt-14">
+      <div className="basis-1/2 md:mt-14">
         ## Wallet Activity at a Glance
 
         Presents the onchain activity of a specific address(s) in a simple descriptive summary with
@@ -141,7 +141,7 @@ query {
       </div>
     </TabPanel>
     <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 mt-14">
+      <div className="basis-1/2 md:mt-14">
         ## App Activity Feeds
 
         Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn More](/docs/api-intro/human-readable-transactions/app-timelines)
