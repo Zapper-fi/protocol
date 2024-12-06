@@ -21,7 +21,7 @@ export function SignInButton() {
         },
         {
           label: 'Contact Support',
-          href: 'mailto:api@zapper.xyz?subject=Customer%20Support',
+          href: 'https://help.zapper.xyz/hc/en-us',
         },
         {
           label: 'Sign Out',
