@@ -52,7 +52,7 @@ export function SignInButton() {
         },
         {
           label: 'Contact Support',
-          href: 'https://help.zapper.xyz/hc/en-us',
+          href: 'mailto:api@zapper.xyz?subject=Customer%20Support',
         },
         {
           label: 'Sign Out',
