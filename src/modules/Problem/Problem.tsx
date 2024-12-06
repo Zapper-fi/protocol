@@ -25,7 +25,8 @@ export const Problem: React.FC = () => {
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-          The Zapper API uses a community of curators to make onchain data human-readable and cover the exponential growth of applications.
+          The Zapper API builds on an open network of curators who transform and contextualize onchain data.
+           This empowers builders with limitless access to the entire onchain world.
           </h5>
         </div>
       </div>
