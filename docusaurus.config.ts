@@ -71,7 +71,7 @@ const config = {
       ],
     },
     navbar: {
-      title: 'Zapper API',
+      title: 'Zapper Protocol',
       logo: {
         alt: 'Zapper Logo',
         src: 'img/logo.png',
@@ -84,7 +84,7 @@ const config = {
         },
         {
           position: 'left',
-          label: 'Interpretation Docs',
+          label: 'Interpretation',
           to: '/docs/interpretation/overview',
         },
         {
