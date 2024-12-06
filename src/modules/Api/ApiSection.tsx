@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from '@site/src/components/Button';
-import { useSignIn } from '@site/src/helpers/useSignIn';
+import { SignInDashboardButton } from '@site/src/components/SignInDashboardButton';
 
 enum TabEnum {
   Portfolio = 'portfolio',
@@ -9,12 +8,6 @@ enum TabEnum {
 }
 
 export const ApiSection: React.FC = () => {
-  const onComplete = () => {
-    window.location.href = '/dashboard';
-  };
-
-  const { login } = useSignIn({ onComplete });
-
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -72,9 +65,8 @@ export const ApiSection: React.FC = () => {
               across 30+ chains 一 all available with a few lines of code.
             </p>
           </div>
-          <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
-            Get Your API Key
-          </Button>
+
+          <SignInDashboardButton />
         </div>
       </div>
     </div>
