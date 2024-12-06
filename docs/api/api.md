@@ -13,19 +13,19 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ## What can I get?
 
-### [Human-Readable Transactions](/docs/api/human-readable-transactions/timeline-event)
+### [Human-Readable Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event)
 
-Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api/human-readable-transactions/timeline-event), [App Timelines](/docs/api/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api/human-readable-transactions/account-timelines).
+Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event), [App Timelines](/docs/api/endpoints/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api/endpoints/human-readable-transactions/account-timelines).
 
-### [Onchain Identity](/docs/api/onchain-identity)
+### [Onchain Identity](/docs/api/endpoints/onchain-identity)
 
 Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.
 
-### [Portfolio Data](/docs/api/portfolio/claimables)
+### [Portfolio Data](/docs/api/endpoints/portfolio/claimables)
 
-A set of portfolio queries to fetch [Tokens](/docs/api/portfolio/token-balances), [NFTs](/docs/api/portfolio/nft-balances), [App Balances](/docs/api/portfolio/app-balances), [Portfolio Totals](/docs/api/portfolio/portfolio-totals), and [Claimables](/docs/api/portfolio/claimables).
+A set of portfolio queries to fetch [Tokens](/docs/api/endpoints/portfolio/token-balances), [NFTs](/docs/api/endpoints/portfolio/nft-balances), [App Balances](/docs/api/endpoints/portfolio/app-balances), [Portfolio Totals](/docs/api/endpoints/portfolio/portfolio-totals), and [Claimables](/docs/api/endpoints/portfolio/claimables).
 
-### [Onchain Prices](/docs/api/onchain-prices)
+### [Onchain Prices](/docs/api/endpoints/onchain-prices)
 
 A price for every token that has an onchain market, including historical data.
 
