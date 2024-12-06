@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+sidebar_label: For Agents & LLMs
+---
+
+
 # Docs for Agents & LLMs
 
 :::note
