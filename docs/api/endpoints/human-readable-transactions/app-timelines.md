@@ -19,11 +19,6 @@ Takes a `slug` parameter and optional `network` filters. Returns timeline of eve
 * Display items such as tokens, NFTs, accounts, and more.
 * Actor details
 
-### `timelineForApp`
-
-The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` or `description`. If returning `description`, `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
-
-
 :::tip
 To find the correct `slug` for the app you are trying to reference, find the app on Zapper. The slug is the last part of the URL. For example: https://zapper.xyz/apps/cat-town, has the slug `cat-town`. 
 :::
