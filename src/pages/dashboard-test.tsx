@@ -1,125 +1,62 @@
-import React from 'react';
-import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
-import { Profile } from '@site/src/modules/Dashboard/Profile';
-import { PaymentHistory } from '@site/src/modules/Dashboard/PaymentHistory';
-import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
-import React, { useState } from 'react';
-import { 
-  IoHomeOutline, 
-  IoStatsChartOutline,
-  IoCardOutline,
-  IoArrowForward
-} from 'react-icons/io5';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-
-export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState('overview');
-  
-  const tabs = [
-    { id: 'overview', label: 'Overview', icon: IoHomeOutline },
-    { id: 'analytics', label: 'Analytics', icon: IoStatsChartOutline },
-    { id: 'credits', label: 'Buy Credits', icon: IoCardOutline }
-  ];
-
-  const quickLinks = [
-    { label: 'Quickstart', href: '/docs/quickstart' },
-    { label: 'API Sandbox', href: '/sandbox' },
-    { label: 'LLM Guide', href: '/docs/llm' },
-    { label: 'Examples', href: '/docs/examples' }
-  ];
-
+export default function DashboardMockup() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-gray-800 p-4">
+      <div className="border-b p-4">
         <h1 className="text-2xl font-bold">API Dashboard</h1>
       </div>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row">
-        {/* Tab Navigation - Mobile (Top) / Desktop (Side) */}
-        <nav className={`
-          md:w-64 md:border-r border-gray-800
-          overflow-x-auto
-          ${activeTab === 'overview' ? 'md:block' : ''}
-        `}>
-          <div className="flex md:flex-col p-4">
-            {tabs.map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`
-                    flex items-center space-x-2 p-2 rounded
-                    whitespace-nowrap
-                    min-w-fit
-                    md:w-full
-                    md:mb-2
-                    mr-2
-                    md:mr-0
-                    ${
-                      activeTab === tab.id 
-                        ? 'bg-[#A387FF] text-white' 
-                        : 'text-gray-400 hover:bg-gray-800'
-                    }
-                  `}
-                >
-                  <Icon size={16} />
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
+        {/* Tab Navigation */}
+        <nav className="md:w-64 md:border-r p-4">
+          <div className="flex md:flex-col">
+            <button className="p-2 rounded md:w-full md:mb-2 mr-2 md:mr-0 bg-black text-white">
+              Overview
+            </button>
+            <button className="p-2 rounded md:w-full md:mb-2 mr-2 md:mr-0 hover:bg-gray-100">
+              Analytics
+            </button>
+            <button className="p-2 rounded md:w-full md:mb-2 mr-2 md:mr-0 hover:bg-gray-100">
+              Buy Credits
+            </button>
           </div>
         </nav>
 
-        {/* Tab Content */}
-        <div className="flex-1 p-4 md:p-6">
-          {activeTab === 'overview' && (
-            <div className="space-y-6">
-              <Profile />
+        {/* Tab Content Area */}
+        <div className="flex-1 p-4">
+          {/* Overview Tab Content Mock */}
+          <div className="space-y-6">
+            {/* Profile Section Mock */}
+            <div className="border rounded p-4">
+              <div className="font-bold mb-2">Profile</div>
+              <div className="text-sm text-gray-600">[Profile Content]</div>
+            </div>
 
-              {/* API Key */}
-              <Alert>
-                <AlertTitle>Your API Key</AlertTitle>
-                <AlertDescription>
-                  <code className="bg-gray-800 p-2 rounded block mt-2 overflow-x-auto">
-                    f56d9d54-1b7b-4349-9c0f-8ec7e106e28f
-                  </code>
-                </AlertDescription>
-              </Alert>
+            {/* API Key Section Mock */}
+            <div className="border rounded p-4">
+              <div className="font-bold mb-2">Your API Key</div>
+              <code className="bg-gray-100 p-2 rounded block mt-2">
+                f56d9d54-1b7b-4349-9c0f-8ec7e106e28f
+              </code>
+            </div>
 
-              {/* Quick Links */}
-              <div>
-                <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                  {quickLinks.map(link => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="flex items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 hover:border hover:border-[#A387FF] transition-all"
-                    >
-                      <span>{link.label}</span>
-                      <IoArrowForward className="ml-2" size={16} />
-                    </a>
-                  ))}
-                </div>
+            {/* Stats Preview Mock */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="border rounded p-4">
+                <div className="text-sm text-gray-600">Credits Remaining</div>
+                <div className="text-xl font-bold">9,697</div>
+              </div>
+              <div className="border rounded p-4">
+                <div className="text-sm text-gray-600">Requests Today</div>
+                <div className="text-xl font-bold">245</div>
+              </div>
+              <div className="border rounded p-4">
+                <div className="text-sm text-gray-600">Cost Today</div>
+                <div className="text-xl font-bold">$0.25</div>
               </div>
             </div>
-          )}
-
-          {activeTab === 'analytics' && (
-            <div className="space-y-6">
-              <ConsumptionStats />
-            </div>
-          )}
-
-          {activeTab === 'credits' && (
-            <div className="space-y-6">
-              <BuyCredits />
-              <PaymentHistory />
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
