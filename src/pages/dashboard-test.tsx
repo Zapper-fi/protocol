@@ -6,9 +6,7 @@ export default function Dashboard() {
   const tabs = [
     { id: 'overview', label: 'Overview' },
     { id: 'analytics', label: 'Analytics' },
-    { id: 'billing', label: 'Billing' },
-    { id: 'documentation', label: 'Documentation' },
-    { id: 'settings', label: 'Settings' }
+    { id: 'buy-credits', label: 'Buy Credits' }
   ];
 
   const quickActions = [
@@ -19,31 +17,33 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0C1013] text-[#FFFFFF] p-6">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-2">API Dashboard</h1>
-      </div>
-
-      {/* Tabs */}
-      <div className="flex space-x-1 mb-6 border-b border-[#32383D]">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center px-4 py-2 space-x-2 ${
-              activeTab === tab.id
-                ? 'border-b-2 border-[#A387FF] text-[#A387FF]'
-                : 'text-[#C7D2DA]'
-            }`}
-          >
-            <span>{tab.label}</span>
-          </button>
-        ))}
-      </div>
+    <div className="min-h-screen bg-[#0C1013] text-[#FFFFFF] p-6 flex">
+      {/* Navigation */}
+      <nav className="bg-[#252A2E] p-4 rounded-lg mr-6 hidden sm:block">
+        <div className="space-y-2">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center space-x-2 px-4 py-2 rounded ${
+                activeTab === tab.id
+                  ? 'bg-[#A387FF] text-[#FFFFFF]'
+                  : 'hover:bg-[#32383D] text-[#C7D2DA]'
+              }`}
+            >
+              <span>{tab.label}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
 
       {/* Main Content */}
-      <div className="space-y-6">
+      <div className="flex-1 space-y-6">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold mb-2">API Dashboard</h1>
+        </div>
+
         {activeTab === 'overview' && (
           <>
             {/* API Key Section */}
@@ -87,8 +87,8 @@ export default function Dashboard() {
                   <div className="text-2xl font-bold">245</div>
                 </div>
                 <div className="bg-[#32383D] p-4 rounded">
-                  <div className="text-sm text-[#C7D2DA]">Cost Today</div>
-                  <div className="text-2xl font-bold">$3.24</div>
+                  <div className="text-sm text-[#C7D2DA]">Active Integrations</div>
+                  <div className="text-2xl font-bold">3</div>
                 </div>
               </div>
             </div>
@@ -98,14 +98,14 @@ export default function Dashboard() {
         {activeTab === 'analytics' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
-            {/* Add existing module for charts here */}
+            {/* Add your existing charts here */}
           </div>
         )}
 
-        {activeTab === 'credits' && (
+        {activeTab === 'buy-credits' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Buy Credits Module</h2>
-            {/* Add existing module  here */}
+            <h2 className="text-lg font-semibold mb-2">Buy Credits</h2>
+            {/* Add your existing billing content here */}
           </div>
         )}
       </div>
