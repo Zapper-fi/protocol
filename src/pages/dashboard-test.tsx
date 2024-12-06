@@ -22,18 +22,35 @@ export default function DashboardMockup() {
             </button>
           </div>
         </nav>
-
         {/* Tab Content Area */}
         <div className="flex-1 p-4">
-          {/* Overview Tab Content Mock */}
+          {/* Overview Tab Content */}
           <div className="space-y-6">
-            {/* Profile Section Mock */}
+            {/* Quick Links */}
+            <div className="bg-gray-100 py-4">
+              <div className="container mx-auto flex justify-center space-x-4">
+                <a href="#" className="px-4 py-2 bg-black text-white rounded hover:bg-gray-900">
+                  Quickstart
+                </a>
+                <a href="#" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                  Use with Agents & LLMs
+                </a>
+                <a href="#" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                  Pricing
+                </a>
+                <a href="#" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                  Sandbox
+                </a>
+              </div>
+            </div>
+
+            {/* Profile Section */}
             <div className="border rounded p-4">
               <div className="font-bold mb-2">Profile</div>
               <div className="text-sm text-gray-600">[Profile Content]</div>
             </div>
 
-            {/* API Key Section Mock */}
+            {/* API Key Section */}
             <div className="border rounded p-4">
               <div className="font-bold mb-2">Your API Key</div>
               <code className="bg-gray-100 p-2 rounded block mt-2">
@@ -41,7 +58,7 @@ export default function DashboardMockup() {
               </code>
             </div>
 
-            {/* Stats Preview Mock */}
+            {/* Stats Preview */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="border rounded p-4">
                 <div className="text-sm text-gray-600">Credits Remaining</div>
