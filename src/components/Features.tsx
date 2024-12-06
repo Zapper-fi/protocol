@@ -24,12 +24,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, ico
 );
 
 const features: Feature[] = [
-  
   {
-    title: "Portfolio Data",
-    description: "A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.",
-    href: "/docs/api/endpoints/portfolio",
-    icon: PieChart
+    title: 'Portfolio Data',
+    description: 'A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.',
+    href: '/docs/api/endpoints/portfolio',
+    icon: RiDonutChartFill,
   },
   {
     title: 'Human-Readable Transactions',
