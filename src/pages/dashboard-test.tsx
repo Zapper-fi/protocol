@@ -13,7 +13,7 @@ export default function Dashboard() {
     { label: 'Quickstart' },
     { label: 'Sandbox' },
     { label: 'Use with LLMs' },
-    { label: 'Examples' }
+    { label: 'Pricing' }
   ];
 
   return (
@@ -87,8 +87,8 @@ export default function Dashboard() {
                   <div className="text-2xl font-bold">245</div>
                 </div>
                 <div className="bg-[#32383D] p-4 rounded">
-                  <div className="text-sm text-[#C7D2DA]">Active Integrations</div>
-                  <div className="text-2xl font-bold">3</div>
+                  <div className="text-sm text-[#C7D2DA]">Cost Today</div>
+                  <div className="text-2xl font-bold">$3.31</div>
                 </div>
               </div>
             </div>
