@@ -38,7 +38,7 @@ Clients can track query usage and credits over time and purchase additional cred
 
 | Query | Description |
 | ----------- | ----------- |
-| `portfolio` | Main portfolio query that returns comprehensive balance data. Available fields include: [`appBalances`](/docs/api/endpoints/portfolio) for application-specific balances, [`nftBalances`](/docs/api/endpoints/portfolio) for NFT valuations, [`tokenBalances`](/docs/api/endpoints/portfolio/token-balances) for token holdings, [`claimables`](/docs/api/endpoints/portfolio) for available token claims, and [`totals`](/docs/api/endpoints/portfolio) for portfolio aggregations. |
+| `portfolio` | Main portfolio query that returns comprehensive balance data. Available fields include: [`appBalances`](/docs/api/endpoints/portfolio) for application-specific balances, [`nftBalances`](/docs/api/endpoints/portfolio) for NFT valuations, [`tokenBalances`](/docs/api/endpoints/portfolio) for token holdings, [`claimables`](/docs/api/endpoints/portfolio) for available token claims, and [`totals`](/docs/api/endpoints/portfolio) for portfolio aggregations. |
 
 :::tip
 You can combine as many of the portfolio fields into a single `portfolio` query for the same price of **3 credits**.
