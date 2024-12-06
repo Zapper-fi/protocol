@@ -13,13 +13,6 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ## What can I get?
 
-### [Human-Readable Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event)
-
-Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event), [App Timelines](/docs/api/endpoints/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api/endpoints/human-readable-transactions/account-timelines).
-
-### [Onchain Identity](/docs/api/endpoints/onchain-identity)
-
-Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.
 
 ### [Portfolio Data](/docs/api/endpoints/portfolio/claimables)
 
@@ -27,7 +20,19 @@ A set of portfolio queries to fetch [Tokens](/docs/api/endpoints/portfolio/token
 
 ### [Onchain Prices](/docs/api/endpoints/onchain-prices)
 
-A price for every token that has an onchain market, including historical data.
+Prices for every token that has an onchain market, including historical data for chart creation.
+
+### [Human-Readable Timelines](/docs/api/endpoints/human-readable-transactions/timeline-event)
+
+Simplify onchain transactions with human-friendly descriptions. Queries for [Single Transactions](/docs/api/endpoints/human-readable-transactions/timeline-event), [App Timelines](/docs/api/endpoints/human-readable-transactions/app-timelines), or [Account Timelines](/docs/api/endpoints/human-readable-transactions/account-timelines).
+
+### [NFTs](/docs/api/endpoints/nft-queries/nft-collections.md)
+
+In depth details on NFTs & collections, including holders and net worth.
+
+### [Onchain Identity](/docs/api/endpoints/onchain-identity)
+
+Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.
 
 ## Quickstart
 
