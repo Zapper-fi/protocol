@@ -10,11 +10,15 @@ import Link from '@docusaurus/Link';
 
 Get aggregate statistics for NFT holdings, including total count and total value of NFTs owned by specified addresses.
 
----
 
 ### `nftUsersTokensTotals`
+Takes an array of `addresses` as input, with similar filtering options as `nftUsersTokens`. Returns aggregated statistics including:
+* Total count of NFTs owned
+* Total value of NFT holdings
+* Balance summaries
+* Token count metrics
+* Quick summaries of NFT holdings without fetching individual token details.
 
-The `nftUsersTokensTotals` query returns aggregate statistics about NFTs owned by specified addresses, with support for the same filtering options as `nftUsersTokens`. This is useful for getting quick summaries of NFT holdings without fetching individual token details.
 
 ### Example Use Case: Portfolio Summary
 

@@ -8,17 +8,20 @@ import Link from '@docusaurus/Link';
 
 # Single NFT Details
 
-Let's say you want to display a specific NFT. Start by passing the `collectionAddress`, `network`, and `tokenId` to identify the NFT. Then return information about the token including its `name`, `description`, current `estimatedValue`, and media assets from `mediasV3`. You can also get trait information and current sale data.
+Surfaces details about a single NFT with its metadata including the collection it belongs to, token ID, traits, name, description, media (images/animations/audio), holders, transfers, and estimated value information.
 
----
 
 ### `nftToken`
-
-The `nftToken` query takes a collection address, network, and token ID to return comprehensive information about a specific NFT token. This includes its metadata, traits, current ownership, and transfer history.
+Takes `collectionAddress`, `network`, and `tokenId` as input. Returns detailed data about a specific NFT including:
+* Token metadata
+* Current ownership
+* Transfer history
+* Traits and rarity
+* Media assets
 
 ### Example Use Case: NFT Display
 
-Query the NFT details by passing the collection `collectionAddress`, `network`, and `tokenId`. This returns key information about the token including metadata, ownership, and market data.
+Let's say you want to display a specific NFT. Start by passing the `collectionAddress`, `network`, and `tokenId` to identify the NFT. Then return information about the token including its `name`, `description`, current `estimatedValue`, and media assets from `mediasV3`. You can also get trait information and current sale data.
 
 #### Example Variables
 

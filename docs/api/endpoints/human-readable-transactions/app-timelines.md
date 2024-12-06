@@ -11,12 +11,13 @@ import Link from '@docusaurus/Link';
 
 Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
----
 
 ### `timelineForApp`
-
-The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` or `description`. If returning `description`, `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
-
+Takes a `slug` parameter and optional `network` filters. Returns timeline of events for a specific application including:
+* App-specific transactions
+* Human-readable descriptions
+* Display items such as tokens, NFTs, accounts, and more.
+* Actor details
 
 :::tip
 To find the correct `slug` for the app you are trying to reference, find the app on Zapper. The slug is the last part of the URL. For example: https://zapper.xyz/apps/cat-town, has the slug `cat-town`. 
@@ -240,11 +241,10 @@ If you want to surface tokens, NFTs, accounts, or other onchain items embedded w
 | `descriptionDisplayItems`      | Contains the fields which the variables in `description` make reference to.      | `ActivityFeedDisplayItem!!`       |
 | `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
 | `app`      | The app that is associated with the transaction.     | `Int!`       |
-| `actors`      | The address(s) involved in the transaction, includes the object `account` that can surface data such as `address`, `displayName`,and `avatar`.    | `ActorDisplayItem!`      |
 | `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
 | `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
 | `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
-| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
+| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`. Also contains the `Account` type for the transaction's actor.       | `ActivityAccountDelta!`       |
 | `accountDeltasV2`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
 | `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
 | `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |

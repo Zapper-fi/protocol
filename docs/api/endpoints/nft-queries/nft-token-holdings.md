@@ -10,11 +10,15 @@ import Link from '@docusaurus/Link';
 
 Query individual NFTs owned by specific addresses, with detailed token information and filtering capabilities.
 
----
 
 ### `nftUsersTokens`
-
-The `nftUsersTokens` query returns individual NFTs owned by specified addresses, with support for filtering by network, minimum value, and specific collections. It includes information about each NFT's metadata, traits, and current value.
+Takes an array of `addresses` as input, with optional parameters for `network`, `standard`, and `minEstimatedValueUsd`. It returns comprehensive NFT holdings data including:
+* Individual NFT tokens owned
+* Balance and quantity information 
+* Collection metadata
+* Current valuations
+* Ownership history
+* Media/trait details
 
 ### Example Use Case: User's NFT Gallery
 

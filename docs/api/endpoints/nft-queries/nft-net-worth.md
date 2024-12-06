@@ -10,11 +10,13 @@ import Link from '@docusaurus/Link';
 
 Calculate the total value of NFT holdings for one or more wallet addresses across networks.
 
----
 
 ### `nftNetWorth`
+Takes an array of `addresses` and optional `network` parameter. Returns:
+* Total estimated value of NFT holdings in BigDecimal
+* Optional network-specific valuations
+* Support for manual value overrides
 
-The `nftNetWorth` query takes an array of addresses and optionally a specific network to calculate the total estimated value of all NFTs held by these addresses. The value is returned in USD.
 
 ### Example Use Case: Portfolio Valuation
 
