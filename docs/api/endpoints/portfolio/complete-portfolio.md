@@ -15,10 +15,9 @@ Fetch an entire onchain portfolio in a single query.
 
 ### `portfolio`
 
-The `portfolio` query takes `addresses` input as an array, with optional `networks`. It has the fields [`appBalances`](/docs/api/endpoints/portfolio/app-balances), [`nftBalances`](/docs/api/endpoints/portfolio/nft-balances), [`tokenBalances`](/docs/api/endpoints/portfolio/token-balances, [`claimables`](/docs/api/endpoints/portfolio/claimables), and [`totals`](/docs/api/endpoints/portfolio/portfolio-totals). You can query as many of these fields in a single query or call them seperately.
+The `portfolio` query takes `addresses` input as an array, with optional `networks`. It has the fields [`appBalances`](/docs/api/endpoints/portfolio/app-balances), [`nftBalances`](/docs/api/endpoints/portfolio/nft-balances), [`tokenBalances`](/docs/api/endpoints/portfolio/token-balances), [`claimables`](/docs/api/endpoints/portfolio/claimables), and [`totals`](/docs/api/endpoints/portfolio/portfolio-totals). You can query as many of these fields in a single query or call them seperately.
 
-### Example Use Case: Net Worth
-
+### Example Use Case: Onchain Portfolio
 You want to show surface the entire onchain portfolio for a user. Start by passing `address` into `portfolio`. Then return `totalByNetwork`, `network`, and `total`.
 
 #### Example Variable
