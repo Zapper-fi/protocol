@@ -46,6 +46,25 @@ export default function Dashboard() {
 
         {activeTab === 'overview' && (
           <>
+            {/* Usage Summary */}
+            <div className="bg-[#252A2E] p-4 rounded-lg">
+              <h2 className="text-lg font-semibold mb-3">Usage Summary</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="bg-[#32383D] p-4 rounded">
+                  <div className="text-sm text-[#C7D2DA]">Credits Remaining</div>
+                  <div className="text-2xl font-bold">9,697</div>
+                </div>
+                <div className="bg-[#32383D] p-4 rounded">
+                  <div className="text-sm text-[#C7D2DA]">Requests Today</div>
+                  <div className="text-2xl font-bold">245</div>
+                </div>
+                <div className="bg-[#32383D] p-4 rounded">
+                  <div className="text-sm text-[#C7D2DA]">Cost Today</div>
+                  <div className="text-2xl font-bold">$3.31</div>
+                </div>
+              </div>
+            </div>
+
             {/* API Key Section */}
             <div className="bg-[#252A2E] p-4 rounded-lg">
               <h2 className="text-lg font-semibold mb-2">API Key</h2>
@@ -73,39 +92,20 @@ export default function Dashboard() {
                 ))}
               </div>
             </div>
-
-            {/* Usage Summary */}
-            <div className="bg-[#252A2E] p-4 rounded-lg">
-              <h2 className="text-lg font-semibold mb-3">Usage Summary</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="bg-[#32383D] p-4 rounded">
-                  <div className="text-sm text-[#C7D2DA]">Credits Remaining</div>
-                  <div className="text-2xl font-bold">9,697</div>
-                </div>
-                <div className="bg-[#32383D] p-4 rounded">
-                  <div className="text-sm text-[#C7D2DA]">Requests Today</div>
-                  <div className="text-2xl font-bold">245</div>
-                </div>
-                <div className="bg-[#32383D] p-4 rounded">
-                  <div className="text-sm text-[#C7D2DA]">Cost Today</div>
-                  <div className="text-2xl font-bold">$3.31</div>
-                </div>
-              </div>
-            </div>
           </>
         )}
 
         {activeTab === 'analytics' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
-            {/* Add your existing charts here */}
+            {/* Add existing module for charts*/}
           </div>
         )}
 
         {activeTab === 'buy-credits' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Buy Credits</h2>
-            {/* Add your existing billing content here */}
+            {/* Add existing module for buy and history*/}
           </div>
         )}
       </div>
