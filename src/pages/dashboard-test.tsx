@@ -5,7 +5,7 @@ export default function Dashboard() {
 
   const tabs = [
     { id: 'overview', label: 'Overview' },
-    { id: 'analytics', label: 'Analytics' },
+    { id: 'usage', label: 'Usage' },
     { id: 'buy-credits', label: 'Buy Credits' }
   ];
 
@@ -95,16 +95,16 @@ export default function Dashboard() {
           </>
         )}
 
-        {activeTab === 'analytics' && (
+        {activeTab === 'usage' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
+            <h2 className="text-lg font-semibold mb-2">Charts</h2>
             {/* Add existing module for charts*/}
           </div>
         )}
 
         {activeTab === 'buy-credits' && (
           <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Buy Credits</h2>
+            <h2 className="text-lg font-semibold mb-2">Buy Credits & Tx history</h2>
             {/* Add existing module for buy and history*/}
           </div>
         )}
