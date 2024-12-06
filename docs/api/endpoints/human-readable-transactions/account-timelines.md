@@ -11,7 +11,6 @@ import Link from '@docusaurus/Link';
 
 Presents the onchain activity of a specific address(s) in a simple descriptive summary with references to dynamic elements of the transaction such as tokens, NFTs, and accounts.
 
----
 
 ### `accountsTimeline`
 

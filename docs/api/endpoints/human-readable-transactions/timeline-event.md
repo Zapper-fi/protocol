@@ -11,7 +11,6 @@ import Link from '@docusaurus/Link';
 
 Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts. Can be useful for building an activity feed of onchain transactions or surfacing specific transaction details.
 
----
 
 ### `timelineEvent`
 

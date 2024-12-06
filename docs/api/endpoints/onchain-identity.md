@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, and more.
 
----
 
 ### `accounts`
 

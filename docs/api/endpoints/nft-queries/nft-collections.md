@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Surfaces information about any ERC721 or ERC1155 NFT collection.
 
----
 
 ### `NftCollections`
 

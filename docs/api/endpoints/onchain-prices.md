@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Get comprehensive onchain prices current and historical, for any token that has an onchain market across supported networks.
 
----
 
 ### `fungibleToken`
 

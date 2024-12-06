@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Query individual NFTs owned by specific addresses, with detailed token information and filtering capabilities.
 
----
 
 ### `nftUsersTokens`
 

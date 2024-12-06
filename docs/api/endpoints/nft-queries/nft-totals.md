@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Get aggregate statistics for NFT holdings, including total count and total value of NFTs owned by specified addresses.
 
----
 
 ### `nftUsersTokensTotals`
 

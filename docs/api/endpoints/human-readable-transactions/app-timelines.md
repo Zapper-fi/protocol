@@ -11,7 +11,6 @@ import Link from '@docusaurus/Link';
 
 Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
----
 
 ### `timelineForApp`
 

@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Get information about NFT collections owned by specific wallet addresses.
 
----
 
 ### `nftUsersCollections`
 

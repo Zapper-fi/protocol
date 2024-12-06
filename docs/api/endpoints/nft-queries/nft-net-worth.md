@@ -10,7 +10,6 @@ import Link from '@docusaurus/Link';
 
 Calculate the total value of NFT holdings for one or more wallet addresses across networks.
 
----
 
 ### `nftNetWorth`
 
