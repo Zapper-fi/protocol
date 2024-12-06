@@ -10,7 +10,7 @@ const UPSERT_USER = gql`
   }
 `;
 
-export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
+export function useSignIn() {
   const [upsertUser] = useMutation(UPSERT_USER);
   const { authenticated, ready } = usePrivy();
   const { logout } = useLogout();
@@ -30,10 +30,8 @@ export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
         }
       }
 
-      if (onComplete) {
-        onComplete();
-      } else if (isNewUser && window.location.pathname === '/dashboard') {
-        // window.location.reload();
+      if (isNewUser && window.location.pathname === '/dashboard') {
+        window.location.reload();
       }
     },
   });
