@@ -1,22 +1,27 @@
 import React from 'react';
+import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
 
 interface Feature {
   title: string;
   description: string;
   href: string;
+  icon: React.ElementType;
 }
 
 interface FeatureCardProps extends Feature {}
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href }) => (
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, icon: Icon }) => (
   <a 
     href={href}
     className="flex flex-col gap-4 p-6 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors duration-200 h-full"
   >
+    <div className="text-white">
+      <Icon className="w-6 h-6 mb-3" />
+    </div>
     <h3 className="text-xl font-semibold text-white">
       {title}
     </h3>
-    <p className="text-neutral-400">
+    <p className="text-base text-neutral-400">
       {description}
     </p>
   </a>
@@ -26,22 +31,26 @@ const features: Feature[] = [
   {
     title: "Human-Readable Transactions",
     description: "Simplify onchain transactions with human-friendly descriptions.",
-    href: "/docs/api/endpoints/human-readable-transactions/timeline-event"
+    href: "/docs/api/endpoints/human-readable-transactions/timeline-event",
+    icon: RiListCheck2
   },
   {
     title: "Onchain Identity",
     description: "Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.",
-    href: "/docs/api/endpoints/onchain-identity"
+    href: "/docs/api/endpoints/onchain-identity",
+    icon: RiPassportLine
   },
   {
     title: "Portfolio Data",
     description: "A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.",
-    href: "/docs/api/endpoints/portfolio/claimables"
+    href: "/docs/api/endpoints/portfolio/claimables",
+    icon: RiDonutChartFill
   },
   {
     title: "Onchain Prices",
     description: "A price for every token that has an onchain market, including historical data.",
-    href: "/docs/api/endpoints/onchain-prices"
+    href: "/docs/api/endpoints/onchain-prices",
+    icon: RiCoinsLine
   }
 ];
 
