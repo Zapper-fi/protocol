@@ -13,7 +13,7 @@ interface FeatureCardProps extends Feature {}
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, icon: Icon }) => (
   <a 
     href={href}
-    className="flex flex-col gap-4 p-6 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors duration-200 h-full"
+    className="flex flex-col gap-4 p-4 rounded-2xl bg-[#181C1F] border border-[#32383D] hover:opacity-90 transition-opacity duration-200 h-full no-underline"
   >
     <div className="text-white">
       <Icon className="w-6 h-6 mb-3" />
@@ -60,7 +60,7 @@ export function Features() {
       <h2 className="text-4xl font-bold text-white mb-12">
         What can I get?
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto">
         {features.map((feature, index) => (
           <FeatureCard key={index} {...feature} />
         ))}
