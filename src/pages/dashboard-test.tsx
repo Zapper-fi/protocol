@@ -92,7 +92,6 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
           </>
         )}
 
@@ -100,17 +99,7 @@ export default function Dashboard() {
           <div className="bg-[#252A2E] p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
             {/* Add existing module for charts here */}
-=======
-          </>
-        )}
-
-        {activeTab === 'analytics' && (
-          <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Analytics Content</h2>
-            {/* Add your existing charts here */}
->>>>>>> 29dde5e9e7711c9262ebd463891e279f3c2d185f
           </div>
-<<<<<<< HEAD
         )}
 
         {activeTab === 'credits' && (
@@ -119,36 +108,6 @@ export default function Dashboard() {
             {/* Add existing module  here */}
           </div>
         )}
-=======
-        )}
-
-        {activeTab === 'billing' && (
-          <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Billing Content</h2>
-            {/* Add your existing billing content here */}
-          </div>
-        )}
-
-        {activeTab === 'documentation' && (
-          <div className="space-y-4">
-            <div className="bg-[#252A2E] p-4 rounded-lg">
-              <h2 className="text-lg font-semibold mb-2">Getting Started</h2>
-              {/* Add documentation content */}
-            </div>
-            <div className="bg-[#252A2E] p-4 rounded-lg">
-              <h2 className="text-lg font-semibold mb-2">Example Queries</h2>
-              {/* Add example queries */}
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'settings' && (
-          <div className="bg-[#252A2E] p-4 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Settings</h2>
-            {/* Add settings content */}
-          </div>
-        )}
->>>>>>> 29dde5e9e7711c9262ebd463891e279f3c2d185f
       </div>
     </div>
   );
