@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-sidebar_label: GraphQL Sandbox
+sidebar_label: Sandbox
 hide_table_of_contents: true
 ---
 
