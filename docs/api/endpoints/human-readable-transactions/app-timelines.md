@@ -36,7 +36,7 @@ When returning `description`, the `descriptionDisplayItems` such as `TokenDispla
 
 ```js
 {
-  "slug": "cat-town",
+  "slug": "aave-v2",
   "first": 10,
   "spamFilter": true,
 }
@@ -100,7 +100,14 @@ query($slug: String!, $first: Int, $after: String, $spamFilter: Boolean) {
             }
           }
         }
-
+        perspectiveDelta {
+          account {
+            address
+            displayName {
+              value
+            }
+          }
+        }
       }
     }
     pageInfo {
@@ -124,54 +131,28 @@ Pagination is highly recommended using `first` and `after` to ensure fast query 
       "edges": [
         {
           "node": {
-            "key": "0xf8d5e339ea4d3035c3d31b1b5cdc3edc4cb932d5a692ce77e9a3d8d647105a68:0xbe1aee2292848dfc84f1a5886ae30785a1513d0e",
-            "timestamp": 1733354963000,
-            "network": "BASE_MAINNET",
+            "key": "0x445369dac3aeefae7aa42f1347b89239e118c2373dbc01a40cc398cf53eca154:0x3c1d52c5240ec764cf818b4d7228d2da36ad9986",
+            "timestamp": 1733520575000,
+            "network": "ETHEREUM_MAINNET",
             "source": "TRANSACTION",
             "transaction": {
-              "hash": "0xf8d5e339ea4d3035c3d31b1b5cdc3edc4cb932d5a692ce77e9a3d8d647105a68",
-              "from": "0xbe1aee2292848dfc84f1a5886ae30785a1513d0e",
-              "to": "0x10a77395a07917c5eb71feeb86696b7612f9730f",
+              "hash": "0x445369dac3aeefae7aa42f1347b89239e118c2373dbc01a40cc398cf53eca154",
+              "from": "0x3c1d52c5240ec764cf818b4d7228d2da36ad9986",
+              "to": "0xd784927ff2f95ba542bfc824c8a8a98f3495f6b5",
               "value": "0"
             },
             "perspective": {
               "type": "ACCOUNT",
-              "value": "0xbe1aee2292848dfc84f1a5886ae30785a1513d0e"
+              "value": "0x3c1d52c5240ec764cf818b4d7228d2da36ad9986"
             },
             "interpretation": {
-              "description": "Evolved floofs to cats ",
-              "processedDescription": "Evolved floofs to cats ",
-              "descriptionDisplayItems": []
-            },
-            "accountDeltasV2": {
-              "edges": []
-            }
-          }
-        },
-        {
-          "node": {
-            "key": "0x2de9580f898bb38f064032004e0b31ab51f8d0cf90daba93d1cabb2c341a636b:0x1ad761cf71f0e0236dc8be1b1e850108dc55fec6",
-            "timestamp": 1733354719000,
-            "network": "BASE_MAINNET",
-            "source": "TRANSACTION",
-            "transaction": {
-              "hash": "0x2de9580f898bb38f064032004e0b31ab51f8d0cf90daba93d1cabb2c341a636b",
-              "from": "0x1ad761cf71f0e0236dc8be1b1e850108dc55fec6",
-              "to": "0x10a77395a07917c5eb71feeb86696b7612f9730f",
-              "value": "0"
-            },
-            "perspective": {
-              "type": "ACCOUNT",
-              "value": "0x1ad761cf71f0e0236dc8be1b1e850108dc55fec6"
-            },
-            "interpretation": {
-              "description": "Sold floofs for $1",
-              "processedDescription": "Sold floofs for 0.002 ETH",
+              "description": "Claimed $1 ",
+              "processedDescription": "Claimed 0.8577 STKAAVE ",
               "descriptionDisplayItems": [
                 {
                   "type": "token",
-                  "tokenAddress": "0x0000000000000000000000000000000000000000",
-                  "amountRaw": "1974629265979054"
+                  "tokenAddress": "0x4da27a545c0c5b758a6ba100e3a049001de870f5",
+                  "amountRaw": "857721002521299917"
                 }
               ]
             },
@@ -183,9 +164,9 @@ Pagination is highly recommended using `first` and `after` to ensure fast query 
                       "edges": [
                         {
                           "node": {
-                            "amount": 0.001974629265979054,
-                            "amountRaw": "1974629265979054",
-                            "address": "0x0000000000000000000000000000000000000000"
+                            "amount": 0.8577210025212999,
+                            "amountRaw": "857721002521299917",
+                            "address": "0x4da27a545c0c5b758a6ba100e3a049001de870f5"
                           }
                         }
                       ]
@@ -193,13 +174,50 @@ Pagination is highly recommended using `first` and `after` to ensure fast query 
                   }
                 }
               ]
+            },
+            "perspectiveDelta": {
+              "account": {
+                "address": "0x3c1d52c5240ec764cf818b4d7228d2da36ad9986",
+                "displayName": {
+                  "value": "cl0kwork.eth"
+                }
+              }
             }
           }
-        }
+        },
+        {
+          "node": {
+            "key": "0x0f1bbabb206a17b85005549583368fc27522365627a0d73f6b8dd7bdc40d5d90:0x1077d17c39d9c6a8131b54e735817f3c3a487f4d",
+            "timestamp": 1733520436000,
+            "network": "POLYGON_MAINNET",
+            "source": "TRANSACTION",
+            "transaction": {
+              "hash": "0x0f1bbabb206a17b85005549583368fc27522365627a0d73f6b8dd7bdc40d5d90",
+              "from": "0x1077d17c39d9c6a8131b54e735817f3c3a487f4d",
+              "to": "0x8df3aad3a84da6b69a4da8aec3ea40d9091b2ac4",
+              "value": "0"
+            },
+            "perspective": {
+              "type": "ACCOUNT",
+              "value": "0x1077d17c39d9c6a8131b54e735817f3c3a487f4d"
+            },
+            "interpretation": {
+              "description": "Approved $1",
+              "processedDescription": "Approved AMWMATIC",
+              "descriptionDisplayItems": [
+                {}
+              ]
+            },
+            "accountDeltasV2": {
+              "edges": []
+            },
+            "perspectiveDelta": null
+          }
+        },
       ],
       "pageInfo": {
         "hasNextPage": true,
-        "endCursor": "MjAyNC0xMi0wNFQyMzoyNToxOS4wMDBafHwweDJkZTk1ODBmODk4YmIzOGYwNjQwMzIwMDRlMGIzMWFiNTFmOGQwY2Y5MGRhYmE5M2QxY2FiYjJjMzQxYTYzNmI="
+        "endCursor": "MjAyNC0xMi0wNlQyMTowNTozOS4wMDBafHwweGI0ZmRkMDY0YWM3OGFkODIzYTE5MGFiNDBmOWU1NmY4ZDU5YTA5OTA4YWFmZjFhZTEyZmZjMGJkM2VhNTQxNGQ="
       }
     }
   }

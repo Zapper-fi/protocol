@@ -286,75 +286,8 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 | `marketCap` | Market capitalization | `BigDecimal` |
 | `groups` | Collection groups | `[NftCollectionGroup!]!` |
 
-### Field Arguments
 
-#### nfts
-```graphql
-nfts(
-  first: Int = 25
-  after: String
-  tokenIds: [String!]
-  owners: [Address!]
-  traitIds: [String!]
-  order: NftTokenConnectionOrderInput
-  traits: [NftTokenTraitInput!]
-): NftTokenConnection!
-```
-
-#### events
-```graphql
-events(
-  first: Int! = 25
-  after: String
-  tokenIds: [String!]
-  owners: [Address!]
-  followedBy: Address
-  traits: [NftTokenTraitInput!]
-  period: NftPaymentStatsPeriod
-): CollectionEventConnection!
-```
-
-#### holders
-```graphql
-holders(
-  input: NftHolderConnectionInput
-  first: Int
-  after: String
-): PaginatedNftHolder!
-```
-
-#### traitGroupValues
-```graphql
-traitGroupValues(
-  input: NftCollectionTraitValuesArgs!
-): NftCollectionTraitValueConnection!
-```
-
-#### isApproved
-```graphql
-isApproved(
-  spenderAddress: Address!
-  ownerAddress: Address!
-): Boolean!
-```
-
-#### approvalTransaction
-```graphql
-approvalTransaction(
-  spenderAddress: Address!
-  ownerAddress: Address!
-): TransactionConfig!
-```
-
-#### revokeApprovalTransaction
-```graphql
-revokeApprovalTransaction(
-  spenderAddress: Address!
-  ownerAddress: Address!
-): TransactionConfig!
-```
-
-### Type Definitions
+### Enums
 
 ```graphql
 enum NftStandard {
@@ -387,44 +320,15 @@ enum NftPaymentStatsPeriod {
   Quarter
 }
 
-type NftCollectionMedias {
-  banner: Image
-  card: Image
-  logo: Image
-}
-
-type TransactionConfig {
-  data: String!
-  to: Address!
-  from: Address!
-}
-
-input NftTokenConnectionOrderInput {
-  orderBy: NftTokenSort!
-  orderDirection: OrderDirectionOption = ASC
-}
-
 enum NftTokenSort {
   RARITY_RANK
   LAST_SALE_ETH
   ESTIMATED_VALUE_ETH
 }
-
-input NftTokenTraitInput {
-  type: String!
-  value: String!
-}
-
-input NftCollectionTraitValuesArgs {
-  first: Int = 10
-  after: String
-  traitName: String!
-  search: String
-}
 ```
 
 ### Notes
 - Supports pagination for handling large collections
-- Can filter by network, value, and NFT standard
+- Filter by network, value, and NFT standard
 - Returns comprehensive collection metadata including floor prices and media
 - Includes social links and collection statistics

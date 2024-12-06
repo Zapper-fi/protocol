@@ -8,16 +8,16 @@ import Link from '@docusaurus/Link';
 
 # Onchain Prices
 
-Get comprehensive onchain prices current and historical, for any token that has an onchain market across supported networks.
+Get comprehensive onchain prices, current and historical, for any token that has an onchain market across supported networks. Price ticks are also provided for price charts.
 
 
 ### `fungibleToken`
 Takes an `address` and `network` as input. Returns detailed token information including:
 * Real-time onchain sourced price data
 * Price history with customizable timeframes
-* Supports multiple price currencies (default: USD)
 * Total supply and holder stats
-* Tracks liquidity and market cap data
+* Liquidity and market cap data
+* Support for multiple price currencies (default: USD)
 
 
 ### Example Use Case: Token Price Chart

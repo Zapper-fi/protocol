@@ -193,50 +193,10 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 | `lastSaleEth` | Last sale price in ETH (deprecated) | `BigDecimal` |
 | `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
 
-### Field Arguments
 
-#### transfers
+
+### Enums
 ```graphql
-transfers(
-  first: Int
-  after: String
-  order: NftTransferConnectionOrderInput
-): NftTransferConnection
-```
-
-#### holders
-```graphql
-holders(
-  first: Int
-  after: String
-  last: Int
-  before: String
-  followedBy: Address
-): NftHolderConnection!
-```
-
-#### holdersFollowedByAddress
-```graphql
-holdersFollowedByAddress(
-  input: HoldersFollowedByAddressInput!
-): [NftHolder!]!
-```
-
-#### isHidden
-```graphql
-isHidden(
-  input: ByAddressInput!
-): Boolean!
-```
-
-### Type Definitions
-
-```graphql
-input NftTransferConnectionOrderInput {
-  orderBy: NftTransferSort!
-  orderDirection: OrderDirectionOption!
-}
-
 enum NftTransferSort {
   TIMESTAMP
 }
@@ -244,40 +204,6 @@ enum NftTransferSort {
 enum OrderDirectionOption {
   DESC
   ASC
-}
-
-input HoldersFollowedByAddressInput {
-  address: Address!
-}
-
-input ByAddressInput {
-  address: Address!
-}
-
-type SocialLink {
-  name: String!
-  label: String!
-  url: String!
-  logoUrl: String!
-}
-
-type NftMedias {
-  images: ImageConnection!
-  animations: AnimationConnection!
-  audios: AudioConnection!
-}
-
-type NftValueDenomination {
-  valueUsd: Float!
-  valueWithDenomination: Float!
-  denomination: NftDenomination!
-}
-
-type NftDenomination {
-  network: String!
-  address: String!
-  symbol: String!
-  imageUrl: String
 }
 ```
 

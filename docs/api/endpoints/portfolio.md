@@ -20,7 +20,7 @@ The `portfolio` query takes an array of `addresses` as input, with optional para
 - Portfolio totals and breakdowns
 - Claimables and debts
 
-## Basic Usage
+## Typical Usage
 
 ### Example Variables
 ```js
@@ -506,6 +506,5 @@ The portfolio query returns a nested structure that can include:
 2. Use network filters when you only need specific chains
 3. Consider caching responses based on the `updatedAt` timestamp
 4. Handle NFT valuations appropriately based on your use case
-5. Account for potential stale data in cached responses
 
 Remember that the portfolio query is highly flexible - you can request as much or as little data as needed for your specific use case.
