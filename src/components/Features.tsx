@@ -13,15 +13,15 @@ interface FeatureCardProps extends Feature {}
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, icon: Icon }) => (
   <a 
     href={href}
-    className="flex flex-col gap-4 p-4 rounded-2xl bg-[#181C1F] border border-[#32383D] hover:opacity-90 transition-opacity duration-200 h-full no-underline"
+    className="flex flex-col p-4 rounded-2xl bg-[#181C1F] border border-[#32383D] hover:opacity-90 transition-opacity duration-200 h-full no-underline"
   >
-    <div className="text-white">
-      <Icon className="w-6 h-6 mb-3" />
+    <div className="text-white mb-3">
+      <Icon className="w-6 h-6" />
     </div>
-    <h3 className="text-xl font-semibold text-white">
+    <h3 className="text-xl font-semibold text-white mb-1">
       {title}
     </h3>
-    <p className="text-base text-neutral-400">
+    <p className="text-base text-neutral-400 leading-normal">
       {description}
     </p>
   </a>
