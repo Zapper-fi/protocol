@@ -1,5 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
-import { useLogin, useLogout } from '@privy-io/react-auth';
+import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 
 const UPSERT_USER = gql`
   mutation UpsertApiClient($email: String!) {
@@ -12,6 +12,7 @@ const UPSERT_USER = gql`
 
 export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
   const [upsertUser] = useMutation(UPSERT_USER);
+  const { authenticated } = usePrivy();
   const { logout } = useLogout();
 
   const { login } = useLogin({
@@ -38,6 +39,7 @@ export function useSignIn({ onComplete }: { onComplete?: () => void } = {}) {
   });
 
   return {
+    authenticated,
     login,
     logout,
   };
