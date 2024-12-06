@@ -45,15 +45,8 @@ export const InterpretationEvent: React.FC = () => {
             augment them with contextual, and often off-chain, information.
           </p>
           <ButtonGroup>
-            <LinkButton
-              href="docs/interpretation/event-interpretation/guide/getting-started"
-              buttonCopy="Get Started"
-            />
-            <LinkButton
-              href="docs/interpretation/event-interpretation/overview"
-              buttonCopy="Learn More"
-              type="secondary"
-            />
+            <LinkButton href="docs/interpret/event-interpretation/guide/getting-started" buttonCopy="Get Started" />
+            <LinkButton href="docs/interpret/event-interpretation/overview" buttonCopy="Learn More" type="secondary" />
           </ButtonGroup>
         </div>
         <div

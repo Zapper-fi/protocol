@@ -51,12 +51,9 @@ export const InterpretationAppToken: React.FC = () => {
             tokens they are redeemable for.
           </p>
           <ButtonGroup>
+            <LinkButton href="docs/interpret/position-interpretation/guide/getting-started" buttonCopy="Get Started" />
             <LinkButton
-              href="docs/interpretation/position-interpretation/guide/getting-started"
-              buttonCopy="Get Started"
-            />
-            <LinkButton
-              href="docs/interpretation/position-interpretation/overview"
+              href="docs/interpret/position-interpretation/overview"
               buttonCopy="Learn More"
               type="secondary"
             />

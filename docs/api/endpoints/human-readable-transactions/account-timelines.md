@@ -99,7 +99,7 @@ If you want to surface tokens, NFTs, accounts, or other onchain items embedded w
 ---
 
 :::note
-Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/interpretation/overview).
+Textual description of each transaction is presented from the perspective of the signer. Events with descriptions such as "Did something with …" indicate that an interpreter for that type of onchain interaction has not yet been curated through [interpretation](/docs/interpret/overview).
 :::
 
 ---
