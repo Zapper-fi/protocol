@@ -12,8 +12,12 @@ Surfaces details about a single NFT with its metadata including the collection i
 
 
 ### `nftToken`
-
-The `nftToken` query takes a collection address, network, and token ID to return comprehensive information about a specific NFT.
+Takes `collectionAddress`, `network`, and `tokenId` as input. Returns detailed data about a specific NFT including:
+* Token metadata
+* Current ownership
+* Transfer history
+* Traits and rarity
+* Media assets
 
 ### Example Use Case: NFT Display
 

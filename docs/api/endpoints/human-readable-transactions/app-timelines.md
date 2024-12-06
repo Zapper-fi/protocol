@@ -13,6 +13,13 @@ Displays a timeline of transactions that happened in a particular onchain app vi
 
 
 ### `timelineForApp`
+Takes a `slug` parameter and optional `network` filters. Returns timeline of events for a specific application including:
+* App-specific transactions
+* Human-readable descriptions
+* Display items such as tokens, NFTs, accounts, and more.
+* Actor details
+
+### `timelineForApp`
 
 The `timelineForApp` query takes an app name in the form of a `slug`. It returns a `processedDescription` or `description`. If returning `description`, `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
 

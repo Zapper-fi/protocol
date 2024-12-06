@@ -11,11 +11,13 @@ import Link from '@docusaurus/Link';
 
 Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts. Can be useful for building an activity feed of onchain transactions or surfacing specific transaction details.
 
-
 ### `timelineEvent`
-
-The `timelineEvent` query takes a `transactionHash` and `network`. It returns a descriptive and human-readable summary of the transaction along with `descriptionDisplayItems` such as tokens, NFTs, or accounts involved.
-
+Takes `transactionHash` and `network` as input. Returns detailed information about a specific transaction including:
+* Transaction details
+* Human-readable description
+* Display items such as tokens, NFTs, accounts, and more.
+* Related app information
+* Actor details
 
 ### Example Use Case: Transaction Details
 

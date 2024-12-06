@@ -12,8 +12,13 @@ Get comprehensive onchain prices current and historical, for any token that has 
 
 
 ### `fungibleToken`
+Takes an `address` and `network` as input. Returns detailed token information including:
+* Real-time onchain sourced price data
+* Price history with customizable timeframes
+* Supports multiple price currencies (default: USD)
+* Total supply and holder stats
+* Tracks liquidity and market cap data
 
-The `fungibleToken` query returns detailed information about a token including its onchain market data and price history. This is particularly useful for getting accurate, onchain-sourced pricing information, including price ticks for price graphs.
 
 ### Example Use Case: Token Price Chart
 
@@ -228,17 +233,17 @@ enum Currency {
 }
 ```
 
-### Notes
-- Provides real-time onchain price data
-- Includes price history with customizable timeframes
-- Offers security and credibility metrics
-- Supports multiple price currencies (default: USD)
-- Tracks liquidity and market cap data
-- Includes token holders statistics when available
 
 ### `fungibleTokensByAddresses`
+Takes an array of token inputs (address and network pairs). Returns an array of token data including:
+* Token details for multiple tokens
+* Real-time onchain sourced price data
+* Price history with customizable timeframes
+* Supports multiple price currencies (default: USD)
+* Total supply and holder stats
+* Tracks liquidity and market cap data
 
-The `fungibleTokensByAddresses` query returns detailed information about multiple tokens in a single request, including their onchain market data and price history.
+
 
 ### Example Use Case: Multi-Token Dashboard
 

@@ -12,8 +12,12 @@ Get information about NFT collections owned by specific wallet addresses.
 
 
 ### `nftUsersCollections`
-
-The `nftUsersCollections` query takes an array of `owners` addresses and returns data about their NFT collections with support for various filtering options.
+Takes an array of `addresses` as input, with optional parameters for `network`, `standard`, and `minCollectionValueUsd`. It returns aggregated NFT collection data including:
+* Collections owned across addresses
+* Floor prices and valuations
+* Collection metadata and stats
+* Owner counts and volume
+* Social links and images
 
 ### Example Use Case: User's NFT Portfolio
 

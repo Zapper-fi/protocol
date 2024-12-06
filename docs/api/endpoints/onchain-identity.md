@@ -12,8 +12,11 @@ Enrich your app by surfacing onchain identity such as avatars, ENS, Farcaster, a
 
 
 ### `accounts`
-
-The `accounts` query takes one or more `addresses` in input, as an array. It returns fields such as `displayName`, `ensRecord`, `farcasterProfile`, `lensProfile`, and other identity primitives.
+Takes an array of `addresses` as input. Returns account information including:
+* Display name and avatar
+* ENS records
+* Social profiles (Lens, Farcaster)
+* Account metadata
 
 ### Example Use Case: Social Profile
 

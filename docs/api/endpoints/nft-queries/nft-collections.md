@@ -11,9 +11,14 @@ import Link from '@docusaurus/Link';
 Surfaces information about any ERC721 or ERC1155 NFT collection.
 
 
-### `NftCollections`
 
-Let's say you want to surface some important details about a specific NFT collection. Start by passing `address` for the collection address and `network` for the chain where the NFTs exist. Then return details such as `name`, `nftStandard`, `floorprice`,`topOfferPrice`, as well as the `medias` object to return the `url` for the collection `logo`.
+### `nftCollections`
+Takes an array of `collections` input containing address and network information. Returns detailed collection data including:
+* Collection metadata
+* Floor price and statistics
+* Token standards and supply
+* Social links and images
+* Trait information
 
 ### Example Use Case: Collection Details
 
