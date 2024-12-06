@@ -15,7 +15,7 @@ Here are the three data source you will use most frequently.
 
 :::tip 
 
-Here is a [video example](/docs/learning-center#event-interpretation) of how to extract an account address
+Here is a [video example](/docs/interpretation/learning-center#event-interpretation) of how to extract an account address
 
 :::
 
