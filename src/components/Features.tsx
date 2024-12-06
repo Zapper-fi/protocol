@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
+import { ListChecks, UserCircle, PieChart, Coins } from 'lucide-react';
 
 interface Feature {
   title: string;
@@ -32,25 +32,25 @@ const features: Feature[] = [
     title: "Human-Readable Transactions",
     description: "Simplify onchain transactions with human-friendly descriptions.",
     href: "/docs/api/endpoints/human-readable-transactions/timeline-event",
-    icon: RiListCheck2
+    icon: ListChecks
   },
   {
     title: "Onchain Identity",
     description: "Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.",
     href: "/docs/api/endpoints/onchain-identity",
-    icon: RiPassportLine
+    icon: UserCircle
   },
   {
     title: "Portfolio Data",
     description: "A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.",
     href: "/docs/api/endpoints/portfolio/claimables",
-    icon: RiDonutChartFill
+    icon: PieChart
   },
   {
     title: "Onchain Prices",
     description: "A price for every token that has an onchain market, including historical data.",
     href: "/docs/api/endpoints/onchain-prices",
-    icon: RiCoinsLine
+    icon: Coins
   }
 ];
 
