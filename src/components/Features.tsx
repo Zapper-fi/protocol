@@ -13,7 +13,7 @@ interface FeatureCardProps extends Feature {}
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, icon: Icon }) => (
   <a 
     href={href}
-    className="flex flex-col p-4 rounded-2xl bg-[#181C1F] border border-[#32383D] hover:opacity-90 transition-opacity duration-200 h-full no-underline"
+    className="flex flex-col p-4 rounded-2xl bg-[#181C1F] border border-[#32383D] hover:opacity-90 transition-opacity duration-200 h-full no-underline shadow-lg shadow-black/10"
   >
     <div className="text-white mb-3">
       <Icon className="w-6 h-6" />
@@ -56,15 +56,10 @@ const features: Feature[] = [
 
 export function Features() {
   return (
-    <div className="py-12">
-      <h2 className="text-4xl font-bold text-white mb-12">
-        What can I get?
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto">
-        {features.map((feature, index) => (
-          <FeatureCard key={index} {...feature} />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {features.map((feature, index) => (
+        <FeatureCard key={index} {...feature} />
+      ))}
     </div>
   );
 }
