@@ -24,6 +24,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, ico
 );
 
 const features: Feature[] = [
+  
+  {
+    title: "Portfolio Data",
+    description: "A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.",
+    href: "/docs/api/endpoints/portfolio",
+    icon: PieChart
+  },
   {
     title: 'Human-Readable Transactions',
     description: 'Simplify onchain transactions with human-friendly descriptions.',
@@ -35,12 +42,6 @@ const features: Feature[] = [
     description: 'Surface identity primitives such as avatars, ENS, Farcaster, Lens and more.',
     href: '/docs/api/endpoints/onchain-identity',
     icon: RiPassportLine,
-  },
-  {
-    title: 'Portfolio Data',
-    description: 'A set of portfolio queries to fetch Tokens, NFTs, App Balances, Portfolio Totals, and Claimables.',
-    href: '/docs/api/endpoints/portfolio/claimables',
-    icon: RiDonutChartFill,
   },
   {
     title: 'Onchain Prices',
