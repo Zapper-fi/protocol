@@ -43,11 +43,13 @@ export function Profile() {
 
   return (
     <div className="space-y-4">
-      <h3>API Key</h3>
+      <h4>API Key</h4>
 
       <div>
         <div className="flex gap-2">
-          <code className="flex-1 text-base font-mono py-2 px-4 rounded">{apiKey}</code>
+          <code className="flex-1 text-base font-mono py-1 px-2 rounded" style={{ fontSize: '14px' }}>
+            {apiKey}
+          </code>
           <div className="relative">
             <Button type="button" onClick={handleCopyApiKey} className="w-10 grid place-content-center">
               <Copy size={18} />

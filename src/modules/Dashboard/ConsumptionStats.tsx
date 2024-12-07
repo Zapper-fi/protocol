@@ -194,8 +194,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <h4>Consumption Amount & Cost</h4>
-          <Card>
+          <Card style={{ width: '100%' }}>
             {consumptionLoading ? (
               <p>Loading...</p>
             ) : consumptionError ? (
@@ -209,7 +208,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h4>Endpoints Queried</h4>
+          <h3>Endpoints Queried</h3>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>

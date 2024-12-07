@@ -170,85 +170,98 @@ export function BuyCredits() {
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 flex flex-col gap-2">
+      <div className="flex  gap-4">
+        <div className="flex flex-col" style={{ flexGrow: 1 }}>
+          <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
+            Credit balance
+            {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
+          </span>
+          <span
+            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}
+            style={{ fontSize: '18px' }}
+          >
+            {displayV2Points}
+          </span>
+        </div>
+        {Number(apiV1PointsRemaining) > 0 && (
+          <div className="flex flex-col" style={{ flexGrow: 1 }}>
+            <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
+              Legacy Credits
+              <InfoIcon message="These credits are currently available for use with the legacy REST API. To migrate previously purchased credits to the new GraphQL API, please contact us at api@zapper.xyz." />
+            </span>
+            <span className="font-bold" style={{ fontSize: '18px' }}>
+              {apiV1PointsRemaining}
+            </span>
+          </div>
+        )}
+      </div>
+      <hr />
       <div className="flex justify-between items-start">
         <div className="space-y-1">
-          <h3>Buy Credits</h3>
+          <h4 style={{ marginBottom: '0px' }}>Buy Credits</h4>
           <div className="text-left">
-            <a href="/docs/api-intro/pricing" className="text-primary-default hover:underline">
+            <a
+              href="/docs/api-intro/pricing"
+              className="text-primary-default hover:underline"
+              style={{ fontSize: '14px' }}
+            >
               See how credit costs are calculated
             </a>
           </div>
         </div>
-        <div className="text-right">
-          <p className="flex items-center justify-end gap-1">
-            Credit balance:
-            <span className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}>
-              {displayV2Points}
-            </span>
-            {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
-          </p>
-          {Number(apiV1PointsRemaining) > 0 && (
-            <p className="flex items-center justify-end gap-1">
-              Legacy REST API credits: <span className="font-bold">{apiV1PointsRemaining}</span>
-              <InfoIcon message="These credits are currently available for use with the legacy REST API. To migrate previously purchased credits to the new GraphQL API, please contact us at api@zapper.xyz." />
-            </p>
-          )}
-        </div>
       </div>
 
-      <Card>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2">
-            <div className="space-y-2">
-              <label htmlFor="points-input" className="text-sm font-medium">
-                Credit Amount
-              </label>
-              <div className="h-10 flex items-center">
-                <div className="relative w-[250px]">
-                  <input
-                    id="points-input"
-                    type="text"
-                    value={displayPoints}
-                    onChange={handlePointsChange}
-                    onBlur={handleBlur}
-                    style={{
-                      border: '1px solid grey',
-                      borderRadius: '8px',
-                      padding: '8px 12px',
-                      width: '100%',
-                    }}
-                    placeholder="Enter credits amount"
-                  />
-                  {errorMessage && (
-                    <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                      <span className="text-red-500 text-sm">{errorMessage}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="cost-display" className="text-sm font-medium">
-                Cost
-              </label>
-              <div className="h-10 flex items-center">
-                <div
-                  id="cost-display"
-                  className="font-extrabold text-primary-default bg-transparent"
-                  aria-label={`Cost: $${formatPrice(price)}`}
-                >
-                  USD ${formatPrice(price)}
-                </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label htmlFor="points-input" className="text-sm font-medium">
+              Credit Amount
+            </label>
+            <div className="h-10 flex items-center">
+              <div className="relative w-[250px]">
+                <input
+                  id="points-input"
+                  type="text"
+                  value={displayPoints}
+                  onChange={handlePointsChange}
+                  onBlur={handleBlur}
+                  style={{
+                    border: '1px solid grey',
+                    borderRadius: '8px',
+                    padding: '8px 12px',
+                    width: '100%',
+                  }}
+                  placeholder="Enter credits amount"
+                />
+                {errorMessage && (
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <span className="text-red-500 text-sm">{errorMessage}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
+          <div className="space-y-2">
+            <label htmlFor="cost-display" className="text-sm font-medium">
+              Cost
+            </label>
+            <div className="h-10 flex items-center">
+              <div
+                id="cost-display"
+                className="font-extrabold text-primary-default bg-transparent"
+                aria-label={`Cost: $${formatPrice(price)}`}
+              >
+                USD ${formatPrice(price)}
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <Button type="submit" variant="primary" disabled={disabled} className="w-full">
-            <span className="font-extrabold">Buy for USD ${formatPrice(price)}</span>
-          </Button>
-        </form>
-      </Card>
+        <Button type="submit" variant="primary" disabled={disabled} className="w-full">
+          <span className="font-extrabold">Buy for USD ${formatPrice(price)}</span>
+        </Button>
+      </form>
     </div>
   );
 }
