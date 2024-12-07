@@ -8,90 +8,67 @@ import Link from '@docusaurus/Link';
 
 # Pricing
 
-The Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits, and these credits are deducted from the accounts credit balance.
+## Overview
+The Zapper API uses a credit-based system where each API call consumes a specific number of credits from your balance. Our flexible pricing model allows you to purchase credits using various cryptocurrencies and offers volume-based discounts for larger purchases.
 
----
+## Credit System Basics
+- **Exchange Rate**: 1,000 Credits = $1 USD
+- **Purchase Options**: Pay with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
+- **Free Tier**: 5,000 credits available to all new API clients
+- **Credit Balance**: Monitor usage and purchase credits through your [Dashboard](/dashboard)
 
-### Buying Credits
+## Query Pricing Structure
 
-Credits can be purchased onchain with any wallet. Payment is supported in over a hundred different tokens including ETH, MATIC, USDC, USDT, DAI, and much more. Once purchased, credits can be spent for API usage. 
+### High-Value Queries (4 Credits)
+| Query | Use Case | Description |
+|-------|----------|-------------|
+| `fungibleToken` | Single token analysis | Get comprehensive token data including market metrics and price history |
+| `fungibleTokensByAddresses` | Bulk token analysis | Retrieve data for multiple tokens in one request |
 
-The rate for purchasing credits is **$1 USD = 1,000 Credits**.
+### Portfolio Queries (3 Credits)
+| Query | Features Included | Description |
+|-------|------------------|-------------|
+| `portfolio` | • App Balances<br>• NFT Balances<br>• Token Balances<br>• Claimables<br>• Portfolio Totals | Complete portfolio analysis in a single query |
 
+### Standard Queries (2 Credits)
+| Category | Queries | Description |
+|----------|---------|-------------|
+| Transaction Data | • `timelineEvent`<br>• `timelineForApp`<br>• `accountsTimeline` | Historical transaction analysis and activity tracking |
+| Identity & Social | • `accounts` | ENS, Farcaster, and Lens identity resolution |
+| NFT Data | • `nftNetWorth`<br>• `nftUsersCollections`<br>• `nftUsersTokens`<br>• `nftToken`<br>• `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
 
-If you run out of credits and have used your 5,000 credit free tier, then you will need to purchase more credits in order to continue using the API.
+## Volume Discounts
 
-Clients can track query usage and credits over time and purchase additional credits on the [Dashboard](/dashboard).
+| Tier | Credit Volume | Price per 1k Credits | Savings |
+|------|---------------|---------------------|---------|
+| Standard | 0-15M | $1.00 | - |
+| Growth | 15M-50M | $0.80 | 20% |
+| Enterprise | 50M+ | $0.70 | 30% |
 
-### Query Prices
+### Volume Pricing Example
+For a 60M credit purchase:
+1. First 15M credits @ $1.00/1k = $15,000
+2. Next 35M credits @ $0.80/1k = $28,000
+3. Final 10M credits @ $0.70/1k = $7,000
+Total cost: $50,000 (vs $60,000 at standard pricing)
 
-#### Onchain Prices: 4 Credits
+## Important Notes
 
-| Query | Description |
-| ----------- | ----------- |
-| [`fungibleToken`](/docs/api/endpoints/onchain-prices#fungibletoken)  | Returns detailed information about a token including its onchain market data and price history.|
-| [`fungibleTokensByAddresses`](/docs/api/endpoints/onchain-prices#fungibletokensbyaddresses)  | Returns detailed information about multiple tokens in a single request, including their onchain market data and price history.|
+### Rate Limits
+- Default: 30 requests per minute
+- Need higher limits? Contact api@zapper.xyz
 
+### Multi-Address Queries
+- Cost = (Query Base Price) × (Number of Addresses)
+- Example: Portfolio query for 3 addresses = 9 credits
 
-#### Portfolio Data: 3 Credits
+### Getting Started
+1. Access your free 5,000 credits
+2. Test queries in our [Sandbox](/docs/api/sandbox) (doesn't consume credits)
+3. Purchase additional credits through your [Dashboard](/dashboard)
 
+<LinkButton href="/api" type="primary" buttonCopy="Get Started" />
 
-| Query | Description |
-| ----------- | ----------- |
-| `portfolio` | Main portfolio query that returns comprehensive balance data. Available fields include: [`appBalances`](/docs/api/endpoints/portfolio) for application-specific balances, [`nftBalances`](/docs/api/endpoints/portfolio) for NFT valuations, [`tokenBalances`](/docs/api/endpoints/portfolio) for token holdings, [`claimables`](/docs/api/endpoints/portfolio) for available token claims, and [`totals`](/docs/api/endpoints/portfolio) for portfolio aggregations. |
-
-:::tip
-You can combine as many of the portfolio fields into a single `portfolio` query for the same price of **3 credits**.
-:::
-
-#### Other Queries: 2 Credits
-
-| Field | Description |
-| ----------- | ----------- |
-| [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event)  | Returns the details of a single onchain transaction. |
-| [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) | Returns a timeline of transactions that happened in a particular onchain app via their smart contracts. |
-| [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Returns the onchain activity of a specific address(s).|
-| [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | Returns onchain identity primitives such as ENS, Farcaster, Lens and more. |
-| `nftNetWorth` | Returns the total net worth of NFTs for given addresses and network. |
-| `nftUsersCollections` | Returns paginated NFT collections owned by given addresses. Includes collection details, floor prices, and valuation data. |
-| `nftUsersTokens` | Returns paginated NFT tokens owned by given addresses. Includes individual token metadata and valuations. |
-| `nftToken` | Returns detailed information about a specific NFT token given its collection address, network, and token ID. |
-| `nftCollections` | Returns detailed information about specific NFT collections given their addresses and networks. |
-
-
-:::info
-Each address used in a query counts as a query. If you bundle multiple addresses into a single call the cost = query price multiplied by the # of addresses.
-:::
-
-### Credit Pricing Tiers
-
-We offer volume-based discounts through our tiered pricing system:
-
-| Tier | Credit Range | Price per Credit | Price per 1,000 Credits | Discount |
-|------|--------------|------------------|------------------------|----------|
-| 1 | 0-15,000,000 | $0.001 | $1.00 | - |
-| 2 | 15,000,001-50,000,000 | $0.0008 | $0.80 | 20% |
-| 3 | 50,000,001+ | $0.0007 | $0.70 | 30% |
-
-For example, purchasing 60,000,000 credits would cost:
-- First 15,000,000 credits at $0.001 each
-- Next 35,000,000 credits at $0.0008 each
-- Final 10,000,000 credits at $0.0007 each
-
-### Free Tier
-
-All API clients can use up to 5,000 credits for free. This gives clients at least 1,500 queries without having to purchase credits and can be a great way to try the API.
-
-The GraphQL [Sandbox](/docs/api/sandbox) can also be used to test queries in-browser without using the free tier.
-
-
-Note that it is against the Zapper API [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf) to create multiple API keys with the goal of accumulating free credits.
-
-
-<LinkButton href="/dashboard" type="primary" buttonCopy="Get Started" />
-
----
-
-:::note
-API calls are initially rate limited at **30 requests per minute**. Please contact us at api@zapper.xyz to increase your limit.
+:::warning Terms of Service
+Creating multiple API keys to accumulate free credits violates our [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf).
 :::
