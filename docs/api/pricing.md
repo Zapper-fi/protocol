@@ -13,37 +13,37 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 
 ## Credit System Basics
 - **Exchange Rate**: 1,000 Credits = $1 USD
-- **Purchase Options**: Pay onchain with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
+- **Purchase Options**: Pay with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
 - **Free Tier**: 5,000 credits available to all new API clients
 - **Credit Balance**: Monitor usage and purchase credits through your [Dashboard](/dashboard)
 
 ## Query Pricing Structure
 
-### High-Value Queries (4 Credits)
+### Onchain Prices (4 Credits)
 | Query | Use Case | Description |
 |-------|----------|-------------|
-| `fungibleToken` | Single token data | Get comprehensive token data including market metrics and price history |
-| `fungibleTokensByAddresses` | Multiple token data | Retrieve data for multiple tokens in one request |
+| [`fungibleToken`](/docs/api/endpoints/onchain-prices#fungibletoken) | Single token data | Get comprehensive token data including market metrics and price history |
+| [`fungibleTokensByAddresses`](/docs/api/endpoints/onchain-prices#fungibletokensbyaddresses) | Multiple token data | Retrieve data for multiple tokens in one request |
 
 ### Portfolio Queries (3 Credits)
 | Query | Features Included | Description |
 |-------|------------------|-------------|
-| `portfolio` | • App Balances<br>• NFT Balances<br>• Token Balances<br>• Claimables<br>• Portfolio Totals | Onchain portfolio's in a single query |
+| [`portfolio`](/docs/api/endpoints/portfolio) | • [`appBalances`](/docs/api/endpoints/portfolio) • [`nftBalances`](/docs/api/endpoints/portfolio) • [`tokenBalances`](/docs/api/endpoints/portfolio) • [`claimables`](/docs/api/endpoints/portfolio) • [`totals`](/docs/api/endpoints/portfolio) | Onchain portfolio's in a single query |
 
-### Standard Queries (2 Credits)
+### Other Queries (2 Credits)
 | Category | Queries | Description |
 |----------|---------|-------------|
-| Transaction Data | • `timelineEvent`<br>• `timelineForApp`<br>• `accountsTimeline` | Human-readable transactions and activity |
-| Identity & Social | • `accounts` | ENS, Farcaster, and Lens identity resolution |
-| NFT Data | • `nftNetWorth`<br>• `nftUsersCollections`<br>• `nftUsersTokens`<br>• `nftToken`<br>• `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
+| Transaction Data | • [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) • [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) • [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Human-readable transactions and activity |
+| Identity & Social | • [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
+| NFT Data | • `nftNetWorth` • `nftUsersCollections` • `nftUsersTokens` • `nftToken` • `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
 
 ## Volume Discounts
 
 | Tier | Credit Volume | Price per 1k Credits | Savings |
 |------|---------------|---------------------|---------|
-| Standard | 0-15M | $1.00 | - |
-| Growth | 15M-50M | $0.80 | 20% |
-| Enterprise | 50M+ | $0.70 | 30% |
+| 1 | 0-15M | $1.00 | - |
+| 2 | 15M-50M | $0.80 | 20% |
+| 3 | 50M+ | $0.70 | 30% |
 
 ### Volume Pricing Example
 For a 60M credit purchase:
@@ -66,6 +66,7 @@ Total cost: $50,000 (vs $60,000 at standard pricing)
 1. Access your free 5,000 credits
 2. Test queries in our [Sandbox](/docs/api/sandbox) (doesn't consume credits)
 3. Purchase additional credits through your [Dashboard](/dashboard)
+
 
 <LinkButton href="/api" type="primary" buttonCopy="Get Started" />
 
