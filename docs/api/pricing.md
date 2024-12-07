@@ -22,18 +22,18 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 ### High-Value Queries (4 Credits)
 | Query | Use Case | Description |
 |-------|----------|-------------|
-| `fungibleToken` | Single token analysis | Get comprehensive token data including market metrics and price history |
-| `fungibleTokensByAddresses` | Bulk token analysis | Retrieve data for multiple tokens in one request |
+| `fungibleToken` | Single token data | Get comprehensive token data including market metrics and price history |
+| `fungibleTokensByAddresses` | Multiple token data | Retrieve data for multiple tokens in one request |
 
 ### Portfolio Queries (3 Credits)
 | Query | Features Included | Description |
 |-------|------------------|-------------|
-| `portfolio` | • App Balances<br>• NFT Balances<br>• Token Balances<br>• Claimables<br>• Portfolio Totals | Complete portfolio analysis in a single query |
+| `portfolio` | • App Balances<br>• NFT Balances<br>• Token Balances<br>• Claimables<br>• Portfolio Totals | Onchain portfolio's in a single query |
 
 ### Standard Queries (2 Credits)
 | Category | Queries | Description |
 |----------|---------|-------------|
-| Transaction Data | • `timelineEvent`<br>• `timelineForApp`<br>• `accountsTimeline` | Historical transaction analysis and activity tracking |
+| Transaction Data | • `timelineEvent`<br>• `timelineForApp`<br>• `accountsTimeline` | Human-readable transactions and activity |
 | Identity & Social | • `accounts` | ENS, Farcaster, and Lens identity resolution |
 | NFT Data | • `nftNetWorth`<br>• `nftUsersCollections`<br>• `nftUsersTokens`<br>• `nftToken`<br>• `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
 
