@@ -13,7 +13,7 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 
 ## Credit System Basics
 - **Exchange Rate**: 1,000 Credits = $1 USD
-- **Purchase Options**: Pay with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
+- **Purchase Options**: Pay onchain with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
 - **Free Tier**: 5,000 credits available to all new API clients
 - **Credit Balance**: Monitor usage and purchase credits through your [Dashboard](/dashboard)
 
