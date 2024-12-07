@@ -337,6 +337,28 @@ hr {
   }
 }
 
+.chart__tabs {
+  border-radius: 10px;
+  border: 1px solid var(--ifm-border-color);
+  width: fit-content;
+}
+
+.chart__tabs__button {
+  font-family: "Inter", Arial, sans-serif;
+  border-radius: 8px;
+  font-weight: 500;
+  background-color: var(--ifm-card-background);
+
+  &.active {
+    background-color: var(--ifm-input-background);
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: var(--ifm-input-background);
+  }
+}
+
 .button {
   &--primary {
     background-color: #784ffe;
