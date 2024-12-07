@@ -1,0 +1,206 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { CodeImage } from '@site/src/components/CodeImage'
+
+
+<TabGroup>
+  <TabList className="md:-mb-10 md:h-10 whitespace-nowrap overflow-x-auto">
+    <Tab className="zapper-tab text-lg">Transactions</Tab>
+    <Tab className="zapper-tab text-lg">Account Timelines</Tab>
+    <Tab className="zapper-tab text-lg">App Timelines</Tab>
+  </TabList>
+
+  <TabPanels>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Transactions made simple
+
+        Summarizes onchain transactions with human-readable descriptions. Ideal for activity feeds or detailed transaction views. [Learn More](/docs/api/endpoints/human-readable-transactions/timeline-event#timelineevent)
+
+        Features:
+        - Human-readable interpretations of complex contract interactions
+        - Parse items involved in the transaction for UI rendering (tokens, NFTs, accounts, apps, etc.) 
+        - Coverage across 35+ chains
+      </div>
+
+      <div className="basis-1/2 min-w-0">
+        <CodeImage src="/img/code/HRT_SingleTransaction.png">
+{`
+query {
+  timelineEvent(transactionHash: "0x...", network: ETHEREUM_MAINNET) {
+    key
+    network
+    source
+    eventType
+    timestamp
+    interpretation {
+      description
+      descriptionDisplayItems
+      processedDescription
+      inboundAttachments {
+        ... on TokenDisplayItem {
+          type
+          network
+          tokenAddress
+          amountRaw
+          token {
+            symbol
+            decimals
+          }
+        }
+        ... on NFTDisplayItem {
+          type
+          network
+          collectionAddress
+          tokenId
+          quantity
+        }
+      }
+      outboundAttachments {
+        ... on TokenDisplayItem {
+          type
+          network
+          tokenAddress
+          amountRaw
+          token {
+            symbol
+            decimals
+          }
+        }
+      }
+    }
+    transaction {
+      hash
+      from
+      to
+      value
+      gasPrice
+      gas
+      transactionFee
+    }
+  }
+}`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## Wallet Activity at a Glance
+
+        Presents the onchain activity of a specific address(s) in a simple descriptive summary with
+        references to items involved in the transaction such as tokens, NFTs, and accounts. [Learn More](/docs/api/human-readable-transactions/account-timelines)
+        Features:
+        - Activity history across 35+ chains in real-time
+        - Filterable by Receieved or Submitted
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/HRT_AccountTimeline.png">
+{`
+query {
+  accountsTimeline(
+    addresses: ["0x..."]
+    first: 10
+    spamFilter: true
+  ) {
+    edges {
+      node {
+        key
+        timestamp
+        eventType
+        interpretation {
+          description
+          processedDescription
+          inboundAttachments {
+            ... on TokenDisplayItem {
+              type
+              tokenAddress
+              amountRaw
+            }
+            ... on NFTDisplayItem {
+              type
+              collectionAddress
+              tokenId
+            }
+          }
+        }
+        transaction {
+          hash
+          network
+          value
+          transactionFee
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2 md:mt-14">
+        ## App Activity Feeds
+
+        Displays a timeline of transactions that happened in a particular onchain app via their smart contracts. [Learn More](/docs/api/human-readable-transactions/app-timelines)
+
+        Features:
+        - Support for every indexed onchain app
+        - Spam filtering for clean, relevant activity feeds
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/HRT_AppTimeline.png">
+{`
+query {
+  timelineForApp(
+    slug: "morpho"
+    first: 10
+    spamFilter: true
+  ) {
+    edges {
+      node {
+        key
+        timestamp
+        eventType
+        interpretation {
+          description
+          processedDescription
+          inboundAttachments {
+            ... on TokenDisplayItem {
+              type
+              tokenAddress
+              amountRaw
+            }
+            ... on NFTDisplayItem {
+              type
+              collectionAddress
+              tokenId
+            }
+          }
+        }
+        app {
+          slug
+          name
+          imgUrl
+        }
+        transaction {
+          hash
+          network
+          value
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>

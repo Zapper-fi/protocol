@@ -201,11 +201,7 @@ export function BuyCredits() {
         <div className="space-y-1">
           <h4 style={{ marginBottom: '0px' }}>Buy Credits</h4>
           <div className="text-left">
-            <a
-              href="/docs/api-intro/pricing"
-              className="text-primary-default hover:underline"
-              style={{ fontSize: '14px' }}
-            >
+            <a href="/docs/api/pricing" className="text-primary-default hover:underline" style={{ fontSize: '14px' }}>
               See how credit costs are calculated
             </a>
           </div>

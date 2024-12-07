@@ -1,0 +1,161 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri'
+import TabPortfolioTracking from './_tab-portfolio-tracking.mdx'
+import TabHumanReadable from './_tab-human-readable.mdx'
+import { CodeImage } from '@site/src/components/CodeImage'
+
+
+<TabGroup>
+  {
+  <TabList className="flex flex-wrap gap-4 justify-center py-6">
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiDonutChartFill /> Portfolio Tracking
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiListCheck2 /> Human Readable-Transactions
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiPassportLine />
+        Onchain Identity
+      </span>
+    </Tab>
+    <Tab className="zapper-tab text-xl">
+      <span className="flex items-center gap-2">
+        <RiCoinsLine />
+        Onchain Prices
+      </span>
+      </Tab>
+  </TabList>
+  }
+  <TabPanels className="border border-border p-8 border-solid rounded-3xl">
+    <TabPanel>
+      <TabPortfolioTracking />
+    </TabPanel>
+
+    <TabPanel>
+      <TabHumanReadable />
+    </TabPanel>
+
+    <TabPanel className="lg:flex gap-8">
+      <div className="basis-1/2">
+        ## Build with Onchain Identity
+
+        Enrich your app by surfacing onchain social identity such as avatars, ENS, Farcaster, Lens and more. [Learn More](/docs/api/endpoints/onchain-identity)
+
+        Features:
+        - Cross-platform identity resolution (ENS, Lens, Farcaster)
+        - Rich metadata data including avatars, PFPs, descriptions and social links.
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/OnchainIdentity.png">
+{`
+query {
+  accounts(addresses: ["0x..."]) {
+    address
+    displayName {
+      value
+      source
+    }
+    description {
+      value
+      source
+    }
+    socialLinks {
+      name
+      url
+      source
+    }
+    ensRecord {
+      name
+      metadata {
+        avatar {
+          ... on AvatarUrl {
+            url
+          }
+        }
+        description
+        email
+        twitter
+        github
+        website
+      }
+    }
+    farcasterProfile {
+      username
+      metadata {
+        displayName
+        description
+        warpcast
+        imageUrl
+      }
+    }
+    lensProfile {
+      handle
+      metadata {
+        name
+        description
+        imageUrl
+      }
+    }
+  }
+}
+`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+
+    <TabPanel className="lg:flex gap-8">
+     <div className="basis-1/2">
+        ## A price for every token, from memecoins to blue chips
+
+        Onchain token prices, current and historical, for any token with an onchain market. [Learn More](/docs/api/endpoints/onchain-prices)
+
+        Includes:
+        - Real-time onchain sourced price data
+        - Price history with customizable timeframes
+        - Automatically detects newly deployed price sources
+        - Tracks liquidity, market cap, holders, and supply
+      </div>
+
+      <div className="basis-1/2">
+        <CodeImage src="/img/code/OnchainPrices.png">
+{`
+query {
+  fungibleToken(
+    address: "0x..."
+    network: ETHEREUM_MAINNET
+  ) {
+    symbol
+    name
+    decimals
+    onchainMarketData {
+      price
+      marketCap
+      totalLiquidity
+      priceChange24h
+      priceTicks(
+        currency: USD
+        timeFrame: DAY
+      ) {
+        timestamp
+        median
+        high
+        low
+        open
+        close
+      }
+    }
+  }
+}
+`}
+        </CodeImage>
+      </div>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>
