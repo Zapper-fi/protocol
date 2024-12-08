@@ -26,20 +26,20 @@ const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: I
 export const QuickLinks: React.FC = () => {
   const links = [
     {
-      title: 'API Documentation',
-      description: 'Explore our comprehensive API guides and references',
+      title: 'Documentation',
+      description: 'Explore step-by-step guides and references',
       href: '/docs',
       icon: BookOpen,
     },
     {
       title: 'Sandbox',
-      description: 'Test your integration in a safe environment',
+      description: 'Test your queries and explore ',
       href: '/sandbox',
       icon: Beaker,
     },
     {
       title: 'Pricing',
-      description: 'View our pricing plans and credit packages',
+      description: 'View pricing plans and credit discounts',
       href: '/pricing',
       icon: CreditCard,
     },
