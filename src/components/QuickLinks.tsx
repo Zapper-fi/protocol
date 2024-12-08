@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Flask, CreditCard } from 'lucide-react';
+import { BookOpen, Beaker, CreditCard } from 'lucide-react';
 
 interface QuickLinkProps {
   title: string;
@@ -37,7 +37,7 @@ export const QuickLinks: React.FC = () => {
       title: 'Sandbox',
       description: 'Test your queries and explore',
       href: '/docs/api/sandbox',
-      icon: Flask,
+      icon: Beaker,
     },
     {
       title: 'Pricing',
