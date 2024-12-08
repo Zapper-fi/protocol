@@ -69,7 +69,6 @@ Total cost: $50,000 (vs $60,000 at standard pricing)
 3. Purchase additional credits through your [Dashboard](/dashboard)
 
 
-<LinkButton href="/docs/api" type="primary" buttonCopy="Get Started" />
 
 :::warning Terms of Service
 Creating multiple API keys to accumulate free credits violates our [Terms of Service](https://zapper.xyz/docs/api-terms-of-use.pdf).
