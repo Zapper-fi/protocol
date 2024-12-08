@@ -11,10 +11,12 @@ interface QuickLinkProps {
 const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon }) => (
   <a
     href={href}
-    className="flex flex-col p-4 rounded-lg bg-card border border-border hover:opacity-90 transition-opacity duration-200 mb-3 text-inherit hover:no-underline"
+    className="flex flex-col p-4 rounded-lg bg-card border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-3 text-inherit hover:no-underline"
   >
-    <div className="flex items-center gap-3">
-      <Icon className="w-6 h-6" />
+    <div className="flex items-start gap-3">
+      <div className="pt-1">
+        <Icon className="w-6 h-6" />
+      </div>
       <div>
         <h3 className="text-base font-semibold mb-1">{title}</h3>
         <p className="text-sm text-neutral-400 leading-normal">{description}</p>
