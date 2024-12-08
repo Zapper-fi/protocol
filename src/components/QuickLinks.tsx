@@ -11,7 +11,7 @@ interface QuickLinkProps {
 const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon }) => (
   <a
     href={href}
-    className="flex flex-col p-4 rounded-lg bg-card border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-3 text-inherit hover:no-underline"
+    className="flex flex-col p-4 rounded-lg bg-card border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-2 text-inherit hover:no-underline"
   >
     <div className="flex items-start gap-3">
       <div className="pt-1">
@@ -30,19 +30,19 @@ export const QuickLinks: React.FC = () => {
     {
       title: 'Documentation',
       description: 'Explore step-by-step guides and references',
-      href: '/docs',
+      href: '/docs/api',
       icon: BookOpen,
     },
     {
       title: 'Sandbox',
       description: 'Test your queries and explore ',
-      href: '/sandbox',
+      href: '/docs/api/sandbox',
       icon: Beaker,
     },
     {
       title: 'Pricing',
       description: 'View pricing plans and credit discounts',
-      href: '/pricing',
+      href: '/docs/api/pricing',
       icon: CreditCard,
     },
   ];
