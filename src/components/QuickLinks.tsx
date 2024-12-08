@@ -11,7 +11,7 @@ interface QuickLinkProps {
 const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon }) => (
   <a
     href={href}
-    className="flex flex-col p-4 rounded-lg bg-card border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-2 text-inherit hover:no-underline"
+    className="flex flex-col rounded-lg border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-2 text-inherit hover:no-underline"
   >
     <div className="flex items-start gap-3">
       <div className="pt-1">
