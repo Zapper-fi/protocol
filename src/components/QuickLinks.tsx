@@ -37,7 +37,7 @@ export const QuickLinks: React.FC = () => {
       title: 'Sandbox',
       description: 'Test your queries and explore',
       href: '/docs/api/sandbox',
-      icon: Beaker,
+      icon: Flask,
     },
     {
       title: 'Pricing',
