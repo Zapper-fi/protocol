@@ -1,22 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  RiBookMarkLine, 
-  RiBookMarkFill,
-  RiTestTubeLine,
-  RiTestTubeFill,
-  RiBankCardLine,
-  RiBankCardFill
-} from 'react-icons/ri';
+import { BookOpen, Beaker, CreditCard } from 'lucide-react';
 
 interface QuickLinkProps {
   title: string;
   description: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
-  iconHover: React.ComponentType<{ className?: string }>;
 }
 
-const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon, iconHover: IconHover }) => {
+const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -28,7 +20,7 @@ const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: I
     >
       <div className="flex items-start gap-3">
         <div className="pt-1">
-          {isHovered ? <IconHover className="w-6 h-6" /> : <Icon className="w-6 h-6" />}
+          <Icon className={`w-6 h-6 ${isHovered ? 'fill-current' : ''}`} />
         </div>
         <div>
           <h3 className="text-base font-semibold mb-1">{title}</h3>
@@ -45,22 +37,19 @@ export const QuickLinks: React.FC = () => {
       title: 'Documentation',
       description: 'Explore step-by-step guides and references',
       href: '/docs/api',
-      icon: RiBookMarkLine,
-      iconHover: RiBookMarkFill,
+      icon: BookOpen,
     },
     {
       title: 'Sandbox',
       description: 'Test your queries and explore ',
       href: '/docs/api/sandbox',
-      icon: RiTestTubeLine,
-      iconHover: RiTestTubeFill,
+      icon: Beaker,
     },
     {
       title: 'Pricing',
       description: 'View pricing plans and credit discounts',
       href: '/docs/api/pricing',
-      icon: RiBankCardLine,
-      iconHover: RiBankCardFill,
+      icon: CreditCard,
     },
   ];
 
