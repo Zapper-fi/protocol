@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Beaker, CreditCard } from 'lucide-react';
+import { BookOpen, Flask, CreditCard } from 'lucide-react';
 
 interface QuickLinkProps {
   title: string;
