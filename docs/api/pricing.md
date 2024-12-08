@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 # Pricing
 
 ## Overview
-The Zapper API uses a credit-based system where each API call consumes a specific number of credits from your balance. Our flexible pricing model allows you to purchase credits using various cryptocurrencies and offers volume-based discounts for larger purchases.
+The Zapper API uses a credit-based system where each API call consumes a specific number of credits from your balance. Our flexible pricing model allows you to purchase credits onchain and offers volume-based discounts for larger purchases.
 
 ## Credit System Basics
 - **Exchange Rate**: 1,000 Credits = $1 USD
@@ -20,22 +20,23 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 ## Query Pricing Structure
 
 ### Onchain Prices (4 Credits)
-| Query | Use Case | Description |
-|-------|----------|-------------|
-| [`fungibleToken`](/docs/api/endpoints/onchain-prices#fungibletoken) | Single token data | Get comprehensive token data including market metrics and price history |
-| [`fungibleTokensByAddresses`](/docs/api/endpoints/onchain-prices#fungibletokensbyaddresses) | Multiple token data | Retrieve data for multiple tokens in one request |
+| Query | Description |
+|-------|-------------|
+| [`fungibleToken`](/docs/api/endpoints/onchain-prices#fungibletoken) | Get comprehensive token data including market metrics and price history |
+| [`fungibleTokensByAddresses`](/docs/api/endpoints/onchain-prices#fungibletokensbyaddresses) | Retrieve data for multiple tokens in one request |
 
 ### Portfolio Queries (3 Credits)
 | Query | Features Included | Description |
 |-------|------------------|-------------|
-| [`portfolio`](/docs/api/endpoints/portfolio) | [`appBalances`](/docs/api/endpoints/portfolio) [`nftBalances`](/docs/api/endpoints/portfolio) [`tokenBalances`](/docs/api/endpoints/portfolio) [`claimables`](/docs/api/endpoints/portfolio) [`totals`](/docs/api/endpoints/portfolio) | Onchain portfolio's in a single query |
+| [`portfolio`](/docs/api/endpoints/portfolio) | [`appBalances`](/docs/api/endpoints/portfolio#2-app-balances-appbalances) [`nftBalances`](/docs/api/endpoints/portfolio#3-nft-balances-nftbalances) [`tokenBalances`](/docs/api/endpoints/portfolio#1-token-balances-tokenbalances) [`claimables`](/docs/api/endpoints/portfolio#5-claimables) [`totals`](/docs/api/endpoints/portfolio#4-portfolio-totals-totals) | Onchain portfolio's in a single query |
 
 ### Other Queries (2 Credits)
 | Category | Queries | Description |
 |----------|---------|-------------|
-| Transaction Data | [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Human-readable transactions and activity |
-| Identity & Social | [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
-| NFT Data | `nftNetWorth` `nftUsersCollections` `nftUsersTokens` `nftToken` `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
+| Human-readable Transactions | [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Human-readable transactions and activity |
+| Onchain Identity | [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
+| NFT Data | [`nftCollections`](/docs/api/endpoints/nft-queries/nft-collections) [`nftToken`](/docs/api/endpoints/nft-queries/nft-token) [`nftUsersCollections`](/docs/api/endpoints/nft-queries/nft-collection-holdings) [`nftUsersTokens`](/docs/api/endpoints/nft-queries/nft-token-holdings) [`nftNetWorth`](/docs/api/endpoints/nft-queries/nft-net-worth)  | Comprehensive NFT data |
+
 
 ## Volume Discounts
 
