@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BookOpen, Beaker, CreditCard } from 'lucide-react';
 
 interface QuickLinkProps {
@@ -8,19 +8,15 @@ interface QuickLinkProps {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: Icon }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
+function QuickLink({ title, description, href, icon: Icon }: QuickLinkProps) {
   return (
     <a
       href={href}
       className="flex flex-col rounded-lg border border-neutral-400 hover:opacity-90 transition-opacity duration-200 mb-2 text-inherit hover:no-underline"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex items-start gap-3">
         <div className="pt-1">
-          <Icon className={`w-6 h-6 ${isHovered ? 'fill-current' : ''}`} />
+          <Icon className="w-6 h-6" />
         </div>
         <div>
           <h3 className="text-base font-semibold mb-1">{title}</h3>
@@ -29,9 +25,9 @@ const QuickLink: React.FC<QuickLinkProps> = ({ title, description, href, icon: I
       </div>
     </a>
   );
-};
+}
 
-export const QuickLinks: React.FC = () => {
+function QuickLinks() {
   const links = [
     {
       title: 'Documentation',
@@ -61,4 +57,6 @@ export const QuickLinks: React.FC = () => {
       ))}
     </div>
   );
-};
+}
+
+export default QuickLinks;
