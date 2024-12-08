@@ -13,7 +13,7 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 
 ## Credit System Basics
 - **Exchange Rate**: 1,000 Credits = $1 USD
-- **Purchase Options**: Pay with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
+- **Purchase Options**: Pay onchain with ETH, MATIC, USDC, USDT, DAI, and 100+ other tokens
 - **Free Tier**: 5,000 credits available to all new API clients
 - **Credit Balance**: Monitor usage and purchase credits through your [Dashboard](/dashboard)
 
@@ -28,14 +28,14 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 ### Portfolio Queries (3 Credits)
 | Query | Features Included | Description |
 |-------|------------------|-------------|
-| [`portfolio`](/docs/api/endpoints/portfolio) | • [`appBalances`](/docs/api/endpoints/portfolio) • [`nftBalances`](/docs/api/endpoints/portfolio) • [`tokenBalances`](/docs/api/endpoints/portfolio) • [`claimables`](/docs/api/endpoints/portfolio) • [`totals`](/docs/api/endpoints/portfolio) | Onchain portfolio's in a single query |
+| [`portfolio`](/docs/api/endpoints/portfolio) | [`appBalances`](/docs/api/endpoints/portfolio) [`nftBalances`](/docs/api/endpoints/portfolio) [`tokenBalances`](/docs/api/endpoints/portfolio) [`claimables`](/docs/api/endpoints/portfolio) [`totals`](/docs/api/endpoints/portfolio) | Onchain portfolio's in a single query |
 
 ### Other Queries (2 Credits)
 | Category | Queries | Description |
 |----------|---------|-------------|
-| Transaction Data | • [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) • [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) • [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Human-readable transactions and activity |
-| Identity & Social | • [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
-| NFT Data | • `nftNetWorth` • `nftUsersCollections` • `nftUsersTokens` • `nftToken` • `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
+| Transaction Data | [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines) | Human-readable transactions and activity |
+| Identity & Social | [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
+| NFT Data | `nftNetWorth` `nftUsersCollections` `nftUsersTokens` `nftToken` `nftCollections` | Comprehensive NFT portfolio analysis and valuations |
 
 ## Volume Discounts
 
