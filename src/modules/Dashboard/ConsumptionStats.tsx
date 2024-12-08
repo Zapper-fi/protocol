@@ -174,7 +174,7 @@ export function ConsumptionStats() {
 
   return (
     <div className="space-y-4">
-      <h3>Consumption Stats</h3>
+      <h3>API Usage</h3>
 
       <ChartTabs timeFrames={timeFrames} handleTimeFrameChange={handleTimeFrameChange} timeFrame={timeFrame} />
 
