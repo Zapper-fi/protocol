@@ -49,7 +49,7 @@ export const QuickLinks: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+      <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
       {links.map((link) => (
         <QuickLink key={link.title} {...link} />
       ))}
