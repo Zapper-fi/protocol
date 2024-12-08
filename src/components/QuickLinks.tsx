@@ -41,7 +41,7 @@ export const QuickLinks: React.FC = () => {
     },
     {
       title: 'Pricing',
-      description: 'View pricing plans and credit discounts',
+      description: 'View query prices and credit discounts',
       href: '/docs/api/pricing',
       icon: CreditCard,
     },

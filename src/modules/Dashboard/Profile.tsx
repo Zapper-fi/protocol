@@ -43,7 +43,7 @@ export function Profile() {
 
   return (
     <div className="space-y-4">
-      <h4>API Key</h4>
+      <h4>Your API Key</h4>
 
       <div>
         <div className="flex gap-2">

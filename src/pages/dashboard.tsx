@@ -26,7 +26,7 @@ function Dashboard() {
               <div className="flex gap-4 " style={{ width: '100%', flexFlow: 'wrap' }}>
                 <div className="flex flex-col gap-4" style={{ flex: 2 }}>
                   <div className="flex justify-between">
-                    <h2>API Dashboard</h2>
+                    <h2>Welcome to Your Dashboard</h2>
                   </div>
                   <ConsumptionStats />
                   <PaymentHistory />
