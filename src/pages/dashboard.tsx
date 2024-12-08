@@ -34,6 +34,7 @@ function Dashboard() {
                   <div className="flex flex-col gap-8">
                     <Profile />
                     <BuyCredits />
+                    <QuickLinks />
                   </div>
                 </Card>
               </div>
