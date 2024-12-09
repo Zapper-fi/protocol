@@ -80,7 +80,7 @@ export function PricingCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
-              Onchain Prices Queries
+              Onchain Price Queries
             </label>
             <input
               type="number"
