@@ -47,7 +47,7 @@ export function PricingCalculator() {
       total: cost / 1000,
       savings: (standardCost - cost) / 1000,
       creditsUsed: totalCredits,
-      savingsPercent: savingsPercent,
+      savingsPercent: savingsPercent > 0 ? `-${savingsPercent.toFixed(0)}%` : null,
       costPer1000: costPer1000 / 1000,
     };
   };
@@ -109,34 +109,44 @@ export function PricingCalculator() {
           <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
             <div className="text-sm text-neutral-400">USD Cost</div>
             <div className="text-2xl font-semibold">${pricing.total.toFixed(2)}</div>
-            {totalCredits > 15_000_000 && (
-              <div className="text-sm text-neutral-400">
-                ${pricing.costPer1000.toFixed(4)} per 1k queries
-              </div>
-            )}
           </div>
           {totalCredits > 15_000_000 && (
             <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
               <div className="text-sm text-neutral-400">Volume Savings</div>
-              <div className="text-2xl font-semibold text-green-500">${pricing.savings.toFixed(2)}</div>
-              <div className="text-sm text-green-500">
-                {pricing.savingsPercent.toFixed(1)}% discount applied
-              </div>
+              <div className="text-2xl font-semibold text-[#00D89A]">${pricing.savings.toFixed(2)}</div>
             </div>
           )}
         </div>
 
-        {totalCredits > 15_000_000 && (
-          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
-            <h3 className="text-xl font-semibold mb-2">Volume Discounts Applied</h3>
-            <div className="space-y-1 text-neutral-400">
-              {totalCredits > 50_000_000 && <div className="text-green-500">30% discount on credits above 50M</div>}
-              {totalCredits > 15_000_000 && (
-                <div className="text-green-500">20% discount on credits between 15M-50M</div>
+        <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span className="text-neutral-400">Credit Amount</span>
+              <span className="font-medium">{formatNumber(totalCredits)}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-neutral-400">Cost per 1k credit</span>
+              <div className="flex items-center gap-2">
+                {pricing.savingsPercent && (
+                  <span className="text-[#00D89A]">{pricing.savingsPercent}</span>
+                )}
+                <span className="font-medium">${pricing.costPer1000.toFixed(3)}</span>
+              </div>
+            </div>
+            <div className="pt-3 border-t border-border">
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Total</span>
+                <span className="text-2xl font-semibold">${pricing.total.toFixed(2)}</span>
+              </div>
+              {pricing.savings > 0 && (
+                <div className="flex justify-between items-center mt-1">
+                  <span className="text-neutral-400 text-sm">Total savings</span>
+                  <span className="text-[#00D89A] text-sm">-${pricing.savings.toFixed(2)}</span>
+                </div>
               )}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
