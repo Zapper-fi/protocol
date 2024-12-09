@@ -87,7 +87,7 @@ export function PricingCalculator() {
               min="0"
               value={queries.onchainPrices}
               onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
           </div>
 
