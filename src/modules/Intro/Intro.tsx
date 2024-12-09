@@ -1,4 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 import type React from 'react';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
 import styles from '../../pages/index.module.scss';
@@ -30,12 +31,14 @@ export const Intro: React.FC = () => {
                 <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
                 <SignInDashboard type="button" />
               </h4>
+
               <Link
-                  to="/docs/interpretation/overview"
-                  className="text-sm hover:opacity-80 mt-2"
-                  style={{ color: 'white' }}>
-                  Want to contribute to our interpretation protocol? Learn how
-                </Link>
+                to="/docs/interpretation/overview"
+                className="text-sm hover:opacity-80 mt-2"
+                style={{ color: 'white' }}
+              >
+                Want to contribute to our interpretation protocol? Learn how
+              </Link>
             </div>
           </div>
         </div>
