@@ -5,7 +5,7 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config = {
-  title: 'Build onchain products with limitless data, powered by an open protocol.',
+  title: 'Build onchain products with limitless data, powered by our interpretation protocol.',
   plugins: [
     'docusaurus2-dotenv',
     'docusaurus-plugin-sass',

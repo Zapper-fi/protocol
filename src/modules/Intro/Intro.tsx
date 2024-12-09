@@ -29,6 +29,13 @@ export const Intro: React.FC = () => {
               <h4 style={{ color: 'white' }} className={styles.subtitle}>
                 <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
                 <SignInDashboard type="button" />
+                <Link
+                  to="/docs/interpretation/overview"
+                  className="text-sm hover:opacity-80 mt-2"
+                  style={{ color: 'white' }}
+                >
+                  Want to contribute to our interpretation protocol? Learn how
+                </Link>
               </h4>
             </div>
           </div>
