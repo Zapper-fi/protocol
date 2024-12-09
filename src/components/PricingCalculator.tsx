@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const PRICING_TIERS = [
   { threshold: 15_000_000, price: 1.0 },
   { threshold: 50_000_000, price: 0.8 },
@@ -27,16 +26,16 @@ const formatNumber = (num: number) => {
 
 export function PricingCalculator() {
   const [queries, setQueries] = useState({
-    onchainPrices: 0,
-    portfolioQueries: 0,
-    otherQueries: 0,
+    onchainPrices: '',
+    portfolioQueries: '',
+    otherQueries: ''
   });
 
   const calculateTotalCredits = () => {
     return (
-      queries.onchainPrices * ENDPOINT_CREDITS.onchainPrices +
-      queries.portfolioQueries * ENDPOINT_CREDITS.portfolioQueries +
-      queries.otherQueries * ENDPOINT_CREDITS.otherQueries
+      (Number(queries.onchainPrices) || 0) * ENDPOINT_CREDITS.onchainPrices +
+      (Number(queries.portfolioQueries) || 0) * ENDPOINT_CREDITS.portfolioQueries +
+      (Number(queries.otherQueries) || 0) * ENDPOINT_CREDITS.otherQueries
     );
   };
 
@@ -54,7 +53,7 @@ export function PricingCalculator() {
     });
 
     const savingsPercent = ((standardCost - cost) / standardCost) * 100;
-    const costPer1000 = (cost / totalCredits) * 1000;
+    const costPer1000 = totalCredits > 0 ? (cost / totalCredits) * 1000 : 0;
 
     return {
       total: cost / 1000,
@@ -81,13 +80,13 @@ export function PricingCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
-              Onchain Price Queries
+              Onchain Prices Queries
             </label>
             <input
               type="number"
               min="0"
               value={queries.onchainPrices}
-              onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
+              onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: e.target.value }))}
               placeholder="Enter number of queries"
               className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
@@ -97,13 +96,13 @@ export function PricingCalculator() {
             <label className="block text-sm font-medium text-alt-color mb-2">
               Portfolio Queries
             </label>
-            <input 
-              type="number" 
-              min="0" 
-              value={queries.portfolioQueries} 
-              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
-              placeholder="Enter number of queries" 
-              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
+            <input
+              type="number"
+              min="0"
+              value={queries.portfolioQueries}
+              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: e.target.value }))}
+              placeholder="Enter number of queries"
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
           </div>
 
@@ -111,24 +110,23 @@ export function PricingCalculator() {
             <label className="block text-sm font-medium text-alt-color mb-2">
               Other Queries
             </label>
-            <input 
-              type="number" 
-              min="0" 
-              value={queries.otherQueries} 
-              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
-              placeholder="Enter number of queries" 
-              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
+            <input
+              type="number"
+              min="0"
+              value={queries.otherQueries}
+              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: e.target.value }))}
+              placeholder="Enter number of queries"
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
           </div>
         </div>
-
         <div className="space-y-3">
           <div className="flex justify-between items-center">
             <span className="text-alt-color">Credits Needed</span>
             <span className="font-medium">{formatNumber(totalCredits)}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-alt-color">Cost per 1k Credits</span>
+            <span className="text-alt-color">Cost per 1k credit</span>
             <div className="flex items-center gap-2">
               {pricing.savingsPercent && (
                 <span className="text-[#00D897]">{pricing.savingsPercent}</span>
