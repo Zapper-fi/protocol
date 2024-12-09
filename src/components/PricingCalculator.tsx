@@ -98,11 +98,11 @@ export function PricingCalculator() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="p-4 rounded-2xl bg-card border border-border shadow-lg">
-            <div className="text-sm text-neutral-400">Total Credits</div>
+            <div className="text-sm text-neutral-400">Credits Needed</div>
             <div className="text-2xl font-semibold">{formatNumber(totalCredits)}</div>
           </div>
           <div className="p-4 rounded-2xl bg-card border border-border shadow-lg">
-            <div className="text-sm text-neutral-400">Total Cost</div>
+            <div className="text-sm text-neutral-400">USD Cost</div>
             <div className="text-2xl font-semibold">${pricing.total.toFixed(2)}</div>
           </div>
           {totalCredits > 15_000_000 && (
