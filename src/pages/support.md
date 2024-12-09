@@ -21,6 +21,7 @@ Need help with the Zapper API?
 - $1 USD = 1,000 credits
 - Payments are made onchain through the Dashboard
 - Bulk purchases offer savings of up to 20-30%
+- See [Pricing](/docs/api/pricing) to learn more
 
 **Q: Which tokens can I use for payment?**
 - We support 100+ tokens including:
@@ -38,7 +39,7 @@ Need help with the Zapper API?
 **Q: How can I optimize my API usage?**
 - Use field selection to minimize response size
 - Implement pagination where available
-- Consider batch queries for multiple requests
+- Consider batch queries instead of multiple requests
 
 ## Need Additional Help?
 
