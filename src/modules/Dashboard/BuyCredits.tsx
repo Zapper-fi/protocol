@@ -242,13 +242,17 @@ export function BuyCredits() {
       </div>
 
       <form onSubmit={handleSubmit} className="my-8">
-        <div className="flex items-center justify-between h-10 my-2">
+        <div className="my-2">
           <label htmlFor="points-input" className="text-sm font-medium">
             Credit Amount
           </label>
 
-          <div className="flex gap-2 text-lg">
-            <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handleDecrement}
+              className="zapper-btn text-3xl py-0 font-normal cursor-pointer"
+            >
               -
             </button>
             <input
@@ -258,10 +262,14 @@ export function BuyCredits() {
               onChange={handlePointsChange}
               onBlur={handleBlur}
               min={MIN_POINTS}
-              className="zapper-btn text-center text-lg field-sizing-content"
+              className="bg-transparent border-none text-center text-lg field-sizing-content"
               placeholder="Enter credits amount"
             />
-            <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
+            <button
+              type="button"
+              onClick={handleIncrement}
+              className="zapper-btn text-3xl py-0 font-normal cursor-pointer"
+            >
               +
             </button>
           </div>
