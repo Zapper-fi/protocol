@@ -40,10 +40,15 @@ export function PricingCalculator() {
       }
     });
 
+    const savingsPercent = ((standardCost - cost) / standardCost) * 100;
+    const costPer1000 = (cost / totalCredits) * 1000;
+
     return {
       total: cost / 1000,
       savings: (standardCost - cost) / 1000,
       creditsUsed: totalCredits,
+      savingsPercent: savingsPercent,
+      costPer1000: costPer1000 / 1000,
     };
   };
 
@@ -52,7 +57,7 @@ export function PricingCalculator() {
   const formatNumber = (num: number) => num.toLocaleString();
 
   return (
-    <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl">
+    <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl shadow-black/10">
       <div className="p-6 border-b border-border">
         <div className="text-xl font-semibold">API Query Calculator</div>
       </div>
@@ -97,24 +102,32 @@ export function PricingCalculator() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg">
+          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
             <div className="text-sm text-neutral-400">Credits Needed</div>
             <div className="text-2xl font-semibold">{formatNumber(totalCredits)}</div>
           </div>
-          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg">
+          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
             <div className="text-sm text-neutral-400">USD Cost</div>
             <div className="text-2xl font-semibold">${pricing.total.toFixed(2)}</div>
+            {totalCredits > 15_000_000 && (
+              <div className="text-sm text-neutral-400">
+                ${pricing.costPer1000.toFixed(4)} per 1k queries
+              </div>
+            )}
           </div>
           {totalCredits > 15_000_000 && (
-            <div className="p-4 rounded-2xl bg-card border border-border shadow-lg">
+            <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
               <div className="text-sm text-neutral-400">Volume Savings</div>
               <div className="text-2xl font-semibold text-green-500">${pricing.savings.toFixed(2)}</div>
+              <div className="text-sm text-green-500">
+                {pricing.savingsPercent.toFixed(1)}% discount applied
+              </div>
             </div>
           )}
         </div>
 
         {totalCredits > 15_000_000 && (
-          <div>
+          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
             <h3 className="text-xl font-semibold mb-2">Volume Discounts Applied</h3>
             <div className="space-y-1 text-neutral-400">
               {totalCredits > 50_000_000 && <div className="text-green-500">30% discount on credits above 50M</div>}
