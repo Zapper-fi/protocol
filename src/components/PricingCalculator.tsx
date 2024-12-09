@@ -80,7 +80,7 @@ export function PricingCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-white/60 mb-2">
-              Onchain Prices Queries (4 credits each)
+              Onchain Price Queries
             </label>
             <input
               type="number"
@@ -93,8 +93,7 @@ export function PricingCalculator() {
 
           <div>
             <label className="block text-sm font-medium text-white/60 mb-2">
-              Portfolio Queries (3 credits each)
-            </label>
+              Portfolio Queries
             <input
               type="number"
               min="0"
@@ -106,7 +105,7 @@ export function PricingCalculator() {
 
           <div>
             <label className="block text-sm font-medium text-white/60 mb-2">
-              Other Queries (2 credits each)
+              Other Queries
             </label>
             <input
               type="number"
