@@ -1,28 +1,24 @@
-import * as React from "react";
-import * as SliderPrimitive from "@radix-ui/react-slider";
-import { cn } from "@/lib/utils";
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { BadgeDollarSign } from 'lucide-react';
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <SliderPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative flex w-full touch-none select-none items-center",
-      className
-    )}
-    {...props}
-  >
-    <SliderPrimitive.Track className="relative h-2 sm:h-1.5 w-full grow overflow-hidden rounded-full bg-neutral-800">
-      <SliderPrimitive.Range className="absolute h-full bg-purple-600" />
-    </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className="block h-5 w-5 sm:h-4 sm:w-4 rounded-full border border-purple-600 bg-purple-600 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
-  </SliderPrimitive.Root>
-));
-Slider.displayName = SliderPrimitive.Root.displayName;
+const CustomSlider: React.FC<{
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  onChange: (value: number) => void;
+}> = ({ value, min, max, step, onChange }) => (
+  <input
+    type="range"
+    value={value}
+    min={min}
+    max={max}
+    step={step}
+    onChange={(e) => onChange(Number(e.target.value))}
+    className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-neutral-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-600 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-purple-600 [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-purple-600 [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-purple-600 [&::-moz-range-thumb]:cursor-pointer"
+  />
+);
 
 interface PricingTier {
   threshold: number;
@@ -128,13 +124,12 @@ const PricingCalculator: React.FC = () => {
           <label className="block text-base xs:text-sm sm:text-base text-neutral-400 mb-3">
             Credits: {formatNumber(credits)}
           </label>
-          <Slider
-            value={[credits]}
+          <CustomSlider
+            value={credits}
             min={1_000_000}
             max={100_000_000}
             step={1_000_000}
-            onValueChange={(value: number[]) => setCredits(value[0])}
-            className="w-full"
+            onChange={setCredits}
           />
         </div>
         
