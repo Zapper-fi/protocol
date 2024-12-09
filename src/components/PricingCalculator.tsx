@@ -126,7 +126,7 @@ export function PricingCalculator() {
             <span className="font-medium">{formatNumber(totalCredits)}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-alt-color">Cost per 1k credit</span>
+            <span className="text-sm text-alt-color">Cost per 1k credit</span>
             <div className="flex items-center gap-2">
               {pricing.savingsPercent && (
                 <span className="text-[#00D897] text-sm font-semibold">{pricing.savingsPercent}</span>
