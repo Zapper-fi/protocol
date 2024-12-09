@@ -10,6 +10,9 @@ module.exports = {
         primary: {
           default: '#A387FF', // TODO: Extract
         },
+        confirmed: {
+          default: '#00D89A', // TODO: Extract
+        },
         'alt-color': 'var(--ifm-text-alt-color)',
         'accent-color': 'var(--ifm-accent-color)',
         card: 'var(--ifm-card-background)',
