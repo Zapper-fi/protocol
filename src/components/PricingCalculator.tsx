@@ -144,7 +144,7 @@ export function PricingCalculator() {
             {pricing.savings > 0 && (
               <div className="flex justify-between items-center mt-1">
                 <span className="text-alt-color text-sm">Total savings</span>
-                <span className="text-[#00D897] text-sm">-${formatUSD(pricing.savings)}</span>
+                <span className="text-[#00D897] text-sm font-semibold">-${formatUSD(pricing.savings)}</span>
               </div>
             )}
           </div>
