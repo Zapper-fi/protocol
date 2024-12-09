@@ -1,0 +1,57 @@
+# Support
+
+Need help with the Zapper API? 
+
+## Frequently Asked Questions
+
+### Account & Access
+**Q: How do I access my API key?**
+- Sign in to the [Dashboard](/dashboard) with your email address
+- Your API key will be displayed after successful authentication
+
+**Q: What happens if my credits are running low?**
+- You'll receive automated email notifications at:
+  - 7 days before estimated depletion
+  - 3 days before estimated depletion
+  - 1 day before estimated depletion
+  - When credits are fully depleted
+
+### Pricing & Credits
+**Q: How does the credit system work?**
+- $1 USD = 1,000 credits
+- Payments are made onchain through the Dashboard
+- Bulk purchases offer savings of up to 20-30%
+
+**Q: Which tokens can I use for payment?**
+- We support 100+ tokens including:
+  - ETH
+  - MATIC
+  - USDC
+  - USDT
+  - DAI
+
+### Technical Questions
+**Q: Which networks are supported?**
+- We support 35+ chains including Ethereum, popular L2s, and emerging chains
+- See our [Supported Chains](/docs/api/supported-chains) documentation for the full list
+
+**Q: How can I optimize my API usage?**
+- Use field selection to minimize response size
+- Implement pagination where available
+- Consider batch queries for multiple requests
+- Review our [best practices guide](/docs/api/best-practices)
+
+## Need Additional Help?
+
+Can't find what you're looking for?
+
+Contact us at api@zapper.xyz for:
+
+- Account issues
+- Credit transfers
+- Rate limit increases
+- Any other questions
+
+---
+
+📚 For detailed technical information, check out our [API Documentation](/docs/api/).
