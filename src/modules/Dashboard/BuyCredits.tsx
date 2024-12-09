@@ -281,21 +281,27 @@ export function BuyCredits() {
           </div>
         </div>
 
-        {breakdown.map((tier) => {
-          const discountPercent = (1 - tier.creditRate) * 100;
-          const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
-          return (
-            <div key={tierKey} className="text-sm flex justify-between">
-              <span>
-                {tier.creditAmount.toLocaleString()} credits at ${(tier.creditRate * 0.001).toFixed(4)}
-              </span>
-              {discountPercent > 0 && (
-                <span className="text-green-500 font-bold">({discountPercent.toFixed(2)}% off)</span>
-              )}
-            </div>
-          );
-        })}
-
+        <div className="space-y-2">
+          <div className="text-sm flex justify-between text-gray-500 mb-1">
+            <span>Credit amount</span>
+            <span>Cost per credit</span>
+          </div>
+          {breakdown.map((tier) => {
+            const discountPercent = (1 - tier.creditRate) * 100;
+            const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
+            return (
+              <div key={tierKey} className="text-sm flex justify-between">
+                <span>{tier.creditAmount.toLocaleString()}</span>
+                <span>
+                  <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
+                  {discountPercent > 0 && (
+                    <span className="text-green-500 font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
         <div className="space-y-2">
           <div className="flex flex-col items-end gap-1 mt-4">
             {savings > 0 && (
