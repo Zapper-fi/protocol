@@ -281,7 +281,7 @@ export function BuyCredits() {
                 <span>
                   <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
                   {discountPercent > 0 && (
-                    <span className="text-green-500 font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
+                    <span className="text-confirmed-default font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
                   )}
                 </span>
               </div>
@@ -291,7 +291,7 @@ export function BuyCredits() {
         <div className="space-y-2">
           <div className="flex flex-col items-end gap-1 mt-4">
             {savings > 0 && (
-              <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
+              <span className="text-confirmed-default font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
             )}
             <div
               id="cost-display"
