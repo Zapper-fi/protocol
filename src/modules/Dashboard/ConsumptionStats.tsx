@@ -16,6 +16,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { Card } from '@site/src/components/Card';
+import { ChartTabs } from './Chart/ChartTabs';
+import type { TimeFrame } from './types';
 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
@@ -60,7 +62,7 @@ const ENDPOINT_QUERY = gql`
 `;
 
 export function ConsumptionStats() {
-  const [timeFrame, setTimeFrame] = useState<'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'YEAR'>('MONTH');
+  const [timeFrame, setTimeFrame] = useState<TimeFrame>('MONTH');
 
   const {
     data: consumptionData,
@@ -77,11 +79,11 @@ export function ConsumptionStats() {
   const consumptionStats = (consumptionData?.apiConsumptionStats || []) as ConsumptionStat[];
   const endpointStats = (endpointData?.apiConsumptionStatsPerEndpoint || []) as EndpointStat[];
 
-  const handleTimeFrameChange = (newTimeFrame: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'YEAR') => {
+  const handleTimeFrameChange = (newTimeFrame: TimeFrame) => {
     setTimeFrame(newTimeFrame);
   };
 
-  const timeFrames = ['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'] as const;
+  const timeFrames = ['HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'] as TimeFrame[];
 
   const chartOptions = {
     responsive: true,
@@ -172,30 +174,13 @@ export function ConsumptionStats() {
 
   return (
     <div className="space-y-4">
-      <h3>API Consumption Stats</h3>
+      <h3>API Usage</h3>
 
-      <div className="timeframe-selector flex">
-        {timeFrames.map((tf) => (
-          <div key={tf} className="mr-2 min-w-[60px]">
-            <button
-              type="button"
-              onClick={() => handleTimeFrameChange(tf)}
-              className={`w-full border-none cursor-pointer ${
-                timeFrame === tf
-                  ? 'font-extrabold text-primary-default bg-transparent'
-                  : 'font-medium text-primary-default bg-transparent'
-              }`}
-            >
-              {tf.charAt(0) + tf.slice(1).toLowerCase()}
-            </button>
-          </div>
-        ))}
-      </div>
+      <ChartTabs timeFrames={timeFrames} handleTimeFrameChange={handleTimeFrameChange} timeFrame={timeFrame} />
 
       <div className="space-y-8">
         <div>
-          <h4>Consumption Amount & Cost</h4>
-          <Card>
+          <Card style={{ width: '100%' }}>
             {consumptionLoading ? (
               <p>Loading...</p>
             ) : consumptionError ? (
@@ -209,7 +194,7 @@ export function ConsumptionStats() {
         </div>
 
         <div>
-          <h4>Endpoints Queried</h4>
+          <h3>Endpoints Queried</h3>
           <Card>
             {endpointLoading ? (
               <p>Loading...</p>

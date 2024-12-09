@@ -7,34 +7,37 @@ import { SignedOut } from '@site/src/modules/Dashboard/SignedOut';
 import { PaymentHistory } from '@site/src/modules/Dashboard/PaymentHistory';
 import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
+import { QuickLinks } from '@site/src/components/QuickLinks';
+import { Card } from '../components/Card';
 
 function Dashboard() {
   return (
     <Layout>
       <div className="flex">
-        <aside className="lg:w-[300px]">{/* Sidebar */}</aside>
-
         <main className="flex-1 pt-4 pb-16">
-          <div className="container mx-auto !pr-[25%]">
+          <div className="container mx-auto ">
             <Breadcrumbs title="Dashboard" />
-
-            <div className="flex justify-between">
-              <h1>API Dashboard</h1>
-            </div>
 
             <SignedOut>
               <p>Please sign in to continue.</p>
             </SignedOut>
 
             <SignedIn>
-              <div className="flex flex-col gap-8">
-                <Profile />
-
-                <ConsumptionStats />
-
-                <BuyCredits />
-
-                <PaymentHistory />
+              <div className="flex gap-4 " style={{ width: '100%', flexFlow: 'wrap' }}>
+                <div className="flex flex-col gap-4" style={{ flex: 2 }}>
+                  <div className="flex justify-between">
+                    <h2>Your Dashboard</h2>
+                  </div>
+                  <ConsumptionStats />
+                  <PaymentHistory />
+                </div>
+                <Card style={{ minWidth: '400px', flex: 1 }}>
+                  <div className="flex flex-col gap-8">
+                    <Profile />
+                    <BuyCredits />
+                    <QuickLinks />
+                  </div>
+                </Card>
               </div>
             </SignedIn>
           </div>
