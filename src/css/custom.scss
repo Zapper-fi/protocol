@@ -39,6 +39,9 @@
   
   /* You can override the default Infima variables here. */
 :root {
+  --ifm-font-family: "Inter", Arial, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family);
+
   --ifm-color-primary: #784ffe;
   --ifm-text-color-primary: #002237;
   --ifm-text-color-alt: #4b5871;
@@ -272,7 +275,7 @@ h3,
 h4,
 h5,
 p {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: var(--ifm-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -485,6 +488,12 @@ hr {
   100% {
     opacity: 0;
     transform: translate(10px, -50%);
+  }
+}
+
+@layer base {
+  button {
+    font-family: inherit;
   }
 }
 
