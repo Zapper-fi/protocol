@@ -101,23 +101,6 @@ export function PricingCalculator() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
-            <div className="text-sm text-neutral-400">Credits Needed</div>
-            <div className="text-2xl font-semibold">{formatNumber(totalCredits)}</div>
-          </div>
-          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
-            <div className="text-sm text-neutral-400">USD Cost</div>
-            <div className="text-2xl font-semibold">${pricing.total.toFixed(2)}</div>
-          </div>
-          {totalCredits > 15_000_000 && (
-            <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
-              <div className="text-sm text-neutral-400">Volume Savings</div>
-              <div className="text-2xl font-semibold text-[#00D89A]">${pricing.savings.toFixed(2)}</div>
-            </div>
-          )}
-        </div>
-
         <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
           <div className="space-y-3">
             <div className="flex justify-between items-center">
