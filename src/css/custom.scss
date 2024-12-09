@@ -375,8 +375,19 @@ hr {
 
   &--secondary {
     background-color: var(--ifm-card-background);
-    color: var(--text-color)
+    color: var(--text-color);
+
+
   }
+}
+
+input {
+  background-color: var(--ifm-input-background);
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid var(--ifm-border-color);
+  font-size: 16px;
 }
 
 

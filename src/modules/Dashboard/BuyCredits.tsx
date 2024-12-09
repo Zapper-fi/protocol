@@ -199,7 +199,7 @@ export function BuyCredits() {
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
@@ -225,7 +225,7 @@ export function BuyCredits() {
           </div>
         )}
       </div>
-      <hr />
+      <hr style={{ margin: 0 }} />
 
       <div className="flex justify-between items-baseline">
         <div>
@@ -241,72 +241,82 @@ export function BuyCredits() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="my-8">
-        <div className="my-2">
-          <label htmlFor="points-input" className="text-sm font-medium">
-            Credit Amount
-          </label>
+      <form onSubmit={handleSubmit} className="my-2">
+        <div className="flex flex-col gap-8">
+          <div className="my-2 flex flex-col gap-2">
+            <label htmlFor="points-input" className="text-sm font-medium">
+              Credit Amount
+            </label>
 
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={handleDecrement}
-              className="zapper-btn text-3xl py-0 font-normal cursor-pointer"
-            >
-              -
-            </button>
-            <input
-              id="points-input"
-              type="text"
-              value={displayPoints}
-              onChange={handlePointsChange}
-              onBlur={handleBlur}
-              min={MIN_POINTS}
-              className="bg-transparent border-none text-center text-lg field-sizing-content min-w-28"
-              placeholder="Enter credits amount"
-            />
-            <button
-              type="button"
-              onClick={handleIncrement}
-              className="zapper-btn text-3xl py-0 font-normal cursor-pointer"
-            >
-              +
-            </button>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={handleDecrement}
+                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                style={{
+                  width: '40px',
+                  justifyContent: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                -
+              </button>
+              <input
+                id="points-input"
+                type="text"
+                value={displayPoints}
+                onChange={handlePointsChange}
+                onBlur={handleBlur}
+                min={MIN_POINTS}
+                className=" text-center  field-sizing-content min-w-28 flex-grow"
+                placeholder="Enter credits amount"
+              />
+              <button
+                type="button"
+                onClick={handleIncrement}
+                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                style={{
+                  width: '40px',
+                  justifyContent: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                +
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-2">
-          <div className="text-sm flex justify-between text-gray-500 mb-1 mt-4">
-            <span>Amount</span>
-            <span>Cost per credit</span>
+          <div className="space-y-2">
+            {breakdown.map((tier) => {
+              const discountPercent = (1 - tier.creditRate) * 100;
+              const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
+              return (
+                <div key={tierKey} className="text-sm flex justify-between">
+                  <span>{tier.creditAmount.toLocaleString()}</span>
+                  <span>
+                    <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
+                    {discountPercent > 0 && (
+                      <span className="text-confirmed-default font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
+                    )}
+                  </span>
+                </div>
+              );
+            })}
           </div>
-          {breakdown.map((tier) => {
-            const discountPercent = (1 - tier.creditRate) * 100;
-            const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
-            return (
-              <div key={tierKey} className="text-sm flex justify-between">
-                <span>{tier.creditAmount.toLocaleString()}</span>
-                <span>
-                  <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
-                  {discountPercent > 0 && (
-                    <span className="text-confirmed-default font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
-                  )}
-                </span>
+          <div className="space-y-2">
+            <div className="flex flex-col items-end gap-1 mt-4">
+              {savings > 0 && (
+                <span className="text-confirmed-default font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
+              )}
+              <div
+                id="cost-display"
+                className="text-primary-default font-bold text-lg py-2"
+                aria-label={`Cost: $${formatPrice(price)}`}
+              >
+                USD ${formatPrice(price)}
               </div>
-            );
-          })}
-        </div>
-        <div className="space-y-2">
-          <div className="flex flex-col items-end gap-1 mt-4">
-            {savings > 0 && (
-              <span className="text-confirmed-default font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
-            )}
-            <div
-              id="cost-display"
-              className="text-primary-default font-bold text-lg py-2"
-              aria-label={`Cost: $${formatPrice(price)}`}
-            >
-              USD ${formatPrice(price)}
             </div>
           </div>
         </div>
