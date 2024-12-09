@@ -129,7 +129,7 @@ export function PricingCalculator() {
             <span className="text-alt-color">Cost per 1k credit</span>
             <div className="flex items-center gap-2">
               {pricing.savingsPercent && (
-                <span className="text-[#00D897]">{pricing.savingsPercent}</span>
+                <span className="text-[#00D897] text-sm">{pricing.savingsPercent}</span>
               )}
               <span className="font-medium">
                 ${totalCredits === 0 ? '0.000' : formatUSD(pricing.costPer1000)}
