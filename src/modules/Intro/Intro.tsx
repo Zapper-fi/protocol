@@ -32,17 +32,19 @@ export const Intro: React.FC = () => {
                 <SignInDashboard type="button" />
               </h4>
 
-              <Link
-                to="/docs/interpretation/contribute"
-                className="text-sm hover:opacity-80 mt-2"
-                style={{ color: 'white' }}
-              >
-                Want to contribute to our interpretation protocol? Learn how
-              </Link>
+              <div style={{ color: 'white', marginTop: '12px' }}>
+                Want to contribute to our interpretation protocol?{' '}
+                <Link
+                  to="/docs/interpretation/contribute"
+                  className="text-sm hover:opacity-80"
+                >
+                  Start Here
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
     </header>
   );
 };
