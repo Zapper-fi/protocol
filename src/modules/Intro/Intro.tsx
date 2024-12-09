@@ -33,7 +33,7 @@ export const Intro: React.FC = () => {
               </h4>
 
               <Link
-                to="/docs/interpretation/overview"
+                to="/docs/interpretation/contribute"
                 className="text-sm hover:opacity-80 mt-2"
                 style={{ color: 'white' }}
               >
