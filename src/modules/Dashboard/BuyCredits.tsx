@@ -309,7 +309,7 @@ Temporary, to put back once the design is updated
           <div className="flex flex-col gap-2 mb-6">
             <div className="flex justify-between">
               <span className="text-sm">Subtotal</span>
-              <span className="text-sm ">USD ${formatPrice(price)}</span>
+              <span className="text-sm ">${formatPrice(price)}</span>
             </div>
             {savings > 0 && (
               <div className="flex justify-between">
