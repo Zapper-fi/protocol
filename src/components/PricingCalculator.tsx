@@ -69,9 +69,9 @@ export function PricingCalculator() {
 
   return (
     <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl shadow-black/10">
-      <div className="p-6 border-b border-border">
-        <div className="text-xl font-semibold text-white">API Cost Calculator</div>
-        <p className="mt-2 text-sm text-white/60">
+      <div className="px-6 pt-6 pb-4 border-b border-border">
+        <div className="text-xl font-semibold">API Cost Calculator</div>
+        <p className="mt-2 text-sm text-alt-color">
           Enter the number of API queries you expect to make for each endpoint type. Consider choosing a specific timeframe (e.g., monthly or annually) to help with cost forecasting.
         </p>
       </div>
@@ -79,67 +79,85 @@ export function PricingCalculator() {
       <div className="space-y-6 p-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-white/60 mb-2">
-              Onchain Price Queries
+            <label className="block text-sm font-medium text-alt-color mb-2">
+              Onchain Prices Queries (4 credits each)
             </label>
             <input
               type="number"
               min="0"
               value={queries.onchainPrices}
               onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
+              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-white/60 mb-2">
-              Portfolio Queries
+            <label className="block text-sm font-medium text-alt-color mb-2">
+              Portfolio Queries (3 credits each)
+            </label>
             <input
               type="number"
               min="0"
               value={queries.portfolioQueries}
               onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
+              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-white/60 mb-2">
-              Other Queries
+            <label className="block text-sm font-medium text-alt-color mb-2">
+              Other Queries (2 credits each)
             </label>
             <input
               type="number"
               min="0"
               value={queries.otherQueries}
               onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
+              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
             />
           </div>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
+            <div className="text-sm text-alt-color">Credits Needed</div>
+            <div className="text-2xl font-semibold">{formatNumber(totalCredits)}</div>
+          </div>
+          <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
+            <div className="text-sm text-alt-color">USD Cost</div>
+            <div className="text-2xl font-semibold">${formatUSD(pricing.total)}</div>
+          </div>
+          {totalCredits > 15_000_000 && (
+            <div className="p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
+              <div className="text-sm text-alt-color">Volume Savings</div>
+              <div className="text-2xl font-semibold text-[#00D897]">${formatUSD(pricing.savings)}</div>
+            </div>
+          )}
+        </div>
+
         <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <span className="text-white/60">Credit Amount</span>
-            <span className="font-medium text-white">{formatNumber(totalCredits)}</span>
+            <span className="text-alt-color">Credit Amount</span>
+            <span className="font-medium">{formatNumber(totalCredits)}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-white/60">Cost per 1k credit</span>
+            <span className="text-alt-color">Cost per 1k credit</span>
             <div className="flex items-center gap-2">
               {pricing.savingsPercent && (
-                <span className="text-[#00D89A]">{pricing.savingsPercent}</span>
+                <span className="text-[#00D897]">{pricing.savingsPercent}</span>
               )}
-              <span className="font-medium text-white">${formatUSD(pricing.costPer1000)}</span>
+              <span className="font-medium">${formatUSD(pricing.costPer1000)}</span>
             </div>
           </div>
           <div className="pt-3 border-t border-border">
             <div className="flex justify-between items-center">
-              <span className="text-white/60">Total</span>
-              <span className="text-2xl font-semibold text-white">${formatUSD(pricing.total)}</span>
+              <span className="text-alt-color">Total</span>
+              <span className="text-2xl font-semibold">${formatUSD(pricing.total)}</span>
             </div>
             {pricing.savings > 0 && (
               <div className="flex justify-between items-center mt-1">
-                <span className="text-white/60 text-sm">Total savings</span>
-                <span className="text-[#00D89A] text-sm">-${formatUSD(pricing.savings)}</span>
+                <span className="text-alt-color text-sm">Total savings</span>
+                <span className="text-[#00D897] text-sm">-${formatUSD(pricing.savings)}</span>
               </div>
             )}
           </div>
