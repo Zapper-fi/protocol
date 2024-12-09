@@ -199,7 +199,7 @@ export function BuyCredits() {
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="flex-col gap-2">
+    <div className="space-y-2 flex flex-col gap-2">
       <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
@@ -227,8 +227,8 @@ export function BuyCredits() {
       </div>
       <hr />
 
-      <div className="flex justify-between items-start w-full">
-        <div className="space-y-1">
+      <div className="flex justify-between items-baseline">
+        <div>
           <h4>Buy Credits</h4>
           <div className="flex flex-col gap-1 mt-1">
             <span>
@@ -250,38 +250,66 @@ export function BuyCredits() {
         </a>
       </div>
 
-      <form onSubmit={handleSubmit} className="my-8">
-        <div>
-          <div className="flex items-center justify-between h-10">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
             <label htmlFor="points-input" className="text-sm font-medium">
               Credit Amount
             </label>
-
-            <div className="flex gap-4">
-              <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
-                -
-              </button>
-              <input
-                id="points-input"
-                type="text"
-                value={displayPoints}
-                onChange={handlePointsChange}
-                onBlur={handleBlur}
-                min={MIN_POINTS}
-                className="zapper-btn text-center text-xl field-sizing-content"
-                placeholder="Enter credits amount"
-              />
-              <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
-                +
-              </button>
+            <div className="h-10 flex items-center">
+              <div className="flex gap-4">
+                <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
+                  -
+                </button>
+                <div className="flex-1">
+                  <input
+                    id="points-input"
+                    type="text"
+                    value={displayPoints}
+                    onChange={handlePointsChange}
+                    onBlur={handleBlur}
+                    min={MIN_POINTS}
+                    className="zapper-btn text-center w-full text-primary-default"
+                    placeholder="Enter credits amount"
+                  />
+                </div>
+                <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
+                  +
+                </button>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="flex items-center justify-between h-10">
-            <span className="text-sm font-medium">Total</span>
+        <div className="space-y-2">
+          <div className="text-sm flex justify-between text-gray-500 mb-1">
+            <span>Amount</span>
+            <span>Cost per credit</span>
+          </div>
+          {breakdown.map((tier) => {
+            const discountPercent = (1 - tier.creditRate) * 100;
+            const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
+            return (
+              <div key={tierKey} className="text-sm flex justify-between">
+                <span>{tier.creditAmount.toLocaleString()}</span>
+                <span>
+                  <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
+                  {discountPercent > 0 && (
+                    <span className="text-green-500 font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="space-y-2">
+          <div className="flex flex-col items-end gap-1 mt-4">
+            {savings > 0 && (
+              <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
+            )}
             <div
               id="cost-display"
-              className="font-extrabold text-primary-default"
+              className="text-primary-default font-bold text-lg"
               aria-label={`Cost: $${formatPrice(price)}`}
             >
               USD ${formatPrice(price)}
@@ -289,7 +317,7 @@ export function BuyCredits() {
           </div>
         </div>
 
-        <Button type="submit" variant="primary" disabled={disabled} className="w-full mt-4">
+        <Button type="submit" variant="primary" disabled={disabled} className="w-full">
           <span className="font-extrabold">Buy for USD ${formatPrice(price)}</span>
         </Button>
       </form>
