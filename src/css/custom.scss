@@ -4,32 +4,29 @@
 
 @import '../modules/Intro/Intro.scss';
 
-
 @font-face {
-  font-family: "Inter";
-  src: url('/static/fonts/Inter/Inter-Bold.ttf') format("truetype");
+  font-family: 'Inter';
+  src: url('/static/fonts/Inter/Inter-Bold.ttf') format('truetype');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url('/static/fonts/Inter/Inter-SemiBold.ttf') format("truetype");
+  font-family: 'Inter';
+  src: url('/static/fonts/Inter/Inter-SemiBold.ttf') format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url('/static/fonts/Inter/Inter-Regular.ttf') format("truetype");
+  font-family: 'Inter';
+  src: url('/static/fonts/Inter/Inter-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
-
 @font-face {
-  font-family: "Inter";
-  src: url('/static/fonts/Inter/Inter-Regular.ttf') format("truetype");
+  font-family: 'Inter';
+  src: url('/static/fonts/Inter/Inter-Regular.ttf') format('truetype');
   font-weight: 300;
 }
-
 
 /**
    * Any CSS included here will be global. The classic template
@@ -39,7 +36,7 @@
   
   /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family: "Inter", Arial, sans-serif;
+  --ifm-font-family: 'Inter', Arial, sans-serif;
   --ifm-heading-font-family: var(--ifm-font-family);
 
   --ifm-color-primary: #784ffe;
@@ -124,7 +121,6 @@
     background-color: rgba(241, 53, 110, 0.2);
   }
 
-
   /** Zapper Theme **/
   --radius: 12px;
   --sm: 8px;
@@ -163,13 +159,11 @@ th {
   border-top: 0;
   font-size: 14px;
   text-align: left;
-
 }
 
 tr {
   border-bottom: 0px !important;
   border-top: 1px solid var(--ifm-border-color);
-
 }
 
 table td {
@@ -203,15 +197,15 @@ td {
 }
 
 /* Zapper overrides */
-.markdown>h2 {
+.markdown > h2 {
   --ifm-h2-font-size: inherit;
 }
 
-.markdown>h3 {
+.markdown > h3 {
   --ifm-h3-font-size: inherit;
 }
 
-.markdown>h4 {
+.markdown > h4 {
   --ifm-h4-font-size: inherit;
 }
 
@@ -233,7 +227,6 @@ details[class*='details_'] {
   --privy-color-foreground-2: var(--ifm-text-color-primary);
 }
 
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #a387ff;
@@ -252,9 +245,7 @@ details[class*='details_'] {
   --ifm-default-background: #0c1013;
   --ifm-text-alt-color: #c7d2da;
 
-
   --ifm-hr-background-color: var(--ifm-border-color);
-
 
   /** Zapper Theme for Dark Mode**/
   --text-color: white;
@@ -300,16 +291,14 @@ p {
   max-width: 1600px !important;
 
   @media screen and (max-width: 750px) {
-    padding: 0 16px,
+    padding: 0 16px;
   }
 }
-
 
 .main-wrapper,
 .navbar {
   background-color: var(--ifm-default-background);
 }
-
 
 .card {
   background-color: var(--ifm-card-background);
@@ -327,7 +316,6 @@ p {
 hr {
   background-color: var(--ifm-border-color);
 }
-
 
 .docs-wrapper {
   .navbar {
@@ -351,7 +339,7 @@ hr {
 }
 
 .chart__tabs__button {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   border-radius: 8px;
   font-weight: 500;
   background-color: var(--ifm-card-background);
@@ -380,8 +368,6 @@ hr {
   &--secondary {
     background-color: var(--ifm-card-background);
     color: var(--text-color);
-
-
   }
 }
 
@@ -399,7 +385,6 @@ input {
   border: 1px solid var(--ifm-border-color);
   font-size: 16px;
 }
-
 
 .problem__section {
   display: flex;

@@ -10,20 +10,20 @@ import Link from '@docusaurus/Link';
 
 Query individual NFTs owned by specific addresses, with detailed token information and filtering capabilities.
 
-
 ### `nftUsersTokens`
+
 Takes an array of `addresses` as input, with optional parameters for `network`, `standard`, and `minEstimatedValueUsd`. It returns comprehensive NFT holdings data including:
-* Individual NFT tokens owned
-* Balance and quantity information 
-* Collection metadata
-* Current valuations
-* Ownership history
-* Media/trait details
+
+- Individual NFT tokens owned
+- Balance and quantity information
+- Collection metadata
+- Current valuations
+- Ownership history
+- Media/trait details
 
 ### Example Use Case: User's NFT Gallery
 
 Let's say you want to display all NFTs owned by a user or group of users. Start by passing the `owners` addresses you want to query. Then return details about each NFT including its `collection` information, `mediasV3` for displaying images, and the current `estimatedValue`. You can filter results by `network` or minimum value, and use pagination with `first` and `after` arguments to load results in batches.
-
 
 #### Example Variables
 
@@ -38,12 +38,8 @@ Let's say you want to display all NFTs owned by a user or group of users. Start 
 #### Example Query
 
 ```graphql
-query($owners: [Address!]!, $network: Network, $first: Int) {
-  nftUsersTokens(
-    owners: $owners
-    network: $network
-    first: $first
-  ) {
+query ($owners: [Address!]!, $network: Network, $first: Int) {
+  nftUsersTokens(owners: $owners, network: $network, first: $first) {
     edges {
       node {
         id
@@ -206,55 +202,54 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `owners` | Array of addresses to query NFTs for | `[Address!]!` | Yes |
-| `network` | Filter NFTs by specific network | `Network` | No |
-| `minEstimatedValueUsd` | Minimum USD value threshold for NFTs | `Float` | No |
-| `search` | Search string to filter NFTs | `String` | No |
-| `collectionIds` | Array of specific collection IDs to include | `[ID!]` | No |
-| `standard` | Filter by NFT standard (ERC721/ERC1155) | `NftStandard` | No |
-| `onlyHidden` | Show only hidden NFTs | `Boolean` | No |
-| `first` | Number of NFTs to return (default: 24) | `Int` | No |
-| `after` | Cursor for pagination | `String` | No |
-| `withOverrides` | Include value overrides | `Boolean` | No |
-
+| Argument               | Description                                 | Type          | Required |
+| ---------------------- | ------------------------------------------- | ------------- | -------- |
+| `owners`               | Array of addresses to query NFTs for        | `[Address!]!` | Yes      |
+| `network`              | Filter NFTs by specific network             | `Network`     | No       |
+| `minEstimatedValueUsd` | Minimum USD value threshold for NFTs        | `Float`       | No       |
+| `search`               | Search string to filter NFTs                | `String`      | No       |
+| `collectionIds`        | Array of specific collection IDs to include | `[ID!]`       | No       |
+| `standard`             | Filter by NFT standard (ERC721/ERC1155)     | `NftStandard` | No       |
+| `onlyHidden`           | Show only hidden NFTs                       | `Boolean`     | No       |
+| `first`                | Number of NFTs to return (default: 24)      | `Int`         | No       |
+| `after`                | Cursor for pagination                       | `String`      | No       |
+| `withOverrides`        | Include value overrides                     | `Boolean`     | No       |
 
 ### Fields
 
 #### NftUserTokenConnection
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `edges` | Array of NFT edges | `[NftUserTokenEdge!]!` |
-| `pageInfo` | Pagination information | `PageInfo!` |
+
+| Field      | Description            | Type                   |
+| ---------- | ---------------------- | ---------------------- |
+| `edges`    | Array of NFT edges     | `[NftUserTokenEdge!]!` |
+| `pageInfo` | Pagination information | `PageInfo!`            |
 
 #### NftToken (node)
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `id` | Unique identifier | `ID!` |
-| `tokenId` | Token ID within collection | `String!` |
-| `name` | Token name | `String!` |
-| `description` | Token description | `String` |
-| `supply` | Total token supply | `BigDecimal!` |
-| `circulatingSupply` | Circulating supply | `BigDecimal!` |
-| `holdersCount` | Number of token holders | `BigDecimal!` |
-| `socialLinks` | Social media links | `[SocialLink!]!` |
-| `collection` | Parent collection data | `NftCollection!` |
-| `traits` | Token attributes | `[NftTrait!]!` |
-| `mediasV2` | Legacy media assets | `[NftMediaV2!]!` |
-| `mediasV3` | Current media assets | `NftMedias!` |
-| `estimatedValue` | Current value estimate | `NftValueDenomination` |
-| `lastSale` | Last sale details | `NftValueDenomination` |
-| `rarityRank` | Token rarity ranking (deprecated) | `Int` |
-| `lastSaleEth` | Last sale in ETH (deprecated) | `BigDecimal` |
-| `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
-| `isHidden` | Hidden status | `Boolean!` |
 
-
+| Field               | Description                         | Type                   |
+| ------------------- | ----------------------------------- | ---------------------- |
+| `id`                | Unique identifier                   | `ID!`                  |
+| `tokenId`           | Token ID within collection          | `String!`              |
+| `name`              | Token name                          | `String!`              |
+| `description`       | Token description                   | `String`               |
+| `supply`            | Total token supply                  | `BigDecimal!`          |
+| `circulatingSupply` | Circulating supply                  | `BigDecimal!`          |
+| `holdersCount`      | Number of token holders             | `BigDecimal!`          |
+| `socialLinks`       | Social media links                  | `[SocialLink!]!`       |
+| `collection`        | Parent collection data              | `NftCollection!`       |
+| `traits`            | Token attributes                    | `[NftTrait!]!`         |
+| `mediasV2`          | Legacy media assets                 | `[NftMediaV2!]!`       |
+| `mediasV3`          | Current media assets                | `NftMedias!`           |
+| `estimatedValue`    | Current value estimate              | `NftValueDenomination` |
+| `lastSale`          | Last sale details                   | `NftValueDenomination` |
+| `rarityRank`        | Token rarity ranking (deprecated)   | `Int`                  |
+| `lastSaleEth`       | Last sale in ETH (deprecated)       | `BigDecimal`           |
+| `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal`           |
+| `isHidden`          | Hidden status                       | `Boolean!`             |
 
 ### Enums
-```graphql
 
+```graphql
 enum NftValuationStrategy {
   TOP_OFFER
   ESTIMATED_VALUE
@@ -263,6 +258,7 @@ enum NftValuationStrategy {
 ```
 
 ### Notes
+
 - Supports pagination for handling large NFT collections
 - Filter by network, value, and NFT standard
 - Returns comprehensive token metadata including estimated values

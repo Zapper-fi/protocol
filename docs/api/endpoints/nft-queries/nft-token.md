@@ -10,14 +10,15 @@ import Link from '@docusaurus/Link';
 
 Surfaces details about a single NFT with its metadata including the collection it belongs to, token ID, traits, name, description, media (images/animations/audio), holders, transfers, and estimated value information.
 
-
 ### `nftToken`
+
 Takes `collectionAddress`, `network`, and `tokenId` as input. Returns detailed data about a specific NFT including:
-* Token metadata
-* Current ownership
-* Transfer history
-* Traits and rarity
-* Media assets
+
+- Token metadata
+- Current ownership
+- Transfer history
+- Traits and rarity
+- Media assets
 
 ### Example Use Case: NFT Display
 
@@ -36,12 +37,8 @@ Let's say you want to display a specific NFT. Start by passing the `collectionAd
 #### Example Query
 
 ```graphql
-query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
-  nftToken(
-    collectionAddress: $collectionAddress
-    network: $network
-    tokenId: $tokenId
-  ) {
+query ($collectionAddress: String!, $network: Network!, $tokenId: String!) {
+  nftToken(collectionAddress: $collectionAddress, network: $network, tokenId: $tokenId) {
     id
     name
     description
@@ -161,41 +158,40 @@ query($collectionAddress: String!, $network: Network!, $tokenId: String!) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `collectionAddress` | The contract address of the NFT collection | `String!` | Yes |
-| `network` | The blockchain network where the NFT exists | `Network!` | Yes |
-| `tokenId` | The unique identifier of the NFT within its collection | `String!` | Yes |
+| Argument            | Description                                            | Type       | Required |
+| ------------------- | ------------------------------------------------------ | ---------- | -------- |
+| `collectionAddress` | The contract address of the NFT collection             | `String!`  | Yes      |
+| `network`           | The blockchain network where the NFT exists            | `Network!` | Yes      |
+| `tokenId`           | The unique identifier of the NFT within its collection | `String!`  | Yes      |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `id` | Unique identifier for the NFT | `ID!` |
-| `tokenId` | Token ID within the collection | `String!` |
-| `name` | Name of the NFT | `String!` |
-| `description` | Description of the NFT | `String` |
-| `supply` | Total supply of this token | `BigDecimal!` |
-| `circulatingSupply` | Number of tokens in circulation | `BigDecimal!` |
-| `holdersCount` | Number of unique holders (ERC-1155) | `BigDecimal!` |
-| `socialLinks` | Social media links | `[SocialLink!]!` |
-| `collection` | Parent collection information | `NftCollection!` |
-| `traits` | Token traits/attributes | `[NftTrait!]!` |
-| `mediasV2` | Media assets (legacy format) | `[NftMediaV2!]!` |
-| `mediasV3` | Media assets (current format) | `NftMedias!` |
-| `transfers` | Transfer history | `NftTransferConnection` |
-| `holders` | Current token holders | `NftHolderConnection!` |
-| `holdersFollowedByAddress` | Holders followed by given address | `[NftHolder!]!` |
-| `isHidden` | Whether token is hidden by owner | `Boolean!` |
-| `estimatedValue` | Current estimated value | `NftValueDenomination` |
-| `lastSale` | Most recent sale details | `NftValueDenomination` |
-| `rarityRank` | Token rarity ranking (deprecated) | `Int` |
-| `lastSaleEth` | Last sale price in ETH (deprecated) | `BigDecimal` |
-| `estimatedValueEth` | Estimated value in ETH (deprecated) | `BigDecimal` |
-
-
+| Field                      | Description                         | Type                    |
+| -------------------------- | ----------------------------------- | ----------------------- |
+| `id`                       | Unique identifier for the NFT       | `ID!`                   |
+| `tokenId`                  | Token ID within the collection      | `String!`               |
+| `name`                     | Name of the NFT                     | `String!`               |
+| `description`              | Description of the NFT              | `String`                |
+| `supply`                   | Total supply of this token          | `BigDecimal!`           |
+| `circulatingSupply`        | Number of tokens in circulation     | `BigDecimal!`           |
+| `holdersCount`             | Number of unique holders (ERC-1155) | `BigDecimal!`           |
+| `socialLinks`              | Social media links                  | `[SocialLink!]!`        |
+| `collection`               | Parent collection information       | `NftCollection!`        |
+| `traits`                   | Token traits/attributes             | `[NftTrait!]!`          |
+| `mediasV2`                 | Media assets (legacy format)        | `[NftMediaV2!]!`        |
+| `mediasV3`                 | Media assets (current format)       | `NftMedias!`            |
+| `transfers`                | Transfer history                    | `NftTransferConnection` |
+| `holders`                  | Current token holders               | `NftHolderConnection!`  |
+| `holdersFollowedByAddress` | Holders followed by given address   | `[NftHolder!]!`         |
+| `isHidden`                 | Whether token is hidden by owner    | `Boolean!`              |
+| `estimatedValue`           | Current estimated value             | `NftValueDenomination`  |
+| `lastSale`                 | Most recent sale details            | `NftValueDenomination`  |
+| `rarityRank`               | Token rarity ranking (deprecated)   | `Int`                   |
+| `lastSaleEth`              | Last sale price in ETH (deprecated) | `BigDecimal`            |
+| `estimatedValueEth`        | Estimated value in ETH (deprecated) | `BigDecimal`            |
 
 ### Enums
+
 ```graphql
 enum NftTransferSort {
   TIMESTAMP
@@ -208,6 +204,7 @@ enum OrderDirectionOption {
 ```
 
 ### Notes
+
 - Returns comprehensive NFT metadata
 - Includes current value estimates and last sale data
 - Provides access to high-quality media assets

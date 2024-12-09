@@ -3,6 +3,7 @@ sidebar_position: 2
 sidebar_label: Underlying Tokens
 pagination_label: Underlying Tokens
 ---
+
 # Defining Underlying Tokens
 
 ## 4. Input the underlying token address

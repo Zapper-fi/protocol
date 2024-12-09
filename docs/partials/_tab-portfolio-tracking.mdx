@@ -1,5 +1,5 @@
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { CodeImage } from '@site/src/components/CodeImage'
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { CodeImage } from '@site/src/components/CodeImage';
 
 <TabGroup className="">  
   <TabList className="md:-mb-10 md:h-10 whitespace-nowrap overflow-x-auto">
@@ -26,35 +26,36 @@ import { CodeImage } from '@site/src/components/CodeImage'
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Tokens.png">
           {`
+
 query {
-  portfolio(addresses: ["0x..."]) {
-    tokenBalances {
-      key
-      address
-      network
-      token {
-        baseToken {
-          address
-          network
-          symbol
-          decimals
-          imageUrl
-        }
-        balance
-        balanceUSD
-        balanceRaw
-      }
-      updatedAt
-    }
-  }
+portfolio(addresses: ["0x..."]) {
+tokenBalances {
+key
+address
+network
+token {
+baseToken {
+address
+network
+symbol
+decimals
+imageUrl
 }
-          `}
-        </CodeImage>
-      </div>
-    </TabPanel>
-    <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 md:mt-14">
-        ## Access DeFi Holdings
+balance
+balanceUSD
+balanceRaw
+}
+updatedAt
+}
+}
+}
+`}
+
+</CodeImage>
+</div>
+</TabPanel>
+<TabPanel className="lg:flex gap-8">
+<div className="basis-1/2 md:mt-14"> ## Access DeFi Holdings
 
         Leverage Zapper's deep coverage of DeFi integrations. [Learn More](/docs/api/endpoints/portfolio#2-app-balances-appbalances)
 
@@ -66,8 +67,8 @@ query {
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Apps.png">
-{`
-query {
+
+{`query {
   portfolio(addresses: ["0x..."]) {
     appBalances {
       key
@@ -96,8 +97,7 @@ query {
       }
     }
   }
-}
-`}
+}`}
 
         </CodeImage>
       </div>
@@ -117,6 +117,7 @@ query {
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_NFTs.png">
+
 {`
 query {
   nftToken(
@@ -170,12 +171,12 @@ query {
     }
   }
 }`}
-        </CodeImage>
-      </div>
-    </TabPanel>
-    <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 md:mt-14">
-        ## Access Total Net Worth
+
+</CodeImage>
+</div>
+</TabPanel>
+<TabPanel className="lg:flex gap-8">
+<div className="basis-1/2 md:mt-14"> ## Access Total Net Worth
 
         Surfaces various aggregations of onchain portfolio value. [Learn More](docs/api/endpoints/portfolio#4-portfolio-totals-totals)
 
@@ -187,8 +188,8 @@ query {
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Totals.png">
-{`
-query {
+
+{`query {
   portfolio(addresses: ["0x..."]) {
     totals {
       total
@@ -213,14 +214,13 @@ query {
         pct
       }
     }
-  }
-`}
-        </CodeImage>
-      </div>
-    </TabPanel>
-    <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 md:mt-14">
-        ## Everybody Loves Claimables
+  }`}
+
+</CodeImage>
+</div>
+</TabPanel>
+<TabPanel className="lg:flex gap-8">
+<div className="basis-1/2 md:mt-14"> ## Everybody Loves Claimables
 
         Surface available claimable tokens for a given address across all indexed onchain apps. [Learn More](/docs/api/endpoints/portfolio#5-claimables)
 
@@ -231,8 +231,8 @@ query {
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Claimables.png">
-{`
-query {
+
+{`query {
   portfolio(addresses: ["0x..."]) {
     totals {
       claimables {
@@ -250,10 +250,11 @@ query {
         }
       }
     }
-  }
-`}
-        </CodeImage>
-      </div>
-    </TabPanel>
+  }`}
+
+</CodeImage>
+</div>
+</TabPanel>
+
   </TabPanels>
 </TabGroup>

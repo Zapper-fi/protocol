@@ -64,6 +64,7 @@ Here you will find a video to guide you through the process of creating a Transa
 ></iframe>
 
 ---
+
 This next video will guide you through the process of creating an Transaction Interpreter with a **Actor** item type.
 
 <iframe

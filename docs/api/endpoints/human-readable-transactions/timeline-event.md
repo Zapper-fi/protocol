@@ -8,16 +8,17 @@ import Link from '@docusaurus/Link';
 
 # Single Transactions
 
-
 Presents the details of an onchain transaction in a simple descriptive summary with optional references to items such as apps, tokens, NFTs, and accounts. Can be useful for building an activity feed of onchain transactions or surfacing specific transaction details.
 
 ### `timelineEvent`
+
 Takes `transactionHash` and `network` as input. Returns detailed information about a specific transaction including:
-* Transaction details
-* Human-readable description
-* Display items such as tokens, NFTs, accounts, and more.
-* Related app information
-* Actor details
+
+- Transaction details
+- Human-readable description
+- Display items such as tokens, NFTs, accounts, and more.
+- Related app information
+- Actor details
 
 ### Example Use Case: Transaction Details
 
@@ -37,7 +38,7 @@ To make these references, add the fields `TokenDisplayItem`, `NFTDisplayItem`, `
 #### Example Query
 
 ```graphql
-query($transactionHash: String!, $network: Network!) {
+query ($transactionHash: String!, $network: Network!) {
   timelineEvent(transactionHash: $transactionHash, network: $network) {
     interpretation {
       processedDescription
@@ -70,7 +71,6 @@ query($transactionHash: String!, $network: Network!) {
           network
           collectionAddress
           quantity
-
         }
         ... on ActorDisplayItem {
           type
@@ -151,7 +151,6 @@ It's useful to include all types of `descriptionDisplayItems` to account for the
 }
 ```
 
-
 <SandboxButton/>
 
 ---
@@ -164,32 +163,30 @@ In this example, the variables $1 and $2 in the `description` make reference to 
 
 ### Arguments
 
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `transactionHash`      | The transaction hash to retreive information for.    | `String!`        | 
-| `network`      | The network that the transaction happened on.   | `Network!`        | 
-
-
+| Argument          | Description                                       | Type       |
+| ----------------- | ------------------------------------------------- | ---------- |
+| `transactionHash` | The transaction hash to retreive information for. | `String!`  |
+| `network`         | The network that the transaction happened on.     | `Network!` |
 
 ### Fields
 
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `key`      | A unique identifier.       | `String!`       |
-| `network`      | Network on which the transaction happened.     | `Network!`       |
-| `interpretation`      | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.     | `Network!`       |
-| `description`      | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.      | `String!`       |
-| `processedDescription`      | The human-readble description of the transaction.      | `String!`       |
-| `descriptionDisplayItems`      | Contains the fields which the variables in `description` make reference to.      | `ActivityFeedDisplayItem!!`       |
-| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
-| `app`      | The app that is associated with the transaction.     | `Int!`       |
-| `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
-| `actors`      | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.      | `ActorDisplayItem!`       |
-| `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
-| `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
-| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
-| `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
-| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
-| `interpreterId`      | Unique identifier for the Interpreter.      | `String!`       |
-| `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
-| `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
+| Field                     | Description                                                                                                                                                      | Type                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| `key`                     | A unique identifier.                                                                                                                                             | `String!`                        |
+| `network`                 | Network on which the transaction happened.                                                                                                                       | `Network!`                       |
+| `interpretation`          | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.                     | `Network!`                       |
+| `description`             | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.                                             | `String!`                        |
+| `processedDescription`    | The human-readble description of the transaction.                                                                                                                | `String!`                        |
+| `descriptionDisplayItems` | Contains the fields which the variables in `description` make reference to.                                                                                      | `ActivityFeedDisplayItem!!`      |
+| `transaction`             | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.                                                                         | `OnChainTransaction!`            |
+| `app`                     | The app that is associated with the transaction.                                                                                                                 | `Int!`                           |
+| `displayName`             | Returns the display name of an address (ENS, Farcaster, Lens, etc.).                                                                                             | `Int!`                           |
+| `actors`                  | Address(s) that were involved in the transaction. Could include accounts, tokens, NFTs, contracts, etc.                                                          | `ActorDisplayItem!`              |
+| `timestamp`               | Represents date and time as number of milliseconds from start of UNIX epoch.                                                                                     | `Timestamp!`                     |
+| `perspective`             | The address whose perspective is used in deltas.                                                                                                                 | `ActivityPerspective!`           |
+| `perspectiveDelta`        | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.                                                                                    | `ActivityAccountDelta!`          |
+| `tokenDeltasV2`           | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.               | `FungibleTokenDeltaConnection!!` |
+| `nftDeltasV2`             | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields. | `NftDeltaConnection!`            |
+| `interpreterId`           | Unique identifier for the Interpreter.                                                                                                                           | `String!`                        |
+| `interpreter`             | Object which contains info on the interpreter such as `app` and `category`.                                                                                      | `ActivityEventInterpreter!`      |
+| `sigHash`                 | Returns the sigHash for the transaction.                                                                                                                         | `String!`                        |

@@ -1,76 +1,69 @@
 .intro {
-    padding: 32px 0px;
-    height: calc(100vh - 126px);
-    z-index: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
+  padding: 32px 0px;
+  height: calc(100vh - 126px);
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 750px) {
+    padding: 0px;
+    height: calc(100vh - 60px);
+  }
+
+  .container {
+    @media screen and (max-width: 750px) {
+      padding: 0px;
+    }
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
 
     @media screen and (max-width: 750px) {
-        padding: 0px;
-        height: calc(100vh - 60px);
+      border-radius: 0px;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 64px;
+
+    &__child {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 540px;
+
+      @media screen and (max-width: 750px) {
+        max-width: 100%;
+      }
     }
 
-    .container {
-        @media screen and (max-width: 750px) {
-            padding: 0px
-        }
+    @media screen and (max-width: 750px) {
+      padding: 64px 16px;
+      height: calc(100vh - 60px);
     }
 
-    &__background {
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-        object-fit: cover;
+    h1 {
+      font-size: 72px;
+      color: white;
 
-        @media screen and (max-width: 750px) {
-            border-radius: 0px;
-        }
+      @media screen and (max-width: 750px) {
+        font-size: 62px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 44px;
+      }
     }
-
-
-    &__content {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 32px;
-        padding: 64px;
-
-        &__child {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-            max-width: 540px;
-
-            @media screen and (max-width: 750px) {
-                max-width: 100%;
-            }
-    
-        }
-
-        @media screen and (max-width: 750px) {
-            padding: 64px 16px;
-            height: calc(100vh - 60px);
-        }
-
-
-        h1 {
-
-            font-size: 72px;
-            color: white;
-
-            @media screen and (max-width: 750px) {
-                font-size: 62px;
-            }
-
-            @media screen and (max-width: 500px) {
-                font-size: 44px;
-            }
-        }
-
-        
-    }
-   
+  }
 }

@@ -10,15 +10,15 @@ import Link from '@docusaurus/Link';
 
 Get aggregate statistics for NFT holdings, including total count and total value of NFTs owned by specified addresses.
 
-
 ### `nftUsersTokensTotals`
-Takes an array of `addresses` as input, with similar filtering options as `nftUsersTokens`. Returns aggregated statistics including:
-* Total count of NFTs owned
-* Total value of NFT holdings
-* Balance summaries
-* Token count metrics
-* Quick summaries of NFT holdings without fetching individual token details.
 
+Takes an array of `addresses` as input, with similar filtering options as `nftUsersTokens`. Returns aggregated statistics including:
+
+- Total count of NFTs owned
+- Total value of NFT holdings
+- Balance summaries
+- Token count metrics
+- Quick summaries of NFT holdings without fetching individual token details.
 
 ### Example Use Case: Portfolio Summary
 
@@ -37,7 +37,7 @@ Let's say you want to show the total value and count of NFTs in a user's portfol
 #### Example Query
 
 ```graphql
-query($owners: [Address!]!, $network: Network, $minEstimatedValueUsd: Float, $withOverrides: Boolean) {
+query ($owners: [Address!]!, $network: Network, $minEstimatedValueUsd: Float, $withOverrides: Boolean) {
   nftUsersTokensTotals(
     owners: $owners
     network: $network
@@ -64,32 +64,34 @@ query($owners: [Address!]!, $network: Network, $minEstimatedValueUsd: Float, $wi
   }
 }
 ```
+
 <SandboxButton/>
 
 ---
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `owners` | Array of addresses to query NFTs for | `[Address!]!` | Yes |
-| `network` | Filter NFTs by specific network | `Network` | No |
-| `minEstimatedValueUsd` | Minimum USD value threshold for NFTs | `Float` | No |
-| `search` | Search string to filter NFTs | `String` | No |
-| `collectionIds` | Array of specific collection IDs to include | `[ID!]` | No |
-| `standard` | Filter by NFT standard (ERC721/ERC1155) | `NftStandard` | No |
-| `onlyHidden` | Show only hidden NFTs | `Boolean` | No |
-| `withOverrides` | Include value overrides | `Boolean` | No |
+| Argument               | Description                                 | Type          | Required |
+| ---------------------- | ------------------------------------------- | ------------- | -------- |
+| `owners`               | Array of addresses to query NFTs for        | `[Address!]!` | Yes      |
+| `network`              | Filter NFTs by specific network             | `Network`     | No       |
+| `minEstimatedValueUsd` | Minimum USD value threshold for NFTs        | `Float`       | No       |
+| `search`               | Search string to filter NFTs                | `String`      | No       |
+| `collectionIds`        | Array of specific collection IDs to include | `[ID!]`       | No       |
+| `standard`             | Filter by NFT standard (ERC721/ERC1155)     | `NftStandard` | No       |
+| `onlyHidden`           | Show only hidden NFTs                       | `Boolean`     | No       |
+| `withOverrides`        | Include value overrides                     | `Boolean`     | No       |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `count` | Number of NFTs matching the current filter criteria | `BigDecimal!` |
-| `totalCount` | Total number of NFTs owned | `BigDecimal` |
+| Field        | Description                                          | Type          |
+| ------------ | ---------------------------------------------------- | ------------- |
+| `count`      | Number of NFTs matching the current filter criteria  | `BigDecimal!` |
+| `totalCount` | Total number of NFTs owned                           | `BigDecimal`  |
 | `balanceUSD` | Total USD value of NFTs matching the filter criteria | `BigDecimal!` |
 
 ### Notes
+
 - Returns aggregate statistics without individual token details
 - Uses the same filtering options as `nftUsersTokens`
 - The `count` field shows NFTs matching current filters, while `totalCount` shows all NFTs
@@ -97,9 +99,7 @@ query($owners: [Address!]!, $network: Network, $minEstimatedValueUsd: Float, $wi
 - USD values are based on floor prices and recent sales data
 - When `withOverrides` is true, includes any manual value overrides in the calculations
 
-
 ---
-
 
 ### `nftUsersCollectionsTotals`
 
@@ -121,11 +121,8 @@ Let's say you want to show summary statistics about a user's NFT collections. St
 #### Example Query
 
 ```graphql
-query($owners: [Address!]!, $network: Network) {
-  nftUsersCollectionsTotals(
-    owners: $owners
-    network: $network
-  ) {
+query ($owners: [Address!]!, $network: Network) {
+  nftUsersCollectionsTotals(owners: $owners, network: $network) {
     count
     totalCount
     balanceUSD
@@ -153,26 +150,27 @@ query($owners: [Address!]!, $network: Network) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `owners` | Wallet addresses to check collection holdings | `[Address!]!` | Yes |
-| `network` | Filter collections by specific network | `Network` | No |
-| `minCollectionValueUsd` | Minimum USD value threshold for collections | `Float` | No |
-| `collectionIds` | Only count specific collections | `[ID!]` | No |
-| `standard` | Filter by NFT standard (ERC721/ERC1155) | `NftStandard` | No |
-| `search` | Search string to filter collections | `String` | No |
-| `onlyHidden` | Show only hidden collections | `Boolean` | No |
-| `withOverrides` | Include manual value overrides | `Boolean` | No |
+| Argument                | Description                                   | Type          | Required |
+| ----------------------- | --------------------------------------------- | ------------- | -------- |
+| `owners`                | Wallet addresses to check collection holdings | `[Address!]!` | Yes      |
+| `network`               | Filter collections by specific network        | `Network`     | No       |
+| `minCollectionValueUsd` | Minimum USD value threshold for collections   | `Float`       | No       |
+| `collectionIds`         | Only count specific collections               | `[ID!]`       | No       |
+| `standard`              | Filter by NFT standard (ERC721/ERC1155)       | `NftStandard` | No       |
+| `search`                | Search string to filter collections           | `String`      | No       |
+| `onlyHidden`            | Show only hidden collections                  | `Boolean`     | No       |
+| `withOverrides`         | Include manual value overrides                | `Boolean`     | No       |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `count` | Number of collections matching your filters | `BigDecimal!` |
-| `totalCount` | Total number of collections owned, regardless of filters | `BigDecimal` |
-| `balanceUSD` | Total value in USD of collections matching your filters | `BigDecimal!` |
+| Field        | Description                                              | Type          |
+| ------------ | -------------------------------------------------------- | ------------- |
+| `count`      | Number of collections matching your filters              | `BigDecimal!` |
+| `totalCount` | Total number of collections owned, regardless of filters | `BigDecimal`  |
+| `balanceUSD` | Total value in USD of collections matching your filters  | `BigDecimal!` |
 
 ### Notes
+
 - Perfect for collection portfolio summaries
 - Works across multiple wallet addresses
 - Can filter by network, value, and NFT standard

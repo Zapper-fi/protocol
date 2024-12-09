@@ -33,7 +33,7 @@ curl protocol.zapper.xyz/agents
 # 2. Generate production-ready code that exactly matches requirements
 # 3. Implement proper error handling for failed queries
 # 4. Parse responses correctly and validate all inputs
-# 5. Use the simplest query possible - avoid nesting unnecessarily 
+# 5. Use the simplest query possible - avoid nesting unnecessarily
 # 6. Never use placeholder addresses - require real addresses
 # 7. Follow proper query structure and syntax
 # 8. Write reusable, well-structured queries
@@ -46,7 +46,6 @@ curl protocol.zapper.xyz/agents
 # 2. Find the appropriate query for the task (ex: nftUsersTokens)
 # 3. Use that exact query name from the schema
 # 4. Double check that the output query matches a real query from the schema and has the required parameters and return types
-
 
 interface AbstractAppView {
   label: String!
@@ -268,14 +267,43 @@ type ActivityFeedApp {
   app: App!
 }
 
-union ActivityFeedDisplayItem = ActorDisplayItem | AppDisplayItem | AppContractNetworkDisplayItem | ChatChannelDisplayItem | CompositeDisplayItem | ImageDisplayItem | NetworkDisplayItem | NFTCollectionDisplayItem | NFTDisplayItem | NumberDisplayItem | ProposalDisplayItemObject | StringDisplayItem | TokenContractDisplayItem | TokenDisplayItem | TransactionDisplayItem
+union ActivityFeedDisplayItem =
+  | ActorDisplayItem
+  | AppDisplayItem
+  | AppContractNetworkDisplayItem
+  | ChatChannelDisplayItem
+  | CompositeDisplayItem
+  | ImageDisplayItem
+  | NetworkDisplayItem
+  | NFTCollectionDisplayItem
+  | NFTDisplayItem
+  | NumberDisplayItem
+  | ProposalDisplayItemObject
+  | StringDisplayItem
+  | TokenContractDisplayItem
+  | TokenDisplayItem
+  | TransactionDisplayItem
 
 type ActivityFeedDisplayItemEdge {
   node: ActivityFeedDisplayItem!
   cursor: String!
 }
 
-union ActivityFeedLeafDisplayItem = ActorDisplayItem | AppDisplayItem | AppContractNetworkDisplayItem | ChatChannelDisplayItem | ImageDisplayItem | NetworkDisplayItem | NFTCollectionDisplayItem | NFTDisplayItem | NumberDisplayItem | ProposalDisplayItemObject | StringDisplayItem | TokenContractDisplayItem | TokenDisplayItem | TransactionDisplayItem
+union ActivityFeedLeafDisplayItem =
+  | ActorDisplayItem
+  | AppDisplayItem
+  | AppContractNetworkDisplayItem
+  | ChatChannelDisplayItem
+  | ImageDisplayItem
+  | NetworkDisplayItem
+  | NFTCollectionDisplayItem
+  | NFTDisplayItem
+  | NumberDisplayItem
+  | ProposalDisplayItemObject
+  | StringDisplayItem
+  | TokenContractDisplayItem
+  | TokenDisplayItem
+  | TransactionDisplayItem
 
 type ActivityInterpretation {
   description: String!
@@ -304,7 +332,9 @@ type ActorDisplayItem {
 
 union ActorV2 = Account | Contract
 
-"""Address"""
+"""
+Address
+"""
 scalar Address
 
 type AddressMetadataEdge {
@@ -333,7 +363,9 @@ enum AllowedOpepenSizes {
 }
 
 type Animation {
-  """File size in bytes. Return `null` if unknown."""
+  """
+  File size in bytes. Return `null` if unknown.
+  """
   fileSize: Int
 
   """
@@ -342,7 +374,9 @@ type Animation {
   mimeType: String
   url: String! @deprecated(reason: "Use `original` instead.")
 
-  """Returns a link of the original animation"""
+  """
+  Returns a link of the original animation
+  """
   original: String!
 }
 
@@ -359,32 +393,50 @@ type AnimationEdge {
 type App implements Node {
   id: ID!
 
-  """Unique application ID"""
+  """
+  Unique application ID
+  """
   databaseId: Int!
 
-  """Unique application slug"""
+  """
+  Unique application slug
+  """
   slug: String!
 
-  """Is this application deprecated?"""
+  """
+  Is this application deprecated?
+  """
   deprecated: Boolean!
 
-  """Group in which this application belongs to"""
+  """
+  Group in which this application belongs to
+  """
   groups: [String!]! @deprecated(reason: "Prefer using groupDefinition")
 
-  """Group in which this application belongs to"""
+  """
+  Group in which this application belongs to
+  """
   groupDefinitions: [AppGroupDefinition!]!
 
-  """The typical display name of the application"""
+  """
+  The typical display name of the application
+  """
   displayName: String!
 
-  """Application website"""
+  """
+  Application website
+  """
   url: String
 
-  """Application links"""
+  """
+  Application links
+  """
   links: AppLinks
   websiteUrl: String @deprecated(reason: "Renamed to url")
 
-  """Description of the application."""
+  """
+  Description of the application.
+  """
   description: String!
   label: String
   imgUrl: String!
@@ -544,19 +596,29 @@ enum ApplicationTag {
 }
 
 type AppLinks {
-  """Discord channel link"""
+  """
+  Discord channel link
+  """
   discord: String
 
-  """GitHub organization link"""
+  """
+  GitHub organization link
+  """
   github: String
 
-  """Medium blog link"""
+  """
+  Medium blog link
+  """
   medium: String
 
-  """Telegram channel link"""
+  """
+  Telegram channel link
+  """
   telegram: String
 
-  """Twitter profile link"""
+  """
+  Twitter profile link
+  """
   twitter: String
 }
 
@@ -636,10 +698,14 @@ type AppTokenPositionEdge {
 }
 
 type AppTvl {
-  """Associated network of the app"""
+  """
+  Associated network of the app
+  """
   network: Network!
 
-  """Total value locked of an app for a given network"""
+  """
+  Total value locked of an app for a given network
+  """
   tvl: Float!
 }
 
@@ -659,7 +725,9 @@ type AttachmentConnection {
 type Audio {
   original: String!
 
-  """File size in bytes. Return `null` if unknown."""
+  """
+  File size in bytes. Return `null` if unknown.
+  """
   fileSize: Int
 
   """
@@ -740,7 +808,9 @@ type BaseTokenPositionBalance implements AbstractToken {
   priceSource: Erc20TokenPriceSource
 }
 
-"""Big decimal scalar"""
+"""
+Big decimal scalar
+"""
 scalar BigDecimal
 
 enum BreakdownType {
@@ -796,7 +866,11 @@ type ChatMessage implements Node {
   content: ChatMessageContent!
 }
 
-union ChatMessageContent = ChatMessageTextContent | ChatMessageNewMemberContent | ChatMessageGifContent | ChatMessageReplyContent
+union ChatMessageContent =
+  | ChatMessageTextContent
+  | ChatMessageNewMemberContent
+  | ChatMessageGifContent
+  | ChatMessageReplyContent
 
 type ChatMessageEdge {
   node: ChatMessage!
@@ -856,10 +930,14 @@ type CollectionEventConnection {
 input CollectionEventConnectionInput {
   first: Int = 25
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
 
-  """Cursor of an edge (excluded) to move backwards"""
+  """
+  Cursor of an edge (excluded) to move backwards
+  """
   before: String
   search: String
   tokenIds: [String!]
@@ -1022,7 +1100,9 @@ type DollarMetadataItem implements AbstractMetadataItem {
   valueDollar: Float!
 }
 
-"""Ethereum Name Service"""
+"""
+Ethereum Name Service
+"""
 scalar Ens
 
 union EnsAvatar = NftToken | NftTokenErc721 | NftTokenErc1155 | AvatarUrl
@@ -1202,12 +1282,16 @@ input HoldersFollowedByAddressInput {
 }
 
 type Image {
-  """See https://blurha.sh/"""
+  """
+  See https://blurha.sh/
+  """
   blurhash: String
   width: Int
   height: Int
 
-  """File size in bytes. Return `null` if unknown."""
+  """
+  File size in bytes. Return `null` if unknown.
+  """
   fileSize: Int
 
   """
@@ -1215,22 +1299,32 @@ type Image {
   """
   mimeType: String
   url(
-    """Deprecated, use `width` or the predefined field sizes"""
+    """
+    Deprecated, use `width` or the predefined field sizes
+    """
     input: ImageUrlInput
     width: Int
     format: ImageFormat
   ): String!
 
-  """Returns a link of the image 100px wide"""
+  """
+  Returns a link of the image 100px wide
+  """
   thumbnail: String!
 
-  """Returns a link of the image 250px wide"""
+  """
+  Returns a link of the image 250px wide
+  """
   medium: String!
 
-  """Returns a link of the image 500px wide"""
+  """
+  Returns a link of the image 500px wide
+  """
   large: String!
 
-  """Returns a link of the original image"""
+  """
+  Returns a link of the original image
+  """
   original: String!
 }
 
@@ -1385,7 +1479,9 @@ type NetworkExchangeConfigurationObject {
   suggestedTokenAddresses: [String!]!
   feeBasisPoints: Float!
 
-  """Fee percentage eg. value of 0.5 -> 0.5% fee taken from total amount"""
+  """
+  Fee percentage eg. value of 0.5 -> 0.5% fee taken from total amount
+  """
   feePercentage: Float!
   feeRecipientAddress: String
   exchangeProviderStrategy: String!
@@ -1444,7 +1540,9 @@ interface NFT implements Node {
   supply: BigDecimal!
   circulatingSupply: BigDecimal!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersCount: BigDecimal!
   socialLinks: [SocialLink!]!
   collection: NftCollection!
@@ -1452,11 +1550,15 @@ interface NFT implements Node {
   transfers(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     order: NftTransferConnectionOrderInput
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftTransferConnectionInput
   ): NftTransferConnection
   mediasV2: [NftMediaV2!]!
@@ -1464,32 +1566,48 @@ interface NFT implements Node {
   name: String!
   description: String
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holders(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     last: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     before: String
     followedBy: Address
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftHolderConnectionInput
   ): NftHolderConnection!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersFollowedByAddress(input: HoldersFollowedByAddressInput!): [NftHolder!]!
 
-  """Token was hidden by owner"""
+  """
+  Token was hidden by owner
+  """
   isHidden(input: ByAddressInput!): Boolean!
 
-  """Estimated value of the NFT"""
+  """
+  Estimated value of the NFT
+  """
   estimatedValue: NftValueDenomination
 
-  """Last sale of the NFT"""
+  """
+  Last sale of the NFT
+  """
   lastSale: NftValueDenomination
 }
 
@@ -1539,10 +1657,14 @@ type NftCollection implements Node {
   network: Network!
   socialLinks: [SocialLink!]!
 
-  """Image of the collection as an horizontal rectangle"""
+  """
+  Image of the collection as an horizontal rectangle
+  """
   bannerImageUrl: String @deprecated(reason: "Use `medias.banner`")
 
-  """Image of the collection as a vertical rectangle"""
+  """
+  Image of the collection as a vertical rectangle
+  """
   cardImageUrl: String @deprecated(reason: "Use `medias.card`")
   supply: BigDecimal!
   totalSupply: BigDecimal!
@@ -1553,7 +1675,9 @@ type NftCollection implements Node {
   holdersCount: BigDecimal!
   nftStandard: NftStandard!
 
-  """Disabled collection will return `null`"""
+  """
+  Disabled collection will return `null`
+  """
   disabled: Boolean!
   type: NftCollectionType!
   openseaId: String
@@ -1562,15 +1686,21 @@ type NftCollection implements Node {
   approvalTransaction(spenderAddress: Address!, ownerAddress: Address!): TransactionConfig!
   revokeApprovalTransaction(spenderAddress: Address!, ownerAddress: Address!): TransactionConfig!
 
-  """Floor price of the NFT collection"""
+  """
+  Floor price of the NFT collection
+  """
   floorPrice: NftValueDenomination
 
-  """Top offer of the NFT collection"""
+  """
+  Top offer of the NFT collection
+  """
   topOfferPrice: NftValueDenomination
   nfts(
     first: Int = 25
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     tokenIds: [String!]
     owners: [Address!]
@@ -1578,13 +1708,17 @@ type NftCollection implements Node {
     order: NftTokenConnectionOrderInput
     traits: [NftTokenTraitInput!]
 
-    """Deprecated, use the args"""
+    """
+    Deprecated, use the args
+    """
     input: NftConnectionInput
   ): NftTokenConnection!
   events(
     first: Int! = 25
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     tokenIds: [String!]
     owners: [Address!]
@@ -1592,7 +1726,9 @@ type NftCollection implements Node {
     traits: [NftTokenTraitInput!]
     period: NftPaymentStatsPeriod
 
-    """Deprecated: use the args"""
+    """
+    Deprecated: use the args
+    """
     input: CollectionEventConnectionInput
   ): CollectionEventConnection!
   traitGroups: [NftCollectionTraitGroupBase!]!
@@ -1626,13 +1762,19 @@ type NftCollectionGroup implements Node {
   description: String!
   socialLinks: [SocialLink!]!
 
-  """Image of the collection group as a square"""
+  """
+  Image of the collection group as a square
+  """
   logoImageUrl: String
 
-  """Image of the collection group as an horizontal rectangle"""
+  """
+  Image of the collection group as an horizontal rectangle
+  """
   bannerImageUrl: String
 
-  """Image of the collection group as a vertical rectangle"""
+  """
+  Image of the collection group as a vertical rectangle
+  """
   cardImageUrl: String
   disabled: Boolean!
   isCurated: Boolean!
@@ -1643,10 +1785,14 @@ type NftCollectionGroup implements Node {
 type NftCollectionHolder implements Node {
   id: ID!
 
-  """Number of unique items"""
+  """
+  Number of unique items
+  """
   holdCount: BigDecimal!
 
-  """Total number of items - for ERC-1155"""
+  """
+  Total number of items - for ERC-1155
+  """
   holdTotalCount: BigDecimal!
 }
 
@@ -1663,13 +1809,19 @@ input NftCollectionInput {
 }
 
 type NftCollectionMedias {
-  """Image of the collection as an horizontal rectangle"""
+  """
+  Image of the collection as an horizontal rectangle
+  """
   banner(excludeFormats: [NftMediaExcludeFormat!]): Image
 
-  """Image of the collection as a vertical rectangle"""
+  """
+  Image of the collection as a vertical rectangle
+  """
   card(excludeFormats: [NftMediaExcludeFormat!]): Image
 
-  """Image of the collection as a square"""
+  """
+  Image of the collection as a square
+  """
   logo(excludeFormats: [NftMediaExcludeFormat!]): Image
 }
 
@@ -1728,7 +1880,9 @@ type NftCollectionTraitValueEdge {
 input NftCollectionTraitValuesArgs {
   first: Int = 10
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
   traitName: String!
   search: String
@@ -1756,10 +1910,14 @@ enum NftCollectionType {
 input NftConnectionInput {
   first: Int = 25
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
 
-  """Cursor of an edge (excluded) to move backwards"""
+  """
+  Cursor of an edge (excluded) to move backwards
+  """
   before: String
   search: String
   tokenIds: [String!]
@@ -1824,10 +1982,14 @@ type NFTDisplayItem {
 type NftHolder implements Node {
   id: ID!
 
-  """Number of unique items"""
+  """
+  Number of unique items
+  """
   holdCount: BigDecimal!
 
-  """Total number of items - for ERC-1155"""
+  """
+  Total number of items - for ERC-1155
+  """
   holdTotalCount: BigDecimal!
 }
 
@@ -1840,10 +2002,14 @@ type NftHolderConnection {
 input NftHolderConnectionInput {
   first: Int = 25
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
 
-  """Cursor of an edge (excluded) to move backwards"""
+  """
+  Cursor of an edge (excluded) to move backwards
+  """
   before: String
   search: String
   followedBy: Address
@@ -1867,21 +2033,27 @@ type NftMedias {
     excludeFormats: [NftMediaExcludeFormat!]
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
   ): ImageConnection!
   animations(
     excludeFormats: [NftMediaExcludeFormat!]
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
   ): AnimationConnection!
   audios(
     excludeFormats: [NftMediaExcludeFormat!]
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
   ): AudioConnection!
 }
@@ -1921,7 +2093,9 @@ type NftToken implements NFT & Node {
   supply: BigDecimal!
   circulatingSupply: BigDecimal!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersCount: BigDecimal!
   socialLinks: [SocialLink!]!
   collection: NftCollection!
@@ -1929,11 +2103,15 @@ type NftToken implements NFT & Node {
   transfers(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     order: NftTransferConnectionOrderInput
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftTransferConnectionInput
   ): NftTransferConnection
   mediasV2: [NftMediaV2!]!
@@ -1941,32 +2119,48 @@ type NftToken implements NFT & Node {
   name: String!
   description: String
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holders(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     last: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     before: String
     followedBy: Address
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftHolderConnectionInput
   ): NftHolderConnection!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersFollowedByAddress(input: HoldersFollowedByAddressInput!): [NftHolder!]!
 
-  """Token was hidden by owner"""
+  """
+  Token was hidden by owner
+  """
   isHidden(input: ByAddressInput!): Boolean!
 
-  """Estimated value of the NFT"""
+  """
+  Estimated value of the NFT
+  """
   estimatedValue: NftValueDenomination
 
-  """Last sale of the NFT"""
+  """
+  Last sale of the NFT
+  """
   lastSale: NftValueDenomination
 }
 
@@ -1994,7 +2188,9 @@ type NftTokenErc1155 implements NFT & Node {
   supply: BigDecimal!
   circulatingSupply: BigDecimal!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersCount: BigDecimal!
   socialLinks: [SocialLink!]!
   collection: NftCollection!
@@ -2002,11 +2198,15 @@ type NftTokenErc1155 implements NFT & Node {
   transfers(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     order: NftTransferConnectionOrderInput
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftTransferConnectionInput
   ): NftTransferConnection
   mediasV2: [NftMediaV2!]!
@@ -2014,32 +2214,48 @@ type NftTokenErc1155 implements NFT & Node {
   name: String!
   description: String
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holders(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     last: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     before: String
     followedBy: Address
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftHolderConnectionInput
   ): NftHolderConnection!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersFollowedByAddress(input: HoldersFollowedByAddressInput!): [NftHolder!]!
 
-  """Token was hidden by owner"""
+  """
+  Token was hidden by owner
+  """
   isHidden(input: ByAddressInput!): Boolean!
 
-  """Estimated value of the NFT"""
+  """
+  Estimated value of the NFT
+  """
   estimatedValue: NftValueDenomination
 
-  """Last sale of the NFT"""
+  """
+  Last sale of the NFT
+  """
   lastSale: NftValueDenomination
 }
 
@@ -2052,7 +2268,9 @@ type NftTokenErc721 implements NFT & Node {
   supply: BigDecimal!
   circulatingSupply: BigDecimal!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersCount: BigDecimal!
   socialLinks: [SocialLink!]!
   collection: NftCollection!
@@ -2060,11 +2278,15 @@ type NftTokenErc721 implements NFT & Node {
   transfers(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     order: NftTransferConnectionOrderInput
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftTransferConnectionInput
   ): NftTransferConnection
   mediasV2: [NftMediaV2!]!
@@ -2072,32 +2294,48 @@ type NftTokenErc721 implements NFT & Node {
   name: String!
   description: String
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holders(
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     last: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     before: String
     followedBy: Address
 
-    """Deprecated use the args"""
+    """
+    Deprecated use the args
+    """
     input: NftHolderConnectionInput
   ): NftHolderConnection!
 
-  """ERC-1155 token can have multiple owners"""
+  """
+  ERC-1155 token can have multiple owners
+  """
   holdersFollowedByAddress(input: HoldersFollowedByAddressInput!): [NftHolder!]!
 
-  """Token was hidden by owner"""
+  """
+  Token was hidden by owner
+  """
   isHidden(input: ByAddressInput!): Boolean!
 
-  """Estimated value of the NFT"""
+  """
+  Estimated value of the NFT
+  """
   estimatedValue: NftValueDenomination
 
-  """Last sale of the NFT"""
+  """
+  Last sale of the NFT
+  """
   lastSale: NftValueDenomination
 }
 
@@ -2146,7 +2384,9 @@ input NftTransferConnectionInput {
   offset: Int = 0
   first: Int = 25
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
   search: String
   order: NftTransferConnectionOrderInput
@@ -2182,10 +2422,14 @@ input NftUsersCollectionsConnectionInput {
   network: Network
   minCollectionValueUsd: Float
 
-  """Deprecated: use `collectionIds` instead"""
+  """
+  Deprecated: use `collectionIds` instead
+  """
   collections: [Address!]
 
-  """Deprecated: use `collectionIds` instead"""
+  """
+  Deprecated: use `collectionIds` instead
+  """
   collectionInputs: [NftCollectionInput!]
   collectionIds: [ID!]
   standard: NftStandard
@@ -2194,7 +2438,9 @@ input NftUsersCollectionsConnectionInput {
   withOverrides: Boolean
   first: Int = 24
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
 }
 
@@ -2203,10 +2449,14 @@ input NftUsersTokensConnectionInput {
   network: Network
   minEstimatedValueUsd: Float
 
-  """Deprecated: use `collectionIds` instead"""
+  """
+  Deprecated: use `collectionIds` instead
+  """
   collections: [Address!]
 
-  """Deprecated: use `collectionIds` instead"""
+  """
+  Deprecated: use `collectionIds` instead
+  """
   collectionInputs: [NftCollectionInput!]
   collectionIds: [ID!]
   standard: NftStandard
@@ -2215,7 +2465,9 @@ input NftUsersTokensConnectionInput {
   withOverrides: Boolean
   first: Int = 24
 
-  """Cursor of an edge (excluded)"""
+  """
+  Cursor of an edge (excluded)
+  """
   after: String
 }
 
@@ -2550,16 +2802,24 @@ type ProxyAccount {
 
 type Query {
   portfolio(
-    """The wallet addresses for which to fetch balances for."""
+    """
+    The wallet addresses for which to fetch balances for.
+    """
     addresses: [Address!]!
 
-    """The networks on which to fetch balances for."""
+    """
+    The networks on which to fetch balances for.
+    """
     networks: [Network!]
 
-    """The appIds for which to fetch balances for."""
+    """
+    The appIds for which to fetch balances for.
+    """
     appIds: [String!]
 
-    """Whether to include NFT overrides in the balances."""
+    """
+    Whether to include NFT overrides in the balances.
+    """
     withOverrides: Boolean = false
   ): Portfolio!
   accountsTimeline(
@@ -2567,7 +2827,9 @@ type Query {
     networks: [Network!]
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     spamFilter: Boolean = true
     realtimeInterpretation: Boolean = false
@@ -2581,7 +2843,9 @@ type Query {
     networks: [Network!]
     first: Int
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     spamFilter: Boolean = true
     realtimeInterpretation: Boolean = false
@@ -2594,10 +2858,14 @@ type Query {
     minCollectionValueUsd: Float
     search: String
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collections: [Address!]
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collectionInputs: [NftCollectionInput!]
     collectionIds: [ID!]
     standard: NftStandard
@@ -2610,10 +2878,14 @@ type Query {
     minCollectionValueUsd: Float
     search: String
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collections: [Address!]
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collectionInputs: [NftCollectionInput!]
     collectionIds: [ID!]
     standard: NftStandard
@@ -2625,7 +2897,9 @@ type Query {
     owners: [Address!]
     first: Int = 24
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     input: NftUsersCollectionsConnectionInput
     withOverrides: Boolean
@@ -2635,10 +2909,14 @@ type Query {
     minEstimatedValueUsd: Float
     search: String
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collections: [Address!]
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collectionInputs: [NftCollectionInput!]
     collectionIds: [ID!]
     standard: NftStandard
@@ -2651,10 +2929,14 @@ type Query {
     minEstimatedValueUsd: Float
     search: String
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collections: [Address!]
 
-    """Deprecated: use `collectionIds` instead"""
+    """
+    Deprecated: use `collectionIds` instead
+    """
     collectionInputs: [NftCollectionInput!]
     collectionIds: [ID!]
     standard: NftStandard
@@ -2666,7 +2948,9 @@ type Query {
     owners: [Address!]
     first: Int = 24
 
-    """Cursor of an edge (excluded)"""
+    """
+    Cursor of an edge (excluded)
+    """
     after: String
     input: NftUsersTokensConnectionInput
     withOverrides: Boolean
@@ -2866,7 +3150,9 @@ type TrendingTokenEdge {
   historicData: SupportedBaseTokenHistoricData!
 }
 
-"""Deprecated: Use `Account` instead"""
+"""
+Deprecated: Use `Account` instead
+"""
 type User {
   address: Address!
   ens: String
@@ -2913,4 +3199,3 @@ type WalletTokenBalanceToken {
   price: Float!
 }
 ```
-

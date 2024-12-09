@@ -4,7 +4,11 @@ export function ChartTabsButton({
   timeFrame,
   handleTimeFrameChange,
   isActive,
-}: { timeFrame: TimeFrame; handleTimeFrameChange: (tf: TimeFrame) => void; isActive: boolean }) {
+}: {
+  timeFrame: TimeFrame;
+  handleTimeFrameChange: (tf: TimeFrame) => void;
+  isActive: boolean;
+}) {
   return (
     <div className="min-w-[60px]">
       <button

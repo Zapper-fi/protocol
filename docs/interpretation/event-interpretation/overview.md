@@ -24,7 +24,6 @@ Each transaction is different, but it will usually consists of different paramet
 
 The combination of these parameters will create a clear summary of the transaction.
 
-
 ### Problem with onchain transactions
 
 All of this information about each transaction is available through onchain explorers, but is almost unreadable to a common user. This makes having a clear picture of an onchain transaction really difficult. This is why Transaction Interpreters (TI) are needed to transform the complicated technical data into a simple and clear summary.

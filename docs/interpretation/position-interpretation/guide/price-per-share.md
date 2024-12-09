@@ -3,6 +3,7 @@ sidebar_position: 3
 # sidebar_label: Price Per Share and ATI Submission
 # pagination_label: App Tokens Interpreters Guide
 ---
+
 # Price Per Share and ATI Submission
 
 ## 5. Calculate the price per share
@@ -43,14 +44,14 @@ For example, on a Uniswap V2 pool token contract, you would calculate the price 
 For `token0`:
 
     ```js
-    (@_reserve0(UniswapV2PoolContract) / 10 ^ @decimals(token0Contract)) / 
+    (@_reserve0(UniswapV2PoolContract) / 10 ^ @decimals(token0Contract)) /
         (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
     ```
 
 For `token1`:
 
     ```js
-    (@_reserve1(UniswapV2PoolContract) / 10 ^ @decimals(token1Contract)) / 
+    (@_reserve1(UniswapV2PoolContract) / 10 ^ @decimals(token1Contract)) /
         (@totalSupply(UniswapV2PoolContract) / @decimals(UniswapV2PoolContract))
     ```
 
@@ -71,9 +72,7 @@ After inputting the contract address, underlying token address, and price per sh
 
 ## 7. Associate the position interpreter with an app (optional)
 
-Once your interpreter is working as expected, you can optionally associate the position interpreter with an app. You should select the app that owns the contract and deployed it onchain. This will allow Zapper to show the position's balance to users in our UI as being associated with the selected app, along with any other positions the user has on that app.
-    - To see the list of apps available to associate the interpreter with, start typing in the "Select App" input box to search Zapper's database for the relevant app.
-    - If you cannot find the right app to associate the interpreter with, you can type in that app's name and we will add it to our database and associate this interpreter with the app.
+Once your interpreter is working as expected, you can optionally associate the position interpreter with an app. You should select the app that owns the contract and deployed it onchain. This will allow Zapper to show the position's balance to users in our UI as being associated with the selected app, along with any other positions the user has on that app. - To see the list of apps available to associate the interpreter with, start typing in the "Select App" input box to search Zapper's database for the relevant app. - If you cannot find the right app to associate the interpreter with, you can type in that app's name and we will add it to our database and associate this interpreter with the app.
 
 ---
 
@@ -81,7 +80,4 @@ Once your interpreter is working as expected, you can optionally associate the p
 
 Once you've inputted all of the above, go ahead and submit the interpreter. This will place the interpreter into a `Pending` state in your [My Submissions page](https://zapper.xyz/my-submissions).
 
-After submission, Zapper Admins will review the interpreter to ensure it is working as expected.
-    - If the interpreter is good to go, it will be approved by the Zapper team, and you will receive a notification in your notification tray (in the top right of the page).
-    - If there are any issues, Zapper will reject your interpreter and provide commentary on what the issue was. You can then make the necessary changes and resubmit the interpreter for review again.
-    - Once your interpreter is approved, you will see it reflected on the [Leaderboard](https://zapper.xyz/curate/leaderboard), and users will be able to see their balance of the positions in the Zapper UI. Additionally, you'll be able to see the number of users who have the position in their wallet in your [My Submissions page](https://zapper.xyz/my-submissions), so you can see the impact you have across all Zapper users!
+After submission, Zapper Admins will review the interpreter to ensure it is working as expected. - If the interpreter is good to go, it will be approved by the Zapper team, and you will receive a notification in your notification tray (in the top right of the page). - If there are any issues, Zapper will reject your interpreter and provide commentary on what the issue was. You can then make the necessary changes and resubmit the interpreter for review again. - Once your interpreter is approved, you will see it reflected on the [Leaderboard](https://zapper.xyz/curate/leaderboard), and users will be able to see their balance of the positions in the Zapper UI. Additionally, you'll be able to see the number of users who have the position in their wallet in your [My Submissions page](https://zapper.xyz/my-submissions), so you can see the impact you have across all Zapper users!

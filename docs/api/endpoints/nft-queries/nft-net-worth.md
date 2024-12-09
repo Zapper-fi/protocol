@@ -10,13 +10,13 @@ import Link from '@docusaurus/Link';
 
 Get the total value of NFT holdings for one or more wallet addresses across networks.
 
-
 ### `nftNetWorth`
-Takes an array of `addresses` and optional `network` parameter. Returns:
-* Total estimated value of NFT holdings in BigDecimal
-* Optional network-specific valuations
-* Support for manual value overrides
 
+Takes an array of `addresses` and optional `network` parameter. Returns:
+
+- Total estimated value of NFT holdings in BigDecimal
+- Optional network-specific valuations
+- Support for manual value overrides
 
 ### Example Use Case: Portfolio Valuation
 
@@ -38,12 +38,8 @@ When you need to display the total value of a user's NFT portfolio, either acros
 #### Example Query
 
 ```graphql
-query($addresses: [Address!]!, $network: Network, $withOverrides: Boolean) {
-  nftNetWorth(
-    addresses: $addresses
-    network: $network
-    withOverrides: $withOverrides
-  )
+query ($addresses: [Address!]!, $network: Network, $withOverrides: Boolean) {
+  nftNetWorth(addresses: $addresses, network: $network, withOverrides: $withOverrides)
 }
 ```
 
@@ -63,19 +59,20 @@ query($addresses: [Address!]!, $network: Network, $withOverrides: Boolean) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `addresses` | Array of wallet addresses to calculate NFT net worth | `[Address!]!` | Yes |
-| `network` | Specific network to calculate NFT worth (optional) | `Network` | No |
-| `withOverrides` | Include NFT value overrides in the calculation | `Boolean` | No |
+| Argument        | Description                                          | Type          | Required |
+| --------------- | ---------------------------------------------------- | ------------- | -------- |
+| `addresses`     | Array of wallet addresses to calculate NFT net worth | `[Address!]!` | Yes      |
+| `network`       | Specific network to calculate NFT worth (optional)   | `Network`     | No       |
+| `withOverrides` | Include NFT value overrides in the calculation       | `Boolean`     | No       |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
+| Field         | Description                        | Type         |
+| ------------- | ---------------------------------- | ------------ |
 | `nftNetWorth` | Total value of NFT holdings in USD | `BigDecimal` |
 
 ### Notes
+
 - Returns the combined value of all NFTs held by the specified addresses
 - When no `network` is specified, calculates value across all supported networks
 - Value is based on floor prices and recent sales data
