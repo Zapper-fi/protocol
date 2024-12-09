@@ -142,6 +142,5 @@ export function PricingCalculator() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
