@@ -25,6 +25,9 @@
       "correctness": {
         "noUnusedImports": "error",
         "useHookAtTopLevel": "warn"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "warn"
       }
     }
   },

@@ -3,7 +3,7 @@ import { Section } from '../../components/Section';
 
 export const Labelling: React.FC = () => {
   return (
-    <Section className="border hide-mobile" style={{ borderWidth: '1px', borderStyle: 'solid', padding: '64px 32px' }}>
+    <Section className="hide-mobile border" style={{ borderWidth: '1px', borderStyle: 'solid', padding: '64px 32px' }}>
       <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
         <div
           style={{

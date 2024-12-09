@@ -6,7 +6,6 @@ sidebar_label: Portfolio Data
 import { SandboxButton } from '@site/src/components/SandboxButton';
 import Link from '@docusaurus/Link';
 
-
 # Portfolio
 
 Access complete onchain portfolio data with a single query. The portfolio query provides comprehensive access to balances across tokens, apps, and NFTs, along with detailed portfolio totals and breakdowns.
@@ -14,8 +13,9 @@ Access complete onchain portfolio data with a single query. The portfolio query 
 ## Overview
 
 The `portfolio` query takes an array of `addresses` as input, with optional parameters for `networks`, `appIds`, and `withOverrides`. It returns a complete view of onchain holdings including:
+
 - Token balances
-- App positions 
+- App positions
 - NFT holdings
 - Portfolio totals and breakdowns
 - Claimables and debts
@@ -23,6 +23,7 @@ The `portfolio` query takes an array of `addresses` as input, with optional para
 ## Typical Usage
 
 ### Example Variables
+
 ```js
 {
   "addresses": ["0x6c52512cbaf8794b6ca55dfa71fd8cfc447ad8c7"]
@@ -30,6 +31,7 @@ The `portfolio` query takes an array of `addresses` as input, with optional para
 ```
 
 ### Example Query
+
 ```graphql
 query GetCompletePortfolio($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
@@ -66,6 +68,7 @@ query GetCompletePortfolio($addresses: [Address!]!) {
 ```
 
 ### Example Response
+
 ```js
 {
   "data": {
@@ -117,12 +120,12 @@ query GetCompletePortfolio($addresses: [Address!]!) {
 
 ### Query Arguments
 
-| Argument | Description | Type |
-|----------|-------------|------|
-| `addresses` | The address(es) being queried, input as an array | `[Address!]!` |
-| `networks` | Network(s) to retrieve balances from | `[Network!]` |
-| `appIds` | Filter by specific app(s) | `[String!]` |
-| `withOverrides` | Include user submitted NFT value overrides (default: false) | `Boolean` |
+| Argument        | Description                                                 | Type          |
+| --------------- | ----------------------------------------------------------- | ------------- |
+| `addresses`     | The address(es) being queried, input as an array            | `[Address!]!` |
+| `networks`      | Network(s) to retrieve balances from                        | `[Network!]`  |
+| `appIds`        | Filter by specific app(s)                                   | `[String!]`   |
+| `withOverrides` | Include user submitted NFT value overrides (default: false) | `Boolean`     |
 
 ## Portfolio Fields
 
@@ -131,6 +134,7 @@ query GetCompletePortfolio($addresses: [Address!]!) {
 Access native token holdings across different networks.
 
 #### Key Fields
+
 - `key`: Unique identifier for aggregating token balances across addresses
 - `address`: Owner's address
 - `network`: Token's network
@@ -141,6 +145,7 @@ Access native token holdings across different networks.
 - `updatedAt`: Last calculation timestamp
 
 #### Example Token Balance Query
+
 ```graphql
 query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
   portfolio(addresses: $addresses, networks: $networks) {
@@ -161,6 +166,7 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
 ```
 
 #### Example Response
+
 ```js
 {
   "data": {
@@ -201,6 +207,7 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
 View positions within onchain applications like lending protocols, DEXes, etc.
 
 #### Key Fields
+
 - `address`: Position owner's address
 - `appId`: Application identifier
 - `appName`: Display name
@@ -214,6 +221,7 @@ Smart accounts like Maker's `DSProxy` are automatically included in balance resp
 :::
 
 #### Example App Balance Query
+
 ```graphql
 query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
   portfolio(addresses: $addresses, networks: $networks) {
@@ -234,6 +242,7 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
 ```
 
 #### Example Response
+
 ```js
 {
   "data": {
@@ -272,6 +281,7 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
 Access NFT holdings and their estimated values.
 
 #### Key Fields
+
 - `network`: NFT's network
 - `balanceUSD`: Estimated total value in USD
 
@@ -280,8 +290,9 @@ NFT valuations use Zapper's algorithm but can be overridden with top offer, last
 :::
 
 #### Example NFT Balance Query
+
 ```graphql
-query($addresses: [Address!]!, $networks: [Network!]) {
+query ($addresses: [Address!]!, $networks: [Network!]) {
   portfolio(addresses: $addresses, networks: $networks) {
     nftBalances {
       balanceUSD
@@ -292,6 +303,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 ```
 
 #### Example Response
+
 ```js
 {
   "data": {
@@ -312,6 +324,7 @@ query($addresses: [Address!]!, $networks: [Network!]) {
 Get aggregated portfolio values and breakdowns.
 
 #### Key Fields
+
 - `total`: Total portfolio value (excluding NFTs)
 - `totalWithNFT`: Total portfolio value (including NFTs)
 - `appsTotal`: Total value in app positions
@@ -322,8 +335,9 @@ Get aggregated portfolio values and breakdowns.
 - `holdings`: Portfolio breakdown by category
 
 #### Example Totals Query
+
 ```graphql
-query($addresses: [Address!]!) {
+query ($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
     totals {
       total
@@ -343,6 +357,7 @@ query($addresses: [Address!]!) {
 ```
 
 #### Example Response
+
 ```js
 {
   "data": {
@@ -378,11 +393,13 @@ query($addresses: [Address!]!) {
 View all available claimable tokens across indexed onchain apps.
 
 #### Key Fields
+
 - `address`: Address of the claimable token
 - `appId`: App where the token is claimable
 - `token`: Token details including balance, value, and metadata
 
 #### Example Claimables Query
+
 ```graphql
 query Claimables($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
@@ -405,6 +422,7 @@ query Claimables($addresses: [Address!]!) {
 ```
 
 #### Example Response
+
 ```js
 {
   "data": {
@@ -451,7 +469,7 @@ The portfolio query returns a nested structure that can include:
         }
       }
     }]
-    
+
     // App positions
     appBalances: [{
       appName: string
@@ -463,13 +481,13 @@ The portfolio query returns a nested structure that can include:
         assets: [{ address: string }]
       }]
     }]
-    
+
     // NFT holdings
     nftBalances: [{
       network: Network
       balanceUSD: number
     }]
-    
+
     // Portfolio totals
     totals: {
       total: number

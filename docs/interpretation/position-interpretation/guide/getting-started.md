@@ -3,6 +3,7 @@ sidebar_position: 1
 sidebar_label: Getting Started
 pagination_label: Getting Started
 ---
+
 # Position Interpreters (PIs) Guide
 
 This guide will walk you through building an Position Interpreter. An Position Interpreter is the ruleset that Zapper uses to interpret the value of a position that a user has in a protocol, whether its tokenized or non-tokenized.
@@ -17,12 +18,12 @@ There are 3 key components of an Position Interpreter:
 
 1. **Contract Address**: The address of the contract the interpreter interprets. This could be 1 contract address you input or a list of contract addresses fetched from a contract factory.
 2. **Underlying token address**: The address of the token that the user deposited into the investment.
-    - This could be 1 token address you input, or sourced from a method called on the token contract.
-    - There could also be multiple underlying tokens, such as the case for a pool token, which often has 2 underlying tokens, or a vault, which can have `n` underlying tokens.
+   - This could be 1 token address you input, or sourced from a method called on the token contract.
+   - There could also be multiple underlying tokens, such as the case for a pool token, which often has 2 underlying tokens, or a vault, which can have `n` underlying tokens.
 3. **Price Per Share**: The price per share of the position, in terms of how much its worth in terms of the underlying token. This is the value that Zapper uses to calculate the user's balance.
 
-    - Sometimes, it's simple, where 1 position is redeemable for 1 underlying token (such as with Aave's aUSDC, where 1 aUSDC = 1 USDC).
-    - This calculation could also be more complex, such as with Yearn's yCRV, where the price per share is calculated based on the underlying tokens in the vault.
+   - Sometimes, it's simple, where 1 position is redeemable for 1 underlying token (such as with Aave's aUSDC, where 1 aUSDC = 1 USDC).
+   - This calculation could also be more complex, such as with Yearn's yCRV, where the price per share is calculated based on the underlying tokens in the vault.
 
 :::warning
 For tokenized postions, note that a user's balance is assumed to be based on a `balanceOf` method on the token contract. If the token contract does not have a `balanceOf` method, or the balance returned from that method is not the correct way to fetch a user's balance of the position holding, then it is not an ERC20 token and would not be interpreted as a tokenized position. Instead, this would be a non-tokenized position interpretation.

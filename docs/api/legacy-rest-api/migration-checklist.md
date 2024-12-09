@@ -14,25 +14,30 @@ import { SignInDashboard } from '@site/src/components/SignInDashboard';
 ### Existing API Client Checklist
 
 #### 1. Access Verification
+
 - [ ] Sign in to the <SignInDashboard type="link" /> with the same address you used for the REST API.
 - [ ] Once signed in, you'll see your API key : it is the same as the REST API.
-- [ ] Test your API key by querying any of the new endpoints at *public.zapper.xyz/graphql*. [See available endpoints](/docs/api).
+- [ ] Test your API key by querying any of the new endpoints at _public.zapper.xyz/graphql_. [See available endpoints](/docs/api).
 - [ ] Contact api@zapper.xyz if you have issues signng in to your account.
 
 #### 2. Existing Credits
-- [ ] Check your remaining REST API credits in the <SignInDashboard type="link" />. 
+
+- [ ] Check your remaining REST API credits in the <SignInDashboard type="link" />.
 - [ ] Email api@zapper.xyz to transfer purchased credits to the GraphQL API.
 
 #### 3. Initial Testing
-- [ ] Explore the new visualizations for query usage and cost on the <SignInDashboard type="link" /> 
+
+- [ ] Explore the new visualizations for query usage and cost on the <SignInDashboard type="link" />
 - [ ] Test response formats match expectations
 
 #### 4. Documentation Review
+
 - [ ] Read updated GraphQL [Docs](/docs/api/)
 - [ ] Save relevant example queries & note new endpoint structures
 
-### New Payment System 
-- $1 USD = 1,000 credits 
+### New Payment System
+
+- $1 USD = 1,000 credits
 - Previous payment flow is discontinued
 - All payments are now onchain through the <SignInDashboard type="link" />
 - Payment supported in 100+ tokens including:
@@ -45,6 +50,7 @@ import { SignInDashboard } from '@site/src/components/SignInDashboard';
 - Consider purchasing credits in bulk to take advantage of 20% and 30% cost savings
 
 ### Credit Management
+
 - Automated email notifications at:
   - 7 days before estimated credit depletion
   - 3 days before estimated credit depletion
@@ -61,6 +67,7 @@ You can now make a single `portfolio` query that includes the fields [`appBalanc
 :::
 
 ### Batch Portfolio Fetching
+
 ```graphql
 query GetCompletePortfolio($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
@@ -80,6 +87,7 @@ query GetCompletePortfolio($addresses: [Address!]!) {
 ```
 
 #### v2/balances/apps → GraphQL
+
 ```graphql
 query GetAppBalances($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
@@ -106,9 +114,8 @@ query GetAppBalances($addresses: [Address!]!) {
 }
 ```
 
-
-
 #### v2/balances/tokens → GraphQL
+
 ```graphql
 query GetTokenBalances($addresses: [Address!]!) {
   portfolio(addresses: $addresses) {
@@ -132,6 +139,7 @@ query GetTokenBalances($addresses: [Address!]!) {
 ### NFT Query Migration
 
 #### Net Worth Query
+
 ```graphql
 query GetNFTNetWorth($addresses: [Address!]!) {
   nftNetWorth(addresses: $addresses)
@@ -139,6 +147,7 @@ query GetNFTNetWorth($addresses: [Address!]!) {
 ```
 
 #### User NFTs Query
+
 ```graphql
 query GetUserNFTs($input: NftUsersTokensConnectionInput!) {
   nftUsersTokens(input: $input) {
@@ -161,6 +170,7 @@ query GetUserNFTs($input: NftUsersTokensConnectionInput!) {
 ```
 
 ### App Data Queries
+
 ```graphql
 query GetApp($appId: ID!) {
   app(id: $appId) {
@@ -187,6 +197,7 @@ query GetApp($appId: ID!) {
 ## 3. Network Enum Changes
 
 ### Update Network References
+
 - Use the new `Network` enum. See [Supported Chains](/docs/api/supported-chains) for all enum values.
   ```graphql
   enum Network {
@@ -200,8 +211,8 @@ query GetApp($appId: ID!) {
   }
   ```
 
-
 ## 4. Token Data Structure
+
 ```graphql
 query GetTokenData($address: Address!, $network: Network!) {
   fungibleToken(address: $address, network: $network) {
@@ -222,8 +233,10 @@ query GetTokenData($address: Address!, $network: Network!) {
 ## 5. Account System Changes
 
 ### Breaking Changes
+
 - Replace `User` type with new `Account` type
 - Update ENS resolution pattern:
+
 ```graphql
 query ResolveENS($addresses: [Address!]!) {
   accounts(addresses: $addresses) {
@@ -239,6 +252,7 @@ query ResolveENS($addresses: [Address!]!) {
 ## 6. Best Practices
 
 ### Field Selection
+
 ```graphql
 # Use fragments for common patterns
 fragment TokenFields on FungibleToken {
@@ -250,6 +264,7 @@ fragment TokenFields on FungibleToken {
 ```
 
 ### Pagination Implementation
+
 ```graphql
 query GetPaginatedData($first: Int!, $after: String) {
   nftUsersTokens(first: $first, after: $after) {
@@ -266,7 +281,9 @@ query GetPaginatedData($first: Int!, $after: String) {
 ```
 
 ### Error Handling
+
 - GraphQL returns errors alongside data:
+
 ```json
 {
   "data": { ... },
@@ -280,6 +297,7 @@ query GetPaginatedData($first: Int!, $after: String) {
 ```
 
 ## 7. Performance Considerations
+
 - Review and optimize query depth
 - Implement field selection to minimize response size
 - Use batch queries where appropriate
@@ -288,12 +306,14 @@ query GetPaginatedData($first: Int!, $after: String) {
 - Use pagination when available
 
 ## 8. Deprecation Notes
+
 - Remove usage of deprecated fields and types
 - Update to new naming conventions
 - Replace legacy endpoints with GraphQL equivalents
 - Update documentation references
 
 ## 9. Documentation and Support
+
 - Update internal documentation
 - Review new schema documentation
 - Document new error handling procedures
@@ -301,6 +321,8 @@ query GetPaginatedData($first: Int!, $after: String) {
 - Document new features and capabilities
 
 ## Need Help?
+
 If you have questions or need assistance with the migration, please:
+
 1. Review the GraphQL schema documentation
 2. Contact api@zapper.xyz for migration support

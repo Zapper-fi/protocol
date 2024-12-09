@@ -1,9 +1,8 @@
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri'
-import TabPortfolioTracking from './_tab-portfolio-tracking.mdx'
-import TabHumanReadable from './_tab-human-readable.mdx'
-import { CodeImage } from '@site/src/components/CodeImage'
-
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
+import TabPortfolioTracking from './_tab-portfolio-tracking.mdx';
+import TabHumanReadable from './_tab-human-readable.mdx';
+import { CodeImage } from '@site/src/components/CodeImage';
 
 <TabGroup>
   {
@@ -54,8 +53,8 @@ import { CodeImage } from '@site/src/components/CodeImage'
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainIdentity.png">
-{`
-query {
+
+{`query {
   accounts(addresses: ["0x..."]) {
     address
     displayName {
@@ -104,11 +103,11 @@ query {
       }
     }
   }
-}
-`}
-        </CodeImage>
-      </div>
-    </TabPanel>
+}`}
+
+</CodeImage>
+</div>
+</TabPanel>
 
     <TabPanel className="lg:flex gap-8">
      <div className="basis-1/2">
@@ -125,8 +124,8 @@ query {
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/OnchainPrices.png">
-{`
-query {
+
+{`query {
   fungibleToken(
     address: "0x..."
     network: ETHEREUM_MAINNET
@@ -152,10 +151,11 @@ query {
       }
     }
   }
-}
-`}
-        </CodeImage>
-      </div>
-    </TabPanel>
+}`}
+
+</CodeImage>
+</div>
+</TabPanel>
+
   </TabPanels>
 </TabGroup>

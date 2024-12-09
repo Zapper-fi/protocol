@@ -12,11 +12,11 @@ There are two ways to contribute to Zapper Protocol:
 
 To get started contributing to Zapper Protocol, visit one of our guides:
 
-| Guide                                | Link  |
-|--------------------------------------|-------|
-| Transaction Interpretation               | [Guide](event-interpretation/guide/getting-started.md) |
-| Position Interpretation             | [Guide](position-interpretation/guide/getting-started.md) |
-| Validation                            | [Guide](../validation/becoming-a-reviewer.md) |
+| Guide                      | Link                                                      |
+| -------------------------- | --------------------------------------------------------- |
+| Transaction Interpretation | [Guide](event-interpretation/guide/getting-started.md)    |
+| Position Interpretation    | [Guide](position-interpretation/guide/getting-started.md) |
+| Validation                 | [Guide](../validation/becoming-a-reviewer.md)             |
 
 ## Curator Leaderboard
 
@@ -31,4 +31,3 @@ Have any questions? Want to learn more? Don't hesitate to reach out and join our
 
 - Discord: https://zapper.xyz/discord
 - Telegram: [https://t.me/+mAVxPRsA7bE3ZDkx](https://t.me/+z8qmxu72oz9kMDYx)
-

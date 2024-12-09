@@ -4,7 +4,7 @@ import { Section } from '../../components/Section';
 
 export const Token: React.FC = () => {
   return (
-    <Section className="border no-padding-mobile" style={{ padding: '64px 32px' }}>
+    <Section className="no-padding-mobile border" style={{ padding: '64px 32px' }}>
       <div
         style={{
           display: 'flex',

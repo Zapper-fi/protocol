@@ -20,7 +20,7 @@ You input wallet addresses and get all the following:
 - Detailed breakdown of all app investment positions represented as app tokens owned by the wallet, such as Aave lending positions or Uniswap pools, valued in USD
 - Detailed breakdown of all app investment positions represented as contract positions that are not held on the wallet, such ve-locked or farming positions, valued in USD
 
-On Zapper's frontend, all tokens that show up in the *Wallet* section of a portfoilo are returned in the [`v2/balances/tokens`](https://docs.zapper.xyz/docs/apis/api-syntax#v2balancestokens) endpoint. All values showing up in the *Apps* section of a portfolio are returned in the `v2/balances/apps` endpoint.
+On Zapper's frontend, all tokens that show up in the _Wallet_ section of a portfoilo are returned in the [`v2/balances/tokens`](https://docs.zapper.xyz/docs/apis/api-syntax#v2balancestokens) endpoint. All values showing up in the _Apps_ section of a portfolio are returned in the `v2/balances/apps` endpoint.
 
 For a list of all supported apps, see [this link](https://zapper.xyz/protocols).
 
@@ -565,9 +565,9 @@ Response for GET
 
 ### `v2/balances/tokens`
 
-You input wallet addresses and get all "base tokens" in the wallet. "Base tokens" are ERC20 tokens that are not invested by the user in an app, but instead sit in the wallet natively. Base tokens are often  liquid and tradable, whereas app tokens are those invested in apps are illiquid and cannot be natively traded, like a Uniswap pool token.
+You input wallet addresses and get all "base tokens" in the wallet. "Base tokens" are ERC20 tokens that are not invested by the user in an app, but instead sit in the wallet natively. Base tokens are often liquid and tradable, whereas app tokens are those invested in apps are illiquid and cannot be natively traded, like a Uniswap pool token.
 
-On Zapper's frontend, all tokens that show up in the *Wallet* section of a portfoilo are returned in the `v2/balances/tokens` endpoint. All values showing up in the *Apps* section of a portfolio are returned in the [`v2/balances/apps`](https://docs.zapper.xyz/docs/apis/api-syntax#v2balancesapps) endpoint.
+On Zapper's frontend, all tokens that show up in the _Wallet_ section of a portfoilo are returned in the `v2/balances/tokens` endpoint. All values showing up in the _Apps_ section of a portfolio are returned in the [`v2/balances/apps`](https://docs.zapper.xyz/docs/apis/api-syntax#v2balancesapps) endpoint.
 
 Zapper supports over 15,000 base tokens (and counting).
 
@@ -611,7 +611,7 @@ Response
 - `address`: address the position queried is for
 - `network`: network the app is on
 - `updatedAt`: time at which this token balance was calculated. This value should be used to determine if this cached balance is considered too "stale" for your purposes, and thus should be re-calculated via a `POST` command on this endpoint
-- `token`:  object containing details about the token, such as metadata, price and balance
+- `token`: object containing details about the token, such as metadata, price and balance
   - `id`: internal token id
   - `networkId`: internal network id
   - `address`: token's address on the network
@@ -1521,9 +1521,7 @@ Response
 ```json
 {
   "id": "aave-v3",
-  "tags": [
-    "lending"
-  ],
+  "tags": ["lending"],
   "name": "Aave V3",
   "url": "https://aave.com/",
   "description": "Aave is a decentralized non-custodial liquidity protocol where users can participate as depositors or borrowers.",
@@ -1559,9 +1557,7 @@ Response
           {
             "viewType": "list",
             "label": "Supply",
-            "groupIds": [
-              "supply"
-            ]
+            "groupIds": ["supply"]
           },
           {
             "viewType": "split",
@@ -1570,16 +1566,12 @@ Response
               {
                 "viewType": "list",
                 "label": "Variable",
-                "groupIds": [
-                  "variable-debt"
-                ]
+                "groupIds": ["variable-debt"]
               },
               {
                 "viewType": "list",
                 "label": "Stable",
-                "groupIds": [
-                  "stable-debt"
-                ]
+                "groupIds": ["stable-debt"]
               }
             ]
           }
@@ -1590,39 +1582,27 @@ Response
   "supportedNetworks": [
     {
       "network": "arbitrum",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     },
     {
       "network": "avalanche",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     },
     {
       "network": "fantom",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     },
     {
       "network": "harmony",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     },
     {
       "network": "optimism",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     },
     {
       "network": "polygon",
-      "actions": [
-        "view"
-      ]
+      "actions": ["view"]
     }
   ],
   "primaryColor": "#1c1d26",
@@ -3223,7 +3203,7 @@ Response
     "type": "base-token",
     "network": "optimism"
   }
-//...
+  //...
 ]
 ```
 
@@ -3299,7 +3279,7 @@ No parameters; your API key is authorized via your header, so points can only be
 
 Returns
 
-- `pointsRemaining`: how many points your API account has remaining before being turned off due to a negative points balance. Calculation for this is 
+- `pointsRemaining`: how many points your API account has remaining before being turned off due to a negative points balance. Calculation for this is
 - `pointsConsumedYesterday`: how many points your API account consumed yesterday in the full 24 hour period
 - `pointsUpdatedAt`: timestamp of when we last snapshot how many points the API account has remaining
 

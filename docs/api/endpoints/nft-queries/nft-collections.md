@@ -10,15 +10,15 @@ import Link from '@docusaurus/Link';
 
 Surfaces information about any ERC721 or ERC1155 NFT collection.
 
-
-
 ### `nftCollections`
+
 Takes an array of `collections` input containing address and network information. Returns detailed collection data including:
-* Collection metadata
-* Floor price and statistics
-* Token standards and supply
-* Social links and images
-* Trait information
+
+- Collection metadata
+- Floor price and statistics
+- Token standards and supply
+- Social links and images
+- Trait information
 
 ### Example Use Case: Collection Details
 
@@ -121,59 +121,59 @@ query NftCollections($collections: [NftCollectionInput!]!) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `collections` | Array of inputs specifying collection details | `[NftCollectionInput!]!` | Yes |
+| Argument      | Description                                   | Type                     | Required |
+| ------------- | --------------------------------------------- | ------------------------ | -------- |
+| `collections` | Array of inputs specifying collection details | `[NftCollectionInput!]!` | Yes      |
 
 ### NftCollectionInput
 
-| Field | Description | Type | Required |
-| ----- | ----------- | ---- | -------- |
-| `collectionAddress` | The address of the NFT collection | `String!` | Yes |
-| `network` | The network where the NFT exists | `Network!` | Yes |
-| `subCollectionIdentifier` | Identifier for a sub-collection | `String` | No |
+| Field                     | Description                       | Type       | Required |
+| ------------------------- | --------------------------------- | ---------- | -------- |
+| `collectionAddress`       | The address of the NFT collection | `String!`  | Yes      |
+| `network`                 | The network where the NFT exists  | `Network!` | Yes      |
+| `subCollectionIdentifier` | Identifier for a sub-collection   | `String`   | No       |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `id` | Unique identifier for the collection | `ID!` |
-| `address` | Contract address of the collection | `Address!` |
-| `subCollectionIdentifier` | Identifier for sub-collection | `String!` |
-| `name` | Name of the collection | `String!` |
-| `displayName` | Display name of the collection | `String` |
-| `symbol` | Symbol/ticker of the collection | `String!` |
-| `description` | Description of the collection | `String!` |
-| `network` | Network where the collection exists | `Network!` |
-| `socialLinks` | Array of social media links | `[SocialLink!]!` |
-| `supply` | Total supply of the collection | `BigDecimal!` |
-| `totalSupply` | Total supply including burned tokens | `BigDecimal!` |
-| `floorPriceEth` | Floor price in ETH (deprecated) | `BigDecimal` |
-| `floorPriceSourceMarketPlace` | Source marketplace for floor price | `NftDataSourceMarketplace` |
-| `topOfferPriceEth` | Top offer in ETH (deprecated) | `BigDecimal` |
-| `topOfferSourceMarketPlace` | Source marketplace for top offer | `NftDataSourceMarketplace` |
-| `holdersCount` | Number of unique holders | `BigDecimal!` |
-| `nftStandard` | Token standard | `NftStandard!` |
-| `disabled` | Whether the collection is disabled | `Boolean!` |
-| `type` | Type of collection | `NftCollectionType!` |
-| `openseaId` | OpenSea identifier | `String` |
-| `spamScore` | Spam score of the collection | `BigDecimal` |
-| `floorPrice` | Current floor price | `NftValueDenomination` |
-| `topOfferPrice` | Highest current offer | `NftValueDenomination` |
-| `isApproved` | Check if collection is approved for a spender | `(spenderAddress: Address!, ownerAddress: Address!) => Boolean!` |
-| `approvalTransaction` | Get transaction config for approval | `(spenderAddress: Address!, ownerAddress: Address!) => TransactionConfig!` |
-| `revokeApprovalTransaction` | Get transaction config for revoking approval | `(spenderAddress: Address!, ownerAddress: Address!) => TransactionConfig!` |
-| `nfts` | List of NFTs in the collection | `NftTokenConnection!` |
-| `events` | Collection events (sales, transfers) | `CollectionEventConnection!` |
-| `traitGroups` | Groups of traits for the collection | `[NftCollectionTraitGroupBase!]!` |
-| `traitGroupValues` | Values for trait groups | `NftCollectionTraitValueConnection!` |
-| `traits` | Collection traits | `[NftCollectionTraitType!]!` |
-| `holders` | Collection holders | `PaginatedNftHolder!` |
-| `medias` | Collection media assets | `NftCollectionMedias!` |
-| `circulatingSupply` | Number of tokens in circulation | `BigDecimal!` |
-| `totalCirculatingSupply` | Total circulating supply | `BigDecimal!` |
-| `groups` | Collection groups information | `[NftCollectionGroup!]!` |
-| `marketCap` | Market capitalization | `BigDecimal` |
+| Field                         | Description                                   | Type                                                                       |
+| ----------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                          | Unique identifier for the collection          | `ID!`                                                                      |
+| `address`                     | Contract address of the collection            | `Address!`                                                                 |
+| `subCollectionIdentifier`     | Identifier for sub-collection                 | `String!`                                                                  |
+| `name`                        | Name of the collection                        | `String!`                                                                  |
+| `displayName`                 | Display name of the collection                | `String`                                                                   |
+| `symbol`                      | Symbol/ticker of the collection               | `String!`                                                                  |
+| `description`                 | Description of the collection                 | `String!`                                                                  |
+| `network`                     | Network where the collection exists           | `Network!`                                                                 |
+| `socialLinks`                 | Array of social media links                   | `[SocialLink!]!`                                                           |
+| `supply`                      | Total supply of the collection                | `BigDecimal!`                                                              |
+| `totalSupply`                 | Total supply including burned tokens          | `BigDecimal!`                                                              |
+| `floorPriceEth`               | Floor price in ETH (deprecated)               | `BigDecimal`                                                               |
+| `floorPriceSourceMarketPlace` | Source marketplace for floor price            | `NftDataSourceMarketplace`                                                 |
+| `topOfferPriceEth`            | Top offer in ETH (deprecated)                 | `BigDecimal`                                                               |
+| `topOfferSourceMarketPlace`   | Source marketplace for top offer              | `NftDataSourceMarketplace`                                                 |
+| `holdersCount`                | Number of unique holders                      | `BigDecimal!`                                                              |
+| `nftStandard`                 | Token standard                                | `NftStandard!`                                                             |
+| `disabled`                    | Whether the collection is disabled            | `Boolean!`                                                                 |
+| `type`                        | Type of collection                            | `NftCollectionType!`                                                       |
+| `openseaId`                   | OpenSea identifier                            | `String`                                                                   |
+| `spamScore`                   | Spam score of the collection                  | `BigDecimal`                                                               |
+| `floorPrice`                  | Current floor price                           | `NftValueDenomination`                                                     |
+| `topOfferPrice`               | Highest current offer                         | `NftValueDenomination`                                                     |
+| `isApproved`                  | Check if collection is approved for a spender | `(spenderAddress: Address!, ownerAddress: Address!) => Boolean!`           |
+| `approvalTransaction`         | Get transaction config for approval           | `(spenderAddress: Address!, ownerAddress: Address!) => TransactionConfig!` |
+| `revokeApprovalTransaction`   | Get transaction config for revoking approval  | `(spenderAddress: Address!, ownerAddress: Address!) => TransactionConfig!` |
+| `nfts`                        | List of NFTs in the collection                | `NftTokenConnection!`                                                      |
+| `events`                      | Collection events (sales, transfers)          | `CollectionEventConnection!`                                               |
+| `traitGroups`                 | Groups of traits for the collection           | `[NftCollectionTraitGroupBase!]!`                                          |
+| `traitGroupValues`            | Values for trait groups                       | `NftCollectionTraitValueConnection!`                                       |
+| `traits`                      | Collection traits                             | `[NftCollectionTraitType!]!`                                               |
+| `holders`                     | Collection holders                            | `PaginatedNftHolder!`                                                      |
+| `medias`                      | Collection media assets                       | `NftCollectionMedias!`                                                     |
+| `circulatingSupply`           | Number of tokens in circulation               | `BigDecimal!`                                                              |
+| `totalCirculatingSupply`      | Total circulating supply                      | `BigDecimal!`                                                              |
+| `groups`                      | Collection groups information                 | `[NftCollectionGroup!]!`                                                   |
+| `marketCap`                   | Market capitalization                         | `BigDecimal`                                                               |
 
 ### Enums
 
@@ -224,6 +224,7 @@ enum NftTokenSort {
 ```
 
 ### Notes
+
 - Provides real-time floor price data
 - Supports both ERC721 and ERC1155 standards
 - Includes social links and media assets

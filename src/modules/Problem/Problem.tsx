@@ -4,7 +4,7 @@ import { Section } from '../../components/Section';
 export const Problem: React.FC = () => {
   return (
     <Section>
-      <div className="border problem__section">
+      <div className="problem__section border">
         <div style={{ flex: 1 }}>
           <h2
             style={{
