@@ -19,7 +19,7 @@ export const Intro: React.FC = () => {
       <div className="container" style={{ height: '100%' }}>
         <div className="intro__content">
           <div className="intro__content__child">
-            <h1 className={styles.title}>{siteConfig.tagline}</h1>
+            <h1>{siteConfig.tagline}</h1>
             <div
               style={{
                 display: 'flex',
