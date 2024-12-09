@@ -11,7 +11,7 @@ export const AccountTimelines: React.FC = () => {
   const [selectedType, setSelectedType] = React.useState<AccountTimelineType>(AccountTimelineType.Timeline);
 
   return (
-    <Section className="border hide-mobile" style={{ borderWidth: '1px', borderStyle: 'solid', padding: '64px 32px' }}>
+    <Section className="hide-mobile border" style={{ borderWidth: '1px', borderStyle: 'solid', padding: '64px 32px' }}>
       <div
         style={{
           display: 'flex',

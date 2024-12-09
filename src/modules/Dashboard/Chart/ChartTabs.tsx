@@ -11,7 +11,7 @@ export function ChartTabs({
   timeFrame: TimeFrame;
 }) {
   return (
-    <div className="chart__tabs  flex gap-1 py-1 px-1">
+    <div className="chart__tabs flex gap-1 px-1 py-1">
       {timeFrames.map((tf) => (
         <ChartTabsButton
           key={tf}

@@ -14,8 +14,8 @@ function Dashboard() {
   return (
     <Layout>
       <div className="flex">
-        <main className="flex-1 pt-4 pb-16">
-          <div className="container mx-auto ">
+        <main className="flex-1 pb-16 pt-4">
+          <div className="container mx-auto">
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
@@ -23,7 +23,7 @@ function Dashboard() {
             </SignedOut>
 
             <SignedIn>
-              <div className="flex gap-4 " style={{ width: '100%', flexFlow: 'wrap' }}>
+              <div className="flex gap-4" style={{ width: '100%', flexFlow: 'wrap' }}>
                 <div className="flex flex-col gap-4" style={{ flex: 2 }}>
                   <div className="flex justify-between">
                     <h2>Your Dashboard</h2>

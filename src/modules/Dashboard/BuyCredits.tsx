@@ -49,7 +49,7 @@ const GET_CREDITS_PRICE = gql`
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px]"
+      className="absolute max-w-[200px] rounded-md bg-gray-800 p-2 text-xs text-white"
       style={{
         top: position.top,
         left: position.left + 10,
@@ -77,7 +77,7 @@ const InfoIcon = ({ message }) => {
   return (
     <div className="relative inline-flex items-center">
       <div
-        className="cursor-pointer flex items-center"
+        className="flex cursor-pointer items-center"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowToast(false)}
       >
@@ -233,13 +233,13 @@ export function BuyCredits() {
 
       <div>
         <h4 className="mt-1">Buy Credits</h4>
-        <div className="flex flex-col gap-2 mt-1 banner" style={{ fontSize: '14px' }}>
+        <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
           <span>
-            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">20% off</span> for all credits
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">20% off</span> for all credits
             over 15M
           </span>
           <span>
-            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">30% off</span> for all credits
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">30% off</span> for all credits
             over 50M
           </span>
         </div>
@@ -248,7 +248,7 @@ export function BuyCredits() {
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-6">
           <div className="my-2 flex flex-col gap-2">
-            <label htmlFor="points-input" className=" font-medium">
+            <label htmlFor="points-input" className="font-medium">
               Credit Amount
             </label>
 
@@ -256,7 +256,7 @@ export function BuyCredits() {
               <button
                 type="button"
                 onClick={handleDecrement}
-                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                className="zapper-btn cursor-pointer py-0 text-2xl font-normal"
                 style={{
                   width: '40px',
                   justifyContent: 'center',
@@ -273,13 +273,13 @@ export function BuyCredits() {
                 onChange={handlePointsChange}
                 onBlur={handleBlur}
                 min={MIN_POINTS}
-                className=" text-center  field-sizing-content min-w-28 flex-grow"
+                className="min-w-28 flex-grow text-center field-sizing-content"
                 placeholder="Enter credits amount"
               />
               <button
                 type="button"
                 onClick={handleIncrement}
-                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                className="zapper-btn cursor-pointer py-0 text-2xl font-normal"
                 style={{
                   width: '40px',
                   justifyContent: 'center',
@@ -291,10 +291,10 @@ export function BuyCredits() {
               </button>
             </div>
           </div>
-          <div className="flex flex-col gap-2 mb-6">
+          <div className="mb-6 flex flex-col gap-2">
             <div className="flex justify-between">
               <span className="text-sm">Subtotal</span>
-              <span className="text-sm ">${formatPrice(price + savings)}</span>
+              <span className="text-sm">${formatPrice(price + savings)}</span>
             </div>
             {breakdown.map((tier) => {
               const discountPercent = (1 - tier.creditRate) * 100;
@@ -302,9 +302,9 @@ export function BuyCredits() {
                 const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
                 const tierInfo = DISCOUNT_TIERS[tier.creditRate];
                 return (
-                  <div key={`tier-${tier.creditRate}`} className="text-sm flex justify-between">
+                  <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
                     <span className="text-sm">{tierInfo.label} Credits Discount</span>
-                    <span className="text-sm text--success font-bold">-${tierSavings.toFixed(2)}</span>
+                    <span className="text--success text-sm font-bold">-${tierSavings.toFixed(2)}</span>
                   </div>
                 );
               }

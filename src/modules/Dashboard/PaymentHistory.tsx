@@ -33,7 +33,7 @@ const mapStatus = {
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px] whitespace-normal"
+      className="absolute max-w-[200px] whitespace-normal rounded-md bg-gray-800 p-2 text-xs text-white"
       style={{
         top: position.top,
         left: position.left + 10,
@@ -61,7 +61,7 @@ const InfoIcon = ({ message }) => {
   return (
     <div className="relative inline-flex items-center">
       <div
-        className="cursor-pointer flex items-center"
+        className="flex cursor-pointer items-center"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowToast(false)}
       >

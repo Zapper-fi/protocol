@@ -7,7 +7,7 @@ export function Breadcrumbs({ title = '' }) {
       <ul className="breadcrumbs">
         <li className="breadcrumbs__item">
           <Link to="/" className="breadcrumbs__link" href="/">
-            <Icon className="align-top relative size-[1.1rem] top-[1px]" />
+            <Icon className="relative top-[1px] size-[1.1rem] align-top" />
           </Link>
         </li>
         <li className="breadcrumbs__item breadcrumbs__item--active">
