@@ -88,6 +88,7 @@ export function PricingCalculator() {
               min="0"
               value={queries.onchainPrices}
               onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
+              placeholder="Enter number of queries"
               className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
           </div>
@@ -100,7 +101,8 @@ export function PricingCalculator() {
               type="number" 
               min="0" 
               value={queries.portfolioQueries} 
-              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))} 
+              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
+              placeholder="Enter number of queries" 
               className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
             />
           </div>
@@ -113,7 +115,8 @@ export function PricingCalculator() {
               type="number" 
               min="0" 
               value={queries.otherQueries} 
-              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))} 
+              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
+              placeholder="Enter number of queries" 
               className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
             />
           </div>
