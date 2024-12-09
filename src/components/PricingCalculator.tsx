@@ -1,4 +1,4 @@
-import React, { useState, type FC } from 'react';
+import { useState } from 'react';
 
 interface SliderProps {
   value: number;
@@ -8,7 +8,7 @@ interface SliderProps {
   onChange: (value: number) => void;
 }
 
-const CustomSlider: FC<SliderProps> = ({ value, min, max, step, onChange }) => (
+const CustomSlider = ({ value, min, max, step, onChange }: SliderProps) => (
   <input
     type="range"
     value={value}
@@ -45,7 +45,7 @@ const formatNumber = (num: number): string => {
   return num.toLocaleString();
 };
 
-const MetricCard: FC<MetricCardProps> = ({ label, value, color, decimals }) => (
+const MetricCard = ({ label, value, color, decimals }: MetricCardProps) => (
   <div className="flex flex-col p-4 xs:p-3 sm:p-4 min-h-[80px] rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
     <div className="text-sm xs:text-xs sm:text-sm text-neutral-400">{label}</div>
     <div className="text-xl xs:text-lg sm:text-2xl font-semibold truncate mt-1">
@@ -59,14 +59,14 @@ interface TierRowProps {
   price: string;
 }
 
-const TierRow: FC<TierRowProps> = ({ range, price }) => (
+const TierRow = ({ range, price }: TierRowProps) => (
   <div className="flex justify-between text-base xs:text-sm sm:text-base text-neutral-400 py-1">
     <span>{range}</span>
     <span className="ml-2">{price}</span>
   </div>
 );
 
-const PricingCalculator: FC = () => {
+const PricingCalculator = () => {
   const [credits, setCredits] = useState<number>(15_000_000);
   
   const calculatePrice = (credits: number): PricingResult => {
