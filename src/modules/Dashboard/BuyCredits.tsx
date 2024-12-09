@@ -86,6 +86,14 @@ export function BuyCredits() {
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
+  useEffect(() => {
+    getPrice({
+      variables: { creditAmount: MIN_POINTS },
+    }).then(({ data }) => {
+      setPrice(data?.getCreditsPrice || 0);
+    });
+  }, [getPrice]);
+
   const [createCharge, { loading }] = useMutation(CREATE_CHARGE, {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
