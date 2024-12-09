@@ -304,7 +304,7 @@ export function BuyCredits() {
                       <span>
                         {tierInfo.label} credit discount (on {tier.creditAmount.toLocaleString()} credits)
                       </span>
-                      <span className="text-confirmed-default font-bold">
+                      <span className="text-success-default font-bold">
                         -${tierSavings.toFixed(2)} ({discountPercent.toFixed(2)}% off)
                       </span>
                     </div>
