@@ -138,7 +138,7 @@ export function PricingCalculator() {
           </div>
           <div className="pt-3 border-t border-border">
             <div className="flex justify-between items-center">
-              <span className="text-alt-color font-semibold">Total</span>
+              <span className="font-semibold">Total</span>
               <span className="text-2xl font-semibold">${formatUSD(pricing.total)}</span>
             </div>
             {pricing.savings > 0 && (
