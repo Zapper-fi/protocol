@@ -283,7 +283,7 @@ export function BuyCredits() {
 
         <div className="space-y-2">
           <div className="text-sm flex justify-between text-gray-500 mb-1">
-            <span>Credit amount</span>
+            <span>Amount</span>
             <span>Cost per credit</span>
           </div>
           {breakdown.map((tier) => {
