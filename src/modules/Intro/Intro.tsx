@@ -27,24 +27,22 @@ export const Intro: React.FC = () => {
                 alignItems: 'flex-start',
               }}
             >
-              <h4 style={{ color: 'white' }} className={styles.subtitle}>
-                <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
-                <SignInDashboard type="button" />
-              </h4>
+              <h4 className="text-white font-normal mb-4">{siteConfig.title}</h4>
 
-              <div style={{ color: 'white', marginTop: '8px' }}>
+              <p className="mb-4">
+                <SignInDashboard type="button" />
+              </p>
+
+              <p className="text-white">
                 Want to contribute to our interpretation protocol?{' '}
-                <Link
-                  to="/docs/interpretation/contribute"
-                  className="text-sm hover:opacity-80"
-                >
+                <Link to="/docs/interpretation/contribute" className="hover:opacity-80">
                   Start Here
                 </Link>
-              </div>
+              </p>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </header>
   );
 };
