@@ -6,11 +6,16 @@ import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
-import { Info, Plus, Minus } from 'lucide-react';
+import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
+
+const DISCOUNT_TIERS = {
+  0.8: { label: '15M', threshold: 15_000_000 },
+  0.7: { label: '50M', threshold: 50_000_000 },
+};
 
 const QUERY = gql`
   query BuyCredits {
@@ -277,37 +282,44 @@ export function BuyCredits() {
 
         <div className="space-y-2">
           <div className="text-sm flex justify-between text-gray-500 mb-1 mt-4">
+            <span>Credits</span>
             <span>Amount</span>
-            <span>Cost per credit</span>
           </div>
-          {breakdown.map((tier) => {
-            const discountPercent = (1 - tier.creditRate) * 100;
-            const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
-            return (
-              <div key={tierKey} className="text-sm flex justify-between">
-                <span>{tier.creditAmount.toLocaleString()}</span>
-                <span>
-                  <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
-                  {discountPercent > 0 && (
-                    <span className="text-confirmed-default font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
-                  )}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-        <div className="space-y-2">
-          <div className="flex flex-col items-end gap-1 mt-4">
-            {savings > 0 && (
-              <span className="text-confirmed-default font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
-            )}
-            <div
-              id="cost-display"
-              className="text-primary-default font-bold text-lg py-2"
-              aria-label={`Cost: $${formatPrice(price)}`}
-            >
-              USD ${formatPrice(price)}
-            </div>
+          <div className="text-sm flex justify-between">
+            <span>Subtotal ({points.toLocaleString()} credits)</span>
+            <span>${(price + savings).toFixed(2)}</span>
+          </div>
+
+          <hr />
+
+          {savings > 0 && (
+            <>
+              {breakdown.map((tier) => {
+                const discountPercent = (1 - tier.creditRate) * 100;
+                if (discountPercent > 0) {
+                  const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
+                  const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                  return (
+                    <div key={`tier-${tier.creditRate}`} className="text-sm flex justify-between">
+                      <span>
+                        {tierInfo.label} credit discount (on {tier.creditAmount.toLocaleString()} credits)
+                      </span>
+                      <span className="text-confirmed-default font-bold">
+                        -${tierSavings.toFixed(2)} ({discountPercent.toFixed(2)}% off)
+                      </span>
+                    </div>
+                  );
+                }
+                return null;
+              })}
+
+              <hr />
+            </>
+          )}
+
+          <div className="text-primary-default font-bold text-lg flex justify-between w-full py-2">
+            <span>Total</span>
+            <span>USD ${formatPrice(price)}</span>
           </div>
         </div>
 
