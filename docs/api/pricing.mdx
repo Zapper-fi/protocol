@@ -6,6 +6,8 @@ sidebar_label: Pricing
 import { LinkButton } from '@site/src/components/LinkButton';
 import Link from '@docusaurus/Link';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
+import { PricingCalculator } from '@site/src/components/PricingCalculator';
+
 
 # Pricing
 
@@ -38,6 +40,7 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 | Onchain Identity | [`accounts`](/docs/api/endpoints/onchain-identity#accounts) | ENS, Farcaster, and Lens identity resolution |
 | NFT Data | [`nftCollections`](/docs/api/endpoints/nft-queries/nft-collections) [`nftToken`](/docs/api/endpoints/nft-queries/nft-token) [`nftUsersCollections`](/docs/api/endpoints/nft-queries/nft-collection-holdings) [`nftUsersTokens`](/docs/api/endpoints/nft-queries/nft-token-holdings) [`nftNetWorth`](/docs/api/endpoints/nft-queries/nft-net-worth)  | Comprehensive NFT data |
 
+<PricingCalculator />
 
 ## Volume Discounts
 
@@ -47,8 +50,11 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 | 2 | 15M-50M | $0.80 | 20% |
 | 3 | 50M+ | $0.70 | 30% |
 
+
 ### Volume Pricing Example
+
 For a 60M credit purchase:
+
 1. First 15M credits @ $1.00/1k = $15,000
 2. Next 35M credits @ $0.80/1k = $28,000
 3. Final 10M credits @ $0.70/1k = $7,000
