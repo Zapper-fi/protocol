@@ -2,7 +2,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import type React from 'react';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
-import styles from '../../pages/index.module.scss';
 
 export const Intro: React.FC = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -27,18 +26,18 @@ export const Intro: React.FC = () => {
                 alignItems: 'flex-start',
               }}
             >
-              <h4 style={{ color: 'white' }} className={styles.subtitle}>
-                <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
-                <SignInDashboard type="button" />
-              </h4>
+              <h4 className="text-white font-normal mb-4">{siteConfig.title}</h4>
 
-              <Link
-                to="/docs/interpretation/contribute"
-                className="text-sm hover:opacity-80 mt-2"
-                style={{ color: 'white' }}
-              >
-                Want to contribute to our interpretation protocol? Learn how
-              </Link>
+              <p className="mb-4">
+                <SignInDashboard type="button" />
+              </p>
+
+              <p className="text-white text-sm">
+                Want to contribute to our interpretation protocol?{' '}
+                <Link to="/docs/interpretation/contribute" className="hover:opacity-80">
+                  Start Here
+                </Link>
+              </p>
             </div>
           </div>
         </div>
