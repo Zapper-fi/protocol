@@ -295,7 +295,7 @@ export function BuyCredits() {
             )}
             <div
               id="cost-display"
-              className="text-primary-default font-bold text-lg"
+              className="text-primary-default font-bold text-lg py-2"
               aria-label={`Cost: $${formatPrice(price)}`}
             >
               USD ${formatPrice(price)}
