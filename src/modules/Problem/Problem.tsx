@@ -1,5 +1,4 @@
 import type React from 'react';
-import { Card } from '../../components/Card';
 import { Section } from '../../components/Section';
 
 export const Problem: React.FC = () => {
@@ -25,7 +24,8 @@ export const Problem: React.FC = () => {
             organize everything.
           </h5>
           <h5 style={{ fontWeight: 'normal', lineHeight: '28px' }}>
-          To solve this problem, an open network of curators contribute to the Zapper Protocol — transforming onchain data and empowering builders with an easy to use API.
+            To solve this problem, an open network of curators contribute to the Zapper Protocol — transforming onchain
+            data and empowering builders with an easy to use API.
           </h5>
         </div>
       </div>

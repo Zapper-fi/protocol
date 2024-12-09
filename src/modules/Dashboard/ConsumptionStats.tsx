@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { gql } from '@apollo/client';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
-import { Button } from '@site/src/components/Button';
 
 import {
   Chart as ChartJS,

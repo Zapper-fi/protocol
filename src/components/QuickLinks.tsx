@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { BookOpen, Beaker, CreditCard } from 'lucide-react';
 
 interface QuickLinkProps {

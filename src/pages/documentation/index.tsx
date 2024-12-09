@@ -1,5 +1,4 @@
 import Layout from '@theme/Layout';
-import * as React from 'react';
 import { RedocStandalone } from 'redoc';
 
 const DocumentationPage = () => {

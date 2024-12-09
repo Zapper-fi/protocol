@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
 import Link from '@docusaurus/Link';
 
