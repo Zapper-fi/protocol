@@ -268,7 +268,7 @@ export function BuyCredits() {
         </div>
 
         <div className="space-y-2">
-          <div className="text-sm flex justify-between text-gray-500 mb-1">
+          <div className="text-sm flex justify-between text-gray-500 mb-1 mt-4">
             <span>Amount</span>
             <span>Cost per credit</span>
           </div>
