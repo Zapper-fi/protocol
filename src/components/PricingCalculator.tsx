@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 function PricingCalculator() {
   const [credits, setCredits] = useState(15_000_000);
 
