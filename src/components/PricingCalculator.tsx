@@ -1,7 +1,28 @@
-import React, { useState } from 'react';
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
+import { cn } from "@/lib/utils";
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
 import { BadgeDollarSign } from 'lucide-react';
+
+const Slider = React.forwardRef<
+  React.ElementRef<typeof SliderPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <SliderPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative flex w-full touch-none select-none items-center",
+      className
+    )}
+    {...props}
+  >
+    <SliderPrimitive.Track className="relative h-2 sm:h-1.5 w-full grow overflow-hidden rounded-full bg-neutral-800">
+      <SliderPrimitive.Range className="absolute h-full bg-purple-600" />
+    </SliderPrimitive.Track>
+    <SliderPrimitive.Thumb className="block h-5 w-5 sm:h-4 sm:w-4 rounded-full border border-purple-600 bg-purple-600 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
+  </SliderPrimitive.Root>
+));
+Slider.displayName = SliderPrimitive.Root.displayName;
 
 interface PricingTier {
   threshold: number;
@@ -29,9 +50,9 @@ const formatNumber = (num: number): string => {
 };
 
 const MetricCard: React.FC<MetricCardProps> = ({ label, value, color, decimals }) => (
-  <div className="flex flex-col p-4 rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
-    <div className={`text-sm text-neutral-400`}>{label}</div>
-    <div className="text-2xl font-semibold">
+  <div className="flex flex-col p-4 xs:p-3 sm:p-4 min-h-[80px] rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
+    <div className="text-sm xs:text-xs sm:text-sm text-neutral-400">{label}</div>
+    <div className="text-xl xs:text-lg sm:text-2xl font-semibold truncate mt-1">
       ${value.toFixed(decimals)}
     </div>
   </div>
@@ -43,9 +64,9 @@ interface TierRowProps {
 }
 
 const TierRow: React.FC<TierRowProps> = ({ range, price }) => (
-  <div className="flex justify-between text-neutral-400">
+  <div className="flex justify-between text-base xs:text-sm sm:text-base text-neutral-400 py-1">
     <span>{range}</span>
-    <span>{price}</span>
+    <span className="ml-2">{price}</span>
   </div>
 );
 
@@ -75,7 +96,7 @@ const PricingCalculator: React.FC = () => {
     });
     
     return {
-      total: cost / 1000, // Convert to cost per 1k credits
+      total: cost / 1000,
       savings: (standardCost - cost) / 1000,
       perUnit: cost / credits
     };
@@ -85,7 +106,7 @@ const PricingCalculator: React.FC = () => {
   const metrics = [
     { label: "Total Cost", value: pricing.total, color: "purple", decimals: 2 },
     { label: "Your Savings", value: pricing.savings, color: "green", decimals: 2 },
-    { label: "Cost per 1k", value: pricing.perUnit, color: 3 }
+    { label: "Cost per 1k", value: pricing.perUnit, color: "blue", decimals: 3 }
   ];
 
   const tiers = [
@@ -96,15 +117,15 @@ const PricingCalculator: React.FC = () => {
 
   return (
     <Card className="w-full max-w-2xl">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <BadgeDollarSign className="w-6 h-6" />
+      <CardHeader className="p-6 xs:p-4 sm:p-6">
+        <CardTitle className="flex items-center gap-2 text-xl xs:text-lg sm:text-2xl">
+          <BadgeDollarSign className="w-6 h-6 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
           Volume Pricing Calculator
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-6 xs:space-y-4 sm:space-y-6 p-6 xs:p-4 sm:p-6">
         <div>
-          <label className="block text-base text-neutral-400 mb-2">
+          <label className="block text-base xs:text-sm sm:text-base text-neutral-400 mb-3">
             Credits: {formatNumber(credits)}
           </label>
           <Slider
@@ -117,15 +138,15 @@ const PricingCalculator: React.FC = () => {
           />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-3 gap-3 xs:gap-2 sm:gap-3">
           {metrics.map((metric) => (
             <MetricCard key={metric.label} {...metric} />
           ))}
         </div>
 
-        <div className="space-y-2">
-          <h3 className="text-xl font-semibold">Volume Discount Tiers</h3>
-          <div className="grid grid-cols-1 gap-2">
+        <div className="space-y-3 xs:space-y-2 sm:space-y-3">
+          <h3 className="text-xl xs:text-base sm:text-xl font-semibold">Volume Discount Tiers</h3>
+          <div className="grid grid-cols-1 gap-1">
             {tiers.map((tier) => (
               <TierRow key={tier.range} {...tier} />
             ))}
