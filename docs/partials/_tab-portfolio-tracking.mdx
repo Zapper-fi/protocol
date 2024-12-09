@@ -25,32 +25,28 @@ import { CodeImage } from '@site/src/components/CodeImage';
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Tokens.png">
-          {`
-
-query {
-portfolio(addresses: ["0x..."]) {
-tokenBalances {
-key
-address
-network
-token {
-baseToken {
-address
-network
-symbol
-decimals
-imageUrl
-}
-balance
-balanceUSD
-balanceRaw
-}
-updatedAt
-}
-}
-}
-`}
-
+{`query {
+    portfolio(addresses: ["0x..."]) {
+      tokenBalances {
+        key
+        address
+        network
+        token {
+          baseToken {
+          address
+          network
+          symbol
+          decimals
+          imageUrl
+        }
+        balance
+        balanceUSD
+        balanceRaw
+      }
+      updatedAt
+    }
+  }
+}`}
         </CodeImage>
       </div>
     </TabPanel>
