@@ -86,6 +86,14 @@ export function BuyCredits() {
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
+  useEffect(() => {
+    getPrice({
+      variables: { creditAmount: MIN_POINTS },
+    }).then(({ data }) => {
+      setPrice(data?.getCreditsPrice || 0);
+    });
+  }, [getPrice]);
+
   const [createCharge, { loading }] = useMutation(CREATE_CHARGE, {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
@@ -223,6 +231,13 @@ export function BuyCredits() {
             </label>
             <div className="h-10 flex items-center">
               <div className="relative w-[250px]">
+                <button
+                  type="button"
+                  onClick={handleDecrement}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
+                >
+                  -
+                </button>
                 <input
                   id="points-input"
                   type="text"
@@ -230,22 +245,22 @@ export function BuyCredits() {
                   onChange={handlePointsChange}
                   onBlur={handleBlur}
                   min={MIN_POINTS}
-                  placeholder="Enter credits amount"
+                  className="text-center"
                   style={{
                     border: '1px solid grey',
                     borderRadius: '8px',
                     padding: '8px 12px',
                     width: '100%',
                   }}
+                  placeholder="Enter credits amount"
                 />
-                <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
-                  <button type="button" onClick={handleDecrement} className="h-6 w-6 flex items-center justify-center">
-                    -
-                  </button>
-                  <button type="button" onClick={handleIncrement} className="h-6 w-6 flex items-center justify-center">
-                    +
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={handleIncrement}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>
