@@ -199,7 +199,7 @@ export function BuyCredits() {
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="space-y-2 flex flex-col gap-2">
+    <div className="flex flex-col gap-2">
       <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
@@ -250,34 +250,29 @@ export function BuyCredits() {
         </a>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label htmlFor="points-input" className="text-sm font-medium">
-              Credit Amount
-            </label>
-            <div className="h-10 flex items-center">
-              <div className="flex gap-4">
-                <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
-                  -
-                </button>
-                <div className="flex-1">
-                  <input
-                    id="points-input"
-                    type="text"
-                    value={displayPoints}
-                    onChange={handlePointsChange}
-                    onBlur={handleBlur}
-                    min={MIN_POINTS}
-                    className="zapper-btn text-center w-full text-primary-default"
-                    placeholder="Enter credits amount"
-                  />
-                </div>
-                <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
-                  +
-                </button>
-              </div>
-            </div>
+      <form onSubmit={handleSubmit} className="my-8">
+        <div className="flex items-center justify-between h-10 my-2">
+          <label htmlFor="points-input" className="text-sm font-medium">
+            Credit Amount
+          </label>
+
+          <div className="flex gap-2 text-lg">
+            <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
+              -
+            </button>
+            <input
+              id="points-input"
+              type="text"
+              value={displayPoints}
+              onChange={handlePointsChange}
+              onBlur={handleBlur}
+              min={MIN_POINTS}
+              className="zapper-btn text-center text-lg field-sizing-content"
+              placeholder="Enter credits amount"
+            />
+            <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
+              +
+            </button>
           </div>
         </div>
 
