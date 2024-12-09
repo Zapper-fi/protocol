@@ -1,5 +1,6 @@
 import React from 'react';
 import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
+import Link from '@docusaurus/Link';
 
 interface Feature {
   title: string;
@@ -11,7 +12,7 @@ interface Feature {
 interface FeatureCardProps extends Feature {}
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, icon: Icon }) => (
-  <a
+  <Link
     href={href}
     className="flex flex-col p-4 rounded-2xl bg-card border border-border hover:opacity-90 transition-opacity duration-200 h-full text-inherit hover:no-underline shadow-lg shadow-black/10"
   >
@@ -20,7 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, href, ico
     </div>
     <h3 className="text-xl font-semibold mb-1">{title}</h3>
     <p className="text-base text-neutral-400 leading-normal">{description}</p>
-  </a>
+  </Link>
 );
 
 const features: Feature[] = [
