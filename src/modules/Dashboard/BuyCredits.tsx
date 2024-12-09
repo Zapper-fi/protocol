@@ -267,7 +267,7 @@ export function BuyCredits() {
               onChange={handlePointsChange}
               onBlur={handleBlur}
               min={MIN_POINTS}
-              className="bg-transparent border-none text-center text-lg field-sizing-content min-w-28"
+              className="bg-white dark:bg-black border-none text-center text-lg field-sizing-content min-w-28"
               placeholder="Enter amount"
             />
             <button
