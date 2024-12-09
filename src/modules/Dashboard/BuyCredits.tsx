@@ -263,7 +263,7 @@ export function BuyCredits() {
               onBlur={handleBlur}
               min={MIN_POINTS}
               className="bg-transparent border-none text-center text-lg field-sizing-content min-w-28"
-              placeholder="Enter credits amount"
+              placeholder="Enter amount"
             />
             <button
               type="button"
