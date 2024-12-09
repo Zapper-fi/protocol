@@ -39,7 +39,6 @@ Need help with the Zapper API?
 - Use field selection to minimize response size
 - Implement pagination where available
 - Consider batch queries for multiple requests
-- Review our [best practices guide](/docs/api/best-practices)
 
 ## Need Additional Help?
 
