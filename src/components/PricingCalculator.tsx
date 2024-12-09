@@ -76,7 +76,7 @@ export function PricingCalculator() {
         </p>
       </div>
       
-      <div className="space-y-6 p-6">
+      <div className="space-y-6 pb-6 px-6">
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
