@@ -20,7 +20,7 @@ const config = {
       };
     },
   ],
-  tagline: 'Illuminating the Onchain World.',
+  tagline: 'The Ultimate Onchain Data API',
   headTags: [
     {
       tagName: 'meta',
