@@ -1,7 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type React from 'react';
-import { ButtonGroup } from '../../components/ButtonGroup';
-import { LinkButton } from '../../components/LinkButton';
+import { SignInDashboard } from '@site/src/components/SignInDashboard';
 import styles from '../../pages/index.module.scss';
 
 export const Intro: React.FC = () => {
@@ -29,7 +28,7 @@ export const Intro: React.FC = () => {
             >
               <h4 style={{ color: 'white' }} className={styles.subtitle}>
                 <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
-                <SignInDashboardButton />
+                <SignInDashboard type="button" />
               </h4>
             </div>
           </div>
