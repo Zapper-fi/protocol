@@ -60,13 +60,23 @@ const config = {
       links: [
         {
           position: 'left',
+          label: 'Twitter',
+          href: 'https://twitter.com/zapper_fi',
+        },
+        {
+          position: 'left',
+          label: 'Warpcast',
+          href: 'https://warpcast.com/~/channel/zapper',
+        },
+        {
+          position: 'left',
           label: 'Discord',
           href: 'https://zapper.xyz/discord',
         },
         {
           position: 'left',
-          label: 'Twitter',
-          href: 'https://twitter.com/zapper_fi',
+          label: 'API Support',
+          href: '/support',
         },
       ],
     },
