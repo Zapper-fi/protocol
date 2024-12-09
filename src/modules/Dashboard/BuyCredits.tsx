@@ -227,8 +227,18 @@ export function BuyCredits() {
       </div>
       <hr />
 
-      <div className="flex justify-between items-center">
-        <h4>Buy Credits</h4>
+      <div className="flex justify-between items-baseline">
+        <div>
+          <h4>Buy Credits</h4>
+          <div className="flex flex-col gap-1 mt-1">
+            <span>
+              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
+            </span>
+            <span>
+              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
+            </span>
+          </div>
+        </div>
         <a
           href="/docs/api/pricing"
           className="text-primary-default hover:underline"
@@ -304,12 +314,11 @@ export function BuyCredits() {
         )}
 
         <div className="space-y-2">
-          <div className="h-10 flex items-center justify-center">
-            <div
-              id="cost-display"
-              className="font-extrabold text-primary-default bg-transparent text-xl"
-              aria-label={`Cost: $${formatPrice(price)}`}
-            >
+          <div className="flex flex-col items-end gap-1">
+            {savings > 0 && (
+              <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
+            )}
+            <div id="cost-display" className="text-white font-bold text-lg" aria-label={`Cost: $${formatPrice(price)}`}>
               USD ${formatPrice(price)}
             </div>
           </div>
