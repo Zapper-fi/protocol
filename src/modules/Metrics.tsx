@@ -1,4 +1,5 @@
 import type React from 'react';
+import Link from '@docusaurus/Link';
 import { Section } from '../components/Section';
 
 export const Metrics: React.FC = () => {
@@ -81,7 +82,7 @@ export const Metrics: React.FC = () => {
             }}
           >
             <h3 style={{ marginBottom: '0px' }}>
-              <a href="/docs/api/supported-chains">38</a>
+              <Link href="/docs/api/supported-chains">38</Link>
             </h3>
             <p style={{ marginBottom: '0px', whiteSpace: 'nowrap' }}>Chains Supported</p>
           </div>
