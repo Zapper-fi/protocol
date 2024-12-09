@@ -239,15 +239,6 @@ export function BuyCredits() {
             </span>
           </div>
         </div>
-        <a
-          href="/docs/api/pricing"
-          className="text-primary-default hover:underline"
-          style={{ fontSize: '14px' }}
-          target="_blank"
-          rel="noreferrer"
-        >
-          See how credit costs are calculated
-        </a>
       </div>
 
       <form onSubmit={handleSubmit} className="my-8">
