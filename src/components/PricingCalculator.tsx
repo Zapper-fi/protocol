@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const PRICING_TIERS = [
   { threshold: 15_000_000, price: 1.0 },
   { threshold: 50_000_000, price: 0.8 },
@@ -68,7 +69,7 @@ export function PricingCalculator() {
   const pricing = calculatePrice(totalCredits);
 
   return (
-    <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl shadow-black/10">
+    <div className="w-full rounded-lg border border-border bg-card shadow-xl shadow-black/10">
       <div className="px-6 pt-6 pb-4 border-b border-border">
         <div className="text-xl font-semibold">API Cost Calculator</div>
         <p className="mt-2 text-sm text-alt-color">
