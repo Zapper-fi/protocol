@@ -1,5 +1,4 @@
 import Layout from '@theme/Layout';
-import React from 'react';
 import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
 import { Profile } from '@site/src/modules/Dashboard/Profile';
 import { SignedIn } from '@site/src/modules/Dashboard/SignedIn';
@@ -9,8 +8,6 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
-import { useLocation } from '@docusaurus/router';
-import { useHistory } from '@docusaurus/router';
 import { RedirectToHome } from '@site/src/components/RedirectToHome';
 
 function Dashboard() {

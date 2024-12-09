@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import type { TimeFrame } from '../types';
 import { ChartTabsButton } from './ChartTabsButton';
 

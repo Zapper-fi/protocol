@@ -1,8 +1,7 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { debounce } from 'lodash';
 import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
-import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
