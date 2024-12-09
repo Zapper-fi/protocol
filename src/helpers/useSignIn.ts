@@ -10,13 +10,18 @@ const UPSERT_USER = gql`
   }
 `;
 
-export function useSignIn() {
+export function useSignIn({ onComplete } = { onComplete: () => {} }) {
   const [upsertUser] = useMutation(UPSERT_USER);
   const { authenticated, ready } = usePrivy();
   const { logout } = useLogout();
 
   const { login } = useLogin({
-    onComplete: async (user, isNewUser) => {
+    onComplete: async (user, isNewUser, wasAlreadyAuthenticated) => {
+      if (wasAlreadyAuthenticated) {
+        return;
+      }
+
+      // Update user
       if (user.email) {
         const { data } = await upsertUser({
           variables: {
@@ -30,6 +35,9 @@ export function useSignIn() {
         }
       }
 
+      onComplete?.();
+
+      // Workaround for new users, data isn't ready
       if (isNewUser && window.location.pathname === '/dashboard') {
         window.location.reload();
       }

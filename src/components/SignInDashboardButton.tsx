@@ -2,11 +2,17 @@ import { Button } from '@site/src/components/Button';
 import { useSignIn } from '@site/src/helpers/useSignIn';
 
 export function SignInDashboardButton() {
-  const { ready, authenticated, login } = useSignIn();
+  const redirectToDashboard = () => {
+    location.href = '/dashboard';
+  };
+
+  const { authenticated, login } = useSignIn({
+    onComplete: redirectToDashboard,
+  });
 
   const handleClick = () => {
-    if (ready && authenticated) {
-      window.location.href = '/dashboard';
+    if (authenticated) {
+      redirectToDashboard();
     } else {
       login();
     }
