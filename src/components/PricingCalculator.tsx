@@ -59,13 +59,14 @@ export function PricingCalculator() {
   return (
     <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl shadow-black/10">
       <div className="p-6 border-b border-border">
-        <div className="text-xl font-semibold">API Query Calculator</div>
+        <div className="text-xl font-semibold">API Cost Calculator</div>
+        <p className="mt-2 text-sm text-neutral-400">Enter the number of API queries you expect to make for each endpoint type. Consider choosing a specific timeframe (e.g., monthly or annually) to help with cost forecasting.</p>
       </div>
       <div className="space-y-6 p-6">
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-2">
-              Onchain Prices Queries (4 credits each)
+              Onchain Prices Queries
             </label>
             <input
               type="number"
@@ -78,7 +79,7 @@ export function PricingCalculator() {
 
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-2">
-              Portfolio Queries (3 credits each)
+              Portfolio Queries 
             </label>
             <input
               type="number"
@@ -90,7 +91,7 @@ export function PricingCalculator() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-neutral-400 mb-2">Other Queries (2 credits each)</label>
+            <label className="block text-sm font-medium text-neutral-400 mb-2">Other Queries</label>
             <input
               type="number"
               min="0"
