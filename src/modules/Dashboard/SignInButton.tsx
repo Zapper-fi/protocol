@@ -20,8 +20,8 @@ export function SignInButton() {
           to: 'dashboard',
         },
         {
-          label: 'Contact Support',
-          href: 'https://help.zapper.xyz/hc/en-us',
+          label: 'Support',
+          href: '/support',
         },
         {
           label: 'Sign Out',
