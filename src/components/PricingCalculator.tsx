@@ -68,6 +68,14 @@ export function PricingCalculator() {
   const pricing = calculatePrice(totalCredits);
 
   return (
+    <div className="w-full rounded-lg border border-border bg-card shadow-xl shadow-black/10">
+      <div className="px-6 pt-6 pb-4 border-b border-border">
+        <div className="text-xl font-semibold">API Cost Calculator</div>
+        <p className="mt-2 text-sm text-alt-color">
+          Enter the number of API queries you expect to make for each endpoint type. Consider choosing a specific timeframe (e.g., monthly or annually) to help with cost forecasting.
+        </p>
+      </div>
+      
       <div className="space-y-6 p-6">
         <div className="space-y-4">
           <div>
@@ -142,5 +150,6 @@ export function PricingCalculator() {
           </div>
         </div>
       </div>
+    </div>
   );
 }
