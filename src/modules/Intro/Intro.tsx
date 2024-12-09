@@ -33,7 +33,7 @@ export const Intro: React.FC = () => {
                 <SignInDashboard type="button" />
               </p>
 
-              <p className="text-white text-xs">
+              <p className="text-white text-sm">
                 Want to contribute to our interpretation protocol?{' '}
                 <Link to="/docs/interpretation/contribute" className="hover:opacity-80">
                   Start Here
