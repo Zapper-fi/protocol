@@ -6,11 +6,16 @@ import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
-import { Info, Plus, Minus } from 'lucide-react';
+import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
+
+const DISCOUNT_TIERS = {
+  0.8: { label: '15M', threshold: 15_000_000 },
+  0.7: { label: '50M', threshold: 50_000_000 },
+};
 
 const QUERY = gql`
   query BuyCredits {
@@ -91,7 +96,7 @@ export function BuyCredits() {
   const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
   const [price, setPrice] = useState(0);
   const [breakdown, setBreakdown] = useState([]);
-  const [savings, setSavings] = useState(0);
+  const [savings, setSavings] = useState<number>(0);
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
@@ -287,36 +292,25 @@ export function BuyCredits() {
               </button>
             </div>
           </div>
-          {/* 
-Temporary, to put back once the design is updated
-          <div className="space-y-2">
-            {breakdown.map((tier) => {
-              const discountPercent = (1 - tier.creditRate) * 100;
-              const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
-              return (
-                <div key={tierKey} className="text-sm flex justify-between">
-                  <span>{tier.creditAmount.toLocaleString()}</span>
-                  <span>
-                    <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
-                    {discountPercent > 0 && (
-                      <span className="text-confirmed-default font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
-                    )}
-                  </span>
-                </div>
-              );
-            })}
-          </div> */}
           <div className="flex flex-col gap-2 mb-6">
             <div className="flex justify-between">
               <span className="text-sm">Subtotal</span>
-              <span className="text-sm ">${formatPrice(price)}</span>
+              <span className="text-sm ">${formatPrice(price + savings)}</span>
             </div>
-            {savings > 0 && (
-              <div className="flex justify-between">
-                <span className="text-sm">Total Savings</span>
-                <span className="text-sm text--success font-bold">-${formatPrice(savings)}</span>
-              </div>
-            )}
+            {breakdown.map((tier) => {
+              const discountPercent = (1 - tier.creditRate) * 100;
+              if (discountPercent > 0) {
+                const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
+                const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                return (
+                  <div key={`tier-${tier.creditRate}`} className="text-sm flex justify-between">
+                    <span className="text-sm">{tierInfo.label} Credits Discount</span>
+                    <span className="text-sm text--success font-bold">-${tierSavings.toFixed(2)}</span>
+                  </div>
+                );
+              }
+              return null;
+            })}
             <hr style={{ margin: 0 }} />
             <div className="flex justify-between">
               <span>Total</span>

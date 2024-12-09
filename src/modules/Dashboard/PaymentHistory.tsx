@@ -25,7 +25,7 @@ const statusInfo = {
 };
 
 const mapStatus = {
-  confirmed: 'text-green-400',
+  confirmed: 'text-success-default',
   pending: 'text-yellow-400',
   failed: 'text-red-400',
 };
