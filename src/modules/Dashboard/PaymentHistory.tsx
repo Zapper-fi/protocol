@@ -106,7 +106,7 @@ export function PaymentHistory() {
             <th className="text-left">Date</th>
             <th className="text-right">Credits</th>
             <th className="text-right">Amount</th>
-            <th className="text-left">Status</th>
+            <th className="text-center">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -122,11 +122,9 @@ export function PaymentHistory() {
                 <td>{formatDate(payment.createdAt)}</td>
                 <td className="text-right">{payment.creditsPurchased}</td>
                 <td className="text-right">USD ${payment.amount}</td>
-                <td>
-                  <div className="flex items-center gap-1">
-                    <span className={mapStatus[payment.status]}>{payment.status}</span>
-                    <InfoIcon message={statusInfo[payment.status]} />
-                  </div>
+                <td className="flex items-center justify-center gap-1 capitalize">
+                  <span className={mapStatus[payment.status]}>{payment.status}</span>
+                  <InfoIcon message={statusInfo[payment.status]} />
                 </td>
               </tr>
             ))

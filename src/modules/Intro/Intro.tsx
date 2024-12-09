@@ -2,7 +2,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import type React from 'react';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
-import styles from '../../pages/index.module.scss';
 
 export const Intro: React.FC = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -19,7 +18,7 @@ export const Intro: React.FC = () => {
       <div className="container" style={{ height: '100%' }}>
         <div className="intro__content">
           <div className="intro__content__child">
-            <h1 className={styles.title}>{siteConfig.tagline}</h1>
+            <h1>{siteConfig.tagline}</h1>
             <div
               style={{
                 display: 'flex',
