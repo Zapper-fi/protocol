@@ -489,9 +489,11 @@ hr {
 }
 
 @layer components {
-
-  /* Tabs */
   .zapper-tab {
     @apply border-0 font-semibold whitespace-nowrap bg-transparent text-alt-color data-[selected]:bg-card data-[selected]:text-primary-default py-2 px-4 rounded-full cursor-pointer;
+  }
+
+  .zapper-btn {
+    @apply bg-button-light dark:bg-button-dark border-none text-white font-semibold rounded-lg px-4 py-2;
   }
 }

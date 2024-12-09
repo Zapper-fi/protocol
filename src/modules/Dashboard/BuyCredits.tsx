@@ -237,35 +237,23 @@ export function BuyCredits() {
               Credit Amount
             </label>
             <div className="h-10 flex items-center">
-              <div className="relative w-[250px]">
-                <button
-                  type="button"
-                  onClick={handleDecrement}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
-                >
+              <div className="flex gap-4">
+                <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
                   -
                 </button>
-                <input
-                  id="points-input"
-                  type="text"
-                  value={displayPoints}
-                  onChange={handlePointsChange}
-                  onBlur={handleBlur}
-                  min={MIN_POINTS}
-                  className="text-center"
-                  style={{
-                    border: '1px solid grey',
-                    borderRadius: '8px',
-                    padding: '8px 12px',
-                    width: '100%',
-                  }}
-                  placeholder="Enter credits amount"
-                />
-                <button
-                  type="button"
-                  onClick={handleIncrement}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
-                >
+                <div className="flex-1">
+                  <input
+                    id="points-input"
+                    type="text"
+                    value={displayPoints}
+                    onChange={handlePointsChange}
+                    onBlur={handleBlur}
+                    min={MIN_POINTS}
+                    className="zapper-btn text-center w-full"
+                    placeholder="Enter credits amount"
+                  />
+                </div>
+                <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
                   +
                 </button>
               </div>
