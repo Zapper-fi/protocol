@@ -212,15 +212,22 @@ export function BuyCredits() {
         )}
       </div>
       <hr />
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start w-full">
         <div className="space-y-1">
-          <h4 style={{ marginBottom: '0px' }}>Buy Credits</h4>
-          <div className="text-left">
-            <a href="/docs/api/pricing" className="text-primary-default hover:underline" style={{ fontSize: '14px' }}>
-              See credit costs and volume discounts
-            </a>
+          <h4>Buy Credits</h4>
+          <div className="flex flex-col gap-1 mt-1">
+            <span className="text-base font-bold">Volume discounts:</span>
+            <span>
+              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
+            </span>
+            <span>
+              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
+            </span>
           </div>
         </div>
+        <a href="/docs/api/pricing" className="text-primary-default hover:underline" style={{ fontSize: '14px' }}>
+          See how credit costs are calculated
+        </a>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
