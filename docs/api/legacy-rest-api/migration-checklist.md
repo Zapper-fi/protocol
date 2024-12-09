@@ -5,6 +5,7 @@ sidebar_label: Migration Checklist
 
 import { LinkButton } from '@site/src/components/LinkButton';
 import Link from '@docusaurus/Link';
+import { SignInDashboard } from '@site/src/components/SignInDashboard';
 
 # Migration Guide: REST to GraphQL
 
@@ -13,17 +14,17 @@ import Link from '@docusaurus/Link';
 ### Existing API Client Checklist
 
 #### 1. Access Verification
-- [ ] Sign in to the [Dashboard](/dashboard) with the same address you used for the REST API.
+- [ ] Sign in to the <SignInDashboard type="link" /> with the same address you used for the REST API.
 - [ ] Once signed in, you'll see your API key : it is the same as the REST API.
 - [ ] Test your API key by querying any of the new endpoints at *public.zapper.xyz/graphql*. [See available endpoints](/docs/api).
 - [ ] Contact api@zapper.xyz if you have issues signng in to your account.
 
 #### 2. Existing Credits
-- [ ] Check your remaining REST API credits in the [Dashboard](/dashboard). 
+- [ ] Check your remaining REST API credits in the <SignInDashboard type="link" />. 
 - [ ] Email api@zapper.xyz to transfer purchased credits to the GraphQL API.
 
 #### 3. Initial Testing
-- [ ] Explore the new visualizations for query usage and cost on the [Dashboard](/dashboard) 
+- [ ] Explore the new visualizations for query usage and cost on the <SignInDashboard type="link" /> 
 - [ ] Test response formats match expectations
 
 #### 4. Documentation Review
@@ -33,7 +34,7 @@ import Link from '@docusaurus/Link';
 ### New Payment System 
 - $1 USD = 1,000 credits 
 - Previous payment flow is discontinued
-- All payments are now onchain through the [Dashboard](/dashboard)
+- All payments are now onchain through the <SignInDashboard type="link" />
 - Payment supported in 100+ tokens including:
   - ETH
   - MATIC
