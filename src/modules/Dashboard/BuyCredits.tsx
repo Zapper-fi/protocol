@@ -96,7 +96,7 @@ export function BuyCredits() {
   const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
   const [price, setPrice] = useState(0);
   const [breakdown, setBreakdown] = useState([]);
-  const [savings, setSavings] = useState(0);
+  const [savings, setSavings] = useState<number>(0);
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
@@ -204,7 +204,7 @@ export function BuyCredits() {
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
@@ -212,7 +212,7 @@ export function BuyCredits() {
             {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
           </span>
           <span
-            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}
+            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text--success'}`}
             style={{ fontSize: '18px' }}
           >
             {displayV2Points}
@@ -230,96 +230,92 @@ export function BuyCredits() {
           </div>
         )}
       </div>
-      <hr />
+      <hr style={{ margin: 0 }} />
 
-      <div className="flex justify-between items-baseline">
-        <div>
-          <h4>Buy Credits</h4>
-          <div className="flex flex-col gap-1 mt-1">
-            <span>
-              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
-            </span>
-            <span>
-              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
-            </span>
-          </div>
+      <div>
+        <h4 className="mt-1">Buy Credits</h4>
+        <div className="flex flex-col gap-2 mt-1 banner" style={{ fontSize: '14px' }}>
+          <span>
+            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">20% off</span> for all credits
+            over 15M
+          </span>
+          <span>
+            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">30% off</span> for all credits
+            over 50M
+          </span>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="my-8">
-        <div className="my-2">
-          <label htmlFor="points-input" className="text-sm font-medium">
-            Credit Amount
-          </label>
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-6">
+          <div className="my-2 flex flex-col gap-2">
+            <label htmlFor="points-input" className=" font-medium">
+              Credit Amount
+            </label>
 
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={handleDecrement}
-              className="zapper-btn text-3xl font-normal p-0 size-10 cursor-pointer"
-            >
-              -
-            </button>
-            <input
-              id="points-input"
-              type="text"
-              value={displayPoints}
-              onChange={handlePointsChange}
-              onBlur={handleBlur}
-              min={MIN_POINTS}
-              className="bg-white dark:bg-black border-none text-center text-lg field-sizing-content min-w-28"
-              placeholder="Enter amount"
-            />
-            <button
-              type="button"
-              onClick={handleIncrement}
-              className="zapper-btn text-3xl p-0 font-normal size-10 cursor-pointer"
-            >
-              +
-            </button>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={handleDecrement}
+                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                style={{
+                  width: '40px',
+                  justifyContent: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                -
+              </button>
+              <input
+                id="points-input"
+                type="text"
+                value={displayPoints}
+                onChange={handlePointsChange}
+                onBlur={handleBlur}
+                min={MIN_POINTS}
+                className=" text-center  field-sizing-content min-w-28 flex-grow"
+                placeholder="Enter credits amount"
+              />
+              <button
+                type="button"
+                onClick={handleIncrement}
+                className="zapper-btn text-2xl py-0 font-normal cursor-pointer"
+                style={{
+                  width: '40px',
+                  justifyContent: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                +
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <div className="text-sm flex justify-between text-gray-500 mb-1 mt-4">
-            <span>Credits</span>
-            <span>Amount</span>
-          </div>
-          <div className="text-sm flex justify-between">
-            <span>Subtotal ({points.toLocaleString()} credits)</span>
-            <span>${(price + savings).toFixed(2)}</span>
-          </div>
-
-          <hr />
-
-          {savings > 0 && (
-            <>
-              {breakdown.map((tier) => {
-                const discountPercent = (1 - tier.creditRate) * 100;
-                if (discountPercent > 0) {
-                  const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
-                  const tierInfo = DISCOUNT_TIERS[tier.creditRate];
-                  return (
-                    <div key={`tier-${tier.creditRate}`} className="text-sm flex justify-between">
-                      <span>
-                        {tierInfo.label} credit discount (on {tier.creditAmount.toLocaleString()} credits)
-                      </span>
-                      <span className="text-success-default font-bold">
-                        -${tierSavings.toFixed(2)} ({discountPercent.toFixed(2)}% off)
-                      </span>
-                    </div>
-                  );
-                }
-                return null;
-              })}
-
-              <hr />
-            </>
-          )}
-
-          <div className="text-primary-default font-bold text-lg flex justify-between w-full py-2">
-            <span>Total</span>
-            <span>USD ${formatPrice(price)}</span>
+          <div className="flex flex-col gap-2 mb-6">
+            <div className="flex justify-between">
+              <span className="text-sm">Subtotal</span>
+              <span className="text-sm ">${formatPrice(price + savings)}</span>
+            </div>
+            {breakdown.map((tier) => {
+              const discountPercent = (1 - tier.creditRate) * 100;
+              if (discountPercent > 0) {
+                const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
+                const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                return (
+                  <div key={`tier-${tier.creditRate}`} className="text-sm flex justify-between">
+                    <span className="text-sm">{tierInfo.label} Credits Discount</span>
+                    <span className="text-sm text--success font-bold">-${tierSavings.toFixed(2)}</span>
+                  </div>
+                );
+              }
+              return null;
+            })}
+            <hr style={{ margin: 0 }} />
+            <div className="flex justify-between">
+              <span>Total</span>
+              <span className="font-bold">USD ${formatPrice(price)}</span>
+            </div>
           </div>
         </div>
 

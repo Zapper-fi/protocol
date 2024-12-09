@@ -104,6 +104,10 @@
   --ifm-color-info-lighter: rgb(135, 216, 242);
   --ifm-color-info-lightest: rgb(170, 227, 246);
 
+  .text--success {
+    color: var(--ifm-color-success);
+  }
+
   .alert--success {
     background-color: rgba(0, 216, 151, 0.2);
   }
@@ -375,8 +379,25 @@ hr {
 
   &--secondary {
     background-color: var(--ifm-card-background);
-    color: var(--text-color)
+    color: var(--text-color);
+
+
   }
+}
+
+.banner {
+  border: 1px solid var(--ifm-border-color);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+input {
+  background-color: var(--ifm-input-background);
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid var(--ifm-border-color);
+  font-size: 16px;
 }
 
 
