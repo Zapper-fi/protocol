@@ -5,7 +5,7 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { Features } from '@site/src/components/Features';
-import { SignInDashboardButton } from '@site/src/components/SignInDashboardButton';
+import { SignInDashboard } from '@site/src/components/SignInDashboard';
 
 
 # Getting Started
@@ -20,7 +20,7 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 ### 1) Get an API key
 
-<SignInDashboardButton />
+<SignInDashboard type="button" />
 
 
 ### 2) Start building
@@ -440,10 +440,10 @@ end
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits which can be found by visiting [Pricing](/docs/api/pricing).
 
-Track API usage and purchase additional credits via the API [Dashboard](/dashboard).
+<p>Track API usage and purchase additional credits via the API <SignInDashboard type="link" />.</p>
 
 :::info
 
-If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started), you have access to the new GraphQL endpoints with your existing API key, after signing in to the new [Dashboard](/dashboard) with the email associated with your existing account. Please contact us at *api@zapper.xyz* to get your purchased points migrated to the new GraphQL API.
+If you are a client of the legacy [REST API](https://studio.zapper.xyz/docs/apis/getting-started), you have access to the new GraphQL endpoints with your existing API key, after signing in to the new <SignInDashboard /> with the email associated with your existing account. Please contact us at *api@zapper.xyz* to get your purchased points migrated to the new GraphQL API.
 
 :::
