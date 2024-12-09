@@ -68,7 +68,7 @@ export function PricingCalculator() {
   const pricing = calculatePrice(totalCredits);
 
   return (
-    <div className="w-full rounded-lg border border-border bg-card shadow-xl shadow-black/10">
+    <div className="w-full rounded-lg border border-border bg-card">
       <div className="px-6 pt-6 pb-4 border-b border-border">
         <div className="text-xl font-semibold">API Cost Calculator</div>
         <p className="mt-2 text-sm text-alt-color">
