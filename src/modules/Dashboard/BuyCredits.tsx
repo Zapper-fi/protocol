@@ -239,15 +239,6 @@ export function BuyCredits() {
             </span>
           </div>
         </div>
-        <a
-          href="/docs/api/pricing"
-          className="text-primary-default hover:underline"
-          style={{ fontSize: '14px' }}
-          target="_blank"
-          rel="noreferrer"
-        >
-          See how credit costs are calculated
-        </a>
       </div>
 
       <form onSubmit={handleSubmit} className="my-8">
@@ -304,7 +295,7 @@ export function BuyCredits() {
             )}
             <div
               id="cost-display"
-              className="text-primary-default font-bold text-lg"
+              className="text-primary-default font-bold text-lg py-2"
               aria-label={`Cost: $${formatPrice(price)}`}
             >
               USD ${formatPrice(price)}
