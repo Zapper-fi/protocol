@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { BadgeDollarSign } from 'lucide-react';
 
 const CustomSlider: React.FC<{
@@ -112,14 +111,14 @@ const PricingCalculator: React.FC = () => {
   ];
 
   return (
-    <Card className="w-full max-w-2xl">
-      <CardHeader className="p-6 xs:p-4 sm:p-6">
-        <CardTitle className="flex items-center gap-2 text-xl xs:text-lg sm:text-2xl">
+    <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl">
+      <div className="p-6 xs:p-4 sm:p-6 border-b border-border">
+        <div className="flex items-center gap-2 text-xl xs:text-lg sm:text-2xl font-semibold">
           <BadgeDollarSign className="w-6 h-6 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
           Volume Pricing Calculator
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6 xs:space-y-4 sm:space-y-6 p-6 xs:p-4 sm:p-6">
+        </div>
+      </div>
+      <div className="space-y-6 xs:space-y-4 sm:space-y-6 p-6 xs:p-4 sm:p-6">
         <div>
           <label className="block text-base xs:text-sm sm:text-base text-neutral-400 mb-3">
             Credits: {formatNumber(credits)}
@@ -147,8 +146,8 @@ const PricingCalculator: React.FC = () => {
             ))}
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
