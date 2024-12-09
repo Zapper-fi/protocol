@@ -9,6 +9,9 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
+import { useLocation } from '@docusaurus/router';
+import { useHistory } from '@docusaurus/router';
+import { RedirectToHome } from '@site/src/components/RedirectToHome';
 
 function Dashboard() {
   return (
@@ -19,7 +22,7 @@ function Dashboard() {
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
-              <p>Please sign in to continue.</p>
+              <RedirectToHome />
             </SignedOut>
 
             <SignedIn>

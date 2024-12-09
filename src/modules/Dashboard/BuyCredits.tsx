@@ -6,7 +6,7 @@ import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
-import { Info } from 'lucide-react';
+import { Info, Plus, Minus } from 'lucide-react';
 import ReactDOM from 'react-dom';
 
 const GRACE_PERIOD = 5000;
@@ -81,11 +81,18 @@ export function BuyCredits() {
   const { user } = usePrivy();
   const { data } = useAuthQuery(QUERY);
   const [points, setPoints] = useState(MIN_POINTS);
-  const [displayPoints, setDisplayPoints] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
   const [price, setPrice] = useState(0);
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
+
+  useEffect(() => {
+    getPrice({
+      variables: { creditAmount: MIN_POINTS },
+    }).then(({ data }) => {
+      setPrice(data?.getCreditsPrice || 0);
+    });
+  }, [getPrice]);
 
   const [createCharge, { loading }] = useMutation(CREATE_CHARGE, {
     onCompleted: (data) => {
@@ -108,8 +115,21 @@ export function BuyCredits() {
     if (numValue < MIN_POINTS) {
       return MIN_POINTS;
     }
-    setErrorMessage('');
     return Math.floor(numValue / MIN_POINTS) * MIN_POINTS;
+  };
+
+  const handleIncrement = () => {
+    const newPoints = Number(displayPoints) + MIN_POINTS;
+    setDisplayPoints(newPoints.toString());
+    setPoints(newPoints);
+    updatePrice(newPoints);
+  };
+
+  const handleDecrement = () => {
+    const newPoints = Math.max(Number(displayPoints) - MIN_POINTS, MIN_POINTS);
+    setDisplayPoints(newPoints.toString());
+    setPoints(newPoints);
+    updatePrice(newPoints);
   };
 
   const debouncedUpdatePrice = useCallback(
@@ -132,11 +152,6 @@ export function BuyCredits() {
   const handlePointsChange = (e) => {
     const rawValue = e.target.value.replace(/[^0-9]/g, '');
     setDisplayPoints(rawValue);
-    if (Number(rawValue) < MIN_POINTS) {
-      setErrorMessage(`Mininum ${MIN_POINTS} credits`);
-    } else {
-      setErrorMessage('');
-    }
     debouncedUpdatePrice(rawValue);
   };
 
@@ -171,7 +186,7 @@ export function BuyCredits() {
 
   return (
     <div className="space-y-2 flex flex-col gap-2">
-      <div className="flex  gap-4">
+      <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
             Credit balance
@@ -202,7 +217,7 @@ export function BuyCredits() {
           <h4 style={{ marginBottom: '0px' }}>Buy Credits</h4>
           <div className="text-left">
             <a href="/docs/api/pricing" className="text-primary-default hover:underline" style={{ fontSize: '14px' }}>
-              See how credit costs are calculated
+              See credit costs and volume discounts
             </a>
           </div>
         </div>
@@ -216,12 +231,21 @@ export function BuyCredits() {
             </label>
             <div className="h-10 flex items-center">
               <div className="relative w-[250px]">
+                <button
+                  type="button"
+                  onClick={handleDecrement}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
+                >
+                  -
+                </button>
                 <input
                   id="points-input"
                   type="text"
                   value={displayPoints}
                   onChange={handlePointsChange}
                   onBlur={handleBlur}
+                  min={MIN_POINTS}
+                  className="text-center"
                   style={{
                     border: '1px solid grey',
                     borderRadius: '8px',
@@ -230,11 +254,13 @@ export function BuyCredits() {
                   }}
                   placeholder="Enter credits amount"
                 />
-                {errorMessage && (
-                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <span className="text-red-500 text-sm">{errorMessage}</span>
-                  </div>
-                )}
+                <button
+                  type="button"
+                  onClick={handleIncrement}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>
