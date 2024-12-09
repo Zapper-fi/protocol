@@ -269,7 +269,7 @@ export function BuyCredits() {
                     onChange={handlePointsChange}
                     onBlur={handleBlur}
                     min={MIN_POINTS}
-                    className="zapper-btn text-center w-full"
+                    className="zapper-btn text-center w-full text-primary-default"
                     placeholder="Enter credits amount"
                   />
                 </div>
@@ -307,7 +307,11 @@ export function BuyCredits() {
             {savings > 0 && (
               <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
             )}
-            <div id="cost-display" className="text-white font-bold text-lg" aria-label={`Cost: $${formatPrice(price)}`}>
+            <div
+              id="cost-display"
+              className="text-primary-default font-bold text-lg"
+              aria-label={`Cost: $${formatPrice(price)}`}
+            >
               USD ${formatPrice(price)}
             </div>
           </div>
