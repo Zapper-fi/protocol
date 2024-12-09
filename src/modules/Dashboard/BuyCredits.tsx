@@ -198,8 +198,8 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
-  const displayV2Points = apiV2PointsRemaining <= 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
-  const isNegativeBalance = apiV2PointsRemaining < 0;
+  const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
+  const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
   const formatPrice = (price) => price.toFixed(2);
 
@@ -209,10 +209,10 @@ export function BuyCredits() {
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
             Credit balance
-            {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
+            {shouldShowWarning && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
           </span>
           <span
-            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text--success'}`}
+            className={`font-bold ${shouldShowWarning ? 'text-yellow-500' : 'text--success'}`}
             style={{ fontSize: '18px' }}
           >
             {displayV2Points}
