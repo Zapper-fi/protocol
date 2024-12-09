@@ -80,7 +80,7 @@ export function PricingCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
-              Onchain Prices Queries (4 credits each)
+              Onchain Price Queries
             </label>
             <input
               type="number"
@@ -93,27 +93,27 @@ export function PricingCalculator() {
 
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
-              Portfolio Queries (3 credits each)
+              Portfolio Queries
             </label>
-            <input
-              type="number"
-              min="0"
-              value={queries.portfolioQueries}
-              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
+            <input 
+              type="number" 
+              min="0" 
+              value={queries.portfolioQueries} 
+              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))} 
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-alt-color mb-2">
-              Other Queries (2 credits each)
+              Other Queries
             </label>
-            <input
-              type="number"
-              min="0"
-              value={queries.otherQueries}
-              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
-              className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900"
+            <input 
+              type="number" 
+              min="0" 
+              value={queries.otherQueries} 
+              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))} 
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]" 
             />
           </div>
         </div>
