@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
 const PRICING_TIERS = [
-  { threshold: 15_000_000, price: 1.00 },
-  { threshold: 50_000_000, price: 0.80 },
-  { threshold: Infinity, price: 0.70 }
+  { threshold: 15_000_000, price: 1.0 },
+  { threshold: 50_000_000, price: 0.8 },
+  { threshold: Infinity, price: 0.7 },
 ];
 
 const ENDPOINT_CREDITS = {
   onchainPrices: 4,
   portfolioQueries: 3,
-  otherQueries: 2
+  otherQueries: 2,
 };
 
-function QueryPricingCalculator() {
+export function PricingCalculator() {
   const [queries, setQueries] = useState({
     onchainPrices: 0,
     portfolioQueries: 0,
-    otherQueries: 0
+    otherQueries: 0,
   });
 
   const calculateTotalCredits = () => {
@@ -31,22 +31,19 @@ function QueryPricingCalculator() {
     let remaining = totalCredits;
     let cost = 0;
     let standardCost = totalCredits * 1.0;
-    
+
     PRICING_TIERS.forEach(({ threshold, price }, index) => {
-      const tierCredits = Math.min(
-        remaining,
-        threshold - (index === 0 ? 0 : PRICING_TIERS[index - 1].threshold)
-      );
+      const tierCredits = Math.min(remaining, threshold - (index === 0 ? 0 : PRICING_TIERS[index - 1].threshold));
       if (tierCredits > 0) {
-        cost += (tierCredits * price);
+        cost += tierCredits * price;
         remaining -= tierCredits;
       }
     });
-    
+
     return {
       total: cost / 1000,
       savings: (standardCost - cost) / 1000,
-      creditsUsed: totalCredits
+      creditsUsed: totalCredits,
     };
   };
 
@@ -69,11 +66,11 @@ function QueryPricingCalculator() {
               type="number"
               min="0"
               value={queries.onchainPrices}
-              onChange={(e) => setQueries(prev => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
+              onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: parseInt(e.target.value) || 0 }))}
               className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-2">
               Portfolio Queries (3 credits each)
@@ -82,20 +79,18 @@ function QueryPricingCalculator() {
               type="number"
               min="0"
               value={queries.portfolioQueries}
-              onChange={(e) => setQueries(prev => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
+              onChange={(e) => setQueries((prev) => ({ ...prev, portfolioQueries: parseInt(e.target.value) || 0 }))}
               className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
             />
           </div>
-          
+
           <div>
-            <label className="block text-sm font-medium text-neutral-400 mb-2">
-              Other Queries (2 credits each)
-            </label>
+            <label className="block text-sm font-medium text-neutral-400 mb-2">Other Queries (2 credits each)</label>
             <input
               type="number"
               min="0"
               value={queries.otherQueries}
-              onChange={(e) => setQueries(prev => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
+              onChange={(e) => setQueries((prev) => ({ ...prev, otherQueries: parseInt(e.target.value) || 0 }))}
               className="w-full px-3 py-2 rounded-md border border-border bg-neutral-900 text-white"
             />
           </div>
@@ -122,9 +117,7 @@ function QueryPricingCalculator() {
           <div>
             <h3 className="text-xl font-semibold mb-2">Volume Discounts Applied</h3>
             <div className="space-y-1 text-neutral-400">
-              {totalCredits > 50_000_000 && (
-                <div className="text-green-500">30% discount on credits above 50M</div>
-              )}
+              {totalCredits > 50_000_000 && <div className="text-green-500">30% discount on credits above 50M</div>}
               {totalCredits > 15_000_000 && (
                 <div className="text-green-500">20% discount on credits between 15M-50M</div>
               )}
@@ -135,5 +128,3 @@ function QueryPricingCalculator() {
     </div>
   );
 }
-
-export default QueryPricingCalculator;
