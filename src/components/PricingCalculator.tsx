@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { BadgeDollarSign } from 'lucide-react';
+import React, { useState, type FC } from 'react';
 
-const CustomSlider: React.FC<{
+interface SliderProps {
   value: number;
   min: number;
   max: number;
   step: number;
   onChange: (value: number) => void;
-}> = ({ value, min, max, step, onChange }) => (
+}
+
+const CustomSlider: FC<SliderProps> = ({ value, min, max, step, onChange }) => (
   <input
     type="range"
     value={value}
@@ -44,7 +45,7 @@ const formatNumber = (num: number): string => {
   return num.toLocaleString();
 };
 
-const MetricCard: React.FC<MetricCardProps> = ({ label, value, color, decimals }) => (
+const MetricCard: FC<MetricCardProps> = ({ label, value, color, decimals }) => (
   <div className="flex flex-col p-4 xs:p-3 sm:p-4 min-h-[80px] rounded-2xl bg-card border border-border shadow-lg shadow-black/10">
     <div className="text-sm xs:text-xs sm:text-sm text-neutral-400">{label}</div>
     <div className="text-xl xs:text-lg sm:text-2xl font-semibold truncate mt-1">
@@ -58,14 +59,14 @@ interface TierRowProps {
   price: string;
 }
 
-const TierRow: React.FC<TierRowProps> = ({ range, price }) => (
+const TierRow: FC<TierRowProps> = ({ range, price }) => (
   <div className="flex justify-between text-base xs:text-sm sm:text-base text-neutral-400 py-1">
     <span>{range}</span>
     <span className="ml-2">{price}</span>
   </div>
 );
 
-const PricingCalculator: React.FC = () => {
+const PricingCalculator: FC = () => {
   const [credits, setCredits] = useState<number>(15_000_000);
   
   const calculatePrice = (credits: number): PricingResult => {
@@ -113,8 +114,7 @@ const PricingCalculator: React.FC = () => {
   return (
     <div className="w-full max-w-2xl rounded-lg border border-border bg-card shadow-xl">
       <div className="p-6 xs:p-4 sm:p-6 border-b border-border">
-        <div className="flex items-center gap-2 text-xl xs:text-lg sm:text-2xl font-semibold">
-          <BadgeDollarSign className="w-6 h-6 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
+        <div className="text-xl xs:text-lg sm:text-2xl font-semibold">
           Volume Pricing Calculator
         </div>
       </div>
