@@ -21,7 +21,7 @@ export function SignInButton() {
         },
         {
           label: 'Support',
-          href: '/support',
+          href: 'https://help.zapper.xyz/hc/en-us',
         },
         {
           label: 'Sign Out',
