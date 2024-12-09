@@ -31,7 +31,14 @@ const CREATE_CHARGE = gql`
 
 const GET_CREDITS_PRICE = gql`
   query GetCreditsPrice($creditAmount: Float!) {
-    getCreditsPrice(creditAmount: $creditAmount)
+    getCreditsPriceBreakdown(creditAmount: $creditAmount) {
+      breakdown {
+        creditAmount
+        creditRate
+      }
+      totalCost
+      savings
+    }
   }
 `;
 
@@ -83,6 +90,8 @@ export function BuyCredits() {
   const [points, setPoints] = useState(MIN_POINTS);
   const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
   const [price, setPrice] = useState(0);
+  const [breakdown, setBreakdown] = useState([]);
+  const [savings, setSavings] = useState(0);
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
@@ -90,7 +99,11 @@ export function BuyCredits() {
     getPrice({
       variables: { creditAmount: MIN_POINTS },
     }).then(({ data }) => {
-      setPrice(data?.getCreditsPrice || 0);
+      if (data?.getCreditsPriceBreakdown) {
+        setPrice(data.getCreditsPriceBreakdown.totalCost);
+        setBreakdown(data.getCreditsPriceBreakdown.breakdown);
+        setSavings(data.getCreditsPriceBreakdown.savings);
+      }
     });
   }, [getPrice]);
 
@@ -107,7 +120,11 @@ export function BuyCredits() {
     const { data } = await getPrice({
       variables: { creditAmount: Number(points) },
     });
-    setPrice(data?.getCreditsPrice || 0);
+    if (data?.getCreditsPriceBreakdown) {
+      setPrice(data.getCreditsPriceBreakdown.totalCost);
+      setBreakdown(data.getCreditsPriceBreakdown.breakdown);
+      setSavings(data.getCreditsPriceBreakdown.savings);
+    }
   };
 
   const normalizePoints = (value) => {
@@ -135,10 +152,7 @@ export function BuyCredits() {
   const debouncedUpdatePrice = useCallback(
     debounce(async (points) => {
       const normalizedPoints = normalizePoints(points);
-      const { data } = await getPrice({
-        variables: { creditAmount: normalizedPoints },
-      });
-      setPrice(data?.getCreditsPrice || 0);
+      updatePrice(normalizedPoints);
     }, 300),
     [],
   );
@@ -212,20 +226,16 @@ export function BuyCredits() {
         )}
       </div>
       <hr />
-      <div className="flex justify-between items-start w-full">
-        <div className="space-y-1">
-          <h4>Buy Credits</h4>
-          <div className="flex flex-col gap-1 mt-1">
-            <span className="text-base font-bold">Volume discounts:</span>
-            <span>
-              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
-            </span>
-            <span>
-              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
-            </span>
-          </div>
-        </div>
-        <a href="/docs/api/pricing" className="text-primary-default hover:underline" style={{ fontSize: '14px' }}>
+
+      <div className="flex justify-between items-center">
+        <h4>Buy Credits</h4>
+        <a
+          href="/docs/api/pricing"
+          className="text-primary-default hover:underline"
+          style={{ fontSize: '14px' }}
+          target="_blank"
+          rel="noreferrer"
+        >
           See how credit costs are calculated
         </a>
       </div>
@@ -243,7 +253,7 @@ export function BuyCredits() {
                   onClick={handleDecrement}
                   className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
                 >
-                  -
+                  <Minus className="h-4 w-4" />
                 </button>
                 <input
                   id="points-input"
@@ -266,23 +276,41 @@ export function BuyCredits() {
                   onClick={handleIncrement}
                   className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center"
                 >
-                  +
+                  <Plus className="h-4 w-4" />
                 </button>
               </div>
             </div>
           </div>
-          <div className="space-y-2">
-            <label htmlFor="cost-display" className="text-sm font-medium">
-              Cost
-            </label>
-            <div className="h-10 flex items-center">
-              <div
-                id="cost-display"
-                className="font-extrabold text-primary-default bg-transparent"
-                aria-label={`Cost: $${formatPrice(price)}`}
-              >
-                USD ${formatPrice(price)}
-              </div>
+        </div>
+
+        {breakdown.map((tier) => {
+          const discountPercent = (1 - tier.creditRate) * 100;
+          const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
+          return (
+            <div key={tierKey} className="text-sm flex justify-between">
+              <span>
+                {tier.creditAmount.toLocaleString()} credits at ${(tier.creditRate * 0.001).toFixed(4)}
+              </span>
+              {discountPercent > 0 && (
+                <span className="text-green-500 font-bold">({discountPercent.toFixed(2)}% off)</span>
+              )}
+            </div>
+          );
+        })}
+        {savings > 0 && (
+          <div className="flex justify-end">
+            <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
+          </div>
+        )}
+
+        <div className="space-y-2">
+          <div className="h-10 flex items-center justify-center">
+            <div
+              id="cost-display"
+              className="font-extrabold text-primary-default bg-transparent text-xl"
+              aria-label={`Cost: $${formatPrice(price)}`}
+            >
+              USD ${formatPrice(price)}
             </div>
           </div>
         </div>
