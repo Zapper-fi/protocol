@@ -207,7 +207,7 @@ export function BuyCredits() {
             {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
           </span>
           <span
-            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}
+            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text--success'}`}
             style={{ fontSize: '18px' }}
           >
             {displayV2Points}
@@ -227,24 +227,24 @@ export function BuyCredits() {
       </div>
       <hr style={{ margin: 0 }} />
 
-      <div className="flex justify-between items-baseline">
-        <div>
-          <h4>Buy Credits</h4>
-          <div className="flex flex-col gap-1 mt-1">
-            <span>
-              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
-            </span>
-            <span>
-              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
-            </span>
-          </div>
+      <div>
+        <h4 className="mt-1">Buy Credits</h4>
+        <div className="flex flex-col gap-2 mt-1 banner" style={{ fontSize: '14px' }}>
+          <span>
+            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">20% off</span> for all credits
+            over 15M
+          </span>
+          <span>
+            <span className="text--success font-bold alert--success px-2 py-1 rounded-md">30% off</span> for all credits
+            over 50M
+          </span>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="my-2">
-        <div className="flex flex-col gap-8">
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-6">
           <div className="my-2 flex flex-col gap-2">
-            <label htmlFor="points-input" className="text-sm font-medium">
+            <label htmlFor="points-input" className=" font-medium">
               Credit Amount
             </label>
 
@@ -287,7 +287,8 @@ export function BuyCredits() {
               </button>
             </div>
           </div>
-
+          {/* 
+Temporary, to put back once the design is updated
           <div className="space-y-2">
             {breakdown.map((tier) => {
               const discountPercent = (1 - tier.creditRate) * 100;
@@ -304,19 +305,22 @@ export function BuyCredits() {
                 </div>
               );
             })}
-          </div>
-          <div className="space-y-2">
-            <div className="flex flex-col items-end gap-1 mt-4">
-              {savings > 0 && (
-                <span className="text-confirmed-default font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
-              )}
-              <div
-                id="cost-display"
-                className="text-primary-default font-bold text-lg py-2"
-                aria-label={`Cost: $${formatPrice(price)}`}
-              >
-                USD ${formatPrice(price)}
+          </div> */}
+          <div className="flex flex-col gap-2 mb-6">
+            <div className="flex justify-between">
+              <span className="text-sm">Subtotal</span>
+              <span className="text-sm ">USD ${formatPrice(price)}</span>
+            </div>
+            {savings > 0 && (
+              <div className="flex justify-between">
+                <span className="text-sm">Total Savings</span>
+                <span className="text-sm text--success font-bold">-${formatPrice(savings)}</span>
               </div>
+            )}
+            <hr style={{ margin: 0 }} />
+            <div className="flex justify-between">
+              <span>Total</span>
+              <span className="font-bold">USD ${formatPrice(price)}</span>
             </div>
           </div>
         </div>

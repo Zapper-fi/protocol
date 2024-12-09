@@ -38,6 +38,7 @@ function Dashboard() {
                   <div className="flex flex-col gap-8">
                     <Profile />
                     <BuyCredits />
+                    <hr style={{ margin: 0 }} />
                     <QuickLinks />
                   </div>
                 </Card>
