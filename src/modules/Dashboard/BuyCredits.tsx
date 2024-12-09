@@ -307,14 +307,9 @@ export function BuyCredits() {
             </div>
           );
         })}
-        {savings > 0 && (
-          <div className="flex justify-end">
-            <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
-          </div>
-        )}
 
         <div className="space-y-2">
-          <div className="flex flex-col items-end gap-1">
+          <div className="flex flex-col items-end gap-1 mt-4">
             {savings > 0 && (
               <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
             )}
