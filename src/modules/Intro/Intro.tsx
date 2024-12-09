@@ -32,8 +32,7 @@ export const Intro: React.FC = () => {
                 <Link
                   to="/docs/interpretation/overview"
                   className="text-sm hover:opacity-80 mt-2"
-                  style={{ color: 'white' }}
-                >
+                  style={{ color: 'white' }}>
                   Want to contribute to our interpretation protocol? Learn how
                 </Link>
               </h4>
