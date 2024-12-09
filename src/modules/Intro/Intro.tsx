@@ -35,7 +35,7 @@ export const Intro: React.FC = () => {
               <p className="text-white text-sm">
                 Want to contribute to our interpretation protocol?{' '}
                 <Link to="/docs/interpretation/contribute" className="hover:opacity-80 font-semibold">
-                  Start Here
+                  Start Here.
                 </Link>
               </p>
             </div>
