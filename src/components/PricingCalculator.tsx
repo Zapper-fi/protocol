@@ -122,7 +122,7 @@ export function PricingCalculator() {
         </div>
         <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <span className="text-alt-color">Credits Needed</span>
+            <span className="text-sm text-alt-color">Credits Needed</span>
             <span className="font-medium">{formatNumber(totalCredits)}</span>
           </div>
           <div className="flex justify-between items-center">
