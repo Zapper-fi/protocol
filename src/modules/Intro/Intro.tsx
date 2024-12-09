@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 import type React from 'react';
-import { ButtonGroup } from '../../components/ButtonGroup';
-import { LinkButton } from '../../components/LinkButton';
+import { SignInDashboard } from '@site/src/components/SignInDashboard';
 import styles from '../../pages/index.module.scss';
 
 export const Intro: React.FC = () => {
@@ -29,8 +29,16 @@ export const Intro: React.FC = () => {
             >
               <h4 style={{ color: 'white' }} className={styles.subtitle}>
                 <span style={{ marginBottom: '16px', display: 'block' }}>{siteConfig.title}</span>
-                <LinkButton href="docs/api" type="primary" buttonCopy="Start Building" />
+                <SignInDashboard type="button" />
               </h4>
+
+              <Link
+                to="/docs/interpretation/contribute"
+                className="text-sm hover:opacity-80 mt-2"
+                style={{ color: 'white' }}
+              >
+                Want to contribute to our interpretation protocol? Learn how
+              </Link>
             </div>
           </div>
         </div>
