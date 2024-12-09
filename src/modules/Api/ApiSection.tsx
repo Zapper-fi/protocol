@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignInDashboardButton } from '@site/src/components/SignInDashboardButton';
+import { SignInDashboard } from '@site/src/components/SignInDashboard';
 
 enum TabEnum {
   Portfolio = 'portfolio',
@@ -66,7 +66,7 @@ export const ApiSection: React.FC = () => {
             </p>
           </div>
 
-          <SignInDashboardButton />
+          <SignInDashboard type="button" />
         </div>
       </div>
     </div>
