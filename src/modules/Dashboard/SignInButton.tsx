@@ -2,6 +2,32 @@ import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 import { useSignIn } from '@site/src/helpers/useSignIn';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
+import { Layout, LogOut } from 'lucide-react';
+
+function MobileMenuItems({ user, logout }) {
+  return (
+    <div className="menu__list fixed right-16 top-2">
+      <div className="menu__list-item hidden max-[996px]:flex">
+        <div className="flex flex-row gap-3 items-center py-1">
+          <a href="/dashboard" className="p-2 rounded-full hover:bg-gray-200 transition-colors" title="Dashboard">
+            <Layout size={20} />
+          </a>
+          <a
+            href="/"
+            className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+            title="Sign Out"
+            onClick={(e) => {
+              e.preventDefault();
+              logout();
+            }}
+          >
+            <LogOut size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function SignInButton() {
   const { authenticated, ready, user } = usePrivy();
@@ -11,26 +37,34 @@ export function SignInButton() {
     return null;
   }
 
-  return authenticated ? (
-    <DropdownNavbarItem
-      label={<span className="text-sm">{user.email.address}</span>}
-      items={[
-        {
-          label: 'Dashboard',
-          to: 'dashboard',
-        },
-        {
-          label: 'Support',
-          href: '/support',
-        },
-        {
-          label: 'Sign Out',
-          href: '/',
-          onClick: logout,
-        },
-      ]}
-    />
-  ) : (
+  if (authenticated) {
+    return (
+      <>
+        <DropdownNavbarItem
+          label={<span className="text-sm">{user.email.address}</span>}
+          items={[
+            {
+              label: 'Dashboard',
+              to: 'dashboard',
+            },
+            {
+              label: 'Support',
+              href: '/support',
+            },
+            {
+              label: 'Sign Out',
+              href: '/',
+              onClick: logout,
+            },
+          ]}
+        />
+
+        <MobileMenuItems user={user} logout={logout} />
+      </>
+    );
+  }
+
+  return (
     <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
       Sign in
     </Button>
