@@ -256,7 +256,7 @@ export function BuyCredits() {
               <button
                 type="button"
                 onClick={handleDecrement}
-                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid place-items-center"
+                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid justify-items-center"
               >
                 -
               </button>
@@ -273,7 +273,7 @@ export function BuyCredits() {
               <button
                 type="button"
                 onClick={handleIncrement}
-                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid place-items-center"
+                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid justify-items-center"
               >
                 +
               </button>
