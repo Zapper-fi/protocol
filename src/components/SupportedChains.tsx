@@ -30,7 +30,7 @@ function SupportedChainsTable() {
     <table>
       <thead>
         <tr>
-          <th colSpan={2}>Chain</th>
+          <th>Chain</th>
           <th>Zapper API enum</th>
         </tr>
       </thead>
@@ -38,9 +38,11 @@ function SupportedChainsTable() {
         {supportedChains.map(({ iconUrl, name, enumValue }) => (
           <tr key={enumValue}>
             <td>
-              <img src={iconUrl} alt={name} className="size-8 rounded-full" />
+              <div className="flex items-center gap-2">
+                <img src={iconUrl} alt={name} className="size-8 rounded-full" />
+                {name}
+              </div>
             </td>
-            <td>{name}</td>
             <td>
               <code>{enumValue}</code>
             </td>
