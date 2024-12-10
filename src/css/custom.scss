@@ -156,7 +156,7 @@ table {
 }
 
 table th {
-  background-color: var(--ifm-input-background) !important; 
+  background-color: var(--ifm-input-background) !important;
   border-width: 0;
   font-size: 14px;
   text-align: left;
@@ -172,16 +172,8 @@ td {
   background-color: var(--ifm-card-background);
 }
 
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
+table tr:nth-child(2n) {
+  background-color: inherit !important;
 }
 
 /* Zapper overrides */
@@ -197,9 +189,6 @@ td {
   --ifm-h4-font-size: inherit;
 }
 
-table tr:nth-child(2n) {
-  background-color: inherit !important;
-}
 
 details[class*='details_'] {
   --docusaurus-details-decoration-color: var(--ifm-border-color);
@@ -286,10 +275,6 @@ p {
 .main-wrapper,
 .navbar {
   background-color: var(--ifm-default-background);
-}
-
-.card {
-  background-color: var(--ifm-card-background);
 }
 
 .navbar {
