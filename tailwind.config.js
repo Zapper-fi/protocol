@@ -22,6 +22,7 @@ module.exports = {
           light: '#E9EDF2',
           dark: '#252A2E',
         },
+        input: 'var(--ifm-input-background)',
       },
     },
   },
