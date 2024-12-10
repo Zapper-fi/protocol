@@ -2,19 +2,20 @@ import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 import { useSignIn } from '@site/src/helpers/useSignIn';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import { Layout, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
+import { RiAccountCircleLine } from 'react-icons/ri';
 
-function MobileMenuItems({ user, logout }) {
+function MobileMenuItems({ logout }) {
   return (
     <div className="menu__list">
       <div className="menu__list-item hidden max-[996px]:flex">
-        <div className="flex flex-row gap-1 items-center mr-6">
+        <div className="flex flex-row gap-1 items-center mr-4">
           <a
             href="/dashboard"
             className="p-2 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
             title="Dashboard"
           >
-            <Layout size={20} className="text-white" />
+            <RiAccountCircleLine size={20} className="text-white" />
           </a>
           <a
             href="/"
