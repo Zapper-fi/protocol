@@ -6,7 +6,7 @@ export const Card: React.FC<{
 }> = ({ children, style }) => {
   return (
     <div
-      className="card"
+      className="bg-card"
       style={{
         ...style,
         padding: '16px',
