@@ -28,8 +28,8 @@ function Dashboard() {
                   <h2>Your Dashboard</h2>
                 </div>
 
-                <div className="flex flex-col-reverse lg:flex-row gap-4">
-                  <div className="flex flex-col gap-4 flex-1 w-full">
+                <div className="flex flex-col-reverse gap-4" style={{ width: '100%', flexFlow: 'wrap-reverse' }}>
+                  <div className="flex flex-col gap-4" style={{ flex: 2, minWidth: '300px' }}>
                     <ConsumptionStats />
                     <PaymentHistory />
                   </div>
