@@ -23,22 +23,25 @@ function Dashboard() {
             </SignedOut>
 
             <SignedIn>
-              <div className="flex gap-4" style={{ width: '100%', flexFlow: 'wrap-reverse' }}>
-                <div className="flex flex-col gap-4" style={{ flex: 2, minWidth: '300px' }}>
-                  <div className="flex justify-between">
-                    <h2>Your Dashboard</h2>
-                  </div>
-                  <ConsumptionStats />
-                  <PaymentHistory />
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between">
+                  <h2>Your Dashboard</h2>
                 </div>
-                <Card style={{ minWidth: '400px', flex: 1 }}>
-                  <div className="flex flex-col gap-8">
-                    <Profile />
-                    <BuyCredits />
-                    <hr style={{ margin: 0 }} />
-                    <QuickLinks />
+
+                <div className="flex gap-4" style={{ width: '100%', flexFlow: 'wrap-reverse' }}>
+                  <div className="flex flex-col gap-4" style={{ flex: 2, minWidth: '300px' }}>
+                    <ConsumptionStats />
+                    <PaymentHistory />
                   </div>
-                </Card>
+                  <Card style={{ minWidth: '400px', flex: 1 }}>
+                    <div className="flex flex-col gap-8">
+                      <Profile />
+                      <BuyCredits />
+                      <hr style={{ margin: 0 }} />
+                      <QuickLinks />
+                    </div>
+                  </Card>
+                </div>
               </div>
             </SignedIn>
           </div>
