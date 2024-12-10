@@ -5,7 +5,7 @@ import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import { LogOut } from 'lucide-react';
 import { RiAccountCircleLine } from 'react-icons/ri';
 
-function MobileMenuItems({ logout }) {
+function MobileMenuItems({ logout, user }) {
   return (
     <div className="menu__list">
       <div className="menu__list-item hidden max-[996px]:flex">
@@ -70,8 +70,20 @@ export function SignInButton() {
   }
 
   return (
-    <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
-      Sign in
-    </Button>
+    <>
+      <div className="hidden min-[997px]:block">
+        <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
+          Sign in
+        </Button>
+      </div>
+
+      <div className="hidden max-[996px]:block">
+        <div className="flex pr-[24px]">
+          <Button height="h-8" textSize="text-[14px]" type="button" variant="primary" onClick={login}>
+            Sign in
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }
