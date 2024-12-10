@@ -143,6 +143,8 @@
 }
 
 table {
+  -ifm-table-cell-padding: 8px 16px;
+
   display: table;
   border-collapse: separate;
   border-spacing: 0;
@@ -153,35 +155,21 @@ table {
   width: 100%;
 }
 
-th {
-  padding: 8px 16px;
-  background-color: var(--ifm-input-background) !important;
-  border-top: 0;
+table th {
+  background-color: var(--ifm-input-background) !important; 
+  border-width: 0;
   font-size: 14px;
   text-align: left;
 }
 
-tr {
-  border-bottom: 0px !important;
-  border-top: 1px solid var(--ifm-border-color);
-}
-
 table td {
-  border-top-width: 1;
   border-right-width: 0;
   border-left-width: 0;
   border-bottom-width: 0;
 }
 
-table th {
-  border-width: 0;
-}
-
 td {
-  padding: 8px 16px;
   background-color: var(--ifm-card-background);
-
-  border-bottom: 1px solid var(--ifm-border-color);
 }
 
 .text-right {
