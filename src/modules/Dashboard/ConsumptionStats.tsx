@@ -179,7 +179,7 @@ export function ConsumptionStats() {
 
       <div className="space-y-8">
         <div>
-          <Card style={{ width: '100%' }}>
+          <Card style={{ width: '100%' }} className="h-80">
             {consumptionLoading ? (
               <p>Loading...</p>
             ) : consumptionError ? (
@@ -194,7 +194,7 @@ export function ConsumptionStats() {
 
         <div>
           <h3>Endpoints Queried</h3>
-          <Card>
+          <Card className="h-80">
             {endpointLoading ? (
               <p>Loading...</p>
             ) : endpointError ? (
