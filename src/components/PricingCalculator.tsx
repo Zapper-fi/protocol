@@ -88,7 +88,7 @@ export function PricingCalculator() {
               value={queries.onchainPrices}
               onChange={(e) => setQueries((prev) => ({ ...prev, onchainPrices: e.target.value }))}
               placeholder="Enter number of queries"
-              className="w-full flex-grow text-center field-sizing-content"
+              className="w-full px-3 py-2 rounded-md border border-border bg-[var(--ifm-input-background)]"
             />
           </div>
 
