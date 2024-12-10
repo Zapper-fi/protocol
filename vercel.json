@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/docs/litepaper",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/docs/interpretation/app-token-interpretation/guide/getting-started",
       "destination": "/docs/interpretation/position-interpretation/guide/getting-started",
       "permanent": true
