@@ -13,9 +13,9 @@ import { RedirectToHome } from '@site/src/components/RedirectToHome';
 function Dashboard() {
   return (
     <Layout>
-      <div className="flex">
-        <main className="flex-1 pb-16 pt-4">
-          <div className="container mx-auto">
+      <div className="flex w-full">
+        <main className="flex-1 pb-16 pt-4 w-full overflow-hidden">
+          <div className="container mx-auto px-4">
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
@@ -28,16 +28,16 @@ function Dashboard() {
                   <h2>Your Dashboard</h2>
                 </div>
 
-                <div className="flex gap-4" style={{ width: '100%', flexFlow: 'wrap-reverse' }}>
-                  <div className="flex flex-col gap-4" style={{ flex: 2, minWidth: '300px' }}>
+                <div className="flex flex-col-reverse lg:flex-row gap-4">
+                  <div className="flex flex-col gap-4 flex-1 w-full">
                     <ConsumptionStats />
                     <PaymentHistory />
                   </div>
-                  <Card style={{ minWidth: '400px', flex: 1 }}>
+                  <Card className="w-full lg:w-96">
                     <div className="flex flex-col gap-8">
                       <Profile />
                       <BuyCredits />
-                      <hr style={{ margin: 0 }} />
+                      <hr className="m-0" />
                       <QuickLinks />
                     </div>
                   </Card>
