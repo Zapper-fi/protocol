@@ -14,7 +14,7 @@ function Dashboard() {
   return (
     <Layout>
       <div className="flex w-full">
-        <main className="flex-1 pb-16 pt-4 w-full overflow-hidden">
+        <main className="w-full flex-1 overflow-hidden pb-16 pt-4">
           <div className="container mx-auto px-4">
             <Breadcrumbs title="Dashboard" />
 

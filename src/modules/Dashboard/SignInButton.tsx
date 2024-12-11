@@ -7,17 +7,17 @@ import { RiAccountCircleLine } from 'react-icons/ri';
 
 function MobileUserMenu({ logout, user }) {
   return (
-    <div className="flex flex-row gap-1 items-center mr-8">
+    <div className="mr-8 flex flex-row items-center gap-1">
       <a
         href="/dashboard"
-        className="p-2 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
+        className="flex items-center justify-center rounded-full p-2 transition-colors hover:bg-gray-200"
         title="Dashboard"
       >
         <RiAccountCircleLine size={20} className="text-gray-900 dark:text-white" />
       </a>
       <a
         href="/"
-        className="p-2 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
+        className="flex items-center justify-center rounded-full p-2 transition-colors hover:bg-gray-200"
         title="Sign Out"
         onClick={(e) => {
           e.preventDefault();
@@ -67,7 +67,7 @@ export function SignInButton() {
         <div className="hidden min-[997px]:block">
           <DesktopUserMenu user={user} logout={logout} />
         </div>
-        <div className="hidden max-[996px]:block menu__list">
+        <div className="menu__list hidden max-[996px]:block">
           <div className="menu__list-item">
             <MobileUserMenu user={user} logout={logout} />
           </div>
@@ -87,7 +87,7 @@ export function SignInButton() {
         <div className="flex pr-[24px]">
           <button
             onClick={login}
-            className="p-2 rounded-full flex items-center justify-center bg-transparent outline-none border-none focus:outline-none focus:ring-0 cursor-pointer"
+            className="flex cursor-pointer items-center justify-center rounded-full border-none bg-transparent p-2 outline-none focus:outline-none focus:ring-0"
             title="Sign In"
             type="button"
           >
