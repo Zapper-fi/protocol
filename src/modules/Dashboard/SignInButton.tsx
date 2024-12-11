@@ -7,13 +7,13 @@ import { RiAccountCircleLine } from 'react-icons/ri';
 
 function MobileUserMenu({ logout, user }) {
   return (
-    <div className="flex flex-row gap-1 items-center mr-4">
+    <div className="flex flex-row gap-1 items-center mr-8">
       <a
         href="/dashboard"
         className="p-2 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
         title="Dashboard"
       >
-        <RiAccountCircleLine size={20} className="text-white" />
+        <RiAccountCircleLine size={20} className="text-gray-900 dark:text-white" />
       </a>
       <a
         href="/"
@@ -24,7 +24,7 @@ function MobileUserMenu({ logout, user }) {
           logout();
         }}
       >
-        <LogOut size={20} className="text-white" />
+        <LogOut size={20} className="text-gray-900 dark:text-white" />
       </a>
     </div>
   );
@@ -91,7 +91,7 @@ export function SignInButton() {
             title="Sign In"
             type="button"
           >
-            <LogIn size={20} className="text-white" />
+            <LogIn size={20} className="text-gray-900 dark:text-white" />
           </button>
         </div>
       </div>
