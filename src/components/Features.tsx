@@ -1,5 +1,5 @@
 import type React from 'react';
-import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine } from 'react-icons/ri';
+import { RiDonutChartFill, RiListCheck2, RiPassportLine, RiCoinsLine, RiNftFill } from 'react-icons/ri';
 import Link from '@docusaurus/Link';
 
 interface Feature {
@@ -48,6 +48,12 @@ const features: Feature[] = [
     description: 'A price for every token that has an onchain market, including historical data.',
     href: '/docs/api/endpoints/onchain-prices',
     icon: RiCoinsLine,
+  },
+  {
+    title: 'NFTs',
+    description: 'Rich NFT metadata with media, traits, holders, valuations and more.',
+    href: '/docs/api/endpoints/nft-queries/nft-collections',
+    icon: RiNftFill,
   },
 ];
 
