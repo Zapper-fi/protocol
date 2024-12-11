@@ -268,7 +268,7 @@ export function BuyCredits() {
               <button
                 type="button"
                 onClick={handleDecrement}
-                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid place-content-center"
+                className="zapper-btn grid size-10 cursor-pointer place-content-center py-0 text-2xl font-normal"
               >
                 -
               </button>
@@ -279,13 +279,13 @@ export function BuyCredits() {
                 onChange={handlePointsChange}
                 onBlur={handleBlur}
                 min={MIN_POINTS}
-                className="min-w-28 h-10 flex-grow text-center text-base field-sizing-content border border-solid border-border rounded-lg bg-input"
+                className="h-10 min-w-28 flex-grow rounded-lg border border-solid border-border bg-input text-center text-base field-sizing-content"
                 placeholder="Enter credits amount"
               />
               <button
                 type="button"
                 onClick={handleIncrement}
-                className="zapper-btn cursor-pointer py-0 text-2xl font-normal size-10 grid place-content-center"
+                className="zapper-btn grid size-10 cursor-pointer place-content-center py-0 text-2xl font-normal"
               >
                 +
               </button>

@@ -25,6 +25,7 @@ import { CodeImage } from '@site/src/components/CodeImage';
 
       <div className="basis-1/2">
         <CodeImage src="/img/code/Portfolio_Tokens.png">
+
 {`query {
     portfolio(addresses: ["0x..."]) {
       tokenBalances {
@@ -47,11 +48,13 @@ import { CodeImage } from '@site/src/components/CodeImage';
     }
   }
 }`}
-        </CodeImage>
-      </div>
-    </TabPanel>
-    <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 md:mt-14">    
+
+      </CodeImage>
+    </div>
+
+   </TabPanel>
+  <TabPanel className="lg:flex gap-8">
+    <div className="basis-1/2 md:mt-14">  
         ## Access DeFi Holdings
 
         Leverage Zapper's deep coverage of DeFi integrations. [Learn More](/docs/api/endpoints/portfolio#2-app-balances-appbalances)
@@ -173,7 +176,7 @@ query {
       </div>
     </TabPanel>
     <TabPanel className="lg:flex gap-8">
-      <div className="basis-1/2 md:mt-14"> 
+      <div className="basis-1/2 md:mt-14">
         ## Access Total Net Worth
 
         Surfaces various aggregations of onchain portfolio value. [Learn More](docs/api/endpoints/portfolio#4-portfolio-totals-totals)
@@ -216,6 +219,7 @@ query {
 
         </CodeImage>
     </div>
+
   </TabPanel>
   <TabPanel className="lg:flex gap-8">
     <div className="basis-1/2 md:mt-14"> 
