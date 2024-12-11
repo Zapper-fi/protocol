@@ -46,6 +46,18 @@ const GET_CREDITS_PRICE = gql`
   }
 `;
 
+const isMobileDevice = () => {
+  return /Android|iPhone/i.test(navigator.userAgent);
+};
+
+const handleCheckoutNavigation = (url: string) => {
+  if (isMobileDevice()) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else {
+    openPopup({ url });
+  }
+};
+
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
@@ -115,7 +127,7 @@ export function BuyCredits() {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
         const url = data.createCharge.hostedUrl;
-        openPopup({ url });
+        handleCheckoutNavigation(url);
       }
     },
   });
