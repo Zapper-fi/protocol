@@ -6,6 +6,7 @@ sidebar_label: Pricing
 import { LinkButton } from '@site/src/components/LinkButton';
 import Link from '@docusaurus/Link';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
+import { PricingCalculator } from '@site/src/components/PricingCalculator';
 
 # Pricing
 
@@ -42,6 +43,13 @@ The Zapper API uses a credit-based system where each API call consumes a specifi
 | Human-readable Transactions | [`timelineEvent`](/docs/api/endpoints/human-readable-transactions/timeline-event) [`timelineForApp`](/docs/api/endpoints/human-readable-transactions/app-timelines) [`accountsTimeline`](/docs/api/endpoints/human-readable-transactions/account-timelines)                                                                                        | Human-readable transactions and activity     |
 | Onchain Identity            | [`accounts`](/docs/api/endpoints/onchain-identity#accounts)                                                                                                                                                                                                                                                                                        | ENS, Farcaster, and Lens identity resolution |
 | NFT Data                    | [`nftCollections`](/docs/api/endpoints/nft-queries/nft-collections) [`nftToken`](/docs/api/endpoints/nft-queries/nft-token) [`nftUsersCollections`](/docs/api/endpoints/nft-queries/nft-collection-holdings) [`nftUsersTokens`](/docs/api/endpoints/nft-queries/nft-token-holdings) [`nftNetWorth`](/docs/api/endpoints/nft-queries/nft-net-worth) | Comprehensive NFT data                       |
+
+
+## Pricing Calculator
+
+Enter the number of API queries you expect to make for each endpoint type. Consider choosing a specific timeframe (e.g., monthly or annually) to help with cost forecasting.
+
+<PricingCalculator />
 
 ## Volume Discounts
 
