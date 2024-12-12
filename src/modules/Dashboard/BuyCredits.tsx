@@ -20,7 +20,6 @@ const DISCOUNT_TIERS = {
 const QUERY = gql`
   query BuyCredits {
     apiClientById {
-      apiV1PointsRemaining
       apiV2PointsRemaining
     }
   }
@@ -209,7 +208,7 @@ export function BuyCredits() {
     });
   };
 
-  const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
+  const { apiV2PointsRemaining = 0 } = data?.apiClientById || {};
   const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
   const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
@@ -230,17 +229,6 @@ export function BuyCredits() {
             {displayV2Points}
           </span>
         </div>
-        {Number(apiV1PointsRemaining) > 0 && (
-          <div className="flex flex-col" style={{ flexGrow: 1 }}>
-            <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
-              Legacy Credits
-              <InfoIcon message="These credits are currently available for use with the legacy REST API. To migrate previously purchased credits to the new GraphQL API, please contact us at api@zapper.xyz." />
-            </span>
-            <span className="font-bold" style={{ fontSize: '18px' }}>
-              {apiV1PointsRemaining}
-            </span>
-          </div>
-        )}
       </div>
       <hr style={{ margin: 0 }} />
 
