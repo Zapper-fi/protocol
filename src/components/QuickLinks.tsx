@@ -1,5 +1,5 @@
 import type React from 'react';
-import { BookOpen, Beaker, CreditCard } from 'lucide-react';
+import { BookOpen, Beaker, CreditCard, Calculator } from 'lucide-react';
 
 interface QuickLinkProps {
   title: string;
@@ -44,6 +44,12 @@ export const QuickLinks: React.FC = () => {
       description: 'View query prices and credit discounts',
       href: '/docs/api/pricing',
       icon: CreditCard,
+    },
+    {
+      title: 'Cost Calculator',
+      description: 'Calculate total costs based on query volume',
+      href: '/docs/api/pricing#pricing-calculator',
+      icon: Calculator,
     },
   ];
 
