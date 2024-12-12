@@ -474,4 +474,8 @@ hr {
   .zapper-btn {
     @apply rounded-lg border-none bg-button-light px-4 py-2 font-semibold dark:bg-button-dark;
   }
+
+  .zapper-input {
+    @apply rounded-lg border border-solid border-border bg-input text-base;
+  }
 }
