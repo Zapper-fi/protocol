@@ -1,9 +1,15 @@
+import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
 import { Button } from '@site/src/components/Button';
 import { useSignIn } from '@site/src/helpers/useSignIn';
 
-export function SignInDashboard({ type = 'link' }: { type: 'link' | 'button' }) {
+interface SignInDashboardProps {
+  type?: 'link' | 'button';
+  children?: string | ReactNode;
+}
+
+export function SignInDashboard({ type = 'link', children = 'Get Your API Key' }: SignInDashboardProps) {
   const history = useHistory();
 
   const redirectToDashboard = () => {
@@ -14,7 +20,7 @@ export function SignInDashboard({ type = 'link' }: { type: 'link' | 'button' }) 
     onComplete: redirectToDashboard,
   });
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
     if (authenticated) {
@@ -27,7 +33,7 @@ export function SignInDashboard({ type = 'link' }: { type: 'link' | 'button' }) 
   if (type === 'button') {
     return (
       <Button height="h-12" textSize="text-[14px]" type="button" variant="primary" onClick={handleClick}>
-        Get Your API Key
+        {children}
       </Button>
     );
   }
