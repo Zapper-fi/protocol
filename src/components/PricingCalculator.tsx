@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { formatNumber, formatUSD } from '@site/src/helpers/formatters';
 
 const PRICING_TIERS = [
   { threshold: 15_000_000, price: 1.0 },
@@ -10,18 +11,6 @@ const ENDPOINT_CREDITS = {
   onchainPrices: 4,
   portfolioQueries: 3,
   otherQueries: 2,
-};
-
-const formatUSD = (value: number) => {
-  const decimalPlaces = value < 0.01 ? 4 : value < 1 ? 3 : 2;
-  return new Intl.NumberFormat('en-US', {
-    minimumFractionDigits: decimalPlaces,
-    maximumFractionDigits: decimalPlaces,
-  }).format(value);
-};
-
-const formatNumber = (num: number) => {
-  return new Intl.NumberFormat('en-US').format(num);
 };
 
 export function PricingCalculator() {
