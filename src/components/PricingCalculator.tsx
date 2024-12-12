@@ -65,7 +65,7 @@ export function PricingCalculator() {
         <div className="space-y-4">
           <div>
             <label htmlFor="onchainQueries" className="mb-2 block text-sm font-medium text-alt-color">
-              Onchain Price Queries
+              Onchain Prices
             </label>
             <input
               id="onchainQueries"
@@ -80,7 +80,7 @@ export function PricingCalculator() {
 
           <div>
             <label htmlFor="portfolioQueries" className="mb-2 block text-sm font-medium text-alt-color">
-              Portfolio Queries
+              Portfolio
             </label>
             <input
               id="portfolioQueries"
@@ -95,7 +95,7 @@ export function PricingCalculator() {
 
           <div>
             <label htmlFor="otherQueries" className="mb-2 block text-sm font-medium text-alt-color">
-              Other Queries
+              Transactions, Accounts, and NFT Data
             </label>
             <input
               id="otherQueries"
