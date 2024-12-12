@@ -48,7 +48,7 @@ const ApolloSandboxComponent: React.FC<ApolloSandboxComponentProps> = () => {
         variables: {
           addresses: TEST_ADDRESSES,
           isSigner: true,
-          realtimeInterpretation: true
+          realtimeInterpretation: true,
         },
         headers: {
           Authorization: API_KEY,

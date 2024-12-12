@@ -7,12 +7,9 @@ import TabItem from '@theme/TabItem';
 import { Features } from '@site/src/components/Features';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
 
-
 # Getting Started
 
 Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
-
-
 
 <Features />
 
@@ -22,11 +19,9 @@ Access powerful onchain data curated by the Zapper Protocol with a GraphQL API.
 
 <SignInDashboard type="button" />
 
-
 ### 2) Start building
 
-
-Below are examples for working with the Zapper API across different languages and frameworks. Each example shows how to fetch portfolio data for provided addresses, across the chosen chains. Additionally, our [API Sandbox](/docs/api/sandbox)  lets you try our endpoints in one click.
+Below are examples for working with the Zapper API across different languages and frameworks. Each example shows how to fetch portfolio data for provided addresses, across the chosen chains. Additionally, our [API Sandbox](/docs/api/sandbox) lets you try our endpoints in one click.
 
 If you are working with an AI agent, we also recommend providing our [customized prompt](/docs/api/agents) to start building efficiently.
 
@@ -38,6 +33,7 @@ The API key must be base64 encoded for all requests.
   <TabItem value="react" label="React" default>
 
 #### Setup
+
 1. Create new React project: `npx create-react-app my-app --template typescript`
 2. Install dependencies: `npm install @apollo/client graphql`
 3. Replace `src/App.tsx` with code below
@@ -152,10 +148,12 @@ function App() {
 
 export default App;
 ```
+
   </TabItem>
   <TabItem value="node" label="Node.js">
 
 #### Setup
+
 1. Create new directory and enter it
 2. Run `npm init -y`
 3. Install axios: `npm install axios`
@@ -197,15 +195,15 @@ async function fetchPortfolio() {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${encodedKey}`,
+        Authorization: `Basic ${encodedKey}`,
       },
       data: {
         query,
         variables: {
-          addresses: ["0x3d280fde2ddb59323c891cf30995e1862510342f"],
-          networks: ["ETHEREUM_MAINNET"]
-        }
-      }
+          addresses: ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+          networks: ['ETHEREUM_MAINNET'],
+        },
+      },
     });
 
     if (response.data.errors) {
@@ -233,6 +231,7 @@ async function fetchPortfolio() {
   }
 })();
 ```
+
   </TabItem>
   <TabItem value="curl" label="cURL">
 
@@ -246,7 +245,8 @@ API_KEY="YOUR_API_KEY"
 ENCODED_KEY=$(echo -n $API_KEY | base64)
 ```
 
-Then, run the cURL command using your encoded key : 
+Then, run the cURL command using your encoded key :
+
 ```bash
 curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header "Authorization: Basic $ENCODED_KEY" --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) { portfolio(addresses: $addresses, networks: $networks) { tokenBalances { address network token { balance balanceUSD baseToken { name symbol } } } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f"],"networks":["ETHEREUM_MAINNET"]}}'
 ```
@@ -255,6 +255,7 @@ curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: appl
   <TabItem value="python" label="Python">
 
 #### Setup
+
 1. Create new directory: `mkdir python-portfolio && cd python-portfolio`
 2. Create virtual environment: `python3 -m venv venv`
 3. Activate virtual environment: `source venv/bin/activate`
@@ -309,15 +310,15 @@ def fetch_portfolio() -> Dict[str, Any]:
             },
             timeout=30
         )
-        
+
         response.raise_for_status()
         data = response.json()
-        
+
         if 'errors' in data:
             raise ValueError(f"GraphQL Errors: {data['errors']}")
-            
+
         return data['data']
-        
+
     except requests.RequestException as e:
         print(f"Request failed: {e}")
         raise
@@ -341,10 +342,12 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Failed to fetch portfolio: {e}")
 ```
+
   </TabItem>
   <TabItem value="ruby" label="Ruby">
 
 #### Setup
+
 1. Install Ruby if not installed: `brew install ruby` (macOS) or follow [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/)
 2. Create new directory: `mkdir ruby-portfolio && cd ruby-portfolio`
 3. Create `portfolio.rb` with code below
@@ -400,13 +403,13 @@ def fetch_portfolio
   }.to_json
 
   response = http.request(request)
-  
+
   unless response.is_a?(Net::HTTPSuccess)
     raise "HTTP Request failed: #{response.code} - #{response.message}"
   end
 
   data = JSON.parse(response.body)
-  
+
   if data['errors']
     raise "GraphQL Errors: #{data['errors']}"
   end
@@ -433,6 +436,7 @@ rescue StandardError => e
   exit 1
 end
 ```
+
   </TabItem>
 </Tabs>
 
@@ -440,7 +444,9 @@ end
 
 Zapper API uses a credit system to manage how many queries an API key can perform. Each query made costs a certain amount of credits which can be found by visiting [Pricing](/docs/api/pricing).
 
-<p>Track API usage and purchase additional credits via the API <SignInDashboard type="link" />.</p>
+<p>
+  Track API usage and purchase additional credits via the API <SignInDashboard type="link" />.
+</p>
 
 :::info
 

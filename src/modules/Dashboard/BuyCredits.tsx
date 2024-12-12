@@ -1,16 +1,21 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { debounce } from 'lodash';
 import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
-import { Card } from '@site/src/components/Card';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
-import { Info, Plus, Minus } from 'lucide-react';
+import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
+import clsx from 'clsx';
 
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
+
+const DISCOUNT_TIERS = {
+  0.8: { label: '15M', threshold: 15_000_000 },
+  0.7: { label: '50M', threshold: 50_000_000 },
+};
 
 const QUERY = gql`
   query BuyCredits {
@@ -42,10 +47,22 @@ const GET_CREDITS_PRICE = gql`
   }
 `;
 
+const isMobileDevice = () => {
+  return /Android|iPhone/i.test(navigator.userAgent);
+};
+
+const handleCheckoutNavigation = (url: string) => {
+  if (isMobileDevice()) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  } else {
+    openPopup({ url });
+  }
+};
+
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px]"
+      className="absolute max-w-[200px] rounded-md bg-gray-800 p-2 text-xs text-white"
       style={{
         top: position.top,
         left: position.left + 10,
@@ -73,7 +90,7 @@ const InfoIcon = ({ message }) => {
   return (
     <div className="relative inline-flex items-center">
       <div
-        className="cursor-pointer flex items-center"
+        className="flex cursor-pointer items-center"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowToast(false)}
       >
@@ -91,7 +108,7 @@ export function BuyCredits() {
   const [displayPoints, setDisplayPoints] = useState(MIN_POINTS.toString());
   const [price, setPrice] = useState(0);
   const [breakdown, setBreakdown] = useState([]);
-  const [savings, setSavings] = useState(0);
+  const [savings, setSavings] = useState<number>(0);
 
   const [getPrice] = useLazyQuery(GET_CREDITS_PRICE);
 
@@ -111,7 +128,7 @@ export function BuyCredits() {
     onCompleted: (data) => {
       if (data?.createCharge.hostedUrl) {
         const url = data.createCharge.hostedUrl;
-        openPopup({ url });
+        handleCheckoutNavigation(url);
       }
     },
   });
@@ -193,21 +210,21 @@ export function BuyCredits() {
   };
 
   const { apiV2PointsRemaining = 0, apiV1PointsRemaining } = data?.apiClientById || {};
-  const displayV2Points = apiV2PointsRemaining <= 0 ? GRACE_PERIOD + apiV2PointsRemaining : apiV2PointsRemaining;
-  const isNegativeBalance = apiV2PointsRemaining < 0;
+  const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
+  const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
   const formatPrice = (price) => price.toFixed(2);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       <div className="flex gap-4">
         <div className="flex flex-col" style={{ flexGrow: 1 }}>
           <span className="flex items-center justify-start gap-1" style={{ fontSize: '14px' }}>
             Credit balance
-            {isNegativeBalance && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
+            {shouldShowWarning && <InfoIcon message="You are now consuming the 5,000 credit free tier" />}
           </span>
           <span
-            className={`font-bold ${isNegativeBalance ? 'text-yellow-500' : 'text-green-500'}`}
+            className={`font-bold ${shouldShowWarning ? 'text-yellow-500' : 'text--success'}`}
             style={{ fontSize: '18px' }}
           >
             {displayV2Points}
@@ -225,89 +242,79 @@ export function BuyCredits() {
           </div>
         )}
       </div>
-      <hr />
+      <hr style={{ margin: 0 }} />
 
-      <div className="flex justify-between items-baseline">
-        <div>
-          <h4>Buy Credits</h4>
-          <div className="flex flex-col gap-1 mt-1">
-            <span>
-              <span className="text-primary-default font-bold">20% off</span> for all credits over 15M
-            </span>
-            <span>
-              <span className="text-primary-default font-bold">30% off</span> for all credits over 50M
-            </span>
-          </div>
+      <div>
+        <h4 className="mt-1">Buy Credits</h4>
+        <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
+          <span>
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">20% off</span> for all credits
+            over 15M
+          </span>
+          <span>
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">30% off</span> for all credits
+            over 50M
+          </span>
         </div>
-        <a
-          href="/docs/api/pricing"
-          className="text-primary-default hover:underline"
-          style={{ fontSize: '14px' }}
-          target="_blank"
-          rel="noreferrer"
-        >
-          See how credit costs are calculated
-        </a>
       </div>
 
-      <form onSubmit={handleSubmit} className="my-8">
-        <div className="flex items-center justify-between h-10 my-2">
-          <label htmlFor="points-input" className="text-sm font-medium">
-            Credit Amount
-          </label>
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-6">
+          <div className="my-2 flex flex-col gap-2">
+            <label htmlFor="points-input" className="font-medium">
+              Credit Amount
+            </label>
 
-          <div className="flex gap-2 text-lg">
-            <button type="button" onClick={handleDecrement} className="zapper-btn cursor-pointer">
-              -
-            </button>
-            <input
-              id="points-input"
-              type="text"
-              value={displayPoints}
-              onChange={handlePointsChange}
-              onBlur={handleBlur}
-              min={MIN_POINTS}
-              className="zapper-btn text-center text-lg field-sizing-content"
-              placeholder="Enter credits amount"
-            />
-            <button type="button" onClick={handleIncrement} className="zapper-btn cursor-pointer">
-              +
-            </button>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={handleDecrement}
+                className="zapper-btn grid size-10 cursor-pointer place-content-center py-0 text-2xl font-normal"
+              >
+                -
+              </button>
+              <input
+                id="points-input"
+                type="text"
+                value={displayPoints}
+                onChange={handlePointsChange}
+                onBlur={handleBlur}
+                min={MIN_POINTS}
+                className={clsx('zapper-input', 'h-10 min-w-28 flex-grow text-center field-sizing-content')}
+                placeholder="Enter credits amount"
+              />
+              <button
+                type="button"
+                onClick={handleIncrement}
+                className="zapper-btn grid size-10 cursor-pointer place-content-center py-0 text-2xl font-normal"
+              >
+                +
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <div className="text-sm flex justify-between text-gray-500 mb-1">
-            <span>Amount</span>
-            <span>Cost per credit</span>
-          </div>
-          {breakdown.map((tier) => {
-            const discountPercent = (1 - tier.creditRate) * 100;
-            const tierKey = `tier-${tier.creditAmount}-${tier.creditRate}`;
-            return (
-              <div key={tierKey} className="text-sm flex justify-between">
-                <span>{tier.creditAmount.toLocaleString()}</span>
-                <span>
-                  <span>${(tier.creditRate * 0.001).toFixed(4)}</span>
-                  {discountPercent > 0 && (
-                    <span className="text-green-500 font-bold ml-2">({discountPercent.toFixed(2)}% off)</span>
-                  )}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-        <div className="space-y-2">
-          <div className="flex flex-col items-end gap-1 mt-4">
-            {savings > 0 && (
-              <span className="text-green-500 font-bold text-sm">Total savings: ${savings.toFixed(2)}</span>
-            )}
-            <div
-              id="cost-display"
-              className="text-primary-default font-bold text-lg"
-              aria-label={`Cost: $${formatPrice(price)}`}
-            >
-              USD ${formatPrice(price)}
+          <div className="mb-6 flex flex-col gap-2">
+            <div className="flex justify-between">
+              <span className="text-sm">Subtotal</span>
+              <span className="text-sm">${formatPrice(price + savings)}</span>
+            </div>
+            {breakdown.map((tier) => {
+              const discountPercent = (1 - tier.creditRate) * 100;
+              if (discountPercent > 0) {
+                const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
+                const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                return (
+                  <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
+                    <span className="text-sm">{tierInfo.label} Credits Discount</span>
+                    <span className="text--success text-sm font-bold">-${tierSavings.toFixed(2)}</span>
+                  </div>
+                );
+              }
+              return null;
+            })}
+            <hr style={{ margin: 0 }} />
+            <div className="flex justify-between">
+              <span>Total</span>
+              <span className="font-bold">USD ${formatPrice(price)}</span>
             </div>
           </div>
         </div>

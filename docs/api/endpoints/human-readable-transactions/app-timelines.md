@@ -8,29 +8,26 @@ import Link from '@docusaurus/Link';
 
 # App Timelines
 
-
 Displays a timeline of transactions that happened in a particular onchain app via their smart contracts.
 
-
 ### `timelineForApp`
+
 Takes a `slug` parameter and optional `network` filters. Returns timeline of events for a specific application including:
-* App-specific transactions
-* Human-readable descriptions
-* Display items such as tokens, NFTs, accounts, and more.
-* Actor details
+
+- App-specific transactions
+- Human-readable descriptions
+- Display items such as tokens, NFTs, accounts, and more.
+- Actor details
 
 :::tip
-To find the correct `slug` for the app you are trying to reference, find the app on Zapper. The slug is the last part of the URL. For example: https://zapper.xyz/apps/cat-town, has the slug `cat-town`. 
+To find the correct `slug` for the app you are trying to reference, find the app on Zapper. The slug is the last part of the URL. For example: https://zapper.xyz/apps/cat-town, has the slug `cat-town`.
 :::
-
 
 ### Example Use Case: App Activity Feed
 
 Let's say you want to show a feed of all activities happening in the app Cat Town. Start by passing the app's `slug`. Then return details about each transaction including the `timestamp`, `eventType`, `processedDescription` and `description`. Use the `first` argument to specify how many events to load at once, and the `after` cursor for pagination to load more events.
 
 When returning `description`, the `descriptionDisplayItems` such as `TokenDisplayItem` will be used to surface onchain items embedded within the human-readable description.
-
-
 
 #### Example Variable
 
@@ -45,13 +42,8 @@ When returning `description`, the `descriptionDisplayItems` such as `TokenDispla
 #### Example Query
 
 ```graphql
-query($slug: String!, $first: Int, $after: String, $spamFilter: Boolean) {
-  timelineForApp(
-    slug: $slug
-    first: $first
-    after: $after
-    spamFilter: $spamFilter
-  ) {
+query ($slug: String!, $first: Int, $after: String, $spamFilter: Boolean) {
+  timelineForApp(slug: $slug, first: $first, after: $after, spamFilter: $spamFilter) {
     edges {
       node {
         key
@@ -224,7 +216,6 @@ Pagination is highly recommended using `first` and `after` to ensure fast query 
 }
 ```
 
-
 <SandboxButton/>
 
 ---
@@ -237,35 +228,34 @@ If you want to surface tokens, NFTs, accounts, or other onchain items embedded w
 
 ### Arguments
 
-| Argument      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `network`      | A network to retreive.    | `Network`        | 
-| `networks`      | The networks to retreive, input as an array.    | `Network!`        | 
-| `realtimeInterpretation`      | Human-readable transactions, default is on.       | `Boolean = true`        | 
-| `spamFilter`      | Filter for spam, default is on.      | `Boolean = true`        | 
-| `first`      | Used for pagination.      | `Int!`        | 
-| `after`      | Used for pagination.       | `String!`        | 
-
+| Argument                 | Description                                  | Type             |
+| ------------------------ | -------------------------------------------- | ---------------- |
+| `network`                | A network to retreive.                       | `Network`        |
+| `networks`               | The networks to retreive, input as an array. | `Network!`       |
+| `realtimeInterpretation` | Human-readable transactions, default is on.  | `Boolean = true` |
+| `spamFilter`             | Filter for spam, default is on.              | `Boolean = true` |
+| `first`                  | Used for pagination.                         | `Int!`           |
+| `after`                  | Used for pagination.                         | `String!`        |
 
 ### Fields
 
-| Field      | Description | Type |
-| ----------- | ----------- | ----------- |
-| `key`      | A transaction hash.     | `String!`       |
-| `network`      | Network on which the transaction happened.     | `Network!`       |
-| `interpretation`      | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.     | `Network!`       |
-| `description`      | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.      | `String!`       |
-| `processedDescription`      | The human-readble description of the transaction.      | `String!`       |
-| `descriptionDisplayItems`      | Contains the fields which the variables in `description` make reference to.      | `ActivityFeedDisplayItem!!`       |
-| `transaction`      | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.       | `OnChainTransaction!`       |
-| `app`      | The app that is associated with the transaction.     | `Int!`       |
-| `displayName`      | Returns the display name of an address (ENS, Farcaster, Lens, etc.).   | `Int!`       |
-| `timestamp`      | Represents date and time as number of milliseconds from start of UNIX epoch.       | `Timestamp!`       |
-| `perspective`      | The address whose perspective is used in deltas.       | `ActivityPerspective!`       |
-| `perspectiveDelta`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`. Also contains the `Account` type for the transaction's actor.       | `ActivityAccountDelta!`       |
-| `accountDeltasV2`      | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.       | `ActivityAccountDelta!`       |
-| `tokenDeltasV2`      | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.        | `FungibleTokenDeltaConnection!!`       |
-| `nftDeltasV2`      | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields.       | `NftDeltaConnection!`       |
-| `interpreterId`      | Unique identifier for the Interpreter.      | `String!`       |
-| `interpreter`      | Object which contains info on the interpreter such as `app` and `category`.      | `ActivityEventInterpreter!`       |
-| `sigHash`      | Returns the sigHash for the transaction.       | `String!`       |
+| Field                     | Description                                                                                                                                                      | Type                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| `key`                     | A transaction hash.                                                                                                                                              | `String!`                        |
+| `network`                 | Network on which the transaction happened.                                                                                                                       | `Network!`                       |
+| `interpretation`          | Contains fields needed to present a human-readable transaction such as `description`, `processedDescription`, and `descriptionDisplayItems`.                     | `Network!`                       |
+| `description`             | The human-readble description of the transaction with variables referencing types such as tokens, NFTs, or accounts.                                             | `String!`                        |
+| `processedDescription`    | The human-readble description of the transaction.                                                                                                                | `String!`                        |
+| `descriptionDisplayItems` | Contains the fields which the variables in `description` make reference to.                                                                                      | `ActivityFeedDisplayItem!!`      |
+| `transaction`             | Contains onchain information like `nounce` , `hash`, `blockNumber`, `gasPrice` and more.                                                                         | `OnChainTransaction!`            |
+| `app`                     | The app that is associated with the transaction.                                                                                                                 | `Int!`                           |
+| `displayName`             | Returns the display name of an address (ENS, Farcaster, Lens, etc.).                                                                                             | `Int!`                           |
+| `timestamp`               | Represents date and time as number of milliseconds from start of UNIX epoch.                                                                                     | `Timestamp!`                     |
+| `perspective`             | The address whose perspective is used in deltas.                                                                                                                 | `ActivityPerspective!`           |
+| `perspectiveDelta`        | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`. Also contains the `Account` type for the transaction's actor.                      | `ActivityAccountDelta!`          |
+| `accountDeltasV2`         | Object containing different deltas such as `tokenDetlasV2` and `nftDeltasV2`.                                                                                    | `ActivityAccountDelta!`          |
+| `tokenDeltasV2`           | Returns info on the tokens transfered in the transaction such as `address`, `amount`, as well as the `token` object with more token specific info.               | `FungibleTokenDeltaConnection!!` |
+| `nftDeltasV2`             | Returns info on the NFTs transfered in the transaction such as `collectionAddress`, `tokenId`, as well as `attachment` which surfaces other NFT specific fields. | `NftDeltaConnection!`            |
+| `interpreterId`           | Unique identifier for the Interpreter.                                                                                                                           | `String!`                        |
+| `interpreter`             | Object which contains info on the interpreter such as `app` and `category`.                                                                                      | `ActivityEventInterpreter!`      |
+| `sigHash`                 | Returns the sigHash for the transaction.                                                                                                                         | `String!`                        |

@@ -10,15 +10,15 @@ import Link from '@docusaurus/Link';
 
 Get comprehensive onchain prices, current and historical, for any token that has an onchain market across supported networks. Price ticks are also provided for price charts.
 
-
 ### `fungibleToken`
-Takes an `address` and `network` as input. Returns detailed token information including:
-* Real-time onchain sourced price data
-* Price history with customizable timeframes
-* Total supply and holder stats
-* Liquidity and market cap data
-* Support for multiple price currencies (default: USD)
 
+Takes an `address` and `network` as input. Returns detailed token information including:
+
+- Real-time onchain sourced price data
+- Price history with customizable timeframes
+- Total supply and holder stats
+- Liquidity and market cap data
+- Support for multiple price currencies (default: USD)
 
 ### Example Use Case: Token Price Chart
 
@@ -39,7 +39,7 @@ Let's say you want to create a token page providing the price, historical graphs
 #### Example Query
 
 ```graphql
-query($address: Address!, $network: Network!, $first: Float!, $currency: Currency!, $timeFrame: TimeFrame!) {
+query ($address: Address!, $network: Network!, $first: Float!, $currency: Currency!, $timeFrame: TimeFrame!) {
   fungibleToken(address: $address, network: $network) {
     address
     decimals
@@ -153,49 +153,48 @@ query($address: Address!, $network: Network!, $first: Float!, $currency: Currenc
 }
 ```
 
-
 ---
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `address` | Token contract address | `Address!` | Yes |
-| `network` | Network where the token exists | `Network!` | Yes |
-| `currency` | Price currency (USD/ETH/BTC) | `Currency!` | Yes |
-| `timeFrame` | Time interval for price data | `TimeFrame!` | Yes |
-| `first` | Number of holders to fetch | `Float!` | Yes |
+| Argument    | Description                    | Type         | Required |
+| ----------- | ------------------------------ | ------------ | -------- |
+| `address`   | Token contract address         | `Address!`   | Yes      |
+| `network`   | Network where the token exists | `Network!`   | Yes      |
+| `currency`  | Price currency (USD/ETH/BTC)   | `Currency!`  | Yes      |
+| `timeFrame` | Time interval for price data   | `TimeFrame!` | Yes      |
+| `first`     | Number of holders to fetch     | `Float!`     | Yes      |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `id` | Unique identifier for the token | `ID!` |
-| `address` | Contract address | `Address!` |
-| `name` | Token name | `String!` |
-| `symbol` | Token symbol | `String!` |
-| `decimals` | Number of decimals | `Int!` |
-| `totalSupply` | Total supply of the token | `String` |
-| `credibility` | Token credibility score | `Float` |
-| `rank` | Token rank | `Int` |
-| `securityRisk` | Security risk assessment | `FungibleTokenSecurityRisk` |
-| `isHoldersSupported` | Whether holder data is available | `Boolean!` |
-| `imageUrl` | Token logo URL | `String!` |
-| `onchainMarketData` | Detailed onchain market data | `OnchainMarketData` |
-| `isVerified` | Token verification status | `Boolean!` |
+| Field                | Description                      | Type                        |
+| -------------------- | -------------------------------- | --------------------------- |
+| `id`                 | Unique identifier for the token  | `ID!`                       |
+| `address`            | Contract address                 | `Address!`                  |
+| `name`               | Token name                       | `String!`                   |
+| `symbol`             | Token symbol                     | `String!`                   |
+| `decimals`           | Number of decimals               | `Int!`                      |
+| `totalSupply`        | Total supply of the token        | `String`                    |
+| `credibility`        | Token credibility score          | `Float`                     |
+| `rank`               | Token rank                       | `Int`                       |
+| `securityRisk`       | Security risk assessment         | `FungibleTokenSecurityRisk` |
+| `isHoldersSupported` | Whether holder data is available | `Boolean!`                  |
+| `imageUrl`           | Token logo URL                   | `String!`                   |
+| `onchainMarketData`  | Detailed onchain market data     | `OnchainMarketData`         |
+| `isVerified`         | Token verification status        | `Boolean!`                  |
 
 ### OnchainMarketData Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `price` | Current token price | `Float!` |
-| `marketCap` | Market capitalization | `Float` |
-| `totalLiquidity` | Total liquidity across all pairs | `Float!` |
-| `totalGasTokenLiquidity` | Native token liquidity | `Float!` |
-| `priceChange5m` | 5-minute price change percentage | `Float` |
-| `priceChange1h` | 1-hour price change percentage | `Float` |
-| `priceChange24h` | 24-hour price change percentage | `Float` |
-| `priceTicks` | Historical price data points | `[PriceTick!]!` |
+| Field                    | Description                      | Type            |
+| ------------------------ | -------------------------------- | --------------- |
+| `price`                  | Current token price              | `Float!`        |
+| `marketCap`              | Market capitalization            | `Float`         |
+| `totalLiquidity`         | Total liquidity across all pairs | `Float!`        |
+| `totalGasTokenLiquidity` | Native token liquidity           | `Float!`        |
+| `priceChange5m`          | 5-minute price change percentage | `Float`         |
+| `priceChange1h`          | 1-hour price change percentage   | `Float`         |
+| `priceChange24h`         | 24-hour price change percentage  | `Float`         |
+| `priceTicks`             | Historical price data points     | `[PriceTick!]!` |
 
 ### Enums
 
@@ -233,17 +232,16 @@ enum Currency {
 }
 ```
 
-
 ### `fungibleTokensByAddresses`
+
 Takes an array of token inputs (address and network pairs). Returns an array of token data including:
-* Token details for multiple tokens
-* Real-time onchain sourced price data
-* Price history with customizable timeframes
-* Supports multiple price currencies (default: USD)
-* Total supply and holder stats
-* Tracks liquidity and market cap data
 
-
+- Token details for multiple tokens
+- Real-time onchain sourced price data
+- Price history with customizable timeframes
+- Supports multiple price currencies (default: USD)
+- Total supply and holder stats
+- Tracks liquidity and market cap data
 
 ### Example Use Case: Multi-Token Dashboard
 
@@ -329,15 +327,16 @@ query fungibleTokensByAddresses($tokens: [FungibleTokenInput!]!) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `tokens` | Array of token inputs | `[FungibleTokenInput!]!` | Yes |
+| Argument | Description           | Type                     | Required |
+| -------- | --------------------- | ------------------------ | -------- |
+| `tokens` | Array of token inputs | `[FungibleTokenInput!]!` | Yes      |
 
 ### FungibleTokenInput
 
 The `FungibleTokenInput` type is used to specify a token's identifying information. Each input must include both the token's contract address and the network it exists on.
 
 #### Structure
+
 ```graphql
 input FungibleTokenInput {
   address: Address!
@@ -348,6 +347,7 @@ input FungibleTokenInput {
 #### Examples
 
 Single token input:
+
 ```js
 {
   "tokens": [
@@ -360,6 +360,7 @@ Single token input:
 ```
 
 Multiple tokens input:
+
 ```js
 {
   "tokens": [

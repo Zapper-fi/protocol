@@ -3,7 +3,7 @@ export function Button(props) {
 
   return (
     <button
-      className={`button--primary cursor-pointer border-none rounded-lg px-4 display-flex align-items-center ${height} ${textSize} font-semibold opacity-100 hover:opacity-80 transition-all ${className || ''}`}
+      className={`button--primary display-flex align-items-center cursor-pointer rounded-lg border-none px-4 ${height} ${textSize} font-semibold opacity-100 transition-all hover:opacity-80 ${className || ''}`}
       {...rest}
     >
       {children}

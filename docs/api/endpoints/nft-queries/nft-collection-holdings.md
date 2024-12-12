@@ -10,14 +10,15 @@ import Link from '@docusaurus/Link';
 
 Get information about NFT collections owned by specific wallet addresses.
 
-
 ### `nftUsersCollections`
+
 Takes an array of `addresses` as input, with optional parameters for `network`, `standard`, and `minCollectionValueUsd`. It returns aggregated NFT collection data including:
-* Collections owned across addresses
-* Floor prices and valuations
-* Collection metadata and stats
-* Owner counts and volume
-* Social links and images
+
+- Collections owned across addresses
+- Floor prices and valuations
+- Collection metadata and stats
+- Owner counts and volume
+- Social links and images
 
 ### Example Use Case: User's NFT Portfolio
 
@@ -37,12 +38,8 @@ Let's say you want to display all NFT collections owned by a user or group of us
 #### Example Query
 
 ```graphql
-query($owners: [Address!]!, $network: Network, $first: Int) {
-  nftUsersCollections(
-    owners: $owners
-    network: $network
-    first: $first
-  ) {
+query ($owners: [Address!]!, $network: Network, $first: Int) {
+  nftUsersCollections(owners: $owners, network: $network, first: $first) {
     edges {
       node {
         id
@@ -227,65 +224,63 @@ query($owners: [Address!]!, $network: Network, $first: Int) {
 
 ### Arguments
 
-| Argument | Description | Type | Required |
-| -------- | ----------- | ---- | -------- |
-| `owners` | Array of addresses to query collections for | `[Address!]!` | Yes |
-| `network` | Filter collections by specific network | `Network` | No |
-| `minCollectionValueUsd` | Minimum USD value threshold for collections | `Float` | No |
-| `search` | Search string to filter collections | `String` | No |
-| `collectionIds` | Array of specific collection IDs to include | `[ID!]` | No |
-| `standard` | Filter by NFT standard (ERC721/ERC1155) | `NftStandard` | No |
-| `onlyHidden` | Show only hidden collections | `Boolean` | No |
-| `first` | Number of collections to return (default: 24) | `Int` | No |
-| `after` | Cursor for pagination | `String` | No |
-| `withOverrides` | Include value overrides | `Boolean` | No |
+| Argument                | Description                                   | Type          | Required |
+| ----------------------- | --------------------------------------------- | ------------- | -------- |
+| `owners`                | Array of addresses to query collections for   | `[Address!]!` | Yes      |
+| `network`               | Filter collections by specific network        | `Network`     | No       |
+| `minCollectionValueUsd` | Minimum USD value threshold for collections   | `Float`       | No       |
+| `search`                | Search string to filter collections           | `String`      | No       |
+| `collectionIds`         | Array of specific collection IDs to include   | `[ID!]`       | No       |
+| `standard`              | Filter by NFT standard (ERC721/ERC1155)       | `NftStandard` | No       |
+| `onlyHidden`            | Show only hidden collections                  | `Boolean`     | No       |
+| `first`                 | Number of collections to return (default: 24) | `Int`         | No       |
+| `after`                 | Cursor for pagination                         | `String`      | No       |
+| `withOverrides`         | Include value overrides                       | `Boolean`     | No       |
 
 ### Fields
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `edges` | Array of collection edges | `[NftUserCollectionEdge!]!` |
-| `pageInfo` | Pagination information | `PageInfo!` |
-| `node` | Collection information | `NftCollection!` |
-| `cursor` | Pagination cursor | `String!` |
-
+| Field      | Description               | Type                        |
+| ---------- | ------------------------- | --------------------------- |
+| `edges`    | Array of collection edges | `[NftUserCollectionEdge!]!` |
+| `pageInfo` | Pagination information    | `PageInfo!`                 |
+| `node`     | Collection information    | `NftCollection!`            |
+| `cursor`   | Pagination cursor         | `String!`                   |
 
 ### Fields in NftUserCollectionConnection
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `edges` | Array of collection edges | `[NftUserCollectionEdge!]!` |
-| `pageInfo` | Pagination information | `PageInfo!` |
+| Field      | Description               | Type                        |
+| ---------- | ------------------------- | --------------------------- |
+| `edges`    | Array of collection edges | `[NftUserCollectionEdge!]!` |
+| `pageInfo` | Pagination information    | `PageInfo!`                 |
 
 ### Fields in NftCollection (node)
 
-| Field | Description | Type |
-| ----- | ----------- | ---- |
-| `id` | Unique identifier | `ID!` |
-| `address` | Collection contract address | `Address!` |
-| `subCollectionIdentifier` | Sub-collection identifier | `String!` |
-| `name` | Collection name | `String!` |
-| `displayName` | Display name | `String` |
-| `symbol` | Collection symbol | `String!` |
-| `description` | Collection description | `String!` |
-| `network` | Blockchain network | `Network!` |
-| `socialLinks` | Social media links | `[SocialLink!]!` |
-| `supply` | Current supply | `BigDecimal!` |
-| `totalSupply` | Total supply | `BigDecimal!` |
-| `holdersCount` | Number of holders | `BigDecimal!` |
-| `nftStandard` | NFT standard (ERC721/1155) | `NftStandard!` |
-| `disabled` | Collection disabled status | `Boolean!` |
-| `type` | Collection type | `NftCollectionType!` |
-| `openseaId` | OpenSea identifier | `String` |
-| `spamScore` | Spam risk score | `BigDecimal` |
-| `floorPrice` | Current floor price | `NftValueDenomination` |
-| `topOfferPrice` | Highest current offer | `NftValueDenomination` |
-| `medias` | Collection media assets | `NftCollectionMedias!` |
-| `circulatingSupply` | Circulating supply | `BigDecimal!` |
-| `totalCirculatingSupply` | Total circulating supply | `BigDecimal!` |
-| `marketCap` | Market capitalization | `BigDecimal` |
-| `groups` | Collection groups | `[NftCollectionGroup!]!` |
-
+| Field                     | Description                 | Type                     |
+| ------------------------- | --------------------------- | ------------------------ |
+| `id`                      | Unique identifier           | `ID!`                    |
+| `address`                 | Collection contract address | `Address!`               |
+| `subCollectionIdentifier` | Sub-collection identifier   | `String!`                |
+| `name`                    | Collection name             | `String!`                |
+| `displayName`             | Display name                | `String`                 |
+| `symbol`                  | Collection symbol           | `String!`                |
+| `description`             | Collection description      | `String!`                |
+| `network`                 | Blockchain network          | `Network!`               |
+| `socialLinks`             | Social media links          | `[SocialLink!]!`         |
+| `supply`                  | Current supply              | `BigDecimal!`            |
+| `totalSupply`             | Total supply                | `BigDecimal!`            |
+| `holdersCount`            | Number of holders           | `BigDecimal!`            |
+| `nftStandard`             | NFT standard (ERC721/1155)  | `NftStandard!`           |
+| `disabled`                | Collection disabled status  | `Boolean!`               |
+| `type`                    | Collection type             | `NftCollectionType!`     |
+| `openseaId`               | OpenSea identifier          | `String`                 |
+| `spamScore`               | Spam risk score             | `BigDecimal`             |
+| `floorPrice`              | Current floor price         | `NftValueDenomination`   |
+| `topOfferPrice`           | Highest current offer       | `NftValueDenomination`   |
+| `medias`                  | Collection media assets     | `NftCollectionMedias!`   |
+| `circulatingSupply`       | Circulating supply          | `BigDecimal!`            |
+| `totalCirculatingSupply`  | Total circulating supply    | `BigDecimal!`            |
+| `marketCap`               | Market capitalization       | `BigDecimal`             |
+| `groups`                  | Collection groups           | `[NftCollectionGroup!]!` |
 
 ### Enums
 
@@ -328,6 +323,7 @@ enum NftTokenSort {
 ```
 
 ### Notes
+
 - Supports pagination for handling large collections
 - Filter by network, value, and NFT standard
 - Returns comprehensive collection metadata including floor prices and media

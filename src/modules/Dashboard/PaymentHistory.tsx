@@ -25,7 +25,7 @@ const statusInfo = {
 };
 
 const mapStatus = {
-  confirmed: 'text-green-400',
+  confirmed: 'text-success-default',
   pending: 'text-yellow-400',
   failed: 'text-red-400',
 };
@@ -33,7 +33,7 @@ const mapStatus = {
 const Toast = ({ message, position }) => {
   return ReactDOM.createPortal(
     <div
-      className="absolute bg-gray-800 text-white p-2 rounded-md text-xs max-w-[200px] whitespace-normal"
+      className="absolute max-w-[200px] whitespace-normal rounded-md bg-gray-800 p-2 text-xs text-white"
       style={{
         top: position.top,
         left: position.left + 10,
@@ -61,7 +61,7 @@ const InfoIcon = ({ message }) => {
   return (
     <div className="relative inline-flex items-center">
       <div
-        className="cursor-pointer flex items-center"
+        className="flex cursor-pointer items-center"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowToast(false)}
       >
@@ -121,10 +121,12 @@ export function PaymentHistory() {
               <tr key={payment.createdAt}>
                 <td>{formatDate(payment.createdAt)}</td>
                 <td className="text-right">{payment.creditsPurchased}</td>
-                <td className="text-right">USD ${payment.amount}</td>
-                <td className="flex items-center justify-center gap-1 capitalize">
-                  <span className={mapStatus[payment.status]}>{payment.status}</span>
-                  <InfoIcon message={statusInfo[payment.status]} />
+                <td className="whitespace-nowrap text-right">USD ${payment.amount}</td>
+                <td>
+                  <div className="flex items-center justify-center gap-1 capitalize">
+                    <span className={mapStatus[payment.status]}>{payment.status}</span>
+                    <InfoIcon message={statusInfo[payment.status]} />
+                  </div>
                 </td>
               </tr>
             ))

@@ -26,15 +26,15 @@ export const Intro: React.FC = () => {
                 alignItems: 'flex-start',
               }}
             >
-              <h4 className="text-white font-normal mb-4">{siteConfig.title}</h4>
+              <h4 className="mb-4 font-normal text-white">{siteConfig.title}</h4>
 
               <p className="mb-4">
                 <SignInDashboard type="button" />
               </p>
 
-              <p className="text-white text-sm">
+              <p className="text-sm text-white">
                 Want to contribute to our interpretation protocol?{' '}
-                <Link to="/docs/interpretation/contribute" className="hover:opacity-80 font-semibold">
+                <Link to="/docs/interpretation/contribute" className="font-semibold hover:opacity-80">
                   Start Here.
                 </Link>
               </p>

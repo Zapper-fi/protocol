@@ -4,26 +4,26 @@ sidebar_position: 2
 
 # Contribute
 
-Help us make blockchains readable to everyone! There are two main roles through which you can help Zapper Protocol initially:
+There are two ways to contribute to Zapper Protocol:
 
-1. **Curators** play a key role by scouting uninterpreted data and building interpreters. Anyone can start curating- no knowledge of coding is required.
+1. **Curators** play a key role by finding uninterpreted transactions and positions, building interpreters, and making them human-readable. Anyone can start contributing without any coding knowledge.
 
-2. **Reviewers** are the final layer before data is made available publicly. They review and validate the submissions from Curators to ensure the interpretation is correct. Reviewers are experienced Curators who have proven their ability to deliver accurate data to Zapper Protocol.
+2. **Reviewers** serve as the final quality control layer before data becomes publicly available. They review and validate submissions from Curators to ensure accurate interpretation. Reviewers are experienced Curators who have demonstrated consistent accuracy in contributing to Zapper Protocol.
 
 To get started contributing to Zapper Protocol, visit one of our guides:
 
-| Guide                                | Link  |
-|--------------------------------------|-------|
-| Position Interpretation             | [Guide](position-interpretation/guide/getting-started.md) |
-| Transaction Interpretation               | [Guide](event-interpretation/guide/getting-started.md) |
-| Validation                            | [Guide](../validation/becoming-a-reviewer.md) |
+| Guide                      | Link                                                      |
+| -------------------------- | --------------------------------------------------------- |
+| Transaction Interpretation | [Guide](event-interpretation/guide/getting-started.md)    |
+| Position Interpretation    | [Guide](position-interpretation/guide/getting-started.md) |
+| Validation                 | [Guide](../validation/becoming-a-reviewer.md)             |
 
 ## Curator Leaderboard
 
-We will be tracking the top contributors in a leaderboard!
+Track your impact on Zapper Protocol!
 
-- Check your ranking on the [Curator Leaderboard](https://zapper.xyz/curate/leaderboard).
-- View your submissions and their stats on your [My Submissions page](https://zapper.xyz/my-submissions).
+- Compare your performance on our [Curator Leaderboard](https://zapper.xyz/curate/leaderboard).
+- Monitor your contributions and stats on your [My Submissions Dashboard](https://zapper.xyz/my-submissions).
 
 ## Join our community
 
@@ -31,4 +31,3 @@ Have any questions? Want to learn more? Don't hesitate to reach out and join our
 
 - Discord: https://zapper.xyz/discord
 - Telegram: [https://t.me/+mAVxPRsA7bE3ZDkx](https://t.me/+z8qmxu72oz9kMDYx)
-

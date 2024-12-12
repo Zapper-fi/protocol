@@ -4,7 +4,21 @@ import { Button } from '@site/src/components/Button';
 import { Copy } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const Toast = ({ message }) => <div className="popup">{message}</div>;
+const Toast = ({ message }) => (
+  <div
+    className="absolute rounded-md bg-gray-800 px-2 py-1 text-xs text-white"
+    style={{
+      top: '100%', // Position below the parent
+      left: '50%', // Center horizontally
+      transform: 'translateX(-50%)', // Center adjust
+      marginTop: '8px', // Add some space between toast and button
+      whiteSpace: 'nowrap',
+      zIndex: 50,
+    }}
+  >
+    {message}
+  </div>
+);
 
 const QUERY = gql`
   query Profile {
@@ -46,12 +60,15 @@ export function Profile() {
       <h4>Your API Key</h4>
 
       <div>
-        <div className="flex gap-2">
-          <code className="flex-1 text-base font-mono py-1 px-2 rounded" style={{ fontSize: '14px' }}>
+        <div className="flex items-center gap-2">
+          <code
+            className="flex flex-1 items-center rounded px-2 py-1 font-mono text-base"
+            style={{ fontSize: '14px', minHeight: '40px' }}
+          >
             {apiKey}
           </code>
           <div className="relative">
-            <Button type="button" onClick={handleCopyApiKey} className="w-10 grid place-content-center">
+            <Button type="button" onClick={handleCopyApiKey} className="grid h-10 w-10 place-content-center">
               <Copy size={18} />
             </Button>
             {showToast && <Toast message="Copied!" />}

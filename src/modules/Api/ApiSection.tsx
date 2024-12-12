@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { SignInDashboard } from '@site/src/components/SignInDashboard';
 
 enum TabEnum {

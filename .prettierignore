@@ -1,0 +1,4 @@
+# Ignore artifacts:
+node_modules
+build
+pnpm-lock.yaml

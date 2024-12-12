@@ -1,5 +1,4 @@
 import Layout from '@theme/Layout';
-import React from 'react';
 import { BuyCredits } from '@site/src/modules/Dashboard/BuyCredits';
 import { Profile } from '@site/src/modules/Dashboard/Profile';
 import { SignedIn } from '@site/src/modules/Dashboard/SignedIn';
@@ -9,16 +8,14 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
-import { useLocation } from '@docusaurus/router';
-import { useHistory } from '@docusaurus/router';
 import { RedirectToHome } from '@site/src/components/RedirectToHome';
 
 function Dashboard() {
   return (
     <Layout>
-      <div className="flex">
-        <main className="flex-1 pt-4 pb-16">
-          <div className="container mx-auto ">
+      <div className="flex w-full">
+        <main className="w-full flex-1 overflow-hidden pb-16 pt-4">
+          <div className="container mx-auto px-4">
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
@@ -26,21 +23,25 @@ function Dashboard() {
             </SignedOut>
 
             <SignedIn>
-              <div className="flex gap-4 " style={{ width: '100%', flexFlow: 'wrap' }}>
-                <div className="flex flex-col gap-4" style={{ flex: 2 }}>
-                  <div className="flex justify-between">
-                    <h2>Your Dashboard</h2>
-                  </div>
-                  <ConsumptionStats />
-                  <PaymentHistory />
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between">
+                  <h2>Your Dashboard</h2>
                 </div>
-                <Card style={{ minWidth: '400px', flex: 1 }}>
-                  <div className="flex flex-col gap-8">
-                    <Profile />
-                    <BuyCredits />
-                    <QuickLinks />
+
+                <div className="flex flex-col-reverse gap-4" style={{ width: '100%', flexFlow: 'wrap-reverse' }}>
+                  <div className="flex flex-col gap-4" style={{ flex: 2, minWidth: '300px' }}>
+                    <ConsumptionStats />
+                    <PaymentHistory />
                   </div>
-                </Card>
+                  <Card className="w-full lg:w-96">
+                    <div className="flex flex-col gap-8">
+                      <Profile />
+                      <BuyCredits />
+                      <hr className="m-0" />
+                      <QuickLinks />
+                    </div>
+                  </Card>
+                </div>
               </div>
             </SignedIn>
           </div>
