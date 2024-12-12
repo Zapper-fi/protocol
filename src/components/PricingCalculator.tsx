@@ -59,10 +59,6 @@ export function PricingCalculator() {
   return (
     <div className="w-full rounded-lg border border-border bg-card">
       <div className="border-b border-border px-6 pb-4 pt-6">
-        <p className="mt-2 text-sm text-alt-color">
-          Enter the number of API queries you expect to make for each endpoint type. Consider choosing a specific
-          timeframe (e.g., monthly or annually) to help with cost forecasting.
-        </p>
       </div>
 
       <div className="space-y-6 px-6 pb-6">
