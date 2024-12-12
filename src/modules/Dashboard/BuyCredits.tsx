@@ -7,6 +7,7 @@ import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
 import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
+import clsx from 'clsx';
 
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
@@ -279,7 +280,7 @@ export function BuyCredits() {
                 onChange={handlePointsChange}
                 onBlur={handleBlur}
                 min={MIN_POINTS}
-                className="h-10 min-w-28 flex-grow rounded-lg border border-solid border-border bg-input text-center text-base field-sizing-content"
+                className={clsx('zapper-input', 'h-10 min-w-28 flex-grow text-center field-sizing-content')}
                 placeholder="Enter credits amount"
               />
               <button
