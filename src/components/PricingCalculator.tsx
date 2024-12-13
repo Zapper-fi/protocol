@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
-import { formatNumber, formatUSD } from '@site/src/helpers/formatters';
-import { Users, LineChart, History, Wallet } from 'lucide-react';
+import { LineChart, History, Wallet } from 'lucide-react';
+
+// Helper functions since we can't import them
+const formatNumber = (num) => {
+  return new Intl.NumberFormat().format(Math.round(num));
+};
+
+const formatUSD = (num) => {
+  return Number(num).toFixed(3);
+};
 
 const USAGE_PRESETS = {
   basic: {
@@ -38,7 +46,7 @@ const ENDPOINT_CREDITS = {
   otherQueries: 2,
 };
 
-export default function PricingCalculator() {
+export function PricingCalculator() {
   const [mode, setMode] = useState('basic');
   const [numUsers, setNumUsers] = useState('');
   const [selectedPreset, setSelectedPreset] = useState('standard');
@@ -48,7 +56,6 @@ export default function PricingCalculator() {
     transactions: false,
   });
   
-  // Advanced mode state
   const [queries, setQueries] = useState({
     onchainPrices: '',
     portfolioQueries: '',
@@ -61,7 +68,7 @@ export default function PricingCalculator() {
     let totalCredits = 0;
 
     if (features.portfolio) {
-      totalCredits += users * preset.portfolioChecks * ENDPOINT_CREDITS.portfolioQueries * 30; // Monthly
+      totalCredits += users * preset.portfolioChecks * ENDPOINT_CREDITS.portfolioQueries * 30;
     }
     if (features.prices) {
       totalCredits += users * preset.priceCharts * ENDPOINT_CREDITS.onchainPrices * 30;
@@ -125,7 +132,7 @@ export default function PricingCalculator() {
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
         />
-        <div className="peer h-6 w-11 rounded-full bg-input after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-default peer-checked:after:translate-x-full peer-checked:after:border-white" />
+        <div className="peer h-6 w-11 rounded-full bg-input after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#784ffe] peer-checked:after:translate-x-full peer-checked:after:border-white" />
       </label>
     </div>
   );
@@ -138,7 +145,7 @@ export default function PricingCalculator() {
           <button
             onClick={() => setMode('basic')}
             className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-              mode === 'basic' ? 'bg-white text-primary-default shadow-sm dark:bg-gray-800' : 'text-alt-color'
+              mode === 'basic' ? 'bg-white text-[#784ffe] shadow-sm dark:bg-gray-800' : 'text-alt-color'
             }`}
           >
             Basic Mode
@@ -146,7 +153,7 @@ export default function PricingCalculator() {
           <button
             onClick={() => setMode('advanced')}
             className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-              mode === 'advanced' ? 'bg-white text-primary-default shadow-sm dark:bg-gray-800' : 'text-alt-color'
+              mode === 'advanced' ? 'bg-white text-[#784ffe] shadow-sm dark:bg-gray-800' : 'text-alt-color'
             }`}
           >
             Advanced Mode
@@ -168,7 +175,7 @@ export default function PricingCalculator() {
                   value={numUsers}
                   onChange={(e) => setNumUsers(e.target.value)}
                   placeholder="Enter number of users"
-                  className="zapper-input h-10 w-full px-2"
+                  className="h-10 w-full rounded-lg border border-border bg-input px-2"
                 />
               </div>
 
@@ -206,7 +213,7 @@ export default function PricingCalculator() {
                       key={key}
                       onClick={() => setSelectedPreset(key)}
                       className={`cursor-pointer rounded-lg border border-border p-4 transition-colors ${
-                        selectedPreset === key ? 'border-primary-default bg-input' : ''
+                        selectedPreset === key ? 'border-[#784ffe] bg-input' : ''
                       }`}
                     >
                       <h3 className="font-semibold">{preset.name}</h3>
@@ -229,7 +236,7 @@ export default function PricingCalculator() {
                 value={queries.onchainPrices}
                 onChange={(e) => setQueries(prev => ({ ...prev, onchainPrices: e.target.value }))}
                 placeholder="Enter number of queries"
-                className="zapper-input h-10 w-full px-2"
+                className="h-10 w-full rounded-lg border border-border bg-input px-2"
               />
             </div>
             <div>
@@ -242,7 +249,7 @@ export default function PricingCalculator() {
                 value={queries.portfolioQueries}
                 onChange={(e) => setQueries(prev => ({ ...prev, portfolioQueries: e.target.value }))}
                 placeholder="Enter number of queries"
-                className="zapper-input h-10 w-full px-2"
+                className="h-10 w-full rounded-lg border border-border bg-input px-2"
               />
             </div>
             <div>
@@ -255,7 +262,7 @@ export default function PricingCalculator() {
                 value={queries.otherQueries}
                 onChange={(e) => setQueries(prev => ({ ...prev, otherQueries: e.target.value }))}
                 placeholder="Enter number of queries"
-                className="zapper-input h-10 w-full px-2"
+                className="h-10 w-full rounded-lg border border-border bg-input px-2"
               />
             </div>
           </div>
