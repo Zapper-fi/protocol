@@ -15,16 +15,16 @@ const USAGE_PRESETS = {
   basic: {
     name: 'Basic',
     description: 'Occasional portfolio checks and basic price tracking',
-    portfolioChecks: .5,
-    priceCharts: .5,
-    txHistory: .5,
+    portfolioChecks: .33,
+    priceCharts: .33,
+    txHistory: .33,
   },
   standard: {
     name: 'Active',
     description: 'Regular portfolio monitoring and price analysis',
-    portfolioChecks: 2,
-    priceCharts: 4,
-    txHistory: 2,
+    portfolioChecks: 1,
+    priceCharts: 2,
+    txHistory: 1,
   },
   power: {
     name: 'Power User',
