@@ -13,14 +13,14 @@ const formatUSD = (num) => {
 
 const USAGE_PRESETS = {
   basic: {
-    name: 'Basic User',
+    name: 'Basic',
     description: 'Occasional portfolio checks and basic price tracking',
-    portfolioChecks: 1,
-    priceCharts: 2,
-    txHistory: 1,
+    portfolioChecks: .5,
+    priceCharts: .5,
+    txHistory: .5,
   },
   standard: {
-    name: 'Active User',
+    name: 'Active',
     description: 'Regular portfolio monitoring and price analysis',
     portfolioChecks: 2,
     priceCharts: 4,
