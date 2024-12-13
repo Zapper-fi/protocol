@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { LineChart, History, Wallet } from 'lucide-react';
+import { RiDonutChartFill, RiListCheck2, RiCoinsLine } from 'react-icons/ri';
+
 
 // Helper functions since we can't import them
 const formatNumber = (num) => {
@@ -183,19 +184,19 @@ export function PricingCalculator() {
                 <label className="block text-sm font-medium text-alt-color">Features</label>
                 <div className="space-y-2">
                   <FeatureToggle
-                    icon={Wallet}
+                    icon={RiCoinsLine}
                     label="Portfolio Tracking"
                     checked={features.portfolio}
                     onChange={(checked) => setFeatures(prev => ({ ...prev, portfolio: checked }))}
                   />
                   <FeatureToggle
-                    icon={LineChart}
+                    icon={RiDonutChartFill}
                     label="Token Price Charts"
                     checked={features.prices}
                     onChange={(checked) => setFeatures(prev => ({ ...prev, prices: checked }))}
                   />
                   <FeatureToggle
-                    icon={History}
+                    icon={RiListCheck2}
                     label="Transaction History"
                     checked={features.transactions}
                     onChange={(checked) => setFeatures(prev => ({ ...prev, transactions: checked }))}
