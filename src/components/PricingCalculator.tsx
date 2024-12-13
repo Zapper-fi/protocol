@@ -184,13 +184,13 @@ export function PricingCalculator() {
                 <label className="block text-sm font-medium text-alt-color">Features</label>
                 <div className="space-y-2">
                   <FeatureToggle
-                    icon={RiCoinsLine}
+                    icon={RiDonutChartFill}
                     label="Portfolio Tracking"
                     checked={features.portfolio}
                     onChange={(checked) => setFeatures(prev => ({ ...prev, portfolio: checked }))}
                   />
                   <FeatureToggle
-                    icon={RiDonutChartFill}
+                    icon={RiCoinsLine}
                     label="Token Price Charts"
                     checked={features.prices}
                     onChange={(checked) => setFeatures(prev => ({ ...prev, prices: checked }))}
