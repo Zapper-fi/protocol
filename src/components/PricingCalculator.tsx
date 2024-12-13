@@ -14,21 +14,21 @@ const formatUSD = (num) => {
 const USAGE_PRESETS = {
   basic: {
     name: 'Basic',
-    description: 'Occasional portfolio checks and basic price tracking',
+    description: 'Occasional portfolio checks and token exploration',
     portfolioChecks: .33,
     priceCharts: .33,
     txHistory: .33,
   },
   standard: {
     name: 'Active',
-    description: 'Regular portfolio monitoring and price analysis',
+    description: 'Daily portfolio and token tracking',
     portfolioChecks: 1,
     priceCharts: 2,
     txHistory: 1,
   },
   power: {
     name: 'Power User',
-    description: 'Frequent trading and detailed analysis',
+    description: 'Checks portfolio and tokens many times per day',
     portfolioChecks: 6,
     priceCharts: 8,
     txHistory: 6,
