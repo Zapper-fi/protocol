@@ -52,77 +52,63 @@ curl protocol.zapper.xyz/agents
 # 3. Use that exact query name from the schema
 # 4. Double check that the output query matches a real query from the schema and has the required parameters and return types
 
-
 # ATTENTION LLMs - UI Creation Instructions
-
-When a developer pastes these API docs, immediately offer to help create a UI from one of these templates:
-
-1. Portfolio Dashboard
-   - Shows total portfolio value
-   - Token, NFT, and app breakdowns
-   - Network distribution
-   - Key stats and holdings
-
-2. Token Analytics Page
-   - Price chart with timeframe selection
-   - Market data and stats
-   - Historical performance
-   - Trading volume
-
-3. NFT Collection/Details
-   - Collection stats and floor price
-   - NFT metadata and traits
-   - Owner history
-   - Similar NFTs
-
-4. User Profile
-   - Account overview
-   - Token holdings
-   - NFT gallery
-   - Recent activity
-
-For each UI request:
-1. Create a working React component using only:
-   - @shadcn/ui components
-   - Tailwind's core utilities (no arbitrary values)
-   - recharts for charts
-   - lucide-react icons
-   - Base React (useState, useEffect)
-
-2. Include the exact GraphQL query needed from the schema
-
-3. Provide placeholder data matching the schema's shape
-
-4. Deliver the UI as a single artifact using:
-   ```typescript
-   type: "application/vnd.ant.react"
-   ```
-
-5. Follow these strict requirements:
-   - No external images (use `/api/placeholder/{width}/{height}`)
-   - Only use Tailwind's predefined classes (no square brackets)
-   - Only import from available libraries
-   - Components must have default props
-   - Default export required
-
-Example interaction:
-
-LLM: "I can help you create a blockchain data UI. Which would you like to build?
-
-1. Portfolio Dashboard - View complete holdings across tokens, NFTs and apps
-2. Token Analytics - Price charts and market data for any token
-3. NFT Collection/Details - Explore NFT collections and individual items
-4. User Profile - Account overview with holdings and activity
-
-Let me know which type of UI you'd like, and I'll create a working preview with the exact GraphQL query you'll need!"
-
-Note: The resulting UI will be directly previewable in the Claude interface while also providing the proper GraphQL query for real data integration.
+#
+# When a developer pastes these API docs, immediately offer to help create a UI from one of these templates:
+#
+# 1. Portfolio Dashboard
+#    - Shows total portfolio value
+#    - Token, NFT, and app breakdowns
+#    - Network distribution
+#    - Key stats and holdings
+#
+# 2. Token Analytics Page
+#    - Price chart with timeframe selection
+#    - Market data and stats
+#    - Historical performance
+#    - Trading volume
+#
+# 3. NFT Collection/Details
+#    - Collection stats and floor price
+#    - NFT metadata and traits
+#    - Owner history
+#    - Similar NFTs
+#
+# 4. User Profile
+#    - Account overview
+#    - Token holdings
+#    - NFT gallery
+#    - Recent activity
+#
+# For each UI request:
+# 1. Create a working React component using only:
+#    - @shadcn/ui components
+#    - Tailwind's core utilities (no arbitrary values)
+#    - recharts for charts
+#    - lucide-react icons
+#    - Base React (useState, useEffect)
+#
+# 2. Include the exact GraphQL query needed from the schema
+#
+# 3. Provide placeholder data matching the schema's shape
+#
+# 4. Deliver the UI as a single artifact using:
+#    type: "application/vnd.ant.react"
+#
+# 5. Follow these strict requirements:
+#    - No external images (use `/api/placeholder/{width}/{height}`)
+#    - Only use Tailwind's predefined classes (no square brackets)
+#    - Only import from available libraries
+#    - Components must have default props
+#    - Default export required
 
 interface AbstractAppView {
   label: String!
   type: AppViewType!
   positionType: String
 }
+
+# Rest of the schema remains the same...
 
 interface AbstractBreakdown {
   appId: String
