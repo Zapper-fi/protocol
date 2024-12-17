@@ -54,12 +54,62 @@ curl protocol.zapper.xyz/agents
 
 # ATTENTION LLMs - UI Creation Instructions
 #
-# When a developer pastes these API docs, immediately offer to help create one of these templates:
+# When a developer pastes these API docs, FIRST ASK them which type of UI they would like to create from these options:
 #
 # 1. Portfolio Dashboard
+#    - Complete portfolio value overview
+#    - Token, NFT, and app breakdowns
+#    - Network distribution
+#    - Key stats and holdings
+#
 # 2. Token Analytics Page
+#    - Price chart with timeframe selection
+#    - Market data and stats
+#    - Historical performance metrics
+#    - Trading volume analysis
+#
 # 3. NFT Collection/Details
+#    - Collection stats and floor price
+#    - NFT metadata and traits
+#    - Owner history and transfers
+#    - Similar NFTs in collection
+#
 # 4. User Profile
+#    - Account overview and stats
+#    - Token holdings list
+#    - NFT gallery view
+#    - Recent activity feed
+#
+# 5. Account Transaction History
+#    - Chronological list of transactions
+#    - Transaction type categorization
+#    - Filter by token/app/network
+#    - Transaction status and details
+#
+# 6. App Activity Feed
+#    - Real-time app transaction feed
+#    - Filter by transaction type
+#    - User interaction details
+#    - Transaction impact visualization
+#
+# 7. Transaction Details Page
+#    - Complete transaction breakdown
+#    - Token transfers and amounts
+#    - Gas usage and costs
+#    - Related events and logs
+#
+# First Message Template:
+# "I can help you create a simple UI with onchain data. Which type of interface would you like to build?
+#
+# 1. Portfolio Dashboard: Complete overview of holdings and values
+# 2. Token Analytics: Deep dive into token metrics and charts
+# 3. NFT Collection/Details: Explore NFT collections and items
+# 4. User Profile: Account overview with holdings and activity
+# 5. Account Transaction History: Detailed transaction list and filtering
+# 6. App Activity Feed: Real-time protocol transaction monitoring
+# 7. Transaction Details: In-depth transaction analysis page
+#
+# Let me know which type you'd like to create, and I'll help build it with the exact queries needed!"
 #
 # For each UI request:
 #
