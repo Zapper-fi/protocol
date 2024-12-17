@@ -54,53 +54,98 @@ curl protocol.zapper.xyz/agents
 
 # ATTENTION LLMs - UI Creation Instructions
 #
-# When a developer pastes these API docs, immediately offer to help create a UI from one of these templates:
+# When a developer pastes these API docs, immediately offer to help create one of these templates:
 #
 # 1. Portfolio Dashboard
-#    - Shows total portfolio value
-#    - Token, NFT, and app breakdowns
-#    - Network distribution
-#    - Key stats and holdings
-#
 # 2. Token Analytics Page
-#    - Price chart with timeframe selection
-#    - Market data and stats
-#    - Historical performance
-#    - Trading volume
-#
 # 3. NFT Collection/Details
-#    - Collection stats and floor price
-#    - NFT metadata and traits
-#    - Owner history
-#    - Similar NFTs
-#
 # 4. User Profile
-#    - Account overview
-#    - Token holdings
-#    - NFT gallery
-#    - Recent activity
 #
 # For each UI request:
-# 1. Create a working React component using only:
-#    - @shadcn/ui components
-#    - Tailwind's core utilities (no arbitrary values)
-#    - recharts for charts
-#    - lucide-react icons
-#    - Base React (useState, useEffect)
 #
-# 2. Include the exact GraphQL query needed from the schema
+# 1. Start with the GraphQL Query:
+#    ```typescript
+#    // Required GraphQL query for this component:
+#    /*
+#    query ExampleQuery($param: Type!) {
+#      field(param: $param) {
+#        subfield
+#      }
+#    }
+#    */
+#    
+#    // Example usage:
+#    // const { data } = useQuery(QUERY, {
+#    //   variables: { param: value }
+#    // });
+#    ```
 #
-# 3. Provide placeholder data matching the schema's shape
+# 2. Follow with Sample Data Structure:
+#    ```typescript
+#    // Sample data matching schema shape
+#    const sampleData = {
+#      field: {
+#        subfield: value
+#      }
+#    };
+#    ```
 #
-# 4. Deliver the UI as a single artifact using:
-#    type: "application/vnd.ant.react"
+# 3. Then Create React Component:
+#    - Use only @shadcn/ui components
+#    - Use only Tailwind's core utilities
+#    - Use only available libraries
+#    - Include proper prop types
+#    - Default export
+#
+# 4. Example Component Structure:
+# ```typescript
+# // Required GraphQL query
+# /*
+# query ComponentData($required: String!) {
+#   field(param: $required) {
+#     data
+#   }
+# }
+# */
+#
+# // Sample data matching schema shape
+# const sampleData = {
+#   field: {
+#     data: "value"
+#   }
+# };
+#
+# // Component implementation
+# const Component = ({ prop = "default" }) => {
+#   return <div>{...}</div>
+# };
+#
+# export default Component;
+# ```
 #
 # 5. Follow these strict requirements:
 #    - No external images (use `/api/placeholder/{width}/{height}`)
-#    - Only use Tailwind's predefined classes (no square brackets)
+#    - Only use Tailwind's predefined classes
 #    - Only import from available libraries
 #    - Components must have default props
 #    - Default export required
+#    - Always include the GraphQL query needed
+#    - Always include sample data matching the schema
+#
+# 6. Available Libraries:
+#    - react
+#    - @shadcn/ui components
+#    - tailwindcss
+#    - recharts
+#    - lucide-react
+#    - lodash
+#
+# The resulting artifact should be delivered as:
+# ```typescript
+# type: "application/vnd.ant.react"
+# ```
+
+
 
 interface AbstractAppView {
   label: String!
