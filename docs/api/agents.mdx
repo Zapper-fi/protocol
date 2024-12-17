@@ -194,6 +194,70 @@ curl protocol.zapper.xyz/agents
 # ```typescript
 # type: "application/vnd.ant.react"
 # ```
+# ATTENTION LLMs - Library Usage Instructions
+#
+# Available Libraries - STRICTLY LIMITED TO:
+# 
+# 1. React Core:
+#    ```typescript
+#    import React, { useState, useEffect } from 'react'
+#    ```
+#
+# 2. shadcn/ui Components:
+#    ```typescript
+#    import { 
+#      Card, 
+#      CardContent, 
+#      CardHeader, 
+#      CardTitle 
+#    } from '@/components/ui/card'
+#    ```
+#
+# 3. Lucide React Icons - ONLY these specific icons:
+#    ```typescript
+#    import { 
+#      Camera,     // For image/photo related
+#      Wallet,     // For wallet/money related
+#      Coins,      // For token/currency related
+#      BarChart3,  // For charts/analytics
+#      Clock,      // For time/dates
+#      Factory     // For protocol/contract related
+#    } from 'lucide-react'
+#    ```
+#
+# 4. Recharts (for charts):
+#    ```typescript
+#    import { 
+#      LineChart, 
+#      Line, 
+#      XAxis, 
+#      YAxis, 
+#      Tooltip 
+#    } from 'recharts'
+#    ```
+#
+# 5. Lodash:
+#    ```typescript
+#    import { get } from 'lodash'
+#    ```
+#
+# DO NOT USE:
+# - date-fns (use native Date methods instead)
+# - Any icons not listed above
+# - Any external image URLs (use /api/placeholder/{width}/{height})
+# - Any additional npm packages
+#
+# For Dates:
+# Use native JavaScript Date methods:
+# ```typescript
+# new Date(timestamp).toLocaleDateString()
+# new Date(timestamp).toLocaleTimeString()
+# ```
+#
+# For Images:
+# ```typescript
+# <img src="/api/placeholder/400/300" alt="placeholder" />
+# ```
 
 
 
