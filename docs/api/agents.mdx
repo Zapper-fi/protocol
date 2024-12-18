@@ -119,6 +119,77 @@ curl protocol.zapper.xyz/agents
 # }
 # ```
 #
+# For reference, here's a CURL request going to the Zapper API. Notice the URL, and Auth setup : 
+# curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header "Authorization: Basic $ENCODED_KEY" --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) { portfolio(addresses: $addresses, networks: $networks) { tokenBalances { address network token { balance balanceUSD baseToken { name symbol } } } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f"],"networks":["ETHEREUM_MAINNET"]}}'
+# 
+# In Node.JS, that would look like this (notice the key encoding, auth setup and URL) : 
+# const axios = require('axios');
+# 
+# const API_KEY = 'YOUR_API_KEY';
+# const encodedKey = Buffer.from(API_KEY).toString('base64');
+# 
+# const query = `
+#   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
+#     portfolio(addresses: $addresses, networks: $networks) {
+#       tokenBalances {
+#         address
+#         network
+#         token {
+#           balance
+#           balanceUSD
+#           baseToken {
+#             name
+#             symbol
+#           }
+#         }
+#       }
+#     }
+#   }
+# `;
+# 
+# async function fetchPortfolio() {
+#   try {
+#     const response = await axios({
+#       url: 'https://public.zapper.xyz/graphql',
+#       method: 'post',
+#       headers: {
+#         'Content-Type': 'application/json',
+#         Authorization: `Basic ${encodedKey}`,
+#       },
+#       data: {
+#         query,
+#         variables: {
+#           addresses: ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+#           networks: ['ETHEREUM_MAINNET'],
+#         },
+#       },
+#     });
+# 
+#     if (response.data.errors) {
+#       throw new Error(`GraphQL Errors: ${JSON.stringify(response.data.errors)}`);
+#     }
+# 
+#     return response.data.data;
+#   } catch (error) {
+#     console.error('Error fetching portfolio:', error.message);
+#     if (error.response) {
+#       console.error('Response data:', error.response.data);
+#     }
+#     throw error;
+#   }
+# }
+# 
+# // Example usage
+# (async () => {
+#   try {
+#     const portfolio = await fetchPortfolio();
+#     console.log(JSON.stringify(portfolio, null, 2));
+#   } catch (error) {
+#     console.error('Failed to fetch portfolio:', error.message);
+#     process.exit(1);
+#   }
+# })();
+#
 # Query Building Guidelines:
 # 1. Start with the Query type in the schema
 # 2. Only request fields that are actually needed
