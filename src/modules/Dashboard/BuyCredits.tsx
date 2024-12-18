@@ -292,6 +292,7 @@ export function BuyCredits() {
               if (discountPercent > 0) {
                 const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
                 const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                if (!tierInfo) return null;
                 return (
                   <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
                     <span className="text-sm">{tierInfo.label} Credits Discount</span>
