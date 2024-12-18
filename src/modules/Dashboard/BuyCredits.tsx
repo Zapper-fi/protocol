@@ -242,7 +242,7 @@ export function BuyCredits() {
           </span>
           <span>
             <span className="text--success alert--success rounded-md px-2 py-1 font-bold">33% off</span> for all credits
-            over 10M ($10,000)
+            over 10M ($7,750)
           </span>
           <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
@@ -292,7 +292,6 @@ export function BuyCredits() {
               if (discountPercent > 0) {
                 const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
                 const tierInfo = DISCOUNT_TIERS[tier.creditRate];
-                if (!tierInfo) return null;
                 return (
                   <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
                     <span className="text-sm">{tierInfo.label} Credits Discount</span>
