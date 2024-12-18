@@ -13,8 +13,8 @@ const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
 
 const DISCOUNT_TIERS = {
-  0.8: { label: '15M', threshold: 15_000_000 },
-  0.7: { label: '50M', threshold: 50_000_000 },
+  0.75: { label: '$1,000', threshold: 1_000_000 }, // 25% off
+  0.67: { label: '$10,000', threshold: 10_000_000 }, // 33% off
 };
 
 const QUERY = gql`
@@ -235,14 +235,16 @@ export function BuyCredits() {
       <div>
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
+          <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
           <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">20% off</span> for all credits
-            over 15M
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">25% off</span> for all credits
+            over 1M
           </span>
           <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">30% off</span> for all credits
-            over 50M
+            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">33% off</span> for all credits
+            over 10M
           </span>
+          <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
       </div>
 
@@ -290,6 +292,7 @@ export function BuyCredits() {
               if (discountPercent > 0) {
                 const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
                 const tierInfo = DISCOUNT_TIERS[tier.creditRate];
+                if (!tierInfo) return null;
                 return (
                   <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
                     <span className="text-sm">{tierInfo.label} Credits Discount</span>
