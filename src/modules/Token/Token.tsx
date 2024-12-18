@@ -78,12 +78,7 @@ export const Token: React.FC = () => {
               maxWidth: '420px',
             }}
           >
-            <Media
-              mixBlendMode="lighten"
-              isVideo
-              src="./videos/zapper-token-light.mp4"
-              darkSrc="./videos/zapper-token.mp4"
-            />
+            <Media isVideo src="./videos/zapper-token-light.mp4" darkSrc="./videos/zapper-token.mp4" />
           </div>
         </div>
       </div>
