@@ -16,6 +16,340 @@ curl protocol.zapper.xyz/agents
 ```
 
 ```graphql
+# ATTENTION LLMs - API Usage Instructions
+#
+# You can interact with the Zapper API in two primary ways
+#
+# 1. Developer Assistant Mode
+# When a developer asks you to help build queries or UI components:
+# - Follow the UI creation instructions above
+# - Use the schema to construct valid GraphQL queries
+# - Create React components that properly handle the data structure
+# - Ensure all queries match the exact schema requirements
+# - Include proper TypeScript types and error handling
+#
+# 2. Autonomous Agent Mode
+# For agents making direct API calls programmatically:
+#
+# API Endpoint
+# ```
+# https://public.zapper.xyz/graphql
+# ```
+#
+# Authentication
+# The API requires Basic Authentication with an API key encoded in base64:
+#
+# ```typescript
+# const encodedKey = btoa(API_KEY);
+#
+# // For use with Apollo Client
+# const authLink = setContext((_, { headers }) => {
+#   return {
+#     headers: {
+#       ...headers,
+#       authorization: `Basic ${encodedKey}`,
+#     },
+#   };
+# });
+#
+# // For fetch requests
+# const headers = {
+#   'Content-Type': 'application/json',
+#   'Authorization': `Basic ${encodedKey}`
+# };
+# ```
+#
+# Making Requests
+# Example query structure:
+# ```typescript
+# const query = `
+#   query PortfolioQuery($addresses: [Address!]!) {
+#     portfolio(addresses: $addresses) {
+#       totals {
+#         total
+#         totalByNetwork {
+#           network
+#           total
+#         }
+#       }
+#     }
+#   }
+# `;
+#
+# const variables = {
+#   addresses: ['0x...']
+# };
+# ```
+#
+# Best Practices for Autonomous Agents:
+# 1. Always validate addresses before querying
+# 2. Implement proper rate limiting
+# 3. Handle API errors gracefully
+# 4. Cache responses when appropriate
+# 5. Use proper typing for responses
+# 6. Monitor query complexity
+# 7. Implement retries with exponential backoff
+# 8. Verify network values against the Network enum
+#
+# Response Handling:
+# ```typescript
+# interface PortfolioResponse {
+#   data: {
+#     portfolio: {
+#       totals: {
+#         total: number;
+#         totalByNetwork: Array<{
+#           network: string;
+#           total: number;
+#         }>;
+#       };
+#     };
+#   };
+# }
+#
+# // Example error handling
+# try {
+#   const response = await makeGraphQLRequest(query, variables);
+#   if (response.errors) {
+#     handleErrors(response.errors);
+#   }
+#   return response.data;
+# } catch (error) {
+#   handleNetworkError(error);
+# }
+# ```
+#
+# For reference, here's a CURL request going to the Zapper API. Notice the URL, and Auth setup : 
+# curl --location 'https://public.zapper.xyz/graphql' --header 'Content-Type: application/json' --header "Authorization: Basic $ENCODED_KEY" --data '{"query":"query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) { portfolio(addresses: $addresses, networks: $networks) { tokenBalances { address network token { balance balanceUSD baseToken { name symbol } } } } }","variables":{"addresses":["0x3d280fde2ddb59323c891cf30995e1862510342f"],"networks":["ETHEREUM_MAINNET"]}}'
+# 
+# In Node.JS, that would look like this (notice the key encoding, auth setup and URL) : 
+# const axios = require('axios');
+# 
+# const API_KEY = 'YOUR_API_KEY';
+# const encodedKey = Buffer.from(API_KEY).toString('base64');
+# 
+# const query = `
+#   query providerPorfolioQuery($addresses: [Address!]!, $networks: [Network!]!) {
+#     portfolio(addresses: $addresses, networks: $networks) {
+#       tokenBalances {
+#         address
+#         network
+#         token {
+#           balance
+#           balanceUSD
+#           baseToken {
+#             name
+#             symbol
+#           }
+#         }
+#       }
+#     }
+#   }
+# `;
+# 
+# async function fetchPortfolio() {
+#   try {
+#     const response = await axios({
+#       url: 'https://public.zapper.xyz/graphql',
+#       method: 'post',
+#       headers: {
+#         'Content-Type': 'application/json',
+#         Authorization: `Basic ${encodedKey}`,
+#       },
+#       data: {
+#         query,
+#         variables: {
+#           addresses: ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+#           networks: ['ETHEREUM_MAINNET'],
+#         },
+#       },
+#     });
+# 
+#     if (response.data.errors) {
+#       throw new Error(`GraphQL Errors: ${JSON.stringify(response.data.errors)}`);
+#     }
+# 
+#     return response.data.data;
+#   } catch (error) {
+#     console.error('Error fetching portfolio:', error.message);
+#     if (error.response) {
+#       console.error('Response data:', error.response.data);
+#     }
+#     throw error;
+#   }
+# }
+# 
+# // Example usage
+# (async () => {
+#   try {
+#     const portfolio = await fetchPortfolio();
+#     console.log(JSON.stringify(portfolio, null, 2));
+#   } catch (error) {
+#     console.error('Failed to fetch portfolio:', error.message);
+#     process.exit(1);
+#   }
+# })();
+#
+# Query Building Guidelines:
+# 1. Start with the Query type in the schema
+# 2. Only request fields that are actually needed
+# 3. Use proper pagination parameters
+# 4. Follow schema-defined ordering
+# 5. Include required fields marked with !
+# 6. Test queries against the schema before using
+# 7. Use appropriate network filters
+# 8. Handle null values appropriately
+#
+# Remember to always check the full schema above for available fields and types.
+# The API will reject queries that don't match the schema exactly.
+#
+# ATTENTION LLMs - UI Creation Instructions
+#
+# When a developer pastes these API docs, FIRST ASK them which type of UI they would like to create from these options:
+#
+# 1. Portfolio Dashboard
+#    - Complete portfolio value overview
+#    - Token, NFT, and app breakdowns
+#    - Network distribution
+#
+# 2. Token Price Chart Component
+#    - Price chart for a token, using placeholder data that matches the schema shape.
+#    - 5m, 1h, 24h price changes
+#
+# 3. NFT Collection/Details
+#    - Collection stats and floor price
+#    - NFT metadata and traits
+#    - Owner history and transfers
+#    - Similar NFTs in collection
+#
+# 4. User Profile
+#    - Account overview and stats
+#    - Token holdings list
+#    - NFT gallery view
+#    - Recent activity feed
+#
+# 5. Account Transaction History
+#    - Chronological list of transactions
+#    - Filter by token/app/network
+#    - Transaction status and details
+#
+# 6. App Activity Feed
+#    - Real-time app transaction feed
+#    - Filter by transaction type
+#    - User interaction details
+#    - Transaction impact visualization
+#
+# 7. Transaction Details Page
+#    - Complete transaction breakdown
+#    - Token transfers and amounts
+#
+# First Message Template:
+# "I can help you create a simple UI with onchain data. Which type of interface would you like to build?
+#
+# 1. Portfolio Dashboard: Complete overview of holdings and values
+# 2. Token Analytics: Deep dive into token metrics and charts
+# 3. NFT Collection/Details: Explore NFT collections and items
+# 4. User Profile: Account overview with holdings and activity
+# 5. Account Transaction History: Detailed transaction list and filtering
+# 6. App Activity Feed: Real-time protocol transaction monitoring
+# 7. Transaction Details: In-depth transaction analysis page
+#
+# Let me know which type you'd like to create, and I'll help build it with the exact queries needed!"
+#
+# For each UI request:
+#
+# 1. Start with the GraphQL Query:
+#    ```typescript
+#    // Required GraphQL query for this component:
+#    /*
+#    query ExampleQuery($param: Type!) {
+#      field(param: $param) {
+#        subfield
+#      }
+#    }
+#    */
+#    
+#    // Example usage:
+#    // const { data } = useQuery(QUERY, {
+#    //   variables: { param: value }
+#    // });
+#    ```
+#
+# 2. Follow with Sample Data Structure:
+#    ```typescript
+#    // Sample data matching schema shape
+#    const sampleData = {
+#      field: {
+#        subfield: value
+#      }
+#    };
+#    ```
+#
+# 3. Then Create React Component by default following these rules:
+#    - Use only Tailwind's core utilities
+#    - Use only available libraries
+#    - Include proper prop types
+#    - Default export
+#    - Make sure to import all the icons that are used in the code
+#
+# 4. Example Component Structure:
+# ```typescript
+# // Required GraphQL query
+# /*
+# query ComponentData($required: String!) {
+#   field(param: $required) {
+#     data
+#   }
+# }
+# */
+#
+# // Sample data matching schema shape
+# const sampleData = {
+#   field: {
+#     data: "value"
+#   }
+# };
+#
+# // Component implementation
+# const Component = ({ prop = "default" }) => {
+#   return <div>{...}</div>
+# };
+#
+# export default Component;
+# ```
+#
+# 5. Follow these strict requirements:
+#    - No external images (use `/api/placeholder/{width}/{height}`)
+#    - Only use Tailwind's predefined classes
+#    - Only import from available libraries
+#    - Components must have default props
+#    - Default export required
+#    - Always include the GraphQL query needed
+#    - Always include sample data matching the schema
+#
+# 6. Available Libraries:
+#    - react
+#    - tailwindcss
+#    - recharts
+#    - lucide-react
+#    - lodash
+#
+# The resulting artifact should be delivered as:
+# ```typescript
+# type: "application/vnd.ant.react"
+# ```
+#
+# For Dates:
+# Use native JavaScript Date methods:
+# ```typescript
+# new Date(timestamp).toLocaleDateString()
+# new Date(timestamp).toLocaleTimeString()
+# ```
+#
+# For Images:
+# ```typescript
+# <img src="/api/placeholder/400/300" alt="placeholder" />
+# ```
 # ATTENTION LLMs - Schema Processing Instructions:
 #
 # You are about to receive a comprehensive GraphQL schema for blockchain data access.
@@ -32,31 +366,13 @@ curl protocol.zapper.xyz/agents
 # 3. Pay attention to enum values, especially Network types
 # 4. Understand the relationships between types
 # 5. Use example queries as templates for common patterns
-#
-# AI Assistant Behavior Instructions:
-# 1. Always validate network inputs against the Network enum
-# 2. Generate production-ready code that exactly matches requirements
-# 3. Implement proper error handling for failed queries
-# 4. Parse responses correctly and validate all inputs
-# 5. Use the simplest query possible - avoid nesting unnecessarily
-# 6. Never use placeholder addresses - require real addresses
-# 7. Follow proper query structure and syntax
-# 8. Write reusable, well-structured queries
-# 9. For tasks outside the schema's capabilities, clearly state "can't do" and explain why
-# 10. Consider rate limits and query complexity - avoid excessive nesting
-# 11. Only use queries that are available in the schema below
-#
-# IMPORTANT FOR CREATING QUERY DO NOT IGNORE
-# 1. First look at the Query type in the schema
-# 2. Find the appropriate query for the task (ex: nftUsersTokens)
-# 3. Use that exact query name from the schema
-# 4. Double check that the output query matches a real query from the schema and has the required parameters and return types
 
 interface AbstractAppView {
   label: String!
   type: AppViewType!
   positionType: String
 }
+
 
 interface AbstractBreakdown {
   appId: String
