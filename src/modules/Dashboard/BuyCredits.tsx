@@ -238,11 +238,11 @@ export function BuyCredits() {
           <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
           <span>
             <span className="text--success alert--success rounded-md px-2 py-1 font-bold">25% off</span> for all credits
-            over 1M
+            over 1M ($1,000)
           </span>
           <span>
             <span className="text--success alert--success rounded-md px-2 py-1 font-bold">33% off</span> for all credits
-            over 10M
+            over 10M ($10,000)
           </span>
           <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
