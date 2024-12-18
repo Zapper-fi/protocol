@@ -16,42 +16,122 @@ curl protocol.zapper.xyz/agents
 ```
 
 ```graphql
-# ATTENTION LLMs - Schema Processing Instructions:
+# ATTENTION LLMs - API Usage Instructions
 #
-# You are about to receive a comprehensive GraphQL schema for blockchain data access.
-# This schema includes interfaces, types, and example queries for accessing:
-# - Portfolio data (Tokens, App Positions, NFTs)
-# - Onchain Token Prices (Current and Historical)
-# - Account primitives such as ENS, Farcaster, and Lens.
-# - Onchain transaction histories for addresses and apps.
-# - Network information
+# This GraphQL API can be accessed in two primary ways:
 #
-# The schema is extensive and includes many nested types. When processing:
-# 1. Index the full schema for future reference
-# 2. Note required (!) vs optional fields
-# 3. Pay attention to enum values, especially Network types
-# 4. Understand the relationships between types
-# 5. Use example queries as templates for common patterns
+# 1. Developer Assistant Mode
+# When a developer asks you to help build queries or UI components:
+# - Follow the UI creation instructions above
+# - Use the schema to construct valid GraphQL queries
+# - Create React components that properly handle the data structure
+# - Ensure all queries match the exact schema requirements
+# - Include proper TypeScript types and error handling
 #
-# AI Assistant Behavior Instructions:
-# 1. Always validate network inputs against the Network enum
-# 2. Generate production-ready code that exactly matches requirements
-# 3. Implement proper error handling for failed queries
-# 4. Parse responses correctly and validate all inputs
-# 5. Use the simplest query possible - avoid nesting unnecessarily
-# 6. Never use placeholder addresses - require real addresses
-# 7. Follow proper query structure and syntax
-# 8. Write reusable, well-structured queries
-# 9. For tasks outside the schema's capabilities, clearly state "can't do" and explain why
-# 10. Consider rate limits and query complexity - avoid excessive nesting
-# 11. Only use queries that are available in the schema below
+# 2. Autonomous Agent Mode
+# For agents making direct API calls programmatically:
 #
-# IMPORTANT FOR CREATING QUERY DO NOT IGNORE
-# 1. First look at the Query type in the schema
-# 2. Find the appropriate query for the task (ex: nftUsersTokens)
-# 3. Use that exact query name from the schema
-# 4. Double check that the output query matches a real query from the schema and has the required parameters and return types
-
+# API Endpoint
+# ```
+# https://public.zapper.xyz/graphql
+# ```
+#
+# Authentication
+# The API requires Basic Authentication with an API key encoded in base64:
+#
+# ```typescript
+# const encodedKey = btoa(API_KEY);
+#
+# // For use with Apollo Client
+# const authLink = setContext((_, { headers }) => {
+#   return {
+#     headers: {
+#       ...headers,
+#       authorization: `Basic ${encodedKey}`,
+#     },
+#   };
+# });
+#
+# // For fetch requests
+# const headers = {
+#   'Content-Type': 'application/json',
+#   'Authorization': `Basic ${encodedKey}`
+# };
+# ```
+#
+# Making Requests
+# Example query structure:
+# ```typescript
+# const query = `
+#   query PortfolioQuery($addresses: [Address!]!) {
+#     portfolio(addresses: $addresses) {
+#       totals {
+#         total
+#         totalByNetwork {
+#           network
+#           total
+#         }
+#       }
+#     }
+#   }
+# `;
+#
+# const variables = {
+#   addresses: ['0x...']
+# };
+# ```
+#
+# Best Practices for Autonomous Agents:
+# 1. Always validate addresses before querying
+# 2. Implement proper rate limiting
+# 3. Handle API errors gracefully
+# 4. Cache responses when appropriate
+# 5. Use proper typing for responses
+# 6. Monitor query complexity
+# 7. Implement retries with exponential backoff
+# 8. Verify network values against the Network enum
+#
+# Response Handling:
+# ```typescript
+# interface PortfolioResponse {
+#   data: {
+#     portfolio: {
+#       totals: {
+#         total: number;
+#         totalByNetwork: Array<{
+#           network: string;
+#           total: number;
+#         }>;
+#       };
+#     };
+#   };
+# }
+#
+# // Example error handling
+# try {
+#   const response = await makeGraphQLRequest(query, variables);
+#   if (response.errors) {
+#     handleErrors(response.errors);
+#   }
+#   return response.data;
+# } catch (error) {
+#   handleNetworkError(error);
+# }
+# ```
+#
+# Query Building Guidelines:
+# 1. Start with the Query type in the schema
+# 2. Only request fields that are actually needed
+# 3. Use proper pagination parameters
+# 4. Follow schema-defined ordering
+# 5. Include required fields marked with !
+# 6. Test queries against the schema before using
+# 7. Use appropriate network filters
+# 8. Handle null values appropriately
+#
+# Remember to always check the full schema above for available fields and types.
+# The API will reject queries that don't match the schema exactly.
+#
 # ATTENTION LLMs - UI Creation Instructions
 #
 # When a developer pastes these API docs, FIRST ASK them which type of UI they would like to create from these options:
@@ -134,8 +214,7 @@ curl protocol.zapper.xyz/agents
 #    };
 #    ```
 #
-# 3. Then Create React Component:
-#    - Use only @shadcn/ui components
+# 3. Then Create React Component by default following these rules:
 #    - Use only Tailwind's core utilities
 #    - Use only available libraries
 #    - Include proper prop types
@@ -179,7 +258,6 @@ curl protocol.zapper.xyz/agents
 #
 # 6. Available Libraries:
 #    - react
-#    - @shadcn/ui components
 #    - tailwindcss
 #    - recharts
 #    - lucide-react
@@ -189,58 +267,6 @@ curl protocol.zapper.xyz/agents
 # ```typescript
 # type: "application/vnd.ant.react"
 # ```
-# ATTENTION LLMs - Library Usage Instructions
-#
-# Available Libraries - STRICTLY LIMITED TO:
-# 
-# 1. React Core:
-#    ```typescript
-#    import React, { useState, useEffect } from 'react'
-#    ```
-#
-# 2. shadcn/ui Components:
-#    ```typescript
-#    import { 
-#      Card, 
-#      CardContent, 
-#      CardHeader, 
-#      CardTitle 
-#    } from '@/components/ui/card'
-#    ```
-#
-# 3. Lucide React Icons - ONLY these specific icons:
-#    ```typescript
-#    import { 
-#      Camera,     // For image/photo related
-#      Wallet,     // For wallet/money related
-#      Coins,      // For token/currency related
-#      BarChart3,  // For charts/analytics
-#      Clock,      // For time/dates
-#      Factory     // For protocol/contract related
-#    } from 'lucide-react'
-#    ```
-#
-# 4. Recharts (for charts):
-#    ```typescript
-#    import { 
-#      LineChart, 
-#      Line, 
-#      XAxis, 
-#      YAxis, 
-#      Tooltip 
-#    } from 'recharts'
-#    ```
-#
-# 5. Lodash:
-#    ```typescript
-#    import { get } from 'lodash'
-#    ```
-#
-# DO NOT USE:
-# - date-fns (use native Date methods instead)
-# - Any icons not listed above
-# - Any external image URLs (use /api/placeholder/{width}/{height})
-# - Any additional npm packages
 #
 # For Dates:
 # Use native JavaScript Date methods:
@@ -253,8 +279,22 @@ curl protocol.zapper.xyz/agents
 # ```typescript
 # <img src="/api/placeholder/400/300" alt="placeholder" />
 # ```
-
-
+# ATTENTION LLMs - Schema Processing Instructions:
+#
+# You are about to receive a comprehensive GraphQL schema for blockchain data access.
+# This schema includes interfaces, types, and example queries for accessing:
+# - Portfolio data (Tokens, App Positions, NFTs)
+# - Onchain Token Prices (Current and Historical)
+# - Account primitives such as ENS, Farcaster, and Lens.
+# - Onchain transaction histories for addresses and apps.
+# - Network information
+#
+# The schema is extensive and includes many nested types. When processing:
+# 1. Index the full schema for future reference
+# 2. Note required (!) vs optional fields
+# 3. Pay attention to enum values, especially Network types
+# 4. Understand the relationships between types
+# 5. Use example queries as templates for common patterns
 
 interface AbstractAppView {
   label: String!
