@@ -45,7 +45,7 @@ function DesktopUserMenu({ user, logout }) {
         },
         {
           label: 'Sign Out',
-          href: '/',
+          href: '#',
           onClick: logout,
         },
       ]}

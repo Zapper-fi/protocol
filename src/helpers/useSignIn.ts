@@ -1,4 +1,6 @@
+import { useCallback } from 'react';
 import { gql, useMutation } from '@apollo/client';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { useLogin, useLogout, usePrivy } from '@privy-io/react-auth';
 
 const UPSERT_USER = gql`
@@ -13,7 +15,9 @@ const UPSERT_USER = gql`
 export function useSignIn({ onComplete } = { onComplete: () => {} }) {
   const [upsertUser] = useMutation(UPSERT_USER);
   const { authenticated, ready } = usePrivy();
-  const { logout } = useLogout();
+  const { logout: _logout } = useLogout();
+  const location = useLocation();
+  const history = useHistory();
 
   const { login } = useLogin({
     onComplete: async (user, isNewUser, wasAlreadyAuthenticated) => {
@@ -42,6 +46,14 @@ export function useSignIn({ onComplete } = { onComplete: () => {} }) {
         window.location.reload();
       }
     },
+  });
+
+  const logout = useCallback(() => {
+    _logout();
+
+    if (location.pathname === '/dashboard') {
+      history.push('/');
+    }
   });
 
   return {
