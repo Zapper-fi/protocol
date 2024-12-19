@@ -8,7 +8,8 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
-import { RedirectToHome } from '@site/src/components/RedirectToHome';
+import { useEffect } from 'react';
+import { useSignIn } from '@site/src/helpers/useSignIn';
 
 function Dashboard() {
   return (
@@ -19,7 +20,7 @@ function Dashboard() {
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
-              <RedirectToHome />
+              <SignInPrompt />
             </SignedOut>
 
             <SignedIn>
@@ -49,6 +50,18 @@ function Dashboard() {
       </div>
     </Layout>
   );
+}
+
+function SignInPrompt() {
+  const { ready, login } = useSignIn();
+
+  useEffect(() => {
+    if (ready) {
+      login();
+    }
+  }, [ready, login]);
+
+  return null;
 }
 
 export default Dashboard;
