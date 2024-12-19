@@ -518,6 +518,143 @@ The portfolio query returns a nested structure that can include:
 }
 ```
 
+## Non-EVM Balance Computation
+
+For non-EVM networks like Bitcoin and Solana, to ensure fetching the most up to date portfolio data, balances need to be computed asynchronously, before being fetched. The following mutations and query are specifically designed for that purpose.
+
+### computeTokenBalances
+
+Initiates a job to compute token balances for a wallet.
+
+The input type for both mutations is `PortfolioInput`:
+
+```graphql
+input PortfolioInput {
+  """The wallet addresses for which to fetch balances"""
+  addresses: [Address!]!
+  """The networks for which to fetch balances"""
+  networks: [Network!]
+  """The app slugs for which to fetch balances"""
+  appIds: [String!]
+  flagAsStale: Boolean
+}
+```
+
+#### Example Variables
+
+```js
+{
+  "input": {
+    "addresses": ["Habp5bncMSsBC3vkChyebepym5dcTNRYeg2LVG464E96"],
+    "networks": ["BITCOIN_MAINNET", "SOLANA_MAINNET"]
+  }
+}
+```
+
+#### Example Mutation
+
+```graphql
+mutation ComputeTokenBalances($input: PortfolioInput!) {
+  computeTokenBalances(input: $input) {
+    jobId
+  }
+}
+```
+
+#### Example Response
+
+```js
+{
+  "data": {
+    "computeTokenBalances": {
+      "jobId": "38b53084-9e84-46fd-a5fc-e7463baba936"
+    }
+  }
+}
+```
+
+### computeAppBalances
+
+Initiates a job to compute app balances for a wallet.
+
+#### Example Variables
+
+```js
+{
+  "input": {
+    "addresses": ["Habp5bncMSsBC3vkChyebepym5dcTNRYeg2LVG464E96"],
+    "networks": ["SOLANA_MAINNET"]
+  }
+}
+```
+
+#### Example Mutation
+
+```graphql
+mutation ComputeAppBalances($input: PortfolioInput!) {
+  computeAppBalances(input: $input) {
+    jobId
+  }
+}
+```
+
+#### Example Response
+
+```js
+{
+  "data": {
+    "computeAppBalances": {
+      "jobId": "176d50a0-c42b-49b1-a263-c1c4a63d8a3c"
+    }
+  }
+}
+```
+
+### balanceJobStatus
+
+Query the status of a balance computation job.
+
+#### Example Variables
+
+```js
+{
+  "jobId": "176d50a0-c42b-49b1-a263-c1c4a63d8a3c"
+}
+```
+
+#### Example Query
+
+```graphql
+query BalanceJobStatus($jobId: String!) {
+  balanceJobStatus(jobId: $jobId) {
+    jobId
+    status
+  }
+}
+```
+
+#### Example Response
+
+```js
+{
+  "data": {
+    "balanceJobStatus": {
+      "jobId": "176d50a0-c42b-49b1-a263-c1c4a63d8a3c",
+      "status": "completed"
+    }
+  }
+}
+```
+
+#### Response Fields
+
+| Field      | Description                                                             | Type      |
+|------------|-------------------------------------------------------------------------|-----------|
+| `jobId`    | Unique identifier for the computation job                               | `ID!`     |
+| `status`   | Current status of the job               | `String!` |
+
+Note that these mutations and query are only necessary for Bitcoin and Solana addresses. For EVM-compatible networks, you can directly use the portfolio query described in the previous sections.
+
 ## Best Practices
 
 1. Always specify required fields to minimize response size
