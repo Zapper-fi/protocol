@@ -10,6 +10,7 @@ import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
 import { useEffect } from 'react';
 import { useSignIn } from '@site/src/helpers/useSignIn';
+import { useModalStatus } from '@privy-io/react-auth';
 
 function Dashboard() {
   return (
@@ -54,12 +55,13 @@ function Dashboard() {
 
 function SignInPrompt() {
   const { ready, login } = useSignIn();
+  const { isOpen } = useModalStatus();
 
   useEffect(() => {
-    if (ready) {
-      login();
-    }
-  }, [ready, login]);
+    if (!ready || isOpen) return;
+
+    login();
+  }, [ready, isOpen, login]);
 
   return null;
 }
