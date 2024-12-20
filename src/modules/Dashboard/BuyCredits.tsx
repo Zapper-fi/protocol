@@ -13,11 +13,6 @@ import clsx from 'clsx';
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
 
-const DISCOUNT_TIERS = {
-  0.75: { label: '$1,000', threshold: 1_000_000 }, // 25% off
-  0.67: { label: '$10,000', threshold: 10_000_000 }, // 33% off
-};
-
 const QUERY = gql`
   query BuyCredits {
     apiClientById {
@@ -247,7 +242,7 @@ export function BuyCredits() {
               <p>
                 <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
                 <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
-                <span className="font-bold alert--success rounded-md px-2 py-1 text-success-default">
+                <span className="alert--success rounded-md px-2 py-1 font-bold text-success-default">
                   {formatPercentage(rate)} off
                 </span>
               </p>
@@ -292,24 +287,22 @@ export function BuyCredits() {
             </div>
           </div>
           <div className="mb-6 flex flex-col gap-2">
-            <div className="flex justify-between">
-              <span className="text-sm">Subtotal</span>
-              <span className="text-sm">{formatUSD(price + savings)}</span>
+            <div className="flex justify-between text-sm">
+              <span>Subtotal</span>
+              <span>{formatUSD(price + savings)}</span>
             </div>
-            {breakdown.map((tier) => {
-              const discountPercent = (1 - tier.creditRate) * 100;
-              if (discountPercent > 0) {
-                const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
-                const tierInfo = DISCOUNT_TIERS[tier.creditRate];
-                return (
-                  <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
-                    <span className="text-sm">{tierInfo.label} Credits Discount</span>
-                    <span className="text--success text-sm font-bold">-{formatUSD(tierSavings)}</span>
-                  </div>
-                );
-              }
-              return null;
-            })}
+
+            {savings > 0 && (
+              <div className="flex justify-between text-sm">
+                <span>Discount</span>
+                <span>
+                  <span className="alert--success rounded-md px-2 py-1 text-success-default">
+                    {formatPercentage(savings / price)} off
+                  </span>{' '}
+                  <span className="font-semibold text-success-default">-{formatUSD(savings)}</span>
+                </span>
+              </div>
+            )}
             <hr style={{ margin: 0 }} />
             <div className="flex justify-between">
               <span>Total</span>
