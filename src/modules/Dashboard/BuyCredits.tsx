@@ -240,14 +240,14 @@ export function BuyCredits() {
       <div>
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
-          <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
+          <span className="text--success font-bold">🎄 Holiday Season Pricing! 🎄</span>
           {discountOffers.map(({ amount, rate }) => (
             <div key={amount}>
               <h6 className="mb-2">Spend {formatUSD(amount)} or more</h6>
               <p>
                 <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
                 <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
-                <span className="alert--success rounded-md px-2 py-1 text-success-default">
+                <span className="font-bold alert--success rounded-md px-2 py-1 text-success-default">
                   {formatPercentage(rate)} off
                 </span>
               </p>
