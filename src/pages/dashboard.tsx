@@ -8,7 +8,7 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
-import { RedirectToHome } from '@site/src/components/RedirectToHome';
+import { RedirectToLogin } from '@site/src/components/RedirectToLogin';
 
 function Dashboard() {
   return (
@@ -19,7 +19,7 @@ function Dashboard() {
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
-              <RedirectToHome />
+              <RedirectToLogin />
             </SignedOut>
 
             <SignedIn>
