@@ -11,3 +11,11 @@ export const formatUSD = (value: number) => {
 export const formatNumber = (num: number) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
+
+export const formatPercentage = (value: number) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'percent',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(value);
+};

@@ -4,7 +4,7 @@ import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
-import { formatUSD } from '@site/src/helpers/formatters';
+import { formatPercentage, formatUSD } from '@site/src/helpers/formatters';
 import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
@@ -102,8 +102,8 @@ const InfoIcon = ({ message }) => {
 };
 
 const discountOffers = [
-  { amount: '1M', rate: '25%', price: '$1,000' },
-  { amount: '10M', rate: '33%', price: '$7,750' },
+  { amount: 1000, rate: 0.25 },
+  { amount: 10000, rate: 0.33 },
 ];
 
 export function BuyCredits() {
@@ -241,11 +241,17 @@ export function BuyCredits() {
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
           <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
-          {discountOffers.map((offer) => (
-            <span key={offer.amount}>
-              <span className="text--success alert--success rounded-md px-2 py-1 font-bold">{offer.rate} off</span> for
-              all credits over {offer.amount} ({offer.price})
-            </span>
+          {discountOffers.map(({ amount, rate }) => (
+            <div key={amount}>
+              <h6 className="mb-2">Spend {formatUSD(amount)} or more</h6>
+              <p>
+                <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
+                <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
+                <span className="rounded-md bg-green-950 px-2 py-1 text-success-default">
+                  {formatPercentage(rate)} off
+                </span>
+              </p>
+            </div>
           ))}
           <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
