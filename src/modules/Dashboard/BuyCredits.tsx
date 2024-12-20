@@ -247,7 +247,7 @@ export function BuyCredits() {
               <p>
                 <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
                 <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
-                <span className="rounded-md bg-green-950 px-2 py-1 text-success-default">
+                <span className="alert--success rounded-md px-2 py-1 text-success-default">
                   {formatPercentage(rate)} off
                 </span>
               </p>
