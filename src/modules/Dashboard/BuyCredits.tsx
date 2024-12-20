@@ -101,6 +101,11 @@ const InfoIcon = ({ message }) => {
   );
 };
 
+const discountOffers = [
+  { amount: '1M', rate: '25%', price: '$1,000' },
+  { amount: '10M', rate: '33%', price: '$7,750' },
+];
+
 export function BuyCredits() {
   const { user } = usePrivy();
   const { data } = useAuthQuery(QUERY);
@@ -236,14 +241,12 @@ export function BuyCredits() {
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
           <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
-          <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">25% off</span> for all credits
-            over 1M ($1,000)
-          </span>
-          <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">33% off</span> for all credits
-            over 10M ($7,750)
-          </span>
+          {discountOffers.map((offer) => (
+            <span key={offer.amount}>
+              <span className="text--success alert--success rounded-md px-2 py-1 font-bold">{offer.rate} off</span> for
+              all credits over {offer.amount} ({offer.price})
+            </span>
+          ))}
           <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
       </div>
