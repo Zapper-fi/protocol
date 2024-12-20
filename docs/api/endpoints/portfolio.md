@@ -517,10 +517,9 @@ The portfolio query returns a nested structure that can include:
   }
 }
 ```
+## Balance Computation
 
-## Non-EVM Balance Computation
-
-For non-EVM networks like Bitcoin and Solana, to ensure fetching the most up to date portfolio data, balances need to be computed asynchronously, before being fetched. The following mutations and query are specifically designed for that purpose.
+For any addresses that have never been tracked by Zapper before, balances need to be computed asynchronously before being fetched to ensure the most up-to-date portfolio data. The following mutations and query are designed for this purpose.
 
 ### computeTokenBalances
 
@@ -582,8 +581,11 @@ Initiates a job to compute app balances for a wallet.
 ```js
 {
   "input": {
-    "addresses": ["Habp5bncMSsBC3vkChyebepym5dcTNRYeg2LVG464E96"],
-    "networks": ["SOLANA_MAINNET"]
+    "addresses": [
+      "0x123...", // EVM address being tracked for first time
+      "Habp5bncMSsBC3vkChyebepym5dcTNRYeg2LVG464E96" // Solana address
+    ],
+    "networks": ["ETHEREUM_MAINNET", "SOLANA_MAINNET"]
   }
 }
 ```
@@ -652,8 +654,6 @@ query BalanceJobStatus($jobId: String!) {
 |------------|-------------------------------------------------------------------------|-----------|
 | `jobId`    | Unique identifier for the computation job                               | `ID!`     |
 | `status`   | Current status of the job               | `String!` |
-
-Note that these mutations and query are only necessary for Bitcoin and Solana addresses. For EVM-compatible networks, you can directly use the portfolio query described in the previous sections.
 
 ## Best Practices
 
