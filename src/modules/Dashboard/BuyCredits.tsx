@@ -213,6 +213,7 @@ export function BuyCredits() {
   const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
   const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
+  const subtotal = price + savings;
 
   return (
     <div className="flex flex-col gap-4">
@@ -289,7 +290,7 @@ export function BuyCredits() {
           <div className="mb-6 flex flex-col gap-2">
             <div className="flex justify-between text-sm">
               <span>Subtotal</span>
-              <span>{formatUSD(price + savings)}</span>
+              <span>{formatUSD(subtotal)}</span>
             </div>
 
             {savings > 0 && (
@@ -297,7 +298,7 @@ export function BuyCredits() {
                 <span>Discount</span>
                 <span>
                   <span className="alert--success rounded-md px-2 py-1 text-success-default">
-                    {formatPercentage(savings / price)} off
+                    {formatPercentage(savings / subtotal)} off
                   </span>{' '}
                   <span className="font-semibold text-success-default">-{formatUSD(savings)}</span>
                 </span>
