@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
 
-export function RedirectToHome() {
+export function RedirectToLogin() {
   const history = useHistory();
 
   useEffect(() => {
-    history.replace('/');
+    history.replace('/login');
   }, [history]);
 
   return null;

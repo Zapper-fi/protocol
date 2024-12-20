@@ -8,9 +8,7 @@ import { ConsumptionStats } from '@site/src/modules/Dashboard/ConsumptionStats';
 import { Breadcrumbs } from '@site/src/modules/Dashboard/Breadcrumbs';
 import { QuickLinks } from '@site/src/components/QuickLinks';
 import { Card } from '../components/Card';
-import { useEffect } from 'react';
-import { useSignIn } from '@site/src/helpers/useSignIn';
-import { useModalStatus } from '@privy-io/react-auth';
+import { RedirectToLogin } from '@site/src/components/RedirectToLogin';
 
 function Dashboard() {
   return (
@@ -21,7 +19,7 @@ function Dashboard() {
             <Breadcrumbs title="Dashboard" />
 
             <SignedOut>
-              <SignInPrompt />
+              <RedirectToLogin />
             </SignedOut>
 
             <SignedIn>
@@ -51,19 +49,6 @@ function Dashboard() {
       </div>
     </Layout>
   );
-}
-
-function SignInPrompt() {
-  const { ready, login } = useSignIn();
-  const { isOpen } = useModalStatus();
-
-  useEffect(() => {
-    if (!ready || isOpen) return;
-
-    login();
-  }, [ready, isOpen, login]);
-
-  return null;
 }
 
 export default Dashboard;
