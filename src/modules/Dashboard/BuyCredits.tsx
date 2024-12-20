@@ -4,7 +4,7 @@ import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
-import { formatUSD } from '@site/src/helpers/formatters';
+import { formatPercentage, formatUSD } from '@site/src/helpers/formatters';
 import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
@@ -12,11 +12,6 @@ import clsx from 'clsx';
 
 const GRACE_PERIOD = 5000;
 const MIN_POINTS = 5000;
-
-const DISCOUNT_TIERS = {
-  0.75: { label: '$1,000', threshold: 1_000_000 }, // 25% off
-  0.67: { label: '$10,000', threshold: 10_000_000 }, // 33% off
-};
 
 const QUERY = gql`
   query BuyCredits {
@@ -100,6 +95,11 @@ const InfoIcon = ({ message }) => {
     </div>
   );
 };
+
+const discountOffers = [
+  { amount: 1000, rate: 0.25 },
+  { amount: 10000, rate: 0.33 },
+];
 
 export function BuyCredits() {
   const { user } = usePrivy();
@@ -213,6 +213,7 @@ export function BuyCredits() {
   const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
   const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
+  const subtotal = price + savings;
 
   return (
     <div className="flex flex-col gap-4">
@@ -235,15 +236,19 @@ export function BuyCredits() {
       <div>
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
-          <span className="text--success font-bold">🎄 Holiday Season Special Pricing! 🎄</span>
-          <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">25% off</span> for all credits
-            over 1M ($1,000)
-          </span>
-          <span>
-            <span className="text--success alert--success rounded-md px-2 py-1 font-bold">33% off</span> for all credits
-            over 10M ($7,750)
-          </span>
+          <span className="text--success font-bold">🎄 Holiday Season Pricing! 🎄</span>
+          {discountOffers.map(({ amount, rate }) => (
+            <div key={amount}>
+              <h6 className="mb-2">Spend {formatUSD(amount)} or more</h6>
+              <p>
+                <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
+                <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
+                <span className="alert--success rounded-md px-2 py-1 font-bold text-success-default">
+                  {formatPercentage(rate)} off
+                </span>
+              </p>
+            </div>
+          ))}
           <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
       </div>
@@ -283,24 +288,22 @@ export function BuyCredits() {
             </div>
           </div>
           <div className="mb-6 flex flex-col gap-2">
-            <div className="flex justify-between">
-              <span className="text-sm">Subtotal</span>
-              <span className="text-sm">{formatUSD(price + savings)}</span>
+            <div className="flex justify-between text-sm">
+              <span>Subtotal</span>
+              <span>{formatUSD(subtotal)}</span>
             </div>
-            {breakdown.map((tier) => {
-              const discountPercent = (1 - tier.creditRate) * 100;
-              if (discountPercent > 0) {
-                const tierSavings = tier.creditAmount * 0.001 * (1 - tier.creditRate);
-                const tierInfo = DISCOUNT_TIERS[tier.creditRate];
-                return (
-                  <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
-                    <span className="text-sm">{tierInfo.label} Credits Discount</span>
-                    <span className="text--success text-sm font-bold">-{formatUSD(tierSavings)}</span>
-                  </div>
-                );
-              }
-              return null;
-            })}
+
+            {savings > 0 && (
+              <div className="flex justify-between text-sm">
+                <span>Discount</span>
+                <span>
+                  <span className="alert--success rounded-md px-2 py-1 text-success-default">
+                    {formatPercentage(savings / subtotal)} off
+                  </span>{' '}
+                  <span className="font-semibold text-success-default">-{formatUSD(savings)}</span>
+                </span>
+              </div>
+            )}
             <hr style={{ margin: 0 }} />
             <div className="flex justify-between">
               <span>Total</span>
