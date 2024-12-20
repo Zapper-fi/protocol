@@ -4,6 +4,7 @@ import { gql, useMutation, useLazyQuery } from '@apollo/client';
 import { usePrivy } from '@privy-io/react-auth';
 import { Button } from '@site/src/components/Button';
 import { useAuthQuery } from '@site/src/helpers/useAuthQuery';
+import { formatUSD } from '@site/src/helpers/formatters';
 import { openPopup } from '@site/src/helpers/openPopup';
 import { Info } from 'lucide-react';
 import ReactDOM from 'react-dom';
@@ -212,7 +213,6 @@ export function BuyCredits() {
   const shouldShowWarning = apiV2PointsRemaining === null || apiV2PointsRemaining < 0;
   const displayV2Points = shouldShowWarning ? GRACE_PERIOD + (apiV2PointsRemaining || 0) : apiV2PointsRemaining;
   const disabled = loading || !user;
-  const formatPrice = (price) => price.toFixed(2);
 
   return (
     <div className="flex flex-col gap-4">
@@ -285,7 +285,7 @@ export function BuyCredits() {
           <div className="mb-6 flex flex-col gap-2">
             <div className="flex justify-between">
               <span className="text-sm">Subtotal</span>
-              <span className="text-sm">${formatPrice(price + savings)}</span>
+              <span className="text-sm">{formatUSD(price + savings)}</span>
             </div>
             {breakdown.map((tier) => {
               const discountPercent = (1 - tier.creditRate) * 100;
@@ -295,7 +295,7 @@ export function BuyCredits() {
                 return (
                   <div key={`tier-${tier.creditRate}`} className="flex justify-between text-sm">
                     <span className="text-sm">{tierInfo.label} Credits Discount</span>
-                    <span className="text--success text-sm font-bold">-${tierSavings.toFixed(2)}</span>
+                    <span className="text--success text-sm font-bold">-{formatUSD(tierSavings)}</span>
                   </div>
                 );
               }
@@ -304,13 +304,13 @@ export function BuyCredits() {
             <hr style={{ margin: 0 }} />
             <div className="flex justify-between">
               <span>Total</span>
-              <span className="font-bold">USD ${formatPrice(price)}</span>
+              <span className="font-bold">{formatUSD(price)}</span>
             </div>
           </div>
         </div>
 
         <Button type="submit" variant="primary" disabled={disabled} className="w-full">
-          <span className="font-extrabold">Buy for USD ${formatPrice(price)}</span>
+          <span className="font-extrabold">Buy for {formatUSD(price)}</span>
         </Button>
       </form>
     </div>

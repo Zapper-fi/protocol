@@ -58,8 +58,7 @@ export function PricingCalculator() {
 
   return (
     <div className="w-full rounded-lg border border-border bg-card">
-      <div className="border-b border-border px-6 pb-4 pt-6">
-      </div>
+      <div className="border-b border-border px-6 pb-4 pt-6"></div>
 
       <div className="space-y-6 px-6 pb-6">
         <div className="space-y-4">
@@ -125,12 +124,12 @@ export function PricingCalculator() {
           <div className="border-t border-border pt-3">
             <div className="flex items-center justify-between">
               <span className="font-semibold">Total</span>
-              <span className="text-2xl font-semibold">${formatUSD(pricing.total)}</span>
+              <span className="text-2xl font-semibold">{formatUSD(pricing.total)}</span>
             </div>
             {pricing.savings > 0 && (
               <div className="mt-1 flex items-center justify-between">
                 <span className="text-sm text-alt-color">Total savings</span>
-                <span className="text-sm font-semibold text-[#00D897]">-${formatUSD(pricing.savings)}</span>
+                <span className="text-sm font-semibold text-[#00D897]">-{formatUSD(pricing.savings)}</span>
               </div>
             )}
           </div>
