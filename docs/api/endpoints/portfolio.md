@@ -216,6 +216,22 @@ View positions within onchain applications like lending protocols, DEXes, etc.
 - `products`: Detailed breakdown of positions by product type
 - `appImage`: Application logo URL
 
+Position balances come in two types that require GraphQL fragments to access their specific fields:
+
+1. `AppTokenPositionBalance` (for fungible tokens like LP tokens):
+   - `balance`: Token balance
+   - `balanceUSD`: USD value
+   - `price`: Token price
+   - `symbol`: Token symbol
+   - `supply`: Total supply
+   - `pricePerShare`: Underlying token ratios
+
+2. `ContractPositionBalance` (for positions like lending):
+   - `balanceUSD`: Position USD value
+   - `tokens`: Array of underlying tokens and their metadata
+   - `displayProps`: Formatted data for UI rendering
+
+
 :::note
 Smart accounts like Maker's `DSProxy` are automatically included in balance responses as part of an "implicit" bundle.
 :::
@@ -223,17 +239,43 @@ Smart accounts like Maker's `DSProxy` are automatically included in balance resp
 #### Example App Balance Query
 
 ```graphql
-query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
-  portfolio(addresses: $addresses, networks: $networks) {
+query Portfolio($addresses: [Address!]!) {
+  portfolio(addresses: $addresses) {
     appBalances {
-      address
       appName
-      balanceUSD
+      appId
       network
       products {
         label
         assets {
-          address
+          # App token positions (e.g. LP tokens)
+          ... on AppTokenPositionBalance {
+            balance
+            balanceUSD
+            price
+            symbol
+            supply
+            displayProps {
+              label
+              images
+            }
+          }
+          # Contract positions (e.g. lending positions)
+          ... on ContractPositionBalance {
+            balanceUSD
+            tokens {
+              metaType
+              token {
+                balance
+                symbol
+                price
+              }
+            }
+            displayProps {
+              label
+              images
+            }
+          }
         }
       }
     }
@@ -249,22 +291,75 @@ query Portfolio($addresses: [Address!]!, $networks: [Network!]) {
     "portfolio": {
       "appBalances": [
         {
-          "address": "0xe321bd63cde8ea046b382f82964575f2a5586474",
-          "appName": "Aave V3",
-          "balanceUSD": 46.05200420761579,
-          "network": "OPTIMISM_MAINNET",
+          "appName": "Lido",
+          "appId": "lido",
+          "network": "ETHEREUM_MAINNET",
           "products": [
             {
-              "label": "Lending",
+              "label": "stETH",
               "assets": [
                 {
-                  "address": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff"
-                },
+                  "type": "app-token",
+                  "balance": "0.011535336210992167",
+                  "balanceUSD": 38.57116510214294,
+                  "price": 3343.74,
+                  "symbol": "stETH",
+                  "supply": 9685583.98598499,
+                  "displayProps": {
+                    "label": "stETH",
+                    "images": [
+                      "https://storage.googleapis.com/zapper-fi-assets/tokens/ethereum/0x0000000000000000000000000000000000000000.png"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "appName": "GMX",
+          "appId": "gmx",
+          "network": "ARBITRUM_MAINNET",
+          "products": [
+            {
+              "label": "Farms",
+              "assets": [
                 {
-                  "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd"
-                },
-                {
-                  "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8"
+                  "type": "contract-position",
+                  "balanceUSD": 217.5294876331168,
+                  "tokens": [
+                    {
+                      "metaType": "SUPPLIED",
+                      "token": {
+                        "balance": "123.19277851320523",
+                        "symbol": "GLP",
+                        "price": 1.4899571509867806
+                      }
+                    },
+                    {
+                      "metaType": "CLAIMABLE",
+                      "token": {
+                        "balance": "0.010176781691672002",
+                        "symbol": "WETH",
+                        "price": 3338.73
+                      }
+                    },
+                    {
+                      "metaType": "CLAIMABLE",
+                      "token": {
+                        "balance": "0",
+                        "symbol": "esGMX",
+                        "price": 28.09
+                      }
+                    }
+                  ],
+                  "displayProps": {
+                    "label": "GLP",
+                    "images": [
+                      "https://storage.googleapis.com/zapper-fi-assets/tokens/arbitrum/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f.png",
+                      "https://storage.googleapis.com/zapper-fi-assets/tokens/arbitrum/0x82af49447d8a07e3bd95bd0d56f35241523fbab1.png"
+                    ]
+                  }
                 }
               ]
             }
