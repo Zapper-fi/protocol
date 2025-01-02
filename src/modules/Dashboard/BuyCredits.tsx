@@ -97,8 +97,8 @@ const InfoIcon = ({ message }) => {
 };
 
 const discountOffers = [
-  { amount: 1000, rate: 0.25 },
-  { amount: 10000, rate: 0.33 },
+  { amount: 15000, rate: 0.2 },
+  { amount: 50000, rate: 0.3 },
 ];
 
 export function BuyCredits() {
@@ -236,11 +236,10 @@ export function BuyCredits() {
       <div>
         <h4 className="mt-1">Buy Credits</h4>
         <div className="banner mt-1 flex flex-col gap-2" style={{ fontSize: '14px' }}>
-          <span className="text--success font-bold">🎄 Holiday Season Pricing! 🎄</span>
           {discountOffers.map(({ amount, rate }) => (
-            <div key={amount}>
-              <h6 className="mb-2">Spend {formatUSD(amount)} or more</h6>
-              <p>
+            <div key={amount} className="py-2">
+              <h6 className="mb-1">Spend {formatUSD(amount)} or more</h6>
+              <p className="m-0">
                 <span className="text-alt-color line-through">{formatUSD(amount)}</span>{' '}
                 <span className="font-bold text-success-default">{formatUSD(amount - amount * rate)}</span>{' '}
                 <span className="alert--success rounded-md px-2 py-1 font-bold text-success-default">
@@ -249,7 +248,6 @@ export function BuyCredits() {
               </p>
             </div>
           ))}
-          <span className="text-sm italic text-gray-500">Promotion ends January 2, 2025</span>
         </div>
       </div>
 
